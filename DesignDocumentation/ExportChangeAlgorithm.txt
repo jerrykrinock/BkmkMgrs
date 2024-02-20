@@ -1,0 +1,63 @@
+ALGORITHMS - BookMacster version 1.3.19
+
+In -[Extore exportViaProperApiByOperation:], send three arrays in the JSON data:
+
+Cuts (deletions), sorted leaves first
+Puts (moves and insertions), sorted root first
+Repairs (updates)
+
+In Chrome, I do the cuts first, setting children of folders into a "limbo" in case they are re-added during puts to another parent.  Then I do the puts, then the repairs.
+
+In Firefox, since now with guids there is no possibility of items having wrong numbers, I simply do the puts first, then the cuts, then the repairs.  Limbo is not used.
+
+
+OLD THINKING:
+
+The old thinking was to send the deletions, moves, insertions and updates to the Client directly.  The Client would finish one of them before starting the next.  The question is: In what order can you do these four operations so that it will always work.  It appears that there is no answer to this question; hence this old thinking was abandoned.
+
+The order in Chrome was originally:
+
+Deletions
+Insertions
+Moves
+Updates
+
+Say that you have the following structure:
+
+A
+ B
+ C
+
+Now say that A and C have the wrong identifiers, but B has the correct identifier.  A and C will not be matched during merging and will be deletions *and* insertions.  B will be a move, from the old A to the new A, at index 0.
+
+So the first thing that will happen is that A and C will be deleted, but because B is a child of A, B will be deleted too.  Then, insertions.  Because we have sorted by lineage depth, A will be inserted first; that's OK.  But now when we go to insert C at index 1, we'll get an error because there is no sibling at index 0, since B was deleted.
+
+So in Firefox I tried this order:
+
+Insertions
+Moves
+Deletions
+Updates
+
+However, there is still a problem.  The *new* A will be inserted first, and then the *new* C will be attempted to be inserted at index 1, but it will err because B has not been moved in yet at index 0.
+
+So, here's how we fix that.  Because we have sorted insertions first by lineage depth and then by index, we won't send an index with insertions.  We'll just always insert items at the next available index.  This will result in items with wrong indexes (which are being deleted and re-inserted) being placed above other siblings, but when identifiers are wrong, you can't be perfect.
+
+But there is *still* a problem because what if you have this family:
+
+A
+B
+
+and want to change it to 
+
+A
+Z (new insertion)
+B
+
+What will happen is that Z will be inserted first, after B, so you'll have this:
+
+A
+B
+Z
+
+and then the move will move B to index 2, the same index as Z.  Depending on the Client behavior, this may make an error.

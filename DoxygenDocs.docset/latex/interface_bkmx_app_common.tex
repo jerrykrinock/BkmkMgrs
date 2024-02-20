@@ -1,0 +1,96 @@
+\hypertarget{interface_bkmx_app_common}{
+\section{BkmxAppCommon Class Reference}
+\label{interface_bkmx_app_common}\index{BkmxAppCommon@{BkmxAppCommon}}
+}
+Application functions that are needed by both the Main App and the Worker.  
+
+
+{\tt \#import $<$BkmxAppCommon.h$>$}
+
+Inheritance diagram for BkmxAppCommon::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_bkmx_app_common}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_bkmx_app_common_78c42c308e6346722a793bb56fef9a01}{
+(\hyperlink{interface_bkmx_app_common}{BkmxAppCommon} $\ast$) + \textbf{sharedAppCommon}}
+\label{interface_bkmx_app_common_78c42c308e6346722a793bb56fef9a01}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_bkmx_app_common_ae900e4efa1a7cd3e48393a16aa8a46b}{
+NSString $\ast$ \textbf{appNameLocalized}}
+\label{interface_bkmx_app_common_ae900e4efa1a7cd3e48393a16aa8a46b}
+
+\item 
+\hypertarget{interface_bkmx_app_common_ea45c3252a4459fce1e266f87e083a3e}{
+NSString $\ast$ \textbf{appNameUnlocalized}}
+\label{interface_bkmx_app_common_ea45c3252a4459fce1e266f87e083a3e}
+
+\item 
+\hypertarget{interface_bkmx_app_common_44342ad4ac454023878d93b0efe48561}{
+NSString $\ast$ \textbf{bundlePath}}
+\label{interface_bkmx_app_common_44342ad4ac454023878d93b0efe48561}
+
+\item 
+\hypertarget{interface_bkmx_app_common_61e16f6c0c91877f9316d6e3d6a6b295}{
+NSString $\ast$ \hyperlink{interface_bkmx_app_common_61e16f6c0c91877f9316d6e3d6a6b295}{executablePath}}
+\label{interface_bkmx_app_common_61e16f6c0c91877f9316d6e3d6a6b295}
+
+\begin{CompactList}\small\item\em The full path to the currently-running executable. \item\end{CompactList}\item 
+BOOL \hyperlink{interface_bkmx_app_common_884bdad8346240e5f35342d9881aa94b}{hasGui}
+\begin{CompactList}\small\item\em Whether or not the process has should access the window server.~. \item\end{CompactList}\item 
+\hypertarget{interface_bkmx_app_common_07d327e700a22a60115f5f7ae0662f00}{
+NSData $\ast$ \textbf{iconData}}
+\label{interface_bkmx_app_common_07d327e700a22a60115f5f7ae0662f00}
+
+\item 
+\hypertarget{interface_bkmx_app_common_a230ca9e727bdccbc702b17b5bdcf34a}{
+NSString $\ast$ \textbf{mainAppBundleIdentifier}}
+\label{interface_bkmx_app_common_a230ca9e727bdccbc702b17b5bdcf34a}
+
+\item 
+\hypertarget{interface_bkmx_app_common_ce502c4b8fb60adc6465ce9904ac3778}{
+NSString $\ast$ \textbf{mainAppNameLocalized}}
+\label{interface_bkmx_app_common_ce502c4b8fb60adc6465ce9904ac3778}
+
+\item 
+\hypertarget{interface_bkmx_app_common_041c799c683f3fc84605b126cac107d7}{
+NSString $\ast$ \textbf{nameForSeparatorStark}}
+\label{interface_bkmx_app_common_041c799c683f3fc84605b126cac107d7}
+
+\item 
+\hypertarget{interface_bkmx_app_common_aae5c6d89f242546c3334756fdf927ee}{
+NSOperationQueue $\ast$ \hyperlink{interface_bkmx_app_common_aae5c6d89f242546c3334756fdf927ee}{operationQueue}}
+\label{interface_bkmx_app_common_aae5c6d89f242546c3334756fdf927ee}
+
+\begin{CompactList}\small\item\em An application-wide operation queue. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Application functions that are needed by both the Main App and the Worker. 
+
+Uses a singleton sharedAppCommon under the hood 
+
+\subsection{Property Documentation}
+\hypertarget{interface_bkmx_app_common_884bdad8346240e5f35342d9881aa94b}{
+\index{BkmxAppCommon@{BkmxAppCommon}!hasGui@{hasGui}}
+\index{hasGui@{hasGui}!BkmxAppCommon@{BkmxAppCommon}}
+\subsubsection[{hasGui}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) hasGui\hspace{0.3cm}{\tt  \mbox{[}read, write, assign\mbox{]}}}}
+\label{interface_bkmx_app_common_884bdad8346240e5f35342d9881aa94b}
+
+
+Whether or not the process has should access the window server.~. 
+
+Set this as early as possible after the process launches 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BkmxAppCommon.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BkmxAppCommon.m\end{CompactItemize}

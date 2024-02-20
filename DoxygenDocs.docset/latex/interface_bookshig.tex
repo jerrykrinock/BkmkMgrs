@@ -1,0 +1,545 @@
+\hypertarget{interface_bookshig}{
+\section{Bookshig Class Reference}
+\label{interface_bookshig}\index{Bookshig@{Bookshig}}
+}
+A managed object which stores the configuration settings of a \hyperlink{class_bookshelf}{Bookshelf} The name is a contraction of \char`\"{}Bookshelf Configuration\char`\"{}.  
+
+
+{\tt \#import $<$Bookshig.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(IBAction) - \hyperlink{interface_bookshig_b76915b8e951542911bef8d087c9b31b}{addNewAgent}
+\begin{CompactList}\small\item\em Action which invokes newInternalizerAtIndex:NSNotFound, to create a new internalizer at the end, but does not return it. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_d54c488c755d5c3e9e5765433cffb884}{
+(Agent $\ast$) - \hyperlink{interface_bookshig_d54c488c755d5c3e9e5765433cffb884}{agentAtIndex:}}
+\label{interface_bookshig_d54c488c755d5c3e9e5765433cffb884}
+
+\begin{CompactList}\small\item\em Returns the agent at the given index. \item\end{CompactList}\item 
+(NSArray $\ast$) - \hyperlink{interface_bookshig_d2153d2b91de732996306620cc6f928c}{agentsOrdered}
+\begin{CompactList}\small\item\em Returns an array of the receiver's agents objects, sorted ascending by their 'index'. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_bookshig_5e754d6d62ce85c11b77f63e092ca567}{attributeKeyForHasHartainerSharype:}
+\begin{CompactList}\small\item\em Returns one of the four hasXXX keys corresponding to a given hartainer sharype. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_766d351ba1896549a32e03bc55a0021a}{
+(NSArray $\ast$) - \hyperlink{interface_bookshig_766d351ba1896549a32e03bc55a0021a}{availableSatchAlls}}
+\label{interface_bookshig_766d351ba1896549a32e03bc55a0021a}
+
+\begin{CompactList}\small\item\em Returns an array of NSNumbers representing the Sharypes of the hartainers that are available in the receiver. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_446a96a413ce9b1130b49f6b51c10ed9}{
+(BOOL) - \hyperlink{interface_bookshig_446a96a413ce9b1130b49f6b51c10ed9}{displaysFoldersValue}}
+\label{interface_bookshig_446a96a413ce9b1130b49f6b51c10ed9}
+
+\begin{CompactList}\small\item\em Returns the value of the receiver's displaysFolders attribute. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_bookshig_0a1d25b248c6ebb71683bdd2bafba3f7}{doAutomaticConfigurationIfNeeded}
+\begin{CompactList}\small\item\em If the receiver's configureAutomatically is true, sets the receiver's {\em collection-support\/} attributes according to the browfiles of the receiver's current internalizers. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_0b0baafc6ef57595b3323666d062b4d5}{
+(BOOL) - \hyperlink{interface_bookshig_0b0baafc6ef57595b3323666d062b4d5}{dupesMaybeMore}}
+\label{interface_bookshig_0b0baafc6ef57595b3323666d062b4d5}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver has observed an action which might change the actual dupes since the last time dupes were analyzed for. \item\end{CompactList}\item 
+(NSArray $\ast$) - \hyperlink{interface_bookshig_853fef4336ef06ce9016e365f1e347e5}{externalizersOrdered}
+\begin{CompactList}\small\item\em Returns an array of the receiver's externalizers objects, sorted ascending by their 'index'. \item\end{CompactList}\item 
+(NSArray $\ast$) - \hyperlink{interface_bookshig_f4bf7fd5870cda33bac7daa1f2c7c5e6}{internalizersOrdered}
+\begin{CompactList}\small\item\em Returns an array of the receiver's internalizersOrdered objects, sorted ascending by their 'index'. \item\end{CompactList}\item 
+(Agent $\ast$) - \hyperlink{interface_bookshig_36b7cbbfd5bc29ba3066c90f21d608c2}{newAgentAtIndex:}
+\begin{CompactList}\small\item\em Returns a new Agent, inserted at a given index, or at as low an index as possible, in the receiver's agents, in the receiver's managed object context. \item\end{CompactList}\item 
+(\hyperlink{interface_ixternalizer}{Ixternalizer} $\ast$) - \hyperlink{interface_bookshig_dbc76520361f6278c1972822c6610cce}{newExternalizerAtIndex:}
+\begin{CompactList}\small\item\em Returns a new \hyperlink{interface_ixternalizer}{Ixternalizer}, inserted at a given index, or at as low an index as possible, in the receiver's externalizers, in the receiver's managed object context. \item\end{CompactList}\item 
+(\hyperlink{interface_ixternalizer}{Ixternalizer} $\ast$) - \hyperlink{interface_bookshig_822107110792c35c9b905bbb123f40e0}{newInternalizerAtIndex:}
+\begin{CompactList}\small\item\em Returns a new \hyperlink{interface_ixternalizer}{Ixternalizer}, inserted at a given index, or at as low an index as possible, in the receiver's internalizers, in the receiver's managed object context. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_5ea2846b7833df5f0af7f6370cac28b9}{
+(NSString $\ast$) - \textbf{readableExportsList}}
+\label{interface_bookshig_5ea2846b7833df5f0af7f6370cac28b9}
+
+\item 
+\hypertarget{interface_bookshig_71140821e73c8d600cbf550a66336b07}{
+(NSString $\ast$) - \textbf{readableImportsList}}
+\label{interface_bookshig_71140821e73c8d600cbf550a66336b07}
+
+\item 
+\hypertarget{interface_bookshig_44167f165a8e06e3229abd4db2343ec7}{
+(Sharype) - \hyperlink{interface_bookshig_44167f165a8e06e3229abd4db2343ec7}{satchAll1SharypeValue}}
+\label{interface_bookshig_44167f165a8e06e3229abd4db2343ec7}
+
+\begin{CompactList}\small\item\em Returns the value of the receiver's satchAll1 attribute. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_e2808ba2de6308c8a9add56369372a4e}{
+(Sharype) - \hyperlink{interface_bookshig_e2808ba2de6308c8a9add56369372a4e}{satchAll2SharypeValue}}
+\label{interface_bookshig_e2808ba2de6308c8a9add56369372a4e}
+
+\begin{CompactList}\small\item\em Returns the value of the receiver's satchAll2 attribute. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_bookshig_e415f54d89e4bf11b6ea451184dc09f6}{setAgentsOrdered:}
+\begin{CompactList}\small\item\em Removes old and sets new objects into the receiver's agents set, conferring order by setting the -index of each object in the array. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_bookshig_b5240ac337a4d1f5c7f282186b576f85}{setExternalizersOrdered:}
+\begin{CompactList}\small\item\em Removes old and sets new objects into the receiver's externalizers set, conferring order by setting the -index of each object in the array. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_bookshig_96ac82e11d96e7e99c2f5ecba8e926c1}{setInternalizersOrdered:}
+\begin{CompactList}\small\item\em Removes old and sets new objects into the receiver's internalizers set, conferring order by setting the -index of each object in the array. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_3d18e32b3418a8fde0d9726f73692dce}{
+(BOOL) - \hyperlink{interface_bookshig_3d18e32b3418a8fde0d9726f73692dce}{sortAllCanDo}}
+\label{interface_bookshig_3d18e32b3418a8fde0d9726f73692dce}
+
+\begin{CompactList}\small\item\em Returns whether or not some of the items in the receiver's document may be out of order. \item\end{CompactList}\item 
+(BkmxSortBy) - \hyperlink{interface_bookshig_1e2039d78f9aa066b054de48f21547ca}{sortByValue}
+\begin{CompactList}\small\item\em Returns the value of the receiver's sortBy attribute. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_63a86c94d09f0ef325e1fa9a966d3b23}{
+(void) - \hyperlink{interface_bookshig_63a86c94d09f0ef325e1fa9a966d3b23}{syncDoOpenAfterLaunchToUserDefaults}}
+\label{interface_bookshig_63a86c94d09f0ef325e1fa9a966d3b23}
+
+\begin{CompactList}\small\item\em Reads the receiver's value of doOpenAfterLaunch and accordingly either adds or removes the receiver's UUID from the constKeyLaunchDocUuids array in user defaults. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_89440da8ba13a087b33e1f27f5f59b28}{
+(NSString $\ast$) - \hyperlink{interface_bookshig_89440da8ba13a087b33e1f27f5f59b28}{toolTipTags}}
+\label{interface_bookshig_89440da8ba13a087b33e1f27f5f59b28}
+
+\begin{CompactList}\small\item\em Gives a tool tip for a tag cloud or token field which indicates the receiver's tag delimiter and how to use it. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+NSSet $\ast$ \hyperlink{interface_bookshig_815dbf635dc021440ff3c03b523b2dc7}{agents}
+\begin{CompactList}\small\item\em An ordered set of the automated Agents currently assigned in the receiver. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_dd14a1e25994d9ff757206c3251fc1cd}{configureAutomatically}
+\begin{CompactList}\small\item\em A number BOOL indicating whether or not the receiver's collection-support attributes should be configured automatically to support the union of those attributes supported by all internalization sources. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_193d41fdcc7d4f8f6c761be74a3908d5}{defaultSortable}
+\begin{CompactList}\small\item\em A number indicating how starks in the receiver's document whose sortable attribute is BkmxSortableAsDefault should be sortable; the default value of sortable for starks in the receiver's document. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_c10a197fbebc63169e77759674b68a17}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_c10a197fbebc63169e77759674b68a17}{displaysFolders}}
+\label{interface_bookshig_c10a197fbebc63169e77759674b68a17}
+
+\begin{CompactList}\small\item\em A number indicating whether or not the user last viewed this document displaying folders, that is, showing hierarchy. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_25131c8ed85aa45fe62713c6371fb608}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_25131c8ed85aa45fe62713c6371fb608}{doExportAfterSave}}
+\label{interface_bookshig_25131c8ed85aa45fe62713c6371fb608}
+
+\begin{CompactList}\small\item\em Indicates whether or not the receiver's document should automatically perform export after it is saved. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_4dbc9e30eea126588a9bf24f09b3158b}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_4dbc9e30eea126588a9bf24f09b3158b}{doFindDupesAfterOpen}}
+\label{interface_bookshig_4dbc9e30eea126588a9bf24f09b3158b}
+
+\begin{CompactList}\small\item\em Indicates whether or not the receiver's document should automatically find dupes whenever it is opened. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_9fce513caf7e6fb68c4df22730bc030c}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_9fce513caf7e6fb68c4df22730bc030c}{doImportAfterOpen}}
+\label{interface_bookshig_9fce513caf7e6fb68c4df22730bc030c}
+
+\begin{CompactList}\small\item\em Indicates whether or not the receiver's document should automatically sort its contents whenever it is opened. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_734bfa416946b47c5ae4f3f5477ede0b}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_734bfa416946b47c5ae4f3f5477ede0b}{doOpenAfterLaunch}}
+\label{interface_bookshig_734bfa416946b47c5ae4f3f5477ede0b}
+
+\begin{CompactList}\small\item\em Indicates whether or not the receiver's document should automatically find dupes whenever it is opened. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_70bea572b6008ad5de3bd64e04d01f6f}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_70bea572b6008ad5de3bd64e04d01f6f}{doSortAfterOpen}}
+\label{interface_bookshig_70bea572b6008ad5de3bd64e04d01f6f}
+
+\begin{CompactList}\small\item\em Indicates whether or not the receiver's document should automatically open whenever this (main, GUI) application is launched. \item\end{CompactList}\item 
+NSSet $\ast$ \hyperlink{interface_bookshig_784c018b7fcd752797030aee24fa0c10}{externalizers}
+\begin{CompactList}\small\item\em An set of the Ixternalizations which should be executed when the receiver performs a Sync Out. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_4bdc6361e7e77128398a6233cea4e633}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_4bdc6361e7e77128398a6233cea4e633}{filterIgnoredPrefixes}}
+\label{interface_bookshig_4bdc6361e7e77128398a6233cea4e633}
+
+\begin{CompactList}\small\item\em Indicates whether or not ignored prefixes should be filtered when sorting the items in the receiver. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_221ca0b9629ad0946357d19eaaef7344}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_221ca0b9629ad0946357d19eaaef7344}{hasBar}}
+\label{interface_bookshig_221ca0b9629ad0946357d19eaaef7344}
+
+\begin{CompactList}\small\item\em A number BOOL indicating whether or not the receiver has an explicit Bookmarks Bar. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_85977635d56ca70f078fb72ab0cb01fc}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_85977635d56ca70f078fb72ab0cb01fc}{hasMenu}}
+\label{interface_bookshig_85977635d56ca70f078fb72ab0cb01fc}
+
+\begin{CompactList}\small\item\em A number BOOL indicating whether or not the receiver has an explicit Bookmarks Menu. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_c59a58b6a2e55061db31582eef83dd6a}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_c59a58b6a2e55061db31582eef83dd6a}{hasOhared}}
+\label{interface_bookshig_c59a58b6a2e55061db31582eef83dd6a}
+
+\begin{CompactList}\small\item\em A number BOOL indicating whether or not the receiver has an explicit (OmniWeb) My Shared Bookmarks collection. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_cb20aa71c3102dd0614f8a96685bf2cd}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_cb20aa71c3102dd0614f8a96685bf2cd}{hasUnfiled}}
+\label{interface_bookshig_cb20aa71c3102dd0614f8a96685bf2cd}
+
+\begin{CompactList}\small\item\em A number BOOL indicating whether or not the receiver has an explicit Unfiled Bookmarks collection. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_7f28988f4f8944f5eacac0c33b413f6b}{ignoreDisparateDupes}
+\begin{CompactList}\small\item\em Indicates whether or duplicate pairs in different collections should be detected when finding duplicates in the receiver. \item\end{CompactList}\item 
+NSSet $\ast$ \hyperlink{interface_bookshig_274f0e3451f769783fc4eb0afef37904}{internalizers}
+\begin{CompactList}\small\item\em An set of the Ixternalizations which should be executed when the receiver performs a Sync In. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_7bf1c6bcceba56a1ae917b5736f6e3f1}{
+NSDate $\ast$ \hyperlink{interface_bookshig_7bf1c6bcceba56a1ae917b5736f6e3f1}{lastDupesDone}}
+\label{interface_bookshig_7bf1c6bcceba56a1ae917b5736f6e3f1}
+
+\begin{CompactList}\small\item\em The last date/time that findDupes: completed execution in the \hyperlink{class_bookshelf}{Bookshelf} whose managed object context the receiver is inserted into. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_d51893c5dfb42c1433fcf59068ea793a}{
+NSDate $\ast$ \hyperlink{interface_bookshig_d51893c5dfb42c1433fcf59068ea793a}{lastDupesMaybeMore}}
+\label{interface_bookshig_d51893c5dfb42c1433fcf59068ea793a}
+
+\begin{CompactList}\small\item\em The last date/time that an action occurred which could cause a subsequent execution of findDupes: to find more dupes tha the previous execution. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_9212f7b6c8aad38c5ee757785f7f7b1e}{
+NSDate $\ast$ \hyperlink{interface_bookshig_9212f7b6c8aad38c5ee757785f7f7b1e}{lastSortDone}}
+\label{interface_bookshig_9212f7b6c8aad38c5ee757785f7f7b1e}
+
+\begin{CompactList}\small\item\em The last date/time that sort: completed execution in the \hyperlink{class_bookshelf}{Bookshelf} whose managed object context the receiver is inserted into. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_640bb26a6f22332a037d17586015d3a8}{
+NSDate $\ast$ \hyperlink{interface_bookshig_640bb26a6f22332a037d17586015d3a8}{lastSortMaybeNot}}
+\label{interface_bookshig_640bb26a6f22332a037d17586015d3a8}
+
+\begin{CompactList}\small\item\em The last date/time that an action occurred which would cause a subsequent execution of sort: to have move any items. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_00e3033b8ceb9c68895f86bc1288c056}{
+NSDate $\ast$ \hyperlink{interface_bookshig_00e3033b8ceb9c68895f86bc1288c056}{lastVerifyDone}}
+\label{interface_bookshig_00e3033b8ceb9c68895f86bc1288c056}
+
+\begin{CompactList}\small\item\em The last date/time that a 'verify' completed execution in the \hyperlink{class_bookshelf}{Bookshelf} whose managed object context the receiver is inserted into. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_8e75fdf73f66800fc5ead1651492047b}{
+NSDate $\ast$ \hyperlink{interface_bookshig_8e75fdf73f66800fc5ead1651492047b}{lastVerifyMaybeNot}}
+\label{interface_bookshig_8e75fdf73f66800fc5ead1651492047b}
+
+\begin{CompactList}\small\item\em The last date/time that an action occurred which would change the distribution between automatically-fixed/fixable and manually-fixable bookmarks. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_5fd1323e5f9da4ac3856ec0340ea1118}{
+NSString $\ast$ \hyperlink{interface_bookshig_5fd1323e5f9da4ac3856ec0340ea1118}{notes}}
+\label{interface_bookshig_5fd1323e5f9da4ac3856ec0340ea1118}
+
+\begin{CompactList}\small\item\em A user-defined string descriving the receiver, stored in its metadata.~ Note: Not a managed object. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_e6e6c4b0106ebbaa0893fb9fd2811e56}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_e6e6c4b0106ebbaa0893fb9fd2811e56}{rootLeavesOk}}
+\label{interface_bookshig_e6e6c4b0106ebbaa0893fb9fd2811e56}
+
+\begin{CompactList}\small\item\em An number BOOL indicating whether or not the receiver accepts starks matching coarse type SharypeCoarseLeaf in its root. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_5d08452c612fbb64fbf7faab6d12769b}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_5d08452c612fbb64fbf7faab6d12769b}{rootNotchesOk}}
+\label{interface_bookshig_5d08452c612fbb64fbf7faab6d12769b}
+
+\begin{CompactList}\small\item\em An number BOOL indicating whether or not the receiver accepts starks matching coarse type SharypeCoarseNotch in its root. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_40b7bfd94d256aed15373735a54cdaa3}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_40b7bfd94d256aed15373735a54cdaa3}{rootSoftainersOk}}
+\label{interface_bookshig_40b7bfd94d256aed15373735a54cdaa3}
+
+\begin{CompactList}\small\item\em An number BOOL indicating whether or not the receiver accepts starks matching coarse type SharypeCoarseSoftainer in its root. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_4f9968fddf0a6be5154a457c0cadb2ad}{rootSortable}
+\begin{CompactList}\small\item\em A number indicating whether or not the root item of the receiver is sortable. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_44bc56e571cc7ae46eec3be8906ec8cc}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_44bc56e571cc7ae46eec3be8906ec8cc}{satchAll1}}
+\label{interface_bookshig_44bc56e571cc7ae46eec3be8906ec8cc}
+
+\begin{CompactList}\small\item\em A number Sharype indicating the preferred collection into which dead-end starks should be placed in the receiver. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_324be50b113a0f08aaf5fcf29f20ed1a}{satchAll2}
+\begin{CompactList}\small\item\em A number Sharype indicating the alternate collection into which dead-end starks should be placed in the receiver. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_8d93d105ce4f7c954ec0163fb671a176}{
+NSNumber $\ast$ \hyperlink{interface_bookshig_8d93d105ce4f7c954ec0163fb671a176}{softainersAnyRootIndex}}
+\label{interface_bookshig_8d93d105ce4f7c954ec0163fb671a176}
+
+\begin{CompactList}\small\item\em An number BOOL indicating whether or not the receiver allows user-defined (\char`\"{}soft\char`\"{}) starks in its root to have a lower index than any of its hartainer collections. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_478c54c81e5d86ef3f61eeec9b3e3e02}{sortBy}
+\begin{CompactList}\small\item\em A number indicating which attribute to sort items by in the owning \hyperlink{class_bookshelf}{Bookshelf}. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_6e2f3678491b8a8f968e0f1aa4237928}{sortFoldersAt}
+\begin{CompactList}\small\item\em A number indicating where folders should be sorted with respect to bookmarks in the receiver. \item\end{CompactList}\item 
+NSNumber $\ast$ \hyperlink{interface_bookshig_35135c7c371975ff3af878537e3811fb}{tagDelimiter}
+\begin{CompactList}\small\item\em A string used to delimit the receiver's tags when the user types into token fields. \item\end{CompactList}\item 
+\hypertarget{interface_bookshig_b0005d0f8c8e49900947e7c2b71b9c6b}{
+NSString $\ast$ \hyperlink{interface_bookshig_b0005d0f8c8e49900947e7c2b71b9c6b}{uuid}}
+\label{interface_bookshig_b0005d0f8c8e49900947e7c2b71b9c6b}
+
+\begin{CompactList}\small\item\em A unique identifier for the receiver's document, used to remember window agent associations, open-on-launch documents, and window positions.~ Set only when a new document is create. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_bookshig_97dec0b001c467c2c978e96b718cfa11}{visitor}
+\begin{CompactList}\small\item\em The bundle identifier of the web browser which the user prefers to use when visiting a bookmark. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A managed object which stores the configuration settings of a \hyperlink{class_bookshelf}{Bookshelf} The name is a contraction of \char`\"{}Bookshelf Configuration\char`\"{}. 
+
+One, and only one of these, is inserted into a new \hyperlink{class_bookshelf}{Bookshelf} when it is initially created.
+
+There are two ways to handle the Automatic configuration (configureAutomatically). \begin{itemize}
+\item The first way would be to to write custom getters for all of the {\em collection-support\/} attributes: \begin{itemize}
+\item satchAll1 \item satchAll2 \item hasBar \item hasMenu \item hasOhared \item hasUnsorted \item rootLeavesOk \item rootSoftainersOk \item rootNotchesOk \item softainersAnyRootIndex \end{itemize}
+Each custom getter would have to iterate through the internalizers and calculate the required setting.~ And this would be calculated during normal program operation. \item The second way would be to set KVO observers which, if configureAutomatically is YES, iterate through the above list of affected attributes and calculate a required setting for each one and set it.~ This will be done only when internalizers were changed, practically, once a year.~ Two observers are required, though: One to observe 'browfile' of \hyperlink{interface_ixternalizer}{Ixternalizer} and one to observe 'internalizers' of \hyperlink{interface_bookshig}{Bookshig}. 
+
+Obviously, the second way is less code and more efficient to run, so I do that.~ It will also cause the disabled attribute settings to display as the current, automatically-calculated values instead of holding on to the last manually-set values.~ I feel that displaying this more correct information to users would be better than holding onto the last manually-set values, since it only takes nine clicks at most to restore the last manually-set values. \end{itemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_bookshig_b76915b8e951542911bef8d087c9b31b}{
+\index{Bookshig@{Bookshig}!addNewAgent@{addNewAgent}}
+\index{addNewAgent@{addNewAgent}!Bookshig@{Bookshig}}
+\subsubsection[{addNewAgent}]{\setlength{\rightskip}{0pt plus 5cm}- (IBAction) addNewAgent }}
+\label{interface_bookshig_b76915b8e951542911bef8d087c9b31b}
+
+
+Action which invokes newInternalizerAtIndex:NSNotFound, to create a new internalizer at the end, but does not return it. 
+
+Action which invokes newExternalizerAtIndex:NSNotFound, to create a new externalizer at the end, but does not return it.
+
+Action which invokes newAgentAtIndex:NSNotFound, to create a new agent at the end, but does not return it. \hypertarget{interface_bookshig_d2153d2b91de732996306620cc6f928c}{
+\index{Bookshig@{Bookshig}!agentsOrdered@{agentsOrdered}}
+\index{agentsOrdered@{agentsOrdered}!Bookshig@{Bookshig}}
+\subsubsection[{agentsOrdered}]{\setlength{\rightskip}{0pt plus 5cm}- (NSArray $\ast$) agentsOrdered }}
+\label{interface_bookshig_d2153d2b91de732996306620cc6f928c}
+
+
+Returns an array of the receiver's agents objects, sorted ascending by their 'index'. 
+
+\begin{Desc}
+\item[Returns:]The sorted array. \end{Desc}
+\hypertarget{interface_bookshig_5e754d6d62ce85c11b77f63e092ca567}{
+\index{Bookshig@{Bookshig}!attributeKeyForHasHartainerSharype:@{attributeKeyForHasHartainerSharype:}}
+\index{attributeKeyForHasHartainerSharype:@{attributeKeyForHasHartainerSharype:}!Bookshig@{Bookshig}}
+\subsubsection[{attributeKeyForHasHartainerSharype:}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) attributeKeyForHasHartainerSharype: (Sharype) {\em sharype}}}
+\label{interface_bookshig_5e754d6d62ce85c11b77f63e092ca567}
+
+
+Returns one of the four hasXXX keys corresponding to a given hartainer sharype. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sharype}]One of the hartainer sharypes SharypeBar, SharypeMenu, SharypeUnfiled or SharypeOhared \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Either constKeyHasBar, constKeyHasMenu, constKeyHasUnfiled or constKeyHasOhared \end{Desc}
+\hypertarget{interface_bookshig_0a1d25b248c6ebb71683bdd2bafba3f7}{
+\index{Bookshig@{Bookshig}!doAutomaticConfigurationIfNeeded@{doAutomaticConfigurationIfNeeded}}
+\index{doAutomaticConfigurationIfNeeded@{doAutomaticConfigurationIfNeeded}!Bookshig@{Bookshig}}
+\subsubsection[{doAutomaticConfigurationIfNeeded}]{\setlength{\rightskip}{0pt plus 5cm}- (void) doAutomaticConfigurationIfNeeded }}
+\label{interface_bookshig_0a1d25b248c6ebb71683bdd2bafba3f7}
+
+
+If the receiver's configureAutomatically is true, sets the receiver's {\em collection-support\/} attributes according to the browfiles of the receiver's current internalizers. 
+
+The {\em collection-support\/} attributes are listed in the class description. \hypertarget{interface_bookshig_853fef4336ef06ce9016e365f1e347e5}{
+\index{Bookshig@{Bookshig}!externalizersOrdered@{externalizersOrdered}}
+\index{externalizersOrdered@{externalizersOrdered}!Bookshig@{Bookshig}}
+\subsubsection[{externalizersOrdered}]{\setlength{\rightskip}{0pt plus 5cm}- (NSArray $\ast$) externalizersOrdered }}
+\label{interface_bookshig_853fef4336ef06ce9016e365f1e347e5}
+
+
+Returns an array of the receiver's externalizers objects, sorted ascending by their 'index'. 
+
+\begin{Desc}
+\item[Returns:]The sorted array. \end{Desc}
+\hypertarget{interface_bookshig_f4bf7fd5870cda33bac7daa1f2c7c5e6}{
+\index{Bookshig@{Bookshig}!internalizersOrdered@{internalizersOrdered}}
+\index{internalizersOrdered@{internalizersOrdered}!Bookshig@{Bookshig}}
+\subsubsection[{internalizersOrdered}]{\setlength{\rightskip}{0pt plus 5cm}- (NSArray $\ast$) internalizersOrdered }}
+\label{interface_bookshig_f4bf7fd5870cda33bac7daa1f2c7c5e6}
+
+
+Returns an array of the receiver's internalizersOrdered objects, sorted ascending by their 'index'. 
+
+\begin{Desc}
+\item[Returns:]The sorted array. \end{Desc}
+\hypertarget{interface_bookshig_36b7cbbfd5bc29ba3066c90f21d608c2}{
+\index{Bookshig@{Bookshig}!newAgentAtIndex:@{newAgentAtIndex:}}
+\index{newAgentAtIndex:@{newAgentAtIndex:}!Bookshig@{Bookshig}}
+\subsubsection[{newAgentAtIndex:}]{\setlength{\rightskip}{0pt plus 5cm}- (Agent $\ast$) newAgentAtIndex: (int) {\em index}}}
+\label{interface_bookshig_36b7cbbfd5bc29ba3066c90f21d608c2}
+
+
+Returns a new Agent, inserted at a given index, or at as low an index as possible, in the receiver's agents, in the receiver's managed object context. 
+
+If inserting the new Agent in the receiver's externalizers would create a gap in the sequence of their indexes, the index is reduced to a value which would close the gap. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]The desired index of the new Agent. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The new Agent \end{Desc}
+\hypertarget{interface_bookshig_dbc76520361f6278c1972822c6610cce}{
+\index{Bookshig@{Bookshig}!newExternalizerAtIndex:@{newExternalizerAtIndex:}}
+\index{newExternalizerAtIndex:@{newExternalizerAtIndex:}!Bookshig@{Bookshig}}
+\subsubsection[{newExternalizerAtIndex:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Ixternalizer} $\ast$) newExternalizerAtIndex: (int) {\em index}}}
+\label{interface_bookshig_dbc76520361f6278c1972822c6610cce}
+
+
+Returns a new \hyperlink{interface_ixternalizer}{Ixternalizer}, inserted at a given index, or at as low an index as possible, in the receiver's externalizers, in the receiver's managed object context. 
+
+If inserting the new \hyperlink{interface_ixternalizer}{Ixternalizer} in the receiver's externalizers would create a gap in the sequence of their indexes, the index is reduced to a value which would close the gap. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]The desired index of the new Ixtnernalizer, or NSNotFound to use the next index.\end{description}
+\end{Desc}
+The array controller in the nib does not use this method.
+
+\begin{Desc}
+\item[Returns:]The new \hyperlink{interface_ixternalizer}{Ixternalizer} \end{Desc}
+\hypertarget{interface_bookshig_822107110792c35c9b905bbb123f40e0}{
+\index{Bookshig@{Bookshig}!newInternalizerAtIndex:@{newInternalizerAtIndex:}}
+\index{newInternalizerAtIndex:@{newInternalizerAtIndex:}!Bookshig@{Bookshig}}
+\subsubsection[{newInternalizerAtIndex:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Ixternalizer} $\ast$) newInternalizerAtIndex: (int) {\em index}}}
+\label{interface_bookshig_822107110792c35c9b905bbb123f40e0}
+
+
+Returns a new \hyperlink{interface_ixternalizer}{Ixternalizer}, inserted at a given index, or at as low an index as possible, in the receiver's internalizers, in the receiver's managed object context. 
+
+If inserting the new \hyperlink{interface_ixternalizer}{Ixternalizer} in the receiver's internalizers would create a gap in the sequence of their indexes, the index is reduced to a value which would close the gap. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]The desired index of the new Ixtnernalizer, or NSNotFound to use the next index.\end{description}
+\end{Desc}
+The array controller in the nib does not use this method.
+
+\begin{Desc}
+\item[Returns:]The new \hyperlink{interface_ixternalizer}{Ixternalizer} \end{Desc}
+\hypertarget{interface_bookshig_e415f54d89e4bf11b6ea451184dc09f6}{
+\index{Bookshig@{Bookshig}!setAgentsOrdered:@{setAgentsOrdered:}}
+\index{setAgentsOrdered:@{setAgentsOrdered:}!Bookshig@{Bookshig}}
+\subsubsection[{setAgentsOrdered:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setAgentsOrdered: (NSArray$\ast$) {\em newObjects}}}
+\label{interface_bookshig_e415f54d89e4bf11b6ea451184dc09f6}
+
+
+Removes old and sets new objects into the receiver's agents set, conferring order by setting the -index of each object in the array. 
+
+Triggers KVO notifications. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em newObjects}]The array of new objects, each of which must conform to the SSYIndexee protocol, i.e., have an 'index' property. \end{description}
+\end{Desc}
+\hypertarget{interface_bookshig_b5240ac337a4d1f5c7f282186b576f85}{
+\index{Bookshig@{Bookshig}!setExternalizersOrdered:@{setExternalizersOrdered:}}
+\index{setExternalizersOrdered:@{setExternalizersOrdered:}!Bookshig@{Bookshig}}
+\subsubsection[{setExternalizersOrdered:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setExternalizersOrdered: (NSArray$\ast$) {\em newObjects}}}
+\label{interface_bookshig_b5240ac337a4d1f5c7f282186b576f85}
+
+
+Removes old and sets new objects into the receiver's externalizers set, conferring order by setting the -index of each object in the array. 
+
+Triggers KVO notifications. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em newObjects}]The array of new objects, each of which must conform to the SSYIndexee protocol, i.e., have an 'index' property. \end{description}
+\end{Desc}
+\hypertarget{interface_bookshig_96ac82e11d96e7e99c2f5ecba8e926c1}{
+\index{Bookshig@{Bookshig}!setInternalizersOrdered:@{setInternalizersOrdered:}}
+\index{setInternalizersOrdered:@{setInternalizersOrdered:}!Bookshig@{Bookshig}}
+\subsubsection[{setInternalizersOrdered:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setInternalizersOrdered: (NSArray$\ast$) {\em newObjects}}}
+\label{interface_bookshig_96ac82e11d96e7e99c2f5ecba8e926c1}
+
+
+Removes old and sets new objects into the receiver's internalizers set, conferring order by setting the -index of each object in the array. 
+
+Triggers KVO notifications. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em newObjects}]The array of new objects, each of which must conform to the SSYIndexee protocol, i.e., have an 'index' property. \end{description}
+\end{Desc}
+\hypertarget{interface_bookshig_1e2039d78f9aa066b054de48f21547ca}{
+\index{Bookshig@{Bookshig}!sortByValue@{sortByValue}}
+\index{sortByValue@{sortByValue}!Bookshig@{Bookshig}}
+\subsubsection[{sortByValue}]{\setlength{\rightskip}{0pt plus 5cm}- (BkmxSortBy) sortByValue }}
+\label{interface_bookshig_1e2039d78f9aa066b054de48f21547ca}
+
+
+Returns the value of the receiver's sortBy attribute. 
+
+/$\ast$! 
+
+\subsection{Property Documentation}
+\hypertarget{interface_bookshig_815dbf635dc021440ff3c03b523b2dc7}{
+\index{Bookshig@{Bookshig}!agents@{agents}}
+\index{agents@{agents}!Bookshig@{Bookshig}}
+\subsubsection[{agents}]{\setlength{\rightskip}{0pt plus 5cm}- (NSSet$\ast$) agents\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_815dbf635dc021440ff3c03b523b2dc7}
+
+
+An ordered set of the automated Agents currently assigned in the receiver. 
+
+The set may be ordered by the -index attributes of its members. Ordering is only necessary in this case to give the user a consistent table display. \hypertarget{interface_bookshig_dd14a1e25994d9ff757206c3251fc1cd}{
+\index{Bookshig@{Bookshig}!configureAutomatically@{configureAutomatically}}
+\index{configureAutomatically@{configureAutomatically}!Bookshig@{Bookshig}}
+\subsubsection[{configureAutomatically}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) configureAutomatically\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_dd14a1e25994d9ff757206c3251fc1cd}
+
+
+A number BOOL indicating whether or not the receiver's collection-support attributes should be configured automatically to support the union of those attributes supported by all internalization sources. 
+
+The {\em collection-support\/} attributes are listed in the class description. \hypertarget{interface_bookshig_193d41fdcc7d4f8f6c761be74a3908d5}{
+\index{Bookshig@{Bookshig}!defaultSortable@{defaultSortable}}
+\index{defaultSortable@{defaultSortable}!Bookshig@{Bookshig}}
+\subsubsection[{defaultSortable}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) defaultSortable\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_193d41fdcc7d4f8f6c761be74a3908d5}
+
+
+A number indicating how starks in the receiver's document whose sortable attribute is BkmxSortableAsDefault should be sortable; the default value of sortable for starks in the receiver's document. 
+
+The value of the number should be an integer, one of the BkmxSortable values. \hypertarget{interface_bookshig_784c018b7fcd752797030aee24fa0c10}{
+\index{Bookshig@{Bookshig}!externalizers@{externalizers}}
+\index{externalizers@{externalizers}!Bookshig@{Bookshig}}
+\subsubsection[{externalizers}]{\setlength{\rightskip}{0pt plus 5cm}- (NSSet$\ast$) externalizers\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_784c018b7fcd752797030aee24fa0c10}
+
+
+An set of the Ixternalizations which should be executed when the receiver performs a Sync Out. 
+
+The set may be ordered by the -index attributes of its members. \hypertarget{interface_bookshig_7f28988f4f8944f5eacac0c33b413f6b}{
+\index{Bookshig@{Bookshig}!ignoreDisparateDupes@{ignoreDisparateDupes}}
+\index{ignoreDisparateDupes@{ignoreDisparateDupes}!Bookshig@{Bookshig}}
+\subsubsection[{ignoreDisparateDupes}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) ignoreDisparateDupes\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_7f28988f4f8944f5eacac0c33b413f6b}
+
+
+Indicates whether or duplicate pairs in different collections should be detected when finding duplicates in the receiver. 
+
+The value of the number should be a BOOL, YES or NO. \hypertarget{interface_bookshig_274f0e3451f769783fc4eb0afef37904}{
+\index{Bookshig@{Bookshig}!internalizers@{internalizers}}
+\index{internalizers@{internalizers}!Bookshig@{Bookshig}}
+\subsubsection[{internalizers}]{\setlength{\rightskip}{0pt plus 5cm}- (NSSet$\ast$) internalizers\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_274f0e3451f769783fc4eb0afef37904}
+
+
+An set of the Ixternalizations which should be executed when the receiver performs a Sync In. 
+
+The set may be ordered by the -index attributes of its members. \hypertarget{interface_bookshig_4f9968fddf0a6be5154a457c0cadb2ad}{
+\index{Bookshig@{Bookshig}!rootSortable@{rootSortable}}
+\index{rootSortable@{rootSortable}!Bookshig@{Bookshig}}
+\subsubsection[{rootSortable}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) rootSortable\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_4f9968fddf0a6be5154a457c0cadb2ad}
+
+
+A number indicating whether or not the root item of the receiver is sortable. 
+
+The value value should be one of the BkmxSortable values, except not BkmxSortableAsParent since root does not have a parent. \hypertarget{interface_bookshig_324be50b113a0f08aaf5fcf29f20ed1a}{
+\index{Bookshig@{Bookshig}!satchAll2@{satchAll2}}
+\index{satchAll2@{satchAll2}!Bookshig@{Bookshig}}
+\subsubsection[{satchAll2}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) satchAll2\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_324be50b113a0f08aaf5fcf29f20ed1a}
+
+
+A number Sharype indicating the alternate collection into which dead-end starks should be placed in the receiver. 
+
+This alternate is use in the event that satchAll1 is SharypeRoot, and some stark is not allowed in root,as indicated by rootLeavesOK, rootSoftainersOK or rootNotchesOK. \hypertarget{interface_bookshig_478c54c81e5d86ef3f61eeec9b3e3e02}{
+\index{Bookshig@{Bookshig}!sortBy@{sortBy}}
+\index{sortBy@{sortBy}!Bookshig@{Bookshig}}
+\subsubsection[{sortBy}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) sortBy\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_478c54c81e5d86ef3f61eeec9b3e3e02}
+
+
+A number indicating which attribute to sort items by in the owning \hyperlink{class_bookshelf}{Bookshelf}. 
+
+The value of the number should be an integer, one of the BkmxSortBy values. \hypertarget{interface_bookshig_6e2f3678491b8a8f968e0f1aa4237928}{
+\index{Bookshig@{Bookshig}!sortFoldersAt@{sortFoldersAt}}
+\index{sortFoldersAt@{sortFoldersAt}!Bookshig@{Bookshig}}
+\subsubsection[{sortFoldersAt}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) sortFoldersAt\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_bookshig_6e2f3678491b8a8f968e0f1aa4237928}
+
+
+A number indicating where folders should be sorted with respect to bookmarks in the receiver. 
+
+The value of the number should be an integer, one of the BkmxSortFoldersAt values. \hypertarget{interface_bookshig_35135c7c371975ff3af878537e3811fb}{
+\index{Bookshig@{Bookshig}!tagDelimiter@{tagDelimiter}}
+\index{tagDelimiter@{tagDelimiter}!Bookshig@{Bookshig}}
+\subsubsection[{tagDelimiter}]{\setlength{\rightskip}{0pt plus 5cm}- (NSNumber$\ast$) tagDelimiter\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_bookshig_35135c7c371975ff3af878537e3811fb}
+
+
+A string used to delimit the receiver's tags when the user types into token fields. 
+
+If this string is found in a receiver's stark's tag, it will be converted to an underscore. \hypertarget{interface_bookshig_97dec0b001c467c2c978e96b718cfa11}{
+\index{Bookshig@{Bookshig}!visitor@{visitor}}
+\index{visitor@{visitor}!Bookshig@{Bookshig}}
+\subsubsection[{visitor}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) visitor\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_bookshig_97dec0b001c467c2c978e96b718cfa11}
+
+
+The bundle identifier of the web browser which the user prefers to use when visiting a bookmark. 
+
+A nil value indicates to use the user's default web browser. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Bookshig.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Bookshig.m\end{CompactItemize}

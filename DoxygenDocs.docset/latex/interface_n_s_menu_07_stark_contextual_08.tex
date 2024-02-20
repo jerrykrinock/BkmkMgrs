@@ -1,0 +1,82 @@
+\hypertarget{interface_n_s_menu_07_stark_contextual_08}{
+\section{NSMenu(StarkContextual) Class Reference}
+\label{interface_n_s_menu_07_stark_contextual_08}\index{NSMenu(StarkContextual)@{NSMenu(StarkContextual)}}
+}
+An NSMenu helper which can add contextual menu items for a \hyperlink{class_stark}{Stark} context, or return an entire prefabricated menu containing all avalailable items.  
+
+
+{\tt \#import $<$NSMenu+StarkContextual.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_ea525185d630293dee70074d9cadd3c1}{
+(void) - \textbf{addClearDontVerifyItemForBookmarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_ea525185d630293dee70074d9cadd3c1}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_502bdb150a62f499973f7482ddb195cc}{
+(void) - \textbf{addCopyAndCutItemForStarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_502bdb150a62f499973f7482ddb195cc}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_ab47179ce024fb424bcb2d51fb90b6cc}{
+(void) - \textbf{addCopyToAndMoveToItemsForStarks:dataSource:}}
+\label{interface_n_s_menu_07_stark_contextual_08_ab47179ce024fb424bcb2d51fb90b6cc}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_a05784156188891092c5073eaec3a2da}{
+(void) - \textbf{addDeleteItemForStarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_a05784156188891092c5073eaec3a2da}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_ffa67057bdafe10840d3b3da4b4ab35e}{
+(void) - \textbf{addSeparatorItem}}
+\label{interface_n_s_menu_07_stark_contextual_08_ffa67057bdafe10840d3b3da4b4ab35e}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_c0b6f6c91bf7cb6778277ebe818df49f}{
+(void) - \textbf{addSetSortableItemForContainers:}}
+\label{interface_n_s_menu_07_stark_contextual_08_c0b6f6c91bf7cb6778277ebe818df49f}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_a08e02fd6083fa705f5a77a8da5ec78e}{
+(void) - \textbf{addShowInspectorItem}}
+\label{interface_n_s_menu_07_stark_contextual_08_a08e02fd6083fa705f5a77a8da5ec78e}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_dd9c9f8f5254bc6eb22b6ced46a3a13a}{
+(void) - \textbf{addSortAtItemsForSoftFoldersAndBookmarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_dd9c9f8f5254bc6eb22b6ced46a3a13a}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_8b826bcb83d017a3a102b2b549f25356}{
+(void) - \textbf{addSwapUrlsItemsForBookmarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_8b826bcb83d017a3a102b2b549f25356}
+
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_3097976e5c0ab11c0264968ec25a77a9}{
+(void) - \textbf{addVisitItemsForBookmarks:}}
+\label{interface_n_s_menu_07_stark_contextual_08_3097976e5c0ab11c0264968ec25a77a9}
+
+\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_n_s_menu_07_stark_contextual_08_9844f81e93ed6da9966948912b97bdbc}{
+(NSMenu $\ast$) + \textbf{menuWithAllActionsWithHierarchicalHost:}}
+\label{interface_n_s_menu_07_stark_contextual_08_9844f81e93ed6da9966948912b97bdbc}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An NSMenu helper which can add contextual menu items for a \hyperlink{class_stark}{Stark} context, or return an entire prefabricated menu containing all avalailable items. 
+
+Items in menus built using the methods of this class are disabled as needed when they are created, by setting a target, and by setting their action to NULL.~ Do not implement -validateMenuItem: or -validateUserInterfaceItem for these menu items.
+
+Most of the methods take, as arguments, the array of starks which would be involved if the menu command is clicked.~ For convenience, these arrays are passed through to the action methods when a menu item is clicked as the -representedObject.~ (The menu item is the 'sender' parameter passed to the action method, so that the action method may recover the array by sending \mbox{[}sender representedObject\mbox{]}) 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/NSMenu+StarkContextual.h\end{CompactItemize}

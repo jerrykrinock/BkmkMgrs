@@ -1,0 +1,151 @@
+=com
+This file is an example .shipconfig.txt file which needs to be supplied as an argument to the ShipProduct.pl script.
+For syntax rules see http://search.cpan.org/~jonbj/Config-Easy-0.2/lib/Config/Easy.pm
+No need to quote anything since values are delimited by end of line or backslash (continued on next line)
+=cut
+
+# Product Info
+                     projectName  BkmkMgrs
+                         appName  Markster
+                    appNameLower  markster
+    # The next two numbers are the major minor version numbers defining the limits for the family (regular, legacy, stone-age) etc., which will be used to identify the "previous" version when comparing the product's Contents to the "previous" version.  If this configuration is for the regular family, where the highest-numbered version is the latest version, set both values to 0.
+                familyLimitMajor 0
+                familyLimitMinor 0
+    # Path to Help Book HTML in built product, relative to the built product
+                   builtHelpPath  Contents/Resources/en.lproj/HelpBook/index.html
+    # App Family Name, used to make title of Update News web page.  If app is not part of a family, pass empty string.
+                   appFamilyName  BookMacster
+    # Path to a html file of Update News html which you have edited for submitting your updates to MacUpdate.  Current edits will be pasted in to the top of this document, which you will edit by hand before copying and pasting what you want into the MacUpdate submission form.
+               macupdateTextPath  /Users/jk/Documents/Programming/Projects/BkmkMgrs/Update-News-for-MacUpdate.html
+    # App Identifier assigned by MacUpdate
+                     macupdateID  51337
+    # Data Model Change Checklist
+    	# Comma-separated checklist of actions that the user/developer should be asked to affirm as having been done after indicating that changes have been made to the data model.  The affirmation will be stated as "Affirm that you have <a-checklist-item>."
+         modelChangeAffirmations  \
+                                  provided a mapping model and (if needed) a migration policy,\
+                                  updated the value returned by -[BkmxDoc requiresVersion]
+    # App Family Name
+                   appFamilyName  BookMacster
+	# Conflicting App Names
+		# Comma-separated list of apps which must be quit to test this app
+		     conflictingAppNames  BookMacster,Synkmark,Smarky
+
+# Xcode Build Info
+    # Path to Xcode app package which should be used to build the product.  Usually this is /Applications/Xcode.app.  Your xcode-select Àenvironment? variable must be set to this same path.
+                   xcodeAppPath  /Applications/Xcode.app
+	# Target Dependencies
+		# Comma-separated list of the names of targets on which buildTargetName depends, which should, separately and in addition, be analyzed by Deploymate for deprecated, obsolete or unavailable API calls.
+		# IF YOU COPY AND PASTE LINES, BE CAREFUL TO CHANGE BOTH SOURCE AND DESTINATION
+              targetDependencies  \
+                    					Bkmxwork,\
+                                        Thomas,\
+                                        Worker,\
+                                        FileAliasWorker,\
+                                        Quatch,\
+                                        UrlHandler
+
+# Stripping Exceptions
+    # By default, the following executables will have "All Symbols" stripped (no options to strip(1))
+    #     Any executables in Contents/MacOS
+    #     Any executables in Contents/Helpers
+    #     Executables of any applications in Contents/Resources
+    # To override the default behavior on any of the above, list them in stripOnlyNonGlobalFrom, below.
+    # By default, the following items have "All Non-Global Symbols" stripped (-x option to strip(1))
+    #     Executables of any loadable bundles (.bundle) in Contents/Resources
+    #     Executables of any frameworks in Contents/Frameworks
+    # To override the default behavior on any of the above, list them in stripAllFrom, below.
+    # Names listed in the following two items should be the names of the executable files with no path.
+    # For example, to reference the executable in the framework Contents/Frameworks/MyFwk.framework/Versions/A/MyFwk, enter "MyFwk".
+    # To list more than one item, see note [1] below for syntax.
+                    stripAllFrom
+          stripOnlyNonGlobalFrom
+
+    # Code Signing and Notarizing.  We sign with an Apple Developer ID certificate.  Keychain.app must contain a certificate whose Common Name matches this, or a 40-hex-char SHA-1 hash.  See man codesign "SIGNING IDENTIFIERS" section for gory details.  Until 2017-07-26, Xcode 9.0 Beta 4, I used the SHA-1 fingerprint, def8002d37ec43e764a8e05cf49a1552dfe91ce7, because that's the way Xcode 4 did it.  But then that stopped working.  How to get your developerTeamItcProvider is explained here: https://forums.developer.apple.com/thread/113798.
+             codeSigningIdentity       Developer ID Application: Jerry Krinock
+             developerTeamId           4MAMECY9VS
+             appleIdEmail              jerry@sheepsystems.com
+             developerTeamItcProvider  JerryKrinock11062068
+
+# Local Client Paths.  All of the paths in this section are relative to Home Directory
+    # Path to the Xcode workspace, which contains a scheme for building the desired product.  In that scheme, remember to switch on the checkbox to "Build implicit dependencies", in order to build and update targets in other projects in the workspace on which this scheme depends.
+                   workspacePath  Documents/Programming/Projects/$projectName/$projectName.xcworkspace
+    # Name of the Scheme in that workspace which is to be built.
+                      schemeName  Markster
+    # Path to an xcconfig file whose CURRENT_PROJECT_VERSION Build Setting should be rolled after shipping
+                    xcconfigPath  Documents/Programming/Projects/$projectName/BkmkMgrs.xcconfig
+    # Directory containing the Markdown source, rawScreenshots directory, etc. to be processed by SSYMakeHelp.pl
+              helpBookSourcePath  Documents/Programming/Projects/$projectName/HelpBookSources/
+    # Path to file containing Help Book anchors referenced in the app which should be checked for existence in the produced Help Book, relative to helpBookSourcePath
+         helpAnchorsRelativePath  ../SSYMH.AppAnchors.m
+    # Directory into which Help Book will be built, and whose contents will be uploaded, if they have changed, to the server during 'normal' shipments
+           helpBookLocalHtmlPath  Documents/Programming/Projects/$projectName/Resources/Localized/en.lproj/HelpBook
+   updateDescriptionMarkdownPath  Documents/Programming/Projects/$projectName/UpdateNews.markdown
+                shipArchivesPath  Documents/Programming/Shipped/
+                localAppcastPath  Documents/SheepSystems/sheepsystems.com/public_html/$appNameLower/appcast.xml
+    # Names of other files in the buildsReleasePath which should be archived in the archive subfolder that will be created for this shipment, along with the .zip product.  These files will only be archived, not shipped.  A typical use for this may be a list of additional, proprietary release notes.  Uses unix cp with options -RLfp:
+    #    -R recursive, will make deep copy of directories
+    #    -L will follow symbolic links, in case you would like to add archivees outside the buildsReleasePath.
+    #    -f overwrites if item already exists in archive (which might happen if this script was aborted and then re-run later.
+    #    -p Tries to preserve file attributes (aka "metadata") as much as practical.
+    # If more than one items is to be listed, see note [1] below for syntax.
+                  otherArchivees  
+    # OS-level script for publishing your website.  Will be run with 'open' shell command.  May be an AppleScript, QuicKeys shortcut, bash script with .command extension, etc.:
+               publishSiteScript  Library/QuicKeys/Shortcuts/Publish_sheepsystems.com.qkshortcutd
+
+# Remote Server (Web Host) Account Info.  (SSYShipProduct will retrieve password from macOS Keychain.)
+                    serverDomain  sheepsystems.com
+                  ftpAccountName  jk
+         
+# Appcast
+                     appcastName  appcast.xml
+          nItemsToLeaveInAppcast  2
+    # Name of html file which will be shown in the Sparkle window when an update is available
+           updateDescriptionName  UpdateNews.html
+    # The following is required for "legacy" shipments, because In -[SUAppcast connectionDidFinishLoading:],, the items parsed from the appcast are sorted descending by date.  So the newest item is first.  And then, in -[SUBasicUpdateDriverÊappcastDidFinishLoading:], we "// Find the first update we can actually use."  Now, say that I have two branches of an app, the "legacy" branch for Mac OS X 10.5 or later, and the "regular" branch for Mac OS X 10.6 or later.  Further, say I do the following (which is actually a true story with different numbers).  On April 15, publish a version 2.1 for Mac OS X 10.6 or later.  On April 16, publish a version 1.1 for Mac OS X 10.5 or later.  Then, someone with version 2.0 on Mac OS X 10.8 checks for update.  Whoops!  They will be told that "You're up to date!", because the sorting by date put version 1.1 first, 2.0 > 1.1, and 10.8 > 10.5.  Enter 0 to indicate that this is the regular build with no maximum system version.
+            maximumSystemVersion 0
+    # The following is to prevent auto-updates from below the given version.  (See 'minimumAutoupdateVersion' in Sparkle documentation.)  Enter 0 to omit this feature.
+                    majorVersion 3.0
+    # The following is to ignore skipped major upgrades below a specific version (See 'ignoreSkippedUpgradesBelowVersion' in Sparkle documentation.)  Enter 0 to omit this feature.
+                    belowVersion 0
+
+# Zip Archive Signature (for Sparkle)
+    # Path to a shell script, relative to Home, which signs the zip package for Sparkle, which must take two command-line parameters: (1) the zip to be signed (2) path to the private key .pem file
+                   zipSignerPath  Documents/Programming/Projects/Sparkle/bin/old_dsa_scripts/sign_update
+    # Path to the Sparkle generate_appcast tool
+    appcastGeneratorPathFromHome  Library/Developer/Xcode/DerivedData/Sparkle-dwqopuvqccscpahawjdgenyclvfe/Build/Products/Debug/generate_appcast
+    # Path to a private key file (.pem), relative to Home, used by the previous parameter to sign the zip package for Sparkle
+               zipPrivateKeyPath  Documents/SheepSystems/Keys/SheepSystems_Sparkle_priv.pem
+    # Path to a public key file (.pem), relative to Home, which will be sent in appcasts generated, which Sparkle will use in the old version of an app to verify that the zip archive containng a new version of the app is authentic
+                zipPublicKeyPath  Documents/SheepSystems/Keys/SheepSystems_Sparkle_pub.pem
+
+# Remote Server (Web Host) Paths
+    # The following is the www landing directory of your site.  It depends on how your web host set it up.  Some typical cases are: none (leave it blank), www/, htdocs/, home/yourName/, public_html/
+                  pathServerHtml  ../../var/www/html/sheepsystems.com/public_html/
+    # pathServerHtmlToHelpBookDir is given for BookMacster, but is empty for the shoebox apps.  This is because only building BookMacster should create the .htaccess file and ship the Help Book, because shoebox apps would write the help book to, for example, https://sheepsystems.com/synkmark/HelpBook, with correspondingly wrong entries in .htaccess.
+     pathServerHtmlToHelpBookDir
+
+# Other Uploads
+    # List of other pseudo-projects which are related to this shipment.  Examples are: scripts, source code, freebies.  Each should be a directory, package or file which will be zipped and the zip archive will be uploaded.  Each such "other upload" is specified by several fields:
+    #   (0) path from local Home to parent directory of the target directory or file to be uploaded
+    #   (1) path from pathServerHtml to directory to which the zipped file should be uploaded
+    #   (2) name of the target file as it now appears on disk.  See note [2, 3] below.
+    #   (3) name to give the .zip archive, not including the .zip extension
+    #   (4) an indication of whether or not the zip process should follow symbolic links, 1 if yes or 0 if no.  So following symbolic links gives you
+    an easy way to include multiple subdirectories from various source locations in one archive, but takes away the ability to properly zip items which contain symbolic links that need to be transparently pass through zip/unzip, such as frameworks.
+    #   (5) an indication of whether or not the pseudo-project should be codesigned with Notarized Developer ID.  1 if yes or 0 if no.
+    # These four components should be separated by commas (no whitespace) and separate "other upload" items should be separated by semicolons.
+    # To continue on multiple lines, see Note [1] below.
+    # IF YOU COPY AND PASTE LINES, BE CAREFUL TO CHANGE BOTH SOURCE AND DESTINATION
+                    otherUploads  Documents/AppleScripts/,files/,Sheep Systems Trouble Zipper.app,SSYTroubleZipper,0,1
+
+=com
+
+Notes
+
+[1]  Use a backslash at end of line to continue on next line.  Whitespace before the beginning of the value, after the end of the value, or after backslashes will be ignored but any other whitespace will be passed literally.
+
+[2] In the destinations, if files are to be downloaded by visitors, avoid filenames that contain ".php", ".pl", etc. because some servers will try to execute instead of serving them, even after .zip is appended.
+
+[3] If using punctuation to create filenames including variables, use spaces or dashes not underscores.  For example, for a zip of the app's Applescripts, name the file "$appName AppleScripts" or "$appName-AppleScripts", not "$appName_AppleScripts".  The latter will be interpreted as one variable.
+
+=cut

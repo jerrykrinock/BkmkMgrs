@@ -1,0 +1,110 @@
+\hypertarget{interface_s_s_y_m_o_c_manager}{
+\section{SSYMOCManager Class Reference}
+\label{interface_s_s_y_m_o_c_manager}\index{SSYMOCManager@{SSYMOCManager}}
+}
+Manages a multitude of managed object contexts for an application.  
+
+
+{\tt \#import $<$SSYMOCManager.h$>$}
+
+Inheritance diagram for SSYMOCManager::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_s_s_y_m_o_c_manager}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(NSManagedObjectContext $\ast$) + \hyperlink{interface_s_s_y_m_o_c_manager_046ddab44a89e6b347bf38cca2148a9b}{managedObjectContextType:owner:identifier:}
+\begin{CompactList}\small\item\em Returns a new or pre-existing managed object context which will access a new or pre-existing store. \item\end{CompactList}\item 
+(id) + \hyperlink{interface_s_s_y_m_o_c_manager_e53ff78bd601040e5225c98359913db9}{ownerOfManagedObjectContext:}
+\begin{CompactList}\small\item\em Returns the owner of a given managed object context, or if it turns out to have not been created by this class, the NSPersistentDocument to which it belongs. \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_m_o_c_manager_e1b1edcdb5b3a26e10ce221839c412dd}{removeManagedObjectContext:}
+\begin{CompactList}\small\item\em Removes a managed object context returned by -managedObjectContextType:owner:identifier: from the receiver's instance data. \item\end{CompactList}\item 
+\hypertarget{interface_s_s_y_m_o_c_manager_472736560a1e4533c94bda3d937092f1}{
+(BOOL) + \textbf{sqliteStoreIsReadableForIdentifier:}}
+\label{interface_s_s_y_m_o_c_manager_472736560a1e4533c94bda3d937092f1}
+
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_s_s_y_m_o_c_manager_14a73829591962e242c0220f27a6035e}{
+NSMutableDictionary $\ast$ \textbf{inMemoryMOCDics}}
+\label{interface_s_s_y_m_o_c_manager_14a73829591962e242c0220f27a6035e}
+
+\item 
+\hypertarget{interface_s_s_y_m_o_c_manager_2463ea12073b96f91e6f02d2a9c54bb8}{
+NSMutableDictionary $\ast$ \textbf{sqliteMOCDics}}
+\label{interface_s_s_y_m_o_c_manager_2463ea12073b96f91e6f02d2a9c54bb8}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a multitude of managed object contexts for an application. 
+
+Provides managed object contexts of the volatile in-memory and/or nonvolatile sqlite type, identifying them later with an {\em identifier\/} and, later, given a managed object context created by this class, identifying its {\em owner\/}, an id which was given when the managed object context was created.~ Also searches through the application's NSPersistentDocuments to find the NSPersistentDocument {\em owner\/} if a managed object context for which the owner is desired turns out to not be one of this class's creations. ~ This class itself is instantiated as an app-wide singleton and no public instance methods are available. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_s_s_y_m_o_c_manager_046ddab44a89e6b347bf38cca2148a9b}{
+\index{SSYMOCManager@{SSYMOCManager}!managedObjectContextType:owner:identifier:@{managedObjectContextType:owner:identifier:}}
+\index{managedObjectContextType:owner:identifier:@{managedObjectContextType:owner:identifier:}!SSYMOCManager@{SSYMOCManager}}
+\subsubsection[{managedObjectContextType:owner:identifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSManagedObjectContext $\ast$) managedObjectContextType: (NSString$\ast$) {\em storeType}\/ owner: (id) {\em owner}\/ identifier: (NSString$\ast$) {\em identifier}}}
+\label{interface_s_s_y_m_o_c_manager_046ddab44a89e6b347bf38cca2148a9b}
+
+
+Returns a new or pre-existing managed object context which will access a new or pre-existing store. 
+
+Provides managed objects in different contexts/stores, segregated from one another. If managed objects are created to be in one of several groups, and not often migrate migrate to other groups, it is better to store these in segragated stores like this rather than to throw them all in the same store and filter them during fetches with an identifying attribute. The reason is that the identifying attribute will cause an extra subpredicate that will increase fetch times, or require post-fetch filtering which will add about the same execution time.
+
+This method searches the app-wide singleton for a managed object context of the required type and identifier and returns it if found. Otherwise, a new store and managed object context are created, retaining with it the provided owner.~ If a new managed object context must be created and the 'owner' parameter is nil, the owner will be set to NSApp.
+
+This method retains a reference to the managed object context (in either sqliteMOCDics or inMemoryMOCDics). To avoid leaks or retain cycles, send a -removeManagedObjectContext: message whenever a managed object context returned from this method is no loner needed. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em type}]NSSQLiteStoreType or NSInMemoryStoreType. \item[{\em owner}]If a new managed object context must be created, an arbitrary object which will be retained as its {\em owner\/}.~ Otherwise, this parameter is ignored.~ \item[{\em identifier}]A unique identifier for the context/store, or nil to return a \char`\"{}common\char`\"{} managed object context/store of the given type for the application. If storeType is NSSQLiteStoreType, identifier must contain only characters that are valid in a filename.~ That means, I believe, in Mac OS X, no slashes (/) or colons (:). ~ This is because the identifier will be incorporated the name of an sqlite database file that will be created to support the new managed object context if necessary. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The new or pre-existing managed object context \end{Desc}
+\hypertarget{interface_s_s_y_m_o_c_manager_e53ff78bd601040e5225c98359913db9}{
+\index{SSYMOCManager@{SSYMOCManager}!ownerOfManagedObjectContext:@{ownerOfManagedObjectContext:}}
+\index{ownerOfManagedObjectContext:@{ownerOfManagedObjectContext:}!SSYMOCManager@{SSYMOCManager}}
+\subsubsection[{ownerOfManagedObjectContext:}]{\setlength{\rightskip}{0pt plus 5cm}+ (id) ownerOfManagedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext}}}
+\label{interface_s_s_y_m_o_c_manager_e53ff78bd601040e5225c98359913db9}
+
+
+Returns the owner of a given managed object context, or if it turns out to have not been created by this class, the NSPersistentDocument to which it belongs. 
+
+This method searches its instance data looking for the owner that was provided when a managed object context was returned by the receiver's -managedObjectContextType:owner:identifier:. ~ If none is found, then it seaches the application's NSDocumentController's -documents, looking for an NSPersistentDocument subclass which returns a -managedObjectContext that matches the given managedObjectCcontext. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em managedObjectContext}]The managed object context for which the owner is desired. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The owner of the given managed object context, or nil if the given managed object context is not found in either in the receiver's instance data or as the -managedObjectContext of any document.\end{Desc}
+
+
+Usage tip: To allow {\em managed objects\/} to access their \char`\"{}owners\char`\"{}, subclass NSManagedObject and provide a method which returns \mbox{[}\hyperlink{interface_s_s_y_m_o_c_manager}{SSYMOCManager} ownerOfManagedObjectContext:\mbox{[}self managedObjectContext\mbox{]}\mbox{]}.~ Then use this method to get the owner. \hypertarget{interface_s_s_y_m_o_c_manager_e1b1edcdb5b3a26e10ce221839c412dd}{
+\index{SSYMOCManager@{SSYMOCManager}!removeManagedObjectContext:@{removeManagedObjectContext:}}
+\index{removeManagedObjectContext:@{removeManagedObjectContext:}!SSYMOCManager@{SSYMOCManager}}
+\subsubsection[{removeManagedObjectContext:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) removeManagedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext}}}
+\label{interface_s_s_y_m_o_c_manager_e1b1edcdb5b3a26e10ce221839c412dd}
+
+
+Removes a managed object context returned by -managedObjectContextType:owner:identifier: from the receiver's instance data. 
+
+This method releases the receiver's retain count on the managed object context. To avoid leaks or retain cycles, send a this message whenever a managed object context returned by -managedObjectContextType:owner:identifier: is no loner needed. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em managedObjectContext}]The managed object context to be removed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if an entry with the given managed object context was found and removed, otherwise NO. \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/ClassesObjC/SSYMOCManager.h\item 
+Documents/Programming/ClassesObjC/SSYMOCManager.m\end{CompactItemize}

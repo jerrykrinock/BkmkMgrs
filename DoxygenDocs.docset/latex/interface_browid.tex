@@ -1,0 +1,150 @@
+\hypertarget{interface_browid}{
+\section{Browid Class Reference}
+\label{interface_browid}\index{Browid@{Browid}}
+}
+A class which has instance variables required to canonically and uniquely identify a \hyperlink{interface_browfile}{Browfile}.  
+
+
+{\tt \#import $<$Browid.h$>$}
+
+Inheritance diagram for Browid::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_browid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browid_d6cc255ea883d5afdd8e198cc4eab1b4}{
+(NSMutableDictionary $\ast$) - \textbf{attributesDictionary}}
+\label{interface_browid_d6cc255ea883d5afdd8e198cc4eab1b4}
+
+\item 
+(NSString $\ast$) - \hyperlink{interface_browid_42445d91fce511961a7a4994c3235b9f}{homePath}
+\begin{CompactList}\small\item\em Returns the home path of the Macintosh account in which the receiver's bookmarks reside, if it has a non-nil otherMacAccount.~ Otherwise, returns the current user's home directory. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{interface_browid_2aa2c70e24aa164c39f75df165218d82}{isEqualToBrowid:}
+\begin{CompactList}\small\item\em Compares the receiver's six instance variables with those of another browid and returns YES if all are equal, including nil==nil. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browid_27d6d7b0f4e8f38a93343ea4beaf5464}{stridentifier}
+\begin{CompactList}\small\item\em A string which uniquely identifies the receiver and all of its instance variables. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browid_ab541ef5a65786db990ceda182420cc2}{
+(\hyperlink{interface_browid}{Browid} $\ast$) + \hyperlink{interface_browid_ab541ef5a65786db990ceda182420cc2}{browidWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:looseFileAlias:}}
+\label{interface_browid_ab541ef5a65786db990ceda182420cc2}
+
+\begin{CompactList}\small\item\em Returns an \hyperlink{interface_browid}{Browid} with its six instance variables set from given values. \item\end{CompactList}\item 
+(\hyperlink{interface_browid}{Browid} $\ast$) + \hyperlink{interface_browid_303a33331895008d82b6d07e7a8d7120}{browidWithStridentifier:}
+\begin{CompactList}\small\item\em Returns a browid made from decoding a stridentifier.~ Untested!! \item\end{CompactList}\item 
+(NSDictionary $\ast$) + \hyperlink{interface_browid_c18854fb4b48a4d0640e4fef340a51e4}{otherMacIdentifierPartsWithVolumesPath:}
+\begin{CompactList}\small\item\em Given the path of a file or folder, extracts the values of the constKeyIdentifierOtherMacAccount and constKeyIdentifierOtherMacVolume keys and returns them in a dictionary. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browid_aeece83ef32e213b04386d94760583f1}{
+NSString $\ast$ \textbf{exformat}}
+\label{interface_browid_aeece83ef32e213b04386d94760583f1}
+
+\item 
+\hypertarget{interface_browid_0d4f4bc6971ddf5ab5f668f4e7c7e443}{
+NSString $\ast$ \textbf{extoreMedia}}
+\label{interface_browid_0d4f4bc6971ddf5ab5f668f4e7c7e443}
+
+\item 
+\hypertarget{interface_browid_3a07e181cd5ad523fbdff6dcfe90aa45}{
+NSData $\ast$ \textbf{looseFileAlias}}
+\label{interface_browid_3a07e181cd5ad523fbdff6dcfe90aa45}
+
+\item 
+\hypertarget{interface_browid_3e26b808233550888ed863b5c37fd345}{
+NSString $\ast$ \textbf{otherMacAccount}}
+\label{interface_browid_3e26b808233550888ed863b5c37fd345}
+
+\item 
+\hypertarget{interface_browid_14d77392e8d250bfa465007ac813f1ba}{
+NSString $\ast$ \textbf{otherMacVolume}}
+\label{interface_browid_14d77392e8d250bfa465007ac813f1ba}
+
+\item 
+\hypertarget{interface_browid_daecab8ee3faf2a87960de6adfd7f074}{
+NSString $\ast$ \textbf{profileName}}
+\label{interface_browid_daecab8ee3faf2a87960de6adfd7f074}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class which has instance variables required to canonically and uniquely identify a \hyperlink{interface_browfile}{Browfile}. 
+
+Conforms to NSCoding and NSCopying so that it can be archived in Core Data stores using the default transformer.
+
+The five string instance variables must consist of only the characters allowed in filenames. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_browid_303a33331895008d82b6d07e7a8d7120}{
+\index{Browid@{Browid}!browidWithStridentifier:@{browidWithStridentifier:}}
+\index{browidWithStridentifier:@{browidWithStridentifier:}!Browid@{Browid}}
+\subsubsection[{browidWithStridentifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Browid} $\ast$) browidWithStridentifier: (NSString$\ast$) {\em stridentifier}}}
+\label{interface_browid_303a33331895008d82b6d07e7a8d7120}
+
+
+Returns a browid made from decoding a stridentifier.~ Untested!! 
+
+I wrote this method for use in allBrowfilesForWebAppsThisUser but then didn't use it, deciding that it was easier to iterate through available browfiles.~ This method has never been tested! \hypertarget{interface_browid_42445d91fce511961a7a4994c3235b9f}{
+\index{Browid@{Browid}!homePath@{homePath}}
+\index{homePath@{homePath}!Browid@{Browid}}
+\subsubsection[{homePath}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) homePath }}
+\label{interface_browid_42445d91fce511961a7a4994c3235b9f}
+
+
+Returns the home path of the Macintosh account in which the receiver's bookmarks reside, if it has a non-nil otherMacAccount.~ Otherwise, returns the current user's home directory. 
+
+\begin{Desc}
+\item[Returns:]The full path in one of two forms, \begin{itemize}
+\item \char`\"{}/Volumes/VolumeName/Users/aUserShortName\char`\"{} \item \char`\"{}/Volumes/aUserShortName\char`\"{} \end{itemize}
+The first form will be returned if otherMacVolume is non-nil the second form will be returned if it is nil. \end{Desc}
+\hypertarget{interface_browid_2aa2c70e24aa164c39f75df165218d82}{
+\index{Browid@{Browid}!isEqualToBrowid:@{isEqualToBrowid:}}
+\index{isEqualToBrowid:@{isEqualToBrowid:}!Browid@{Browid}}
+\subsubsection[{isEqualToBrowid:}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) isEqualToBrowid: ({\bf Browid}$\ast$) {\em otherBrowid}}}
+\label{interface_browid_2aa2c70e24aa164c39f75df165218d82}
+
+
+Compares the receiver's six instance variables with those of another browid and returns YES if all are equal, including nil==nil. 
+
+\begin{Desc}
+\item[Returns:]If all are not equal, including nil==nil, returns NO. \end{Desc}
+\hypertarget{interface_browid_c18854fb4b48a4d0640e4fef340a51e4}{
+\index{Browid@{Browid}!otherMacIdentifierPartsWithVolumesPath:@{otherMacIdentifierPartsWithVolumesPath:}}
+\index{otherMacIdentifierPartsWithVolumesPath:@{otherMacIdentifierPartsWithVolumesPath:}!Browid@{Browid}}
+\subsubsection[{otherMacIdentifierPartsWithVolumesPath:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSDictionary $\ast$) otherMacIdentifierPartsWithVolumesPath: (NSString$\ast$) {\em path}}}
+\label{interface_browid_c18854fb4b48a4d0640e4fef340a51e4}
+
+
+Given the path of a file or folder, extracts the values of the constKeyIdentifierOtherMacAccount and constKeyIdentifierOtherMacVolume keys and returns them in a dictionary. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em path}]A path to some file or folder in a Home directory on another Macintosh account, in one of these two forms: \begin{itemize}
+\item \char`\"{}/Volumes/VolumeName/Users/aUserShortName/Additional/Components/Ignored\char`\"{} \item \char`\"{}/Volumes/aUserShortName/Additional/Components/Ignored\char`\"{} \end{itemize}
+\end{description}
+\end{Desc}
+If a value cannot be extracted from the path, no key is set for it in the result. \begin{Desc}
+\item[Returns:]A dictionary containing neither, one, or both of the keys constKeyIdentifierOtherMacAccount, constKeyIdentifierOtherMacVolume. \end{Desc}
+\hypertarget{interface_browid_27d6d7b0f4e8f38a93343ea4beaf5464}{
+\index{Browid@{Browid}!stridentifier@{stridentifier}}
+\index{stridentifier@{stridentifier}!Browid@{Browid}}
+\subsubsection[{stridentifier}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) stridentifier }}
+\label{interface_browid_27d6d7b0f4e8f38a93343ea4beaf5464}
+
+
+A string which uniquely identifies the receiver and all of its instance variables. 
+
+May be used as a filename. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browid.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browid.m\end{CompactItemize}

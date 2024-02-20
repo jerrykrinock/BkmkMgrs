@@ -1,0 +1,89 @@
+\hypertarget{interface_stark_07_attributability_08}{
+\section{Stark(Attributability) Class Reference}
+\label{interface_stark_07_attributability_08}\index{Stark(Attributability)@{Stark(Attributability)}}
+}
+A category which answers questions about attribute capability for a \hyperlink{class_stark}{Stark}.  
+
+
+{\tt \#import $<$Stark+Attributability.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_e8eaf2b43bbb668aac1b49af1eb1303e}{canHaveChildren}
+\begin{CompactList}\small\item\em Returns whether or not the receiver should be given children. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_235300183edd8aa94dbf1d18d7e87a25}{
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_235300183edd8aa94dbf1d18d7e87a25}{canHaveRSSArticles}}
+\label{interface_stark_07_attributability_08_235300183edd8aa94dbf1d18d7e87a25}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver should be given rss articles. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_9b539de67baf0b879f8611b3acf45b4a}{canHaveUrl}
+\begin{CompactList}\small\item\em Returns whether or not the receiver should be given a URL. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_04f76ff1c7cdf6fe4c2eaac6d3444a3c}{
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_04f76ff1c7cdf6fe4c2eaac6d3444a3c}{isEditable}}
+\label{interface_stark_07_attributability_08_04f76ff1c7cdf6fe4c2eaac6d3444a3c}
+
+\begin{CompactList}\small\item\em Returns whether or not any of the receiver's attributes should be editable by the user. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}{
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}{isEditableAttribute:}}
+\label{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}
+
+\begin{CompactList}\small\item\em Returns whether or not the given attribute in the receiver is allowed to be edited by the user. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_9417d2fcbce001da5647a94b1139b221}{
+(BOOL) - \hyperlink{interface_stark_07_attributability_08_9417d2fcbce001da5647a94b1139b221}{isMoveable}}
+\label{interface_stark_07_attributability_08_9417d2fcbce001da5647a94b1139b221}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver can be moved to a different index and/or parent. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(NSAttributeType) + \hyperlink{interface_stark_07_attributability_08_b9794d9b02c0e2a09cbb2d4393718b3a}{attributeTypeForKey:}
+\begin{CompactList}\small\item\em Returns the attribute type for a given attribute key. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_dc57a67106fadcef4778aaff2933d606}{
+(NSSet $\ast$) + \hyperlink{interface_stark_07_attributability_08_dc57a67106fadcef4778aaff2933d606}{genericAttributes}}
+\label{interface_stark_07_attributability_08_dc57a67106fadcef4778aaff2933d606}
+
+\begin{CompactList}\small\item\em Returns a set of all attributes of a \hyperlink{class_stark}{Stark} instance not related to a particular browfile or extore, not transient, not 'index', and not 'sharype'. \item\end{CompactList}\item 
+\hypertarget{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}{
+(BOOL) + \hyperlink{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}{isEditableAttribute:}}
+\label{interface_stark_07_attributability_08_965bfb14990842eead6e8fbedfef93e8}
+
+\begin{CompactList}\small\item\em Returns whether or not the given attribute can possibly be edited for any member of the class. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A category which answers questions about attribute capability for a \hyperlink{class_stark}{Stark}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_stark_07_attributability_08_b9794d9b02c0e2a09cbb2d4393718b3a}{
+\index{Stark(Attributability)@{Stark(Attributability)}!attributeTypeForKey:@{attributeTypeForKey:}}
+\index{attributeTypeForKey:@{attributeTypeForKey:}!Stark(Attributability)@{Stark(Attributability)}}
+\subsubsection[{attributeTypeForKey:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSAttributeType) attributeTypeForKey: (NSString $\ast$) {\em key}}}
+\label{interface_stark_07_attributability_08_b9794d9b02c0e2a09cbb2d4393718b3a}
+
+
+Returns the attribute type for a given attribute key. 
+
+Attribute types for managed attributes are determined by consulting the receiver's managed object context.~ Attribute types for some other attributes are hard-coded.~ If key is nil, returns NSUndefinedAttributeType. \hypertarget{interface_stark_07_attributability_08_e8eaf2b43bbb668aac1b49af1eb1303e}{
+\index{Stark(Attributability)@{Stark(Attributability)}!canHaveChildren@{canHaveChildren}}
+\index{canHaveChildren@{canHaveChildren}!Stark(Attributability)@{Stark(Attributability)}}
+\subsubsection[{canHaveChildren}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) canHaveChildren }}
+\label{interface_stark_07_attributability_08_e8eaf2b43bbb668aac1b49af1eb1303e}
+
+
+Returns whether or not the receiver should be given children. 
+
+Bound to enabled binding \char`\"{}Sort this folder?\char`\"{} label and also the associated popup menu. \hypertarget{interface_stark_07_attributability_08_9b539de67baf0b879f8611b3acf45b4a}{
+\index{Stark(Attributability)@{Stark(Attributability)}!canHaveUrl@{canHaveUrl}}
+\index{canHaveUrl@{canHaveUrl}!Stark(Attributability)@{Stark(Attributability)}}
+\subsubsection[{canHaveUrl}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) canHaveUrl }}
+\label{interface_stark_07_attributability_08_9b539de67baf0b879f8611b3acf45b4a}
+
+
+Returns whether or not the receiver should be given a URL. 
+
+Bound to enabled binding \char`\"{}Visit this bookmark with\char`\"{} label and also the associated popup menu. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Stark+Attributability.h\end{CompactItemize}

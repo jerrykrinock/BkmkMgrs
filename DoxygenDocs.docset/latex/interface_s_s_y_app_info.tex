@@ -1,0 +1,78 @@
+\hypertarget{interface_s_s_y_app_info}{
+\section{SSYAppInfo Class Reference}
+\label{interface_s_s_y_app_info}\index{SSYAppInfo@{SSYAppInfo}}
+}
+Right now, gives info on app version and app version run during previous launch. I'm not sure where I'm going with this class right now. Might add other \char`\"{}features\char`\"{} later.  
+
+
+{\tt \#import $<$SSYAppInfo.h$>$}
+
+Inheritance diagram for SSYAppInfo::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_s_s_y_app_info}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(BOOL) + \hyperlink{interface_s_s_y_app_info_ec4c68c2764a7b8f745c738d5b5c88b8}{isNewUser}
+\begin{CompactList}\small\item\em $<$\#(brief description)\#$>$ \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_app_info_f4746af13cb4163609fc85b3c950d020}{didUpgradeSinceLastRun}
+\begin{CompactList}\small\item\em $<$\#(brief description)\#$>$ \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_s_s_y_app_info_fd124ed4342ab8ddc2f4bdd0e520c62a}{
+SSYVersionTriplet $\ast$ \textbf{\_\-previousVersionTriplet}}
+\label{interface_s_s_y_app_info_fd124ed4342ab8ddc2f4bdd0e520c62a}
+
+\item 
+\hypertarget{interface_s_s_y_app_info_c05d016a62bd81512163ae18d61abc9d}{
+SSYVersionTriplet $\ast$ \textbf{\_\-currentVersionTriplet}}
+\label{interface_s_s_y_app_info_c05d016a62bd81512163ae18d61abc9d}
+
+\item 
+\hypertarget{interface_s_s_y_app_info_2bb3fbe5d8237688b9f6e3a769e5651c}{
+enum SSYAppInfoUpgradeState \textbf{\_\-upgradeState}}
+\label{interface_s_s_y_app_info_2bb3fbe5d8237688b9f6e3a769e5651c}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Right now, gives info on app version and app version run during previous launch. I'm not sure where I'm going with this class right now. Might add other \char`\"{}features\char`\"{} later. 
+
+Upon initialization, if found to be running a version that is different than the previous version in standard user defaults' KEY\_\-LAST\_\-RUN\_\-VERSION, an instance of this class (the shared instance, for instance) will overwrite the KEY\_\-LAST\_\-RUN\_\-VERSION user default with the current version. This should be done early in the application launch to make sure that this information gets updated. It should be done at least once during an application launch in order to register KEY\_\-LAST\_\-RUN\_\-VERSION to provide accurate info during the $^\wedge$next$^\wedge$ launch of this application. That being said, this is now a reason for using an instance with instance variables. The ivars \_\-previousVersionNumbers and consequently \_\-upgradeState can no longer be computed from data stored on disk (in user defaults) after this overwriting has been done.
+
+Regarding version strings, this class uses what I call \char`\"{}SSYSimpleVersioningSystem\char`\"{} instead of Apple Generic Versioning. In SSYSimpleVersioningSystem, CFBundleVersion contains two-dot string of three integers, major.minor.bugfix. So, for example in the About box your application will appear as \char`\"{}MyApp 1.2.3 (1.2.3)\char`\"{} I use this because I have two issues with Apple Generic Versioning (1) It is too confusing to have separate marketing and engineering versions. Why confuse customers reporting bugs etc. with two numbers? Is Engineering trying to hide things from Marketing, which is trying to hide things from users? I say, let's all use the same numbers! (2) Don't like agvtool. Why does Chris Hanson instruct \hyperlink{interfaceyou}{you} to quit Xcode before invoking it? The man page does not say that. Why could they have not built agvtool into Xcode? Also, man agvtool says that \hyperlink{interfaceyou}{you} get two global variables, one of them unnamed, the other CURRENT\_\-PROJECT\_\-VERSION, but this is not found when I try to either compile or link (extern) to it. I give up on it. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_s_s_y_app_info_f4746af13cb4163609fc85b3c950d020}{
+\index{SSYAppInfo@{SSYAppInfo}!didUpgradeSinceLastRun@{didUpgradeSinceLastRun}}
+\index{didUpgradeSinceLastRun@{didUpgradeSinceLastRun}!SSYAppInfo@{SSYAppInfo}}
+\subsubsection[{didUpgradeSinceLastRun}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) didUpgradeSinceLastRun }}
+\label{interface_s_s_y_app_info_f4746af13cb4163609fc85b3c950d020}
+
+
+$<$\#(brief description)\#$>$ 
+
+ultra-convenience method, actually invokes the shared singleton \begin{Desc}
+\item[Returns:]returns whether or not app's version has been upgraded since last run \end{Desc}
+\hypertarget{interface_s_s_y_app_info_ec4c68c2764a7b8f745c738d5b5c88b8}{
+\index{SSYAppInfo@{SSYAppInfo}!isNewUser@{isNewUser}}
+\index{isNewUser@{isNewUser}!SSYAppInfo@{SSYAppInfo}}
+\subsubsection[{isNewUser}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) isNewUser }}
+\label{interface_s_s_y_app_info_ec4c68c2764a7b8f745c738d5b5c88b8}
+
+
+$<$\#(brief description)\#$>$ 
+
+ultra-convenience method, actually invokes the shared singleton \begin{Desc}
+\item[Returns:]returns whether or not user has used $^\wedge$this$^\wedge$ application \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/ClassesObjC/SSYAppInfo.h\item 
+Documents/Programming/ClassesObjC/SSYAppInfo.m\end{CompactItemize}

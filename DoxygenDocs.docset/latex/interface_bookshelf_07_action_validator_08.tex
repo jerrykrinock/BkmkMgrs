@@ -1,0 +1,40 @@
+\hypertarget{interface_bookshelf_07_action_validator_08}{
+\section{Bookshelf(ActionValidator) Class Reference}
+\label{interface_bookshelf_07_action_validator_08}\index{Bookshelf(ActionValidator)@{Bookshelf(ActionValidator)}}
+}
+{\tt \#import $<$Bookshelf+ActionValidator.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(BOOL) - \hyperlink{interface_bookshelf_07_action_validator_08_4d2dfe58465786b4d295b7d388c5e9ed}{visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:}
+\begin{CompactList}\small\item\em Calculates current parameters (enabled, target, action, title) for a menu item which could visit the receiver's currently-selected starks with a given url temporality. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{itemize}
+\item Application Main Menu: Will invoke the -validateMenuItem for the current document because of the document window in the responder chain \item Inspector Gear Button menu: Will not invoke the -validateMenuItem for the current document because it is a contextual menu, and the responder chain for contextual menus does not inlude any other windows. \item Main Window Contextual Menus (ContentOutlineView and DupesOutlineView): Will invoke the -validateMenuItem for the current document because the responder chain for contextual menus does inlude the current window. \end{itemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_bookshelf_07_action_validator_08_4d2dfe58465786b4d295b7d388c5e9ed}{
+\index{Bookshelf(ActionValidator)@{Bookshelf(ActionValidator)}!visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:@{visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:}}
+\index{visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:@{visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:}!Bookshelf(ActionValidator)@{Bookshelf(ActionValidator)}}
+\subsubsection[{visitMenuItemParametersForUrlTemporality:target\_\-p:action\_\-p:title\_\-p:}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) visitMenuItemParametersForUrlTemporality: (BkmxUrlTemporality) {\em urlTemporality}\/ target_p: (id $\ast$) {\em target\_\-p}\/ action_p: (SEL $\ast$) {\em action\_\-p}\/ title_p: (NSString $\ast$$\ast$) {\em title\_\-p}}}
+\label{interface_bookshelf_07_action_validator_08_4d2dfe58465786b4d295b7d388c5e9ed}
+
+
+Calculates current parameters (enabled, target, action, title) for a menu item which could visit the receiver's currently-selected starks with a given url temporality. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em urlTemporality}]The temporality (prior URL, current URL, or suggested URL) of the url to be used in the hypothetical visit. \item[{\em target\_\-p}]On return, if non-NULL, points to the target of the menu item. \item[{\em action\_\-p}]On return, if non-NULL, points to the action of the menu item.~ This will be NULL if the menu item should not be enabled. \item[{\em title\_\-p}]On return, if non-NULL, points to the title of the menu item. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if the menu item should be enabled, NO otherwise. \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Bookshelf+ActionValidator.h\end{CompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{class_s_s_y_linked_operation}{
+\section{SSYLinkedOperation Class Reference}
+\label{class_s_s_y_linked_operation}\index{SSYLinkedOperation@{SSYLinkedOperation}}
+}
+A subclass of NSOperation which allows operations to be skipped, by using the value of an error.  
+
+
+{\tt \#import $<$SSYOperationLinker.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_s_s_y_linked_operation_ab73afb6fe1503f22233f85794ce3d61}{
+(NSError $\ast$) - \hyperlink{class_s_s_y_linked_operation_ab73afb6fe1503f22233f85794ce3d61}{error}}
+\label{class_s_s_y_linked_operation_ab73afb6fe1503f22233f85794ce3d61}
+
+\begin{CompactList}\small\item\em Returns the error set into the key constKeyLinkedOperationError in the receiver's info dictionary. \item\end{CompactList}\item 
+(NSInteger) - \hyperlink{class_s_s_y_linked_operation_d946954a8c7b98d017886f2a77a2a734}{errorThreshold}
+\begin{CompactList}\small\item\em Returns the receiver's errorThreshold. \item\end{CompactList}\item 
+(void) - \hyperlink{class_s_s_y_linked_operation_6cccf67319ed27e5c5a7e3ac2bb80ce5}{registerError:}
+\begin{CompactList}\small\item\em Sets an error into the key constKeyLinkedOperationError in the receiver's info dictionary. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_s_s_y_linked_operation_25d296e42fb5557dc1980e4259706ca9}{
+SEL \textbf{selector}}
+\label{class_s_s_y_linked_operation_25d296e42fb5557dc1980e4259706ca9}
+
+\item 
+\hypertarget{class_s_s_y_linked_operation_643d505eac36249a7bb795bac00643bb}{
+NSInteger \textbf{errorThreshold}}
+\label{class_s_s_y_linked_operation_643d505eac36249a7bb795bac00643bb}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_s_s_y_linked_operation_3b4bfc14336aa99510b3ec9f93bc2c84}{
+NSMutableDictionary $\ast$ \hyperlink{class_s_s_y_linked_operation_3b4bfc14336aa99510b3ec9f93bc2c84}{info}}
+\label{class_s_s_y_linked_operation_3b4bfc14336aa99510b3ec9f93bc2c84}
+
+\begin{CompactList}\small\item\em The info passed to SSYOperationLinker. Worker methods may access this NSMutableDictionary to get arguments and set results. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A subclass of NSOperation which allows operations to be skipped, by using the value of an error. 
+
+The error is the value for keyconstKeyLinkedOperationError in the receiver's 'info'. If the -code of this error equals or exceeds the receiver's 'errorThreshold', the operation becomes a no-op. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_s_s_y_linked_operation_d946954a8c7b98d017886f2a77a2a734}{
+\index{SSYLinkedOperation@{SSYLinkedOperation}!errorThreshold@{errorThreshold}}
+\index{errorThreshold@{errorThreshold}!SSYLinkedOperation@{SSYLinkedOperation}}
+\subsubsection[{errorThreshold}]{\setlength{\rightskip}{0pt plus 5cm}- (NSInteger) errorThreshold }}
+\label{class_s_s_y_linked_operation_d946954a8c7b98d017886f2a77a2a734}
+
+
+Returns the receiver's errorThreshold. 
+
+The comparison which decides whether or not to execute the method is done in the -main implementation which is not ordinarily overridden if the operation is created by SSYOperationLinker. Therefore, this method should be rarely used. It may be used if the receiver wants to predict whether or not an error that it generaetes will cause an abortion of subsequent operations. \hypertarget{class_s_s_y_linked_operation_6cccf67319ed27e5c5a7e3ac2bb80ce5}{
+\index{SSYLinkedOperation@{SSYLinkedOperation}!registerError:@{registerError:}}
+\index{registerError:@{registerError:}!SSYLinkedOperation@{SSYLinkedOperation}}
+\subsubsection[{registerError:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) registerError: (NSError$\ast$) {\em error}}}
+\label{class_s_s_y_linked_operation_6cccf67319ed27e5c5a7e3ac2bb80ce5}
+
+
+Sets an error into the key constKeyLinkedOperationError in the receiver's info dictionary. 
+
+Sending this message with a non-nil argument will cause subsequent operations in the chain to be skipped. In other words, it aborts further method invocations by -\mbox{[}SSYOperationLinker performSelectorNames:::::::\mbox{]}. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em error}]The error to be set. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/Projects/Bookmarksman/ExternalWrite.m\item 
+Documents/Programming/ClassesObjC/SSYOperationLinker.h\item 
+Documents/Programming/ClassesObjC/SSYOperationLinker.m\end{CompactItemize}

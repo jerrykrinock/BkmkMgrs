@@ -1,0 +1,5 @@
+Unfortunately, the guid that you get from the Firefox Bookmarks Service API, using function getItemGUID(), is different than the guid stored in the places database.  getItemGUID() typically returns a string such as:
+
+    {2a3831e6-b729-964c-acf0-0062596ef2c0}107
+
+The part in the curly brackets is obviously a UUID which usually seems to identify the user profile (it's the same for almost all bookmarks and folders in the profile), except for RSS Articles, where it's the same for all articles in the same feed, so it apparently identifies the feed somehow.  I call the part in the curly brackets the "family".  The suffix (e.g. "107") seems to be an integer identifier which is different for every item in the same "family".  It looks like, but is not equal to, the item's item identifier (id).

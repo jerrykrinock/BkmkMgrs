@@ -1,0 +1,21 @@
+\hypertarget{interface_set_of_strings_to_data_value_transformer}{
+\section{SetOfStringsToDataValueTransformer Class Reference}
+\label{interface_set_of_strings_to_data_value_transformer}\index{SetOfStringsToDataValueTransformer@{SetOfStringsToDataValueTransformer}}
+}
+Value Transformer, NSSet of NSStrings to NSData. Reversible.  
+
+
+{\tt \#import $<$StringCollectionTransformers.h$>$}
+
+
+
+\subsection{Detailed Description}
+Value Transformer, NSSet of NSStrings to NSData. Reversible. 
+
+The input to the forward transformation must be an NSSet of NSStrings. The strings may not contain any NUL (0x00) characters. The forward transformation operates by encoding each of the strings to binary data using UTF8 encoding, then concatenates them together, using an 0x00 NULL byte to delimit between adjacent strings.
+
+This can be done without escaping because, according to \href{http://en.wikipedia.org/wiki/UTF-8,}{\tt http://en.wikipedia.org/wiki/UTF-8,} \char`\"{}Unlike UTF-16, byte values of 0 (The ASCII NUL character) do not appear in the encoding unless U+0000 (the Unicode NUL character) is represented. This means that string functions from the standard C library (such as strcpy()) which use a null terminator will correctly handle UTF-8 strings (whereas many UTF-16 strings will be prematurely truncated by use of the standard functions).\char`\"{} 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+Documents/Programming/Projects/BookMacster/StringCollectionTransformers.h\end{CompactItemize}

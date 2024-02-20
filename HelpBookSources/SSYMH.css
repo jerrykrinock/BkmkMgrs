@@ -1,0 +1,272 @@
+/* @group Elements */
+
+a[href] {
+	text-decoration: none ;
+	color: #0000ff
+}
+a:hover {
+	text-decoration: underline ;
+}
+body {
+	padding-left: 0px ;
+	margin: 0px ;
+	font-family: 'Arial', Verdana, Helvetica ;
+}
+body, td {
+	font-size: 12px ;
+}
+h1 {
+	font-size: 20px ;
+	color: #0000ff ;
+	margin-top: 5px ;
+	margin-bottom: 5px ;
+	line-height: normal ;
+}
+h2 {
+	font-size: 18px ;
+	color: #666 ;
+	margin-top: 30px ;
+	padding-bottom: 3px ;
+	border-bottom: 1px solid #bbb ;
+	line-height: normal ;
+}
+h3 {
+	font-size: 16px ;
+	margin-bottom: 8px ;
+	margin-top: 1.8em ;
+	color: #333; }
+h4 {
+	font-size: 14px ;
+	margin-bottom: 3px ;
+	color: #333 ;
+}
+h5 {
+	font-size: 12px ;
+	margin-bottom: 3px ;
+	color: #333 ;
+}
+i, em {
+	font-family: Helvetica ;
+	margin-right:
+	0.3em ;
+}
+img {
+	border: none ;
+}
+p {
+	margin-bottom: 0px ;
+	margin-top: 10px ;
+}
+
+table {
+	table-layout: fixed ;
+	font-size: 100%
+}
+
+code, filepath {
+	font-family: Monaco, Courier ;
+	font-size: 90%;
+}
+
+ul {
+	list-style-image: url(images/bullet-square.gif);
+	padding-left: 20px ;
+}
+
+/* id Elements */
+
+#normalBody {
+	color: #111 ;
+	padding: 15px 22px ;
+	line-height: 120%;
+}
+
+#navLinks {
+	background: #eee ;
+	width: 100%;
+	color: #555 ;
+}
+
+#navLinks td {
+	font-size: 11px ;
+	text-align: center ;
+}
+
+/* class Elements */
+
+.figure {
+	text-align: center ;
+	margin: 10px ;
+}
+
+.figure.left {
+	text-align: left ;
+	margin-left: 0px ;
+}
+
+.figure P {
+	margin-top: 0px ;
+}
+
+.filepath {
+	font-family: Monaco, Courier ;
+	font-size: 90%;
+}
+
+
+
+.homePage {
+	width: 476px ; /* Default width of Apple Help Viewer window */
+	margin-top: 12px ;
+	margin-left: 0px ;
+	padding-left: 0px ;
+}
+
+.homePage h1 {
+	text-align: center ;
+	background-image: none ;
+	padding-left: 0px ;
+	font-size: 26px ;
+	text-shadow: #ddd 3px 3px 3px ;
+}
+.homePage h2 {
+	font-size: 14px ;
+	margin-top: 8px ;
+	border-bottom-style: none ;
+}
+.homePage h2 a {
+	color: #777 ;
+}
+
+.homeTOC {
+	width: 476px ; /* Default width of Apple Help Viewer window */
+	margin-left: 14px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border: 0px solid gray;
+	padding-left: 0px ;
+	overflow: auto;
+}
+.homeTOC .col1 {
+   float:left;
+   width: 50%;
+}
+.homeTOC .col2 {
+   float:right;
+   width: 50%;
+}
+
+.homeTOC .chapterHeading {
+	font-size: 15px ;
+	font-weight: bold ;
+	margin-top: 14px ;
+	margin-left: 0px ;
+}
+
+.homeTOC .chapterHeading A {
+	color: #111 ;
+}
+
+.homeTOC .item {
+	font-size: 12px ;
+	margin-top: 2px ;
+	margin-left: 0px ;
+}
+
+.homeTOC .item a {
+	color: #333 ;
+}
+
+.chapterHeading {
+	font-size: 13px ;
+	font-weight: bold ;
+	margin-top: 14px ;
+	margin-left: 4px ;
+}
+
+.chapterHeading a {
+	color: #111 ;
+}
+
+item {
+	font-size: 11px ;
+	margin-top: 2px ;
+	margin-left: 18px ;
+}
+
+.item a {
+	color: #333 ;
+}
+
+.screenshot {
+	text-align: center ;
+	margin: 10px ;
+}
+
+.screenshot.left {
+	text-align: left ;
+	margin-left: 0px ;
+}
+
+.screenshot p {
+	margin-top: 0px ;
+}
+
+.textmiddle {
+	vertical-align: middle ;
+} 
+
+.whapp {
+	vertical-align: middle ;
+	height: 32px ;
+	/* Do not specify width, to allow for non-square icons */
+} 
+
+.whappMini {
+	vertical-align: middle ;
+	height: 18px ;
+	/* Do not specify width, to allow for non-square icons */
+} 
+
+.flip-horizontal {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+}
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: flipv; /*IE*/
+    filter: flipv; /*IE*/
+}
+
+.pageContents {
+	background-color: #eee ;
+	border: 1px solid #ccc ;
+	border-left-width: 8px ;
+	padding-top: 5px ;
+	margin-top: 10px ;
+	margin-bottom: 10px ;
+}
+.pageContents ul {
+	margin: 0px; padding: 8px 24px ;
+	padding-left: 22px ;
+	list-style-image: url(images/bullet.gif);
+}
+
+.pageContents l1 {
+	font-size: 12px ;
+	line-height: 120% ;
+}
+
+.borderedCell { 
+	border:1px solid #606060;
+	border-collapse:collapse;
+	padding: 4px 4px 4px 4px;
+}

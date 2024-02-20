@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kDKDrawingInfoTitle</key>
+	<string>SyncLoop.artb</string>
+	<key>kdkdrawinginfocreationdate</key>
+	<date>2013-01-24T18:58:50Z</date>
+	<key>kdkdrawinginfodimensionsshortunits</key>
+	<string>cm</string>
+	<key>kdkdrawinginfodimensionsunits</key>
+	<string>centimetres</string>
+	<key>kdkdrawinginfodraughter</key>
+	<string>Jerry</string>
+	<key>kdkdrawinginfodrawingdimensions.size_height</key>
+	<string>42.050064</string>
+	<key>kdkdrawinginfodrawingdimensions.size_width</key>
+	<string>59.450091</string>
+	<key>kdkdrawinginfodrawingnumber</key>
+	<string>A2-000001-0001</string>
+	<key>kdkdrawinginfodrawingnumberunformatted</key>
+	<integer>1</integer>
+	<key>kdkdrawinginfodrawingprefix</key>
+	<string>A2</string>
+	<key>kdkdrawinginfodrawingrevision</key>
+	<integer>1</integer>
+	<key>kdkdrawinginfolastmodificationdate</key>
+	<date>2013-01-24T18:58:50Z</date>
+</dict>
+</plist>

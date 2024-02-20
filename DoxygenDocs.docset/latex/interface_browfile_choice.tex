@@ -1,0 +1,76 @@
+\hypertarget{interface_browfile_choice}{
+\section{BrowfileChoice Class Reference}
+\label{interface_browfile_choice}\index{BrowfileChoice@{BrowfileChoice}}
+}
+A thin wrapper around a browfile, or a placeholder which allows users to choose \char`\"{}Other Mac Account\char`\"{} or \char`\"{}Choose File\char`\"{} instead of an existing browfile.  
+
+
+{\tt \#import $<$BrowfileChoice.h$>$}
+
+Inheritance diagram for BrowfileChoice::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_browfile_choice}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browfile_choice_c42a2398b246fae208d3718e310a8936}{
+(\hyperlink{interface_browfile_choice}{BrowfileChoice} $\ast$) + \textbf{browfileChoiceInvolvingLooseFile}}
+\label{interface_browfile_choice_c42a2398b246fae208d3718e310a8936}
+
+\item 
+\hypertarget{interface_browfile_choice_aa0c46ea5c5107919ed6298905ee8614}{
+(\hyperlink{interface_browfile_choice}{BrowfileChoice} $\ast$) + \textbf{browfileChoiceInvolvingOtherMacAccount}}
+\label{interface_browfile_choice_aa0c46ea5c5107919ed6298905ee8614}
+
+\item 
+(\hyperlink{interface_browfile_choice}{BrowfileChoice} $\ast$) + \hyperlink{interface_browfile_choice_8535524867208dc8efcfba86fdb82d9d}{browfileChoiceWithBrowfile:}
+\begin{CompactList}\small\item\em Returns a \hyperlink{interface_browfile_choice}{BrowfileChoice} defined by a browfile. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browfile_choice_69b27d89322ccb1e36b4b1626bc0c326}{
+\hyperlink{interface_browfile}{Browfile} $\ast$ \textbf{browfile}}
+\label{interface_browfile_choice_69b27d89322ccb1e36b4b1626bc0c326}
+
+\item 
+\hypertarget{interface_browfile_choice_ff0663ae558b370226e73e72137a67f7}{
+NSString $\ast$ \hyperlink{interface_browfile_choice_ff0663ae558b370226e73e72137a67f7}{displayName}}
+\label{interface_browfile_choice_ff0663ae558b370226e73e72137a67f7}
+
+\begin{CompactList}\small\item\em The receiver's title, suitable for display as the title of a (popup) menu item. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_choice_5d876ddedce9d183a1c3ad56456a68ba}{
+SEL \textbf{selector}}
+\label{interface_browfile_choice_5d876ddedce9d183a1c3ad56456a68ba}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A thin wrapper around a browfile, or a placeholder which allows users to choose \char`\"{}Other Mac Account\char`\"{} or \char`\"{}Choose File\char`\"{} instead of an existing browfile. 
+
+A browfile choice which wraps a browfile will have a non-nil browfile ivar and a nil selector.~ A browfile choice which wraps a placeholder will have a nil browfile and a non-nil selector. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_browfile_choice_8535524867208dc8efcfba86fdb82d9d}{
+\index{BrowfileChoice@{BrowfileChoice}!browfileChoiceWithBrowfile:@{browfileChoiceWithBrowfile:}}
+\index{browfileChoiceWithBrowfile:@{browfileChoiceWithBrowfile:}!BrowfileChoice@{BrowfileChoice}}
+\subsubsection[{browfileChoiceWithBrowfile:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf BrowfileChoice} $\ast$) browfileChoiceWithBrowfile: ({\bf Browfile}$\ast$) {\em browfile}}}
+\label{interface_browfile_choice_8535524867208dc8efcfba86fdb82d9d}
+
+
+Returns a \hyperlink{interface_browfile_choice}{BrowfileChoice} defined by a browfile. 
+
+Returns a \hyperlink{interface_browfile_choice}{BrowfileChoice} even if browfile is nil. This is so that the localized \char`\"{}No Selection\char`\"{} placeholder can be returned for displayName and appear in the popup in this case. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em browfile}]The browfile that is being wrapped \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BrowfileChoice.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BrowfileChoice.m\end{CompactItemize}

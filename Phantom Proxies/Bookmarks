@@ -1,0 +1,79 @@
+{
+   "checksum": "515a6cc429b82a9c6418c82aa46fdeeb",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13104294738736415",
+            "id": "18",
+            "name": "http://www.santaclara.com/",
+            "type": "url",
+            "url": "http://www.santaclara.com/"
+         }, {
+            "date_added": "13104294204413488",
+            "id": "11",
+            "name": "Download 1504",
+            "type": "url",
+            "url": "http://rapidgator.net/file/e205f41b160d6e179fd9adf90ee602da"
+         }, {
+            "date_added": "13104294625009964",
+            "id": "17",
+            "name": "http://www.larence.com/",
+            "type": "url",
+            "url": "http://www.larence.com/"
+         } ],
+         "date_added": "13008797503521124",
+         "date_modified": "13104294738736415",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13104294204435549",
+            "id": "12",
+            "name": "Menu1",
+            "type": "url",
+            "url": "https://www.maketecheasier.com/"
+         }, {
+            "date_added": "13104294204442352",
+            "id": "13",
+            "name": "Saved in Chrome to Other",
+            "type": "url",
+            "url": "https://www.google.com/?gws_rd=ssl"
+         }, {
+            "date_added": "13104294204444590",
+            "id": "14",
+            "name": "Getting Started",
+            "type": "url",
+            "url": "https://www.mozilla.org/en-US/firefox/central/"
+         }, {
+            "date_added": "13104294204446442",
+            "id": "15",
+            "name": "To adjust, move, or delete a tuplet",
+            "type": "url",
+            "url": "http://www.finalemusic.com/usermanuals/finale2012mac/content/finale/Tuplets2.htm"
+         }, {
+            "date_added": "13104294204448224",
+            "id": "16",
+            "name": "Read1",
+            "type": "url",
+            "url": "https://www.python.org/about/gettingstarted/"
+         } ],
+         "date_added": "13008797495700268",
+         "date_modified": "13104294204448224",
+         "id": "6",
+         "name": "Other Bookmarks",
+         "type": "folder"
+      },
+      "sync_transaction_version": "2",
+      "synced": {
+         "children": [  ],
+         "date_added": "12961954824015569",
+         "date_modified": "0",
+         "id": "8",
+         "name": "Mobile Bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

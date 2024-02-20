@@ -1,0 +1,33 @@
+\hypertarget{interface_n_s_data_07_base64_minus_08}{
+\section{NSData(Base64Minus) Class Reference}
+\label{interface_n_s_data_07_base64_minus_08}\index{NSData(Base64Minus)@{NSData(Base64Minus)}}
+}
+Codec for a modified base64 encoding which uses \char`\"{}-\char`\"{} character is used in its alphabet instead of the \char`\"{}/\char`\"{}.  
+
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_n_s_data_07_base64_minus_08_84c6f8a8e3323ab20a696279b2903b56}{
+(NSString $\ast$) - \hyperlink{interface_n_s_data_07_base64_minus_08_84c6f8a8e3323ab20a696279b2903b56}{stringBase64MinusEncoded}}
+\label{interface_n_s_data_07_base64_minus_08_84c6f8a8e3323ab20a696279b2903b56}
+
+\begin{CompactList}\small\item\em Encodes the receiver into a base64Minus-encoded string. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_n_s_data_07_base64_minus_08_fe209ffe4b1390cf1490d4e434d8c582}{
+(NSData $\ast$) + \hyperlink{interface_n_s_data_07_base64_minus_08_fe209ffe4b1390cf1490d4e434d8c582}{base64MinusDecodedString:}}
+\label{interface_n_s_data_07_base64_minus_08_fe209ffe4b1390cf1490d4e434d8c582}
+
+\begin{CompactList}\small\item\em Decodes a given base64Minus-encoded string into its data .~ This method has never been tested. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Codec for a modified base64 encoding which uses \char`\"{}-\char`\"{} character is used in its alphabet instead of the \char`\"{}/\char`\"{}. 
+
+This is for representing data in a filename.~ Although the Finder allows \hyperlink{interfaceyou}{you} to use a slash in filenames, it converts them to a colon since unix does not allow slashes.~ But Finder does not allow colons.~ This could get very confusing, so I'd rather not use slashes in filenames. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browid.m\end{CompactItemize}

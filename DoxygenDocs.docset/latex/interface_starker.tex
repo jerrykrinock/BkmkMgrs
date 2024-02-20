@@ -1,0 +1,362 @@
+\hypertarget{interface_starker}{
+\section{Starker Class Reference}
+\label{interface_starker}\index{Starker@{Starker}}
+}
+Instantiated with a managed object context with Starks in it, \hyperlink{interface_starker}{Starker} can do many of the common manipulations \hyperlink{interfaceyou}{you} need done on those Starks.  
+
+
+{\tt \#import $<$Starker.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(NSArray $\ast$) - \hyperlink{interface_starker_fe2d2b4012ad3a6ee403683afb3c3141}{allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:}
+\begin{CompactList}\small\item\em Returns all starks whose type is classified as \char`\"{}bookmark\char`\"{}, passing option name/url and tag filters, and sorted by a given sortKey. \item\end{CompactList}\item 
+\hypertarget{interface_starker_6cdf2546b53485807ff3830eb6534506}{
+(NSArray $\ast$) - \hyperlink{interface_starker_6cdf2546b53485807ff3830eb6534506}{allNonhierarchicalStarks}}
+\label{interface_starker_6cdf2546b53485807ff3830eb6534506}
+
+\begin{CompactList}\small\item\em Returns all starks in the receiver's managed object context which should display in a flat, no-folders view. \item\end{CompactList}\item 
+\hypertarget{interface_starker_1229c0a6b3b8eb37fc160d212295c6d8}{
+(NSArray $\ast$) - \hyperlink{interface_starker_1229c0a6b3b8eb37fc160d212295c6d8}{allNonRootStarks}}
+\label{interface_starker_1229c0a6b3b8eb37fc160d212295c6d8}
+
+\begin{CompactList}\small\item\em Returns all starks in the receiver's managed object context except the root stark. \item\end{CompactList}\item 
+\hypertarget{interface_starker_c801cc032a5e50d78233e4a7ddfcf21f}{
+(NSArray $\ast$) - \hyperlink{interface_starker_c801cc032a5e50d78233e4a7ddfcf21f}{allSeparatorStarks}}
+\label{interface_starker_c801cc032a5e50d78233e4a7ddfcf21f}
+
+\begin{CompactList}\small\item\em Returns all starks in the receiver's managed object context for which -sharypeValue returns SharypeSeparator. \item\end{CompactList}\item 
+(NSSet $\ast$) - \hyperlink{interface_starker_bc41462f876cb564eff482c51e634ef8}{allShortcuts}
+\begin{CompactList}\small\item\em Returns a set of all the shortcuts existing in all of starks in the receiver's managed object context. \item\end{CompactList}\item 
+\hypertarget{interface_starker_f73619556ccab00cb5b4d1ed802d5812}{
+(NSArray $\ast$) - \hyperlink{interface_starker_f73619556ccab00cb5b4d1ed802d5812}{allSoftStarks}}
+\label{interface_starker_f73619556ccab00cb5b4d1ed802d5812}
+
+\begin{CompactList}\small\item\em Returns all starks in the receiver's managed object context that are not hartainers; return NO to -isHartainer. \item\end{CompactList}\item 
+(NSCountedSet $\ast$) - \hyperlink{interface_starker_97d71185bce7a12c705e88e7a47924cd}{allTags}
+\begin{CompactList}\small\item\em Returns a NSCountedSet of all the tags existing in all of starks in the receiver's managed object context. \item\end{CompactList}\item 
+\hypertarget{interface_starker_97f76f8bb784adb13fd725e990998ca8}{
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_97f76f8bb784adb13fd725e990998ca8}{bar}}
+\label{interface_starker_97f76f8bb784adb13fd725e990998ca8}
+
+\begin{CompactList}\small\item\em Returns the receiver's Bookmarks Bar hartainer collection, or nil if the receiver does not have one. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_starker_daca2fda1699477d0b3cbd3f1613b130}{deleteAllObjects}
+\begin{CompactList}\small\item\em Deletes all of the starks in the receiver's managed object context and also sets the cached root instance variable to nil.￼. \item\end{CompactList}\item 
+\hypertarget{interface_starker_d734d35c7a91bb8ebf16445d4023321c}{
+(void) - \hyperlink{interface_starker_d734d35c7a91bb8ebf16445d4023321c}{deleteStark:}}
+\label{interface_starker_d734d35c7a91bb8ebf16445d4023321c}
+
+\begin{CompactList}\small\item\em Delete a single stark from the receiver's managed object context.￼. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_starker_3d17b481943ce2a3ccd9d1e9613bf695}{deleteStarks:}
+\begin{CompactList}\small\item\em Delete a subset of the receiver's starks from the receiver's managed object context.￼. \item\end{CompactList}\item 
+(id) - \hyperlink{interface_starker_a6bc8eb2ce9f75157c0b3fcc8d669cf6}{initWithManagedObjectContext:owner:}
+\begin{CompactList}\small\item\em Designated Initializer for \hyperlink{interface_starker}{Starker} instances ￼. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_starker_4708f65cf0077599521812a5573e8e5a}{insertStarkLikeStark:}
+\begin{CompactList}\small\item\em ￼Inserts a new stark in the receiver's managed object context and sets its attributes to match those of an other stark. \item\end{CompactList}\item 
+\hypertarget{interface_starker_c9d7934838919f1c07a3de24019f1f2e}{
+(NSArray $\ast$) - \hyperlink{interface_starker_c9d7934838919f1c07a3de24019f1f2e}{matchedStarks}}
+\label{interface_starker_c9d7934838919f1c07a3de24019f1f2e}
+
+\begin{CompactList}\small\item\em Returns all of the receiver's Starks that have isMatched==YES. \item\end{CompactList}\item 
+\hypertarget{interface_starker_ef8b7e68846767cd600ab5038c301351}{
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_ef8b7e68846767cd600ab5038c301351}{menu}}
+\label{interface_starker_ef8b7e68846767cd600ab5038c301351}
+
+\begin{CompactList}\small\item\em Returns the receiver's Bookmarks Menu hartainer collection, or nil if the receiver does not have one. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_fb577d5ab759cfe1ac806592c2ee4117}{newStark}
+\begin{CompactList}\small\item\em Inserts a new stark into receiver's managed object context. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_684b153eda9128194d5432de135e1abb}{ohared}
+\begin{CompactList}\small\item\em Returns the receiver's Ohared (OmniWeb Shared) hartainer collection, or nil if the receiver does not have one. \item\end{CompactList}\item 
+\hypertarget{interface_starker_fc0ca854c289203b29ba54e3fcea4ae4}{
+(void) - \hyperlink{interface_starker_fc0ca854c289203b29ba54e3fcea4ae4}{processPendingChanges}}
+\label{interface_starker_fc0ca854c289203b29ba54e3fcea4ae4}
+
+\begin{CompactList}\small\item\em Sends -processPendingChanges receiver's managed object context.￼. \item\end{CompactList}\item 
+\hypertarget{interface_starker_192bfe5cfee3de5793f028dcae3ea4b4}{
+(BOOL) - \hyperlink{interface_starker_192bfe5cfee3de5793f028dcae3ea4b4}{save:}}
+\label{interface_starker_192bfe5cfee3de5793f028dcae3ea4b4}
+
+\begin{CompactList}\small\item\em A wrapper for sending -save: to the receiver's managed object context. \item\end{CompactList}\item 
+\hypertarget{interface_starker_7ad462e926b7a142ca20d22902a2f125}{
+(void) - \hyperlink{interface_starker_7ad462e926b7a142ca20d22902a2f125}{setAllStarksNotMatched}}
+\label{interface_starker_7ad462e926b7a142ca20d22902a2f125}
+
+\begin{CompactList}\small\item\em Sets the isMatched attribute to NO in all of the receiver's Starks to NO. ￼. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_starker_d55434f50ba418c0da1f705826290d3d}{setValue:forKey:inStarks:}
+\begin{CompactList}\small\item\em Sets the same new value for the same key in a collection of starks. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_3c1b774cdc1371325f0768bac859df4c}{starkOfSharype:}
+\begin{CompactList}\small\item\em Returns the first stark found of a given sharype in the receiver's owner's manged object context, or nil if no such stark exists. \item\end{CompactList}\item 
+(NSDictionary $\ast$) - \hyperlink{interface_starker_f95610147961bd54e65714c250d97112}{starksKeyedByExidForBrowid:}
+\begin{CompactList}\small\item\em Returns a dictionary of all starks in the receiver's managed object context which have an exid for a given browid. \item\end{CompactList}\item 
+(NSDictionary $\ast$) - \hyperlink{interface_starker_1e2df51e1815880ae1b2b339c801359a}{starksKeyedByKey:}
+\begin{CompactList}\small\item\em A \char`\"{}bulk\char`\"{} version of starkWithEqualValueForKey:asStark: which returns all starks in a convenient dictionary with only one fetch. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_f68e618ff7532058e480e99ef40125f8}{starkWithEqualValueForKey:asStark:}
+\begin{CompactList}\small\item\em Returns the first of the receiver's Starks whose value for a given key is equal to the value of the same key in another given Stark￼. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{interface_starker_043bec1f3d10734c4c2b6adacdafa9dd}{unfiled}
+\begin{CompactList}\small\item\em Returns the receiver's Bookmarks Unfiled hartainer collection, or nil if the receiver does not have one. \item\end{CompactList}\item 
+\hypertarget{interface_starker_867b017225ba7dc82d0dd1f705565021}{
+(NSArray $\ast$) - \hyperlink{interface_starker_867b017225ba7dc82d0dd1f705565021}{unmatchedLeaves}}
+\label{interface_starker_867b017225ba7dc82d0dd1f705565021}
+
+\begin{CompactList}\small\item\em Returns all of the receiver's Starks which have isMatched=NO and sharype one of the leaf coarse types. \item\end{CompactList}\item 
+\hypertarget{interface_starker_ebe6bb1af19f279541638dbbb121f2ac}{
+(NSArray $\ast$) - \hyperlink{interface_starker_ebe6bb1af19f279541638dbbb121f2ac}{unmatchedStarks}}
+\label{interface_starker_ebe6bb1af19f279541638dbbb121f2ac}
+
+\begin{CompactList}\small\item\em Returns all of the receiver's Starks that do not have isMatched==YES. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_starker_494ce92d64fc0b7d121781c9ae87b723}{
+(NSInteger) + \textbf{areSortableItems:}}
+\label{interface_starker_494ce92d64fc0b7d121781c9ae87b723}
+
+\item 
+\hypertarget{interface_starker_b7f5728ca247fb3b5c99ee0473ce2c81}{
+(NSInteger) + \textbf{countOfBookmarksInItems:}}
+\label{interface_starker_b7f5728ca247fb3b5c99ee0473ce2c81}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hyperlink{interface_browid}{Browid} $\ast$ \hyperlink{interface_starker_ad670a0a7f814f16031594514cb0d005}{browid}
+\begin{CompactList}\small\item\em The -browid of the receiver's -owner, or nil if the receiver's -owner does not respond to -browfile. \item\end{CompactList}\item 
+\hypertarget{interface_starker_6ea1720ea5009a7a1b3003c8c59fd54b}{
+NSObject$<$ \hyperlink{protocol_startainer-p}{Startainer}, SSYErrorHandler $>$ $\ast$ \hyperlink{interface_starker_6ea1720ea5009a7a1b3003c8c59fd54b}{owner}}
+\label{interface_starker_6ea1720ea5009a7a1b3003c8c59fd54b}
+
+\begin{CompactList}\small\item\em The object which is using the receiver to store its Starks.~ A weak reference. \item\end{CompactList}\item 
+\hyperlink{class_stark}{Stark} $\ast$ \hyperlink{interface_starker_240831d09fe505069017793aa161c471}{root}
+\begin{CompactList}\small\item\em Returns the receiver's root \hyperlink{class_stark}{Stark}, creating one if none exists. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Instantiated with a managed object context with Starks in it, \hyperlink{interface_starker}{Starker} can do many of the common manipulations \hyperlink{interfaceyou}{you} need done on those Starks. 
+
+This object is used in three situations: as either the starker or the localStarker for an \hyperlink{interface_extore}{Extore}, or the -managedObjectContext of a \hyperlink{class_bookshelf}{Bookshelf} document. This class was written because the three situations described all require some common methods for accessing Starks and collections of Starks.
+
+The receiver's managed object context may contain other objects besides Starks. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_starker_fe2d2b4012ad3a6ee403683afb3c3141}{
+\index{Starker@{Starker}!allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:@{allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:}}
+\index{allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:@{allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:}!Starker@{Starker}}
+\subsubsection[{allBookmarksOnlySortedBy:matchingInNameOrURL:matchingTags:logic:}]{\setlength{\rightskip}{0pt plus 5cm}- (NSArray $\ast$) allBookmarksOnlySortedBy: (NSString$\ast$) {\em sortKey}\/ matchingInNameOrURL: (NSString$\ast$) {\em filterString}\/ matchingTags: (NSSet$\ast$) {\em filterTags}\/ logic: (int) {\em filterLogic}}}
+\label{interface_starker_fe2d2b4012ad3a6ee403683afb3c3141}
+
+
+Returns all starks whose type is classified as \char`\"{}bookmark\char`\"{}, passing option name/url and tag filters, and sorted by a given sortKey. 
+
+The \char`\"{}bookmark\char`\"{} classification is defined by -\mbox{[}\hyperlink{class_stark}{Stark} classifyBySharypeDeeply:hartainers:softFolders:bookmarks:separators:\mbox{]}. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em sortKey}]The sort key with which the results will be sorted \item[{\em filterString}]A string which must appear in the name or url in order for bookmarks to pass the name filter \item[{\em filterTags}]The set of tags used in the tag filter. \item[{\em filterLogic}]If 0, the filterTags parameter is ignored and not filtering by tags is done.~ If 1, the tag filter will pass only starks that have all of the tags in the filterTags set.~ \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]An array of filtered, sorted starks. \end{Desc}
+\hypertarget{interface_starker_bc41462f876cb564eff482c51e634ef8}{
+\index{Starker@{Starker}!allShortcuts@{allShortcuts}}
+\index{allShortcuts@{allShortcuts}!Starker@{Starker}}
+\subsubsection[{allShortcuts}]{\setlength{\rightskip}{0pt plus 5cm}- (NSSet $\ast$) allShortcuts }}
+\label{interface_starker_bc41462f876cb564eff482c51e634ef8}
+
+
+Returns a set of all the shortcuts existing in all of starks in the receiver's managed object context. 
+
+A set, by definition, has all of its duplicates coalesced into one.~ However, duplicate shortcuts should not be allowed anyhow. \hypertarget{interface_starker_97d71185bce7a12c705e88e7a47924cd}{
+\index{Starker@{Starker}!allTags@{allTags}}
+\index{allTags@{allTags}!Starker@{Starker}}
+\subsubsection[{allTags}]{\setlength{\rightskip}{0pt plus 5cm}- (NSCountedSet $\ast$) allTags }}
+\label{interface_starker_97d71185bce7a12c705e88e7a47924cd}
+
+
+Returns a NSCountedSet of all the tags existing in all of starks in the receiver's managed object context. 
+
+An NSCountedSet indicates item counts by having the same item appear multiple times in the set.~ If \hyperlink{interfaceyou}{you} want a set of distinct objects, use \mbox{[}NSSet setWithSet:\mbox{[}someStarker allTags\mbox{]}\mbox{]}. \hypertarget{interface_starker_daca2fda1699477d0b3cbd3f1613b130}{
+\index{Starker@{Starker}!deleteAllObjects@{deleteAllObjects}}
+\index{deleteAllObjects@{deleteAllObjects}!Starker@{Starker}}
+\subsubsection[{deleteAllObjects}]{\setlength{\rightskip}{0pt plus 5cm}- (void) deleteAllObjects }}
+\label{interface_starker_daca2fda1699477d0b3cbd3f1613b130}
+
+
+Deletes all of the starks in the receiver's managed object context and also sets the cached root instance variable to nil.￼. 
+
+￼ According to \href{http://www.cocoabuilder.com/archive/message/cocoa/2006/11/15/174531,}{\tt http://www.cocoabuilder.com/archive/message/cocoa/2006/11/15/174531,} the Great mmalc seemed to think it was better, albeit slower, to delete all objects in the store, rather than replacing the store file. Actually, this is not possible in the general case anyhow, when the store may include other Starker's Starks or other entities. \hypertarget{interface_starker_3d17b481943ce2a3ccd9d1e9613bf695}{
+\index{Starker@{Starker}!deleteStarks:@{deleteStarks:}}
+\index{deleteStarks:@{deleteStarks:}!Starker@{Starker}}
+\subsubsection[{deleteStarks:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) deleteStarks: (id) {\em starks}}}
+\label{interface_starker_3d17b481943ce2a3ccd9d1e9613bf695}
+
+
+Delete a subset of the receiver's starks from the receiver's managed object context.￼. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em starks}]May be either an NSArray$\ast$ or NSSet$\ast$. \end{description}
+\end{Desc}
+\hypertarget{interface_starker_a6bc8eb2ce9f75157c0b3fcc8d669cf6}{
+\index{Starker@{Starker}!initWithManagedObjectContext:owner:@{initWithManagedObjectContext:owner:}}
+\index{initWithManagedObjectContext:owner:@{initWithManagedObjectContext:owner:}!Starker@{Starker}}
+\subsubsection[{initWithManagedObjectContext:owner:}]{\setlength{\rightskip}{0pt plus 5cm}- (id) initWithManagedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext\_\-}\/ owner: (NSObject $<${\bf Startainer}, SSYErrorHandler$>$ $\ast$) {\em owner\_\-}}}
+\label{interface_starker_a6bc8eb2ce9f75157c0b3fcc8d669cf6}
+
+
+Designated Initializer for \hyperlink{interface_starker}{Starker} instances ￼. 
+
+Both arguments are required. If either is nil, this method will return nil. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em managedObjectContext}]See class properties for documentation. \item[{\em owner}]See class properties for documentation. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]￼The receiver, or nil if something failed. \end{Desc}
+\hypertarget{interface_starker_4708f65cf0077599521812a5573e8e5a}{
+\index{Starker@{Starker}!insertStarkLikeStark:@{insertStarkLikeStark:}}
+\index{insertStarkLikeStark:@{insertStarkLikeStark:}!Starker@{Starker}}
+\subsubsection[{insertStarkLikeStark:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) insertStarkLikeStark: ({\bf Stark}$\ast$) {\em otherStark}}}
+\label{interface_starker_4708f65cf0077599521812a5573e8e5a}
+
+
+￼Inserts a new stark in the receiver's managed object context and sets its attributes to match those of an other stark. 
+
+Enumerates through the attributes of otherStark.~ For each non-nil value found, sets the same value for the same attribute key in the new stark.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em otherStark}]The stark whose attributes are to be copied. \end{description}
+\end{Desc}
+\hypertarget{interface_starker_fb577d5ab759cfe1ac806592c2ee4117}{
+\index{Starker@{Starker}!newStark@{newStark}}
+\index{newStark@{newStark}!Starker@{Starker}}
+\subsubsection[{newStark}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) newStark }}
+\label{interface_starker_fb577d5ab759cfe1ac806592c2ee4117}
+
+
+Inserts a new stark into receiver's managed object context. 
+
+\begin{Desc}
+\item[Returns:]The newly-inserted stark \end{Desc}
+\hypertarget{interface_starker_684b153eda9128194d5432de135e1abb}{
+\index{Starker@{Starker}!ohared@{ohared}}
+\index{ohared@{ohared}!Starker@{Starker}}
+\subsubsection[{ohared}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) ohared }}
+\label{interface_starker_684b153eda9128194d5432de135e1abb}
+
+
+Returns the receiver's Ohared (OmniWeb Shared) hartainer collection, or nil if the receiver does not have one. 
+
+This hartainer collection is nil for most Extores. \hypertarget{interface_starker_d55434f50ba418c0da1f705826290d3d}{
+\index{Starker@{Starker}!setValue:forKey:inStarks:@{setValue:forKey:inStarks:}}
+\index{setValue:forKey:inStarks:@{setValue:forKey:inStarks:}!Starker@{Starker}}
+\subsubsection[{setValue:forKey:inStarks:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setValue: (id) {\em value}\/ forKey: (NSString$\ast$) {\em key}\/ inStarks: (id) {\em starks}}}
+\label{interface_starker_d55434f50ba418c0da1f705826290d3d}
+
+
+Sets the same new value for the same key in a collection of starks. 
+
+Begins and ends an undo grouping. This may be unnecessary because, according to -\mbox{[}NSUndoManager beginUndoGrouping\mbox{]} documentation, \char`\"{}By default undo groups are begun automatically at the start of the event loop\char`\"{}. All starks in the 'starks' parameter should be in the same managed object context because the managed object context is obtained from the first stark in starks. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em value}]The new value to be set. \item[{\em key}]The key for which to set the value \item[{\em starks}]The NSArray of starks which are to be affected. \end{description}
+\end{Desc}
+\hypertarget{interface_starker_3c1b774cdc1371325f0768bac859df4c}{
+\index{Starker@{Starker}!starkOfSharype:@{starkOfSharype:}}
+\index{starkOfSharype:@{starkOfSharype:}!Starker@{Starker}}
+\subsubsection[{starkOfSharype:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) starkOfSharype: (Sharype) {\em sharype}}}
+\label{interface_starker_3c1b774cdc1371325f0768bac859df4c}
+
+
+Returns the first stark found of a given sharype in the receiver's owner's manged object context, or nil if no such stark exists. 
+
+The intended use is to get the hartainers. \hypertarget{interface_starker_f95610147961bd54e65714c250d97112}{
+\index{Starker@{Starker}!starksKeyedByExidForBrowid:@{starksKeyedByExidForBrowid:}}
+\index{starksKeyedByExidForBrowid:@{starksKeyedByExidForBrowid:}!Starker@{Starker}}
+\subsubsection[{starksKeyedByExidForBrowid:}]{\setlength{\rightskip}{0pt plus 5cm}- (NSDictionary $\ast$) starksKeyedByExidForBrowid: ({\bf Browid}$\ast$) {\em browid}}}
+\label{interface_starker_f95610147961bd54e65714c250d97112}
+
+
+Returns a dictionary of all starks in the receiver's managed object context which have an exid for a given browid. 
+
+Use this method when \hyperlink{interfaceyou}{you} need to get many starks each matching a given exid for a single browid.~ It is efficient because only one fetch is done.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em browid}]The browid for which each returned stark must have an exid \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A dictionary of starks, keyed by their exids for the given browid \end{Desc}
+\hypertarget{interface_starker_1e2df51e1815880ae1b2b339c801359a}{
+\index{Starker@{Starker}!starksKeyedByKey:@{starksKeyedByKey:}}
+\index{starksKeyedByKey:@{starksKeyedByKey:}!Starker@{Starker}}
+\subsubsection[{starksKeyedByKey:}]{\setlength{\rightskip}{0pt plus 5cm}- (NSDictionary $\ast$) starksKeyedByKey: (NSString$\ast$) {\em key}}}
+\label{interface_starker_1e2df51e1815880ae1b2b339c801359a}
+
+
+A \char`\"{}bulk\char`\"{} version of starkWithEqualValueForKey:asStark: which returns all starks in a convenient dictionary with only one fetch. 
+
+Starks which have a nil value for the given key will be omitted from the result. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em key}]The key whose values will become keys in the result.~ Of course, the type of these values must be suitable to be a dictionary key.~ \end{description}
+\end{Desc}
+\hypertarget{interface_starker_f68e618ff7532058e480e99ef40125f8}{
+\index{Starker@{Starker}!starkWithEqualValueForKey:asStark:@{starkWithEqualValueForKey:asStark:}}
+\index{starkWithEqualValueForKey:asStark:@{starkWithEqualValueForKey:asStark:}!Starker@{Starker}}
+\subsubsection[{starkWithEqualValueForKey:asStark:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) starkWithEqualValueForKey: (NSString$\ast$) {\em key}\/ asStark: ({\bf Stark}$\ast$) {\em stark}}}
+\label{interface_starker_f68e618ff7532058e480e99ef40125f8}
+
+
+Returns the first of the receiver's Starks whose value for a given key is equal to the value of the same key in another given Stark￼. 
+
+Typically, the \hyperlink{class_stark}{Stark} argument will belong to a different managed object context. This method is thus used to find {\em corresponding\/} or {\em matching\/} Starks in different managed object contexts.
+
+This implementation uses -valueForKey: on stark.~ It might be cheaper to change the key argument type to SEL, and use -performSelector: instead??
+
+This method requires a fetch. If you're thinking of using it in a loop, use starksKeyedByKey: instead, for efficiency. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em key}]The key whose value is to be matched. \item[{\em stark}]The other stark whose value is to be matched. \end{description}
+\end{Desc}
+\hypertarget{interface_starker_043bec1f3d10734c4c2b6adacdafa9dd}{
+\index{Starker@{Starker}!unfiled@{unfiled}}
+\index{unfiled@{unfiled}!Starker@{Starker}}
+\subsubsection[{unfiled}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) unfiled }}
+\label{interface_starker_043bec1f3d10734c4c2b6adacdafa9dd}
+
+
+Returns the receiver's Bookmarks Unfiled hartainer collection, or nil if the receiver does not have one. 
+
+This hartainer collection is nil for most Extores. 
+
+\subsection{Property Documentation}
+\hypertarget{interface_starker_ad670a0a7f814f16031594514cb0d005}{
+\index{Starker@{Starker}!browid@{browid}}
+\index{browid@{browid}!Starker@{Starker}}
+\subsubsection[{browid}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Browid} $\ast$) browid\hspace{0.3cm}{\tt  \mbox{[}read, retain\mbox{]}}}}
+\label{interface_starker_ad670a0a7f814f16031594514cb0d005}
+
+
+The -browid of the receiver's -owner, or nil if the receiver's -owner does not respond to -browfile. 
+
+I had previously used this to filter starks in general; however at this time it is not used. \hypertarget{interface_starker_240831d09fe505069017793aa161c471}{
+\index{Starker@{Starker}!root@{root}}
+\index{root@{root}!Starker@{Starker}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark} $\ast$) root\hspace{0.3cm}{\tt  \mbox{[}read, retain\mbox{]}}}}
+\label{interface_starker_240831d09fe505069017793aa161c471}
+
+
+Returns the receiver's root \hyperlink{class_stark}{Stark}, creating one if none exists. 
+
+\hyperlink{class_bookshelf}{Bookshelf} documents synced in from nonhierarchical sources will have all their items at root, and therefore when the outline is reloaded, if the view is is to displayFolders = YES, \mbox{[}BookshelfOutlineDataSource outlineView:child:ofItem:\mbox{]} will be invoked for each item, which will invoke this method, which will do a fetch.~ In an early prototype, displaying a document with 1161 bookmarks at root spent 3:45 min:sec just fetching root.~ So, to eliminate that, this method caches the root in an instance variable.
+
+We can get away with simply caching it because, as far as I can figure, once we have a root, it will never be replaced with a new root during the life of a starker.~ If this assertion were not true, this would get much more yucky. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Starker.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Starker.m\end{CompactItemize}

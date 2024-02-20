@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name" : "BookMacster Button",
+	"version" : "32",
+	"description" : "Empowers Sheep Systems' BookMacster or Markster apps to bookmark the web page you are currently viewing",
+	"homepage_url" : "https:\/\/sheepsystems.com\/bookmacster\/HelpBook\/browserExtensions",
+	"permissions" : [
+	"tabs",
+	"nativeMessaging",
+	"storage",
+	"offscreen"
+	],
+	"background": {
+	"service_worker": "service_worker.js",
+	"type": "module"
+	},
+	"icons": {
+		"128": "BookMacsterButton-128.png"
+	},
+	"action": {
+		"default_icon": "3Bkmx19.png",
+		"default_title": "Land the current page into BookMacster or Markster.\n\nYour 'option' key controls whether or not Inspector is shown, so you can move or edit your new bookmark.  See Preferences > Adding in BookMacster/Markster."
+	},
+	"content_security_policy": {}
+}

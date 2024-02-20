@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content=
+  "text/html; charset=us-ascii" />
+  <meta http-equiv="Content-Language" content="en-us" />
+
+  <title>BookMacster -- Installing the Bookmarklet</title>
+<style type="text/css">
+/*<![CDATA[*/
+      <!--
+      
+      body, html{
+        width: 750px;
+        margin: 0 auto;
+        padding: 0;
+        color:  #000;
+         font: 12px verdana, arial, helvetica, sans-serif;
+         line-height: 19px;
+         text-align: center;
+         background: #eee;
+      }
+      
+      body {
+         min-width:750px;
+      }
+      
+      #container { 
+         margin: 10px;
+                 padding: 0;
+                width: 750px;
+                background: #fff;
+                border: 2px solid #aaa;
+                        text-align: left;
+        }
+                
+        #container h1 {
+                text-align: center;
+        }
+        
+        #content {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 0px;
+        }
+      
+
+        
+      .bookmarklet {
+         color: #242424;
+           font-weight: bold;
+         margin-top: 0px;
+         padding: 5px;
+         border: 1px solid #D7D7D7; 
+         background: #FFCA0A;
+         text-align: center;
+         font-size: 18px;
+         line-height: 26px;
+         height: 30px;
+                 width: 200px;
+      }
+      
+      
+      #header {
+         clear:both;
+         background: #FFFF99;
+         text-align: center;
+         margin: 0px;
+                 padding: 5px;
+         font-size: 20px;
+         color: #333333;
+      }
+          
+          #footer {
+         clear:both;
+         background: #FFFF99;
+         text-align: center;
+         margin-left: 0px;
+         font-size: 10px;
+         color: #333333;
+      }
+      -->
+/*]]>*/
+</style>
+</head>
+
+<body>
+  <div id="container">
+    <h1 id="header">Installing the bookmarklet</h1>
+
+    <div id="content">
+      <p>Install this bookmarklet into your browser by dragging it to the
+      Bookmarks Bar.</p>
+
+      <div class="bookmarklet">
+        <a href="javascript:if(navigator.userAgent.indexOf('Safari')%20%3E=%200){s=getSelection();}else{s=document.selection?document.selection.createRange().text:document.getSelection();}document.location.href='bookmacster://add?url='+encodeURIComponent(location.href)+'&name='+encodeURIComponent(document.title)+'&comments='+encodeURIComponent(s);">BM!</a>
+      </div>
+
+      <p>From now on, you can bookmark a page directly in BookMacster by clicking on the  "BM!" bookmarklet.</p>
+
+      <p>If there is already a bookmark for the page, then BookMacster will display its information.</p>
+    </div>
+
+  </div>
+</body>
+</html>

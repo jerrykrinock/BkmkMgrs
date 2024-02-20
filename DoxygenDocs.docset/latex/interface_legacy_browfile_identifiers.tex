@@ -1,0 +1,52 @@
+\hypertarget{interface_legacy_browfile_identifiers}{
+\section{LegacyBrowfileIdentifiers Class Reference}
+\label{interface_legacy_browfile_identifiers}\index{LegacyBrowfileIdentifiers@{LegacyBrowfileIdentifiers}}
+}
+A class which converts legacy browfileIdentifier strings into equivalent \hyperlink{interface_browid}{Browid} objects.  
+
+
+{\tt \#import $<$LegacyBrowfileIdentifiers.h$>$}
+
+Inheritance diagram for LegacyBrowfileIdentifiers::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_legacy_browfile_identifiers}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(\hyperlink{interface_browid}{Browid} $\ast$) + \hyperlink{interface_legacy_browfile_identifiers_b16ca891eb09b8e1774e25728cee50e9}{browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:}
+\begin{CompactList}\small\item\em Given a legacy browfile identifier and its associated info dictionary from the Browfiles key of Bookdog user defaults, builds a browid based on the extracted information. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class which converts legacy browfileIdentifier strings into equivalent \hyperlink{interface_browid}{Browid} objects. 
+
+{\bf Overview} 
+
+A browfile is uniquely identified by either by its {\em legacy browfileIdentifier\/}, although other supplemental data (aliasData, browserName) is needed for some types.~ This class provides a method for creating a new \hyperlink{interface_browid}{Browid} object from this identifier and supplemental data. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_legacy_browfile_identifiers_b16ca891eb09b8e1774e25728cee50e9}{
+\index{LegacyBrowfileIdentifiers@{LegacyBrowfileIdentifiers}!browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:@{browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:}}
+\index{browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:@{browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:}!LegacyBrowfileIdentifiers@{LegacyBrowfileIdentifiers}}
+\subsubsection[{browidFromLegacyBrowfileIdentifier:moreInfo:localizedErrorReason:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Browid} $\ast$) browidFromLegacyBrowfileIdentifier: (NSString$\ast$) {\em legacyIdentifier}\/ moreInfo: (NSDictionary$\ast$) {\em moreInfo}\/ localizedErrorReason: (NSString$\ast$$\ast$) {\em reason\_\-p}}}
+\label{interface_legacy_browfile_identifiers_b16ca891eb09b8e1774e25728cee50e9}
+
+
+Given a legacy browfile identifier and its associated info dictionary from the Browfiles key of Bookdog user defaults, builds a browid based on the extracted information. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em legacyIdentifier}]\item[{\em moreInfo}]An optional dictionary of extra information to help with loose browid types.~ May contain values for keys @\char`\"{}browserName\char`\"{}, @\char`\"{}aliasData\char`\"{}, and @\char`\"{}filePath\char`\"{}. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A browid with the same identification as the given data, or nil if enough nonambiguous data to make a useable browfile could not be extracted. \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/LegacyBrowfileIdentifiers.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/LegacyBrowfileIdentifiers.m\end{CompactItemize}

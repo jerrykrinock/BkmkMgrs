@@ -1,0 +1,83 @@
+\hypertarget{interface_bkmx_outline_view}{
+\section{BkmxOutlineView Class Reference}
+\label{interface_bkmx_outline_view}\index{BkmxOutlineView@{BkmxOutlineView}}
+}
+Adds some fairly generic features to NSOutlineView.  
+
+
+{\tt \#import $<$BkmxOutlineView.h$>$}
+
+Inherited by ContentOutlineView, and DupesOutlineView.
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_bkmx_outline_view_c1877f8a3049af76096ae14ed35aa108}{
+(int) - \textbf{countOfSelectedObjects}}
+\label{interface_bkmx_outline_view_c1877f8a3049af76096ae14ed35aa108}
+
+\item 
+\hypertarget{interface_bkmx_outline_view_724d3f83f3849c8109fcdc43c8b61e18}{
+(\hyperlink{class_bookshelf}{Bookshelf} $\ast$) - \textbf{document}}
+\label{interface_bkmx_outline_view_724d3f83f3849c8109fcdc43c8b61e18}
+
+\item 
+\hypertarget{interface_bkmx_outline_view_506b5c12000c91c1e47558fbfa6ea46e}{
+(BOOL) - \textbf{isVisibleItem:}}
+\label{interface_bkmx_outline_view_506b5c12000c91c1e47558fbfa6ea46e}
+
+\item 
+\hypertarget{interface_bkmx_outline_view_2ff6c8161e648d95286295394ba86097}{
+(NSArray $\ast$) - \textbf{objectsAtRowIndexes:}}
+\label{interface_bkmx_outline_view_2ff6c8161e648d95286295394ba86097}
+
+\item 
+(id) - \hyperlink{interface_bkmx_outline_view_3242784daf5f402c060d5bbcb100d94a}{selectedObject}
+\begin{CompactList}\small\item\em Returns the single selected object in the receiver, or an NSNull if there is a multiple selection. \item\end{CompactList}\item 
+(NSArray $\ast$) - \hyperlink{interface_bkmx_outline_view_c5e3a2bf303d91298c9ea9aeacf6a753}{selectedObjects}
+\begin{CompactList}\small\item\em Returns the array of objects in the receiver that are selected. \item\end{CompactList}\item 
+\hypertarget{interface_bkmx_outline_view_3c8fab6a913521bebc5f847323ebc714}{
+(void) - \textbf{selectObjects:byExtendingSelection:}}
+\label{interface_bkmx_outline_view_3c8fab6a913521bebc5f847323ebc714}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_bkmx_outline_view_2a6eeb37b0ceb736ed23d37b7111e42e}{
+NSArray $\ast$ \textbf{selectedObjects}}
+\label{interface_bkmx_outline_view_2a6eeb37b0ceb736ed23d37b7111e42e}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Adds some fairly generic features to NSOutlineView. 
+
+The delegate of a \hyperlink{interface_bkmx_outline_view}{BkmxOutlineView} must be connected in Interface Builder to the window controller 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_bkmx_outline_view_3242784daf5f402c060d5bbcb100d94a}{
+\index{BkmxOutlineView@{BkmxOutlineView}!selectedObject@{selectedObject}}
+\index{selectedObject@{selectedObject}!BkmxOutlineView@{BkmxOutlineView}}
+\subsubsection[{selectedObject}]{\setlength{\rightskip}{0pt plus 5cm}- (id) selectedObject }}
+\label{interface_bkmx_outline_view_3242784daf5f402c060d5bbcb100d94a}
+
+
+Returns the single selected object in the receiver, or an NSNull if there is a multiple selection. 
+
+Changes in this value can be observed by KVO and also a binding is exposed. \hypertarget{interface_bkmx_outline_view_c5e3a2bf303d91298c9ea9aeacf6a753}{
+\index{BkmxOutlineView@{BkmxOutlineView}!selectedObjects@{selectedObjects}}
+\index{selectedObjects@{selectedObjects}!BkmxOutlineView@{BkmxOutlineView}}
+\subsubsection[{selectedObjects}]{\setlength{\rightskip}{0pt plus 5cm}- (NSArray$\ast$) selectedObjects }}
+\label{interface_bkmx_outline_view_c5e3a2bf303d91298c9ea9aeacf6a753}
+
+
+Returns the array of objects in the receiver that are selected. 
+
+Changes in this value can be observed by KVO and also a binding is exposed. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BkmxOutlineView.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/BkmxOutlineView.m\end{CompactItemize}

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21179.7"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ClientSpecialBoxController">
+            <connections>
+                <outlet property="view" destination="47" id="157"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <box autoresizesSubviews="NO" borderType="line" title="Spe_cial (ClientName)" id="47" userLabel="Special">
+            <rect key="frame" x="0.0" y="0.0" width="526" height="222"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" id="789-5x-8Hc">
+                <rect key="frame" x="4" y="5" width="518" height="200"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93">
+                        <rect key="frame" x="37" y="144" width="138" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="94">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="95"/>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="155" name="content" keyPath="content.availableHttpRateInitials" id="162"/>
+                            <binding destination="155" name="contentValues" keyPath="content.availableHttpRateInitials" previousBinding="162" id="c2c-kx-0mU"/>
+                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipInitialInterval" id="146"/>
+                            <binding destination="155" name="selectedObject" keyPath="content.httpRateInitial" previousBinding="c2c-kx-0mU" id="oG8-Q9-2Yo"/>
+                        </connections>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="107">
+                        <rect key="frame" x="37" y="114" width="138" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="108">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="109"/>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="155" name="content" keyPath="content.availableHttpRateRests" id="178"/>
+                            <binding destination="155" name="contentValues" keyPath="content.availableHttpRateRests" previousBinding="178" id="A0N-rk-cUJ"/>
+                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipRestInterval" id="147"/>
+                            <binding destination="155" name="selectedObject" keyPath="content.httpRateRest" previousBinding="A0N-rk-cUJ" id="Q2G-gd-Abt"/>
+                        </connections>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="100">
+                        <rect key="frame" x="37" y="84" width="138" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="101">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="102"/>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="155" name="content" keyPath="content.availableHttpRateBackoffs" id="198"/>
+                            <binding destination="155" name="contentValues" keyPath="content.availableHttpRateBackoffs" previousBinding="198" id="8VJ-2c-1BN"/>
+                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipBackoffFactor" id="148"/>
+                            <binding destination="155" name="selectedObject" keyPath="content.httpRateBackoff" previousBinding="8VJ-2c-1BN" id="oQU-3r-RGD"/>
+                        </connections>
+                    </popUpButton>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="118">
+                        <rect key="frame" x="11" y="176" width="485" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="http_request_rates" id="119">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelBookmarkRequests" id="137"/>
+                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.tooltipBookmarkRequests" id="s84-B2-zf5"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="120">
+                        <rect key="frame" x="177" y="149" width="339" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="initial_interval" id="121">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelInitialInterval" id="141"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="124">
+                        <rect key="frame" x="177" y="90" width="339" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="backoff_factor" id="125">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelBackoffFactor" id="140"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="122">
+                        <rect key="frame" x="177" y="120" width="339" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="rest_interval" id="123">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelRestInterval" id="139"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="454" translatesAutoresizingMaskIntoConstraints="NO" id="Ku7-m9-152">
+                        <rect key="frame" x="11" y="60" width="458" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="__Download_from_the_cloud_during…" id="aJ7-pk-NU2">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="labelIxportDownloadPolicy" id="u8a-S4-dpo"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="LBy-iv-qQy">
+                        <rect key="frame" x="39" y="39" width="228" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Import__" id="65c-km-8AQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelImport" id="PM2-5l-131"/>
+                        </connections>
+                    </textField>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S1W-oW-hJ5">
+                        <rect key="frame" x="478" y="57" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tlf-Bo-Ok5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="helpIxportDownloadPolicy:" target="-2" id="CT7-6s-txP"/>
+                        </connections>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Vm-kT-Hce">
+                        <rect key="frame" x="271" y="7" width="155" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="qlx-Bb-sHN">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="krm-53-NP1">
+                                <items>
+                                    <menuItem title="Never" tag="1" id="RUo-la-zKm"/>
+                                    <menuItem title="Automatic" id="AL1-wo-UBn"/>
+                                    <menuItem title="Always" tag="2" id="Hgh-Om-eUJ"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="155" name="selectedTag" keyPath="selection.downloadPolicyForExport" id="CLG-HZ-vEq"/>
+                        </connections>
+                    </popUpButton>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="hEQ-FR-G64">
+                        <rect key="frame" x="271" y="39" width="228" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Export__" id="ecj-uj-VDo">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-3" name="value" keyPath="delegate.basis.labelExport" id="J75-JT-uwn"/>
+                        </connections>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2IO-Qv-9Is">
+                        <rect key="frame" x="39" y="7" width="155" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Always" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="Yft-Yk-aXR" id="cRD-EZ-i9b">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="OtherViews" id="dWc-mL-vS3">
+                                <items>
+                                    <menuItem title="Automatic" id="XFf-CF-CtE"/>
+                                    <menuItem title="Always" state="on" tag="2" id="Yft-Yk-aXR"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="155" name="selectedTag" keyPath="selection.downloadPolicyForImport" id="RuT-lH-jVA"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+            </view>
+            <font key="titleFont" metaFont="system"/>
+            <connections>
+                <binding destination="-2" name="title" keyPath="boxTitle" id="90"/>
+            </connections>
+            <point key="canvasLocation" x="-143" y="108"/>
+        </box>
+        <objectController id="155" userLabel="Client Controller">
+            <declaredKeys>
+                <mutableString>dontAskJustLogout</mutableString>
+                <mutableString>availableHttpRateInitials</mutableString>
+                <mutableString>availableHttpRateInitials.httpRateInitialDisplayName</mutableString>
+                <mutableString>httpRateInitial</mutableString>
+                <mutableString>availableHttpRateRests</mutableString>
+                <mutableString>availableHttpRateRests.httpRateRestDisplayName</mutableString>
+                <mutableString>httpRateRest</mutableString>
+                <mutableString>availableHttpRateBackoffs</mutableString>
+                <mutableString>availableHttpRateBackoffs.httpRateBackoffDisplayName</mutableString>
+                <mutableString>httpRateBackoff</mutableString>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="client" id="156"/>
+            </connections>
+        </objectController>
+    </objects>
+</document>

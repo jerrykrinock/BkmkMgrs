@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21179.7"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ClientInfoController">
+            <connections>
+                <outlet property="defaultParentPopup" destination="32" id="w2v-ZJ-gvF"/>
+                <outlet property="exportBox" destination="8" id="277"/>
+                <outlet property="exportSafeLimitPopup" destination="167" id="284"/>
+                <outlet property="importBox" destination="10" id="276"/>
+                <outlet property="tagFolderMapsButton" destination="310" id="321"/>
+                <outlet property="window" destination="76" id="93"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="76" customClass="SSYHintableWindow">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="88" y="200" width="560" height="479"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <view key="contentView" id="77">
+                <rect key="frame" x="0.0" y="0.0" width="560" height="479"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Im_port" translatesAutoresizingMaskIntoConstraints="NO" id="10" userLabel="Import">
+                        <rect key="frame" x="17" y="294" width="526" height="151"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView" id="6vL-vw-YMb">
+                            <rect key="frame" x="4" y="5" width="518" height="129"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                                    <rect key="frame" x="298" y="57" width="203" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Tags__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="22">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.hasFolders" id="8Jk-a5-tsT"/>
+                                        <binding destination="-2" name="value" keyPath="client.importer.fabricateTags" id="146"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelTags" id="163"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipFabricateTags" previousBinding="163" id="164"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="233">
+                                    <rect key="frame" x="298" y="37" width="203" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Folders__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="234">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.canEditTagsInAnyStyle" id="P2C-Dt-6QY"/>
+                                        <binding destination="-2" name="value" keyPath="client.importer.fabricateFoldersAny" id="248"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelFolders" id="239"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipFabFoldersAny" previousBinding="239" id="269"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="242">
+                                    <rect key="frame" x="317" y="17" width="191" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="One for each Tag__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="243">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.importer.fabricateFoldersAny" id="249"/>
+                                        <binding destination="-2" name="value" keyPath="client.importer.fabricateFoldersMany" id="250"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelOneForEachTag" id="251"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipFabFoldersMany" previousBinding="251" id="270"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                                    <rect key="frame" x="271" y="103" width="203" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Share New Items__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="30">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.importer.shareNewItems" id="150"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelShareNewItems" id="151"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipShareNewItems" previousBinding="151" id="152"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                                    <rect key="frame" x="270" y="77" width="239" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fabricate__" id="23">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelFabricateColon" id="178"/>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                                    <rect key="frame" x="10" y="104" width="241" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Merge__by__" id="27">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeBy" id="znk-JG-eHv"/>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                    <rect key="frame" x="10" y="59" width="231" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keep item from___" id="28">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeKeep" id="101"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipMergeKeepImport" id="103"/>
+                                    </connections>
+                                </textField>
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                                    <rect key="frame" x="37" y="17" width="250" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="250" height="18"/>
+                                    <size key="intercellSpacing" width="4" height="2"/>
+                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="24">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <cells>
+                                        <column>
+                                            <buttonCell type="radio" title="Client__" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="26">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="-2" name="title" keyPath="client.displayName" id="290"/>
+                                                </connections>
+                                            </buttonCell>
+                                            <buttonCell type="radio" title="Collection___" imagePosition="left" alignment="left" inset="2" id="25">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelCollection" id="8Kf-yK-yKZ"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </column>
+                                    </cells>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.importer.canChangeMergeBias" id="lvs-AP-iaC"/>
+                                        <binding destination="-2" name="selectedIndex" keyPath="client.importer.mergeBias" id="5c9-Kj-Pgo"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipMergeKeepImport" id="104"/>
+                                    </connections>
+                                </matrix>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-n0-euM">
+                                    <rect key="frame" x="34" y="76" width="185" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sZH-Id-VYx" id="5ge-iU-d7S">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="evz-1M-xwx">
+                                            <items>
+                                                <menuItem title="0" state="on" id="sZH-Id-VYx"/>
+                                                <menuItem title="1" id="xQd-Ic-BRb"/>
+                                                <menuItem title="∞" id="x9C-8l-HJu"/>
+                                            </items>
+                                        </menu>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <binding destination="-2" name="selectedObject" keyPath="client.importer.mergeBy" previousBinding="Kr3-iT-i5W" id="lYW-EB-vbs"/>
+                                        <binding destination="-3" name="content" keyPath="delegate.availableMergeBys" id="SdZ-Nr-L29"/>
+                                        <binding destination="-3" name="contentValues" keyPath="delegate.availableMergeBys.mergeByDisplay" previousBinding="SdZ-Nr-L29" id="Kr3-iT-i5W"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="n0D-lC-Whd"/>
+                                    </connections>
+                                </popUpButton>
+                                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-Ld-biR">
+                                    <rect key="frame" x="224" y="77" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9oG-uA-o1e">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="helpMergeBy:" target="-2" id="WdF-lY-P8a"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <font key="titleFont" metaFont="system"/>
+                        <connections>
+                            <binding destination="-3" name="title" keyPath="delegate.basis.labelImport" id="278"/>
+                        </connections>
+                    </box>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
+                        <rect key="frame" x="17" y="452" width="526" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="_Advanced Settings for Client XXXXX__" id="73">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="client.labelAdvancedSettings" id="162"/>
+                        </connections>
+                    </textField>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Ex_port" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Export">
+                        <rect key="frame" x="17" y="52" width="526" height="246"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" id="Ef9-rj-Uhd">
+                            <rect key="frame" x="4" y="5" width="518" height="224"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37">
+                                    <rect key="frame" x="298" y="171" width="203" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Tags__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="62">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.canEditTagsInAnyStyle" id="FQK-HX-5UO"/>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.fabricateTags" id="204"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelTags" id="165"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34">
+                                    <rect key="frame" x="272" y="195" width="237" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fabricate__" id="65">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelFabricateColon" id="179"/>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
+                                    <rect key="frame" x="13" y="139" width="259" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default Parent____" id="66">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="enabled" keyPath="delegate.basis.labelDefaultParent" id="206"/>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelDefaultParent" id="275"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipDefaultParentExport" id="299"/>
+                                    </connections>
+                                </textField>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46">
+                                    <rect key="frame" x="11" y="163" width="215" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Delete__Unmatched__Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="47">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.deleteUnmatched" id="302"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelDeleteUnmatchedItems" id="188"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipDeleteUnmatchedItemsEx" previousBinding="188" id="189"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39">
+                                    <rect key="frame" x="298" y="80" width="215" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Separators_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="60">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.skipSeparators" id="320">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="-2" name="enabled" keyPath="client.supportsSeparators" id="285"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelSeparators" id="327"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportSeparators" previousBinding="327" id="328"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="329">
+                                    <rect key="frame" x="298" y="61" width="215" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="File URLs______" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="330">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.skipFileUrls" id="347">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelFileUrls" id="350"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportFileUrls" previousBinding="350" id="362"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="335">
+                                    <rect key="frame" x="298" y="41" width="215" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="JavaScript Bookmarklets_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="336">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.skipJavaScript" id="348">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelJavaScriptBookmarklets" id="360"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportJavaScript" previousBinding="360" id="363"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="341">
+                                    <rect key="frame" x="298" y="21" width="215" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="RSS_Feeds_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="342">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.skipRssFeeds" id="349">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelRssFeeds" id="358"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportRssFeeds" previousBinding="358" id="364"/>
+                                    </connections>
+                                </button>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42">
+                                    <rect key="frame" x="10" y="92" width="200" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Merge__by__" id="55">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeBy" id="OPS-Um-ItQ"/>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41">
+                                    <rect key="frame" x="10" y="51" width="209" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keep item from___" id="56">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeKeepItemFrom" id="k6h-vo-4Lb"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipMergeKeepExport" id="105"/>
+                                    </connections>
+                                </textField>
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40">
+                                    <rect key="frame" x="37" y="10" width="251" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="cellSize" width="251" height="18"/>
+                                    <size key="intercellSpacing" width="4" height="2"/>
+                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="59">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <cells>
+                                        <column>
+                                            <buttonCell type="radio" title="Collection___" imagePosition="left" alignment="left" tag="1" inset="2" id="57">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelCollection" id="q4w-ih-sfP"/>
+                                                </connections>
+                                            </buttonCell>
+                                            <buttonCell type="radio" title="Client___" imagePosition="left" alignment="left" state="on" inset="2" id="58">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="-2" name="title" keyPath="client.displayName" id="292"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </column>
+                                    </cells>
+                                    <connections>
+                                        <binding destination="-2" name="selectedIndex" keyPath="client.exporter.mergeBias" id="gYW-tJ-mh3"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipMergeKeepExport" id="219"/>
+                                    </connections>
+                                </matrix>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32">
+                                    <rect key="frame" x="36" y="113" width="206" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="67">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="68">
+                                            <connections>
+                                                <outlet property="delegate" destination="-2" id="unr-cM-tqJ"/>
+                                            </connections>
+                                        </menu>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipDefaultParentExport" id="298"/>
+                                    </connections>
+                                </popUpButton>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="166">
+                                    <rect key="frame" x="94" y="193" width="151" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Safe Limit__" id="173">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelSafeLimit" id="180"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="186"/>
+                                    </connections>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="322">
+                                    <rect key="frame" x="272" y="105" width="151" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Export____" id="323">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelExport" id="326"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="325"/>
+                                    </connections>
+                                </textField>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="167">
+                                    <rect key="frame" x="10" y="188" width="82" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="172" id="168">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="169">
+                                            <items>
+                                                <menuItem title="0" state="on" id="172"/>
+                                                <menuItem title="1" id="171"/>
+                                                <menuItem title="∞" id="170"/>
+                                            </items>
+                                        </menu>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <binding destination="-2" name="selectedObject" keyPath="client.exporter.safeLimit" previousBinding="182" id="301"/>
+                                        <binding destination="-3" name="content" keyPath="delegate.availableLimits" id="181"/>
+                                        <binding destination="-3" name="contentValues" keyPath="delegate.availableLimits.limitsDisplay" previousBinding="181" id="182"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="184"/>
+                                    </connections>
+                                </popUpButton>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="254">
+                                    <rect key="frame" x="298" y="151" width="203" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="Folders__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="257">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.fabricateFoldersAny" id="266"/>
+                                        <binding destination="-2" name="enabled" keyPath="client.hasFolders" id="307"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelFolders" id="260"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipFabFoldersAny" previousBinding="260" id="271"/>
+                                    </connections>
+                                </button>
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="255">
+                                    <rect key="frame" x="317" y="131" width="191" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="check" title="One for each Tag__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="256">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="-2" name="enabled" keyPath="client.exporter.fabricateFoldersAny" id="274"/>
+                                        <binding destination="-2" name="value" keyPath="client.exporter.fabricateFoldersMany" id="273"/>
+                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelOneForEachTag" id="263"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipFabFoldersMany" previousBinding="263" id="272"/>
+                                    </connections>
+                                </button>
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3F-1P-1pj">
+                                    <rect key="frame" x="36" y="65" width="185" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D3K-48-xEr" id="ZFE-xg-3SN">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="menu"/>
+                                        <menu key="menu" title="OtherViews" id="Vtm-wi-jyR">
+                                            <items>
+                                                <menuItem title="0" state="on" id="D3K-48-xEr"/>
+                                                <menuItem title="1" id="khc-FQ-qwe"/>
+                                                <menuItem title="∞" id="QCI-oB-y06"/>
+                                            </items>
+                                        </menu>
+                                    </popUpButtonCell>
+                                    <connections>
+                                        <binding destination="-2" name="selectedObject" keyPath="client.exporter.mergeBy" previousBinding="41J-ty-LLM" id="PsR-fH-w9j"/>
+                                        <binding destination="-3" name="content" keyPath="delegate.availableMergeBys" id="AE3-q4-Eeg"/>
+                                        <binding destination="-3" name="contentValues" keyPath="delegate.availableMergeBys.mergeByDisplay" previousBinding="AE3-q4-Eeg" id="41J-ty-LLM"/>
+                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="EHt-RO-TDK"/>
+                                    </connections>
+                                </popUpButton>
+                                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiI-aZ-pan">
+                                    <rect key="frame" x="225" y="66" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sgh-Kh-BsC">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="helpMergeBy:" target="-2" id="dCT-4o-ZWd"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <font key="titleFont" metaFont="system"/>
+                        <connections>
+                            <binding destination="-3" name="title" keyPath="delegate.basis.labelExport" id="279"/>
+                        </connections>
+                    </box>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                        <rect key="frame" x="19" y="20" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="75">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="help:" target="-2" id="225"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                        <rect key="frame" x="416" y="13" width="130" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="__Done__" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="74">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="done:" target="-2" id="224"/>
+                            <binding destination="-3" name="title" keyPath="delegate.basis.labelDone" id="226"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="310">
+                        <rect key="frame" x="153" y="13" width="217" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="__Tag-To-Folder Maps___…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="311">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showTalderMapsSheet:" target="-2" id="317"/>
+                            <binding destination="-3" name="title" keyPath="delegate.basis.labelTalderMapsEllipsized" id="318"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="132" y="-26.5"/>
+        </window>
+        <userDefaultsController id="157"/>
+    </objects>
+</document>

@@ -1,0 +1,16 @@
+PROBLEM:
+
+fatal error: malformed or corrupted AST file:
+
+This occurs when building the Chromessenger, but only during Product > Analyze, not Build.
+
+
+SOLUTION:
+
+Window->Organizer->Projects select your project and press delete button next to Derived data.
+
+
+REFERENCE:
+
+http://w3facility.info/question/fatal-error-malformed-or-corrupted-ast-file-xcode/
+

@@ -1,0 +1,140 @@
+\hypertarget{protocol_startainer-p}{
+\section{$<$ Startainer $>$ Protocol Reference}
+\label{protocol_startainer-p}\index{Startainer-p@{Startainer-p}}
+}
+Formal protocol for an object which can contain Starks in a managed object context, and has a \hyperlink{interface_starker}{Starker} available.  
+
+
+{\tt \#import $<$Startainer.h$>$}
+
+Inheritance diagram for $<$ Startainer $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{protocol_startainer-p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(\hyperlink{interface_browfile}{Browfile} $\ast$) - \hyperlink{protocol_startainer-p_41fe6c60170721b6d349de2f092826ca}{browfile}
+\begin{CompactList}\small\item\em Gets the receiver's browfile. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{protocol_startainer-p_7c1bb5ed066348edc1a5e9f252a8a1e1}{canBeAtRootStark:}
+\begin{CompactList}\small\item\em Tests whether or not a given \hyperlink{class_stark}{Stark} can be inserted as a child of the root item in the receiver. \item\end{CompactList}\item 
+\hypertarget{protocol_startainer-p_59c43eee849be1c0dc38f9b1b008bb62}{
+(BOOL) - \hyperlink{protocol_startainer-p_59c43eee849be1c0dc38f9b1b008bb62}{canPublicize}}
+\label{protocol_startainer-p_59c43eee849be1c0dc38f9b1b008bb62}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver's ownerApp can selectively share some or all of the user's bookmarks with other users. \item\end{CompactList}\item 
+(BkmxHas) - \hyperlink{protocol_startainer-p_eaceb0f1b6bbf19128a9ed21c66ae531}{hasBar}
+\begin{CompactList}\small\item\em Returns whether or not the receiver's ownerApp has a permanent collection called a \char`\"{}Bookmarks Bar\char`\"{}, \char`\"{}Bookmarks Toolbar\char`\"{} or equivalent. \item\end{CompactList}\item 
+\hypertarget{protocol_startainer-p_77396523d06f16a7582a9d056151af72}{
+(BOOL) - \hyperlink{protocol_startainer-p_77396523d06f16a7582a9d056151af72}{hasMenu}}
+\label{protocol_startainer-p_77396523d06f16a7582a9d056151af72}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver's ownerApp has a permanent collection called a \char`\"{}Bookmarks Menu\char`\"{}. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{protocol_startainer-p_4bd99dcab48caf0096a7acccbd209c5f}{hasOhared}
+\begin{CompactList}\small\item\em Returns whether or not the receiver's ownerApp has a permanent collection designated for \char`\"{}Shared\char`\"{} bookmarks. \item\end{CompactList}\item 
+\hypertarget{protocol_startainer-p_d878de43e2f3c508069c7ddb386cf8ed}{
+(BOOL) - \hyperlink{protocol_startainer-p_d878de43e2f3c508069c7ddb386cf8ed}{hasUnfiled}}
+\label{protocol_startainer-p_d878de43e2f3c508069c7ddb386cf8ed}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver's ownerApp has a permanent collection designated for \char`\"{}Unfiled\char`\"{} bookmarks. \item\end{CompactList}\item 
+\hypertarget{protocol_startainer-p_6c1ca429238494091161ceaed5004a7c}{
+(BOOL) - \hyperlink{protocol_startainer-p_6c1ca429238494091161ceaed5004a7c}{isHierarchical}}
+\label{protocol_startainer-p_6c1ca429238494091161ceaed5004a7c}
+
+\begin{CompactList}\small\item\em Returns YES if the receiver's ownerApp stores items in a hierarchical outline and NO if it stores them in a flat list. \item\end{CompactList}\item 
+\hypertarget{protocol_startainer-p_c2e96c912cc19fa2176b27aa90245406}{
+(BOOL) - \textbf{rootSoftainersOk}}
+\label{protocol_startainer-p_c2e96c912cc19fa2176b27aa90245406}
+
+\item 
+\hypertarget{protocol_startainer-p_0b6fb7941ed37e21b676849620dfa197}{
+(\hyperlink{interface_starker}{Starker} $\ast$) - \hyperlink{protocol_startainer-p_0b6fb7941ed37e21b676849620dfa197}{starker}}
+\label{protocol_startainer-p_0b6fb7941ed37e21b676849620dfa197}
+
+\begin{CompactList}\small\item\em Returns the receiver's \hyperlink{interface_starker}{Starker} which must be configured to access the Starks in the \hyperlink{protocol_startainer-p}{Startainer}. \item\end{CompactList}\item 
+(\hyperlink{class_stark}{Stark} $\ast$) - \hyperlink{protocol_startainer-p_017eeb2accc256bc5d784468db860f29}{starkFromExternalPlistNode:}
+\begin{CompactList}\small\item\em Returns a new stark modelling a given item from the external store. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Formal protocol for an object which can contain Starks in a managed object context, and has a \hyperlink{interface_starker}{Starker} available. 
+
+Conforming classes will provide methods to
+
+Access the \hyperlink{interface_starker}{Starker} (of course!) Answer questions regarding placing additional Starks in the receiver Identify the class's \hyperlink{interface_browfile}{Browfile} (optional)
+
+This protocol was established to express the commonality between the internal representation of Starks in a \hyperlink{class_bookshelf}{Bookshelf} and their external representation in an \hyperlink{interface_extore}{Extore}. \hyperlink{class_bookshelf}{Bookshelf} and \hyperlink{interface_extore}{Extore} adopt this protocol. 
+
+\subsection{Member Function Documentation}
+\hypertarget{protocol_startainer-p_41fe6c60170721b6d349de2f092826ca}{
+\index{Startainer-p@{Startainer-p}!browfile@{browfile}}
+\index{browfile@{browfile}!Startainer-p@{Startainer-p}}
+\subsubsection[{browfile}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Browfile}$\ast$) browfile \hspace{0.3cm}{\tt  \mbox{[}optional\mbox{]}}}}
+\label{protocol_startainer-p_41fe6c60170721b6d349de2f092826ca}
+
+
+Gets the receiver's browfile. 
+
+This method is optional because \hyperlink{interface_extore}{Extore} subclasses will have a browfile but \hyperlink{class_bookshelf}{Bookshelf} objects will not. \begin{Desc}
+\item[Returns:]The receiver's browfile \end{Desc}
+\hypertarget{protocol_startainer-p_7c1bb5ed066348edc1a5e9f252a8a1e1}{
+\index{Startainer-p@{Startainer-p}!canBeAtRootStark:@{canBeAtRootStark:}}
+\index{canBeAtRootStark:@{canBeAtRootStark:}!Startainer-p@{Startainer-p}}
+\subsubsection[{canBeAtRootStark:}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) canBeAtRootStark: ({\bf Stark} $\ast$) {\em stark}}}
+\label{protocol_startainer-p_7c1bb5ed066348edc1a5e9f252a8a1e1}
+
+
+Tests whether or not a given \hyperlink{class_stark}{Stark} can be inserted as a child of the root item in the receiver. 
+
+Depends on the browser or service. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em stark}]The \hyperlink{class_stark}{Stark} to be tested \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if OK to insert, NO if not. \end{Desc}
+\hypertarget{protocol_startainer-p_eaceb0f1b6bbf19128a9ed21c66ae531}{
+\index{Startainer-p@{Startainer-p}!hasBar@{hasBar}}
+\index{hasBar@{hasBar}!Startainer-p@{Startainer-p}}
+\subsubsection[{hasBar}]{\setlength{\rightskip}{0pt plus 5cm}- (BkmxHas) hasBar }}
+\label{protocol_startainer-p_eaceb0f1b6bbf19128a9ed21c66ae531}
+
+
+Returns whether or not the receiver's ownerApp has a permanent collection called a \char`\"{}Bookmarks Bar\char`\"{}, \char`\"{}Bookmarks Toolbar\char`\"{} or equivalent. 
+
+\begin{Desc}
+\item[Returns:]Returns BkmxHasExplicit If it has an explicit Bookmarks Bar with children not repeated in other collections. Returns BkmxHasSmart if it creates a Bookmarks Bar dynamically by copying items in other collections which have some kind of Bookmarks Bar \char`\"{}flag\char`\"{}. Returns BkmxHasNot if receiver's ownerApp has no kind of Bookmarks Bar whatsoever are stored \end{Desc}
+\hypertarget{protocol_startainer-p_4bd99dcab48caf0096a7acccbd209c5f}{
+\index{Startainer-p@{Startainer-p}!hasOhared@{hasOhared}}
+\index{hasOhared@{hasOhared}!Startainer-p@{Startainer-p}}
+\subsubsection[{hasOhared}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) hasOhared }}
+\label{protocol_startainer-p_4bd99dcab48caf0096a7acccbd209c5f}
+
+
+Returns whether or not the receiver's ownerApp has a permanent collection designated for \char`\"{}Shared\char`\"{} bookmarks. 
+
+Do not confuse this with the capacity of a web service external store to set individual bookmarks \char`\"{}shared\char`\"{} or \char`\"{}private\char`\"{}. \hypertarget{protocol_startainer-p_017eeb2accc256bc5d784468db860f29}{
+\index{Startainer-p@{Startainer-p}!starkFromExternalPlistNode:@{starkFromExternalPlistNode:}}
+\index{starkFromExternalPlistNode:@{starkFromExternalPlistNode:}!Startainer-p@{Startainer-p}}
+\subsubsection[{starkFromExternalPlistNode:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Stark}$\ast$) starkFromExternalPlistNode: (NSDictionary $\ast$) {\em item}}}
+\label{protocol_startainer-p_017eeb2accc256bc5d784468db860f29}
+
+
+Returns a new stark modelling a given item from the external store. 
+
+Subclasses must override. Default implementation logs an Internal Error and returns nil.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em item}]The item from the external store to be modelled. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The new stark \end{Desc}
+
+
+The documentation for this protocol was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Startainer.h\end{CompactItemize}

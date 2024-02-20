@@ -1,0 +1,51 @@
+\hypertarget{interface_verify_since_controller}{
+\section{VerifySinceController Class Reference}
+\label{interface_verify_since_controller}\index{VerifySinceController@{VerifySinceController}}
+}
+Window controller subclass for the sheet which asks user which bookmarks -- since last when verified -- to verify.  
+
+
+{\tt \#import $<$VerifySinceController.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_verify_since_controller_f7a9c84632d9da71ddf336e8a24e097b}{
+(IBAction) - \textbf{cancel:}}
+\label{interface_verify_since_controller_f7a9c84632d9da71ddf336e8a24e097b}
+
+\item 
+\hypertarget{interface_verify_since_controller_726bb813d3adbe90ca6e130bc840c25d}{
+(IBAction) - \textbf{ok:}}
+\label{interface_verify_since_controller_726bb813d3adbe90ca6e130bc840c25d}
+
+\item 
+\hypertarget{interface_verify_since_controller_885d9a88561299407f4fe2b930d4f5bd}{
+(NSDate $\ast$) - \textbf{since}}
+\label{interface_verify_since_controller_885d9a88561299407f4fe2b930d4f5bd}
+
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_verify_since_controller_377b9c1314340288cea66e0df24f2f2e}{
+IBOutlet NSDatePicker $\ast$ \textbf{datePicker}}
+\label{interface_verify_since_controller_377b9c1314340288cea66e0df24f2f2e}
+
+\item 
+\hypertarget{interface_verify_since_controller_15f53b71ac7497c07d9c93076fe992f4}{
+NSInteger \textbf{selectedRadioTag}}
+\label{interface_verify_since_controller_15f53b71ac7497c07d9c93076fe992f4}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Window controller subclass for the sheet which asks user which bookmarks -- since last when verified -- to verify. 
+
+Note: In the nib containing the sheet/window, make sure that in the window attribute \char`\"{}Visible on Launch\char`\"{} is NOT checked. If it is, the window will display immediately as a freestanding window instead of the next line attaching it to hostWindow as a sheet. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/VerifySinceController.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/VerifySinceController.m\end{CompactItemize}

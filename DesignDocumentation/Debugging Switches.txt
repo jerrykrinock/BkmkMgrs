@@ -1,0 +1,67 @@
+# Debugging Switches
+
+## Compile-time Switches
+
+To change a switch setting, search for the indicated text in the (indicated file)
+
+### For debugging without delays
+
+Only 60 second interval for AGENT_BOOKMARKS_CHANGED_THROTTLE_INTERVAL   (Top of BkmxDoc.m)
+Only 60 second interval for AGENT_DROPBOX_THROTTLE_INTERVAL   (Top of BkmxDoc.m)
+Change bookmarksChangeDelay1 in Preferences/com.google.Chrome.helper.EH.plist
+Change bookmarksChangeDelay2 in Preferences/com.sheepsystems.BookMacster.plist
+
+### In Extore.h
+
+USE_LOCAL_CACHES
+IS_EXPORTABLE_STARK_WILL_ALWAYS_RETURN_YES
+DEBUG_WRITE_IMPORTED_URLS_TO_FILES
+DONT_USE_LOCAL_CACHES
+READING_POSTS_ALL_FROM_FILE (Diigo)
+LOCAL_FILE_PATH_TO_OVERRIDE_EXTOREWEBFLAT_DOWNLOAD (Diigo, Pinboard)
+POSTS_ALL_INTERVAL_TO_AVOID_BANNING
+
+### In Stark.h
+
+VERIFY_HASH_WITH_IMMEDIATE_LOOPBACK
+LOGGING_STARK_DEALLOCATION
+
+### Others
+
+Logging Messages to Console Too   (BkmxBasis.m)
+Using Distributed Notification of Message Logs   (BkmxBasis.m)
+Logging when ixporter observes changes (Ixporter.m)
+Logging ixporter messages to chaker (Ixporter.m)
+Logging Chaker inputs to Console (Chaker.m)
+Logging SSYOperationLinker Operations (a cracking risk)   (SSYOperation.m)
+Logging as each group is added to SSYOperationQueue  (SSYOperationQueue.m)
+No document will be set to open after launch   (NSUserDefaults+Bkmx.m)
+Skipping warning to Export before Close   (BkmxDoc.m)
+Logging registrations of browprietaryValue updates (Stange.m)
+Logging import hashes (Extore.h)
+Using TEST Licensing Scripts!  Do not ship! (LicensingParms-SheepSystems.m)
+
+## User Defaults and Secret Key Combinations
+
+/* This will cause files of SheepSafariHelper logs to be written to
+~/Desktop/Bkmx-SheepSafariHelper-Logs. */
+defaults write com.sheepsystems.SheepSafariHelper logVerbosity 5
+
+/* This will cause files of log messages produced by methods
+-[Ixporter merge…], -[Gulper gulp…] and their friends to be written to
+~/Desktop/Bkmx-Ixport-Traces.  It will also cause JSON text of bookmarks
+trees received from browser to be written to
+~/Desktop/Bkmx-Trees-From-Clients. */
+defaults write com.sheepsystems.BookMacster debugTraceVerbosity 5
+/* You can also get this behavior on a one-time basis by holding down the
+'alternate' and 'shift' keys as the ixport begins.  */
+
+/* This will cause files of hash components (change for each bookmark!) to be
+written to ~/Desktop/Bkmx-Hash-Components, and also additional summary
+entries in the Logs. */
+defaults write com.sheepsystems.BookMacster debugIxportHashes -bool YES
+
+/* To enable relaxedExtensionDetection, which ignores detected extension
+version numbers and always enables the "Install" buttons, hold down
+shift+option+command while opening the Manage Browser Extensions window.
+The behavior will persist until the app is quit. */

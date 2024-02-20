@@ -1,0 +1,51 @@
+On 2012 Aug 17, at 19:26, Jeff Johnson <publicposting@lapcatsoftware.com> wrote:
+
+> On Aug 17, 2012, at 9:00 PM, Jerry Krinock wrote:
+
+>> The loader is MainFramework; therefore @loader_path is /path/to/Contents/Frameworks.  The Install Name should therefore resolve by traversing "/.." to the parent directory, which is /path/to/Contents, then back down into Frameworks/Sparkle.framework, etc., resulting in /path/to/Contents/Frameworks/Sparkle.framework/Versions/A/Sparkle, as required.
+
+> No, the @loader_path includes MainFramework.framework/Versions/A/
+
+Thank you, Jeff.  I'd wondered about that, but couldn't understand why the Main Framework was able to link to Sparkle OK when run in Main Executable.  MainExecutable is linked to MainFramework, in the same way that Helper1 is linked to MainFramework.  MainFramework in turn links to Sparkle, via the same @loader_path in either case.  I thought they should either both work or both fail.  And then there's the fact that both work OK when "Run" in Xcode.
+
+Maybe Xcode is "smart" enough to use the "loose" build of Sparkle.framework in /path/to/Build/Products/Debug.  So, I devised a more rigorous, Xcode-proof experimental procedure:
+
+1.  In the Sparkle project, set "Installation Directory" to some value.
+2.  Build the main app.  (Sparkle is in the dependency chain.)
+3.  Remove the new "loose" build of Sparkle.framework in /path/to/Build/Products/Debug
+4.  Try to launch the main app, outside of Xcode.
+5.  Try to launch the helper, outside of Xcode.
+
+Using this procedure, the results, while still surprising, make sense:
+
+After building with Sparkle's Installation Directory set to…
+  @loader_path/../Frameworks
+Result:
+  Both main app and helper fail to launch.
+
+After building with Sparkle's Installation Directory set to…
+  @loader_path/../../../../Frameworks
+Result:
+  Both main app and helper launch OK.
+
+After building with Sparkle's Installation Directory set to…
+  @executable_path/../Frameworks
+Result:
+  Both main app and helper launch OK.
+
+After building with Sparkle's Installation Directory set to…
+  @loader_path/../Fooey/Baloney
+Result:
+  Both main app and helper fail to launch.
+
+So I conclude that you are correct about loader_path referring to the loading framework's executable. Because I am using Sparkle in a non-standard way, as a "secondary" framework, Sparkle's out-of-GitHub Installation Directory setting,
+
+  @loader_path/../Frameworks
+
+is no good.  I must change it to either
+
+  @loader_path/../../../../Frameworks
+
+or
+
+  @executable_path/../Frameworks

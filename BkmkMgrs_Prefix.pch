@@ -1,0 +1,114 @@
+//
+// Prefix header for all source files of the 'Framework (Bkmxwork)' target in the 'BookMacster' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <Cocoa/Cocoa.h>
+
+
+/* 
+ MAC_OS_X_VERSION_MIN_REQUIRED is the minimum system version
+ required to *run* the application.  Its value is equal to the
+ resolved value of the "macOS Deployment Target"
+ (MACOSX_DEPLOYMENT_TARGET) build setting.
+ 
+ MAC_OS_X_VERSION_MAX_ALLOWED is the maximum system version
+ in which any *API that you use* must be available.  Its value
+ is equal to the resolved value of the "Base SDK" (SDKROOT) build setting.
+ */
+
+#if 0
+/*
+ To verify SDK and operating requirements of your build, and
+ to test the operation of this file, copy the following paragraphs
+ of code to any source file, compile and examine the build
+ transcript…
+ */
+#if MAC_OS_X_VERSION_MAX_ALLOWED > 101000
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) later than macOS 10.10
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1090
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.9
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1080
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.8
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1070
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.8
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1060
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.7
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1050
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.6
+#elif MAC_OS_X_VERSION_MAX_ALLOWED > 1040
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) equal to macOS 10.5
+#else
+#warning   Compiling with Base SDK (SDKROOT, MAC_OS_X_VERSION_MAX_ALLOWED) earlier than macOS 10.5
+#endif
+
+#if MAC_OS_X_VERSION_MIN_REQUIRED > 101000
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) later than macOS 10.10
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1090
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.9
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1080
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.8
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1070
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.8
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1060
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.7
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1050
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.6
+#elif MAC_OS_X_VERSION_MIN_REQUIRED > 1040
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) equal to macOS 10.5
+#else
+#warning   Compiling with macOS Deployment Target (MACOSX_DEPLOYMENT_TARGET, MAC_OS_X_VERSION_MIN_REQUIRED) earlier than macOS 10.5
+#endif
+
+#endif // 0
+
+#if (MAC_OS_X_VERSION_MAX_ALLOWED < 1070)
+
+// Define protocols which are defined in Mac OS 10.7 and later SDK
+
+@protocol NSURLDownloadDelegate
+@end
+
+#endif
+
+#import <syslog.h>
+
+// Debugging code that I don't touch very often
+#import "SSYDebug.h"
+#import "SSYFoo.h"
+
+#endif // __OBJC__
+
+/* In the above, the #ifdef __OBJC__ is so that .c and .cpp files
+ will be able to compile their precompiled headers.
+ From xcode-users@lists.apple.com …
+ ------------------------------------------------
+ On 2009 Mar 14, at 19:46, Chris Espinosa wrote:
+ 
+ > The good target uses a prefix file that conditionally #includes AppKit.h only when building Objective-C code.
+ 
+ …
+ 
+ > The bad target unconditionally uses AppKit.h as its prefix file.
+ 
+ Yes, … the good target uses:
+ 
+ #ifdef __OBJC__
+ #import <Cocoa/Cocoa.h>
+ #endif
+ 
+ > It's a performance vs. flexibility tradeoff. Using AppKit.h as the prefix file increases the odds of reusing an already-built pch file.  But it limits you to .m or .mm files, or as you discovered, C files declared to be Objective-C.
+ ------------------------------------------------
+
+ Note that since SSYDebug.h and SSYFoo.h #import <Cocoa.h>, they need to be in there too.
+ */
+
+
+// Starting with BookMacster 1.7, BookMacster is forked into two
+// builds, the "regular" build, which has no particular label
+// and requires Mac OS 10.6 or later to run, and the build for
+// macOS 10.5.  The latter is built with special targets that
+// have "-OSX5" suffixed onto the relevant target names.
+#define BOOKMACSTER_OSX5_BUILD (MAC_OS_X_VERSION_MIN_REQUIRED == 1050)

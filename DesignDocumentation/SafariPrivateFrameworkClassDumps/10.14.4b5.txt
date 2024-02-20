@@ -1,0 +1,4 @@
+Safari Version 12.1 (14607.1.40.1.3)
+
+The class dump from 10.14.4b5 was the same as that from 10.14.4b6,
+except for different version numbers and version UUID.

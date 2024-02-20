@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CntntViewController">
+            <connections>
+                <outlet property="bookshigController" destination="7065" id="QhG-SA-3Id"/>
+                <outlet property="buttonShowTags" destination="N5C-NW-gIW" id="JgV-CC-lWn"/>
+                <outlet property="contentOutlineView" destination="501" id="sZC-cN-oDC"/>
+                <outlet property="filterAnnunciator" destination="5006" id="qTD-wh-MVM"/>
+                <outlet property="lineageImageView" destination="SST-a3-IQN" id="ML2-CG-rFa"/>
+                <outlet property="splitView" destination="6956" id="xlu-iU-wCN"/>
+                <outlet property="switchDisplayFolders" destination="uLM-tv-74z" id="8vy-sp-e15"/>
+                <outlet property="switchFilterLogic" destination="1067" id="jOs-4a-1xo"/>
+                <outlet property="tagCloud" destination="4999" id="Wnf-Za-LUA"/>
+                <outlet property="tagsPopover" destination="n1J-i7-nd7" id="Xkh-pm-9fq"/>
+                <outlet property="textLineage" destination="4990" id="qgP-uk-i1I"/>
+                <outlet property="view" destination="7015" id="Fx9-Ok-qw6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="7015">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="455"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <splitView fixedFrame="YES" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6956" customClass="SSYSplitView">
+                    <rect key="frame" x="0.0" y="3" width="620" height="448"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <customView fixedFrame="YES" id="6957">
+                            <rect key="frame" x="0.0" y="0.0" width="136" height="448"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4996" userLabel="Tag Cloud Scroll View">
+                                    <rect key="frame" x="0.0" y="0.0" width="136" height="416"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <clipView key="contentView" id="zFz-iL-eik">
+                                        <rect key="frame" x="1" y="1" width="123" height="414"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4999" userLabel="Tag Cloud" customClass="RPTokenControl">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="415"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <accessibility description="Tag Cloud" help="This is the tag cloud" identifier="tagCloud"/>
+                                                <connections>
+                                                    <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipTagCloud" id="5001"/>
+                                                </connections>
+                                            </customView>
+                                        </subviews>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4998">
+                                        <rect key="frame" x="-100" y="-100" width="561" height="15"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="4997">
+                                        <rect key="frame" x="124" y="1" width="11" height="414"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                </scrollView>
+                                <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1067" userLabel="- |✓|✓✓ Switch">
+                                    <rect key="frame" x="7" y="421" width="62" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <segmentedCell key="cell" enabled="NO" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="1137">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment width="18" selected="YES">
+                                                <nil key="label"/>
+                                            </segment>
+                                            <segment width="18" tag="1">
+                                                <nil key="label"/>
+                                            </segment>
+                                            <segment width="18">
+                                                <nil key="label"/>
+                                            </segment>
+                                        </segments>
+                                    </segmentedCell>
+                                    <accessibility description="Filter" help="Filters the Content View by the Tags selection"/>
+                                    <connections>
+                                        <action selector="search:" target="-2" id="1074"/>
+                                        <binding destination="-2" name="enabled" keyPath="switchFilterEnabled" id="Jkx-LC-o1t"/>
+                                        <binding destination="-2" name="toolTip" keyPath="switchFilterToolTip" id="2ml-W2-GUQ"/>
+                                    </connections>
+                                </segmentedControl>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4976" userLabel="Filter (label)" customClass="SSYNoVoiceOverTextField">
+                                    <rect key="frame" x="69" y="426" width="62" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" title="fffilter" id="4977">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelFilter" id="5009"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                        </customView>
+                        <customView fixedFrame="YES" id="6958">
+                            <rect key="frame" x="137" y="0.0" width="483" height="448"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="0.0" verticalLineScroll="19" verticalPageScroll="0.0" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="504" userLabel="Content Outline Scroll View">
+                                    <rect key="frame" x="0.0" y="0.0" width="483" height="416"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <clipView key="contentView" id="2Wl-Rz-3WJ">
+                                        <rect key="frame" x="1" y="1" width="481" height="414"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" emptySelection="NO" autosaveColumns="NO" headerView="1158" indentationPerLevel="16" outlineTableColumn="735" id="501" customClass="ContentOutlineView">
+                                                <rect key="frame" x="0.0" y="0.0" width="481" height="391"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <size key="intercellSpacing" width="3" height="2"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                <tableColumns>
+                                                    <tableColumn identifier="name" width="246" minWidth="16" maxWidth="1000" id="735" customClass="StarkTableColumn">
+                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="_nam0">
+                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </tableHeaderCell>
+                                                        <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="1152">
+                                                            <font key="font" size="13" name="Helvetica"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </textFieldCell>
+                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    </tableColumn>
+                                                    <tableColumn identifier="userDefinedC0" width="123" minWidth="4" maxWidth="1000" id="951" customClass="StarkTableColumn">
+                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ud0">
+                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                        </tableHeaderCell>
+                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="1153">
+                                                            <font key="font" size="13" name="Helvetica"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    </tableColumn>
+                                                    <tableColumn identifier="userDefinedC1" width="67" minWidth="10" maxWidth="3.4028230607370965e+38" id="2708" customClass="StarkTableColumn">
+                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ud1">
+                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                        </tableHeaderCell>
+                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="2709">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                                    </tableColumn>
+                                                </tableColumns>
+                                                <connections>
+                                                    <outlet property="delegate" destination="-2" id="H0H-8r-mBP"/>
+                                                </connections>
+                                            </outlineView>
+                                        </subviews>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="1157">
+                                        <rect key="frame" x="-100" y="-100" width="522" height="11"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="1156">
+                                        <rect key="frame" x="535" y="17" width="11" height="192"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <tableHeaderView key="headerView" id="1158" customClass="SSYTableHeaderView">
+                                        <rect key="frame" x="0.0" y="0.0" width="481" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </tableHeaderView>
+                                </scrollView>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4990" userLabel="Lineage Text Field" customClass="SSYVerticalCenteredTextField">
+                                    <rect key="frame" x="151" y="426" width="290" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" id="4991">
+                                        <font key="font" metaFont="smallSystem"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5003" userLabel="Filter Annunciator">
+                                    <rect key="frame" x="0.0" y="400" width="467" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="qPS-4v-rHG">
+                                        <rect key="frame" x="0.0" y="0.0" width="467" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="5006" userLabel="Filter Annunciator">
+                                                <rect key="frame" x="0.0" y="0.0" width="467" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <size key="minSize" width="467" height="14"/>
+                                                <size key="maxSize" width="945" height="10000000"/>
+                                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            </textView>
+                                        </subviews>
+                                    </clipView>
+                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="5005">
+                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5004">
+                                        <rect key="frame" x="-100" y="-100" width="15" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </scroller>
+                                </scrollView>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SST-a3-IQN">
+                                    <rect key="frame" x="129" y="423" width="24" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="9uf-6D-SIt"/>
+                                    <accessibility description="Lineage"/>
+                                </imageView>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-NW-gIW">
+                                    <rect key="frame" x="83" y="419" width="32" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n9M-0P-XhM">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                        <connections>
+                                            <action selector="showTagsPopover:" target="-2" id="q5U-5o-I6Y"/>
+                                        </connections>
+                                    </buttonCell>
+                                    <accessibility description="Shows tags of selected item(s)"/>
+                                    <connections>
+                                        <binding destination="AHw-Z1-Pkm" name="toolTip" keyPath="labelString" id="H3S-yy-4VT"/>
+                                    </connections>
+                                </button>
+                                <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-tv-74z" userLabel="Outline / Flat Control">
+                                    <rect key="frame" x="12" y="421" width="58" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="fYc-4I-IhC">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment image="NSPathTemplate" tag="1"/>
+                                            <segment image="NSListViewTemplate"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <accessibility description="Outline / Table Mode" help="Switches between Outline Mode and Table Mode"/>
+                                    <connections>
+                                        <binding destination="-2" name="selectedTag" keyPath="outlineMode" id="Uu8-Jh-kmX"/>
+                                    </connections>
+                                </segmentedControl>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" tag="49111" translatesAutoresizingMaskIntoConstraints="NO" id="Gyn-sh-bTN" customClass="SSYMenuButton">
+                                    <rect key="frame" x="424" y="420" width="42" height="23"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="roundTextured" title="Add…" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HC4-hb-8uE">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="label"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <outlet property="menuMaker" destination="-2" id="5xU-zv-wC8"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </customView>
+                    </subviews>
+                    <holdingPriorities>
+                        <real value="250"/>
+                        <real value="250"/>
+                    </holdingPriorities>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="MnT-CP-joT"/>
+                    </connections>
+                </splitView>
+            </subviews>
+            <point key="canvasLocation" x="140" y="153.5"/>
+        </view>
+        <objectController mode="entity" entityName="Bookshig_entity" automaticallyPreparesContent="YES" id="7065" userLabel="Bookshig Controller">
+            <declaredKeys>
+                <string>employees</string>
+                <string>name</string>
+                <string>budget</string>
+                <mutableString>shig.tagDelimiter</mutableString>
+                <string>tagDelimiter</string>
+                <mutableString>shig.visitor</mutableString>
+                <string>visitor</string>
+                <mutableString>shig.ignoreDisparateDupes</mutableString>
+                <string>ignoreDisparateDupes</string>
+                <mutableString>shig.notes</mutableString>
+                <string>notes</string>
+                <mutableString>shig.rootSortable</mutableString>
+                <string>rootSortable</string>
+                <mutableString>shig.defaultSortable</mutableString>
+                <string>defaultSortable</string>
+                <mutableString>shig.sortFoldersAt</mutableString>
+                <string>sortFoldersAt</string>
+                <mutableString>shig.sortBy</mutableString>
+                <string>sortBy</string>
+                <mutableString>shig.filterIgnoredPrefixes</mutableString>
+                <string>filterIgnoredPrefixes</string>
+                <mutableString>shig.rootSoftainersOk</mutableString>
+                <string>rootSoftainersOk</string>
+                <string>rootLeavesOk</string>
+                <mutableString>shig.rootNotchesOk</mutableString>
+                <string>rootNotchesOk</string>
+                <mutableString>shig.canFilterIgnoredPrefixes</mutableString>
+                <string>canFilterIgnoredPrefixes</string>
+                <string>visitorChoice</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="managedObjectContext" keyPath="windowController.document.managedObjectContext" id="QVC-r2-MgF"/>
+            </connections>
+        </objectController>
+        <viewController title="Tagzz" nibName="TagsPopover" id="AHw-Z1-Pkm" userLabel="Popover View Controller" customClass="TagsPopoverViewController">
+            <connections>
+                <outlet property="contentOutlineView" destination="501" id="oUb-hX-4z4"/>
+                <outlet property="contentViewController" destination="-2" id="aCI-bf-b3p"/>
+                <outlet property="popover" destination="n1J-i7-nd7" id="9Dm-YN-E0b"/>
+            </connections>
+        </viewController>
+        <popover behavior="t" id="n1J-i7-nd7">
+            <connections>
+                <outlet property="contentViewController" destination="AHw-Z1-Pkm" id="93a-0f-HDq"/>
+            </connections>
+        </popover>
+    </objects>
+    <resources>
+        <image name="NSListViewTemplate" width="21" height="15"/>
+        <image name="NSPathTemplate" width="25" height="15"/>
+    </resources>
+</document>

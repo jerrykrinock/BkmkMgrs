@@ -1,0 +1,162 @@
+\hypertarget{interface_browfiler}{
+\section{Browfiler Class Reference}
+\label{interface_browfiler}\index{Browfiler@{Browfiler}}
+}
+A class for fetching Browfiles from and inserting Browfiles into the application-wide in-memory managed object context.~ To avoid duplication, a \hyperlink{interface_browfile}{Browfile} must be obtained using one of these class methods.  
+
+
+{\tt \#import $<$Browfiler.h$>$}
+
+Inheritance diagram for Browfiler::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_browfiler}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(NSArray $\ast$) + \hyperlink{interface_browfiler_ab08f66c29f5093aa6bbb47cd6a37d72}{allBrowfilesForLocalAppsThisUser}
+\begin{CompactList}\small\item\em Returns an NSArray of all browfiles whose external sources are locally-running (i.e. \char`\"{}desktop\char`\"{} or \char`\"{}laptop\char`\"{}) applications whose installed version numbers are supported by this application, and owning bookmarks available in the current Mac user's account. \item\end{CompactList}\item 
+(NSArray $\ast$) + \hyperlink{interface_browfiler_11b83f6a0f39feda72bf2d65f274d63b}{allBrowfilesForWebAppsThisUser}
+\begin{CompactList}\small\item\em Returns an NSArray of all browfiles whose external sources are web applications with a keychain item available in the Keychain of the current Mac user's account, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. \item\end{CompactList}\item 
+(NSArray $\ast$) + \hyperlink{interface_browfiler_10e8c8587c44de55ca23266cef3b1ba2}{allBrowfilesForWebAppThisUserExformat:}
+\begin{CompactList}\small\item\em Returns an NSArray of all browfiles matching a given extore, which must be a web application, and for which a keychain item is available in the current Mac user's Keychain (in other words, one for each account in a given web application), inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. \item\end{CompactList}\item 
+(NSArray $\ast$) + \hyperlink{interface_browfiler_24c28cd93d779361eeabff02cba25265}{allBrowfilesWithSqliteStores}
+\begin{CompactList}\small\item\em Returns an array of all browfiles that have local sqlite stores in the SSYMOCManager, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. \item\end{CompactList}\item 
+(NSArray $\ast$) + \hyperlink{interface_browfiler_f7f1db735d9ed7538b4424a53f39f413}{availableBrowfiles}
+\begin{CompactList}\small\item\em Returns an array of all available browfiles of extoreMedia BkMxExtoreMediaThisUser for the current Mac user, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. \item\end{CompactList}\item 
+(\hyperlink{interface_browfile}{Browfile} $\ast$) + \hyperlink{interface_browfiler_915708d5176df7677cad6d364b98f73c}{browfileThisUserWithExformat:profileName:managedObjectContext:}
+\begin{CompactList}\small\item\em Fetches, or optionally creates if none found, a browfile with extoreMedia type BkmxExtoreMediaThisUser from the application's shared in-memory managed object context, with a given exformat and profileName. \item\end{CompactList}\item 
+(\hyperlink{interface_browfile}{Browfile} $\ast$) + \hyperlink{interface_browfiler_9a2c30ffaefd8756108588de35db3783}{browfileWithBrowid:managedObjectContext:}
+\begin{CompactList}\small\item\em Fetches, or optionally creates if none found, a browfile from the application's shared in-memory managed object context, with given parts. \item\end{CompactList}\item 
+(\hyperlink{interface_browfile}{Browfile} $\ast$) + \hyperlink{interface_browfiler_b6296ec8f48c65fd8667366194615b42}{browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:}
+\begin{CompactList}\small\item\em Fetches, or optionally creates if none found, a browfile from the application's shared in-memory managed object context, which can probably ixternalize given data from a give file type at a given path. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class for fetching Browfiles from and inserting Browfiles into the application-wide in-memory managed object context.~ To avoid duplication, a \hyperlink{interface_browfile}{Browfile} must be obtained using one of these class methods. 
+
+The only primary reason why Browfiles are managed objects is so that they can be copied and stored in the object graph of the \hyperlink{class_bookshelf}{Bookshelf} documents.
+
+I suppose that, since Browfiles could be re-used, they \char`\"{}central\char`\"{} store of Browfiles could be in application's shared sqlite moc instead of the in-memory moc.~ But browfiles don't take too much effort to create, and since they can change, I decided to fetch and re-use them while the app is running (see +browfileWithParts:), but throw them away when the app quits. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_browfiler_ab08f66c29f5093aa6bbb47cd6a37d72}{
+\index{Browfiler@{Browfiler}!allBrowfilesForLocalAppsThisUser@{allBrowfilesForLocalAppsThisUser}}
+\index{allBrowfilesForLocalAppsThisUser@{allBrowfilesForLocalAppsThisUser}!Browfiler@{Browfiler}}
+\subsubsection[{allBrowfilesForLocalAppsThisUser}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) allBrowfilesForLocalAppsThisUser }}
+\label{interface_browfiler_ab08f66c29f5093aa6bbb47cd6a37d72}
+
+
+Returns an NSArray of all browfiles whose external sources are locally-running (i.e. \char`\"{}desktop\char`\"{} or \char`\"{}laptop\char`\"{}) applications whose installed version numbers are supported by this application, and owning bookmarks available in the current Mac user's account. 
+
+\begin{Desc}
+\item[Returns:]The array of browfiles, or an empty array if no qualified browfiles were found. \end{Desc}
+\hypertarget{interface_browfiler_11b83f6a0f39feda72bf2d65f274d63b}{
+\index{Browfiler@{Browfiler}!allBrowfilesForWebAppsThisUser@{allBrowfilesForWebAppsThisUser}}
+\index{allBrowfilesForWebAppsThisUser@{allBrowfilesForWebAppsThisUser}!Browfiler@{Browfiler}}
+\subsubsection[{allBrowfilesForWebAppsThisUser}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) allBrowfilesForWebAppsThisUser }}
+\label{interface_browfiler_11b83f6a0f39feda72bf2d65f274d63b}
+
+
+Returns an NSArray of all browfiles whose external sources are web applications with a keychain item available in the Keychain of the current Mac user's account, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. 
+
+Within each web application, the profile names are sorted alphabetically in the results. \begin{Desc}
+\item[Returns:]The array of browfiles, or an empty array if no qualified browfiles were found. \end{Desc}
+\hypertarget{interface_browfiler_10e8c8587c44de55ca23266cef3b1ba2}{
+\index{Browfiler@{Browfiler}!allBrowfilesForWebAppThisUserExformat:@{allBrowfilesForWebAppThisUserExformat:}}
+\index{allBrowfilesForWebAppThisUserExformat:@{allBrowfilesForWebAppThisUserExformat:}!Browfiler@{Browfiler}}
+\subsubsection[{allBrowfilesForWebAppThisUserExformat:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) allBrowfilesForWebAppThisUserExformat: (NSString$\ast$) {\em exformat}}}
+\label{interface_browfiler_10e8c8587c44de55ca23266cef3b1ba2}
+
+
+Returns an NSArray of all browfiles matching a given extore, which must be a web application, and for which a keychain item is available in the current Mac user's Keychain (in other words, one for each account in a given web application), inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. 
+
+The results are sorted alphabetically. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em exformat}]appended, or nil if log information is not desired \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The array of browfiles, or an empty array if no qualified browfiles were found. \end{Desc}
+\hypertarget{interface_browfiler_24c28cd93d779361eeabff02cba25265}{
+\index{Browfiler@{Browfiler}!allBrowfilesWithSqliteStores@{allBrowfilesWithSqliteStores}}
+\index{allBrowfilesWithSqliteStores@{allBrowfilesWithSqliteStores}!Browfiler@{Browfiler}}
+\subsubsection[{allBrowfilesWithSqliteStores}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) allBrowfilesWithSqliteStores }}
+\label{interface_browfiler_24c28cd93d779361eeabff02cba25265}
+
+
+Returns an array of all browfiles that have local sqlite stores in the SSYMOCManager, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. 
+
+\begin{Desc}
+\item[Returns:]The array of browfiles, or an empty array if no qualified browfiles were found. \end{Desc}
+\hypertarget{interface_browfiler_f7f1db735d9ed7538b4424a53f39f413}{
+\index{Browfiler@{Browfiler}!availableBrowfiles@{availableBrowfiles}}
+\index{availableBrowfiles@{availableBrowfiles}!Browfiler@{Browfiler}}
+\subsubsection[{availableBrowfiles}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) availableBrowfiles }}
+\label{interface_browfiler_f7f1db735d9ed7538b4424a53f39f413}
+
+
+Returns an array of all available browfiles of extoreMedia BkMxExtoreMediaThisUser for the current Mac user, inserted into the app-wide shared in-memory managed object context provided by SSYMOCManager. 
+
+The array consists of the results from +\mbox{[}self allBrowfilesForLocalAppsThisUser\mbox{]} followed by results from +\mbox{[}self allBrowfilesForWebAppsThisUser\mbox{]}, and for each of the latter, an item with a nil profile which could be used to create a new profile.
+
+The result can be used to populate the popup menus of external sources and destinations.
+
+\begin{Desc}
+\item[Returns:]The array of browfiles, or an empty array if no qualified browfiles were found. \end{Desc}
+\hypertarget{interface_browfiler_915708d5176df7677cad6d364b98f73c}{
+\index{Browfiler@{Browfiler}!browfileThisUserWithExformat:profileName:managedObjectContext:@{browfileThisUserWithExformat:profileName:managedObjectContext:}}
+\index{browfileThisUserWithExformat:profileName:managedObjectContext:@{browfileThisUserWithExformat:profileName:managedObjectContext:}!Browfiler@{Browfiler}}
+\subsubsection[{browfileThisUserWithExformat:profileName:managedObjectContext:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Browfile} $\ast$) browfileThisUserWithExformat: (NSString$\ast$) {\em exformat}\/ profileName: (NSString$\ast$) {\em profileName}\/ managedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext}}}
+\label{interface_browfiler_915708d5176df7677cad6d364b98f73c}
+
+
+Fetches, or optionally creates if none found, a browfile with extoreMedia type BkmxExtoreMediaThisUser from the application's shared in-memory managed object context, with a given exformat and profileName. 
+
+The fetch is done first. If a browfile matching the given parameters is not found in the receiver's managed object context, creates and inserts a new browfile and sets its attributes to match the given parameters. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em exformat}]\item[{\em profileName}]The target profileName, or nil for the default/no profile. \item[{\em managedObjectContext}]The managed object context from which the browfile will be fetched or into which it will be inserted, or nil to indicate the app-wide shared in-memory managed object context provided by SSYMOCManager. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The fetched or newly-inserted browfile \end{Desc}
+\hypertarget{interface_browfiler_9a2c30ffaefd8756108588de35db3783}{
+\index{Browfiler@{Browfiler}!browfileWithBrowid:managedObjectContext:@{browfileWithBrowid:managedObjectContext:}}
+\index{browfileWithBrowid:managedObjectContext:@{browfileWithBrowid:managedObjectContext:}!Browfiler@{Browfiler}}
+\subsubsection[{browfileWithBrowid:managedObjectContext:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Browfile} $\ast$) browfileWithBrowid: ({\bf Browid}$\ast$) {\em browid}\/ managedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext}}}
+\label{interface_browfiler_9a2c30ffaefd8756108588de35db3783}
+
+
+Fetches, or optionally creates if none found, a browfile from the application's shared in-memory managed object context, with given parts. 
+
+The fetch is done first. If a browfile matching the given parameters is not found in the receiver's managed object context, creates and inserts a new browfile and sets its attributes to match the given parameters. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em browid}]The browid identifying the browfile \item[{\em managedObjectContext}]The managed object context from which the browfile will be fetched or into which it will be inserted, or nil to indicate the app-wide shared in-memory managed object context provided by SSYMOCManager. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The fetched or newly-inserted browfile \end{Desc}
+\hypertarget{interface_browfiler_b6296ec8f48c65fd8667366194615b42}{
+\index{Browfiler@{Browfiler}!browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:@{browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:}}
+\index{browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:@{browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:}!Browfiler@{Browfiler}}
+\subsubsection[{browfileWithLooseFileData:type:path:managedObjectContext:error\_\-p:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Browfile} $\ast$) browfileWithLooseFileData: (NSData$\ast$) {\em data}\/ type: (NSString$\ast$) {\em type}\/ path: (NSString$\ast$) {\em path}\/ managedObjectContext: (NSManagedObjectContext$\ast$) {\em managedObjectContext}\/ error_p: (NSError$\ast$$\ast$) {\em error\_\-p}}}
+\label{interface_browfiler_b6296ec8f48c65fd8667366194615b42}
+
+
+Fetches, or optionally creates if none found, a browfile from the application's shared in-memory managed object context, which can probably ixternalize given data from a give file type at a given path. 
+
+The fetch is done first. If a browfile matching the given parameters is not found in the receiver's managed object context, creates and inserts a new browfile and sets its attributes to match the given parameters. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]The data from the file proposed to be internalized \item[{\em type}]The 'type' of the file proposed to be internalized. In this context, 'type' is, for example, one of the document types listed in Target $>$ Info $>$ Properties $>$ Document Types $>$ Name \item[{\em path}]The path of the file proposed to be internalized \item[{\em managedObjectContext}]The managed object context from which the browfile will be fetched or into which it will be inserted, or nil to indicate the app-wide shared in-memory managed object context provided by SSYMOCManager. \item[{\em error\_\-p}]If a pointer to an NSError$\ast$ is provided, and a File Manager error occurs, the pointer will point to the File Manager's NSError$\ast$ upon return. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The fetched or newly-inserted browfile \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browfiler.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browfiler.m\end{CompactItemize}

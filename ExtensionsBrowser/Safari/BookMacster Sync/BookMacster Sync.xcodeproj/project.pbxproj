@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		481125AA24A2E26C0063458E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481125A924A2E26C0063458E /* AppDelegate.swift */; };
+		481125AD24A2E26C0063458E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481125AB24A2E26C0063458E /* Main.storyboard */; };
+		481125AF24A2E26C0063458E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481125AE24A2E26C0063458E /* ViewController.swift */; };
+		481125B124A2E26E0063458E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481125B024A2E26E0063458E /* Assets.xcassets */; };
+		481125B824A2E26E0063458E /* BookMacster Sync Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 481125B724A2E26E0063458E /* BookMacster Sync Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		481125BD24A2E26E0063458E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481125BC24A2E26E0063458E /* Cocoa.framework */; };
+		481125C024A2E26E0063458E /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481125BF24A2E26E0063458E /* SafariWebExtensionHandler.swift */; };
+		481125D124A2E26F0063458E /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 481125CD24A2E26F0063458E /* script.js */; };
+		481125D224A2E26F0063458E /* BookMacsterSync-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 481125CE24A2E26F0063458E /* BookMacsterSync-128.png */; };
+		481125D324A2E26F0063458E /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 481125CF24A2E26F0063458E /* manifest.json */; };
+		481125D424A2E26F0063458E /* background.html in Resources */ = {isa = PBXBuildFile; fileRef = 481125D024A2E26F0063458E /* background.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		481125B924A2E26E0063458E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4811259D24A2E26C0063458E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 481125B624A2E26E0063458E;
+			remoteInfo = "BookMacster Sync Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		481125C824A2E26E0063458E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				481125B824A2E26E0063458E /* BookMacster Sync Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		481125A524A2E26C0063458E /* BookMacster Sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BookMacster Sync.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481125A824A2E26C0063458E /* BookMacster_Sync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookMacster_Sync.entitlements; sourceTree = "<group>"; };
+		481125A924A2E26C0063458E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		481125AC24A2E26C0063458E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		481125AE24A2E26C0063458E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		481125B024A2E26E0063458E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		481125B224A2E26E0063458E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481125B724A2E26E0063458E /* BookMacster Sync Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BookMacster Sync Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		481125BC24A2E26E0063458E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		481125BF24A2E26E0063458E /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		481125C124A2E26E0063458E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481125C224A2E26E0063458E /* BookMacster_Sync_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookMacster_Sync_Extension.entitlements; sourceTree = "<group>"; };
+		481125CD24A2E26F0063458E /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = script.js; path = ../../Documents/Programming/Projects/BkmkMgrs/ExtensionsBrowser/W3CBE/BookMacsterSync/BrowserCommon/script.js; sourceTree = "<group>"; };
+		481125CE24A2E26F0063458E /* BookMacsterSync-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BookMacsterSync-128.png"; path = "../../Documents/Programming/Projects/BkmkMgrs/ExtensionsBrowser/W3CBE/BookMacsterSync/BrowserCommon/BookMacsterSync-128.png"; sourceTree = "<group>"; };
+		481125CF24A2E26F0063458E /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Documents/Programming/Projects/BkmkMgrs/ExtensionsBrowser/W3CBE/BookMacsterSync/BrowserCommon/manifest.json; sourceTree = "<group>"; };
+		481125D024A2E26F0063458E /* background.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = background.html; path = ../../Documents/Programming/Projects/BkmkMgrs/ExtensionsBrowser/W3CBE/BookMacsterSync/BrowserCommon/background.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		481125A224A2E26C0063458E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481125B424A2E26E0063458E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481125BD24A2E26E0063458E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4811259C24A2E26C0063458E = {
+			isa = PBXGroup;
+			children = (
+				481125A724A2E26C0063458E /* BookMacster Sync */,
+				481125BE24A2E26E0063458E /* BookMacster Sync Extension */,
+				481125BB24A2E26E0063458E /* Frameworks */,
+				481125A624A2E26C0063458E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		481125A624A2E26C0063458E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				481125A524A2E26C0063458E /* BookMacster Sync.app */,
+				481125B724A2E26E0063458E /* BookMacster Sync Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		481125A724A2E26C0063458E /* BookMacster Sync */ = {
+			isa = PBXGroup;
+			children = (
+				481125A824A2E26C0063458E /* BookMacster_Sync.entitlements */,
+				481125A924A2E26C0063458E /* AppDelegate.swift */,
+				481125AB24A2E26C0063458E /* Main.storyboard */,
+				481125AE24A2E26C0063458E /* ViewController.swift */,
+				481125B024A2E26E0063458E /* Assets.xcassets */,
+				481125B224A2E26E0063458E /* Info.plist */,
+			);
+			path = "BookMacster Sync";
+			sourceTree = "<group>";
+		};
+		481125BB24A2E26E0063458E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				481125BC24A2E26E0063458E /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		481125BE24A2E26E0063458E /* BookMacster Sync Extension */ = {
+			isa = PBXGroup;
+			children = (
+				481125CC24A2E26F0063458E /* Resources */,
+				481125BF24A2E26E0063458E /* SafariWebExtensionHandler.swift */,
+				481125C124A2E26E0063458E /* Info.plist */,
+				481125C224A2E26E0063458E /* BookMacster_Sync_Extension.entitlements */,
+			);
+			path = "BookMacster Sync Extension";
+			sourceTree = "<group>";
+		};
+		481125CC24A2E26F0063458E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				481125CD24A2E26F0063458E /* script.js */,
+				481125CE24A2E26F0063458E /* BookMacsterSync-128.png */,
+				481125CF24A2E26F0063458E /* manifest.json */,
+				481125D024A2E26F0063458E /* background.html */,
+			);
+			name = Resources;
+			path = "BookMacster Sync Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		481125A424A2E26C0063458E /* BookMacster Sync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481125C924A2E26E0063458E /* Build configuration list for PBXNativeTarget "BookMacster Sync" */;
+			buildPhases = (
+				481125A124A2E26C0063458E /* Sources */,
+				481125A224A2E26C0063458E /* Frameworks */,
+				481125A324A2E26C0063458E /* Resources */,
+				481125C824A2E26E0063458E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				481125BA24A2E26E0063458E /* PBXTargetDependency */,
+			);
+			name = "BookMacster Sync";
+			productName = "BookMacster Sync";
+			productReference = 481125A524A2E26C0063458E /* BookMacster Sync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		481125B624A2E26E0063458E /* BookMacster Sync Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481125C524A2E26E0063458E /* Build configuration list for PBXNativeTarget "BookMacster Sync Extension" */;
+			buildPhases = (
+				481125B324A2E26E0063458E /* Sources */,
+				481125B424A2E26E0063458E /* Frameworks */,
+				481125B524A2E26E0063458E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BookMacster Sync Extension";
+			productName = "BookMacster Sync Extension";
+			productReference = 481125B724A2E26E0063458E /* BookMacster Sync Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4811259D24A2E26C0063458E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					481125A424A2E26C0063458E = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					481125B624A2E26E0063458E = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 481125A024A2E26C0063458E /* Build configuration list for PBXProject "BookMacster Sync" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4811259C24A2E26C0063458E;
+			productRefGroup = 481125A624A2E26C0063458E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				481125A424A2E26C0063458E /* BookMacster Sync */,
+				481125B624A2E26E0063458E /* BookMacster Sync Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		481125A324A2E26C0063458E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481125B124A2E26E0063458E /* Assets.xcassets in Resources */,
+				481125AD24A2E26C0063458E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481125B524A2E26E0063458E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481125D124A2E26F0063458E /* script.js in Resources */,
+				481125D324A2E26F0063458E /* manifest.json in Resources */,
+				481125D424A2E26F0063458E /* background.html in Resources */,
+				481125D224A2E26F0063458E /* BookMacsterSync-128.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		481125A124A2E26C0063458E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481125AF24A2E26C0063458E /* ViewController.swift in Sources */,
+				481125AA24A2E26C0063458E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481125B324A2E26E0063458E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481125C024A2E26E0063458E /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		481125BA24A2E26E0063458E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 481125B624A2E26E0063458E /* BookMacster Sync Extension */;
+			targetProxy = 481125B924A2E26E0063458E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		481125AB24A2E26C0063458E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				481125AC24A2E26C0063458E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		481125C324A2E26E0063458E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		481125C424A2E26E0063458E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		481125C624A2E26E0063458E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BookMacster Sync Extension/BookMacster_Sync_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BookMacster Sync Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.BookMacster-Sync-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		481125C724A2E26E0063458E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BookMacster Sync Extension/BookMacster_Sync_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BookMacster Sync Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.BookMacster-Sync-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		481125CA24A2E26E0063458E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BookMacster Sync/BookMacster_Sync.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "BookMacster Sync/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.BookMacster-Sync";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		481125CB24A2E26E0063458E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BookMacster Sync/BookMacster_Sync.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "BookMacster Sync/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.BookMacster-Sync";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		481125A024A2E26C0063458E /* Build configuration list for PBXProject "BookMacster Sync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481125C324A2E26E0063458E /* Debug */,
+				481125C424A2E26E0063458E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481125C524A2E26E0063458E /* Build configuration list for PBXNativeTarget "BookMacster Sync Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481125C624A2E26E0063458E /* Debug */,
+				481125C724A2E26E0063458E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481125C924A2E26E0063458E /* Build configuration list for PBXNativeTarget "BookMacster Sync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481125CA24A2E26E0063458E /* Debug */,
+				481125CB24A2E26E0063458E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4811259D24A2E26C0063458E /* Project object */;
+}

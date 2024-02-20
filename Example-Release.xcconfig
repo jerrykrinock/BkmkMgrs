@@ -1,0 +1,21 @@
+#include "ConfigCommon.xcconfig"
+#include "ConfigCommonRelease.xcconfig"
+#include "ConfigFramework.xcconfig"
+
+STRIP_INSTALLED_PRODUCT = YES
+DEPLOYMENT_POSTPROCESSING = YES
+STRIPFLAGS = -u -r
+STRIP_STYLE = non-global
+SEPARATE_STRIP = YES
+ARCHS = x86_64 i386
+
+// According to this guy…
+// https://github.com/krevis/MIDIApps/blob/master/Configurations/Snoize-Project-Global.xcconfig
+// The following is equivalent to "Latest OS X".  Note that it will be 10.6 when building in Xcode 3.
+SDKROOT = macosx
+
+// Minimum machine we'll attempt to run on is 10.5
+MACOSX_DEPLOYMENT_TARGET = 10.6
+
+// Here is how to set a per-architecture deployment target
+// MACOSX_DEPLOYMENT_TARGET[arch=x86_64] = 10.6

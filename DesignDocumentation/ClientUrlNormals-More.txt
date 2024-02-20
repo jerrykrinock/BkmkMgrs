@@ -1,0 +1,90 @@
+This document regards percent escaping of the 'path' component of a URL
+
+
+TEST 1.  Given Percent Escape Sequences 
+
+Raw URL pasted into address bar:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2D%2E%2F%30%31%32%39%3A%3B%3C%3D%3E%3F%40%41%5A%5B%5C%5D%5E%5F%60%61%7A%7B%7C%7D%7E%7F%E2%8C%98%E2%87%A7%C2%B5
+
+The following shows what happens in the browser, after you hit return, or create a bookmark.  Spaces have been added where characters were decoded, so they all line up…
+
+Firefox 22.0:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2D%2E%2F%30%31%32%39%3A%3B%3C%3D%3E%3F%40%41%5A%5B%5C%5D%5E%5F%60%61%7A%7B%7C%7D%7E%7F%E2%8C%98%E2%87%A7%C2%B5
+
+Safari 6.0.5:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2D%2E%2F%30%31%32%39%3A%3B%3C%3D%3E%3F%40%41%5A%5B%5C%5D%5E%5F%60%61%7A%7B%7C%7D%7E%7F⌘        ⇧        µ     
+
+Chrome:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-  .  %2F0  1  2  9  %3A%3B%3C%3D%3E%3F%40A  Z  %5B%5C%5D%5E_  %60a  z  %7B%7C%7D~  %7F%E2%8C%98%E2%87%A7%C2%B5
+
+Opera 12.14:
+http://b01.com/%01%02%20!  %22%23%24%25%26'  (  )  *  %2B%2C-  .  %2F0  1  2  9  %3A%3B%3C%3D%3E%3F%40A  Z  %5B%5C%5D%5E_  `  a  z  %7B%7C%7D~    ⌘        ⇧        µ     
+
+Opera 15.0.1147.100:
+http://b01.com/%01%02%20%21"  %23%24%25%26%27%28%29%2A%2B%2C-  .  %2F0  1  2  9  %3A%3B<  %3D>  %3F%40A  Z  %5B%5C%5D%5E_  %60a  z  %7B%7C%7D~  %7F⌘        ⇧        µ     
+
+BookMacster 1.16.3:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-  .  /  0  1  2  9  %3A%3B%3C%3D%3E%3F%40A  Z  %5B%5C%5D%5E_  %60a  z  %7B%7C%7D~  %7F%E2%8C%98%E2%87%A7%C2%B5
+
+BookMacster 1.16.4:
+http://b01.com/%01%02%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%2D%2E%2F%30%31%32%39%3A%3B%3C%3D%3E%3F%40%41%5A%5B%5C%5D%5E%5F%60%61%7A%7B%7C%7D%7E%7F%E2%8C%98%E2%87%A7%C2%B5
+
+
+TEST 2.  Given Unescaped Characters
+
+The following shows what happens in the browser, after you hit return, or create a bookmark.  Spaces have been added where characters were decoded, so they all line up…
+
+Raw URL pasted into address bar:
+http://b41.com/!";()*-+_.0129<>AZ_`az⌘⇧µ
+
+Firefox 22.0:
+http://www.b41.com/!%22;()*-+_.0129%3C%3EAZ_%60az%7F%E2%8C%98%E2%87%A7%C2%B5
+
+Safari 6.0.5
+http://b41.com/!%22;()*-+_.0129%3C%3EAZ_%60az%7F⌘⇧µ
+
+Chrome 29.0.1547.18
+http://www.b41.com/!%22;()*-+_.0129%3C%3EAZ_%60az%7F%E2%8C%98%E2%87%A7%C2%B5
+
+Opera 12.14:
+http://b41.com/!%22;()*-+_.0129%3C%3EAZ_`az⌘⇧µ
+
+Opera 15.0.1147.100:
+http://b41.com/!";()*-+_.0129<>AZ_%60az%7F⌘⇧µ
+
+BookMacster 1.16.3:
+http://b41.com/!";()*-+_.0129<>AZ_`az%7F%E2%8C%98%E2%87%A7%C2%B5
+
+BookMacster 1.16.4:
+http://b41.com/!";()*-+_.0129<>AZ_`az%7F%E2%8C%98%E2%87%A7%C2%B5
+
+
+TEST 3.  Given Valid Unescaped Characters
+
+The following shows what happens in the browser, after you hit return, or create a bookmark.  Spaces have been added where characters were decoded, so they all line up…
+http://b42.com/a+b
+
+Firefox 22.0:
+http://b42.com/a+b
+
+Safari 6.0.5
+http://b42.com/a+b
+
+Chrome 29.0.1547.18
+http://b42.com/a+b
+
+Opera 12.14:
+http://b42.com/a+b
+
+Opera 15.0.1147.100:
+http://b42.com/a+b
+
+BookMacster 1.16.3:
+http://b41.com/a%2Bb
+
+BookMacster 1.16.4:
+
+
+
+
+

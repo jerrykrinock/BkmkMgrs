@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController">
+            <connections>
+                <outlet property="bookshigController" destination="qp1-OP-j2u" id="NLM-u8-hDc"/>
+                <outlet property="clientDownArrow" destination="6380" id="q6i-TS-enG"/>
+                <outlet property="clientListView" destination="6378" id="6cT-WD-FGp"/>
+                <outlet property="clientUpArrow" destination="6379" id="noY-OE-CMc"/>
+                <outlet property="commandsArrayController" destination="6404" id="v8p-Gt-Rbt"/>
+                <outlet property="importPostprocButton" destination="6682" id="F2B-0E-5T6"/>
+                <outlet property="labelHow" destination="4534" id="bGq-If-ufA"/>
+                <outlet property="labelReorder" destination="uLb-wZ-TqQ" id="qva-6T-ZQM"/>
+                <outlet property="labelWhich" destination="4478" id="NMN-ZW-rVr"/>
+                <outlet property="landingPopup" destination="5648" id="2cn-Bq-dpb"/>
+                <outlet property="settingsTabView" destination="1552" id="74f-xm-yis"/>
+                <outlet property="simpleAllOrNoneButton" destination="VnI-pC-heo" id="W72-sz-e5s"/>
+                <outlet property="switchSettingsTab" destination="4152" id="hmj-dW-JBg"/>
+                <outlet property="syncStatusTextField" destination="zDX-Cn-kUu" id="exd-mG-DFA"/>
+                <outlet property="syncersArrayController" destination="6402" id="ZH1-gW-yKK"/>
+                <outlet property="syncingTabView" destination="6408" id="7iC-Ug-Ebw"/>
+                <outlet property="tabAdvanced" destination="6410" id="so3-aw-p5s"/>
+                <outlet property="tabClients" destination="6371" id="wX9-80-diZ"/>
+                <outlet property="tabGeneral" destination="1628" id="QGP-bU-WNq"/>
+                <outlet property="tabOpenSave" destination="2750" id="kgh-rJ-yEp"/>
+                <outlet property="tabSimple" destination="pID-3h-dmo" id="oQh-Lg-eOo"/>
+                <outlet property="tabSorting" destination="1553" id="zqQ-X6-Svs"/>
+                <outlet property="tabStructure" destination="1559" id="LDo-SA-aMF"/>
+                <outlet property="tabSyncing" destination="6530" id="kfc-nI-tGq"/>
+                <outlet property="triggersArrayController" destination="6405" id="p2D-OC-Tk2"/>
+                <outlet property="view" destination="6963" id="OBv-KX-hrr"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="6963">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="533"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4152" userLabel="Settings Tab Segmented Control">
+                    <rect key="frame" x="20" y="501" width="584" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="4153">
+                        <font key="font" metaFont="message" size="11"/>
+                        <segments>
+                            <segment width="94" selected="YES">
+                                <nil key="label"/>
+                            </segment>
+                            <segment width="94" tag="1">
+                                <nil key="label"/>
+                            </segment>
+                            <segment width="94">
+                                <nil key="label"/>
+                            </segment>
+                            <segment width="94">
+                                <nil key="label"/>
+                            </segment>
+                            <segment width="94"/>
+                            <segment width="93"/>
+                        </segments>
+                    </segmentedCell>
+                </segmentedControl>
+                <tabView fixedFrame="YES" type="noTabsNoBorder" initialItem="1628" translatesAutoresizingMaskIntoConstraints="NO" id="1552" userLabel="Settings Tab View" customClass="SSYTabView">
+                    <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <font key="font" metaFont="system"/>
+                    <tabViewItems>
+                        <tabViewItem label="gen_" identifier="general" id="1628" userLabel="General">
+                            <view key="view" id="1629">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1640" userLabel="Visitor">
+                                        <rect key="frame" x="29" y="385" width="286" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1645" id="1641">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" title="OtherViews" id="1642">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="1645"/>
+                                                    <menuItem title="Item 2" id="1644"/>
+                                                    <menuItem title="Item 3" id="1643"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="-3" name="content" keyPath="delegate.visitorChoicesDocument" id="2292"/>
+                                            <binding destination="-3" name="contentValues" keyPath="delegate.visitorChoicesDocument.displayNameForVisitor" previousBinding="2292" id="6869"/>
+                                            <binding destination="qp1-OP-j2u" name="selectedObject" keyPath="selection.visitor" previousBinding="6869" id="bH3-sg-a1k"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1638">
+                                        <rect key="frame" x="17" y="413" width="506" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="visitor____" id="1651">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelVisitor" id="4772"/>
+                                            </connections>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelVisitorDefault" id="5632"/>
+                                        </connections>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2314">
+                                        <rect key="frame" x="17" y="269" width="541" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="descrip" id="2315">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelComments" id="4532"/>
+                                        </connections>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1635">
+                                        <rect key="frame" x="18" y="346" width="544" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Ignore_disparate_dupes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1654">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelIgnoreDisparateDupes" id="2749"/>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipIgnoreDisparateDupes" previousBinding="2749" id="4472"/>
+                                            <binding destination="qp1-OP-j2u" name="value" keyPath="selection.ignoreDisparateDupes" id="GkG-9Z-yK1"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3119">
+                                        <rect key="frame" x="17" y="471" width="266" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="tag_delimiter" id="3122">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelTagDelimiter" id="4475"/>
+                                            </connections>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelTagDelimiter" id="3135"/>
+                                        </connections>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3139" userLabel="Tag Delimiter">
+                                        <rect key="frame" x="28" y="445" width="287" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3142" id="3140">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" title="OtherViews" id="3141">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="3142"/>
+                                                    <menuItem title="Item 2" id="3143"/>
+                                                    <menuItem title="Item 3" id="3144"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipTagDelimiter" id="4476"/>
+                                            <binding destination="-3" name="content" keyPath="delegate.tagDelimiterChoicesDoc" id="3147"/>
+                                            <binding destination="-3" name="contentValues" keyPath="delegate.tagDelimiterChoicesDoc.characterDisplayName" previousBinding="3147" id="6935"/>
+                                            <binding destination="qp1-OP-j2u" name="selectedObject" keyPath="selection.tagDelimiter" previousBinding="6935" id="2i0-Sc-k3t"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5648" userLabel="New Bookmark Landing">
+                                        <rect key="frame" x="34" y="291" width="281" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="5649">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" title="New Bookmark Landing (from IB)" id="5650" userLabel="New Bookmark Landing" customClass="StarkContainersFlatMenu"/>
+                                        </popUpButtonCell>
+                                        <connections>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipNewBookmarkLanding" id="5681"/>
+                                        </connections>
+                                    </popUpButton>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5656">
+                                        <rect key="frame" x="17" y="318" width="377" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Neue bookmawk landin" id="5657">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelNewBookmarkLanding" id="5660"/>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipNewBookmarkLanding" id="5661"/>
+                                        </connections>
+                                    </textField>
+                                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-BR-9hB">
+                                        <rect key="frame" x="20" y="61" width="580" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <clipView key="contentView" drawsBackground="NO" id="1Mg-xA-Kk9">
+                                            <rect key="frame" x="1" y="1" width="567" height="198"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" continuousSpellChecking="YES" smartInsertDelete="YES" id="mIh-M6-qw6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="611" height="198"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="minSize" width="567" height="198"/>
+                                                    <size key="maxSize" width="1147" height="10000000"/>
+                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipDocumentInfo" id="cho-2U-NGp"/>
+                                                        <binding destination="qp1-OP-j2u" name="attributedString" keyPath="selection.notes" id="7Hn-nn-gO6">
+                                                            <dictionary key="options">
+                                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                <string key="NSValueTransformerName">SSYTransformStringToAttributed</string>
+                                                            </dictionary>
+                                                        </binding>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="sc1-sj-2w6">
+                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="cwg-gG-nB7">
+                                            <rect key="frame" x="568" y="1" width="11" height="198"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                            </view>
+                            <connections>
+                                <binding destination="-3" name="label" keyPath="delegate.basis.labelGeneral" id="2756"/>
+                            </connections>
+                        </tabViewItem>
+                        <tabViewItem label="sortin'" identifier="sorting" id="1553" userLabel="Sorting">
+                            <view key="view" id="1556">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5130" customClass="SSYSizeFixxerSubview">
+                                        <rect key="frame" x="0.0" y="25" width="590" height="469"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="sortBoxTop" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="4537">
+                                        <rect key="frame" x="15" y="353" width="560" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" id="odT-lW-P8a">
+                                            <rect key="frame" x="4" y="5" width="552" height="124"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1563">
+                                                    <rect key="frame" x="38" y="80" width="508" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="check" title="Sort_root______" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1564">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelSortRoot" id="2393"/>
+                                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipRoot" previousBinding="2393" id="4483"/>
+                                                        <binding destination="qp1-OP-j2u" name="value" keyPath="selection.rootSortable" id="Udp-z0-ToI"/>
+                                                    </connections>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1575">
+                                                    <rect key="frame" x="37" y="63" width="520" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default_setting_for_folders_not_explicit___________________" id="1576">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelSortableDefault" id="2379"/>
+                                                        </connections>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4478">
+                                                    <rect key="frame" x="15" y="102" width="541" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sort_conf" id="4479">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelSortWhich" id="4533"/>
+                                                    </connections>
+                                                </textField>
+                                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1574">
+                                                    <rect key="frame" x="67" y="1" width="487" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="cellSize" width="487" height="18"/>
+                                                    <size key="intercellSpacing" width="4" height="2"/>
+                                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="1578">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <cells>
+                                                        <column>
+                                                            <buttonCell type="radio" title="Do_______" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="1580">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSortableDo" id="2383"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="Don't___sort" imagePosition="left" alignment="left" inset="2" id="1579">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSortableDont" id="2386"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="Sort_if_parent_________" imagePosition="left" alignment="left" tag="-1" inset="2" id="1577">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSortableAsParent" id="2389"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                        </column>
+                                                    </cells>
+                                                    <connections>
+                                                        <binding destination="qp1-OP-j2u" name="selectedTag" keyPath="selection.defaultSortable" id="KdP-bg-zKp"/>
+                                                    </connections>
+                                                </matrix>
+                                            </subviews>
+                                        </view>
+                                    </box>
+                                    <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="sortBoxBot" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="4538">
+                                        <rect key="frame" x="15" y="32" width="560" height="313"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" id="TTu-j1-noA">
+                                            <rect key="frame" x="4" y="5" width="552" height="305"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="0t3-Af-tOh">
+                                                    <rect key="frame" x="67" y="68" width="96" height="5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                </box>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1582">
+                                                    <rect key="frame" x="37" y="140" width="500" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Within_each_folder, sort_____..." id="1583">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelSortingSegmentation" id="E5s-wE-5z7"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1570">
+                                                    <rect key="frame" x="37" y="241" width="293" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sort_alpha-numerically_by____" id="1571">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelSortBy" id="2371"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2401">
+                                                    <rect key="frame" x="349" y="181" width="216" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="com, apple, itunes" id="2402">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2394">
+                                                    <rect key="frame" x="349" y="239" width="208" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Example______" id="2395">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelExample" id="2396"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2399">
+                                                    <rect key="frame" x="349" y="201" width="192" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iTunes.apple.com/tunes" id="2400">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1581">
+                                                    <rect key="frame" x="67" y="79" width="477" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="cellSize" width="477" height="18"/>
+                                                    <size key="intercellSpacing" width="4" height="2"/>
+                                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="1585">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <cells>
+                                                        <column>
+                                                            <buttonCell type="radio" title="mixed__" imagePosition="left" alignment="left" state="on" inset="2" id="1587">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelMixed" id="2404"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="folders above_________" imagePosition="left" alignment="left" tag="1" inset="2" id="1586">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelFoldersAboveBookmarks" id="2405"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="bookmarks above______" imagePosition="left" alignment="left" tag="2" inset="2" id="1584">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelBookmarksAboveFolders" id="2409"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                        </column>
+                                                    </cells>
+                                                    <connections>
+                                                        <binding destination="qp1-OP-j2u" name="selectedTag" keyPath="selection.segmentConfiguration" id="phD-dr-ejx"/>
+                                                    </connections>
+                                                </matrix>
+                                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO8-o9-Hyg">
+                                                    <rect key="frame" x="67" y="4" width="450" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="cellSize" width="450" height="18"/>
+                                                    <size key="intercellSpacing" width="4" height="2"/>
+                                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="8Jb-GP-3td">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <cells>
+                                                        <column>
+                                                            <buttonCell type="radio" title="sort_both_segs" imagePosition="left" alignment="left" state="on" inset="2" id="uRE-Ge-jWV">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSegmentSortBoth" id="rqu-jB-m90"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="sort_folders_only" imagePosition="left" alignment="left" tag="1" inset="2" id="RTK-TB-78B">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSegmentSortFolders" id="t7q-Z6-O7H"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="sort_bookmarks_only" imagePosition="left" alignment="left" tag="2" inset="2" id="jsf-lk-pLu">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelSegmentSortBookmarks" id="v0S-KU-fpt"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                        </column>
+                                                    </cells>
+                                                    <connections>
+                                                        <binding destination="qp1-OP-j2u" name="enabled" keyPath="selection.canPickSortWhichSegments" id="s2l-BK-8rk"/>
+                                                        <binding destination="qp1-OP-j2u" name="selectedTag" keyPath="selection.sortWhichSegments" id="7ZN-Yf-iLg"/>
+                                                    </connections>
+                                                </matrix>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4534">
+                                                    <rect key="frame" x="15" y="282" width="541" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sort_conf" id="4535">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="value" keyPath="delegate.basis.labelSortOrder" id="4541"/>
+                                                    </connections>
+                                                </textField>
+                                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1565">
+                                                    <rect key="frame" x="67" y="160" width="278" height="78"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="cellSize" width="278" height="18"/>
+                                                    <size key="intercellSpacing" width="4" height="2"/>
+                                                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="1568">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <cells>
+                                                        <column>
+                                                            <buttonCell type="radio" title="name___" imagePosition="left" alignment="left" inset="2" id="1566">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelName" id="2373"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="entire URL" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="1567">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="domain__host__path" imagePosition="left" alignment="left" tag="2" inset="2" id="1569">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelDomainHostPath" id="2375"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                            <buttonCell type="radio" title="da Rating (Starzz)" imagePosition="left" alignment="left" tag="3" inset="2" id="6953">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                                <connections>
+                                                                    <binding destination="-3" name="title" keyPath="delegate.basis.labelRating" id="6954"/>
+                                                                </connections>
+                                                            </buttonCell>
+                                                        </column>
+                                                    </cells>
+                                                    <connections>
+                                                        <binding destination="qp1-OP-j2u" name="selectedTag" keyPath="selection.sortBy" id="2tD-rP-QMw"/>
+                                                    </connections>
+                                                </matrix>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1572">
+                                                    <rect key="frame" x="38" y="259" width="502" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="check" title="Ignore__Common__Prefixes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1573">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <binding destination="-3" name="title" keyPath="delegate.basis.labelIgnoreCommonPrefixesCheckbox" id="2411"/>
+                                                        <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipCommonPrefixesSwitch" previousBinding="2411" id="4482"/>
+                                                        <binding destination="qp1-OP-j2u" name="enabled" keyPath="selection.canFilterIgnoredPrefixes" id="kfe-US-vhR"/>
+                                                        <binding destination="qp1-OP-j2u" name="value" keyPath="selection.filterIgnoredPrefixes" id="uoP-41-kTl"/>
+                                                    </connections>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2397">
+                                                    <rect key="frame" x="349" y="223" width="192" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Apple - iTunes" id="2398">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                    </box>
+                                </subviews>
+                            </view>
+                            <connections>
+                                <binding destination="-3" name="label" keyPath="delegate.basis.labelSorting" id="2753"/>
+                            </connections>
+                        </tabViewItem>
+                        <tabViewItem label="__struct-ure__" identifier="structure" id="1559" userLabel="Structure">
+                            <view key="view" id="1560">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5129" customClass="SSYSizeFixxerSubview">
+                                        <rect key="frame" x="0.0" y="373" width="585" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1660">
+                                        <rect key="frame" x="318" y="469" width="248" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="items_allowed_root" id="1661">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelItemsAllowedAtRoot" id="4131"/>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipRoot" id="4484"/>
+                                        </connections>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2050">
+                                        <rect key="frame" x="45" y="469" width="244" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="have_dese_hartainers" id="2051">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelHartainersHave" id="4132"/>
+                                        </connections>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1602">
+                                        <rect key="frame" x="73" y="445" width="210" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="bar" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1603">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeHasBar" id="b7t-by-lgv"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.hasBar" id="ysd-dH-i64"/>
+                                            <binding destination="4EK-4e-yn9" name="title" keyPath="selection.labelBar" id="PB3-Cm-B2c"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipHasBar" previousBinding="PB3-Cm-B2c" id="wdL-3j-OZM"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1604">
+                                        <rect key="frame" x="73" y="425" width="210" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="menu" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1605">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeHasMenu" id="a6Q-Mh-szO"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.hasMenu" id="2hJ-2U-uCa"/>
+                                            <binding destination="4EK-4e-yn9" name="title" keyPath="selection.labelMenu" id="VcF-Tk-RVY"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipHasMenu" previousBinding="VcF-Tk-RVY" id="jAi-Oe-bdC"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1606">
+                                        <rect key="frame" x="73" y="405" width="210" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="unfiled" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1607">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeHasUnfiled" id="HMk-K1-bY4"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.hasUnfiled" id="qgH-5c-4rs"/>
+                                            <binding destination="4EK-4e-yn9" name="title" keyPath="selection.labelUnfiled" id="CBA-1e-VJV"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipHasUnfiled" previousBinding="CBA-1e-VJV" id="E75-Su-ccg"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1662">
+                                        <rect key="frame" x="345" y="425" width="220" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="softainers" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1667">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelSoftainers" id="2275"/>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeRootSoftainersOk" id="pzr-QJ-n7B"/>
+                                            <binding destination="qp1-OP-j2u" name="value" keyPath="selection.rootSoftainersOk" id="68j-ZW-QYa"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipRootSoftainersOk" previousBinding="2275" id="b7q-dL-Q7E"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1663">
+                                        <rect key="frame" x="345" y="405" width="220" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="bmarks" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1666">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelLeaves" id="2279"/>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeRootLeavesOk" id="voQ-ci-kwG"/>
+                                            <binding destination="qp1-OP-j2u" name="value" keyPath="selection.rootLeavesOk" id="TeT-TR-CQg"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipRootLeavesOk" previousBinding="2279" id="oKn-U7-mJL"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1664">
+                                        <rect key="frame" x="345" y="385" width="220" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="seps" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1665">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelNotches" id="2283"/>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeRootNotchesOk" id="cvC-9q-pgC"/>
+                                            <binding destination="qp1-OP-j2u" name="value" keyPath="selection.rootNotchesOk" id="qkg-69-DJ6"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipRootNotchesOk" previousBinding="2283" id="aWP-sd-uhF"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1608">
+                                        <rect key="frame" x="73" y="385" width="251" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="ohared" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="1609">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.canChangeHasOhared" id="cKQ-iY-9Ur"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.hasOhared" id="oGi-Ab-cxX"/>
+                                            <binding destination="4EK-4e-yn9" name="title" keyPath="selection.labelOhared" id="wzt-C8-64q"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.toolTipHasOhared" previousBinding="wzt-C8-64q" id="cWQ-wT-U70"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2052">
+                                        <rect key="frame" x="345" y="445" width="220" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="fixt's" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="2053">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelHartainers" id="2272"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <connections>
+                                <binding destination="-3" name="label" keyPath="delegate.basis.labelStructure" id="2760"/>
+                            </connections>
+                        </tabViewItem>
+                        <tabViewItem label="opn_save" identifier="openSave" id="2750" userLabel="Open/Save">
+                            <view key="view" id="2751">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5131" customClass="SSYSizeFixxerSubview">
+                                        <rect key="frame" x="0.0" y="235" width="508" height="258"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2744">
+                                        <rect key="frame" x="20" y="437" width="500" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="after_open_do" id="2745">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelAfterOpenDo" id="3174"/>
+                                            </connections>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelAfterOpenDo" id="3240"/>
+                                        </connections>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4190">
+                                        <rect key="frame" x="20" y="329" width="500" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="before_save_do" id="4191">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelBeforeSaveDo" id="4218"/>
+                                        </connections>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2723">
+                                        <rect key="frame" x="50" y="402" width="372" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="_import_" bezelStyle="regularSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" inset="2" id="2724">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelImportAutoImport" id="6887"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.autoImport" id="bJW-sB-Ues"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.macster.toolTipAutoImport" previousBinding="6887" id="cCy-Ed-GU0"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2729">
+                                        <rect key="frame" x="50" y="300" width="403" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="_export_" bezelStyle="regularSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" inset="2" id="2730">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelExportAutoExport" id="6889"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.autoExport" id="ao8-3U-sCp"/>
+                                            <binding destination="4EK-4e-yn9" name="toolTip" keyPath="selection.macster.toolTipAutoExport" previousBinding="6889" id="6AY-3I-A2w"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2727">
+                                        <rect key="frame" x="50" y="354" width="403" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="find_dupes" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2728">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelFindDupes" id="2740"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.doFindDupesAfterOpen" id="bs8-0v-b5x"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2725">
+                                        <rect key="frame" x="50" y="378" width="403" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="sort_" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2726">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelSort" id="2739"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.doSortAfterOpen" id="066-Eg-2fk"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5752">
+                                        <rect key="frame" x="20" y="266" width="477" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="autosave_upon_close" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="5753">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelAutosaveUponClose" id="5758"/>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.tooltipAutosaveUponClose" previousBinding="5758" id="5760"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.autosaveUponClose" id="dqV-lk-t7f"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6583">
+                                        <rect key="frame" x="18" y="456" width="485" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="open_me_after_launch" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="6584">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="-3" name="title" keyPath="delegate.basis.labelDoOpenAfterLaunch" id="6592"/>
+                                            <binding destination="4EK-4e-yn9" name="value" keyPath="selection.doOpenAfterLaunch" id="sOf-z5-B1q"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6600">
+                                        <rect key="frame" x="50" y="243" width="291" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="DaDese Are &quot;Local&quot; Settings" id="6601">
+                                            <font key="font" metaFont="message" size="11"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelLocalSettings" id="6605"/>
+                                        </connections>
+                                    </textField>
+                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6602">
+                                        <rect key="frame" x="338" y="237" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6603">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="message" size="11"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="helpLocalSettings:" target="-2" id="CT5-Tv-3Wv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <connections>
+                                <binding destination="-3" name="label" keyPath="delegate.basis.labelOpenSave" id="2752"/>
+                            </connections>
+                        </tabViewItem>
+                        <tabViewItem label="__clients__" identifier="clients" id="6371" userLabel="Clients">
+                            <view key="view" id="6372" userLabel="Clients">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6606">
+                                        <rect key="frame" x="106" y="13" width="235" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="DaDese 'r' &quot;Local&quot; Settings" id="6609">
+                                            <font key="font" metaFont="message" size="11"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelLocalSettings" id="6611"/>
+                                        </connections>
+                                    </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6682">
+                                        <rect key="frame" x="486" y="395" width="34" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSAdvanced" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="6683">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu" size="10"/>
+                                        </buttonCell>
+                                        <accessibility description="Edit advanced Import Postprocessing options"/>
+                                        <connections>
+                                            <action selector="showImportPostprocSheet:" target="-2" id="oXg-h3-gFU"/>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.labelShowImportPostproc" id="6691"/>
+                                        </connections>
+                                    </button>
+                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6607">
+                                        <rect key="frame" x="340" y="6" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6608">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="message" size="11"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="helpLocalSettings:" target="-2" id="Xgo-rp-to2"/>
+                                        </connections>
+                                    </button>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6375" customClass="SSYLineBox">
+                                        <rect key="frame" x="500" y="340" width="5" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-4N-KV9" customClass="SSYLineBox">
+                                        <rect key="frame" x="501" y="340" width="5" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="d4b-fn-5w3" customClass="SSYLineBox">
+                                        <rect key="frame" x="499" y="340" width="5" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6374" customClass="SSYLineBox">
+                                        <rect key="frame" x="528" y="351" width="5" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xR0-Yn-0YM" customClass="SSYLineBox">
+                                        <rect key="frame" x="527" y="351" width="5" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-cK-XcM" customClass="SSYLineBox">
+                                        <rect key="frame" x="529" y="351" width="5" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    </box>
+                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6378" userLabel="Client List View" customClass="ClientListView">
+                                        <rect key="frame" x="20" y="312" width="580" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipClient" id="6878"/>
+                                            <outlet property="documentProvider" destination="-2" id="VrU-0b-u1P"/>
+                                        </connections>
+                                    </customView>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6373" customClass="SSYNoVoiceOverTextField">
+                                        <rect key="frame" x="533" y="381" width="75" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Ex_port" id="6385">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelExport" id="6389"/>
+                                        </connections>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6395" customClass="SSYNoVoiceOverTextField">
+                                        <rect key="frame" x="403" y="356" width="97" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Im_port" id="6396">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelImport" id="6398"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6379" customClass="SSYNoVoiceOverImageView">
+                                        <rect key="frame" x="497" y="387" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="6382"/>
+                                    </imageView>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-yg-WPg" customClass="SSYNoVoiceOverImageView">
+                                        <rect key="frame" x="481" y="427" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="KrU-3C-jId"/>
+                                        <connections>
+                                            <binding destination="-2" name="value" keyPath="documentImage" id="ed3-Sk-xdz"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6380" customClass="SSYNoVoiceOverImageView">
+                                        <rect key="frame" x="525" y="339" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="6381"/>
+                                    </imageView>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLb-wZ-TqQ" customClass="SSYNoVoiceOverTextField">
+                                        <rect key="frame" x="527" y="333" width="75" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" id="oEf-le-GWM">
+                                            <font key="font" metaFont="label" size="9"/>
+                                            <string key="title">Move
+Up | Dn</string>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="syncinnn" identifier="syncing" id="6530" userLabel="Syncing">
+                            <view key="view" id="6531">
+                                <rect key="frame" x="0.0" y="0.0" width="620" height="493"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6612">
+                                        <rect key="frame" x="106" y="15" width="235" height="14"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="DaDese 'r' &quot;Local&quot; Settings" id="6615">
+                                            <font key="font" metaFont="message" size="11"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="-3" name="value" keyPath="delegate.basis.labelLocalSettings" id="6617"/>
+                                        </connections>
+                                    </textField>
+                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6613">
+                                        <rect key="frame" x="341" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6614">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="message" size="11"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="helpLocalSettings:" target="-2" id="vbd-s8-zib"/>
+                                        </connections>
+                                    </button>
+                                    <tabView fixedFrame="YES" controlSize="small" initialItem="pID-3h-dmo" translatesAutoresizingMaskIntoConstraints="NO" id="6408" userLabel="Syncing Tab View">
+                                        <rect key="frame" x="0.0" y="33" width="620" height="463"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <tabViewItems>
+                                            <tabViewItem label="simple_" identifier="simple" id="pID-3h-dmo" userLabel="Syncers - Simple">
+                                                <view key="view" id="xQ1-td-U37" userLabel="Syncers - Simple">
+                                                    <rect key="frame" x="10" y="29" width="600" height="421"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTS-VZ-mVp" customClass="SSYSizeFixxerSubview">
+                                                            <rect key="frame" x="-3" y="245" width="559" height="176"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        </customView>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnI-pC-heo">
+                                                            <rect key="frame" x="29" y="381" width="123" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="squareTextured" title="FULL-ZYNCING" bezelStyle="texturedSquare" image="buttonCell:h0o-ZV-LTy:image" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h0o-ZV-LTy">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="simpleAllOrNone:" target="-2" id="CFj-MQ-0gj"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="32" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-yO-L38">
+                                                            <rect key="frame" x="227" y="362" width="220" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="Sort (alphabetize) " bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="93i-hD-VTg">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.macster.syncerConfigImportChanges" id="6VS-sd-o8T"/>
+                                                                <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.syncerConfigSort" id="7DO-YZ-4zl"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="64" translatesAutoresizingMaskIntoConstraints="NO" id="vyL-dp-mAR">
+                                                            <rect key="frame" x="227" y="311" width="328" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="changes are imported from a Local Client" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="6Zf-90-B8J">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.syncerConfigExportToClients" id="2ap-sP-wtu"/>
+                                                                <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.macster.syncerConfigImportChanges" id="7Ek-mt-8sQ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="256" translatesAutoresizingMaskIntoConstraints="NO" id="3KR-AW-CuG">
+                                                            <rect key="frame" x="227" y="289" width="303" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="this document is updated from another Mac" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Sd7-Ux-FZI">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.macster.clients" id="gJt-MV-hVb">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.syncerConfigExportCloud" id="rpU-6Y-JDT"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="256" translatesAutoresizingMaskIntoConstraints="NO" id="WrM-Qz-9VW">
+                                                            <rect key="frame" x="227" y="267" width="303" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="a new bookmark is landed" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="dDU-c5-d6k">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.macster.clients" id="1rb-ni-Pac">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.syncerConfigExportLanding" id="Sl5-uv-6qZ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="AOF-t3-NQe">
+                                                            <rect key="frame" x="204" y="384" width="329" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="check" title="Watch Local Clients and Import any changes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="20h-40-utz">
+                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="enabled" keyPath="selection.macster.clients" id="57v-KP-R81">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="4EK-4e-yn9" name="value" keyPath="selection.macster.syncerConfigImportChanges" id="Bxh-X3-uhm"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VqO-jU-9dI">
+                                                            <rect key="frame" x="204" y="337" width="366" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" title="Export to Clients whenever" id="NGu-LI-r14">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDX-Cn-kUu" userLabel="Text Field - Sync Status" customClass="SyncStatusTextField">
+                                                            <rect key="frame" x="31" y="318" width="119" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="ofp-lY-e4c">
+                                                                <font key="font" metaFont="system"/>
+                                                                <string key="title">Da Szync Statuz
+iz ACTIVV</string>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sj5-bg-OZY">
+                                                            <rect key="frame" x="78" y="266" width="25" height="25"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bBE-kk-FdF">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="helpSimpleSyncers:" target="-2" id="z4h-1J-1U0"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <binding destination="-3" name="label" keyPath="delegate.basis.labelSimple" id="0rG-z8-W3m"/>
+                                                </connections>
+                                            </tabViewItem>
+                                            <tabViewItem label="adv_" identifier="advanced" id="6410" userLabel="Syncers - Advanced">
+                                                <view key="view" id="6411" userLabel="Syncers - Advanced">
+                                                    <rect key="frame" x="10" y="25" width="600" height="425"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6426">
+                                                            <rect key="frame" x="73" y="17" width="5" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </box>
+                                                        <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6427">
+                                                            <rect key="frame" x="75" y="14" width="22" height="5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </box>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6414">
+                                                            <rect key="frame" x="113" y="406" width="474" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" borderStyle="border" alignment="left" title="descr__" id="6452">
+                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelComments" id="6559"/>
+                                                                <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncers" id="6560"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6415">
+                                                            <rect key="frame" x="25" y="406" width="89" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" borderStyle="border" alignment="center" title="ac__tive" id="6451">
+                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelActive" id="6574"/>
+                                                                <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncers" id="6562"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6413" userLabel="Syncers">
+                                                            <rect key="frame" x="25" y="337" width="562" height="69"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <clipView key="contentView" id="Z9p-C1-4ny">
+                                                                <rect key="frame" x="1" y="1" width="549" height="67"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="reverseSequential" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" id="6453" userLabel="Syncers" customClass="SSYDragTableView">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="549" height="67"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                        <tableColumns>
+                                                                            <tableColumn width="84" minWidth="10" maxWidth="1000" id="6456">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="1">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </tableHeaderCell>
+                                                                                <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="only" alignment="left" controlSize="small" inset="2" id="6459">
+                                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                </buttonCell>
+                                                                                <connections>
+                                                                                    <binding destination="6402" name="value" keyPath="arrangedObjects.isActive" id="6527"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                            <tableColumn width="421" minWidth="10" maxWidth="1000" id="6457">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="1">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </tableHeaderCell>
+                                                                                <textFieldCell key="dataCell" controlSize="small" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="1" id="6458">
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                                                                <connections>
+                                                                                    <binding destination="6402" name="value" keyPath="arrangedObjects.userDescription" id="6515"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                        </tableColumns>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="6402" id="6496"/>
+                                                                            <outlet property="delegate" destination="6402" id="6521"/>
+                                                                        </connections>
+                                                                    </tableView>
+                                                                </subviews>
+                                                            </clipView>
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="6454">
+                                                                <rect key="frame" x="-100" y="-100" width="503" height="15"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                            <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="6455">
+                                                                <rect key="frame" x="550" y="1" width="11" height="67"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                        </scrollView>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6424">
+                                                            <rect key="frame" x="34" y="314" width="248" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="triggerz" id="6429">
+                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelTriggers" id="6563"/>
+                                                                <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipTriggers" id="6564"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6416" userLabel="Triggers">
+                                                            <rect key="frame" x="37" y="221" width="550" height="91"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <clipView key="contentView" id="dd1-M4-oNa">
+                                                                <rect key="frame" x="1" y="1" width="537" height="89"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="reverseSequential" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" id="6439" userLabel="Triggers" customClass="SSYDragTableView">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="537" height="89"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                        <tableColumns>
+                                                                            <tableColumn identifier="coarse" width="220" minWidth="13" maxWidth="1000" id="6441" userLabel="Trigger Type">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Type">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </tableHeaderCell>
+                                                                                <popUpButtonCell key="dataCell" type="bevel" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" id="6445">
+                                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <menu key="menu" title="OtherViews" id="6446">
+                                                                                        <items>
+                                                                                            <menuItem title="Pop Up" id="6447"/>
+                                                                                        </items>
+                                                                                    </menu>
+                                                                                </popUpButtonCell>
+                                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                                                                <connections>
+                                                                                    <binding destination="6405" name="selectedObject" keyPath="arrangedObjects.triggerType" previousBinding="6526" id="6490"/>
+                                                                                    <binding destination="6402" name="content" keyPath="selection.availableTriggerTypes" id="6528"/>
+                                                                                    <binding destination="6402" name="contentValues" keyPath="selection.availableTriggerTypes.triggerTypeDisplayName" previousBinding="6528" id="6526"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                            <tableColumn identifier="detail" editable="NO" width="206" minWidth="10" maxWidth="1000" id="6440" userLabel="Detail">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Detail">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </tableHeaderCell>
+                                                                                <popUpButtonCell key="dataCell" type="bevel" title="Pop Up" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="6450" id="6448">
+                                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <menu key="menu" title="OtherViews" id="6449">
+                                                                                        <items>
+                                                                                            <menuItem title="Pop Up" state="on" id="6450"/>
+                                                                                        </items>
+                                                                                    </menu>
+                                                                                </popUpButtonCell>
+                                                                                <connections>
+                                                                                    <binding destination="6405" name="selectedObject" keyPath="arrangedObjects.detailChoice" previousBinding="5Dk-ye-mjQ" id="DqE-P5-WXQ"/>
+                                                                                    <binding destination="6405" name="content" keyPath="arrangedObjects.detailChoices" id="e9S-No-c8K"/>
+                                                                                    <binding destination="6405" name="contentValues" keyPath="arrangedObjects.detailChoices.triggerDetailDisplayName" previousBinding="e9S-No-c8K" id="5Dk-ye-mjQ"/>
+                                                                                    <binding destination="6405" name="enabled" keyPath="arrangedObjects.hasDetail" id="6514"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                            <tableColumn width="64" minWidth="10" maxWidth="3.4028230607370965e+38" id="6442" userLabel="Time">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                                </tableHeaderCell>
+                                                                                <textFieldCell key="dataCell" controlSize="small" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Text" id="6443">
+                                                                                    <dateFormatter key="formatter" formatterBehavior="custom10_4" timeStyle="short" id="6444"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                                <connections>
+                                                                                    <binding destination="6405" name="editable" keyPath="arrangedObjects.hasTimeChoice" id="6493"/>
+                                                                                    <binding destination="6405" name="value" keyPath="arrangedObjects.time" id="6524"/>
+                                                                                    <binding destination="6405" name="textColor" keyPath="arrangedObjects.timeTextColor" id="6519"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                        </tableColumns>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="6405" id="6512"/>
+                                                                            <outlet property="delegate" destination="6405" id="6517"/>
+                                                                        </connections>
+                                                                    </tableView>
+                                                                </subviews>
+                                                            </clipView>
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="6438">
+                                                                <rect key="frame" x="-100" y="-100" width="160" height="15"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                            <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="6437">
+                                                                <rect key="frame" x="538" y="1" width="11" height="89"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                        </scrollView>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6423">
+                                                            <rect key="frame" x="34" y="193" width="245" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="commandz" id="6430">
+                                                                <font key="font" metaFont="message" size="11"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="-3" name="value" keyPath="delegate.basis.labelCommands" id="6565"/>
+                                                                <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipCommandsTable" id="6566"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6412" userLabel="Commands">
+                                                            <rect key="frame" x="37" y="37" width="550" height="154"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <clipView key="contentView" id="U3J-gl-NgW">
+                                                                <rect key="frame" x="1" y="1" width="537" height="152"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="reverseSequential" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" id="6460" userLabel="Commands" customClass="SSYDragTableView">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="537" height="152"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                        <tableColumns>
+                                                                            <tableColumn width="16" minWidth="10" maxWidth="3.4028230607370965e+38" id="6465">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="right">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                                </tableHeaderCell>
+                                                                                <textFieldCell key="dataCell" controlSize="small" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text" id="6466">
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                                <connections>
+                                                                                    <binding destination="6404" name="value" keyPath="arrangedObjects.index" id="6668">
+                                                                                        <dictionary key="options">
+                                                                                            <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                                                            <string key="NSValueTransformerName">SSYTransformIndexBase0To1</string>
+                                                                                        </dictionary>
+                                                                                    </binding>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                            <tableColumn identifier="method" width="157" minWidth="13" maxWidth="1000" id="6463">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Method">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </tableHeaderCell>
+                                                                                <popUpButtonCell key="dataCell" type="bevel" title="Pop Up" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="6472" id="6470">
+                                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <menu key="menu" title="OtherViews" id="6471">
+                                                                                        <items>
+                                                                                            <menuItem title="Pop Up" state="on" id="6472"/>
+                                                                                        </items>
+                                                                                    </menu>
+                                                                                </popUpButtonCell>
+                                                                                <connections>
+                                                                                    <binding destination="6404" name="selectedObject" keyPath="arrangedObjects.method" previousBinding="6506" id="6520"/>
+                                                                                    <binding destination="6402" name="content" keyPath="selection.availableCommandMethods" id="6499"/>
+                                                                                    <binding destination="6402" name="contentValues" keyPath="selection.availableCommandMethods.methodDisplayName" previousBinding="6499" id="6506"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                            <tableColumn identifier="argument" editable="NO" width="317" minWidth="10" maxWidth="3.4028230607370965e+38" id="6464">
+                                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Argument">
+                                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                                </tableHeaderCell>
+                                                                                <popUpButtonCell key="dataCell" type="bevel" title="Pop Up" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="bezel" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="6469" id="6467">
+                                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <menu key="menu" title="OtherViews" id="6468">
+                                                                                        <items>
+                                                                                            <menuItem title="Pop Up" state="on" id="6469"/>
+                                                                                        </items>
+                                                                                    </menu>
+                                                                                </popUpButtonCell>
+                                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                                                                <connections>
+                                                                                    <binding destination="6404" name="selectedObject" keyPath="arrangedObjects.argument" previousBinding="6525" id="6505"/>
+                                                                                    <binding destination="6404" name="content" keyPath="arrangedObjects.argumentChoices" id="6491"/>
+                                                                                    <binding destination="6404" name="contentValues" keyPath="arrangedObjects.argumentChoices.commandArgumentDisplayName" previousBinding="6491" id="6525"/>
+                                                                                    <binding destination="6404" name="enabled" keyPath="arrangedObjects.hasArgumentChoices" id="6503"/>
+                                                                                </connections>
+                                                                            </tableColumn>
+                                                                        </tableColumns>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="6404" id="6529"/>
+                                                                            <outlet property="delegate" destination="6404" id="6502"/>
+                                                                        </connections>
+                                                                    </tableView>
+                                                                </subviews>
+                                                            </clipView>
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="6461">
+                                                                <rect key="frame" x="-100" y="-100" width="456" height="15"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                            <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="6462">
+                                                                <rect key="frame" x="538" y="1" width="11" height="152"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                        </scrollView>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6419">
+                                                            <rect key="frame" x="18" y="221" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" alternateTitle="(key equiv from OmniWeb.nib)" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="6434">
+                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" size="12" name="GujaratiMT"/>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="remove:" target="6405" id="6513"/>
+                                                                <binding destination="6405" name="enabled" keyPath="content" id="6497">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6420">
+                                                            <rect key="frame" x="18" y="240" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="6433">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="label" size="12"/>
+                                                                <string key="keyEquivalent"></string>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="addBelowCurrentSelection:" target="6405" id="6501"/>
+                                                                <binding destination="6402" name="enabled" keyPath="selectedObjects" id="6522">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6422">
+                                                            <rect key="frame" x="18" y="37" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonCell key="cell" type="square" alternateTitle="(key equiv from OmniWeb.nib)" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="6431">
+                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" size="12" name="GujaratiMT"/>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="remove:" target="6404" id="6489"/>
+                                                                <binding destination="6404" name="enabled" keyPath="content" id="6494">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6421">
+                                                            <rect key="frame" x="18" y="56" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="6432">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="label" size="12"/>
+                                                                <string key="keyEquivalent"></string>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="addBelowCurrentSelection:" target="6404" id="6759"/>
+                                                                <binding destination="6402" name="enabled" keyPath="selectedObjects" id="6508">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6417">
+                                                            <rect key="frame" x="6" y="338" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" alternateTitle="(key equiv from OmniWeb.nib)" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="6436">
+                                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" size="12" name="GujaratiMT"/>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="remove:" target="6402" id="6492"/>
+                                                                <binding destination="6402" name="enabled" keyPath="content" id="6509">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">SSYTransformCollectionNotEmpty</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </button>
+                                                        <button fixedFrame="YES" tag="49112" translatesAutoresizingMaskIntoConstraints="NO" id="6418" userLabel="Add Syncer Menu Button (NSAddTemplate)">
+                                                            <rect key="frame" x="6" y="357" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="6435">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="label" size="12"/>
+                                                                <string key="keyEquivalent"></string>
+                                                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="addBelowCurrentSelection:" target="6402" id="6504"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6425">
+                                                            <rect key="frame" x="92" y="1" width="126" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="purrform___" bezelStyle="rounded" alignment="left" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6428">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="message" size="11"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="performSelectedSyncer:" target="-2" id="qUE-er-10A"/>
+                                                                <binding destination="-3" name="title" keyPath="delegate.basis.labelPerform" id="6571"/>
+                                                                <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncerPerform" previousBinding="6571" id="6572"/>
+                                                                <binding destination="6402" name="enabled" keyPath="hasSelection" id="6569"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6928" userLabel="Sync is Paused #3">
+                                                            <rect key="frame" x="25" y="318" width="89" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" alignment="center" id="6929">
+                                                                <font key="font" metaFont="system" size="20"/>
+                                                                <string key="title">
+Sync is
+Paused!
+</string>
+                                                                <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="4EK-4e-yn9" name="hidden" keyPath="selection.macster.syncersPaused" id="xjI-mR-GOI">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <binding destination="-3" name="label" keyPath="delegate.basis.labelAdvanced" id="6540"/>
+                                                </connections>
+                                            </tabViewItem>
+                                        </tabViewItems>
+                                        <connections>
+                                            <outlet property="delegate" destination="-2" id="7440"/>
+                                        </connections>
+                                    </tabView>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                    </tabViewItems>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="7439"/>
+                    </connections>
+                </tabView>
+            </subviews>
+            <point key="canvasLocation" x="139" y="192.5"/>
+        </view>
+        <arrayController mode="entity" entityName="Syncer_entity" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="6402" userLabel="Syncers AC" customClass="SSYArrayController" showNotesWithSelection="YES">
+            <declaredKeys>
+                <string>selection.commandsOrdered</string>
+                <string>selection.triggersOrdered</string>
+                <string>commandsOrdered</string>
+                <string>triggersOrdered</string>
+                <string>userDescription</string>
+                <string>availableTriggerTypes</string>
+                <string>availableTriggerTypes.displayNames</string>
+                <string>availableTriggerTypes.triggerTypeDisplayNames</string>
+                <string>availableTriggerTypes.triggerTypeDisplayName</string>
+                <string>availableCommandMethods</string>
+                <string>availableCommandMethods.methodDisplayName</string>
+                <string>selection</string>
+                <string>self</string>
+                <string>hasSelection</string>
+                <string>isActive</string>
+                <string>index</string>
+                <string>firstObjectSafely</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="4EK-4e-yn9" name="contentArray" keyPath="selection.macster.syncersOrdered" id="W6d-Nx-CXi"/>
+                <binding destination="4EK-4e-yn9" name="managedObjectContext" keyPath="selection.settingsMoc" id="O5U-Ls-VM7"/>
+                <outlet property="tableView" destination="6453" id="6665"/>
+            </connections>
+        </arrayController>
+        <objectController objectClassName="NSObject" editable="NO" id="4EK-4e-yn9" userLabel="Document Controller">
+            <classReference key="objectClass" className="NSObject"/>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="document" id="KlI-XN-IvK"/>
+            </connections>
+        </objectController>
+        <objectController mode="entity" entityName="Bookshig_entity" automaticallyPreparesContent="YES" id="qp1-OP-j2u" userLabel="Bookshig Controller">
+            <declaredKeys>
+                <string>employees</string>
+                <string>name</string>
+                <string>budget</string>
+                <mutableString>shig.tagDelimiter</mutableString>
+                <string>tagDelimiter</string>
+                <mutableString>shig.visitor</mutableString>
+                <string>visitor</string>
+                <mutableString>shig.ignoreDisparateDupes</mutableString>
+                <string>ignoreDisparateDupes</string>
+                <mutableString>shig.notes</mutableString>
+                <string>notes</string>
+                <mutableString>shig.rootSortable</mutableString>
+                <string>rootSortable</string>
+                <mutableString>shig.defaultSortable</mutableString>
+                <string>defaultSortable</string>
+                <mutableString>shig.sortFoldersAt</mutableString>
+                <string>sortFoldersAt</string>
+                <mutableString>shig.sortBy</mutableString>
+                <string>sortBy</string>
+                <mutableString>shig.filterIgnoredPrefixes</mutableString>
+                <string>filterIgnoredPrefixes</string>
+                <mutableString>shig.rootSoftainersOk</mutableString>
+                <string>rootSoftainersOk</string>
+                <string>rootLeavesOk</string>
+                <mutableString>shig.rootNotchesOk</mutableString>
+                <string>rootNotchesOk</string>
+                <mutableString>shig.canFilterIgnoredPrefixes</mutableString>
+                <string>canFilterIgnoredPrefixes</string>
+                <string>visitorChoice</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="4EK-4e-yn9" name="managedObjectContext" keyPath="selection.managedObjectContext" id="Dpj-4x-unt"/>
+            </connections>
+        </objectController>
+        <arrayController mode="entity" entityName="Command_entity" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="6404" userLabel="Commands AC" customClass="SSYArrayController">
+            <declaredKeys>
+                <string>index</string>
+                <string>availableCommands</string>
+                <string>availableCommands.commandDisplayName</string>
+                <string>method</string>
+                <string>availableMethods.methodDisplayName</string>
+                <string>availableMethods</string>
+                <string>availableCommandArguments</string>
+                <string>commandArgumentChoices</string>
+                <string>commandArgumentChoices.commandArgumentDisplayName</string>
+                <string>argument</string>
+                <string>hasArgument</string>
+                <string>argumentChoices</string>
+                <string>argumentChoices.commandArgumentDisplayName</string>
+                <string>delegate.tagDelimiterChoicesDoc.delimiterDisplayName</string>
+                <string>delegate.basis.toolTipTriggers</string>
+                <string>hasArgumentChoices</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="6402" name="contentArray" keyPath="selection.commandsOrdered" id="6507">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                        <bool key="NSHandlesContentAsCompoundValue" value="YES"/>
+                    </dictionary>
+                </binding>
+                <binding destination="4EK-4e-yn9" name="managedObjectContext" keyPath="selection.settingsMoc" id="LKF-F3-z3p"/>
+                <outlet property="tableView" destination="6460" id="6666"/>
+            </connections>
+        </arrayController>
+        <arrayController mode="entity" entityName="Trigger_entity" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="6405" userLabel="Triggers AC" customClass="SSYArrayController">
+            <declaredKeys>
+                <string>cleanDestination</string>
+                <string>createFoldersFromTags</string>
+                <string>isActive</string>
+                <string>triggerType</string>
+                <string>availableDetails</string>
+                <string>detailSummary</string>
+                <string>popupChoices</string>
+                <string>popupChoices.triggerDisplayName</string>
+                <string>popUpChoice</string>
+                <string>popUpChoices.triggerDisplayName</string>
+                <string>popUpChoices</string>
+                <string>popUpChoices.triggerDetailDisplayName</string>
+                <string>popUpChoices.triggerPopUpDisplayName</string>
+                <string>time</string>
+                <string>hasPopUpChoice</string>
+                <string>hasTimeChoice</string>
+                <string>popupChoice</string>
+                <string>detailChoices</string>
+                <string>detailChoices.triggerDetailDisplayName</string>
+                <string>detailChoice</string>
+                <string>hasDetail</string>
+                <string>timeColumnWidth</string>
+                <string>timeFontSize</string>
+                <string>timeTextColor</string>
+                <string>delegate.basis.labelStructure</string>
+                <string>delegate.basis.labelClients</string>
+                <string>hasDupeSelection</string>
+                <string>hasDupeStarkSelection</string>
+                <string>delegate.basis.labelSyncerCommands</string>
+                <string>delegate.basis.labelCommands</string>
+                <string>delegate.basis.labelStatusCode</string>
+                <string>verifySummary.n302Agree</string>
+                <string>labelMapPersonalBar</string>
+                <string>delegate.basis.labelMapPersonalBar</string>
+                <string>availableCreateFolders</string>
+                <string>document.managedObjectContext</string>
+                <string>delegate.basis.toolTipFabricateFolders</string>
+                <string>hasATimeChoice</string>
+                <string>delegate.basis.labelActive</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="4EK-4e-yn9" name="managedObjectContext" keyPath="selection.settingsMoc" id="xXC-Eb-XW6"/>
+                <binding destination="6402" name="contentArray" keyPath="selection.triggersOrdered" id="6500">
+                    <dictionary key="options">
+                        <integer key="NSDeletesObjectsOnRemove" value="1"/>
+                        <integer key="NSHandlesContentAsCompoundValue" value="1"/>
+                    </dictionary>
+                </binding>
+                <outlet property="tableView" destination="6439" id="6667"/>
+            </connections>
+        </arrayController>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSRemoveTemplate" width="18" height="5"/>
+        <image name="buttonCell:h0o-ZV-LTy:image" width="1" height="1">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
+S2V5ZWRBcmNoaXZlctEICVRyb290gAGuCwwZGh8UJCkqMTQ3PUBVJG51bGzWDQ4PEBESExQVFhcYVk5T
+U2l6ZV5OU1Jlc2l6aW5nTW9kZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0NvbG9ygAIQAIAN
+EiDDAACAA4ALVnsxLCAxfdIbDxweWk5TLm9iamVjdHOhHYAEgArSGw8gI6IhIoAFgAaACdMPJSYnKBRf
+EBROU1RJRkZSZXByZXNlbnRhdGlvbl8QGU5TSW50ZXJuYWxMYXlvdXREaXJlY3Rpb26ACIAHTxEIjE1N
+ACoAAAAKAAAAEAEAAAMAAAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEG
+AAMAAAABAAEAAAEKAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAIAAAEW
+AAMAAAABAAEAAAEXAAQAAAABAAAAAgEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEAAAFT
+AAMAAAACAAEAAYdzAAcAAAe8AAAA0AAAAAAAAAe8YXBwbAIgAABtbnRyR1JBWVhZWiAH0AACAA4ADAAA
+AABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVkZXNjAAAAwAAAAG9kc2NtAAABMAAA
+Bi5jcHJ0AAAHYAAAADh3dHB0AAAHmAAAABRrVFJDAAAHrAAAAA5kZXNjAAAAAAAAABVHZW5lcmljIEdy
+YXkgUHJvZmlsZQAAAAAAAAAAAAAAFUdlbmVyaWMgR3JheSBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAeAAAADHNrU0sAAAAqAAABeGRh
+REsAAAA0AAABomNhRVMAAAAsAAAB1nB0QlIAAAAqAAACAnVrVUEAAAAsAAACLGZyRlUAAAAqAAACWGh1
+SFUAAAAuAAACgnpoVFcAAAAQAAACsG5iTk8AAAAsAAACwGNzQ1oAAAAkAAAC7GhlSUwAAAAgAAADEGl0
+SVQAAAAuAAADMHJvUk8AAAAkAAADXmRlREUAAAA6AAADgmtvS1IAAAAYAAADvHN2U0UAAAAuAAAD1Hpo
+Q04AAAAQAAAEAmphSlAAAAAWAAAEEmVsR1IAAAAkAAAEKHB0UE8AAAA4AAAETG5sTkwAAAAqAAAEhGVz
+RVMAAAAoAAAErnRoVEgAAAAkAAAE1nRyVFIAAAAiAAAE+mZpRkkAAAAsAAAFHGhySFIAAAA6AAAFSHBs
+UEwAAAA2AAAFgnJ1UlUAAAAmAAAFuGFyRUcAAAAoAAAF3mVuVVMAAAAoAAAGBgBWAWEAZQBvAGIAZQBj
+AG4A/QAgAHMAaQB2AP0AIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAZQBsACAAZwByAOUAdABvAG4AZQBi
+AGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIAZgBpAGwAIABkAGUAIABnAHIAaQBzACAAZwBlAG4A6ABy
+AGkAYwBQAGUAcgBmAGkAbAAgAEMAaQBuAHoAYQAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9
+BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABHAHIAYQB5AFAAcgBvAGYAaQBsACAAZwDpAG4A6QByAGkAcQB1
+AGUAIABnAHIAaQBzAMEAbAB0AGEAbADhAG4AbwBzACAAcwB6APwAcgBrAGUAIABwAHIAbwBmAGkAbJAa
+dShwcJaOgnJfaWPPj/AARwBlAG4AZQByAGkAcwBrACAAZwByAOUAdABvAG4AZQBwAHIAbwBmAGkAbABP
+AGIAZQBjAG4A/QAgAWEAZQBkAP0AIABwAHIAbwBmAGkAbAXkBegF1QXkBdkF3AAgAEcAcgBhAHkAIAXb
+BdwF3AXZAFAAcgBvAGYAaQBsAG8AIABnAHIAaQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwBQAHIAbwBm
+AGkAbAAgAGcAcgBpACAAZwBlAG4AZQByAGkAYwBBAGwAbABnAGUAbQBlAGkAbgBlAHMAIABHAHIAYQB1
+AHMAdAB1AGYAZQBuAC0AUAByAG8AZgBpAGzHfLwYACAARwByAGEAeQAg1QS4XNMMx3wARwBlAG4AZQBy
+AGkAcwBrACAAZwByAOUAcwBrAGEAbABlAHAAcgBvAGYAaQBsZm6QGnBwXqZjz4/wZYdO9k4AgiwwsDDs
+MKQw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgA7MDugPBA7kAUABlAHIAZgBp
+AGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABjAGkAbgB6AGUAbgB0AG8AcwBBAGwAZwBlAG0AZQBl
+AG4AIABnAHIAaQBqAHMAcAByAG8AZgBpAGUAbABQAGUAcgBmAGkAbAAgAGcAcgBpAHMAIABnAGUAbgDp
+AHIAaQBjAG8OQg4bDiMORA4fDiUOTA4qDjUOQA4XDjIOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAARwBy
+AGkAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABoAGEAcgBtAGEAYQBwAHIAbwBmAGkAaQBs
+AGkARwBlAG4AZQByAGkBDQBrAGkAIABwAHIAbwBmAGkAbAAgAHMAaQB2AGkAaAAgAHQAbwBuAG8AdgBh
+AFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAAcwB6AGEAcgBvAVsAYwBpBB4EMQRJ
+BDgEOQAgBEEENQRABEsEOQAgBD8EQAQ+BEQEOAQ7BEwGRQZEBkEAIAYqBjkGMQZKBkEAIABHAHIAYQB5
+ACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMAIABHAHIAYQB5ACAAUAByAG8AZgBpAGwAZQAAdGV4dAAA
+AABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRzIHJlc2VydmVkLgBYWVogAAAAAAAA
+81EAAQAAAAEWzGN1cnYAAAAAAAAAAQHNAADSKywtLlokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRt
+YXBJbWFnZVJlcKMtLzBaTlNJbWFnZVJlcFhOU09iamVjdNIrLDIzV05TQXJyYXmiMjDSKyw1Nl5OU011
+dGFibGVBcnJheaM1MjDTODkPOjs8V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0issPj9XTlND
+b2xvcqI+MNIrLEFCV05TSW1hZ2WiQTAACAARABoAJAApADIANwBJAEwAUQBTAGIAaAB1AHwAiwCSAJ8A
+pgCuALAAsgC0ALkAuwC9AMQAyQDUANYA2ADaAN8A4gDkAOYA6ADvAQYBIgEkASYJtgm7CcYJzwniCeYJ
+8Qn6Cf8KBwoKCg8KHgoiCikKMQo+CkMKRQpHCkwKVApXClwKZAAAAAAAAAIBAAAAAAAAAEMAAAAAAAAA
+AAAAAAAAAApnA
+</mutableData>
+        </image>
+    </resources>
+</document>

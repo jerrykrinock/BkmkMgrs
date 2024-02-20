@@ -1,0 +1,224 @@
+\hypertarget{interface_browfile_identifier_codecs}{
+\section{BrowfileIdentifierCodecs Class Reference}
+\label{interface_browfile_identifier_codecs}\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+}
+A class which encodes and decodes among browfile identifier strings, browfile identifier parts, and other raw data defining browfile identifiers.  
+
+
+{\tt \#import $<$BrowfileIdentifierCodecs.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_a75ce452485b932c558ba3aa1c0b2cab}{exformatDotProfileStringWithIdentifierExformat:profileName:}
+\begin{CompactList}\small\item\em Given an exformat, either returns it, returns an exformatDotProfileName as described in the class description. \item\end{CompactList}\item 
+(BkmmExtoreMedia) + \hyperlink{interface_browfile_identifier_codecs_45f4a695ff8246d5365321150f9d46b9}{extoreMediaWithIdentifier:}
+\begin{CompactList}\small\item\em Given an identifier, decodes the BkmmExtoreMedia type. \item\end{CompactList}\item 
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_ae21fc97059d565eb49c2fb24c060856}{homePathWithParts:}
+\begin{CompactList}\small\item\em Encodes the two otherMacXXXXX values from a given a dictionary into a full filesystem path to a Home directory in the /Volumes directory. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_identifier_codecs_0adb839ae7361b3e7254a5e59ac7eb84}{
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_0adb839ae7361b3e7254a5e59ac7eb84}{identifierWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:}}
+\label{interface_browfile_identifier_codecs_0adb839ae7361b3e7254a5e59ac7eb84}
+
+\begin{CompactList}\small\item\em Returns an identifer constructed from given parts. \item\end{CompactList}\item 
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_086992a2a108567952d44d25feeb4018}{identifierWithParts:}
+\begin{CompactList}\small\item\em Returns an identifier constructed from parts in a given dictionary. \item\end{CompactList}\item 
+(NSDictionary $\ast$) + \hyperlink{interface_browfile_identifier_codecs_d49244e4ebedc9534c7d4dc10be5787d}{otherMacIdentifierPartsWithVolumesPath:}
+\begin{CompactList}\small\item\em Given the path of a file or folder, extracts the values of the constKeyIdentifierOtherMacAccount and constKeyIdentifierOtherMacVolume keys and returns them in a dictionary. \item\end{CompactList}\item 
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_aef53477126fe3995319b74eef830e1c}{otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:}
+\begin{CompactList}\small\item\em Given the otherMacXXXX parts of a standalone browfile, returns the relevant substring of the identifier, either \char`\"{}:volume:account:\char`\"{} or \char`\"{}:account:\char`\"{}. \item\end{CompactList}\item 
+(NSString $\ast$) + \hyperlink{interface_browfile_identifier_codecs_5d78bd8bf7049ca89549470594995432}{otherMacSubstringOfIdentifierWithOtherMacParts:}
+\begin{CompactList}\small\item\em Given the otherMacXXXX parts of a standalone browfile, returns the relevant substring of the identifier, either \char`\"{}:volume:account:\char`\"{} or \char`\"{}:account:\char`\"{}. \item\end{CompactList}\item 
+(NSDictionary $\ast$) + \hyperlink{interface_browfile_identifier_codecs_9022cca2656e4efe2bc16aef0f86c12c}{partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:}
+\begin{CompactList}\small\item\em Returns a dictionary of key-value pairs with the parameters given. \item\end{CompactList}\item 
+(NSDictionary $\ast$) + \hyperlink{interface_browfile_identifier_codecs_9d8985f26628fbdedd8b53b3f8050aca}{partsWithExformatDotProfileName:}
+\begin{CompactList}\small\item\em Given an exformatDotProfileName string, extracts the exformat and profileName to a dictionary. \item\end{CompactList}\item 
+(NSDictionary $\ast$) + \hyperlink{interface_browfile_identifier_codecs_1e06878c01e208f7312a7f08eb9aa598}{partsWithIdentifier:}
+\begin{CompactList}\small\item\em Returns a dictionary containing a key/value pair for each non-nil part of given browfile identifier. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class which encodes and decodes among browfile identifier strings, browfile identifier parts, and other raw data defining browfile identifiers. 
+
+{\bf Overview} 
+
+A browfile is uniquely identified by either by its {\em identifier\/}, or, equivalently by six {\em parts\/} which compose the identifier.~ This class provides methods for converting back and forth among the identifier, the parts and other raw data from which the parts can be derived. 
+
+All methods provided by this class are factory methods. 
+
+{\bf Specification of a browfile's identifier in terms of its parts} 
+
+An important substring of the identifier is always the {\em exformatDotProfileName\/}. If there is no profileName, exformatDotProfileName is simply the exformat. If there is a profileName, exformatDotProfileName is \char`\"{}exformat.profileName\char`\"{}. Note that the profile name itself may have dots (.) in it.
+
+After that, the form of the browfile identifier depends on the part extoreMedia.~ This table gives that form as a function of extoreMedia: \begin{itemize}
+\item {\em BkmmExtoreBuiltIn\/}. ~ This is the basic \char`\"{}default\char`\"{} case. The identifier form is simply the exformatDotProfileName. \item {\em BkmmExtoreOtherHome\/}. ~ There are two possible sub-forms: \begin{itemize}
+\item \char`\"{}:volume:account:exformatDotProfileName\char`\"{} \item \char`\"{}:account:exformatDotProfileName\char`\"{} \end{itemize}
+The first form is used if the volume root was mounted when the browfile was identified, and the second form is used if the home folder on another Mac was mounted. In the latter case, the volume name is unknown. \item {\em BkmmExtoreStandalone\/}. ~ The identifier form is \char`\"{}file://standalonePath:exformatDotProfileName\char`\"{}. ~ The standalonePath is a full path that itself begins with a slash, and contains slashes in it, up to and including the bookmarks file or folder of bookmarks files. \end{itemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_browfile_identifier_codecs_a75ce452485b932c558ba3aa1c0b2cab}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!exformatDotProfileStringWithIdentifierExformat:profileName:@{exformatDotProfileStringWithIdentifierExformat:profileName:}}
+\index{exformatDotProfileStringWithIdentifierExformat:profileName:@{exformatDotProfileStringWithIdentifierExformat:profileName:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{exformatDotProfileStringWithIdentifierExformat:profileName:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) exformatDotProfileStringWithIdentifierExformat: (NSString$\ast$) {\em exformat}\/ profileName: (NSString$\ast$) {\em profileName}}}
+\label{interface_browfile_identifier_codecs_a75ce452485b932c558ba3aa1c0b2cab}
+
+
+Given an exformat, either returns it, returns an exformatDotProfileName as described in the class description. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em exformat}]The exformat \item[{\em profileName}]The profileName, or nil \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The exformatDotProfileName \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_45f4a695ff8246d5365321150f9d46b9}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!extoreMediaWithIdentifier:@{extoreMediaWithIdentifier:}}
+\index{extoreMediaWithIdentifier:@{extoreMediaWithIdentifier:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{extoreMediaWithIdentifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BkmmExtoreMedia) extoreMediaWithIdentifier: (NSString$\ast$) {\em identifier}}}
+\label{interface_browfile_identifier_codecs_45f4a695ff8246d5365321150f9d46b9}
+
+
+Given an identifier, decodes the BkmmExtoreMedia type. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em The}]complete identifier to be decoded \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]One of the BkmmExtoreMedia enumerated values \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_ae21fc97059d565eb49c2fb24c060856}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!homePathWithParts:@{homePathWithParts:}}
+\index{homePathWithParts:@{homePathWithParts:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{homePathWithParts:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) homePathWithParts: (NSDictionary$\ast$) {\em parts}}}
+\label{interface_browfile_identifier_codecs_ae21fc97059d565eb49c2fb24c060856}
+
+
+Encodes the two otherMacXXXXX values from a given a dictionary into a full filesystem path to a Home directory in the /Volumes directory. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em parts}]A dictionary containing keys constKeyIdentifierOtherMacAccount and optionally constKeyIdentifierOtherMacVolume. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The full path in one of two forms, \begin{itemize}
+\item \char`\"{}/Volumes/VolumeName/Users/aUserShortName\char`\"{} \item \char`\"{}/Volumes/aUserShortName\char`\"{} \end{itemize}
+The first form will be returned if constKeyIdentifierOtherMacVolume is present in parts and the second form will be returned otherwise. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_086992a2a108567952d44d25feeb4018}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!identifierWithParts:@{identifierWithParts:}}
+\index{identifierWithParts:@{identifierWithParts:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{identifierWithParts:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) identifierWithParts: (NSDictionary$\ast$) {\em parts}}}
+\label{interface_browfile_identifier_codecs_086992a2a108567952d44d25feeb4018}
+
+
+Returns an identifier constructed from parts in a given dictionary. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em parts}]A dictionary containing key(s) from the constants listed in Identifier Parts Keys. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The constructed identifier string. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_d49244e4ebedc9534c7d4dc10be5787d}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!otherMacIdentifierPartsWithVolumesPath:@{otherMacIdentifierPartsWithVolumesPath:}}
+\index{otherMacIdentifierPartsWithVolumesPath:@{otherMacIdentifierPartsWithVolumesPath:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{otherMacIdentifierPartsWithVolumesPath:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSDictionary $\ast$) otherMacIdentifierPartsWithVolumesPath: (NSString$\ast$) {\em path}}}
+\label{interface_browfile_identifier_codecs_d49244e4ebedc9534c7d4dc10be5787d}
+
+
+Given the path of a file or folder, extracts the values of the constKeyIdentifierOtherMacAccount and constKeyIdentifierOtherMacVolume keys and returns them in a dictionary. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em path}]A path to some file or folder in a Home directory on another Macintosh account, in one of these two forms: \begin{itemize}
+\item \char`\"{}/Volumes/VolumeName/Users/aUserShortName/Additional/Components/Ignored\char`\"{} \item \char`\"{}/Volumes/aUserShortName/Additional/Components/Ignored\char`\"{} \end{itemize}
+\end{description}
+\end{Desc}
+If a value cannot be extracted from the path, no key is set for it in the result. \begin{Desc}
+\item[Returns:]A dictionary containing neither, one, or both of the keys constKeyIdentifierOtherMacAccount, constKeyIdentifierOtherMacVolume. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_aef53477126fe3995319b74eef830e1c}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:@{otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:}}
+\index{otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:@{otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{otherMacSubstringOfIdentifierWithOtherMacAccount:otherMacVolume:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) otherMacSubstringOfIdentifierWithOtherMacAccount: (NSString$\ast$) {\em otherMacAccount}\/ otherMacVolume: (NSString$\ast$) {\em otherMacVolume}}}
+\label{interface_browfile_identifier_codecs_aef53477126fe3995319b74eef830e1c}
+
+
+Given the otherMacXXXX parts of a standalone browfile, returns the relevant substring of the identifier, either \char`\"{}:volume:account:\char`\"{} or \char`\"{}:account:\char`\"{}. 
+
+See the class description for more precise info. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em otherMacAccount}]The 'short name' of the account. \item[{\em otherMacVolume}]The name of the file system Volume on which the other account is located. This is optional. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The substring generated, or nil if otherMacAccount was nil. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_5d78bd8bf7049ca89549470594995432}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!otherMacSubstringOfIdentifierWithOtherMacParts:@{otherMacSubstringOfIdentifierWithOtherMacParts:}}
+\index{otherMacSubstringOfIdentifierWithOtherMacParts:@{otherMacSubstringOfIdentifierWithOtherMacParts:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{otherMacSubstringOfIdentifierWithOtherMacParts:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) otherMacSubstringOfIdentifierWithOtherMacParts: (NSDictionary$\ast$) {\em parts}}}
+\label{interface_browfile_identifier_codecs_5d78bd8bf7049ca89549470594995432}
+
+
+Given the otherMacXXXX parts of a standalone browfile, returns the relevant substring of the identifier, either \char`\"{}:volume:account:\char`\"{} or \char`\"{}:account:\char`\"{}. 
+
+See the class description for more precise info. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em parts}]A dictionary containing the constKeyIdentifierOtherMacAccount and, optionally, constKeyIdentifierOtherMacVolume key/value pair(s). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The substring generated, or nil if parts did not have a value for key constKeyIdentifierOtherMacAccount. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_9022cca2656e4efe2bc16aef0f86c12c}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:@{partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:}}
+\index{partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:@{partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{partsWithExformat:profileName:extoreMedia:otherMacVolume:otherMacAccount:standalonePath:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSDictionary $\ast$) partsWithExformat: (NSString$\ast$) {\em exformat}\/ profileName: (NSString$\ast$) {\em profileName}\/ extoreMedia: (BkmmExtoreMedia) {\em extoreMedia}\/ otherMacVolume: (NSString$\ast$) {\em otherMacVolume}\/ otherMacAccount: (NSString$\ast$) {\em otherMacAccount}\/ standalonePath: (NSString$\ast$) {\em standalonePath}}}
+\label{interface_browfile_identifier_codecs_9022cca2656e4efe2bc16aef0f86c12c}
+
+
+Returns a dictionary of key-value pairs with the parameters given. 
+
+\begin{Desc}
+\item[Returns:]If all given parameters are nil, returns an empty dictionary. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_9d8985f26628fbdedd8b53b3f8050aca}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!partsWithExformatDotProfileName:@{partsWithExformatDotProfileName:}}
+\index{partsWithExformatDotProfileName:@{partsWithExformatDotProfileName:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{partsWithExformatDotProfileName:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSDictionary $\ast$) partsWithExformatDotProfileName: (NSString$\ast$) {\em string}}}
+\label{interface_browfile_identifier_codecs_9d8985f26628fbdedd8b53b3f8050aca}
+
+
+Given an exformatDotProfileName string, extracts the exformat and profileName to a dictionary. 
+
+The exformatDotProfileName is defined in the class description. If a value cannot be extracted from the path, no key is set for it in the result. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]The string from which the values will be extracted. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A dictionary containing none, one or both of the keys constKeyIdentifierExformat, constKeyIdentifierProfileName. \end{Desc}
+\hypertarget{interface_browfile_identifier_codecs_1e06878c01e208f7312a7f08eb9aa598}{
+\index{BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}!partsWithIdentifier:@{partsWithIdentifier:}}
+\index{partsWithIdentifier:@{partsWithIdentifier:}!BrowfileIdentifierCodecs@{BrowfileIdentifierCodecs}}
+\subsubsection[{partsWithIdentifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSDictionary $\ast$) partsWithIdentifier: (NSString$\ast$) {\em identifier}}}
+\label{interface_browfile_identifier_codecs_1e06878c01e208f7312a7f08eb9aa598}
+
+
+Returns a dictionary containing a key/value pair for each non-nil part of given browfile identifier. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em identifier}]The identifier to be decoded. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A dictionary containing constKeyIdentifierXXXX key/value pair(s) \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/Projects/Bookmarksman/BrowfileIdentifierCodecs.h\item 
+Documents/Programming/Projects/Bookmarksman/BrowfileIdentifierCodecs.m\end{CompactItemize}

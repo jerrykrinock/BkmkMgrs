@@ -1,0 +1,254 @@
+\hypertarget{interface_s_s_y_other_apper}{
+\section{SSYOtherApper Class Reference}
+\label{interface_s_s_y_other_apper}\index{SSYOtherApper@{SSYOtherApper}}
+}
+A class of class methods for observing and controlling other applications.  
+
+
+{\tt \#import $<$SSYOtherApper.h$>$}
+
+Inheritance diagram for SSYOtherApper::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_s_s_y_other_apper}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(pid\_\-t) + \hyperlink{interface_s_s_y_other_apper_9a84904467601f670f918ca4ca44b23c}{pidOfThisUsersAppWithBundleIdentifier:}
+\begin{CompactList}\small\item\em Returns unix process ID (PID) of running app with given bundleIdentifier and the same user ID as this process. \item\end{CompactList}\item 
+(pid\_\-t) + \hyperlink{interface_s_s_y_other_apper_e9bd22bf08e408c430ff4e78837b5f50}{pidOfRunningExecutableName:}
+\begin{CompactList}\small\item\em Returns unix process ID (PID) of running app with given executable name. \item\end{CompactList}\item 
+(NSString $\ast$) + \hyperlink{interface_s_s_y_other_apper_0dc80eea85ed01896cb7b48ced64951e}{versionStringForAppName:}
+\begin{CompactList}\small\item\em Gets both version strings for an application with a given name and formats them into one string: \char`\"{}CFBundleShortVersionString (CFBundleVersion)\char`\"{}. \item\end{CompactList}\item 
+(pid\_\-t) + \hyperlink{interface_s_s_y_other_apper_b9b485324f49ce4133926b819c96b2d1}{pidOfThisUsersProcessNamed:}
+\begin{CompactList}\small\item\em Gets the unix process ID (pid) of a process with a given process name which must have the same user id as this process. \item\end{CompactList}\item 
+(NSArray $\ast$) + \hyperlink{interface_s_s_y_other_apper_d90f09ff0b3b2fe51bb9753781098256}{runningExecutablesUsersAndPIDs}
+\begin{CompactList}\small\item\em Returns an array with one element for each running executable, with each element being a dictionary with three key/value pairs: @\char`\"{}pidString\char`\"{}, @\char`\"{}user\char`\"{}, and @\char`\"{}command\char`\"{}. \item\end{CompactList}\item 
+(struct ProcessSerialNumber) + \hyperlink{interface_s_s_y_other_apper_01c7b19bc9f1d866accecc1181524083}{processSerialNumberForProcessIDNumber:}
+\begin{CompactList}\small\item\em Returns the process serial number given a unix process ID (pid). \item\end{CompactList}\item 
+(pid\_\-t) + \hyperlink{interface_s_s_y_other_apper_2c2e6184773c20691af5e7b4ad77d114}{pidOfThisUsersProcessWithBundlePath:}
+\begin{CompactList}\small\item\em Returns the unix process identifier (pid) of a process with a given bundle path with the same user ID as the current process. \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_other_apper_124f0f431084815f973c193d2d840f60}{quitThisUsersAppWithPID:}
+\begin{CompactList}\small\item\em Finds a running application, owned by the current user, with a given unix process identifier (pid) sends that app a \char`\"{}quit application\char`\"{} Apple Event message, and returns immediately. \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_other_apper_66c87ff12481240baaa238b739c4e96d}{quitThisUsersAppWithPID:timeout:}
+\begin{CompactList}\small\item\em Finds a running app, owned by the current user, with a given unix pid, sends it a \char`\"{}quit application\char`\"{} Apple Event message, and returns when the app is quit or timeout occurs, whichever comes first. \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_other_apper_75d43509eff771647fb55f6f51cfc0fd}{quitThisUsersAppWithBundleIdentifier:}
+\begin{CompactList}\small\item\em Finds a running application, owned by the current user, with a given bundle identifier, sends that app a \char`\"{}quit application\char`\"{} Apple Event message, and returns immediately. \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_other_apper_00f9c0308851443ba4dc51bde1f9dd5d}{quitThisUsersAppWithBundleIdentifier:timeout:}
+\begin{CompactList}\small\item\em Finds a running app, owned by the current user, with a given bundle identifier, sends it a \char`\"{}quit application\char`\"{} Apple Event message, and returns when the app is quit or timeout occurs, whichever comes first. \item\end{CompactList}\item 
+(void) + \hyperlink{interface_s_s_y_other_apper_2f92b71badc09ac130766ad732c01f3d}{killProcessPID:waitUntilExit:}
+\begin{CompactList}\small\item\em Kills a process given its unix process identifier (pid). \item\end{CompactList}\item 
+(BOOL) + \hyperlink{interface_s_s_y_other_apper_b87815ef795c287fdc5a2c236475181f}{killThisUsersAppWithBundleIdentifier:timeout:}
+\begin{CompactList}\small\item\em Finds a running app, owned by the current user, with a given bundle identifier, sends it a \char`\"{}kill -9\char`\"{} BSD signal, and returns when the app is killed or timeout occurs, whichever comes first. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class of class methods for observing and controlling other applications. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_s_s_y_other_apper_2f92b71badc09ac130766ad732c01f3d}{
+\index{SSYOtherApper@{SSYOtherApper}!killProcessPID:waitUntilExit:@{killProcessPID:waitUntilExit:}}
+\index{killProcessPID:waitUntilExit:@{killProcessPID:waitUntilExit:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{killProcessPID:waitUntilExit:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) killProcessPID: (pid\_\-t) {\em pid}\/ waitUntilExit: (BOOL) {\em wait}}}
+\label{interface_s_s_y_other_apper_2f92b71badc09ac130766ad732c01f3d}
+
+
+Kills a process given its unix process identifier (pid). 
+
+Kills the process using unix 'kill -9' \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pid}]The unix process identifier (pid) of the target process \item[{\em waitUntilDone}]YES if this method should not return until the 'kill' process completes. \end{description}
+\end{Desc}
+\hypertarget{interface_s_s_y_other_apper_b87815ef795c287fdc5a2c236475181f}{
+\index{SSYOtherApper@{SSYOtherApper}!killThisUsersAppWithBundleIdentifier:timeout:@{killThisUsersAppWithBundleIdentifier:timeout:}}
+\index{killThisUsersAppWithBundleIdentifier:timeout:@{killThisUsersAppWithBundleIdentifier:timeout:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{killThisUsersAppWithBundleIdentifier:timeout:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) killThisUsersAppWithBundleIdentifier: (NSString$\ast$) {\em bundleIdentifier}\/ timeout: (NSTimeInterval) {\em timeout}}}
+\label{interface_s_s_y_other_apper_b87815ef795c287fdc5a2c236475181f}
+
+
+Finds a running app, owned by the current user, with a given bundle identifier, sends it a \char`\"{}kill -9\char`\"{} BSD signal, and returns when the app is killed or timeout occurs, whichever comes first. 
+
+May block its thread up to the timeout. Sleeps for 0.5 seconds between polls. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bundleIdentifier}]The bundle identifier of the application to be killed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if the target app was not running, or if it dies within the allowed timeout. NO if app was still running when timeout expired. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_e9bd22bf08e408c430ff4e78837b5f50}{
+\index{SSYOtherApper@{SSYOtherApper}!pidOfRunningExecutableName:@{pidOfRunningExecutableName:}}
+\index{pidOfRunningExecutableName:@{pidOfRunningExecutableName:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{pidOfRunningExecutableName:}]{\setlength{\rightskip}{0pt plus 5cm}+ (pid\_\-t) pidOfRunningExecutableName: (NSString$\ast$) {\em executableName}}}
+\label{interface_s_s_y_other_apper_e9bd22bf08e408c430ff4e78837b5f50}
+
+
+Returns unix process ID (PID) of running app with given executable name. 
+
+If no such qualified process exists, or if executableName is nil, returns 0. If more than one such process exists, returns the first one found. Note that this method considers all processes for all users: anything that shows by executing the unix 'ps' command. It launches an NSTask to do this; therefore AppKit is not required. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em executableName}]The last component of the process' command path. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The unix process identifier (pid), or 0 if no qualifying process exists. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_9a84904467601f670f918ca4ca44b23c}{
+\index{SSYOtherApper@{SSYOtherApper}!pidOfThisUsersAppWithBundleIdentifier:@{pidOfThisUsersAppWithBundleIdentifier:}}
+\index{pidOfThisUsersAppWithBundleIdentifier:@{pidOfThisUsersAppWithBundleIdentifier:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{pidOfThisUsersAppWithBundleIdentifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ (pid\_\-t) pidOfThisUsersAppWithBundleIdentifier: (NSString$\ast$) {\em bundleIdentifier}}}
+\label{interface_s_s_y_other_apper_9a84904467601f670f918ca4ca44b23c}
+
+
+Returns unix process ID (PID) of running app with given bundleIdentifier and the same user ID as this process. 
+
+If no such qualified process exists, or if bundleIdentifier is nil, returns 0. The target app must be a normal GUI app, not a faceless background application. This method invokes NSWorkspace and thus requires Cocoa AppKit. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bundleIdentifier}]The bundle identifier that the target app must have \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The unix process identifier (pid), or 0 if no qualifying process exists. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_b9b485324f49ce4133926b819c96b2d1}{
+\index{SSYOtherApper@{SSYOtherApper}!pidOfThisUsersProcessNamed:@{pidOfThisUsersProcessNamed:}}
+\index{pidOfThisUsersProcessNamed:@{pidOfThisUsersProcessNamed:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{pidOfThisUsersProcessNamed:}]{\setlength{\rightskip}{0pt plus 5cm}+ (pid\_\-t) pidOfThisUsersProcessNamed: (NSString$\ast$) {\em processName}}}
+\label{interface_s_s_y_other_apper_b9b485324f49ce4133926b819c96b2d1}
+
+
+Gets the unix process ID (pid) of a process with a given process name which must have the same user id as this process. 
+
+If no such process exists, returns 0. I think that the name is the CFBundleName, but it may be CFExecutableName. Finds regular applications as well as faceless background applications. Uses Carbon $>$ Process Manager \hypertarget{interface_s_s_y_other_apper_2c2e6184773c20691af5e7b4ad77d114}{
+\index{SSYOtherApper@{SSYOtherApper}!pidOfThisUsersProcessWithBundlePath:@{pidOfThisUsersProcessWithBundlePath:}}
+\index{pidOfThisUsersProcessWithBundlePath:@{pidOfThisUsersProcessWithBundlePath:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{pidOfThisUsersProcessWithBundlePath:}]{\setlength{\rightskip}{0pt plus 5cm}+ (pid\_\-t) pidOfThisUsersProcessWithBundlePath: (NSString$\ast$) {\em bundlePath}}}
+\label{interface_s_s_y_other_apper_2c2e6184773c20691af5e7b4ad77d114}
+
+
+Returns the unix process identifier (pid) of a process with a given bundle path with the same user ID as the current process. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bundlePath}]The bundle path with the result must have \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The pid of the target process, or 0 if no qualifying process exists. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_01c7b19bc9f1d866accecc1181524083}{
+\index{SSYOtherApper@{SSYOtherApper}!processSerialNumberForProcessIDNumber:@{processSerialNumberForProcessIDNumber:}}
+\index{processSerialNumberForProcessIDNumber:@{processSerialNumberForProcessIDNumber:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{processSerialNumberForProcessIDNumber:}]{\setlength{\rightskip}{0pt plus 5cm}+ (struct ProcessSerialNumber) processSerialNumberForProcessIDNumber: (pid\_\-t) {\em pid}}}
+\label{interface_s_s_y_other_apper_01c7b19bc9f1d866accecc1181524083}
+
+
+Returns the process serial number given a unix process ID (pid). 
+
+Invokes NSWorkspace, and thus requires AppKit.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pid}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The process serial number of the target process, or struct values \{0,0\} if no such process exists. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_75d43509eff771647fb55f6f51cfc0fd}{
+\index{SSYOtherApper@{SSYOtherApper}!quitThisUsersAppWithBundleIdentifier:@{quitThisUsersAppWithBundleIdentifier:}}
+\index{quitThisUsersAppWithBundleIdentifier:@{quitThisUsersAppWithBundleIdentifier:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{quitThisUsersAppWithBundleIdentifier:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) quitThisUsersAppWithBundleIdentifier: (NSString$\ast$) {\em bundleIdentifier}}}
+\label{interface_s_s_y_other_apper_75d43509eff771647fb55f6f51cfc0fd}
+
+
+Finds a running application, owned by the current user, with a given bundle identifier, sends that app a \char`\"{}quit application\char`\"{} Apple Event message, and returns immediately. 
+
+Does not wait or test to see if the requested app did quit. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bundleIdentifier}]The bundle identifier of the application to be quit. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if it was able to find the app with the targetPID, send it a \char`\"{}quit\char`\"{} AppleEvent, and event returned without error. Otherwise, NO. Does not indicate whether or not the target app actually did quit. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_00f9c0308851443ba4dc51bde1f9dd5d}{
+\index{SSYOtherApper@{SSYOtherApper}!quitThisUsersAppWithBundleIdentifier:timeout:@{quitThisUsersAppWithBundleIdentifier:timeout:}}
+\index{quitThisUsersAppWithBundleIdentifier:timeout:@{quitThisUsersAppWithBundleIdentifier:timeout:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{quitThisUsersAppWithBundleIdentifier:timeout:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) quitThisUsersAppWithBundleIdentifier: (NSString$\ast$) {\em bundleIdentifier}\/ timeout: (NSTimeInterval) {\em timeout}}}
+\label{interface_s_s_y_other_apper_00f9c0308851443ba4dc51bde1f9dd5d}
+
+
+Finds a running app, owned by the current user, with a given bundle identifier, sends it a \char`\"{}quit application\char`\"{} Apple Event message, and returns when the app is quit or timeout occurs, whichever comes first. 
+
+May block its thread up to the timeout. Sleeps for 0.5 seconds between polls. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bundleIdentifier}]The bundle identifier of the application to be quit. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if the target app was not running, or if it quit within the allowed timeout. NO if app was still running when timeout expired. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_124f0f431084815f973c193d2d840f60}{
+\index{SSYOtherApper@{SSYOtherApper}!quitThisUsersAppWithPID:@{quitThisUsersAppWithPID:}}
+\index{quitThisUsersAppWithPID:@{quitThisUsersAppWithPID:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{quitThisUsersAppWithPID:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) quitThisUsersAppWithPID: (pid\_\-t) {\em targetPID}}}
+\label{interface_s_s_y_other_apper_124f0f431084815f973c193d2d840f60}
+
+
+Finds a running application, owned by the current user, with a given unix process identifier (pid) sends that app a \char`\"{}quit application\char`\"{} Apple Event message, and returns immediately. 
+
+Does not wait or test to see if the requested app did quit. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em targetPID}]The unix process identifier of the application to be quit. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if it was able to find the app with the targetPID, send it a \char`\"{}quit\char`\"{} AppleEvent, and event returned without error. Otherwise, NO. Does not indicate whether or not the target app actually did quit. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_66c87ff12481240baaa238b739c4e96d}{
+\index{SSYOtherApper@{SSYOtherApper}!quitThisUsersAppWithPID:timeout:@{quitThisUsersAppWithPID:timeout:}}
+\index{quitThisUsersAppWithPID:timeout:@{quitThisUsersAppWithPID:timeout:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{quitThisUsersAppWithPID:timeout:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) quitThisUsersAppWithPID: (pid\_\-t) {\em targetPID}\/ timeout: (NSTimeInterval) {\em timeout}}}
+\label{interface_s_s_y_other_apper_66c87ff12481240baaa238b739c4e96d}
+
+
+Finds a running app, owned by the current user, with a given unix pid, sends it a \char`\"{}quit application\char`\"{} Apple Event message, and returns when the app is quit or timeout occurs, whichever comes first. 
+
+May block its thread up to the timeout. Sleeps for 0.5 seconds between polls. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em targetPID}]The unix process identifier of the application to be quit. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if the target app was not running, or if it quit within the allowed timeout. NO if app was still running when timeout expired. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_d90f09ff0b3b2fe51bb9753781098256}{
+\index{SSYOtherApper@{SSYOtherApper}!runningExecutablesUsersAndPIDs@{runningExecutablesUsersAndPIDs}}
+\index{runningExecutablesUsersAndPIDs@{runningExecutablesUsersAndPIDs}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{runningExecutablesUsersAndPIDs}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSArray $\ast$) runningExecutablesUsersAndPIDs }}
+\label{interface_s_s_y_other_apper_d90f09ff0b3b2fe51bb9753781098256}
+
+
+Returns an array with one element for each running executable, with each element being a dictionary with three key/value pairs: @\char`\"{}pidString\char`\"{}, @\char`\"{}user\char`\"{}, and @\char`\"{}command\char`\"{}. 
+
+This method uses the unix \char`\"{}ps\char`\"{} instead of \mbox{[}\mbox{[}NSWorkspace sharedWorkspace\mbox{]} launchedApplications\mbox{]} The \char`\"{}advantage\char`\"{} of this is that it does not use AppKit, therefore does not invoke WindowServer, therefore does not raise an exception if the user is not the console user. The disadvantage is that it uses NSTask, and did not work in finding Bookwatchdog for user Michael Sherwin $<$\href{mailto:mdsherwin@mac.com}{\tt mdsherwin@mac.com}$>$ \begin{Desc}
+\item[Returns:]The array of information. \end{Desc}
+\hypertarget{interface_s_s_y_other_apper_0dc80eea85ed01896cb7b48ced64951e}{
+\index{SSYOtherApper@{SSYOtherApper}!versionStringForAppName:@{versionStringForAppName:}}
+\index{versionStringForAppName:@{versionStringForAppName:}!SSYOtherApper@{SSYOtherApper}}
+\subsubsection[{versionStringForAppName:}]{\setlength{\rightskip}{0pt plus 5cm}+ (NSString $\ast$) versionStringForAppName: (NSString$\ast$) {\em appName}}}
+\label{interface_s_s_y_other_apper_0dc80eea85ed01896cb7b48ced64951e}
+
+
+Gets both version strings for an application with a given name and formats them into one string: \char`\"{}CFBundleShortVersionString (CFBundleVersion)\char`\"{}. 
+
+Uses NSWorkspace, thus requires the Cocoa AppKit. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em appName}]The name of the target application. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The string as described, or \char`\"{} ()\char`\"{} of the named application could not be found. \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/ClassesObjC/SSYOtherApper.h\item 
+Documents/Programming/ClassesObjC/SSYOtherApper.m\end{CompactItemize}

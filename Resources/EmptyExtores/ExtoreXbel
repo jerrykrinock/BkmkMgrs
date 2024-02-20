@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE xbel>
+<xbel version="1.0">
+	<folder folded="yes">
+		<title>Bookmarks Bar</title>
+		<info>
+			<metadata owner="com.sheepsystems.BookMacster/hartainer">BBar</metadata>
+		</info>
+	</folder>
+	<folder folded="yes">
+		<title>Bookmarks Menu</title>
+		<info>
+			<metadata owner="com.sheepsystems.BookMacster/hartainer">Menu</metadata>
+		</info>
+	</folder>
+	<folder folded="yes">
+		<title>Reading/Unsorted</title>
+		<info>
+			<metadata owner="com.sheepsystems.BookMacster/hartainer">Unfl</metadata>
+		</info>
+	</folder>
+	<folder folded="yes">
+		<title>My Shared Bookmarks</title>
+		<info>
+			<metadata owner="com.sheepsystems.BookMacster/hartainer">Ohar</metadata>
+		</info>
+	</folder>
+</xbel>

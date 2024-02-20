@@ -1,0 +1,17 @@
+#include "ConfigCommon.xcconfig"
+#include "ConfigCommonDebug.xcconfig"
+#include "ConfigFramework.xcconfig"
+
+OTHER_CFLAGS = -fsingle-precision-constant -DDEBUG
+ARCHS = i386 x86_64
+
+// According to this guy…
+// https://github.com/krevis/MIDIApps/blob/master/Configurations/Snoize-Project-Global.xcconfig
+// The following is equivalent to "Latest OS X".  Note that it will be 10.6 when building in Xcode 3.
+SDKROOT = macosx
+
+// Minimum machine we'll attempt to run on is 10.5
+MACOSX_DEPLOYMENT_TARGET = 10.6
+
+// Here is how to set a per-architecture deployment target
+// MACOSX_DEPLOYMENT_TARGET[arch=x86_64] = 10.6

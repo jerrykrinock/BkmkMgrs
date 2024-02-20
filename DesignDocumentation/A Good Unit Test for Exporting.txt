@@ -1,0 +1,14 @@
+Create an Empty Collection, Empty.bkmslf
+Structure with all Hard Folders
+1 Client
+Create a Collection, FewA.bkmslf, with one soft folder, FolderA, containing one bookmark, BkmkA, same 1 Client.
+Export to the Client.
+Create a third Collection, FewB.bkmslf, with the same 1 Client.  Import from this Client into FewB.bkmslf.
+In FewB.bkmslf, create a new folder FolderB.  Move BkmkA from FolderA to FolderB, and then delete FolderA.
+Export from FewB.
+Verify that, although FolderA and FolderB have different exids for the 1 Client, BkmkA and BkmkB have different exids for the 1 Client.
+Export from Empty.
+Export from FewA.
+Export from FewB.
+Expected Result: Client should have FolderB and BkmkB.
+Bad Result: BkmkB will not be there, because, for example, it may have been placed before its new parent FolderB was endowed with an identifier

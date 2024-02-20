@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BkmxDocWinCon">
+            <connections>
+                <outlet property="contentLazyView" destination="6977" id="7024"/>
+                <outlet property="progressView" destination="968" id="2303"/>
+                <outlet property="reportsLazyView" destination="6981" id="7026"/>
+                <outlet property="searchField" destination="4894" id="4911"/>
+                <outlet property="settingsLazyView" destination="6979" id="7025"/>
+                <outlet property="sidebarController" destination="lQL-CY-z4k" id="Au6-bT-jup"/>
+                <outlet property="tabContent" destination="6976" id="7038"/>
+                <outlet property="tabReports" destination="6980" id="7039"/>
+                <outlet property="tabSettings" destination="6978" id="7040"/>
+                <outlet property="toolbar" destination="4877" id="5040"/>
+                <outlet property="toolbarItemContent" destination="4888" id="4905"/>
+                <outlet property="toolbarItemHelp" destination="Av2-i2-eIQ" id="4yT-C9-RsM"/>
+                <outlet property="toolbarItemInspector" destination="4891" id="4906"/>
+                <outlet property="toolbarItemReports" destination="4890" id="4909"/>
+                <outlet property="toolbarItemSearch" destination="4896" id="4907"/>
+                <outlet property="topTabView" destination="1541" id="2764"/>
+                <outlet property="verifyProgressController" destination="782" id="832"/>
+                <outlet property="verifyProgressView" destination="5Md-iK-bdX" id="6vN-Eq-P3W"/>
+                <outlet property="window" destination="21" id="4084"/>
+                <outlet property="windowContentView" destination="2" id="726"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="bkmslf window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="21" userLabel="BkmxDoc Window" customClass="SSYHintableWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="0.0" y="388" width="889" height="470"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <view key="contentView" id="2" userLabel="Content">
+                <rect key="frame" x="0.0" y="0.0" width="889" height="470"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6648">
+                        <rect key="frame" x="0.0" y="0.0" width="889" height="23"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="968" userLabel="Status Bar" customClass="SSYProgressView">
+                        <rect key="frame" x="5" y="4" width="879" height="14"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </customView>
+                    <tabView fixedFrame="YES" drawsBackground="NO" allowsTruncatedLabels="NO" type="noTabsNoBorder" initialItem="7033" translatesAutoresizingMaskIntoConstraints="NO" id="1541" userLabel="Top Tab View" customClass="SSYTabView">
+                        <rect key="frame" x="0.0" y="23" width="661" height="448"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="The-Content" identifier="content" id="6976" userLabel="Content">
+                                <view key="view" id="6977" customClass="SSYContentLazyView">
+                                    <rect key="frame" x="0.0" y="0.0" width="661" height="448"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="The-Settings" identifier="settings" id="6978" userLabel="Settings">
+                                <view key="view" id="6979" customClass="SSYSettingsLazyView">
+                                    <rect key="frame" x="0.0" y="0.0" width="620" height="448"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="The-Reports" identifier="reports" id="6980" userLabel="Reports">
+                                <view key="view" id="6981" customClass="SSYReportsLazyView">
+                                    <rect key="frame" x="0.0" y="0.0" width="620" height="448"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="TheInitialDummy" identifier="initialDummy" id="7033" userLabel="InitialDummy">
+                                <view key="view" id="7034">
+                                    <rect key="frame" x="0.0" y="0.0" width="620" height="448"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="7023"/>
+                            <outlet property="toolbar" destination="4877" id="4916"/>
+                        </connections>
+                    </tabView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Md-iK-bdX" userLabel="Verify Progress View">
+                        <rect key="frame" x="660" y="23" width="228" height="448"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="939">
+                                <rect key="frame" x="10" y="227" width="208" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <clipView key="contentView" drawsBackground="NO" id="bR0-i5-R80">
+                                    <rect key="frame" x="1" y="1" width="195" height="199"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" smartInsertDelete="YES" id="940">
+                                            <rect key="frame" x="0.0" y="208" width="278" height="199"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="195" height="199"/>
+                                            <size key="maxSize" width="386" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="newLog">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" metaFont="system" size="10"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="YES" id="1160">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="1159">
+                                    <rect key="frame" x="196" y="1" width="11" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="818">
+                                <rect key="frame" x="17" y="216" width="194" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="816">
+                                <rect key="frame" x="17" y="125" width="194" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="814">
+                                <rect key="frame" x="15" y="127" width="5" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="812">
+                                <rect key="frame" x="208" y="127" width="5" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="811" userLabel="Throttle Slider">
+                                <rect key="frame" x="50" y="132" width="19" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <sliderCell key="cell" controlSize="small" alignment="left" maxValue="5" doubleValue="4" tickMarkPosition="right" numberOfTickMarks="6" allowsTickMarkValuesOnly="YES" sliderType="linear" id="1151">
+                                    <font key="font" metaFont="controlContent" size="11"/>
+                                </sliderCell>
+                                <connections>
+                                    <action selector="readThrottleControl:" target="782" id="4530"/>
+                                </connections>
+                            </slider>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="808">
+                                <rect key="frame" x="42" y="202" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="806">
+                                <rect key="frame" x="41" y="189" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="804">
+                                <rect key="frame" x="41" y="176" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="802">
+                                <rect key="frame" x="41" y="163" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="800">
+                                <rect key="frame" x="41" y="150" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="798">
+                                <rect key="frame" x="41" y="137" width="11" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </box>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="797">
+                                <rect key="frame" x="17" y="159" width="23" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="5" id="1149">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="796">
+                                <rect key="frame" x="17" y="145" width="23" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="2" id="1148">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="795">
+                                <rect key="frame" x="16" y="198" width="23" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="50" id="1147">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="794">
+                                <rect key="frame" x="16" y="161" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="1146">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <string key="title">10
+</string>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="793">
+                                <rect key="frame" x="17" y="131" width="23" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="1" id="1145">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="19" translatesAutoresizingMaskIntoConstraints="NO" id="792">
+                                <rect key="frame" x="16" y="174" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="1144">
+                                    <font key="font" metaFont="label" size="9"/>
+                                    <string key="title">20
+</string>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="116" translatesAutoresizingMaskIntoConstraints="NO" id="791">
+                                <rect key="frame" x="79" y="136" width="120" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="small" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" id="1143">
+                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <string key="title">requests
+per
+second</string>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="117" translatesAutoresizingMaskIntoConstraints="NO" id="790">
+                                <rect key="frame" x="79" y="194" width="121" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="small" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="throttle" id="1142">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="789">
+                                <rect key="frame" x="98" y="77" width="24" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="11" drawsBackground="YES" id="1141">
+                                    <font key="font" size="11" name="Helvetica"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="787">
+                                <rect key="frame" x="92" y="16" width="121" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="c" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="1140">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="user" size="13"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancel:" target="782" id="833"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="192" translatesAutoresizingMaskIntoConstraints="NO" id="786">
+                                <rect key="frame" x="12" y="43" width="196" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="1139">
+                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <string key="title">unansweredRequests
+line 2</string>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5673">
+                                <rect key="frame" x="19" y="17" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5674">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="helpVerify:" target="782" id="5675"/>
+                                </connections>
+                            </button>
+                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7041">
+                                <rect key="frame" x="10" y="100" width="208" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <levelIndicatorCell key="cell" controlSize="small" enabled="NO" alignment="left" maxValue="20" warningValue="13" criticalValue="14" numberOfMajorTickMarks="5" numberOfTickMarks="21" id="7042"/>
+                            </levelIndicator>
+                        </subviews>
+                    </customView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="AF0D2338-76B5-41F9-ABBB-62E5D170E49D" explicitIdentifier="topToolbar" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="4877">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="23E2A0C3-62C6-4A93-8F76-CDEF086C21B1" explicitItemIdentifier="content" label="contentus" paletteLabel="PalContent" tag="20" sizingBehavior="auto" id="4888" userLabel="Toolbar Item (Content)">
+                        <connections>
+                            <action selector="changeTabViewItem:" target="1541" id="4913"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EFE797ED-578F-47B8-ADA9-07B20D586ED9" explicitItemIdentifier="reports" label="reportz" paletteLabel="PalReports" tag="22" sizingBehavior="auto" id="4890" userLabel="Toolbar Item (Reports)">
+                        <connections>
+                            <action selector="changeTabViewItem:" target="1541" id="4915"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="4886"/>
+                    <toolbarItem implicitItemIdentifier="5F3ADB1E-CF18-4DA2-9E0A-6D0466504554" explicitItemIdentifier="searchField" label="" paletteLabel="PalSearch" tag="30" sizingBehavior="auto" id="4896" customClass="NSSearchToolbarItem">
+                        <nil key="toolTip"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" tag="30" allowsCharacterPickerTouchBarItem="YES" id="4894" customClass="BkmxSearchField">
+                            <rect key="frame" x="0.0" y="14" width="120" height="22"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" bezelStyle="round" recentsAutosaveName="RecentSearches" id="4895">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <action selector="search:" target="-2" id="xMM-k7-GhG"/>
+                            </connections>
+                        </searchField>
+                        <connections>
+                            <action selector="search:" target="-2" id="ccJ-XL-YTS"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="97A1FFF2-5AB9-4231-A8FF-01A37BFC2B43" explicitItemIdentifier="inspector" label="inspectorr" paletteLabel="PalInspector" tag="40" sizingBehavior="auto" id="4891" customClass="SSYToolbarButton">
+                        <connections>
+                            <action selector="inspectorShowOrNot:" target="-1" id="4910"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0C2D8774-45D2-4FFD-8B51-79987C0D2C54" explicitItemIdentifier="help" label="help" paletteLabel="PalHelp" tag="10" sizingBehavior="auto" id="Av2-i2-eIQ" userLabel="PalHelp" customClass="SSYToolbarButton">
+                        <connections>
+                            <action selector="help:" target="-2" id="ejC-0j-X5i"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="4888"/>
+                    <toolbarItem reference="4890"/>
+                    <toolbarItem reference="4896"/>
+                    <toolbarItem reference="4891"/>
+                    <toolbarItem reference="Av2-i2-eIQ"/>
+                </defaultToolbarItems>
+                <connections>
+                    <outlet property="delegate" destination="-2" id="4897"/>
+                </connections>
+            </toolbar>
+            <connections>
+                <outlet property="windowController" destination="-2" id="ibB-VC-JD8"/>
+            </connections>
+            <point key="canvasLocation" x="250.5" y="119"/>
+        </window>
+        <customObject id="lQL-CY-z4k" customClass="SSYSidebarController">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="whichEdge">
+                    <integer key="value" value="0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="mainView" destination="1541" id="Av4-IH-SF5"/>
+                <outlet property="sidebarView" destination="5Md-iK-bdX" id="8L0-ZU-L4N"/>
+            </connections>
+        </customObject>
+        <customObject id="782" userLabel="Verify Progress Controller" customClass="VerifyProgressController">
+            <connections>
+                <outlet property="buttonCancel" destination="787" id="823"/>
+                <outlet property="labelUnansweredRequests" destination="786" id="824"/>
+                <outlet property="levelIndicator" destination="7041" id="7043"/>
+                <outlet property="sliderThrottle" destination="811" id="826"/>
+                <outlet property="textLog" destination="940" id="941"/>
+                <outlet property="textNumberUnreplied" destination="789" id="829"/>
+                <outlet property="textRequestsPerSecond" destination="791" id="830"/>
+                <outlet property="textThrottle" destination="790" id="831"/>
+            </connections>
+        </customObject>
+    </objects>
+</document>

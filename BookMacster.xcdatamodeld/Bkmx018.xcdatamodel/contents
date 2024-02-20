@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.11" systemVersion="22A5311f" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Agent_entity" representedClassName="Agent" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="userDescription" optional="YES" attributeType="String"/>
+        <relationship name="commands" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Command_entity" inverseName="agent" inverseEntity="Command_entity"/>
+        <relationship name="macster" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Macster_entity" inverseName="agents" inverseEntity="Macster_entity"/>
+        <relationship name="triggers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Trigger_entity" inverseName="agent" inverseEntity="Trigger_entity"/>
+        <fetchIndex name="byCommandsIndex">
+            <fetchIndexElement property="commands" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byMacsterIndex">
+            <fetchIndexElement property="macster" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTriggersIndex">
+            <fetchIndexElement property="triggers" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Bookshig_entity" representedClassName="Bookshig" syncable="YES">
+        <attribute name="configureAutomatically" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="defaultSortable" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="filterIgnoredPrefixes" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="ignoreDisparateDupes" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="importCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="isWindowless" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="lastDupesDone" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastDupesMaybeLess" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastDupesMaybeMore" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastSortDone" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastSortMaybeNot" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastTouched" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastVerifyDone" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastVerifyMaybeNot" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="rootLeavesOk" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="rootNotchesOk" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="rootSoftainersOk" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="rootSortable" optional="YES" attributeType="Boolean" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="sortBy" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="sortFoldersAt" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="tagDelimiter" optional="YES" attributeType="Integer 16" defaultValueString="61441" usesScalarValueType="NO"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <attribute name="visitor" attributeType="String" defaultValueString="visitDB"/>
+        <relationship name="landing" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Stark_entity" inverseName="shigForLanding" inverseEntity="Stark_entity"/>
+        <fetchIndex name="byLandingIndex">
+            <fetchIndexElement property="landing" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Client_entity" representedClassName="Client" syncable="YES">
+        <attribute name="exformat" optional="YES" attributeType="String"/>
+        <attribute name="extorageAlias" optional="YES" attributeType="Binary"/>
+        <attribute name="extoreMedia" optional="YES" attributeType="String"/>
+        <attribute name="failedLastExport" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="lastImported" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastKnownTouch" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="otherMacAccount" optional="YES" attributeType="String"/>
+        <attribute name="otherMacVolume" optional="YES" attributeType="String"/>
+        <attribute name="profileName" optional="YES" attributeType="String"/>
+        <attribute name="profileNameAlternate" optional="YES" attributeType="String"/>
+        <attribute name="serverDisplayName" optional="YES" attributeType="String"/>
+        <attribute name="specialOptions" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="unexportedDeletions" optional="YES" attributeType="Transformable" valueTransformerName="TransformStringsSetToData"/>
+        <relationship name="exporter" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Exporter_entity" inverseName="client" inverseEntity="Exporter_entity"/>
+        <relationship name="importer" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Importer_entity" inverseName="client" inverseEntity="Importer_entity"/>
+        <relationship name="macster" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Macster_entity" inverseName="clients" inverseEntity="Macster_entity"/>
+        <relationship name="triggers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Trigger_entity" inverseName="client" inverseEntity="Trigger_entity"/>
+        <fetchIndex name="byExporterIndex">
+            <fetchIndexElement property="exporter" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byImporterIndex">
+            <fetchIndexElement property="importer" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byMacsterIndex">
+            <fetchIndexElement property="macster" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTriggersIndex">
+            <fetchIndexElement property="triggers" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Clixid_entity" representedClassName="Clixid" syncable="YES">
+        <attribute name="clidentifier" optional="YES" attributeType="String"/>
+        <attribute name="exid" optional="YES" attributeType="String"/>
+        <relationship name="starxid" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Starxid_entity" inverseName="clixids" inverseEntity="Starxid_entity"/>
+        <fetchIndex name="byStarxidIndex">
+            <fetchIndexElement property="starxid" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Command_entity" representedClassName="Command" syncable="YES">
+        <attribute name="argument" optional="YES" attributeType="Transformable"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="method" optional="YES" attributeType="String" defaultValueString="importIfNeededWithDeference:"/>
+        <relationship name="agent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Agent_entity" inverseName="commands" inverseEntity="Agent_entity"/>
+        <fetchIndex name="byAgentIndex">
+            <fetchIndexElement property="agent" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Dupe_entity" representedClassName="Dupe" syncable="YES">
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="dupetainer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Dupetainer_entity" inverseName="dupes" inverseEntity="Dupetainer_entity"/>
+        <relationship name="starks" toMany="YES" deletionRule="Nullify" destinationEntity="Stark_entity" inverseName="dupe" inverseEntity="Stark_entity"/>
+        <fetchIndex name="byDupetainerIndex">
+            <fetchIndexElement property="dupetainer" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byStarksIndex">
+            <fetchIndexElement property="starks" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Dupetainer_entity" representedClassName="Dupetainer" syncable="YES">
+        <relationship name="dupes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dupe_entity" inverseName="dupetainer" inverseEntity="Dupe_entity"/>
+        <fetchIndex name="byDupesIndex">
+            <fetchIndexElement property="dupes" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ErrorLog_entity" representedClassName="ErrorLog" parentEntity="LogEntry_entity" syncable="YES">
+        <attribute name="archive" optional="YES" attributeType="Transformable"/>
+        <attribute name="presented" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Exporter_entity" representedClassName="Exporter" parentEntity="Ixporter_entity" syncable="YES">
+        <attribute name="anyStarkCatchypeOrder" optional="YES" attributeType="Transformable"/>
+        <attribute name="preferredCatchype" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="safeLimit" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="25" usesScalarValueType="NO"/>
+        <relationship name="client" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Client_entity" inverseName="exporter" inverseEntity="Client_entity"/>
+        <fetchIndex name="byClientIndex">
+            <fetchIndexElement property="client" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ExportLog_entity" representedClassName="ExportLog" parentEntity="IxportLog_entity" syncable="YES">
+        <attribute name="exporterDisplayName" optional="YES" attributeType="String"/>
+        <attribute name="exporterUri" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FolderMap_entity" representedClassName="FolderMap" parentEntity="TalderMap_entity" syncable="YES">
+        <relationship name="ixporter" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Ixporter_entity" inverseName="folderMaps" inverseEntity="Ixporter_entity"/>
+        <fetchIndex name="byIxporterIndex">
+            <fetchIndexElement property="ixporter" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Importer_entity" representedClassName="Importer" parentEntity="Ixporter_entity" syncable="YES">
+        <relationship name="client" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Client_entity" inverseName="importer" inverseEntity="Client_entity"/>
+        <fetchIndex name="byClientIndex">
+            <fetchIndexElement property="client" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="ImportLog_entity" representedClassName="ImportLog" parentEntity="IxportLog_entity" syncable="YES">
+        <attribute name="importersDisplayList" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Ixporter_entity" representedClassName="Ixporter" isAbstract="YES" syncable="YES">
+        <attribute name="deleteUnmatched" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="fabricateFolders" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="fabricateTags" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="ixportCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="lastPostHash" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="lastPreHash" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="mergeResolutionExids" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="mergeResolutionTags" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="mergeStark" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="mergeUrl" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="shareNewItems" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="skipFileUrls" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="skipJavaScript" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="skipRssFeeds" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="skipSeparators" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <relationship name="folderMaps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FolderMap_entity" inverseName="ixporter" inverseEntity="FolderMap_entity"/>
+        <relationship name="tagMaps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TagMap_entity" inverseName="ixporter" inverseEntity="TagMap_entity"/>
+        <fetchIndex name="byFolderMapsIndex">
+            <fetchIndexElement property="folderMaps" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byTagMapsIndex">
+            <fetchIndexElement property="tagMaps" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="IxportLog_entity" representedClassName="IxportLog" isAbstract="YES" parentEntity="LogEntry_entity" syncable="YES">
+        <attribute name="displayStatistics" optional="YES" attributeType="String"/>
+        <attribute name="errorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="serialNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="whoDo" optional="YES" attributeType="String"/>
+        <relationship name="starkoids" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Starkoid_entity" inverseName="ixportLog" inverseEntity="Starkoid_entity"/>
+        <fetchIndex name="byStarkoidsIndex">
+            <fetchIndexElement property="starkoids" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="LogEntry_entity" representedClassName="LogEntry" isAbstract="YES" syncable="YES">
+        <attribute name="processId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="processType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Macster_entity" representedClassName="Macster" syncable="YES">
+        <attribute name="agentConfig" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="anyStarkCatchypeOrder" optional="YES" attributeType="Transformable"/>
+        <attribute name="autoExport" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="autoImport" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="autosaveUponClose" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="daysDiary" optional="YES" attributeType="Float" defaultValueString="15" usesScalarValueType="NO"/>
+        <attribute name="deleteUnmatchedMxtr" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO"/>
+        <attribute name="doFindDupesAfterOpen" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="doSortAfterOpen" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="openMinimized" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="preferredCatchype" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="NO"/>
+        <attribute name="safeLimitImport" optional="YES" attributeType="Integer 32" defaultValueString="25" usesScalarValueType="NO"/>
+        <relationship name="agents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Agent_entity" inverseName="macster" inverseEntity="Agent_entity"/>
+        <relationship name="clients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Client_entity" inverseName="macster" inverseEntity="Client_entity"/>
+        <fetchIndex name="byAgentsIndex">
+            <fetchIndexElement property="agents" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byClientsIndex">
+            <fetchIndexElement property="clients" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="MessageLog_entity" representedClassName="MessageLog" parentEntity="LogEntry_entity" syncable="YES">
+        <attribute name="message" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Stark_entity" representedClassName="Stark" syncable="YES">
+        <attribute name="addDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="autodeleteDate" optional="YES" attributeType="Date" defaultDateTimeInterval="0" usesScalarValueType="NO"/>
+        <attribute name="color" optional="YES" attributeType="Transformable"/>
+        <attribute name="comments" optional="YES" attributeType="String"/>
+        <attribute name="dontExportExformats" optional="YES" attributeType="Transformable" valueTransformerName="TransformStringsArrayToData"/>
+        <attribute name="dontVerify" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="exid" optional="YES" attributeType="String"/>
+        <attribute name="favicon" optional="YES" attributeType="Binary"/>
+        <attribute name="faviconUrl" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" minValueString="0" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="isAllowedDupe" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="isAutoTab" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="isExpanded" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="isShared" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="lastChengDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastVisitedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="rssArticles" optional="YES" attributeType="Transformable"/>
+        <attribute name="sharype" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="shortcut" optional="YES" attributeType="String"/>
+        <attribute name="sortable" optional="YES" attributeType="Integer 16" defaultValueString="127" usesScalarValueType="NO"/>
+        <attribute name="sortDirective" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="starkid" optional="YES" attributeType="String"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable" valueTransformerName="TransformStringsArrayToData"/>
+        <attribute name="toRead" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="verifierCode" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="verifierDetails" optional="YES" attributeType="Transformable"/>
+        <attribute name="verifierDisposition" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="verifierLastDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="verifierSubtype302" optional="YES" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="visitCount" optional="YES" attributeType="Integer 32" usesScalarValueType="NO"/>
+        <attribute name="visitor" optional="YES" attributeType="String" defaultValueString="visitDD"/>
+        <attribute name="visitorWindowFrame" optional="YES" attributeType="String"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Stark_entity" inverseName="parent" inverseEntity="Stark_entity"/>
+        <relationship name="dupe" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Dupe_entity" inverseName="starks" inverseEntity="Dupe_entity"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Stark_entity" inverseName="children" inverseEntity="Stark_entity"/>
+        <relationship name="shigForLanding" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Bookshig_entity" inverseName="landing" inverseEntity="Bookshig_entity"/>
+        <fetchIndex name="byIndexIndex">
+            <fetchIndexElement property="index" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byChildrenIndex">
+            <fetchIndexElement property="children" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byDupeIndex">
+            <fetchIndexElement property="dupe" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byParentIndex">
+            <fetchIndexElement property="parent" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byShigForLandingIndex">
+            <fetchIndexElement property="shigForLanding" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Starkoid_entity" representedClassName="Starkoid" syncable="YES">
+        <attribute name="changeType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="fromDisplayName" optional="YES" attributeType="String"/>
+        <attribute name="lineage" optional="YES" attributeType="String"/>
+        <attribute name="sharypeCoarse" optional="YES" attributeType="Integer 16" defaultValueString="3567" usesScalarValueType="NO"/>
+        <attribute name="updateDescriptions" optional="YES" attributeType="Transformable" valueTransformerName="TransformStringsArrayToData"/>
+        <relationship name="ixportLog" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="IxportLog_entity" inverseName="starkoids" inverseEntity="IxportLog_entity"/>
+        <fetchIndex name="byIxportLogIndex">
+            <fetchIndexElement property="ixportLog" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Starlobute_entity" representedClassName="Starlobute" syncable="YES">
+        <attribute name="isExpanded" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="starkid" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Starxid_entity" representedClassName="Starxid" syncable="YES">
+        <attribute name="starkid" optional="YES" attributeType="String"/>
+        <relationship name="clixids" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Clixid_entity" inverseName="starxid" inverseEntity="Clixid_entity"/>
+        <fetchIndex name="byClixidsIndex">
+            <fetchIndexElement property="clixids" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="TagMap_entity" representedClassName="TagMap" parentEntity="TalderMap_entity" syncable="YES">
+        <relationship name="ixporter" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Ixporter_entity" inverseName="tagMaps" inverseEntity="Ixporter_entity"/>
+        <fetchIndex name="byIxporterIndex">
+            <fetchIndexElement property="ixporter" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="TalderMap_entity" representedClassName="TalderMap" syncable="YES">
+        <attribute name="folderId" optional="YES" attributeType="String"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Trigger_entity" representedClassName="Trigger" syncable="YES">
+        <attribute name="efficiently" optional="YES" attributeType="Integer 16" defaultValueString="-2" usesScalarValueType="NO"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="period" optional="YES" attributeType="Integer 32" defaultValueString="1800" usesScalarValueType="NO"/>
+        <attribute name="recurringDate" optional="YES" attributeType="Transformable"/>
+        <attribute name="triggerType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO"/>
+        <relationship name="agent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Agent_entity" inverseName="triggers" inverseEntity="Agent_entity"/>
+        <relationship name="client" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Client_entity" inverseName="triggers" inverseEntity="Client_entity"/>
+        <fetchIndex name="byAgentIndex">
+            <fetchIndexElement property="agent" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byClientIndex">
+            <fetchIndexElement property="client" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <elements>
+        <element name="Agent_entity" positionX="1116" positionY="24" width="128" height="133"/>
+        <element name="Bookshig_entity" positionX="16" positionY="18" width="128" height="420"/>
+        <element name="Client_entity" positionX="1116" positionY="198" width="135" height="315"/>
+        <element name="Clixid_entity" positionX="1852" positionY="51" width="128" height="90"/>
+        <element name="Command_entity" positionX="1303" positionY="21" width="128" height="105"/>
+        <element name="Dupe_entity" positionX="421" positionY="513" width="128" height="88"/>
+        <element name="Dupetainer_entity" positionX="567" positionY="459" width="128" height="60"/>
+        <element name="ErrorLog_entity" positionX="2185" positionY="162" width="128" height="73"/>
+        <element name="Exporter_entity" positionX="891" positionY="369" width="128" height="105"/>
+        <element name="ExportLog_entity" positionX="2563" positionY="342" width="128" height="75"/>
+        <element name="FolderMap_entity" positionX="540" positionY="635" width="128" height="58"/>
+        <element name="Importer_entity" positionX="889" positionY="522" width="128" height="60"/>
+        <element name="ImportLog_entity" positionX="2419" positionY="342" width="128" height="60"/>
+        <element name="Ixporter_entity" positionX="729" positionY="342" width="128" height="299"/>
+        <element name="IxportLog_entity" positionX="2484" positionY="162" width="128" height="120"/>
+        <element name="LogEntry_entity" positionX="2320" positionY="18" width="128" height="90"/>
+        <element name="Macster_entity" positionX="927" positionY="54" width="128" height="255"/>
+        <element name="MessageLog_entity" positionX="2329" positionY="162" width="128" height="60"/>
+        <element name="Stark_entity" positionX="205" positionY="18" width="128" height="643"/>
+        <element name="Starkoid_entity" positionX="2655" positionY="162" width="128" height="135"/>
+        <element name="Starlobute_entity" positionX="738" positionY="45" width="128" height="75"/>
+        <element name="Starxid_entity" positionX="1656" positionY="33" width="128" height="75"/>
+        <element name="TagMap_entity" positionX="909" positionY="639" width="128" height="58"/>
+        <element name="TalderMap_entity" positionX="727" positionY="737" width="128" height="88"/>
+        <element name="Trigger_entity" positionX="1323" positionY="306" width="101" height="148"/>
+    </elements>
+</model>

@@ -1,0 +1,12 @@
+• Copy the 1024x1024 png file of the app icon as <AppName>.blurred.png.
+• Open in GraphicConverter
+• Remove the alpha channel
+• menu > Filter > Core Image Filters > Blur > Gaussian Blur. 
+• Set Radius to 30.
+• Apply
+Alpha channel will come back for some reason.
+• Remove the alpha channel again.
+Trim width equally from each side so that picture is 678 wide instead of 1024.
+• Scale picture to 200 x 552.  You'll need to switch off the Keep Proportions checkbox.
+• Using Simple Brightness/Contrast, do Brightness to +77, Contrast -74.
+• Save

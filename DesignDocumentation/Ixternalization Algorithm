@@ -1,0 +1,144 @@
+Execution of the Import or Export command is complicated by the slightly different attributes, rules and structures which the designers of the different web browsers have ascribed to their bookmarks.  Taking poetic license with some mathematical definitions, BookMacster needs to be at times "greatest common denominator" and at other times the "least common factor".  Several of differences are resolved by options which are available to you in the Settings > Import/Export tab of a document.
+
+We describe herein the heart of the Import/Export execution  which we call the "Internalization" or "Externalization" -- the actual mixing of the source and destination items.  Other processes such as quitting browsers, removing duplicates for those browsers that don't allow them, translating tag delimiters, translating RSS articles, writing files, timestamping, etc. occur before or after this but they are beyond the scope of this article.
+
+Before we could design BookMacster to do what it should in this process, we needed to write down clearly what was expected.  This lengthy document is the result.  We put it in the Help Book here for anyone who is interested in understanding exactly what all the options do, so that they can exercise fine control over how BookMacster moves any given bookmark or folder from "here" to "there".
+
+The process has been broken into several different modules which execute sequentially as given below.  The entire process is repeated for each Import Source or Export Destination in a document's Settings.
+
+
+Prepare
+
+First, we look up, for the external source, the list of 
+common attributes" supported by the external browser or file which is involved.  For example, Safari does not support an item "keyword", but Camino does.  Firefox supports a "last modified date" attribute which is supported by neither Safari nor Camino.  If the "Fabricate tags" switch is on for this Import/Export, we add the 'tags' attribute to this list.  This is becase, if importing, our bookmarks will be getting tagged before merging.  Similarly, if exporting, our bookmarks will need to have tags copied to them so we can fabricate folders from them after merging.
+
+Next, we clean out any items that we may have in memory and re-read in all items from the external browser or file.  Note that this browser or file will be the "source" if we are doing an Import operation, or the "destination" if we are doing an Export operation.
+
+Any "Special Mapping", (currently only done with an Import of Opera bookmarks, for their pseudo-Bookmarks Bar) is performed at this time.
+
+Then, if this operation is an export, or if this Import Source is the first Import Source being imported, a "sponsor index" attribute on each item is set to nil (no value), indicating that it was originally in the source.  We will set this attribute later when an item has been matched to a source item -- the Import Source becomes its "sponsor".  Also, in the event that we are set to "Clean Slate", we will delete unsponsored items.  And, we clear (set to zero) the counts of adds, updates, and changes for this Import or Export
+
+We set some "observers" which will record whenever items are added, updated (attributes changed) or deleted.  Apple's Cocoa frameworks will do the observing for us.
+
+We determine the "clean slate" boolean variable.  For an Export operation
+
+Merge
+
+Next, items are merged between the source and destination.  This is, of course, the most complicated module.  It is performed on each source item.  In the first part, we will be looking for a "matching" destination item, called the "mate", and in the latter part we will be copying attributes and such.  So, now, for each source item...
+
+If the source item is a Hard Folder, processing is simplified.  The mate is the same Hard Folder in the destination, if it has such a Hard Folder.  For example, the Bookmarks Bar will be matched to the Bookmarks Bar, etc.  If the same Hard Folder does not exist in the destination, the mate is set to the destination's Default Parent.
+
+For an export, it is possible that the destination may not have a Default Parent.  For example, Pinboard does not even have a root item -- all items are "loose" bookmarks.  In that case, we abort processing this source item and skip to the next one.
+
+We don't copy the attributes of a Hard Folder, so now we skip down to the bottom of this module where we enter the "mates" into a pair of dictionaries.  (See below.)
+
+If the source item is a Hard Folder, we have alot of work to do.  Again, first we look for a mate.
+
+Our first action is to try and find an item in the destination with the same exid as the item from the source under consideration.  If found, that's the mate.
+
+If an item with matching exid is not found for a source item, and if "Merge By URL" is checked, the destination is searched for an item with effectively the same URL.  This is how "Merge By URL" option is used to avoid creating duplicates.
+
+In either of the above two searches produces a mate, we now add the source item to an array of 'deletables if childless'.  This is done to fulfill the "Delete certain empty folders" section of the documentation.
+
+But if neither search produces a mate, this means that we're importing or exporting a "new" item -- one which did not previously exist in the destination.   First, we check and see if the source item would be exportable to the browser/file.  For example, if a source item's type is that of Soft Folder and the browser/file is Pinboard, this source item is not exportable because Pinboard does not accept folders, only bookmarks.  And if the source item is not exportable, a new destination which we would fabricate by copying it would not be exportable either.  So we skip the remaining processing for this item and start with the next source item, it any.  We do the same the "Clean Slate" option is off and if the source item is a separator, concluding that the destination already has enough separators of its own. 
+
+If the source item passes these tests, we fabricate a new item, set its 'new item' flag, and set this to be the mate we're looking for.  If we're Importing and the "Share new items'" option is checked on, the "shared" attribute of the new item is set to the "on" condition.  And, for efficiency, we add this new item to a set of "new destination items" which will bypass the Clean Slate module, since obviously a new item should not need to be deleted.
+
+The following processing is done to both new items and mates that were found in the destination.
+
+We set a temporary "sponsor index" of the matched or new item to be the index of the Import Source, and another attribute called the "sponsored index" to be the index of that the source item has within its parent folder ("child number").  We'll use the former to avoid deleting this item if we Clean Slate, and both numbers when we reconstruct the parent folder in the destination.  For matched items, the idea is that the item's location in the source will over-ride its current location in the destination, causing it to be moved if necessary.  In this case, "the source rules".
+
+Next, we merge attributes (name, url, shortcut, comments, etc.) from the source item to its destination mate.  All attributes that are applicable in the source format are copied from source item, erasing the value in the destination item if there was any, except for the 'tags' attribute -- tags are merged if the "Merge tags" option is checked on in an Import configuration.  In addition, if the "Fabricate tags" option is checked on, tags are added, one for each of the Soft Folders in the lineage of the source item.  Except: When a given tag is to be added, this occurs only if it does not already exist in the item's tags.  Attributes that applicable in the destination format only are left untouched in the destination item.  This is particularly important during an Import, since BookMacster's items carry a wealth of attributes that most and in some cases no external sources have.  Examples: the "Sort this folder" attribute of a folder, the last Verify results, the "don't verify" attribute, 
+
+We didn't copy the exid in the previous paragraph.  This is handled now.  If we're executing an Import, we simply copy the exid from the source item to the destination item.  If we're doing an Export, though, things are more complicated.  If this item is new to the export destination, it will not have an exid.  And we could not necessarily generate one yet because some browser applications (web apps in particular) would rather generate their own exids (on their remote server).  And for OmniWeb, the exid depends on which of their three top-level collection the item is bound for.  So instead of messing things up at this point, we  add to the destination a "mate in Collection" attribute, with value set to the source item.  In a later process, another part of the Export command execution, not described in this article, we'll get an exid, and back-fill it into the source item.
+
+Note that we need not copy exids related to other browser/files.  This is because, when importing, the only exid we want from the browser/file, indeed the only one it has, is its own.  Similarly, when exporting, the  external browser is interested only in its own exid.
+
+If the date "Added" is supported by the destination but not by the source, as will be the case for example with an Import from Safari, and if this date is currently not set in the destination item, it is set to the current date (and time).  The same thing is done for the "Last Modified" date.
+
+Finally, we enter this source and destination pair into one or two dictionaries of "mates".  There is a destination-to-source dictionary which allows us to look up the source item for a given destination item, and a source-to-destination dictionary which does the vice versa.  We'll need these dictionaries later in the Identify Families module.  For now, note that if we created a new destination item, it will definitely need to be moved somewhere, because at this time it does not have any location.  For most items, we make the entry in both dictionaries, but if the source item was a Hard folder and we substituted in the destination's Default Parent, then we only enter it into the source-to-destination dictionary, which we will use to find the "parent in the destination".  If we entered it into the destination-to-source dictionary, it might tell us that, for example, the destination's root's mate in the source is its bookmarks bar, which would lead to a catastrophic failure later.
+
+The above is repeated for each item in the source.
+
+
+Prepare Destin
+
+"Clean slate" means to delete any items in the destination which have not been sponsored.
+
+If we determine that the operation should be done, we examine each destination item and, if it is not a Hard Folder and has not been sponsored (no sponsor index), we delete it.  Otherwise, we add it to a list called "survivors".  At the end we re-set our list of destination items to be the survivors.
+
+Finally, even if we didn't do the operation, we add the "new destinaion items" which we collected during the Merge module to our  destination items.
+
+
+Identify Families
+
+The purpose of this module is to add to any parent items a set of "sponsored children", which are the pending children that need to be be moved into their family.
+
+The reason for not moving children immediately to their new parents is that children appear at random in this process, and we have to wait until we have all the children for a given parent so that we can place them in the proper order -- which child should be first under the parent, second, third etc.  These actual moves will be done in the next module.
+
+Again, we consider each destination item in turn.  Although we are going to add sponsored children to a parent, we must consider each item as a child because at this point it is only the children who know who their paretns are.
+
+First, we see if the item has set its 'correct parent has me' flag checked.  If so, then we immediately stop and skip ahead to the next destination item, because this operation is apparently part of a multi-source import or export, and this was an item from a previous source which has already been identified to its correct parent.
+
+Next, we get an item's mate from the destination-to-source mates dictionary that we created during the Merge module.  If this mate is root, we immediately stop and skip ahead to the next destination item, because root does not have a parent and therefore this item has no information for us.  
+
+We now get the parent of this mate, and using the source-to-destination mates dictionary, we map this back to find the "correct parent" in the destination.  (Imagine if you if you and your parent were both standing in front of a large mirror but had a wall between you.  You know that the person on the other side of the wall is your parent because you can see their reflection standing next to your reflection in the mirror.)
+
+If the parent of the mate does not exist, and if the destination item is not itself root, and if its its 'new item' flag is on, this means that the item was parentless in the source.  This will occur if it comes from a parentless source such as Pinboard.  In this case, we add it to a special collection of parentless destination items and also set the item's 'correct parent has me' flag, and also set a flag indicating that the current item is headed for root (headedForRoot).
+
+If the parent of the mate does exist, and if the destination item itself is not root, and if the resulting correctParent is root, we likewise set the headedForRoot flag.
+
+Next, if the correct parent we have just computed is the root item, we check and see if the item is allowed into it.  For example, loose bookmarks are not allowed into the Root of an export destined for Camino.  If not allowed, we re-set the correct parent to the Default Parent for the destination, and if not allowed there, re-set to still a different Hard Folder.  (There is a "hidden preference" to set the order in which the other Hard Containers are tried.)  
+
+We note that this incompatibility could only have occured if the item was "sponsored" to move into the incompatible parent.  And, as a newcomer, it should be placed below other children which were intended for this parent.  Therefore, we set its "sponsored index" attribute to a large number, plus its current index.  The idea here is that it will appear below the items which already existed in the destination, but have the same relation to its siblings..
+
+Items that were in the destination to begin with, and not matched/sponsored during Merge, and not deleted during Clean Slate will not have a mate in the destination-to-source dictionary and therefore a "correct parent" will not be found.  This item does is already in its correct location and does not need to be moved, or sponsored.  Therefore, we stop processing this item and skip ahead to the next one.
+
+Finally, we execute two tests to determine whether an item needs to be sponsored so it can be moved.  First, we test if the the correct parent is the current parent.  If it is in the correct parent, we further test that the "sponsored index" which was assigned during the Merge module, the index of the item in the source which it should be in the destination, is the same as the item's current index.  If either test fails, we add the item to the sponsored children of its correct parent.  Also, we remove it from its current parent or from the set of parentless destination items, whichever is applicable, and finally we set its 'correct parent has me' flag so that this item is not reprocessed during import or export of other sources.
+
+If the item passes both tests, it does not need to be moved, so we're done with it.
+
+We repeat the above steps for each destination item.
+
+
+Connect Families
+
+This module is a "summary" module to make the moves we identified in the preceding module.  To avoid playing musical chairs and reporting things as changed when they in fact ended up where they started, this module is only executed when importing the last Import Source, or if we are Exporting.  Otherwise, we skip immediately to the end of this module.
+
+For each item in the destination, first we combine its existing children with its sponsored children into an array of "correct children".  If the item is root, we also combine in the set of parentless destination items which we had collected during the previous section.  Then we sort this array  first by sponsor index and then by what we call "effective index".  For unsponsored items, effective index is their current index, and for sponsored items, the effective index is their sponsored index.
+
+The reason for sorting first by sponsor index is so that when items from the original destination and from input sources are combined into the same parent folder, the original items (those with no sponsor index) appear first, followed by those from the first input source, then those from the next input source, etc.
+
+In order to avoid logging a change if in fact no change occurred, and to avoid extra work, we compare the array of children just computed for this parent with the array of existing children.  If they do not have exactly the same children in exactly the same order, we remove all children and re-set the correct children into the parent in the correct order.
+
+
+Fabricate Folders
+
+There is the question of when we should do this.  We do not want to do it to the source, before Merge, at least during an Export, because it would fabricate folders in the source Collection, clearly an unacceptable side effect.  Will it work if we do it after Merge, to the destination?
+
+Consider 'Fabricate Folders' during  Import.  (Why would anyone want to do this?  Well, so you could edit and rearrange them before exporting.)  The source-browser/file items will have tags.  Since BookMacster document supports tags, destination items will also have tags after Merge.  Therefore 'Fabricate Folders' can be executed after Merge.
+
+Consider 'Fabricate Folders' during an Export.  (Why would anyone want to do this?  Well, it's the normal way for destinations that don't support tags.)  The source-Collection items will have tags, but after Merge the destination-client items will have tags from the source if the mergeTags parameter of overwriteAttributes:mergeTags:fromStark: is BkmxMergeResolutionKeepSource or BkmxMergeResolutionKeepBoth.  Actually, these are the only two  possible values available because this parameter is set by a checkbox reverse-transformed by SSYTransformShortToBool.  So it should work if I 'Fabricate tags' after Merge, but seems kind of fragile.
+
+So, we do it now, near the end.  If  the "Fabricate Folders"  option is switched on, the indicated operation is now performed on the destination items.  This is done by again iterating through all of the destination items.
+
+
+Finish
+
+Since there's no need to do this until we're done, the following operation only executed if we are importing the last Import Source, or if we are Exporting.  Otherwise, we skip it.
+
+First, we iterate through destination items to find the destination root, and also count the number of children.  The latter will be needed to show progress while merging folders.
+
+It will sometimes occur when importing from more than one source that you will import a folder named, say, "News" which is located in the, say, Bookmarks Bar, into a destination whose Bookmarks Bar already has a folder named "News".  In this case, you'd want these two folders to be merged, so we now do that, merging the newer folder into the older folder.
+
+If the item is a folder, we see if it contains any sets of subfolders with the same name (doing a case-insensitive comparison) and, if so, combine their contents into one folder.
+
+In the remainder of this operation, again we examine each item in the destination.
+
+We iterate through the set of deletablesIfChildless, get the mate in the destination of each of these items (since the set includes source items) and, like the name says, delete them if they are childless.
+
+ Then, we also remove the "sponsor index" and "sponsored index" attributes, since they were just temporary for this concatenation of Import or Export operations.  The former is acually necessary, in case the operation is repeated, because we would re-detect these items as sponsored.  The latter is just to clean up and not waste memory.  We also clear all flags ('new item' and 'correct parent has me'), in case the operation is repeated later.
+
+The above is repeated for all items in the destination.
+
+Finally, in any destination item which had any attributes or relationships changed (moved to a new parent; gained, lost or reordered children), the Last Modified date is set to the current date and time.

@@ -1,0 +1,20 @@
+CURRENT_PROJECT_VERSION = 3.1
+
+// Note: You cannot use /* C-style comments */ in .xcconfig file
+
+// W3CBE = World Wide Web Consortium Browser Extension Community Group
+// Their website is https://browserext.github.io
+
+W3CBE_BUTTON_EXTENSION_MIN_VERSION_FOR_OPERA = 26
+W3CBE_BUTTON_EXTENSION_MIN_VERSION_FOR_OTHERS = 28
+W3CBE_SYNC_EXTENSION_MIN_VERSION_FOR_OPERA = 38
+W3CBE_SYNC_EXTENSION_MIN_VERSION_FOR_OTHERS = 40
+// Often different for Opera due to slow Opera review process.
+
+
+// W3CBE actual extension versions are stated in their manifest.json files.
+
+// Note that we can only require *minimum* versions because Chrome, Chromium,
+// and Vivaldi (I verified these) and Opera (I hope) automatically check for
+// and update extensions for users "every few hours", Firefox is 24 hours by
+// default, and all of them only when they are running.

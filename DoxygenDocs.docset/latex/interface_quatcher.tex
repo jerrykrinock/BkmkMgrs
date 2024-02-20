@@ -1,0 +1,63 @@
+\hypertarget{interface_quatcher}{
+\section{Quatcher Class Reference}
+\label{interface_quatcher}\index{Quatcher@{Quatcher}}
+}
+A Quit Watcher.~ Will watch quatches (quit watches) and, when an app specified by a quatch quits, will launch a worker tool with the argument specified in the quatch.  
+
+
+{\tt \#import $<$Quatcher.h$>$}
+
+Inheritance diagram for Quatcher::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_quatcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(id) - \hyperlink{interface_quatcher_6851273b20027e4e2b9ceb53bdbdfedd}{initWithWorkerPath:quatches:}
+\begin{CompactList}\small\item\em Designated initializer for this class. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_quatcher_e87f01cbc4e56ac930a80891b4b11212}{
+NSDictionary $\ast$ \textbf{quatches}}
+\label{interface_quatcher_e87f01cbc4e56ac930a80891b4b11212}
+
+\item 
+\hypertarget{interface_quatcher_e293efe2a44b50968f872a3311ed74db}{
+NSString $\ast$ \textbf{workerPath}}
+\label{interface_quatcher_e293efe2a44b50968f872a3311ed74db}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A Quit Watcher.~ Will watch quatches (quit watches) and, when an app specified by a quatch quits, will launch a worker tool with the argument specified in the quatch. 
+
+Note that, because the quatches and workerPath are stored as instance variables, and there are no setters, it is necessary to destroy this object and create a new one when the underlying values in the user defaults change.~ In practice, this is done by killing and then restarting the Quatch tool in which this thing lives.~
+
+This would not be necessary if this class' -handleAppQuit method would read the user defaults whenever needed.~ However, that might cause this agent to use more CPU time whenever an app quits, and since it was easy to do the instance variables, and natural to quit and restart the Quatch tool in -\mbox{[}\hyperlink{class_bookshelf}{Bookshelf} syncLaunchdAgents\mbox{]} anyhow, and since instance variables was the method I used in Bookwatchdog, I decided to use instance variables.~ 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_quatcher_6851273b20027e4e2b9ceb53bdbdfedd}{
+\index{Quatcher@{Quatcher}!initWithWorkerPath:quatches:@{initWithWorkerPath:quatches:}}
+\index{initWithWorkerPath:quatches:@{initWithWorkerPath:quatches:}!Quatcher@{Quatcher}}
+\subsubsection[{initWithWorkerPath:quatches:}]{\setlength{\rightskip}{0pt plus 5cm}- (id) initWithWorkerPath: (NSString$\ast$) {\em workerPath\_\-}\/ quatches: (NSDictionary$\ast$) {\em quatches\_\-}}}
+\label{interface_quatcher_6851273b20027e4e2b9ceb53bdbdfedd}
+
+
+Designated initializer for this class. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em workerPath\_\-}]Path to tool which should be launched when a quatch detects a quit. \item[{\em quatches\_\-}]See definition of the root user defaults key constKeyQuatches. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Quatcher.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Quatcher.m\end{CompactItemize}

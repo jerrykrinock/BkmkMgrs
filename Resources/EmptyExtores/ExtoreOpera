@@ -1,0 +1,83 @@
+{
+   "checksum": "c4a06cd30be8ffc5cd747f2baa7f472b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13109569410413484",
+         "date_modified": "13109570140578425",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "sync_transaction_version": "3",
+         "type": "folder"
+      },
+      "custom_root": {
+         "speedDial": {
+            "children": [ {
+               "children": [  ],
+               "date_added": "13109569410574074",
+               "date_modified": "13109570266158225",
+               "id": "8",
+               "meta_info": {
+                  "speed_dial_root_folder_guid": "8E5B29CB-5489-4A60-A33F-F6FAA9F256F2"
+               },
+               "name": "Air2",
+               "sync_transaction_version": "3",
+               "type": "folder"
+            } ],
+            "date_added": "13109569410573622",
+            "date_modified": "0",
+            "id": "6",
+            "name": "Speed Dial",
+            "sync_transaction_version": "3",
+            "type": "folder"
+         },
+         "trash": {
+            "children": [  ],
+            "date_added": "13109569410573623",
+            "date_modified": "13109814631997845",
+            "id": "7",
+            "name": "Trash",
+            "sync_transaction_version": "3",
+            "type": "folder"
+         },
+         "unsorted": {
+            "children": [  ],
+            "date_added": "13109569410573620",
+            "date_modified": "13109570228548517",
+            "id": "4",
+            "name": "Unsorted Bookmarks",
+            "sync_transaction_version": "3",
+            "type": "folder"
+         },
+         "userRoot": {
+            "children": [  ],
+            "date_added": "13109569410573621",
+            "date_modified": "13109724286805824",
+            "id": "5",
+            "name": "My Folders",
+            "sync_transaction_version": "3",
+            "type": "folder"
+         }
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13109569410413491",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other Bookmarks",
+         "sync_transaction_version": "3",
+         "type": "folder"
+      },
+      "sync_transaction_version": "25",
+      "synced": {
+         "children": [  ],
+         "date_added": "13109569410413493",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile Bookmarks",
+         "sync_transaction_version": "3",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

@@ -1,0 +1,345 @@
+\hypertarget{interface_browfile}{
+\section{Browfile Class Reference}
+\label{interface_browfile}\index{Browfile@{Browfile}}
+}
+A managed object which knows static information about an OwnerApp and its exformat.~ To avoid duplication, a browfile can only be obtained using one of the \hyperlink{interface_browfiler}{Browfiler} class methods.~ For the same reason, an extore can only be obtained from one of the browfile instance methods.~ Thus, an extore must always have a browfile.  
+
+
+{\tt \#import $<$Browfile.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browfile_e704f5cde0effeb61f70bc8a1799e302}{
+(NSArray $\ast$) - \hyperlink{interface_browfile_e704f5cde0effeb61f70bc8a1799e302}{availableSatchAlls}}
+\label{interface_browfile_e704f5cde0effeb61f70bc8a1799e302}
+
+\begin{CompactList}\small\item\em Returns an array of NSNumbers representing the Sharypes of the hartainers that are available in the receiver. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_13961e421d2b5ae4f9cf4b51695a8fb7}{
+(NSArray $\ast$) - \hyperlink{interface_browfile_13961e421d2b5ae4f9cf4b51695a8fb7}{availableSatchAllternates}}
+\label{interface_browfile_13961e421d2b5ae4f9cf4b51695a8fb7}
+
+\begin{CompactList}\small\item\em Returns an array of NSNumbers representing the Sharypes of the hartainers that are available in the receiver, without root. \item\end{CompactList}\item 
+(\hyperlink{interface_browid}{Browid} $\ast$) - \hyperlink{interface_browfile_4f3288562dead6ef00b55c8526261ba5}{browid}
+\begin{CompactList}\small\item\em Returns a browid (browfile identifier) which specifies all of the receiver's constant properties and is unique among browfiles. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{interface_browfile_f323dcdd3b989718de76b9800c22915d}{browserInstalledIsOkError\_\-p:}
+\begin{CompactList}\small\item\em If the receiver's extoreMedia is BkmxExtoreMediaThisUser, checks if the browser indicated by the receiver's ownerApp is installed on the system, and whether its version meets the minimum requirement of the receiver's minBrowserVersion. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_458e96e324cc9f0521f17b2a9dccbfb5}{
+(NSString $\ast$) - \hyperlink{interface_browfile_458e96e324cc9f0521f17b2a9dccbfb5}{defaultFilename}}
+\label{interface_browfile_458e96e324cc9f0521f17b2a9dccbfb5}
+
+\begin{CompactList}\small\item\em Returns the last component of the file path to the receiver's browser's bookmarks file, or localized \char`\"{}untitled\char`\"{} if the receiver does not have a single bookmarks file. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browfile_fc7b3c0bbc1fd8a721ee772bf07f22ac}{definingFilePath}
+\begin{CompactList}\small\item\em Returns the receiver's filePath or filePathParent, whichever is first not nil, in that order. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browfile_e94e37009ef243ec9af8548f8b352443}{displayName}
+\begin{CompactList}\small\item\em Returns the name by which the user refers to the extore. \item\end{CompactList}\item 
+(\hyperlink{interface_extore}{Extore} $\ast$) - \hyperlink{interface_browfile_12fe34f8dcfe5e3ce07aa6c787d0e840}{extore}
+\begin{CompactList}\small\item\em Returns the extore owned by the receiver, creating one if needed, with a default BkmxDeference of BkmxDeferenceAsk and a nil \hyperlink{class_bookshelf}{Bookshelf}. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_1b539db33b53f5932d6e5f19d2db49a0}{
+(Class) - \hyperlink{interface_browfile_1b539db33b53f5932d6e5f19d2db49a0}{extoreClass}}
+\label{interface_browfile_1b539db33b53f5932d6e5f19d2db49a0}
+
+\begin{CompactList}\small\item\em Returns the \hyperlink{interface_extore}{Extore} subclass, an instance of which is or could become the receiver's extore. \item\end{CompactList}\item 
+(\hyperlink{interface_extore}{Extore} $\ast$) - \hyperlink{interface_browfile_7edafdefa18eeb4e8dbee11c15decf35}{extoreWithDeference:bookshelf:}
+\begin{CompactList}\small\item\em Returns the extore owned by the receiver, creating one if needed, with a specified BkmxDeference and bookshelf and a nil \hyperlink{class_bookshelf}{Bookshelf}. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_7518bd99d6413a2fd58610fca973c9d9}{
+(NSString $\ast$) - \hyperlink{interface_browfile_7518bd99d6413a2fd58610fca973c9d9}{filePath}}
+\label{interface_browfile_7518bd99d6413a2fd58610fca973c9d9}
+
+\begin{CompactList}\small\item\em Returns the path to the bookmarks file, or nil if the receiver's browser does not have a single bookmarks file. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browfile_dd03b4118f7a6a7075862638f52b37ba}{filePathParent}
+\begin{CompactList}\small\item\em Returns the path to the parent directory containing the receiver's browser's bookmarks file or files, or nil if the receiver's browser does not have a single bookmarks file. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browfile_790ce216e65845668c088d7bc8d25f38}{homePath}
+\begin{CompactList}\small\item\em Encodes the two otherMacXXXXX values from a given a dictionary into a full filesystem path to a Home directory in the /Volumes directory. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_bbea052985247f901a76a0c30bb4598a}{
+(BOOL) - \hyperlink{interface_browfile_bbea052985247f901a76a0c30bb4598a}{isHierarchical}}
+\label{interface_browfile_bbea052985247f901a76a0c30bb4598a}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver's \hyperlink{interface_extore}{Extore} class says it isHierarchical. \item\end{CompactList}\item 
+(BOOL) - \hyperlink{interface_browfile_b215081d2ec4b0aefb483c41adf8c488}{isSameIdentity:}
+\begin{CompactList}\small\item\em Compares the 'parts' of the receiver with the 'parts' of another browfile. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_fd8d2de435f07b0b06ff57ab0ca9cf46}{
+(SSYVersionTriplet $\ast$) - \hyperlink{interface_browfile_fd8d2de435f07b0b06ff57ab0ca9cf46}{minBrowserVersion}}
+\label{interface_browfile_fd8d2de435f07b0b06ff57ab0ca9cf46}
+
+\begin{CompactList}\small\item\em Returns the minimum version of the receiver's ownerApp which will write bookmarks in a format that this application can read and write. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_a9cdbde31ecea7af5c2aa2d6bbb72556}{
+(SSYVersionTriplet $\ast$) - \hyperlink{interface_browfile_a9cdbde31ecea7af5c2aa2d6bbb72556}{minSystemVersionForMinBrowserVersion}}
+\label{interface_browfile_a9cdbde31ecea7af5c2aa2d6bbb72556}
+
+\begin{CompactList}\small\item\em Returns the minimum Mac OS X version required to run version -minBrowserVersion of the receiver's ownerApp. \item\end{CompactList}\item 
+(NSString $\ast$) - \hyperlink{interface_browfile_c7da66faf7ae5851faba0bee346e4bab}{ownerAppFullPath}
+\begin{CompactList}\small\item\em Returns either the full path to the receiver's ownerApp if it is installed as a desktop application, or a URL to the receiver's API if it is a web service application, or nil. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_0b2e26022aac7601619360188621f6bb}{
+(NSString $\ast$) - \hyperlink{interface_browfile_0b2e26022aac7601619360188621f6bb}{pathPrefixRelativeTo:}}
+\label{interface_browfile_0b2e26022aac7601619360188621f6bb}
+
+\begin{CompactList}\small\item\em Returns the base part of the receiver's defining file path, given its constant PathRelativeTo value. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_browfile_601ee617af1e629896a55ff4ec1a7c16}{setIfLaterLastKnownTouch:}
+\begin{CompactList}\small\item\em Sets the receiver's lastKnownTouch to a new value, but only if it is later than the current value of lastKnownTouch. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_a457572dbcc9130430d12ad182341709}{
+(BOOL) - \hyperlink{interface_browfile_a457572dbcc9130430d12ad182341709}{supportsTags}}
+\label{interface_browfile_a457572dbcc9130430d12ad182341709}
+
+\begin{CompactList}\small\item\em Returns whether or not the receiver's \hyperlink{interface_extore}{Extore} class says it supportsTags. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_browfile_b0a973f63d8dab3924c3140251a94783}{
+\hyperlink{interface_extore}{Extore} $\ast$ \textbf{extore}}
+\label{interface_browfile_b0a973f63d8dab3924c3140251a94783}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+NSString $\ast$ \hyperlink{interface_browfile_d3e47dbe85dabd8d0e42c0e30e3063bc}{exformat}
+\begin{CompactList}\small\item\em The external format of the receiver. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_browfile_db4c0ef59bce7f8a410aa8b05b38bb27}{extoreMedia}
+\begin{CompactList}\small\item\em The external storage media of the receiver. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_5d79ea2ed7f6918d9b94fbd841b66d20}{
+NSDate $\ast$ \hyperlink{interface_browfile_5d79ea2ed7f6918d9b94fbd841b66d20}{lastExternalized}}
+\label{interface_browfile_5d79ea2ed7f6918d9b94fbd841b66d20}
+
+\begin{CompactList}\small\item\em The last NSDate that we completed externalizing the receiver's extore. \item\end{CompactList}\item 
+\hypertarget{interface_browfile_5bf72e5f00e01ea0e5b9a99c64fad7e9}{
+NSDate $\ast$ \hyperlink{interface_browfile_5bf72e5f00e01ea0e5b9a99c64fad7e9}{lastInternalized}}
+\label{interface_browfile_5bf72e5f00e01ea0e5b9a99c64fad7e9}
+
+\begin{CompactList}\small\item\em The last NSDate that we completed internalizing the receiver's extore. \item\end{CompactList}\item 
+NSDate $\ast$ \hyperlink{interface_browfile_cb977f286bf3fcc4e8035fc21bad8277}{lastKnownTouch}
+\begin{CompactList}\small\item\em The last date that we {\em know\/} the external store's data was touched. \item\end{CompactList}\item 
+NSDate $\ast$ \hyperlink{interface_browfile_81e5fc54708d2cafac0ad92e2293bfe1}{lastLocalMocSync}
+\begin{CompactList}\small\item\em Should be used to set and get the last time that the receiver's local managed object context was synced with the external store. \item\end{CompactList}\item 
+NSData $\ast$ \hyperlink{interface_browfile_5479f40ab53f07f371b7821d4db88c39}{looseFileAlias}
+\begin{CompactList}\small\item\em Data of an alias record identifying the external store file of the receiver. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_browfile_e992c41231fc2a559a6c6de21c2cec21}{otherMacAccount}
+\begin{CompactList}\small\item\em The Macintosh account name of the receiver. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_browfile_ad5c2ac9980f9dc3b5422541da3a15c7}{otherMacVolume}
+\begin{CompactList}\small\item\em The Macintosh Volume name, in the file system, of the receiver. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_browfile_5ea1819f456684217e9b7cb92566a319}{profileName}
+\begin{CompactList}\small\item\em The profile name or account name of the receiver. \item\end{CompactList}\item 
+NSString $\ast$ \hyperlink{interface_browfile_c9e81679b2f739c733625af5dd3f5a18}{profileNameAlternate}
+\begin{CompactList}\small\item\em An additional profile name or account name of the receiver. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A managed object which knows static information about an OwnerApp and its exformat.~ To avoid duplication, a browfile can only be obtained using one of the \hyperlink{interface_browfiler}{Browfiler} class methods.~ For the same reason, an extore can only be obtained from one of the browfile instance methods.~ Thus, an extore must always have a browfile. 
+
+GLOSSARY Browser: An installed browser application such as Safari, Camino, etc. Service: Google Bookmarks, del.icio.us, etc. OwnerApp: A Browser (installed application) or a Service (web application) Exformat: The format and structure of the bookmarks in an OwnerApp \hyperlink{interface_browfile}{Browfile}: structure of a profile or account supported by a particular ownerApp, or a builtout browfile. Examples: $>$ structure of a particular Firefox profile $>$ structure of a particular Google Bookmarks account $>$ structure of a particular loose bookmarks file 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_browfile_4f3288562dead6ef00b55c8526261ba5}{
+\index{Browfile@{Browfile}!browid@{browid}}
+\index{browid@{browid}!Browfile@{Browfile}}
+\subsubsection[{browid}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Browid} $\ast$) browid }}
+\label{interface_browfile_4f3288562dead6ef00b55c8526261ba5}
+
+
+Returns a browid (browfile identifier) which specifies all of the receiver's constant properties and is unique among browfiles. 
+
+See \hyperlink{interface_browid}{Browid} class overview for precise specification.~ \hypertarget{interface_browfile_f323dcdd3b989718de76b9800c22915d}{
+\index{Browfile@{Browfile}!browserInstalledIsOkError\_\-p:@{browserInstalledIsOkError\_\-p:}}
+\index{browserInstalledIsOkError\_\-p:@{browserInstalledIsOkError\_\-p:}!Browfile@{Browfile}}
+\subsubsection[{browserInstalledIsOkError\_\-p:}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) browserInstalledIsOkError\_\-p: (NSError$\ast$$\ast$) {\em error\_\-p}}}
+\label{interface_browfile_f323dcdd3b989718de76b9800c22915d}
+
+
+If the receiver's extoreMedia is BkmxExtoreMediaThisUser, checks if the browser indicated by the receiver's ownerApp is installed on the system, and whether its version meets the minimum requirement of the receiver's minBrowserVersion. 
+
+If the receiver's extoreMedia is not constBkmxExtoreMediaThisUser, returns YES unconditionally. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em error\_\-p}]If result is NO, upon return, will point to an NSError explaining the problem. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if browser is installed and meets minimum version requirement, NO otherwise. \end{Desc}
+\hypertarget{interface_browfile_fc7b3c0bbc1fd8a721ee772bf07f22ac}{
+\index{Browfile@{Browfile}!definingFilePath@{definingFilePath}}
+\index{definingFilePath@{definingFilePath}!Browfile@{Browfile}}
+\subsubsection[{definingFilePath}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) definingFilePath }}
+\label{interface_browfile_fc7b3c0bbc1fd8a721ee772bf07f22ac}
+
+
+Returns the receiver's filePath or filePathParent, whichever is first not nil, in that order. 
+
+OmniWeb returns filePathParent instead of filePath since it stores bookmarks in three separate files in there. \begin{Desc}
+\item[Returns:]A POSIX path \end{Desc}
+\hypertarget{interface_browfile_e94e37009ef243ec9af8548f8b352443}{
+\index{Browfile@{Browfile}!displayName@{displayName}}
+\index{displayName@{displayName}!Browfile@{Browfile}}
+\subsubsection[{displayName}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) displayName }}
+\label{interface_browfile_e94e37009ef243ec9af8548f8b352443}
+
+
+Returns the name by which the user refers to the extore. 
+
+Somewhat abbreviated, not guaranteed to be unique.~ It's an engineering compromise. \hypertarget{interface_browfile_12fe34f8dcfe5e3ce07aa6c787d0e840}{
+\index{Browfile@{Browfile}!extore@{extore}}
+\index{extore@{extore}!Browfile@{Browfile}}
+\subsubsection[{extore}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Extore}$\ast$) extore }}
+\label{interface_browfile_12fe34f8dcfe5e3ce07aa6c787d0e840}
+
+
+Returns the extore owned by the receiver, creating one if needed, with a default BkmxDeference of BkmxDeferenceAsk and a nil \hyperlink{class_bookshelf}{Bookshelf}. 
+
+A newly-created \hyperlink{interface_browfile}{Browfile} instance does not have an extore. A transient \hyperlink{interface_browfile}{Browfile} instance created for a simple purpose may never require one. However, once one is created, it is stored as an ivar. \begin{Desc}
+\item[Returns:]An extore whose class is the subclass of \hyperlink{interface_extore}{Extore} given by -extoreClass \end{Desc}
+\hypertarget{interface_browfile_7edafdefa18eeb4e8dbee11c15decf35}{
+\index{Browfile@{Browfile}!extoreWithDeference:bookshelf:@{extoreWithDeference:bookshelf:}}
+\index{extoreWithDeference:bookshelf:@{extoreWithDeference:bookshelf:}!Browfile@{Browfile}}
+\subsubsection[{extoreWithDeference:bookshelf:}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Extore} $\ast$) extoreWithDeference: (BkmxDeference) {\em deference}\/ bookshelf: ({\bf Bookshelf}$\ast$) {\em bookshelf}}}
+\label{interface_browfile_7edafdefa18eeb4e8dbee11c15decf35}
+
+
+Returns the extore owned by the receiver, creating one if needed, with a specified BkmxDeference and bookshelf and a nil \hyperlink{class_bookshelf}{Bookshelf}. 
+
+A newly-created \hyperlink{interface_browfile}{Browfile} instance does not have an extore. A transient \hyperlink{interface_browfile}{Browfile} instance created for a simple purpose may never require one. However, once one is created, it is stored as an ivar. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em deference}]The value of the ivar 'deference' to set in the receiver. \item[{\em bookshelf}]The \hyperlink{class_bookshelf}{Bookshelf} to which progress messages will be sent during ixternalizations. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]An extore whose class is the subclass of \hyperlink{interface_extore}{Extore} given by -extoreClass \end{Desc}
+\hypertarget{interface_browfile_dd03b4118f7a6a7075862638f52b37ba}{
+\index{Browfile@{Browfile}!filePathParent@{filePathParent}}
+\index{filePathParent@{filePathParent}!Browfile@{Browfile}}
+\subsubsection[{filePathParent}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) filePathParent }}
+\label{interface_browfile_dd03b4118f7a6a7075862638f52b37ba}
+
+
+Returns the path to the parent directory containing the receiver's browser's bookmarks file or files, or nil if the receiver's browser does not have a single bookmarks file. 
+
+For a web service, returns the path on the server at which the bookmarks API is accessed. \hypertarget{interface_browfile_790ce216e65845668c088d7bc8d25f38}{
+\index{Browfile@{Browfile}!homePath@{homePath}}
+\index{homePath@{homePath}!Browfile@{Browfile}}
+\subsubsection[{homePath}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) homePath }}
+\label{interface_browfile_790ce216e65845668c088d7bc8d25f38}
+
+
+Encodes the two otherMacXXXXX values from a given a dictionary into a full filesystem path to a Home directory in the /Volumes directory. 
+
+See +\mbox{[}BrowidCodecs homePathWithParts\mbox{]} for precise specification. \hypertarget{interface_browfile_b215081d2ec4b0aefb483c41adf8c488}{
+\index{Browfile@{Browfile}!isSameIdentity:@{isSameIdentity:}}
+\index{isSameIdentity:@{isSameIdentity:}!Browfile@{Browfile}}
+\subsubsection[{isSameIdentity:}]{\setlength{\rightskip}{0pt plus 5cm}- (BOOL) isSameIdentity: ({\bf Browfile}$\ast$) {\em otherBrowfile}}}
+\label{interface_browfile_b215081d2ec4b0aefb483c41adf8c488}
+
+
+Compares the 'parts' of the receiver with the 'parts' of another browfile. 
+
+\begin{Desc}
+\item[Returns:]YES if all corresponding parts are the same, otherwise NO. \end{Desc}
+\hypertarget{interface_browfile_c7da66faf7ae5851faba0bee346e4bab}{
+\index{Browfile@{Browfile}!ownerAppFullPath@{ownerAppFullPath}}
+\index{ownerAppFullPath@{ownerAppFullPath}!Browfile@{Browfile}}
+\subsubsection[{ownerAppFullPath}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString $\ast$) ownerAppFullPath }}
+\label{interface_browfile_c7da66faf7ae5851faba0bee346e4bab}
+
+
+Returns either the full path to the receiver's ownerApp if it is installed as a desktop application, or a URL to the receiver's API if it is a web service application, or nil. 
+
+Returns nil if the receiver -ownerAppIsLocalApp but is not installed. \hypertarget{interface_browfile_601ee617af1e629896a55ff4ec1a7c16}{
+\index{Browfile@{Browfile}!setIfLaterLastKnownTouch:@{setIfLaterLastKnownTouch:}}
+\index{setIfLaterLastKnownTouch:@{setIfLaterLastKnownTouch:}!Browfile@{Browfile}}
+\subsubsection[{setIfLaterLastKnownTouch:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setIfLaterLastKnownTouch: (NSDate$\ast$) {\em proposedDate}}}
+\label{interface_browfile_601ee617af1e629896a55ff4ec1a7c16}
+
+
+Sets the receiver's lastKnownTouch to a new value, but only if it is later than the current value of lastKnownTouch. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em proposedDate}]\end{description}
+\end{Desc}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_browfile_d3e47dbe85dabd8d0e42c0e30e3063bc}{
+\index{Browfile@{Browfile}!exformat@{exformat}}
+\index{exformat@{exformat}!Browfile@{Browfile}}
+\subsubsection[{exformat}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) exformat\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_d3e47dbe85dabd8d0e42c0e30e3063bc}
+
+
+The external format of the receiver. 
+
+This is required for all browfiles. \hypertarget{interface_browfile_db4c0ef59bce7f8a410aa8b05b38bb27}{
+\index{Browfile@{Browfile}!extoreMedia@{extoreMedia}}
+\index{extoreMedia@{extoreMedia}!Browfile@{Browfile}}
+\subsubsection[{extoreMedia}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) extoreMedia\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_db4c0ef59bce7f8a410aa8b05b38bb27}
+
+
+The external storage media of the receiver. 
+
+One of the BkmxExtoreMediaXXXXX constants. \hypertarget{interface_browfile_cb977f286bf3fcc4e8035fc21bad8277}{
+\index{Browfile@{Browfile}!lastKnownTouch@{lastKnownTouch}}
+\index{lastKnownTouch@{lastKnownTouch}!Browfile@{Browfile}}
+\subsubsection[{lastKnownTouch}]{\setlength{\rightskip}{0pt plus 5cm}- (NSDate$\ast$) lastKnownTouch\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_cb977f286bf3fcc4e8035fc21bad8277}
+
+
+The last date that we {\em know\/} the external store's data was touched. 
+
+With some extores, particularly those whose owners are web apps, the \char`\"{}last touched\char`\"{} value given by their API may exclude some touches that we know about (usually because we did them).~ Therefore, we record whenever we {\em know\/} that the extore was touched.~ Therefore, -\mbox{[}\hyperlink{interface_extore}{Extore} lastDateExternalWasTouched\mbox{]} should always look at this date and return it if it is later than the date it found. \hypertarget{interface_browfile_81e5fc54708d2cafac0ad92e2293bfe1}{
+\index{Browfile@{Browfile}!lastLocalMocSync@{lastLocalMocSync}}
+\index{lastLocalMocSync@{lastLocalMocSync}!Browfile@{Browfile}}
+\subsubsection[{lastLocalMocSync}]{\setlength{\rightskip}{0pt plus 5cm}- (NSDate $\ast$) lastLocalMocSync\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_browfile_81e5fc54708d2cafac0ad92e2293bfe1}
+
+
+Should be used to set and get the last time that the receiver's local managed object context was synced with the external store. 
+
+Since this time may be affected for more than one browfile (with the same browid) in different Bookshelfs, it is stored in user defaults.~ It is not KVObserveable. \hypertarget{interface_browfile_5479f40ab53f07f371b7821d4db88c39}{
+\index{Browfile@{Browfile}!looseFileAlias@{looseFileAlias}}
+\index{looseFileAlias@{looseFileAlias}!Browfile@{Browfile}}
+\subsubsection[{looseFileAlias}]{\setlength{\rightskip}{0pt plus 5cm}- (NSData$\ast$) looseFileAlias\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_browfile_5479f40ab53f07f371b7821d4db88c39}
+
+
+Data of an alias record identifying the external store file of the receiver. 
+
+Browfiles of extoreMedia BkmxExtoreMediaLoose must have this attribute. Other extoreMedia types must not have this attribute. \hypertarget{interface_browfile_e992c41231fc2a559a6c6de21c2cec21}{
+\index{Browfile@{Browfile}!otherMacAccount@{otherMacAccount}}
+\index{otherMacAccount@{otherMacAccount}!Browfile@{Browfile}}
+\subsubsection[{otherMacAccount}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) otherMacAccount\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_e992c41231fc2a559a6c6de21c2cec21}
+
+
+The Macintosh account name of the receiver. 
+
+Browfiles of extoreMedia BkmxExtoreMediaOtherUser must have this attribute. Other extoreMedia types must not have this attribute. \hypertarget{interface_browfile_ad5c2ac9980f9dc3b5422541da3a15c7}{
+\index{Browfile@{Browfile}!otherMacVolume@{otherMacVolume}}
+\index{otherMacVolume@{otherMacVolume}!Browfile@{Browfile}}
+\subsubsection[{otherMacVolume}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) otherMacVolume\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_ad5c2ac9980f9dc3b5422541da3a15c7}
+
+
+The Macintosh Volume name, in the file system, of the receiver. 
+
+Browfiles of extoreMedia BkmxExtoreMediaOtherUser may have this attribute. Other extoreMedia types must not have this attribute. \hypertarget{interface_browfile_5ea1819f456684217e9b7cb92566a319}{
+\index{Browfile@{Browfile}!profileName@{profileName}}
+\index{profileName@{profileName}!Browfile@{Browfile}}
+\subsubsection[{profileName}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) profileName\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_5ea1819f456684217e9b7cb92566a319}
+
+
+The profile name or account name of the receiver. 
+
+Of the desktopApp extores, only Firefox have one of these.~ All webApp extores have one of these. \hypertarget{interface_browfile_c9e81679b2f739c733625af5dd3f5a18}{
+\index{Browfile@{Browfile}!profileNameAlternate@{profileNameAlternate}}
+\index{profileNameAlternate@{profileNameAlternate}!Browfile@{Browfile}}
+\subsubsection[{profileNameAlternate}]{\setlength{\rightskip}{0pt plus 5cm}- (NSString$\ast$) profileNameAlternate\hspace{0.3cm}{\tt  \mbox{[}read, write, copy\mbox{]}}}}
+\label{interface_browfile_c9e81679b2f739c733625af5dd3f5a18}
+
+
+An additional profile name or account name of the receiver. 
+
+This is used for Google browfiles because Google can have regular email or a gmail email which both access the same account. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browfile.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Browfile.m\end{CompactItemize}

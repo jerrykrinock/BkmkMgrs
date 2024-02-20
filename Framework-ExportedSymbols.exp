@@ -1,0 +1,103 @@
+
+# The following symbols from the Bkmxwork framework are needed to compile BkmxAgent.
+# I don't know why, but, when using GCC_SYMBOLS_PRIVATE_EXTERN, the definitions of
+# plain C constants such as _constKeyDocAliasRecords must be listed here as well as
+# having their definitions marked with __attribute__((visibility("default")))
+
+_constBkmxAgentErrorDomain
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_constAll
+_constSawChange
+_constNoPid
+_constSorryNullExtore
+_constSorryNullProfile
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_constKeyDocAliasRecords
+_constKeyAlertStage
+_constKeyAlertStart
+_constKeyAlertSuccess
+_constKeyAlertFailure
+_constKeyAppName
+_constKeyDocLastSaveToken
+_constKeyBookmarksChangeDelay1
+_constKeyBookmarksChangeDelay2
+_constKeyBrowserWeQuitDates
+_constKeyClientsDirt
+_constKeyDebugIxportHashes
+_constKeyDocUuid
+_constKeyExtensionName
+_constKeyExtensionVersion
+_constKeyExtoreName
+_constKeyLastJsonExport
+_constKeyIgnoreNextLoginTrigger
+_constKeyLaunchQuietlyNextTime
+_constKeyProfileName
+_constKeySafariMoreAgentSecs
+_constKeySoundStage
+_constKeySoundStart
+_constKeySoundSuccess
+_constKeySoundFailMinor
+_constKeySoundFailMajor
+_constKeyTriggerUri
+_constKeyWaitAfterLogin
+_constKeyWaitAfterWake
+_constKeyWatches
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_constKeyAgentCause
+_constKeyDateCreated
+_constKeyStagedUri
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_constLegacyAppName
+_constLegacyAppBundleIdentifier
+_constMinimumBookmarksChangeDelay2
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_NSDataFileAliasDataKey
+_NSDataFileAliasPathKey
+_NSDataFileAliasErrorKey
+_NSDataFileAliasModernityKey
+_NSDataFileAliasStalenessKey
+
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+
+_SSYAppleScriptErrorDomain
+_SSYDocumentAliasDataErrorKey
+_SSYDocumentUuidErrorKey
+
+# C Functions
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+_SSYLCCurrentLevel
+_SSYDebugBacktraceDepth
+
+# Objective-C Classes
+# You must also prefix declarations or definitions with __attribute__((visibility("default"))) !
+.objc_class_name_AgentPerformer
+.objc_class_name_BkmxDoc
+.objc_class_name_BkmxBasis
+.objc_class_name_BkmxChangeNotifier
+.objc_class_name_ChromeBookmarksGuy
+.objc_class_name_BkmxDocumentController
+.objc_class_name_BSManagedDocument
+.objc_class_name_Extore
+.objc_class_name_SSYInterappClient
+.objc_class_name_SSYInterappServer
+.objc_class_name_SSYLaunchdGuy
+.objc_class_name_SSYOtherApper
+.objc_class_name_SSYRunLoopTickler
+.objc_class_name_SSYShellTasker
+.objc_class_name_SSYSystemUptimer
+.objc_class_name_SSYUserInfo
+.objc_class_name_Stager
+.objc_class_name_Syncer
+.objc_class_name_Trigger
+.objc_class_name_Stark
+.objc_class_name_Watcher

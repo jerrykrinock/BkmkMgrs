@@ -1,0 +1,87 @@
+\hypertarget{interface_s_s_y_file_finder}{
+\section{SSYFileFinder Class Reference}
+\label{interface_s_s_y_file_finder}\index{SSYFileFinder@{SSYFileFinder}}
+}
+A class for programmatically conducting a Spotlight search for a named file, returning an array of paths.  
+
+
+{\tt \#import $<$SSYFileFinder.h$>$}
+
+Inheritance diagram for SSYFileFinder::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_s_s_y_file_finder}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(void) + \hyperlink{interface_s_s_y_file_finder_1829ef47ca78e535dc61aaff831483f9}{findPathsWithPredicate:callbackTarget:callbackSelector:}
+\begin{CompactList}\small\item\em Finds paths of files with a given predicate, by doing a Spotlight search, i.e. using NSMetadaQuery. \item\end{CompactList}\item 
+(void) + \hyperlink{interface_s_s_y_file_finder_b134d2e6ce86fd02466bbe6a98cf312f}{findPathsWithFilename:callbackTarget:callbackSelector:}
+\begin{CompactList}\small\item\em Invokes findPathsWithPredicate:callbackTarget:callbackSelector: after constructing a predicate requiring that a results' displayName equal the passed filename. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_s_s_y_file_finder_760f06173370e8a202da0e1814f1f1e5}{
+SEL \textbf{callbackSelector}}
+\label{interface_s_s_y_file_finder_760f06173370e8a202da0e1814f1f1e5}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_s_s_y_file_finder_8e387e02ca7fc9c02335960e20e564a4}{
+NSMetadataQuery $\ast$ \textbf{query}}
+\label{interface_s_s_y_file_finder_8e387e02ca7fc9c02335960e20e564a4}
+
+\item 
+\hypertarget{interface_s_s_y_file_finder_107b5b996e79b7a6da113107ecc7417e}{
+id \textbf{callbackTarget}}
+\label{interface_s_s_y_file_finder_107b5b996e79b7a6da113107ecc7417e}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A class for programmatically conducting a Spotlight search for a named file, returning an array of paths. 
+
+NSObject \{ NSMetadataQuery $\ast$query ; id callbackTarget ; SEL callbackSelector ; \}  Two class methods is exposed. findPathsWithPredicate:callbackTarget:callbackSelector: is the general, base method. findPathsWithFilename:callbackTarget:callbackSelector: is a wrapper around the base method which shows how to construct predicates for a the search \hyperlink{interfaceyou}{you} need. For a complete list of attributes, consult Apple's \char`\"{}MD Item Reference\char`\"{} documentation and scroll down to \char`\"{}File System Metadata Attribute Keys\char`\"{}.
+
+The class method creates an instance which self-destructs after the search is complete. This class requires Mac OS 10.5 or later. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_s_s_y_file_finder_b134d2e6ce86fd02466bbe6a98cf312f}{
+\index{SSYFileFinder@{SSYFileFinder}!findPathsWithFilename:callbackTarget:callbackSelector:@{findPathsWithFilename:callbackTarget:callbackSelector:}}
+\index{findPathsWithFilename:callbackTarget:callbackSelector:@{findPathsWithFilename:callbackTarget:callbackSelector:}!SSYFileFinder@{SSYFileFinder}}
+\subsubsection[{findPathsWithFilename:callbackTarget:callbackSelector:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) findPathsWithFilename: (NSString$\ast$) {\em filename}\/ callbackTarget: (id) {\em callbackTarget}\/ callbackSelector: (SEL) {\em callbackSelector}}}
+\label{interface_s_s_y_file_finder_b134d2e6ce86fd02466bbe6a98cf312f}
+
+
+Invokes findPathsWithPredicate:callbackTarget:callbackSelector: after constructing a predicate requiring that a results' displayName equal the passed filename. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em filename}]The filename to be searched for. To search for an application, use the extension \char`\"{}.app\char`\"{}. \end{description}
+\end{Desc}
+\hypertarget{interface_s_s_y_file_finder_1829ef47ca78e535dc61aaff831483f9}{
+\index{SSYFileFinder@{SSYFileFinder}!findPathsWithPredicate:callbackTarget:callbackSelector:@{findPathsWithPredicate:callbackTarget:callbackSelector:}}
+\index{findPathsWithPredicate:callbackTarget:callbackSelector:@{findPathsWithPredicate:callbackTarget:callbackSelector:}!SSYFileFinder@{SSYFileFinder}}
+\subsubsection[{findPathsWithPredicate:callbackTarget:callbackSelector:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) findPathsWithPredicate: (NSPredicate$\ast$) {\em predicate}\/ callbackTarget: (id) {\em callbackTarget}\/ callbackSelector: (SEL) {\em callbackSelector}}}
+\label{interface_s_s_y_file_finder_1829ef47ca78e535dc61aaff831483f9}
+
+
+Finds paths of files with a given predicate, by doing a Spotlight search, i.e. using NSMetadaQuery. 
+
+Runs asynchronously and returns an NSArray of NSString objects to a specified callback target object, via a specified callback selector. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em predicate}]The predicate used to filter items, or qualify results, in the search. \item[{\em callbackTarget}]The object which will receive the callback. \item[{\em callbackSelector}]The selector in the callback target which will be invoked. This selector should take one argument, an NSArray, and should return void. \end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+Documents/Programming/ClassesObjC/SSYFileFinder.h\item 
+Documents/Programming/ClassesObjC/SSYFileFinder.m\end{CompactItemize}

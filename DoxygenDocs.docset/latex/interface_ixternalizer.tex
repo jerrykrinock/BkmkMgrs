@@ -1,0 +1,147 @@
+\hypertarget{interface_ixternalizer}{
+\section{Ixternalizer Class Reference}
+\label{interface_ixternalizer}\index{Ixternalizer@{Ixternalizer}}
+}
+A managed object which stores settings and knows how to do the Sync In or Sync Out for a single \hyperlink{interface_browfile}{Browfile}.  
+
+
+{\tt \#import $<$Ixternalizer.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+(void) - \hyperlink{interface_ixternalizer_aa26d5dd8c3b4a9d771e714a35aed4e2}{externalizeWithDeference:}
+\begin{CompactList}\small\item\em Reads out items from the receiver's owner, a \hyperlink{class_bookshelf}{Bookshelf}, to the external store indicated by the receiver's browfile. \item\end{CompactList}\item 
+(void) - \hyperlink{interface_ixternalizer_03ee363f4bf4e23d53728ba1f2e48c80}{internalizeWithDeference:ifNotNeeded:}
+\begin{CompactList}\small\item\em If active and necessary, reads in items from the external store, as indicated by the receiver's browfile, to the receiver's owner, a \hyperlink{class_bookshelf}{Bookshelf}. \item\end{CompactList}\item 
+\hypertarget{interface_ixternalizer_c7ce16666ef89af71f9525d7d060df0b}{
+(BOOL) - \textbf{ixternalizeFromStartainer:toStartainer:error\_\-p:}}
+\label{interface_ixternalizer_c7ce16666ef89af71f9525d7d060df0b}
+
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_ixternalizer_1f3cc8d34a7a0ebb9180fe5aaf41eb6e}{
+BOOL \textbf{isObserving}}
+\label{interface_ixternalizer_1f3cc8d34a7a0ebb9180fe5aaf41eb6e}
+
+\end{CompactItemize}
+\subsection*{Properties}
+\begin{CompactItemize}
+\item 
+\hyperlink{interface_browfile}{Browfile} $\ast$ \hyperlink{interface_ixternalizer_b78dfdbc948323f9ba1e469f5dd3cc02}{browfile}
+\begin{CompactList}\small\item\em The \hyperlink{interface_browfile}{Browfile} which identifies the receiver's external store. \item\end{CompactList}\item 
+\hypertarget{interface_ixternalizer_372d8f5626630c874eac77f4bd08f532}{
+NSNumber $\ast$ \textbf{cleanDestination}}
+\label{interface_ixternalizer_372d8f5626630c874eac77f4bd08f532}
+
+\item 
+\hypertarget{interface_ixternalizer_c51c5fd9d5eff610363e98bc0256a671}{
+NSNumber $\ast$ \textbf{createFoldersFromTags}}
+\label{interface_ixternalizer_c51c5fd9d5eff610363e98bc0256a671}
+
+\item 
+\hypertarget{interface_ixternalizer_9e728e11ee70fdfdd0d93677842335c6}{
+NSNumber $\ast$ \textbf{createTagsFromFolders}}
+\label{interface_ixternalizer_9e728e11ee70fdfdd0d93677842335c6}
+
+\item 
+\hypertarget{interface_ixternalizer_6a7c9c8211b0e3bbc1ea407616833671}{
+NSNumber $\ast$ \textbf{dontCreateDuplicates}}
+\label{interface_ixternalizer_6a7c9c8211b0e3bbc1ea407616833671}
+
+\item 
+\hypertarget{interface_ixternalizer_1d24e9d92960cfc5ba865dbe48d8a9d2}{
+NSNumber $\ast$ \textbf{isActive}}
+\label{interface_ixternalizer_1d24e9d92960cfc5ba865dbe48d8a9d2}
+
+\item 
+\hypertarget{interface_ixternalizer_83f123e6f598f275b1d4875369af0d96}{
+NSNumber $\ast$ \textbf{mergeTags}}
+\label{interface_ixternalizer_83f123e6f598f275b1d4875369af0d96}
+
+\item 
+\hypertarget{interface_ixternalizer_5390beb1ef17d152a151213dddb87935}{
+NSNumber $\ast$ \textbf{satchAll1}}
+\label{interface_ixternalizer_5390beb1ef17d152a151213dddb87935}
+
+\item 
+\hypertarget{interface_ixternalizer_0d1d559a52060a287832f7a1f9a5c3ed}{
+NSNumber $\ast$ \textbf{satchAll2}}
+\label{interface_ixternalizer_0d1d559a52060a287832f7a1f9a5c3ed}
+
+\item 
+\hypertarget{interface_ixternalizer_329088b6fde0713ec4d5a381629e7d5e}{
+NSNumber $\ast$ \textbf{shareNewItems}}
+\label{interface_ixternalizer_329088b6fde0713ec4d5a381629e7d5e}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A managed object which stores settings and knows how to do the Sync In or Sync Out for a single \hyperlink{interface_browfile}{Browfile}. 
+
+Ixternalizers are stored in the managed object context of a \hyperlink{class_bookshelf}{Bookshelf} document and are related to the documents \hyperlink{interface_bookshig}{Bookshig} as internalizers objects or externalizers objects.
+
+{\em Details which apply to both -internalize and -externalize\/}. These methods create a temporary \hyperlink{interface_browfile}{Browfile}, and an \hyperlink{interface_extore}{Extore}, which create a temporary transMoc. When these methods are complete, all of these objects will be autoreleased. Therefore, the next time one of these methods is invoked, bookmarks will be read in from the external store from scratch, all over again. Merging and item adjustments are performed according to the values of the relevant attributes in the receiver. The receiver's owning \hyperlink{class_bookshelf}{Bookshelf} is found by sending -owner to the receiver's -managedObjectContext. Progress messages may be sent to the receiver's owning \hyperlink{class_bookshelf}{Bookshelf}.  
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_ixternalizer_aa26d5dd8c3b4a9d771e714a35aed4e2}{
+\index{Ixternalizer@{Ixternalizer}!externalizeWithDeference:@{externalizeWithDeference:}}
+\index{externalizeWithDeference:@{externalizeWithDeference:}!Ixternalizer@{Ixternalizer}}
+\subsubsection[{externalizeWithDeference:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) externalizeWithDeference: (BkmxDeference) {\em deference}}}
+\label{interface_ixternalizer_aa26d5dd8c3b4a9d771e714a35aed4e2}
+
+
+Reads out items from the receiver's owner, a \hyperlink{class_bookshelf}{Bookshelf}, to the external store indicated by the receiver's browfile. 
+
+Returns after the the Bookshelf's data is converted, but writing data out continues asynchronouslyin other thread(s).
+
+If ultimately successful, sets the timestamp lastExternalized of the browfile indicated by the receiver's browfile.~ Otherwise, presents the error to the user.~ (Either of these are performed by -\mbox{[}\hyperlink{class_bookshelf}{Bookshelf} finishOperationInfo:\mbox{]}, after returning to the main thread.)
+
+More info in the class documentation.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em deference}]The level of deference to use in case a nasty browser will not allow bookmarks to be written \end{description}
+\end{Desc}
+\hypertarget{interface_ixternalizer_03ee363f4bf4e23d53728ba1f2e48c80}{
+\index{Ixternalizer@{Ixternalizer}!internalizeWithDeference:ifNotNeeded:@{internalizeWithDeference:ifNotNeeded:}}
+\index{internalizeWithDeference:ifNotNeeded:@{internalizeWithDeference:ifNotNeeded:}!Ixternalizer@{Ixternalizer}}
+\subsubsection[{internalizeWithDeference:ifNotNeeded:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) internalizeWithDeference: (BkmxDeference) {\em deference}\/ ifNotNeeded: (BOOL) {\em ifNotNeeded}}}
+\label{interface_ixternalizer_03ee363f4bf4e23d53728ba1f2e48c80}
+
+
+If active and necessary, reads in items from the external store, as indicated by the receiver's browfile, to the receiver's owner, a \hyperlink{class_bookshelf}{Bookshelf}. 
+
+Necessity is determined by comparing the lastKnownTouch and lastInternalized timestamps of the receiver's browfile.
+
+If successful, sets the timestamp lastInternalized of the browfile indicated by the receiver's browfile.~ Otherwise, presents the error to the user.
+
+More info in the class documentation.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em deference}]The level of deference to use in case a nasty browser will not allow bookmarks to be read. \item[{\em ifNotNeeded}]If YES, will perform the internalization even if the modification dates indicate it is not necessary \end{description}
+\end{Desc}
+
+
+\subsection{Property Documentation}
+\hypertarget{interface_ixternalizer_b78dfdbc948323f9ba1e469f5dd3cc02}{
+\index{Ixternalizer@{Ixternalizer}!browfile@{browfile}}
+\index{browfile@{browfile}!Ixternalizer@{Ixternalizer}}
+\subsubsection[{browfile}]{\setlength{\rightskip}{0pt plus 5cm}- ({\bf Browfile}$\ast$) browfile\hspace{0.3cm}{\tt  \mbox{[}read, write, retain\mbox{]}}}}
+\label{interface_ixternalizer_b78dfdbc948323f9ba1e469f5dd3cc02}
+
+
+The \hyperlink{interface_browfile}{Browfile} which identifies the receiver's external store. 
+
+The setter checks to see if the given browfile is in the same managed object context as the receiver.~ If not, it inserts a new browfile into its managed object context, copies all attributes from the given browfile, and sets the new browfile. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Ixternalizer.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/Ixternalizer.m\end{CompactItemize}

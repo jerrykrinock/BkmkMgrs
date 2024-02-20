@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "BookMacster Sync",
+  "version": "50",
+  "description": "Empowers BookMacster, Markster, Synkmark to sync bookmarks, sends info on current page, notifies of bookmarks changes",
+  "homepage_url": "https://sheepsystems.com/bookmacster/HelpBook/browserExtensions",
+  "permissions": [
+    "bookmarks",
+    "nativeMessaging",
+    "tabs",
+    "storage",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "icons": {
+    "128": "BookMacsterSync-128.png"
+  },
+  "content_security_policy": {}
+}

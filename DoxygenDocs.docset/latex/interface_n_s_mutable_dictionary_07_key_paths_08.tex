@@ -1,0 +1,91 @@
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08}{
+\section{NSMutableDictionary(KeyPaths) Class Reference}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08}\index{NSMutableDictionary(KeyPaths)@{NSMutableDictionary(KeyPaths)}}
+}
+NSMutableDictionary can read values from nested dictionaries with -\mbox{[}NSObject valueForKeyPath:\mbox{]}, but not set such values.~ This category adds the missing setValue:forKeyPath: method, and methods to mutate arrays located down key paths.~ Each method also has a companion which takes a \char`\"{}key path array\char`\"{}, which is a an array of string keys, instead of a key path, which is an equivalent dot-separated string.  
+
+
+{\tt \#import $<$NSDictionary+KeyPaths.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_b8b4daba56ebac9f9c6bbe67b84e3e06}{
+(void) - \textbf{addObject:toArrayAtKeyPath:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_b8b4daba56ebac9f9c6bbe67b84e3e06}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_089efd1c4a9e7ef2efa2635083269518}{
+(void) - \textbf{addObject:toArrayAtKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_089efd1c4a9e7ef2efa2635083269518}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_2bf193a56da73f52b58416bc7e814fc9}{
+(void) - \textbf{addUniqueObject:toArrayAtKeyPath:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_2bf193a56da73f52b58416bc7e814fc9}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_652f02d316d76a6843600e853bdf2ede}{
+(void) - \textbf{addUniqueObject:toArrayAtKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_652f02d316d76a6843600e853bdf2ede}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_0a8cdd3e1dfa5e195c529d64adcfe11b}{
+(void) - \textbf{removeKey:fromDictionaryAtKeyPath:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_0a8cdd3e1dfa5e195c529d64adcfe11b}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_541a9b25ed52d29e62ddb88f0d6f54e1}{
+(void) - \textbf{removeKey:fromDictionaryAtKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_541a9b25ed52d29e62ddb88f0d6f54e1}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_a224f3e5cfdc1fa709b316c4060de16d}{
+(void) - \textbf{removeObject:fromArrayAtKeyPath:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_a224f3e5cfdc1fa709b316c4060de16d}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_47e89b6b6e9a220d442b78dd70e3a4e1}{
+(void) - \textbf{removeObject:fromArrayAtKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_47e89b6b6e9a220d442b78dd70e3a4e1}
+
+\item 
+(void) - \hyperlink{interface_n_s_mutable_dictionary_07_key_paths_08_1e45362bcfad985a535b7e523cdf1726}{setValue:forKeyPath:}
+\begin{CompactList}\small\item\em Sets a value for the given keyPath in the receiver, creating dictionaries as needed if they do not exist, and inserting values into existing dictionaries if they do exist. \item\end{CompactList}\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_ce975ba65e29a98cf9b1ac520b04e5af}{
+(void) - \textbf{setValue:forKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_ce975ba65e29a98cf9b1ac520b04e5af}
+
+\item 
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_2cb9d1497a05e143fbdd9c3a45010fd1}{
+(id) - \hyperlink{interface_n_s_mutable_dictionary_07_key_paths_08_2cb9d1497a05e143fbdd9c3a45010fd1}{valueForKeyPathArray:}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_2cb9d1497a05e143fbdd9c3a45010fd1}
+
+\begin{CompactList}\small\item\em A wrapper around -valueForKeyPath: which changes the parameter to be a key path array, instead of a dot-separated string of keys. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+NSMutableDictionary can read values from nested dictionaries with -\mbox{[}NSObject valueForKeyPath:\mbox{]}, but not set such values.~ This category adds the missing setValue:forKeyPath: method, and methods to mutate arrays located down key paths.~ Each method also has a companion which takes a \char`\"{}key path array\char`\"{}, which is a an array of string keys, instead of a key path, which is an equivalent dot-separated string. 
+
+This class is a clone of NSUserDefaults (KeyPaths). 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_n_s_mutable_dictionary_07_key_paths_08_1e45362bcfad985a535b7e523cdf1726}{
+\index{NSMutableDictionary(KeyPaths)@{NSMutableDictionary(KeyPaths)}!setValue:forKeyPath:@{setValue:forKeyPath:}}
+\index{setValue:forKeyPath:@{setValue:forKeyPath:}!NSMutableDictionary(KeyPaths)@{NSMutableDictionary(KeyPaths)}}
+\subsubsection[{setValue:forKeyPath:}]{\setlength{\rightskip}{0pt plus 5cm}- (void) setValue: (id) {\em value}\/ forKeyPath: (NSString $\ast$) {\em keyPath}}}
+\label{interface_n_s_mutable_dictionary_07_key_paths_08_1e45362bcfad985a535b7e523cdf1726}
+
+
+Sets a value for the given keyPath in the receiver, creating dictionaries as needed if they do not exist, and inserting values into existing dictionaries if they do exist. 
+
+The opposite method, -valueForKeyPath:, is provided by NSObject and works as expected. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em value}]\item[{\em keyPath}]\end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/NSDictionary+KeyPaths.h\end{CompactItemize}

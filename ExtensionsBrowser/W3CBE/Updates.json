@@ -1,0 +1,18 @@
+{
+  "addons": {
+    "{5be4a1a1-c477-423d-a946-13c1d880306f}": {
+      "updates": [
+        { "version": "33",
+          "update_link": "https://sheepsystems.com/bookmacster/extensions/BookMacsterSync.xpi",
+          "update_hash": "sha256:4140c13f260163dffdefa9a3e7a914baf4d0e2a2613b5e20bee258163f2500d4" }
+      ]
+    },
+    "{ffcd605e-1e3e-460b-be92-80366b730886}": {
+      "updates": [
+        { "version": "23",
+          "update_link": "https://sheepsystems.com/bookmacster/extensions/BookMacsterButton.xpi",
+          "update_hash": "sha256:fc790f879ecf63a20f96809fdea9cbab2d5d195a97ad1bdbdfed62b67f5547b7" }
+      ]
+    }
+  }
+}

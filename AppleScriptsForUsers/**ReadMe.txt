@@ -1,0 +1,1 @@
+These scripts are editable using Apple's AppleScript Editor or similar application.  After opening a script in AppleScript Editor, click on the "Description" tab at the bottom of the window to learn what the script does.

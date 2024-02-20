@@ -1,0 +1,44 @@
+
+Buzzy Found 0 required class methods on WBSSafariBookmarksSyncAgentProtocol
+
+Buzzy Found 0 optional class methods on WBSSafariBookmarksSyncAgentProtocol
+
+Buzzy Found 36 required instance methods on WBSSafariBookmarksSyncAgentProtocol
+syncDownSafariPerSiteSettingsSyncWithCompletion: encoding: v24@0:8@?16
+syncDownSafariSettingsSyncWithCompletion: encoding: v24@0:8@?16
+syncUpSafariPerSiteSettingsSyncWithCompletion: encoding: v24@0:8@?16
+syncUpSafariSettingsSyncWithCompletion: encoding: v24@0:8@?16
+fetchCloudSettingsChangesImmediately encoding: v16@0:8
+saveCloudPerSiteSettingWithDictionaryRepresentation:successCompletionHandler: encoding: v32@0:8@16@?24
+saveCloudSettingWithDictionaryRepresentation:successCompletionHandler: encoding: v32@0:8@16@?24
+saveCloudTabCloseRequestWithDictionaryRepresentation:closeRequestUUIDString:completionHandler: encoding: v40@0:8@16@24@?32
+saveTabsForCurrentDeviceWithDictionaryRepresentation:deviceUUIDString:completionHandler: encoding: v40@0:8@16@24@?32
+fetchRemoteMigrationStateWithCompletionHandler: encoding: v24@0:8@?16
+deleteCloudTabCloseRequestsWithUUIDStrings:completionHandler: encoding: v32@0:8@16@?24
+fetchSyncedCloudTabDevicesAndCloseRequestsWithCompletionHandler: encoding: v24@0:8@?16
+deleteDevicesWithUUIDStrings:completionHandler: encoding: v32@0:8@16@?24
+observeRemoteMigrationStateForSecondaryMigration encoding: v16@0:8
+getCloudTabDevicesWithCompletionHandler: encoding: v24@0:8@?16
+beginMigrationFromDAV encoding: v16@0:8
+deleteBackgroundImageFromCloudKitWithCompletionHandler: encoding: v24@0:8@?16
+scheduleCloudBackgroundImageSaveWithURL:isLightAppearance:successCompletionHandler: encoding: v36@0:8@16B24@?28
+triggerImmediateBackgroundImageSaveIfApplicable encoding: v16@0:8
+registerForPushNotificationsIfNeeded encoding: v16@0:8
+userDidUpdateBookmarkDatabase encoding: v16@0:8
+userAccountDidChange: encoding: v24@0:8q16
+collectDiagnosticsDataWithCompletionHandler: encoding: v24@0:8@?16
+triggerSafariTabGroupSync encoding: v16@0:8
+triggerSafariTechnologyPreviewTabGroupSync encoding: v16@0:8
+getCloudTabContainerManateeStateWithCompletionHandler: encoding: v24@0:8@?16
+getCloudSettingsContainerManateeStateWithCompletionHandler: encoding: v24@0:8@?16
+fetchCloudTabDevicesAndCloseRequests encoding: v16@0:8
+deleteBackgroundImageDirectory encoding: v16@0:8
+deletePerSiteSettingsSyncData encoding: v16@0:8
+saveExtensionStatesWithDictionaryRepresentation:forDevice:completionHandler: encoding: v40@0:8@16@24@?32
+saveExtensionDeviceWithDictionaryRepresentation:completionHandler: encoding: v32@0:8@16@?24
+getCloudExtensionStatesWithCompletionHandler: encoding: v24@0:8@?16
+deleteCloudExtensionDevicesWithUUIDStrings:completionHandler: encoding: v32@0:8@16@?24
+deleteCloudExtensionStatesDatabaseWithCompletionHandler: encoding: v24@0:8@?16
+fetchTabGroupEntitiesWithCompletion: encoding: v24@0:8@?16
+
+Buzzy Found 0 optional instance methods on WBSSafariBookmarksSyncAgentProtocol

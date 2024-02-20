@@ -1,0 +1,101 @@
+\hypertarget{interface_delicious_parser}{
+\section{DeliciousParser Class Reference}
+\label{interface_delicious_parser}\index{DeliciousParser@{DeliciousParser}}
+}
+Provides a class method for parsing data downloaded from del.icio.us API posts/all requests into the localMoc of a given extore.  
+
+
+{\tt \#import $<$DeliciousParser.h$>$}
+
+Inheritance diagram for DeliciousParser::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{interface_delicious_parser}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+(BOOL) + \hyperlink{interface_delicious_parser_33553d12448de4b978218aa2d3106063}{parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:}
+\begin{CompactList}\small\item\em Parses given data downloaded from del.icious, obtaining, optionally: posts and tags, dates and/or bundles. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{interface_delicious_parser_b8357aa1178b7814061cd9b6fad5044b}{
+int \textbf{\_\-debugCount}}
+\label{interface_delicious_parser_b8357aa1178b7814061cd9b6fad5044b}
+
+\item 
+\hypertarget{interface_delicious_parser_24ec36be6602d51fc94c8f5b322a3bda}{
+BOOL \textbf{\_\-doStarks}}
+\label{interface_delicious_parser_24ec36be6602d51fc94c8f5b322a3bda}
+
+\item 
+\hypertarget{interface_delicious_parser_ccd8e504dc2d4ea05cd49bd4037bc7ea}{
+ExtoreDelicious $\ast$ \textbf{\_\-extore}}
+\label{interface_delicious_parser_ccd8e504dc2d4ea05cd49bd4037bc7ea}
+
+\item 
+\hypertarget{interface_delicious_parser_861272914f1fb1b4a382f1fb86d7031d}{
+BOOL \textbf{\_\-insertBundles}}
+\label{interface_delicious_parser_861272914f1fb1b4a382f1fb86d7031d}
+
+\item 
+\hypertarget{interface_delicious_parser_db6718bbd3a14bf83b38bf7a4183ed7b}{
+BOOL \textbf{\_\-insertDates}}
+\label{interface_delicious_parser_db6718bbd3a14bf83b38bf7a4183ed7b}
+
+\item 
+\hypertarget{interface_delicious_parser_15cdaac645688a8dffe205c8a1b589b8}{
+\hyperlink{interface_browid}{Browid} $\ast$ \textbf{browid}}
+\label{interface_delicious_parser_15cdaac645688a8dffe205c8a1b589b8}
+
+\item 
+\hypertarget{interface_delicious_parser_3277fb9a673036560b17d938546885fc}{
+NSData $\ast$ \textbf{data}}
+\label{interface_delicious_parser_3277fb9a673036560b17d938546885fc}
+
+\item 
+\hypertarget{interface_delicious_parser_fa3b885a785ec7b9140ce7aac083c773}{
+NSError $\ast$ \textbf{error}}
+\label{interface_delicious_parser_fa3b885a785ec7b9140ce7aac083c773}
+
+\item 
+\hypertarget{interface_delicious_parser_4d64c65be004dea47827f70c23593425}{
+NSCalendarDate $\ast$ \textbf{lastUpdateTime}}
+\label{interface_delicious_parser_4d64c65be004dea47827f70c23593425}
+
+\item 
+\hypertarget{interface_delicious_parser_a1400db5d99173e9641d98ede4604f92}{
+NSXMLParser $\ast$ \textbf{parser}}
+\label{interface_delicious_parser_a1400db5d99173e9641d98ede4604f92}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a class method for parsing data downloaded from del.icio.us API posts/all requests into the localMoc of a given extore. 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_delicious_parser_33553d12448de4b978218aa2d3106063}{
+\index{DeliciousParser@{DeliciousParser}!parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:@{parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:}}
+\index{parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:@{parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:}!DeliciousParser@{DeliciousParser}}
+\subsubsection[{parseData:doStarks:doDates:doBundles:extore:lastUpdateTime:error:}]{\setlength{\rightskip}{0pt plus 5cm}+ (BOOL) parseData: (NSData$\ast$) {\em data}\/ doStarks: (BOOL) {\em doStarks}\/ doDates: (BOOL) {\em doDates}\/ doBundles: (BOOL) {\em doBundles}\/ extore: (ExtoreDelicious$\ast$) {\em extore}\/ lastUpdateTime: (NSDate$\ast$$\ast$) {\em lastUpdateTime}\/ error: (NSError$\ast$$\ast$) {\em error}}}
+\label{interface_delicious_parser_33553d12448de4b978218aa2d3106063}
+
+
+Parses given data downloaded from del.icious, obtaining, optionally: posts and tags, dates and/or bundles. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em data}]\item[{\em doStarks}]If YES, bookmarks and tags are parsed from data and inserted into the localMoc of the extore. \item[{\em doDates}]Switches on a function which is not implemented at this time. \item[{\em doBundles}]Switches on a function which is not implemented at this time. \item[{\em extore}]The extore into whose localMoc any bookmarks and tags found will be inserted as starks, and whose browfile's browid the exid of each inserted stark will be associated with. \item[{\em lastUpdateTime}]Pointer to an NSDate$\ast$ or NULL.~ If not NULL, and a last update time is found while parsing the data, an NSDate representing this time will be assigned to this pointer. \item[{\em error}]Pointer to an NSError$\ast$ or NULL.~ If not NULL, and an error occurs, an NSError explaining the error will be assigned to this pointer. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]YES if the operation completes with no error, otherwise NO. \end{Desc}
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/DeliciousParser.h\item 
+/Users/jk/Documents/Programming/Projects/BookMacster/DeliciousParser.m\end{CompactItemize}

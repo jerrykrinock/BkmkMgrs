@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="BookMacster Terminology">
+	<!--
+		STANDARD SUITE
+	-->
+	<suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+        <command name="open" code="aevtodoc" description="Open a document.">
+            <direct-parameter description="The file(s) to be opened.">
+                <type type="file" list="yes"/>
+            </direct-parameter>
+        </command>
+        <enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask " description="Ask the user whether or not to save the file."/>
+		</enumeration>
+		<class name="application" code="capp" description="The application&apos;s top-level scripting object.">
+			<cocoa class="NSApplication"/>
+			<element type="window" access="r">
+				<cocoa key="orderedWindows"/>
+			</element>
+			<element type="document">
+				<cocoa key="orderedDocuments"/>
+			</element>
+			<property name="name" code="pnam" description="The name of the application." type="text" access="r"/>
+			<property name="frontmost" code="pisf" description="Is this the frontmost (active) application?" type="boolean" access="r">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" description="The version of the application." type="text" access="r"/>
+            <responds-to name="open">
+                <cocoa method="handleOpenScriptCommand:"/>
+            </responds-to>
+            <responds-to command="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="document" code="docu" description="A document.">
+			<cocoa class="NSDocument"/>
+			<property name="name" code="pnam" description="The document&apos;s name." type="text">
+				<cocoa key="displayName"/>
+			</property>
+			<property name="modified" code="imod" description="Has the document been modified since the last save?" type="boolean" access="r">
+				<cocoa key="isDocumentEdited"/>
+			</property>
+			<property name="file" code="file" description="The document&apos;s location on disk." type="file" access="r">
+				<cocoa key="fileURL"/>
+			</property>
+			<responds-to command="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="window" code="cwin" description="A window.">
+			<cocoa class="NSWindow"/>
+			<property name="name" code="pnam" description="The full title of the window." type="text" access="r">
+				<cocoa key="title"/>
+			</property>
+			<property name="id" code="ID  " description="The unique identifier of the window." type="integer" access="r">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="index" code="pidx" description="The index of the window, ordered front to back." type="integer">
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="rectangle">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
+			<property name="closeable" code="hclb" description="Whether the window has a close box." type="boolean" access="r">
+				<cocoa key="hasCloseBox"/>
+			</property>
+			<property name="miniaturizable" code="ismn" description="Whether the window can be minimized." type="boolean" access="r">
+				<cocoa key="isMiniaturizable"/>
+			</property>
+			<property name="miniaturized" code="pmnd" description="Whether the window is currently minimized." type="boolean">
+				<cocoa key="isMiniaturized"/>
+			</property>
+			<property name="resizable" code="prsz" description="Whether the window can be resized." type="boolean" access="r">
+				<cocoa key="isResizable"/>
+			</property>
+			<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="zoomable" code="iszm" description="Whether the window can be zoomed." type="boolean" access="r">
+				<cocoa key="isZoomable"/>
+			</property>
+			<property name="zoomed" code="pzum" description="Whether the window is currently zoomed." type="boolean">
+				<cocoa key="isZoomed"/>
+			</property>
+			<property name="document" code="docu" description="The document whose contents are being displayed in the window." type="document" access="r"/>
+			<responds-to command="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to command="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to command="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+		<command name="close" code="coreclos" description="Close a document.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter description="the document(s) or window(s) to close." type="specifier"/>
+			<parameter name="saving" code="savo" description="Whether or not changes should be saved before closing." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" description="The file in which to save the document." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="save" code="coresave" description="Save a document.">
+			<direct-parameter description="The document(s) or window(s) to save." type="specifier"/>
+			<parameter name="in" code="kfil" description="The file in which to save the document." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="quit" code="aevtquit" description="Quit the application.">
+			<cocoa class="NSQuitCommand"/>
+			<parameter name="saving" code="savo" description="Whether or not changed documents should be saved before closing." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+		</command>
+		<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter description="the object whose elements are to be counted" type="specifier"/>
+			<parameter name="each" code="kocl" description="The class of objects to be counted." type="type" optional="yes">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result description="the number of elements" type="integer"/>
+		</command>
+		<command name="delete" code="coredelo" description="Delete an object.">
+			<cocoa class="NSDeleteCommand"/>
+			<direct-parameter description="the object to delete" type="specifier"/>
+		</command>
+		<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+			<cocoa class="NSCloneCommand"/>
+			<direct-parameter description="the object(s) to duplicate" type="specifier"/>
+			<parameter name="to" code="insh" description="The location for the new object(s)." type="location specifier">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" description="Properties to be set in the new duplicated object(s)." type="record" optional="yes">
+				<cocoa key="WithProperties"/>
+			</parameter>
+		</command>
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter description="the object in question" type="any"/>
+			<result description="true if it exists, false if not" type="boolean"/>
+		</command>
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="NSMoveCommand"/>
+			<direct-parameter description="the object(s) to move" type="specifier"/>
+			<parameter name="to" code="insh" description="The new location for the object(s)." type="location specifier">
+				<cocoa key="ToLocation"/>
+			</parameter>
+		</command>
+		<!-- "set" is supposed to be hidden. -->
+		<command name="set" code="Bkdgsetd" description="Set an object&apos;s data.">
+			<cocoa class="NSSetCommand"/>
+			<direct-parameter type="specifier"/>
+			<!-- "set" is supposed to return the fully evaluated "to" data.
+				<result type="any"/>
+				-->
+			<parameter name="to" code="data" description="The new value." type="any">
+				<cocoa key="Value"/>
+			</parameter>
+		</command>
+		<!-- "get" is supposed to be hidden. -->
+		<command name="get" code="coregetd" description="Get the data for an object.">
+			<cocoa class="NSGetCommand"/>
+			<direct-parameter type="specifier"/>
+			<result type="any"/>
+		</command>
+	</suite>
+	<suite name="Sheep Systems Suite" code="ShSy" description="Classes and commands specific to Sheep Systems software">
+		<enumeration name="error recovery results" code="ErRR" description="Specifies the result of trying to recover from an error.  Usually this is related to which button the user clicked.">
+			<enumerator name="was no error" code="Nerr" description="No error was found; therefore it was not even presented to the user.">
+				<cocoa integer-value="99"/>
+			</enumerator>
+			<enumerator name="recovery succeeded" code="ReSx" description="The application successfully recovered from the error">
+				<cocoa integer-value="100"/>
+			</enumerator>
+			<enumerator name="recovery failed" code="ReFa" description="The application was not able to recover from ther error.">
+				<cocoa integer-value="101"/>
+			</enumerator>
+			<enumerator name="not attempted" code="NoAt" description="Error recovery was not attempted">
+				<cocoa integer-value="102"/>
+			</enumerator>
+			<enumerator name="attempted asynchrously" code="AtAs" description="The user was presented with the error and clicked a button to select an error recovery option, but we did not stick around to find out whether or not recovery succeeded.  Maybe it succeeded and maybe it did not.">
+				<cocoa integer-value="103"/>
+			</enumerator>
+			<enumerator name="error is hidden" code="ErHd" description="The error was not displayed to the user because it is a &quot;hidden&quot; error, so no recovery was attempted">
+				<cocoa integer-value="104"/>
+			</enumerator>
+			<enumerator name="user cancelled previously" code="UsCn" description="The error was not displayed to the user because it was caused by user&apos;s previous cancellation of the command.  Therefore, no error recovery was attemped.">
+				<cocoa integer-value="105"/>
+			</enumerator>
+            <enumerator name="there was a internal error" code="IErr" description="The error was not displayed to the user because it was caused by user&apos;s previous cancellation of the command.  Therefore, no error recovery was attemped.">
+                <cocoa integer-value="105"/>
+            </enumerator>
+			<enumerator name="user clicked first (default) button" code="UsDB" description="This error was presented to the user, and the user responded by clicking the first (default) button">
+				<cocoa integer-value="1000"/>
+			</enumerator>
+            <enumerator name="user clicked second (usually 'Cancel') button" code="UsOB" description="This error was presented to the user, and the user responded by clicking the second (usually 'Cancel')  button">
+                <cocoa integer-value="1001"/>
+            </enumerator>
+			<enumerator name="user clicked third ('alternate') button" code="UsAB" description="This error was presented to the user, and the user responded by clicking the third ('alternate') button button">
+				<cocoa integer-value="1002"/>
+			</enumerator>
+			<enumerator name="user clicked fourth button" code="UsOB" description="This error was presented to the user, and the user responded by clicking the fourth button">
+				<cocoa integer-value="1003"/>
+			</enumerator>
+		</enumeration>
+	</suite>
+	<suite name="BookMacster Family Suite" code="Bkmx" description="Classes and commands specific to Smarky, Synkmark, Markster and BookMacser">
+		<enumeration name="tab identifiers" code="BTbs" description="The names of the tabs of a collection (.bmco) window which can be revealed using the &apos;reveal tab&apos; command">
+			<enumerator name="Content" code="Cntt">
+				<cocoa string-value="content"/>
+			</enumerator>
+			<enumerator name="Settings" code="Stgs">
+				<cocoa string-value="settings"/>
+			</enumerator>
+			<enumerator name="General" code="Gnrl">
+				<cocoa string-value="general"/>
+			</enumerator>
+			<enumerator name="OpenSave" code="OpSv">
+				<cocoa string-value="openSave"/>
+			</enumerator>
+			<enumerator name="Sorting" code="Srtg">
+				<cocoa string-value="sorting"/>
+			</enumerator>
+			<enumerator name="Clients" code="Clts">
+				<cocoa string-value="clients"/>
+			</enumerator>
+			<enumerator name="Structure" code="Strc">
+				<cocoa string-value="structure"/>
+			</enumerator>
+			<enumerator name="Syncers" code="Agts">
+				<cocoa string-value="syncers"/>
+			</enumerator>
+			<enumerator name="Reports" code="Rpts">
+				<cocoa string-value="reports"/>
+			</enumerator>
+			<enumerator name="Duplicates" code="Dups">
+				<cocoa string-value="dupes"/>
+			</enumerator>
+			<enumerator name="Verify" code="Vrfy">
+				<cocoa string-value="verify"/>
+			</enumerator>
+			<enumerator name="Find" code="Find">
+				<cocoa string-value="find/replace"/>
+			</enumerator>
+			<enumerator name="Logs" code="Logs">
+				<cocoa string-value="logs"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="deference values" code="Dfrc" description="Specifies what to do in case a browser client which is not allowed to be running during the scripted operation is found to be running.">
+			<enumerator name="yield" code="Yild" description="Yield to the browser by aborting the operation">
+				<cocoa integer-value="1"/>
+			</enumerator>
+			<enumerator name="ask permission" code="AskB" description="Ask the user in a dialog whether or not to quit the browser">
+				<cocoa integer-value="2"/>
+			</enumerator>
+			<enumerator name="quitting" code="QitB" description="Quit the browser.">
+				<cocoa integer-value="3"/>
+			</enumerator>
+			<enumerator name="kill" code="KilB" description="Try to quit the browser, but if it refuses to quit, kill it.">
+				<cocoa integer-value="4"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="browser names" code="FFCh" description="Local browser apps supported by BookMacster">
+			<enumerator name="Chrome" code="Chro">
+				<cocoa string-value="Chrome"/>
+			</enumerator>
+			<enumerator name="Chromium" code="Chmm">
+				<cocoa string-value="Chromium"/>
+			</enumerator>
+			<enumerator name="Epic" code="Epic">
+				<cocoa string-value="Epic"/>
+			</enumerator>
+			<enumerator name="Firefox" code="Ffox">
+				<cocoa string-value="Firefox"/>
+			</enumerator>
+			<enumerator name="iCab" code="ICab">
+				<cocoa string-value="ICab"/>
+			</enumerator>
+			<enumerator name="OmniWeb" code="OWeb">
+				<cocoa string-value="OmniWeb"/>
+			</enumerator>
+			<enumerator name="Opera" code="Opra">
+				<cocoa string-value="Opera"/>
+			</enumerator>
+			<enumerator name="Safari" code="Sfri">
+				<cocoa string-value="Safari"/>
+			</enumerator>
+			<enumerator name="Vivaldi" code="Epic">
+				<cocoa string-value="Vivaldi"/>
+			</enumerator>
+			<enumerator name="Xbel" code="Xbel">
+				<cocoa string-value="Xbel"/>
+			</enumerator>
+		</enumeration>
+		<!-- put your application specific scripting suite information here -->
+		<!-- a specialization of the application class.  this will be the root container for all of
+		our objects.  -->
+		<class name="application" code="capp" description="Additions to the application in the Standard Suite." inherits="application">
+			<cocoa class="NSApplication"/>
+			<element description="One of the open documents." type="collection">
+				<cocoa key="orderedDocuments"/>
+			</element>
+			<property name="last save token of front document" code="ApLt" description="This property returns the same thing as asking the front collection for its &apos;last save token&apos;.  Unfortunately, that property returns missing value if a modal sheet is showing on the front document window.  So, this command works around that limitation." type="text" access="r">
+				<cocoa key="lastSaveTokenOfFrontDoc"/>
+			</property>
+		</class>
+		<class name="collection" code="BmSf" description="The application&apos;s main document type, which contains Bookmarks Content, Settings and Report Results." plural="collections" inherits="document">
+			<cocoa class="BkmxDoc"/>
+			<element description="The Syncers of a Collection, which you see in BookMacster by clicking the tabs Settings ▸ Syncers." type="syncer">
+				<cocoa key="syncersOrdered"/>
+			</element>
+			<property name="identifier" code="BmDI" description="The unique identifier of a collection" type="text">
+				<cocoa key="uuid"/>
+			</property>
+			<property name="last save token" code="BmLs" description="A string which changes each time that the document is saved.  May be used to verify that the version open in the application is the latest version of the document" type="text" access="r">
+				<cocoa key="lastSaveToken"/>
+			</property>
+			<responds-to command="reveal tab">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="import">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="export">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="import only">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="export only">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="write sync log">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="make new local client">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="delete all clients">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="delete all content">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="undo">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="redo">
+				<cocoa method=""/>
+			</responds-to>
+		</class>
+		<class name="syncer" code="BmAg" description="The receiver&apos;s Syncers, which can be seen in Settings ▸ Syncers tab." plural="syncers">
+			<cocoa class="Syncer"/>
+			<element description="You can see the Triggers of a Syncer in the BookMacster application by clicking the tabs Settings > Syncing > Advanced and selecting the desired Syncer" type="trigger">
+				<cocoa key="triggersOrdered"/>
+			</element>
+			<responds-to command="perform">
+				<cocoa method=""/>
+			</responds-to>
+		</class>
+		<class name="trigger" code="BmTg" description="A list of triggers which may cause a syncer to perform its commands" plural="triggers">
+			<cocoa class="Trigger"/>
+		</class>
+		<command name="display error logs" code="BkmxDerr" description="Display the application&apos;s Logs window, Errors tab.">
+			<cocoa class="DisplayErrorLogsScriptCommand"/>
+		</command>
+		<command name="display inspector" code="BkmxDipt" description="Display the application&apos;s Inspector panel.">
+			<cocoa class="DisplayInspectorScriptCommand"/>
+		</command>
+		<command name="reveal tab" code="BkmxRvTb" description="Selects and thereby reveals a specified tab view in the window.    Example: &quot;tell myCollection to reveal tab identifier Content&quot;">
+			<cocoa class="RevealTabCommand"/>
+			<direct-parameter description="The Collection which is to have a tab revealed." type="collection"/>
+			<parameter name="identifier" code="tbId" description="One of the enumerated tab identifiers, which specifies which tab to reveal" type="tab identifiers">
+				<cocoa key="Identifier"/>
+			</parameter>
+		</command>
+		<command name="perform" code="BkmxPerf" description="Performs the commands of a specified syncer, as if one of its triggers had occurred.  Example: &quot;tell syncer 1 of collection 1 to perform&quot;.  If one of the commands is an Import, it will only be performed from a given Client if either the Client or the Collection have been modified since the prior Import from this Client.">
+			<cocoa class="PerformCommand"/>
+			<direct-parameter description="The syncer whose commands are to be performed" type="syncer"/>
+			<parameter name="for trigger" code="pftg" description="The trigger whose single Client will be imported from and/or exported to during execution of any &apos;Import Triggering Client&apos; or &apos;Export Triggering Client&apos; command." type="trigger" optional="yes">
+				<cocoa key="trigger"/>
+			</parameter>
+			<parameter name="for pid" code="pfpd" description="Specifies the pid that should be used to create the doOver syncer in the event that the command fails to import a Client due to detection of an unimported change.  This is only used for internal testing." type="integer" optional="yes">
+				<cocoa key="pid"/>
+			</parameter>
+		</command>
+		<command name="present last logged error" code="BkmxPerr" description="Presents the last error logged by the application or one of its Workers in dialog box.">
+			<cocoa class="PresentLastLoggedErrorScriptCommand"/>
+            <parameter name="code" code="ecod" description="Modifies the command to present the last logged error of the given code.  If there is no such error in the database, ignores this parameter and simply presents the latest error in the database." type="integer" optional="yes">
+                <cocoa key="code"/>
+            </parameter>
+			<result description="An integer expressing if the user attempted error recovery, and if known, whether or not recovery was successful." type="error recovery results"/>
+		</command>
+        <command name="open notification settings" code="BkmxONot" description="Opens the Preferences window and tabs to Syncing, then pushes the Notifications button, to show the sync notification settings.  This command may be sent by BkmxNotifier-A.">
+            <cocoa class="OpenNotificationSettingsScriptCommand"/>
+        </command>
+		<command name="import" code="BkmxImpt" description="Imports from all active Import Clients, as though the menu item File ▸ Import from all had been clicked">
+			<cocoa class="ImportCommand"/>
+			<direct-parameter description="The Collection which is to receive the import." type="collection"/>
+			<parameter name="deference" code="defr" description="Specifies what to do in case a browser client which is not allowed to be running during the scripted operation is found to be running.  If not given, defaults to &quot;ask&quot;." type="deference values" optional="yes">
+				<cocoa key="deference"/>
+			</parameter>
+			<parameter name="ignoring limit" code="iglm" description="Specifies whether or not to ignore the &quot;Safe Limit&quot; (number of allowed changes) which is set in the Settings ▸ Client tab for the operation.  If not given, defaults to &quot;no&quot;." type="boolean" optional="yes">
+				<cocoa key="ignoreLimit"/>
+			</parameter>
+		</command>
+		<command name="export" code="BkmxExpt" description="Exports to all active Export Clients, as though the menu item File ▸ Export to all had been clicked">
+			<cocoa class="ExportCommand"/>
+			<direct-parameter description="The Collection which is to push the export." type="collection"/>
+			<parameter name="deference" code="defr" description="Specifies what to do in case a browser client which is not allowed to be running during the scripted operation is found to be running.  If not given, defaults to &quot;ask&quot;." type="deference values" optional="yes">
+				<cocoa key="deference"/>
+			</parameter>
+			<parameter name="ignoring limit" code="iglm" description="Specifies whether or not to ignore the &quot;Safe Limit&quot; (number of allowed changes) which is set in the Settings ▸ Client tab for the operation.  If not given, defaults to &quot;no&quot;." type="boolean" optional="yes">
+				<cocoa key="ignoreLimit"/>
+			</parameter>
+		</command>
+		<command name="import only" code="BkmxImOy" description="Acts as though the user had clicked in the menu File ▸ &quot;Import from only&quot;, then &quot;Overlay&quot;, except that a temporary Client is created, with file format and path are provided as parameters.">
+			<cocoa class="ImportOnlyCommand"/>
+			<direct-parameter description="The Collection which is to perform the operation" type="collection"/>
+			<parameter name="file format" code="flfm" description="The file format of the file to be imported from" type="browser names">
+				<cocoa key="exformat"/>
+			</parameter>
+			<parameter name="path" code="fpth" description="The full path of the file to be imported from or exported to.  Only use this for an Advanced &quot;Choose File&quot; Client." type="text" optional="yes">
+				<cocoa key="path"/>
+			</parameter>
+		</command>
+		<command name="export only" code="BkmxExOy" description="Acts as though the user had clicked in the menu File ▸ &quot;Export to only&quot;, then &quot;Overlay&quot;, except that instead of a specified Client, bookmarks are exported to a file at a given path, in a given file format">
+			<cocoa class="ExportOnlyCommand"/>
+			<direct-parameter description="The Collection which is to perform the operation" type="collection"/>
+			<parameter name="file format" code="flfm" description="The file format of the file to be exported to" type="browser names">
+				<cocoa key="exformat"/>
+			</parameter>
+			<parameter name="path" code="fpth" description="The full path of the file to be imported from or exported to.  Only use this for an Advanced &quot;Choose File&quot; Client." type="text" optional="yes">
+				<cocoa key="path"/>
+			</parameter>
+		</command>
+		<command name="write sync log" code="BkmxWrSL" description="Writes a Sync Log as a human-readable text file to a given path.  The result is the same as clicking the &quot;Write to Desktop&quot; button in the Reports ▸ Sync Log tab, except that you may specify the file path to which you want the log written">
+			<cocoa class="WriteSyncLogCommand"/>
+			<direct-parameter description="The Collection whose last sync log file is to be written" type="collection"/>
+			<parameter name="path" code="lpth" description="The full path of the log file to be written.  If this parameter is not given, a default name will be made up" type="text" optional="yes">
+				<cocoa key="path"/>
+			</parameter>
+			<parameter name="back" code="lbck" description="Use this to specify which sync log you want.  If not specified, you get the latest sync log which is selected in the Settings ▸ Sync Logs tab, or the most recent Sync Log if none is selected.  If you pass a number N, where N&gt;0, you will get the log whose serial number is L-N, where L is the latest log&apos;s serial number." type="integer" optional="yes">
+				<cocoa key="back"/>
+			</parameter>
+			<parameter name="stamp" code="lnst" description="Specifies whether or not you want the log&apos;s serial number and timestamp included in the first line of the file.  If this parameter is not given, defaults to true." type="boolean" optional="yes">
+				<cocoa key="stamp"/>
+			</parameter>
+			<result description="The path to which the log file was written." type="text"/>
+		</command>
+		<command name="make new local client" code="BkmxMNLC" description="Makes a new Client">
+			<cocoa class="MakeNewLocalClientCommand"/>
+			<direct-parameter description="The Collection to which the new Client should be added" type="collection"/>
+			<parameter name="browser" code="mbrw" description="The name of the client&apos;s web browser" type="browser names">
+				<cocoa key="exformat"/>
+			</parameter>
+			<parameter name="profile" code="mcpl" description="The name of the profile of the new client.  Only meaningful in Chrome, Canary, FreeSMUG's Chromium or Firefox.  If the browser is one of these four, and profile is not given, we&apos;ll set it to &apos;default&apos; for Firefox or &apos;Default&apos; for the chrome-ish browsers." type="text" optional="yes">
+				<cocoa key="profileName"/>
+			</parameter>
+		</command>
+		<command name="delete all clients" code="BkmxDClt" description="Deletes all of the receiver&apos;s Clients">
+			<cocoa class="DeleteAllClientsCommand"/>
+			<direct-parameter description="The Collection whose clients are to be deleted" type="collection"/>
+		</command>
+		<command name="delete all content" code="BkmxDCnt" description="Deletes all the soft folders, bookmarks, RSS feeds, RSS articles, and separators in the receiver">
+			<cocoa class="DeleteAllContentCommand"/>
+			<direct-parameter description="The Collection whose content is to be deleted" type="collection"/>
+		</command>
+		<command name="undo" code="BkmxUndo" description="Undoes the last edit which was performed on the Content or non-local Settings of the receiver">
+			<cocoa class="UndoCommand"/>
+			<direct-parameter description="The Collection whose last edit is to be undone." type="collection"/>
+		</command>
+		<command name="redo" code="BkmxRedo" description="Redoes the last edit which was undone in the receiver">
+			<cocoa class="RedoCommand"/>
+			<direct-parameter description="The Collection whose last edit is to be undone." type="collection"/>
+		</command>
+		<command name="land new bookmark" code="BkmxAdBk" description="Creates, or as we say, &quot;lands&quot; a new bookmark.  Regarding which Collection the new bookmark lands into, where it lands (see New Bookmark Landing) and whether or not the Inspector panel is shown, behavior is the same as when adding a bookmark from the BookMacsterize bookmarklet.">
+			<cocoa class="AddBookmarkCommand"/>
+			<parameter name="name" code="namm" description="The name of the new bookmark to be created.  If this parameter is not given, a default name will be made up." type="text" optional="yes">
+				<cocoa key="name"/>
+			</parameter>
+			<parameter name="url" code="urlr" description="The URL of the new bookmark to be created.  Normally this is a string beginning with &quot;http://…&quot;" type="text" optional="yes">
+				<cocoa key="url"/>
+			</parameter>
+			<parameter name="comments" code="cmts" description="The Comments to be entered into the new bookmark being created" type="text" optional="yes">
+				<cocoa key="comments"/>
+			</parameter>
+			<parameter name="show inspector override" code="shio" description="If this parameter is true, the Inspector panel will not be displayed when this bookmark is landed, regardless of what the user&apos;s preferences indicate.  (You can display the Inspector, if desired, with the &apos;display inspector&apos; command.)" type="boolean" optional="yes">
+				<cocoa key="showInspectorOverride"/>
+			</parameter>
+		</command>
+		<command name="hide inspector" code="BkmxHipt" description="Closes the application&apos;s Inspector panel.">
+			<cocoa class="HideInspectorScriptCommand"/>
+		</command>
+		<command name="manage browser extensions" code="BkmxMBAo" description="Display the &quot;Manage Browser Extensions&quot; window.">
+			<cocoa class="DisplayManageBrowserAddOnsScriptCommand"/>
+		</command>
+	</suite>
+</dictionary>

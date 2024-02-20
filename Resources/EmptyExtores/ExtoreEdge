@@ -1,0 +1,36 @@
+{
+   "checksum": "52f81758dc2bd5f9aa19ae73f8210a54",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13225748157626500",
+         "date_modified": "13225748255530725",
+         "guid": "00000000-0000-4000-A000-000000000002",
+         "id": "1",
+         "name": "Favorites Bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13225748157626519",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-A000-000000000003",
+         "id": "2",
+         "name": "Other Favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13225748157626522",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-A000-000000000004",
+         "id": "3",
+         "name": "Mobile Favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

@@ -1,0 +1,598 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red64\green128\blue0;\red76\green78\blue78;
+\red0\green22\blue176;\red0\green0\blue255;\red251\green0\blue7;\red108\green5\blue211;\red68\green21\blue176;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\csgenericrgb\c25000\c50001\c0;\csgenericrgb\c29999\c30457\c30457;
+\csgenericrgb\c0\c8656\c68986;\csgenericrgb\c0\c0\c100000;\cssrgb\c100000\c0\c0;\csgenericrgb\c42337\c1841\c82833;\csgenericrgb\c26552\c8264\c69162;
+}
+\deftab480
+\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf2 property
+\b0 \cf2  \cf3 startingIndex\cf2  : \cf2 4000\cf2 \
+
+\b \cf2 property
+\b0 \cf2  \cf3 endingIndex\cf2  : \cf2 9999\cf2 \
+
+\b \cf2 property
+\b0 \cf2  \cf3 logPath\cf2  : \cf2 "~/Desktop/ExportToFirefox-PerformancerLog.txt"\cf2  \cf4 -- must not end in .log\cf2 \
+\
+
+\b \cf2 repeat
+\b0 \cf2  
+\b \cf2 with
+\b0 \cf2  \cf3 i\cf2  
+\b \cf2 from
+\b0 \cf2  \cf3 startingIndex\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 endingIndex\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 baseUrlCount\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\b \cf5 do shell script
+\b0 \cf2  \cf2 "sqlite3 /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/places.sqlite 'select * from moz_places' | grep -c 'http'"\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+	\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 serialNumber\cf2  
+\b \cf2 to
+\b0 \cf2  \cf7 padZeros\cf2 (\cf3 i\cf2 , \cf2 5\cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 aUrl\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 "http://sheepsystems.com?x="\cf2  & \cf3 serialNumber\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 aTitle\cf2  
+\b \cf2 to
+\b0 \cf2  \cf7 geekDateTime\cf2 (\cf2 "-"\cf2 ) & \cf2 "-"\cf2  & \cf3 serialNumber\cf2 \
+	
+\b \cf6 log
+\b0 \cf2  (\cf2 "Adding "\cf2  & \cf3 aTitle\cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 exportSeconds\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 0\cf2 \
+	
+\b \cf2 tell
+\b0 \cf2  
+\i \cf6 application
+\i0 \cf2  \cf2 "BookMacster"\cf2 \
+		
+\b \cf6 land new bookmark
+\b0 \cf2  \cf6 name\cf2  \cf3 aTitle\cf2  \cf6 url\cf2  \cf3 aUrl\cf2 \
+		
+\b \cf6 delay
+\b0 \cf2  \cf2 2\cf2 \
+		
+\b \cf2 try
+\b0 \cf2 \
+			
+\b \cf2 with
+\b0 \cf2  
+\b \cf2 timeout
+\b0 \cf2  
+\b \cf2 of
+\b0 \cf2  \cf2 900\cf2  
+\i \cf6 seconds
+\i0 \cf2 \
+				
+\b \cf2 tell
+\b0 \cf2  
+\b \cf2 me
+\b0 \cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf2 set
+\b0 \cf2  \cf3 startTime\cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf5 current date
+\b0 \cf2 \
+				
+\b \cf2 tell
+\b0 \cf2  
+\i \cf6 collection
+\i0 \cf2  \cf2 1\cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf6 export
+\b0 \cf2 \
+				
+\b \cf2 tell
+\b0 \cf2  
+\b \cf2 me
+\b0 \cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf2 set
+\b0 \cf2  \cf3 exportSeconds\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\b \cf5 current date
+\b0 \cf2 ) - \cf3 startTime\cf2 \
+			
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 timeout
+\b0 \cf2 \
+		
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 try
+\b0 \cf2 \
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 tell
+\b0 \cf2 \
+	
+\b \cf6 delay
+\b0 \cf2  \cf2 5\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 expectedUrlCount\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 baseUrlCount\cf2  + \cf2 1\cf2 \
+	\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 newUrlCount1\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\b \cf5 do shell script
+\b0 \cf2  \cf2 "sqlite3 /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/places.sqlite 'select * from moz_places' | grep -c 'http'"\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+	
+\b \cf5 do shell script
+\b0 \cf2  (\cf2 "cd /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/; cp places.sqlite places"\cf2  & \cf3 serialNumber\cf2  & \cf2 "-1.sqlite"\cf2 )\
+	\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 newUrlCount2\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 0\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 newUrlCount3\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 0\cf2 \
+	
+\b \cf2 if
+\b0 \cf2  (\cf3 i\cf2  
+\b \cf2 mod
+\b0 \cf2  \cf2 4\cf2  
+\b \cf2 is
+\b0 \cf2  
+\b \cf2 equal to
+\b0 \cf2  \cf2 0\cf2 ) 
+\b \cf2 then
+\b0 \cf2 \
+		\cf4 -- Using 'tell \'85 run' instead of 'launch application \'85' causes it to launch hidden. \cf2 \
+		
+\b \cf2 tell
+\b0 \cf2  
+\i \cf6 application
+\i0 \cf2  \cf2 "Firefox"\cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf6 run
+\b0 \cf2 \
+		
+\b \cf6 delay
+\b0 \cf2  \cf2 15\cf2 \
+		\
+		
+\b \cf2 set
+\b0 \cf2  \cf3 newUrlCount2\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\b \cf5 do shell script
+\b0 \cf2  \cf2 "sqlite3 /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/places.sqlite 'select * from moz_places' | grep -c 'http'"\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+		
+\b \cf5 do shell script
+\b0 \cf2  (\cf2 "cd /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/; cp places.sqlite places"\cf2  & \cf3 serialNumber\cf2  & \cf2 "-2.sqlite"\cf2 )\
+		\
+		
+\b \cf6 quit
+\b0 \cf2  
+\i \cf6 application
+\i0 \cf2  \cf2 "Firefox"\cf2 \
+		
+\b \cf6 delay
+\b0 \cf2  \cf2 10\cf2 \
+		\
+		
+\b \cf2 set
+\b0 \cf2  \cf3 newUrlCount3\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\b \cf5 do shell script
+\b0 \cf2  \cf2 "sqlite3 /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/places.sqlite 'select * from moz_places' | grep -c 'http'"\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+		
+\b \cf5 do shell script
+\b0 \cf2  (\cf2 "cd /Users/jk/Library/Application\\\\ Support/Firefox/Profiles/jsw6uz53.default/; cp places.sqlite places"\cf2  & \cf3 serialNumber\cf2  & \cf2 "-3.sqlite"\cf2 )\
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 if
+\b0 \cf2 \
+	\
+	
+\b \cf2 if
+\b0 \cf2  (\cf3 logPath\cf2  
+\b \cf2 is
+\b0 \cf2  
+\b \cf2 not
+\b0 \cf2  
+\i \cf6 missing value
+\i0 \cf2 ) 
+\b \cf2 then
+\b0 \cf2 \
+		
+\b \cf2 tell
+\b0 \cf2  
+\b \cf2 me
+\b0 \cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf2 set
+\b0 \cf2  \cf3 paddedExportSeconds\cf2  
+\b \cf2 to
+\b0 \cf2  \cf7 padZeros\cf2 (\cf3 exportSeconds\cf2 , \cf2 4\cf2 )\
+		
+\b \cf2 set
+\b0 \cf2  \cf3 logLine\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 aTitle\cf2  & \cf2 " "\cf2  & \cf3 paddedExportSeconds\cf2  & \cf2 " "\cf2  & \cf3 expectedUrlCount\cf2  & \cf2 " "\cf2  & \cf3 newUrlCount1\cf2  & \cf2 " "\cf2  & \cf3 newUrlCount2\cf2  & \cf2 " "\cf2  & \cf3 newUrlCount3\cf2  & \cf8 return\cf2 \
+		
+\b \cf2 tell
+\b0 \cf2  
+\b \cf2 me
+\b0 \cf2  
+\b \cf2 to
+\b0 \cf2  \cf7 writeTextToPosixPath\cf2 (\cf3 logPath\cf2 , \cf3 logLine\cf2 , 
+\i \cf8 true
+\i0 \cf2 )\
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 if
+\b0 \cf2 \
+	\
+	
+\b \cf6 log
+\b0 \cf2  (\cf2 "quit window open for 5"\cf2 )\
+	
+\b \cf6 delay
+\b0 \cf2  \cf2 5\cf2 \
+	
+\b \cf6 log
+\b0 \cf2  (\cf2 "quit window closed"\cf2 )\
+
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 repeat
+\b0 \cf2 \
+\
+\
+\
+\cf4 (* returns a string of the form "20100816j230115" where that "j" is a given joiner string *)\cf2 \
+
+\b \cf2 on
+\b0 \cf2  \cf7 geekDateTime\cf2 (\cf3 joiner\cf2 )\
+	
+\b \cf2 return
+\b0 \cf2  \cf7 geekDateDaysAgo\cf2 (\cf2 0\cf2 ) & \cf3 joiner\cf2  & \cf7 geekTime\cf2 ()\
+
+\b \cf2 end
+\b0 \cf2  \cf7 geekDateTime\cf2 \
+\
+\cf4 (* returns an 8-character string of the form "20100816", which expresses the date that it was daysAgo ago.  Pass daysAgo=0 to get today's date.  If daysAgo is positive, the answer will be in the past.  If daysAgo is negative, the answer will be in the future *)\cf2 \
+
+\b \cf2 to
+\b0 \cf2  \cf7 geekDateDaysAgo\cf2 (\cf3 daysAgo\cf2 ) \cf4 -- Old_date is text, not a date.\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 old_date\cf2  
+\b \cf2 to
+\b0 \cf2  ((
+\b \cf5 current date
+\b0 \cf2 ) - \cf2 24\cf2  * \cf2 3600\cf2  * \cf3 daysAgo\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 string
+\i0 \cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \{\cf8 year\cf2 :\cf3 y\cf2 , 
+\i \cf6 month
+\i0 \cf2 :\cf3 m\cf2 , \cf8 day\cf2 :\cf3 d\cf2 \} 
+\b \cf2 to
+\b0 \cf2  
+\i \cf6 date
+\i0 \cf2  \cf3 old_date\cf2 \
+	
+\b \cf2 tell
+\b0 \cf2  (\cf3 y\cf2  * \cf2 10000\cf2  + \cf3 m\cf2  * \cf2 100\cf2  + \cf3 d\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 string
+\i0 \cf2  
+\b \cf2 to
+\b0 \cf2  
+\i \cf6 text
+\i0 \cf2  \cf2 1\cf2  
+\b \cf2 thru
+\b0 \cf2  \cf2 4\cf2  & 
+\i \cf6 text
+\i0 \cf2  \cf2 5\cf2  
+\b \cf2 thru
+\b0 \cf2  \cf2 6\cf2  & 
+\i \cf6 text
+\i0 \cf2  \cf2 7\cf2  
+\b \cf2 thru
+\b0 \cf2  \cf2 8\cf2 \
+
+\b \cf2 end
+\b0 \cf2  \cf7 geekDateDaysAgo\cf2 \
+\
+\cf4 -- Returns the number of hours relative to GMT.  California is -7 or -8.\cf2 \
+
+\b \cf2 on
+\b0 \cf2  \cf7 timeZone\cf2 ()\
+	
+\b \cf2 return
+\b0 \cf2  (
+\b \cf5 time to GMT
+\b0 \cf2 ) / \cf8 hours\cf2  \cf4 -- hours is 3600, a built-in constant\cf2 \
+
+\b \cf2 end
+\b0 \cf2  \cf7 timeZone\cf2 \
+\
+\cf4 -- Returns a 6-digit string representing the current time's hours, minutes and seconds.   For example, if the time is 23:01:15, returns 230115\cf2 \
+
+\b \cf2 on
+\b0 \cf2  \cf7 geekTime\cf2 ()\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 secsPastMidnight\cf2  
+\b \cf2 to
+\b0 \cf2  \cf8 time\cf2  
+\b \cf2 of
+\b0 \cf2  (
+\b \cf5 current date
+\b0 \cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 currentHour\cf2  
+\b \cf2 to
+\b0 \cf2  ((\cf3 secsPastMidnight\cf2  - \cf2 1799\cf2 ) / \cf2 3600\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+	\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 secsPastHour\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 secsPastMidnight\cf2  - \cf2 3600\cf2  * \cf3 currentHour\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 currentMin\cf2  
+\b \cf2 to
+\b0 \cf2  ((\cf3 secsPastHour\cf2  - \cf2 29\cf2 ) / \cf2 60\cf2 ) 
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 integer
+\i0 \cf2 \
+	\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 currentSec\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 secsPastHour\cf2  - \cf2 60\cf2  * \cf3 currentMin\cf2 \
+	\
+	
+\b \cf2 return
+\b0 \cf2  \cf7 padZeros\cf2 (\cf3 currentHour\cf2 , \cf2 2\cf2 ) & \cf7 padZeros\cf2 (\cf3 currentMin\cf2 , \cf2 2\cf2 ) & \cf7 padZeros\cf2 (\cf3 currentSec\cf2 , \cf2 2\cf2 )\
+
+\b \cf2 end
+\b0 \cf2  \cf7 geekTime\cf2 \
+\
+\cf4 -- Returns a string of digits representing n, padded on the left by as many leading zeros as are needed to make the length of the string equal to targLen\cf2 \
+
+\b \cf2 on
+\b0 \cf2  \cf7 padZeros\cf2 (\cf3 n\cf2 , \cf3 targLen\cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 nS\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 n\cf2  
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 string
+\i0 \cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 nNeeded\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 targLen\cf2  - (
+\b \cf6 count
+\b0 \cf2  
+\b \cf2 of
+\b0 \cf2  \cf3 nS\cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 zeros\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 ""\cf2 \
+	
+\b \cf2 repeat
+\b0 \cf2  
+\b \cf2 with
+\b0 \cf2  \cf3 i\cf2  
+\b \cf2 from
+\b0 \cf2  \cf2 1\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 nNeeded\cf2 \
+		
+\b \cf2 set
+\b0 \cf2  \cf3 zeros\cf2  
+\b \cf2 to
+\b0 \cf2  \cf2 "0"\cf2  & \cf3 zeros\cf2 \
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 repeat
+\b0 \cf2 \
+	\
+	
+\b \cf2 return
+\b0 \cf2  \cf3 zeros\cf2  & \cf3 nS\cf2 \
+
+\b \cf2 end
+\b0 \cf2  \cf7 padZeros\cf2 \
+\
+\cf4 -- Writes given text to a given file path\cf2 \
+\cf4 -- filename must not end in ".log" or else a "file already open" error will result.\cf2 \
+\cf4 -- Maybe some system logging daemon takes over all .log files??\cf2 \
+\cf4 -- Uses File Read/Write suite of the Standard Additions scripting addition\cf2 \
+\cf4 -- If doAppend is true, appends.  If doAppend is false, overwrites.\cf2 \
+
+\b \cf2 on
+\b0 \cf2  \cf7 writeTextToPosixPath\cf2 (\cf3 aPath\cf2 , \cf3 newText\cf2 , \cf3 doAppend\cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 oldastid\cf2  
+\b \cf2 to
+\b0 \cf2  \cf8 AppleScript's\cf2  \cf8 text item delimiters\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf8 AppleScript's\cf2  \cf8 text item delimiters\cf2  
+\b \cf2 to
+\b0 \cf2  \{\cf2 ""\cf2 \}\
+	
+\b \cf2 if
+\b0 \cf2  \cf3 aPath\cf2  
+\b \cf2 begins with
+\b0 \cf2  \cf2 "~"\cf2  
+\b \cf2 then
+\b0 \cf2 \
+		
+\b \cf2 set
+\b0 \cf2  \cf3 home_posix_path\cf2  
+\b \cf2 to
+\b0 \cf2  \cf8 POSIX path\cf2  
+\b \cf2 of
+\b0 \cf2  (
+\b \cf5 path to
+\b0 \cf2  
+\i \cf9 home folder
+\i0 \cf2 )\
+		
+\b \cf2 set
+\b0 \cf2  \cf3 aPath\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 home_posix_path\cf2  & 
+\i \cf6 characters
+\i0 \cf2  \cf2 2\cf2  
+\b \cf2 thru
+\b0 \cf2  
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 of
+\b0 \cf2  \cf3 aPath\cf2 \
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 if
+\b0 \cf2 \
+	
+\b \cf6 log
+\b0 \cf2  \cf2 "aPath: "\cf2  & \cf3 aPath\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf3 filePath\cf2  
+\b \cf2 to
+\b0 \cf2  (
+\i \cf6 POSIX file
+\i0 \cf2  \cf3 aPath\cf2  
+\b \cf2 as
+\b0 \cf2  
+\i \cf6 text
+\i0 \cf2 )\
+	
+\b \cf2 set
+\b0 \cf2  \cf3 fileRef\cf2  
+\b \cf2 to
+\b0 \cf2  
+\b \cf5 open for access
+\b0 \cf2  \cf3 filePath\cf2  
+\b \cf2 with
+\b0 \cf2  \cf5 write permission\cf2 \
+	
+\b \cf2 if
+\b0 \cf2  \cf3 doAppend\cf2  
+\b \cf2 is
+\b0 \cf2  
+\i \cf8 true
+\i0 \cf2  
+\b \cf2 then
+\b0 \cf2 \
+		
+\b \cf5 write
+\b0 \cf2  \cf3 newText\cf2  \cf5 to\cf2  \cf3 fileRef\cf2  \cf5 starting at\cf2  
+\i \cf9 eof
+\i0 \cf2 \
+	
+\b \cf2 else
+\b0 \cf2 \
+		\cf4 -- Wipe out all existing text first\cf2 \
+		
+\b \cf5 set eof
+\b0 \cf2  
+\b \cf2 of
+\b0 \cf2  \cf3 fileRef\cf2  \cf5 to\cf2  \cf2 0\cf2 \
+		
+\b \cf5 write
+\b0 \cf2  \cf3 newText\cf2  \cf5 to\cf2  \cf3 fileRef\cf2 \
+	
+\b \cf2 end
+\b0 \cf2  
+\b \cf2 if
+\b0 \cf2 \
+	
+\b \cf5 close access
+\b0 \cf2  \cf3 fileRef\cf2 \
+	
+\b \cf2 set
+\b0 \cf2  \cf8 AppleScript's\cf2  \cf8 text item delimiters\cf2  
+\b \cf2 to
+\b0 \cf2  \cf3 oldastid\cf2 \
+
+\b \cf2 end
+\b0 \cf2  \cf7 writeTextToPosixPath\cf2 \
+\
+}
