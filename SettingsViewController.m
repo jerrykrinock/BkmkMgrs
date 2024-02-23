@@ -514,7 +514,7 @@
     return answer ;
 }
 
-+ (NSSet*)keyPathsForValuesAffectingsimpleSyncersIsHalfFull {
++ (NSSet*)keyPathsForValuesAffectingSimpleSyncersIsHalfFull {
     return [NSSet setWithObjects:
             @"windowController.document.macster.syncerConfigActiveValue",
             nil] ;
