@@ -10,7 +10,7 @@ else
   #exit 79
 fi
 
-RAW_BUNDLE_ID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$AGENT_INFO_PLIST_PATH")
+RAW_BUNDLE_ID=com.sheepsystems.BkmxAgent
 echo Read raw Bundle ID: $RAW_BUNDLE_ID
 
 TIMESTAMP=`date +"%Y%m%d-%H%M%S"`
