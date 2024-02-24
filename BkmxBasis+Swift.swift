@@ -160,7 +160,7 @@ extension BkmxBasis {
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusEnabled.rawValue:
-                    return NSLocalizedString("BkmxAgentRunner is enabled in main menu:  > System Settings > Login Items BkmxAgentrunner, and is therefore able to run BkmxAgent.  (Good!)",
+                    return NSLocalizedString("BkmxAgentRunner is enabled in main menu:  > System Settings > Login Items BkmxAgentRunner, and is therefore able to run BkmxAgent.  (Good!)",
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusRequiresApproval.rawValue:
@@ -169,6 +169,10 @@ extension BkmxBasis {
                     ) + " ***"
                 case BkmxAgentStatusUnknown.rawValue:
                     return NSLocalizedString("Someting went wrong.  macOS does not recognize that BkmxAgentRunner is even installed.",
+                                             comment: "what it says"
+                    )
+                case BkmxAgentStatusNoSuchService.rawValue:
+                    return NSLocalizedString("Cannot tell if the correct BkmmxAgent is running or not, because SMAppService says it does not recognize the bundle identifier which BkmxAgentRunner gave it.  (Very strange!!)",
                                              comment: "what it says"
                     )
                 default:
