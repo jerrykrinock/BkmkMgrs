@@ -931,7 +931,7 @@ NSString* constStringSpaceQuitSuffix = @" quit";
         [extore doBackupLabel:@"WCDHC"];
         {
             NSString* msg = [NSString stringWithFormat:
-                             @"WCDHC: Did Pre-imort backup for extore %p",
+                             @"WCDHC: Did Pre-ipmort backup for extore %p",
                              extore];
             [[BkmxBasis sharedBasis] forJobSerial:jobSerial
                                         logFormat:msg];
