@@ -1992,9 +1992,21 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
         error = [SSYMakeError(623937, @"Error when searching for bundle identifier of our BkmxAgent") errorByAddingUnderlyingError:error];
     }
 
-    NSArray* agentApps = nil;
+    NSArray<NSRunningApplication*>* agentApps = nil;
     if (bundleIdentifier) {
-        agentApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:bundleIdentifier];
+        for (NSInteger i=1; i<13; i++) {
+            agentApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:bundleIdentifier];
+            
+            if (agentApps.count > 0) {
+                if (i > 1) {
+                    [[BkmxBasis sharedBasis] logFormat:@"macOS required %@ tries to find BkmxAgent, shame on Apple!",
+                     [NSString stringWithInt:i]];
+                }
+                break;
+            }
+            usleep(10000);
+        }
+        
         if (agentApps.count > 1) {
             NSString* msg = [NSString stringWithFormat:
                              @"Eeek, found %ld BkmxAgent processes running.",
