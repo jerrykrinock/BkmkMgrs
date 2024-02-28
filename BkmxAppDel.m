@@ -5784,7 +5784,9 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
 
         NSString* reportCopy = [report copy];
 
-        thenDo(reportCopy);
+        if (thenDo) {
+            thenDo(reportCopy);
+        }
 
         [report release];
         [reportCopy release];
