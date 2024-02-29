@@ -1981,9 +1981,89 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
      report from a user whose system took longer than 10 seconds. */
     return (NSApp ? 10.26 : 60.26) ;
 }
-
-
+    
 - (NSArray<NSRunningApplication*>*)runningAgents {
+    /*
+     
+     Why the Retry Loop?
+
+     The loop was added to this method in BkmkMgrs 3.1, when we
+     observed that the array returned by our call to the Cocoa method
+     +[NSRunningApplication runningApplicationsWithBundleIdentifier:] would
+     occasionally not contain BkmxAgent even when BkmxAgent was in fact running.
+     With macOS 14.4 Beta 3, this issue caused the Show Syncing Status report to
+     show that BkmxAgent was not running it was running, on maybe 5 out of 10
+     consecutive tries.  Very strange.
+     
+     We understand from the documentation of
+     +[NSRunningApplication runningApplicationsWithBundleIdentifier:] that the
+     run loop must run cycle, and that there can be a "race condition" if the
+     app if the system does not know the app is running yet.  But that was not
+     the problem during our test because BkmxAgent had been running for many
+     minutes.  After restarting and updating to macOS 14.4 Beta 4 and then 5
+     it got somewhat better, then later that day much better, maybe 0.1%
+     failure rate.
+     
+     Also, I tried it with TextEdit.  Running it all day, it even failed to find
+     the running TextEdit a once or twice/
+     
+     An tried an alternative to the Retry Loop, which was to add the following
+     method to SSYOtherApper:
+     
+     + (NSArray<SSYRunningApp*>*)runningAppsWithExecutableName:(NSString*)executableName
+     andBundleIdentifier:(NSString*)bundleIdentifier
+     error_p:(NSError**)error_p;
+     
+     This method called the unix progra `ps` instead of NSRunningApplication,
+     found the desired executable name, and then dug into the app's Info.piist
+     to get the bundle identifier.  Whew!  Also, notice that it returned
+     SSYRunningApp, which was a custom stripped-down replacement for
+     NSRunningApplication ( because there is no API to create and set
+     attributes in NSRunningApplication.  It was a lot of work.  Result:
+     It did not help.  Whenever NSRunningApplication failed, this new method
+     based on `ps` failed also.  So I delete the new method from SSYOtherApper.
+     
+     I experimented a little to see if there was any correlation between
+     the failures and either switching from Light to Dark mode or waking from
+     sleep.  I did see one or two failures, but nothing reproducible.  There
+     may be a small correlation.
+     
+     After completing this work, I retested in macOS 14.4 Beta 5 I think I have
+     now.  I clicked in the main menu: Show Syncing Status 10 times.  It required
+     two tries on three of the trials:
+     
+     2024-02-28 14:38:48    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:39:10    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:39:10    BkMtr    9845    macOS required 2 tries to find BkmxAgent, shame on Apple!
+     2024-02-28 14:39:24    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:39:32    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:39:33    BkMtr    9845    macOS required 2 tries to find BkmxAgent, shame on Apple!
+     2024-02-28 14:39:47    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:40:00    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:40:09    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:40:25    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:40:25    BkMtr    9845    macOS required 2 tries to find BkmxAgent, shame on Apple!
+     2024-02-28 14:40:40    BkMtr    9845    Will status BkmxAgent
+     2024-02-28 14:40:57    BkMtr    9845    Will status BkmxAgent
+     
+     But then, some tens of minutes later, I tested main menu > Reboot Sync Agent.
+     Breakpoint shows that this method is called once for each Reboot Sync Agent.
+     To my surprise, no trials required more than one trial:
+     
+     2024-02-28 14:59:14    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 14:59:25    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 14:59:31    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 14:59:39    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 14:59:45    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 14:59:53    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 15:00:01    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 15:00:11    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 15:00:30    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 15:00:38    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 16:38:31    BkMtr    9845    Will reboot BkmxAgent
+     2024-02-28 16:38:55    BkMtr    9845    Will reboot BkmxAgent
+     */
+
     NSError* error = nil;
     NSString* bundleIdentifier = [self bundleIdentifierForLoginItemName:constAppNameBkmxAgent
                                                             inWhich1App:[[BkmxBasis sharedBasis] iAm]
