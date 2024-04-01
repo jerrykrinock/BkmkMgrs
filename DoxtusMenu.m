@@ -274,7 +274,15 @@
 	
     [[BkmxBasis sharedBasis] logError:error
                       markAsPresented:YES];
-    [SSYAlert alertError:error];
+    
+    /* If the user attempts to land a bookmark when a browser is the active
+     app, but that browser has no window open, the script will fail with
+     code 2 in NSPOSIXErrorDomain.  We shall not bother the user with that. */
+    if (error.code != 2) {
+        if (![error.domain isEqualToString:NSPOSIXErrorDomain]) {
+            [SSYAlert alertError:error];
+        }
+    }
 
 	return answer ;
 }
