@@ -4,7 +4,7 @@ import OSLog
 let agentRunnerLogger = BkmxAgentRunnerLogger()
 
 class BkmxAgentRunnerLogger {
-    let osLogger = Logger(subsystem: Bundle.main.bundleIdentifier!,
+    let osLogger = Logger(subsystem: "com.sheepsystems.BkmxAgentRunner",
                           category: "BkmxAR-gory")
     func log(_ s: String) {
         let sds = String(describing: s)

@@ -700,6 +700,9 @@
 /* Title of a checkbox. */
 "agentDefaultTT" = "See Help for more information on ." ;
 
+/* What is says! */
+"agentEnabledOK" = "%@ is enabled in main menu:  > System Settings > Login Items.  We are therefore able to run BkmxAgent.  (Good!)";
+
 /* A ToolTip on a button, explaining the effect of clicking the button.
  %0 = "Commands" (translated)
  %1 = "Trigger" (translated) */
@@ -2870,7 +2873,7 @@
 "mustBeAtLeast%0Chars" = "Must be at least %0 characters." ;
 
 /* What is says! */
-"mustEnableAgentRunner" = "ATTENTION: BkmxAgentRunner is disabled in main menu:  > System Settings > Login Items, and is therefore not able to run BkmxAgent.  For syncing to work, you must visit there and switch BkmxAgentRunner ON." ;
+"mustEnableAgentRunner" = "ATTENTION: %@ is disabled in main menu:  > System Settings > Login Items, and is therefore not able to run BkmxAgent.  For syncing to work, you must visit there and switch %@ ON." ;
 
 /* Text which will be shown in a warning dialog.  In this string, %0 will be replaced by the name of another application.  For example, "Firefox is running.  It must be quit before you can perform this operation."  Under this text will be two buttons, "Cancel", and Quit followed by the applicaton name, for example, "Quit Firefox".  */
 "mustQuitApp" = "%0 is running.  It must be quit before performing this operation." ;

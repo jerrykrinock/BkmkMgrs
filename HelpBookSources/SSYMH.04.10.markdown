@@ -113,7 +113,7 @@ Here is what happens after you make a change (adding a bookmark, for example) in
 
 ## Syncers are run by *BkmxAgent* <img src="images/Smarky.png" class="whapp" /> <img src="images/Synkmark.png" class="whapp" /> <img src="images/BookMacster.png" class="whapp" /> [bkmxAgent]
 
-Buried inside the Smarky, Synkmark or BookMacster package is an application named *BkmxAgentRunner* and inside that is an app named *BkmxAgent*.  When you switch on *Syncing*, Smarky, Synkmark or BookMacster instruct macOS to launch this app and keep it running in the background.  *BkmxAgent* loads your active [Syncers]() and in turn installs into macOS various notifiers which notify BkmxAgent whenever a triggering event such as a bookmarks change occurs.  The relevant Syncer then runs in BkmxAgent to do the work.  After you have enabled syncinc, you will see *BkmxAgentRunner* listed in your Mac's *System Settings* > *Login Items*.  BkmxAgentRunner starts, stops, or reboots BkmxAgent per your requirements. 
+The Smarky, Synkmark and BookMacster application packages include a command-line executable named *BkmxAgentRunner* and BkmxAgent itself invoke as needed.  When you switch on *Syncing*, Smarky, Synkmark or BookMacster, this tool is invoked to "register" BkmxAgent with macOS.  The macOS will in turn launch this app and keep it running in the background.  *BkmxAgent* loads your active [Syncers]() and in turn installs into macOS various notifiers which notify BkmxAgent whenever a triggering event such as a bookmarks change occurs.  The relevant Syncer then runs in BkmxAgent to do the work.  BkmxAgentRunner starts, stops, or reboots BkmxAgent as needed. 
 
 ### Testing and Troubleshooting Aids [syncTTAids]
 

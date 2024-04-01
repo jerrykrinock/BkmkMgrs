@@ -4,7 +4,7 @@
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "NO">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48E6E6772B45CF6100113FFC"
-               BuildableName = "BkmxAgentRunner.app"
+               BlueprintIdentifier = "488D3E1D2BB2080C00EC4E47"
+               BuildableName = "BkmxAgentRunner"
                BlueprintName = "BkmxAgentRunner"
                ReferencedContainer = "container:BkmkMgrs.xcodeproj">
             </BuildableReference>
@@ -38,27 +38,18 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      viewDebuggingEnabled = "No">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48E6E6772B45CF6100113FFC"
-            BuildableName = "BkmxAgentRunner.app"
+            BlueprintIdentifier = "488D3E1D2BB2080C00EC4E47"
+            BuildableName = "BkmxAgentRunner"
             BlueprintName = "BkmxAgentRunner"
             ReferencedContainer = "container:BkmkMgrs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "whatever.whatever.org"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "--reboot"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -70,8 +61,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48E6E6772B45CF6100113FFC"
-            BuildableName = "BkmxAgentRunner.app"
+            BlueprintIdentifier = "488D3E1D2BB2080C00EC4E47"
+            BuildableName = "BkmxAgentRunner"
             BlueprintName = "BkmxAgentRunner"
             ReferencedContainer = "container:BkmkMgrs.xcodeproj">
          </BuildableReference>

@@ -74,44 +74,27 @@ extension BkmxBasis {
         var statusInt = -3
         
         var error: NSError? = nil
-        let kickerPath = Bundle.mainAppBundle().path(forHelper: "BkmxAgentRunner.app")
+        let runnerPath = Bundle.mainAppBundle().path(forMacOS: "BkmxAgentRunner")
         if let appSupportPath  = Bundle.main.applicationSupportPathForMotherApp() {
-            let appSupportUrl = URL(fileURLWithPath: appSupportPath)
-            let stdoutUrl = appSupportUrl.appendingPathComponent("BkmxAgentRunnerLog.txt")
-            let stdoutPath = stdoutUrl.path
-            /* Remove stdout of previous run from disk.
-             The "?" ignores error if file is not present */
-            try? FileManager.default.removeItem(atPath: stdoutPath)
             let subcommand = String(format: "--\(whatDo)")
             let arguments = [
-                "-a",
-                kickerPath,
-                "-W",
-                "--stdout",
-                stdoutPath,
-                "--args",
                 subcommand]
-            let taskResult = SSYShellTasker.doShellTaskCommand("/usr/bin/open",
+            var stdout: NSData? = nil
+            var stderr: NSData? = nil
+            let taskResult = SSYShellTasker.doShellTaskCommand(runnerPath,
                                                                arguments: arguments as [Any],
                                                                inDirectory: nil,
                                                                stdinData: nil,
-                                                               stdoutData_p: nil,
-                                                               stderrData_p: nil,
+                                                               stdoutData_p: &stdout,
+                                                               stderrData_p: &stderr,
                                                                timeout: 20.0,
                                                                error_p: &error)
             if (taskResult != 0) {
-                // throw BkmxAgentRunnerErrorTOTALSWIFT.couldNotEvenLaunchAgentRunner(underlying: error)
                 let wrappedError = BkmxAgentRunnerError(.couldNotEvenLaunchAgentRunner, underlying: error)
                 throw wrappedError
             }
-            var stdoutData: Data? = nil
-            do {
-                stdoutData = try Data(contentsOf: stdoutUrl)
-            } catch {
-                throw BkmxAgentRunnerError(.couldNotReadLogFileFromAgentRunner)
-            }
-            if let stdoutData = stdoutData {
-                let stdoutString = String(decoding: stdoutData, as: UTF8.self)
+            if let stdout = stdout {
+                let stdoutString = String(decoding: stdout, as: UTF8.self)
                 let scanner = Scanner(string: stdoutString)
                 
                 /* Scan and discard into _ the 'log' text: */
@@ -126,7 +109,13 @@ extension BkmxBasis {
                 _ = scanner.scanString("BkAgRnRsltSTATUS: ")
                 
                 statusInt = scanner.scanInt() ?? -13
-            }            
+            } 
+            if let stderr = stderr {
+                let stdoutString = String(decoding: stderr, as: UTF8.self)
+                if stdoutString.count > 0 {
+                    Self.shared().logString("BkmxAgentRunner returned stderr: \(stdoutString)")
+                }
+            }
         }
         
         return [
@@ -144,15 +133,15 @@ extension BkmxBasis {
                 let status = Int32((results[constKeyStatus] as? Int) ?? Int(BkmxAgentStatusUnknown.rawValue))
                 switch status {
                 case BkmxAgentStatusUnknown.rawValue:
-                    return NSLocalizedString("Someting weent wrong.  The status of BkmxAgentRunnner could not be determined.",
+                    return NSLocalizedString("Someting weent wrong.  The registration status of BkmxAgent could not be determined.",
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusNotAvailableDueToMacOS12OrEarlier.rawValue:
-                    return NSLocalizedString("The status of BkmxAgentRunnner (in  > System Settings > Login Items) could not be determined because you are running macOS 12 or earlier.  You must look in there manually if you suspect it is not enabled.",
+                    return NSLocalizedString("Our ability to run Login Items (in  > System Settings > Login Items) could not be determined because you are running macOS 12 or earlier.  If you suspect we are not enabled, look at our switch status in there.",
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusNotRequested.rawValue:
-                    return NSLocalizedString("Something went wrong.  BkmxAgentRunner did not get our question about its status.",
+                    return NSLocalizedString("Something went wrong.  BkmxAgentRunner did not get our question about the status of BkmxAgent registration.",
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusNotRegistered.rawValue:
@@ -160,15 +149,11 @@ extension BkmxBasis {
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusEnabled.rawValue:
-                    return NSLocalizedString("BkmxAgentRunner is enabled in main menu:  > System Settings > Login Items BkmxAgentRunner, and is therefore able to run BkmxAgent.  (Good!)",
-                                             comment: "what it says"
-                    )
+                    return self.agentEnabledOKText()
                 case BkmxAgentStatusRequiresApproval.rawValue:
-                    return "*** " + NSLocalizedString("mustEnableAgentRunner",
-                                                      comment: "what it says"
-                    ) + " ***"
+                    return "*** " + self.agentDisabledWarningText() + " ***"
                 case BkmxAgentStatusUnknown.rawValue:
-                    return NSLocalizedString("Someting went wrong.  macOS does not recognize that BkmxAgentRunner is even installed.",
+                    return NSLocalizedString("Someting went wrong.  macOS does not recognize that our internal tool BkmxAgentRunner is even installed.",
                                              comment: "what it says"
                     )
                 case BkmxAgentStatusNoSuchService.rawValue:
@@ -176,7 +161,7 @@ extension BkmxBasis {
                                              comment: "what it says"
                     )
                 default:
-                    return NSLocalizedString("Someting *really* went wrong.  BkmxAgentRunner returned an unknown response when asked for its status.",
+                    return NSLocalizedString("Someting *really* went wrong.  Got an unknown response when querying the status of BkmxAgent registration.",
                                              comment: "what it says"
                     )
                 }
@@ -186,5 +171,19 @@ extension BkmxBasis {
         } else {
             return "Registration status of \(constAppNameBkmxAgent) is not available in macOS 12 or earlier."
         }
+    }
+    
+    @objc
+    func agentDisabledWarningText() -> String {
+        return String(format:
+                        NSLocalizedString("mustEnableAgentRunner", comment:"what it says"),
+                      self.appNameLocalized,
+                      self.appNameLocalized)
+    }
+    
+    func agentEnabledOKText() -> String {
+        return String(format:
+                        NSLocalizedString("agentEnabledOK", comment:"what it says"),
+                      self.appNameLocalized)
     }
 }

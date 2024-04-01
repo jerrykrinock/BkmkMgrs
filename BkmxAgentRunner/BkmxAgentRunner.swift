@@ -1,5 +1,6 @@
 import Foundation
 import ServiceManagement
+import Cocoa
 
 typealias Retult = (returnValue: Int, status: BkmxAgentStatus)
 
@@ -28,15 +29,15 @@ class BkmxAgentRunner {
         switch (whatDo) {
         case .start:
             try self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: true, timeout: 3.0)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: 3.0)
         case .stop:
             try self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: false, timeout: 3.0)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: 3.0)
         case .reboot:
             try self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: false, timeout: 3.0)
+            NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: 3.0)
             try self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: true, timeout: 3.0)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: 3.0)
         case .status:
             ok = true
         case .nothing:

@@ -302,10 +302,6 @@
 		4852C3330F895048000569AA /* NSMenu+PopOntoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4852C3320F895048000569AA /* NSMenu+PopOntoView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4852C4310F89B6AC000569AA /* Inspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4852C4300F89B6AC000569AA /* Inspector.xib */; };
 		4853E78517A07BD200E842E1 /* Bkmslf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4853E78317A07BD100E842E1 /* Bkmslf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		485537622B82672200447FE7 /* BkmxAgentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */; };
-		485537632B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */; };
-		485537642B82672200447FE7 /* .h in Resources */ = {isa = PBXBuildFile; fileRef = 485537602B82672200447FE7 /* .h */; };
-		485537652B82672200447FE7 /* BkmxAgentRunnerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */; };
 		48553F9C13D3BBAB0006E382 /* NSMenu+Populating.m in Sources */ = {isa = PBXBuildFile; fileRef = 48553F9B13D3BBAB0006E382 /* NSMenu+Populating.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4855B2661A75F89C0006A597 /* SSY-RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B2651A75F89C0006A597 /* SSY-RSA.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4855B7681902045400D4EC7A /* BookMacster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 482C4FD41695C22400CB7C9F /* BookMacster.xcdatamodeld */; };
@@ -565,6 +561,19 @@
 		488CBCD311207B15006AF61F /* SSYSizeFixxerSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBCD211207B15006AF61F /* SSYSizeFixxerSubview.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		488CBDBF1120C9DC006AF61F /* NSNumber+ChangeTypesSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBDBE1120C9DC006AF61F /* NSNumber+ChangeTypesSymbols.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		488CBDC41120D0A7006AF61F /* SSYModelChangeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBDC31120D0A7006AF61F /* SSYModelChangeTypes.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		488D3E212BB2080D00EC4E47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488D3E202BB2080D00EC4E47 /* main.swift */; };
+		488D3E252BB208EE00EC4E47 /* BkmxAgentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */; };
+		488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */; };
+		488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */; };
+		488D3E292BB208EE00EC4E47 /* BkmxAgentRunnerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A790392B6B0CD000CF2230 /* BkmxAgentRunnerError.swift */; };
+		488D3E2A2BB2093900EC4E47 /* NSRunningApplication+WaitFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */; };
+		488D3E2C2BB20CF900EC4E47 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 488D3E2B2BB20CF900EC4E47 /* ArgumentParser */; };
+		488D3E2F2BB21FCB00EC4E47 /* BkmxAgent.app in Copy Login Items */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488D3E302BB21FDD00EC4E47 /* BkmxAgent.app in Copy Login Items */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488D3E322BB2203F00EC4E47 /* BkmxAgent.app in Copy Login Items */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		488D3E342BB223DF00EC4E47 /* BkmxAgentRunner in Copy Other Executables */ = {isa = PBXBuildFile; fileRef = 488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		488D3E362BB2243600EC4E47 /* BkmxAgentRunner in Copy Other Executables */ = {isa = PBXBuildFile; fileRef = 488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		488D3E382BB2247D00EC4E47 /* BkmxAgentRunner in Copy Other Executables */ = {isa = PBXBuildFile; fileRef = 488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		48911EE425C273CF009538EC /* NormalizeUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6D061179210DC00BD0DE2 /* NormalizeUrl.m */; };
 		48911EF725C273DE009538EC /* BookMacsterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A4FD301D43C7B40019A892 /* BookMacsterTests.m */; };
 		48911F8B25C27FBC009538EC /* Urls.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48B6D062179210DC00BD0DE2 /* Urls.txt */; };
@@ -640,7 +649,6 @@
 		48A6D92A1EC6CCF500729FBB /* SSYNoVoiceOverControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6D9291EC6CCF500729FBB /* SSYNoVoiceOverControls.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48A7049B14DE5A4000410331 /* BkmxApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A7049914DE5A4000410331 /* BkmxApp.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48A773AD119904C8009B13C1 /* SSYLicenseInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A772B71198F376009B13C1 /* SSYLicenseInstaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48A7903A2B6B0CD000CF2230 /* BkmxAgentRunnerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A790392B6B0CD000CF2230 /* BkmxAgentRunnerError.swift */; };
 		48A8232A2199F77C003499D4 /* BkmxAgentXPCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A823282199F76F003499D4 /* BkmxAgentXPCListener.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48A8440B13E218F500B17E89 /* ExtoreDiigo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A8440A13E218F500B17E89 /* ExtoreDiigo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48A938A60FB882AB00516BFB /* NSString+LocalizeSSY.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A938A50FB882AB00516BFB /* NSString+LocalizeSSY.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1148,14 +1156,6 @@
 		48E6973F18D1082E003A97BF /* Bkmx017_018.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */; };
 		48E6974018D1082E003A97BF /* Bkmx017_018.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */; };
 		48E6974218D1082E003A97BF /* Bkmx017_018.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */; };
-		48E6E67B2B45CF6100113FFC /* BkmxAgentRunnerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6E67A2B45CF6100113FFC /* BkmxAgentRunnerAppDelegate.swift */; };
-		48E6E67D2B45CF6200113FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E6E67C2B45CF6200113FFC /* Assets.xcassets */; };
-		48E6E6802B45CF6200113FFC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E6E67E2B45CF6200113FFC /* MainMenu.xib */; };
-		48E6E6862B4606BD00113FFC /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 48E6E6852B4606BD00113FFC /* ArgumentParser */; };
-		48E6E6902B46129800113FFC /* BkmxAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		48E6E6912B46137500113FFC /* BkmxAgentRunner.app in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		48E6E6922B46139200113FFC /* BkmxAgentRunner.app in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		48E6E6932B4613A100113FFC /* BkmxAgentRunner.app in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48E83D3E1CDBE39E00B00AA7 /* StarkCruft.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E83D3D1CDBE39E00B00AA7 /* StarkCruft.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48E83D481CDC170F00B00AA7 /* ApproveCruftController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E83D471CDC170F00B00AA7 /* ApproveCruftController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48E83D4D1CE177B200B00AA7 /* SSYMoreObserveableArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E83D4C1CE177B200B00AA7 /* SSYMoreObserveableArrayController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1215,7 +1215,6 @@
 		48F47C25182C8D520034A6F6 /* SpecialFirefox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F47C24182C8D520034A6F6 /* SpecialFirefox.xib */; };
 		48F47C26182C8D520034A6F6 /* SpecialFirefox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F47C24182C8D520034A6F6 /* SpecialFirefox.xib */; };
 		48F4BDB32A2C15F8004797B7 /* DraggableStark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4BDB22A2C15F8004797B7 /* DraggableStark.swift */; };
-		48F5DFB12B81AA5E005519FB /* NSRunningApplication+WaitFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */; };
 		48F6671F12A4D01500A5473C /* OperationConsolidateFolders.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F6671E12A4D01500A5473C /* OperationConsolidateFolders.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F73F0B144F2EA900E9B0F7 /* ActiveBrowserObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F73F0A144F2EA900E9B0F7 /* ActiveBrowserObserver.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F75BDE28A20FDC004E2513 /* Tagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F75BDD28A20FDB004E2513 /* Tagger.swift */; };
@@ -1258,13 +1257,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 482CFF9E1645A311000CB943;
 			remoteInfo = Thomas;
-		};
-		4819D30E2B6DA6CF00683C5A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4820A95E212B88140040C592;
-			remoteInfo = BkmxAgent;
 		};
 		4820A97B212B881C0040C592 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1385,6 +1377,48 @@
 			remoteGlobalIDString = 48813DB62460DC2000F0166C;
 			remoteInfo = "BkmxNotifier-A";
 		};
+		488D3E392BB227DA00EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488D3E1D2BB2080C00EC4E47;
+			remoteInfo = BkmxAgentRunner;
+		};
+		488D3E3B2BB227EE00EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488D3E1D2BB2080C00EC4E47;
+			remoteInfo = BkmxAgentRunner;
+		};
+		488D3E3D2BB227F700EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 488D3E1D2BB2080C00EC4E47;
+			remoteInfo = BkmxAgentRunner;
+		};
+		488D3E412BB2287900EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4820A95E212B88140040C592;
+			remoteInfo = BkmxAgent;
+		};
+		488D3E432BB2288400EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4820A95E212B88140040C592;
+			remoteInfo = BkmxAgent;
+		};
+		488D3E452BB2288D00EC4E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4820A95E212B88140040C592;
+			remoteInfo = BkmxAgent;
+		};
 		4893E46219917459008383A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -1405,13 +1439,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4898F9F715AE3DC800141F40;
 			remoteInfo = UrlHandler;
-		};
-		48A7903E2B6BE91400CF2230 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48E6E6772B45CF6100113FFC;
-			remoteInfo = BkmxAgentRunner;
 		};
 		48B0C4AD1F8BBC0D00FF5F9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1490,20 +1517,6 @@
 			remoteGlobalIDString = 4898F9F715AE3DC800141F40;
 			remoteInfo = UrlHandler;
 		};
-		48E6E6872B46115100113FFC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48E6E6772B45CF6100113FFC;
-			remoteInfo = BkmxAgentRunner;
-		};
-		48E6E6892B46116F00113FFC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48E6E6772B45CF6100113FFC;
-			remoteInfo = BkmxAgentRunner;
-		};
 		48EEC0530FFE2C1100A358CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -1559,6 +1572,81 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		488D3E1C2BB2080C00EC4E47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		488D3E2D2BB21F0F00EC4E47 /* Copy Login Items */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E302BB21FDD00EC4E47 /* BkmxAgent.app in Copy Login Items */,
+			);
+			name = "Copy Login Items";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E2E2BB21F9C00EC4E47 /* Copy Login Items */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E2F2BB21FCB00EC4E47 /* BkmxAgent.app in Copy Login Items */,
+			);
+			name = "Copy Login Items";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E312BB2201800EC4E47 /* Copy Login Items */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E322BB2203F00EC4E47 /* BkmxAgent.app in Copy Login Items */,
+			);
+			name = "Copy Login Items";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E332BB2239800EC4E47 /* Copy Other Executables */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/MacOS;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E342BB223DF00EC4E47 /* BkmxAgentRunner in Copy Other Executables */,
+			);
+			name = "Copy Other Executables";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E352BB2240900EC4E47 /* Copy Other Executables */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/MacOS;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E362BB2243600EC4E47 /* BkmxAgentRunner in Copy Other Executables */,
+			);
+			name = "Copy Other Executables";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E372BB2245500EC4E47 /* Copy Other Executables */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/MacOS;
+			dstSubfolderSpec = 1;
+			files = (
+				488D3E382BB2247D00EC4E47 /* BkmxAgentRunner in Copy Other Executables */,
+			);
+			name = "Copy Other Executables";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48A00B9D2211C9B0001E56F1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1605,7 +1693,6 @@
 			dstPath = Contents/Helpers;
 			dstSubfolderSpec = 1;
 			files = (
-				48E6E6932B4613A100113FFC /* BkmxAgentRunner.app in Copy Helper Tools */,
 				48813DCA2460DDA100F0166C /* BkmxNotifier-B.app in Copy Helper Tools */,
 				48813DCB2460DDA100F0166C /* BkmxNotifier-A.app in Copy Helper Tools */,
 				485F190418EC6DD80019B4ED /* Sheep-Sys-Thomas in Copy Helper Tools */,
@@ -1632,7 +1719,6 @@
 			dstPath = Contents/Helpers;
 			dstSubfolderSpec = 1;
 			files = (
-				48E6E6912B46137500113FFC /* BkmxAgentRunner.app in Copy Helper Tools */,
 				48813DC92460DD6300F0166C /* BkmxNotifier-A.app in Copy Helper Tools */,
 				48813DA4245E1B5C00F0166C /* BkmxNotifier-B.app in Copy Helper Tools */,
 				48CA7626195CC2B5003FC228 /* Chromessenger in Copy Helper Tools */,
@@ -1661,7 +1747,6 @@
 			dstPath = Contents/Helpers;
 			dstSubfolderSpec = 1;
 			files = (
-				48E6E6922B46139200113FFC /* BkmxAgentRunner.app in Copy Helper Tools */,
 				48813DC72460DD2200F0166C /* BkmxNotifier-B.app in Copy Helper Tools */,
 				48813DC82460DD2200F0166C /* BkmxNotifier-A.app in Copy Helper Tools */,
 				48CA7628195CC2FA003FC228 /* Chromessenger in Copy Helper Tools */,
@@ -1681,16 +1766,6 @@
 				48D6F334179D6E0700F23494 /* Bkmxwork.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		48E6E68F2B46125D00113FFC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				48E6E6902B46129800113FFC /* BkmxAgent.app in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48FB142D2459246400C83ABF /* Embed XPC Services */ = {
@@ -2353,6 +2428,8 @@
 		488CBDBE1120C9DC006AF61F /* NSNumber+ChangeTypesSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+ChangeTypesSymbols.m"; path = "../../CategoriesObjC/NSNumber+ChangeTypesSymbols.m"; sourceTree = SOURCE_ROOT; };
 		488CBDC21120D0A7006AF61F /* SSYModelChangeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYModelChangeTypes.h; path = ../../ClassesObjC/SSYModelChangeTypes.h; sourceTree = SOURCE_ROOT; };
 		488CBDC31120D0A7006AF61F /* SSYModelChangeTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYModelChangeTypes.m; path = ../../ClassesObjC/SSYModelChangeTypes.m; sourceTree = SOURCE_ROOT; };
+		488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BkmxAgentRunner; sourceTree = BUILT_PRODUCTS_DIR; };
+		488D3E202BB2080D00EC4E47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../BkmxAgentRunner/main.swift; sourceTree = "<group>"; };
 		488E42E411EEB00D0056CEA9 /* SSYErrorAlertee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYErrorAlertee.h; path = ../../ProtocolsObjC/SSYErrorAlertee.h; sourceTree = SOURCE_ROOT; };
 		4891B2FC0F2177BA00EE20B7 /* SSYTransformSetToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYTransformSetToArray.h; path = ../../ClassesObjC/SSYTransformSetToArray.h; sourceTree = SOURCE_ROOT; };
 		4891B2FD0F2177BA00EE20B7 /* SSYTransformSetToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYTransformSetToArray.m; path = ../../ClassesObjC/SSYTransformSetToArray.m; sourceTree = SOURCE_ROOT; };
@@ -2836,8 +2913,6 @@
 		48E68CBB184D5867005464D7 /* SyncStatusTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStatusTextField.h; sourceTree = "<group>"; };
 		48E68CBC184D5867005464D7 /* SyncStatusTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStatusTextField.m; sourceTree = "<group>"; };
 		48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Bkmx017_018.xcmappingmodel; sourceTree = "<group>"; };
-		48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BkmxAgentRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		48E6E67A2B45CF6100113FFC /* BkmxAgentRunnerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunnerAppDelegate.swift; sourceTree = "<group>"; };
 		48E6E67C2B45CF6200113FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48E6E67F2B45CF6200113FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		48E6E6812B45CF6200113FFC /* BkmxAgentRunner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BkmxAgentRunner.entitlements; sourceTree = "<group>"; };
@@ -3291,6 +3366,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		488D3E1B2BB2080C00EC4E47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488D3E2C2BB20CF900EC4E47 /* ArgumentParser in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4898F9F615AE3DC800141F40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -3393,14 +3476,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48E6E6752B45CF6100113FFC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				48E6E6862B4606BD00113FFC /* ArgumentParser in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48EEBFC00FFDBE5F00A358CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -3437,8 +3512,8 @@
 				4801E2B7231704C500E2A886 /* BkmkMgrsTests.xctest */,
 				48342032245A9BB000E275B6 /* BkmxNotifier-B.app */,
 				48813DC52460DC2000F0166C /* BkmxNotifier-A.app */,
-				48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */,
 				484F55EF2B48BEED0050F78F /* BkmxAgentTest.app */,
+				488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3480,6 +3555,7 @@
 				4801E2B8231704C500E2A886 /* BkmkMgrTests */,
 				48E6E6792B45CF6100113FFC /* BkmxAgentRunner */,
 				484F55F02B48BEED0050F78F /* BkmxAgentTest */,
+				488D3E1F2BB2080D00EC4E47 /* BkmxAgentRunner2 */,
 				48D2A57516FC348400480801 /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
@@ -4266,6 +4342,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		488D3E1F2BB2080D00EC4E47 /* BkmxAgentRunner2 */ = {
+			isa = PBXGroup;
+			children = (
+				488D3E202BB2080D00EC4E47 /* main.swift */,
+			);
+			path = BkmxAgentRunner2;
+			sourceTree = "<group>";
+		};
 		4891BDB017A72905008B750E /* BkmxDoc */ = {
 			isa = PBXGroup;
 			children = (
@@ -4673,7 +4757,6 @@
 				4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */,
 				4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */,
 				485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */,
-				48E6E67A2B45CF6100113FFC /* BkmxAgentRunnerAppDelegate.swift */,
 				48E6E67C2B45CF6200113FFC /* Assets.xcassets */,
 				48E6E67E2B45CF6200113FFC /* MainMenu.xib */,
 				48E6E6812B45CF6200113FFC /* BkmxAgentRunner.entitlements */,
@@ -5690,6 +5773,26 @@
 			productReference = 48813DC52460DC2000F0166C /* BkmxNotifier-A.app */;
 			productType = "com.apple.product-type.application";
 		};
+		488D3E1D2BB2080C00EC4E47 /* BkmxAgentRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488D3E242BB2080D00EC4E47 /* Build configuration list for PBXNativeTarget "BkmxAgentRunner" */;
+			buildPhases = (
+				488D3E1A2BB2080C00EC4E47 /* Sources */,
+				488D3E1B2BB2080C00EC4E47 /* Frameworks */,
+				488D3E1C2BB2080C00EC4E47 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BkmxAgentRunner;
+			packageProductDependencies = (
+				488D3E2B2BB20CF900EC4E47 /* ArgumentParser */,
+			);
+			productName = BkmxAgentRunner2;
+			productReference = 488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */;
+			productType = "com.apple.product-type.tool";
+		};
 		4898F9F715AE3DC800141F40 /* UrlHandler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4898F9FD15AE3DCC00141F40 /* Build configuration list for PBXNativeTarget "UrlHandler" */;
@@ -5798,21 +5901,24 @@
 			buildPhases = (
 				48C412841644CF7E00AE1D01 /* Sources */,
 				48C412961644CF7E00AE1D01 /* Frameworks */,
-				48C413101645586B00AE1D01 /* Touch Info.plist */,
 				48C412A21644CF7E00AE1D01 /* Resources */,
+				48C413101645586B00AE1D01 /* Touch Info.plist */,
 				48C4129B1644CF7E00AE1D01 /* Copy Helper Tools */,
 				48C413021644CF7E00AE1D01 /* Copy Frameworks */,
 				48132E4A256A447900CF3FE2 /* Copy Appropriate License Obfuscated Public Key File */,
+				488D3E312BB2201800EC4E47 /* Copy Login Items */,
+				488D3E372BB2245500EC4E47 /* Copy Other Executables */,
 			);
 			buildRules = (
 			);
 			comments = "On 20090819, in order to work around Apple Bug 7145893, I stopped stripping in Xcode and now strip in ShipProduct.pl.\n\nCheckboxes that were checked, now unchecked:\n\nDeployment Postprocessing\nStrip Debug Symbols During Copy\nStrip Linked Product\nDead Code Stripping\n\nThe Strip Styles were \"All Symbols\" for Bookdog main, Bookwatchdog main, and Bkmxwork; Non-Global Symbols for other frameworks.\n\n-------------------------------------------------------------------------------\n\nThe spaces between [consecutive macros] in the macro expansion process can be avoided by passing -CC to the Info.plist Other Preprocessor Flags build setting.\nThe things that Xcode replaces DO want the ${...}, but the things that the gcc preprocessor replaces do NOT want the ${...}\n\nFROM APPLE TN1275, for SPARKLE URL\nUsing the GCC C preprocessor to preprocess your Info.plist files may have some unintended side-effects. Such as using URLs in your file. That is, the C preprocessor treats the text in the same way it would treat source code - anything following \"//\" characters are treated as comments and discarded. Therefore, a <string> property that is originally represented as this:\n<string>http://developer.apple.com</string>\nwill get converted into this:\n<string>http:\nTo work around this feature of the C preprocessor, we can pass the -traditional flag to the Info.plist Other Preprocessor Flags build setting in Xcode. This will cause the preprocessor to use the traditional ANSI C /* and */ character strings as tokens to recognize and discard text as comments.\nLater, I found that -CC seemed to do the same thing.  See man gcc.\n\n\nI suspect that the source text \"$\" is being replaced\nbefore gcc's preprocessor ever gets run.  This would be happening because\n$ looks like a replaceable Xcode variable, so if the value\nof RELEASE_VERSION is nil or empty, it gets replaced by nothing.  You're\nthe victim of colliding replacement mechanisms.\n\nA way to test this hypothesis would be to define a build setting for\nRELEASE_VERSION that differs from the value you assign it in your\npreprocessor definition, and then see what the output Info.plist is.\n\nGcc's C preprocessor doesn't need ${} surrounding its replaceable elements.\nIt's just a normal C preprocessor working on plain text in ordinary macro\nmode.  I think if you remove the ${} from RELEASE_VERSION it will work.\n\nAlso see this past post:\n  <http://lists.apple.com/archives/cocoa-dev/2005/Dec/msg01384.html>\n\nand in this one, note:\n  <http://lists.apple.com/archives/xcode-users/2005/Nov/msg00227.html>\n\"* Preprocessing Info.plist adds whitespace that causes XML parse failure\n  Using the Preprocess Info.plist feature may produce an invalid XML file.\n  Adding the -traditional flag to 'Info.plist  Other Preprocessor Flags' may\n  help.\"\n\n  -- GG\n\n-------------------------------------------------------------------------------\n";
 			dependencies = (
+				488D3E462BB2288D00EC4E47 /* PBXTargetDependency */,
+				488D3E3A2BB227DA00EC4E47 /* PBXTargetDependency */,
 				48813DD52460DE8100F0166C /* PBXTargetDependency */,
 				48813DD72460DE8100F0166C /* PBXTargetDependency */,
 				4893E46519917465008383A6 /* PBXTargetDependency */,
 				4893E46319917459008383A6 /* PBXTargetDependency */,
-				48E6E6882B46115100113FFC /* PBXTargetDependency */,
 				48C4127A1644CF7E00AE1D01 /* PBXTargetDependency */,
 				48C412821644CF7E00AE1D01 /* PBXTargetDependency */,
 			);
@@ -5856,13 +5962,16 @@
 				48D1EE270F6CB79A001BA354 /* Resources */,
 				48C58B320F9A8C7900326383 /* Copy Helper Tools */,
 				48D1EE200F6CB79A001BA354 /* Copy Frameworks */,
+				488D3E2D2BB21F0F00EC4E47 /* Copy Login Items */,
+				488D3E332BB2239800EC4E47 /* Copy Other Executables */,
 				48BD42F6256983FB00DC211A /* Copy Appropriate License Obfuscated Public Key File */,
 			);
 			buildRules = (
 			);
 			comments = "On 20090819, in order to work around Apple Bug 7145893, I stopped stripping in Xcode and now strip in ShipProduct.pl.\n\nCheckboxes that were checked, now unchecked:\n\nDeployment Postprocessing\nStrip Debug Symbols During Copy\nStrip Linked Product\nDead Code Stripping\n\nThe Strip Styles were \"All Symbols\" for Bookdog main, Bookwatchdog main, and Bkmxwork; Non-Global Symbols for other frameworks.\n\n-------------------------------------------------------------------------------\n\nThe spaces between [consecutive macros] in the macro expansion process can be avoided by passing -CC to the Info.plist Other Preprocessor Flags build setting.\nThe things that Xcode replaces DO want the ${...}, but the things that the gcc preprocessor replaces do NOT want the ${...}\n\nFROM APPLE TN1275, for SPARKLE URL\nUsing the GCC C preprocessor to preprocess your Info.plist files may have some unintended side-effects. Such as using URLs in your file. That is, the C preprocessor treats the text in the same way it would treat source code - anything following \"//\" characters are treated as comments and discarded. Therefore, a <string> property that is originally represented as this:\n<string>http://developer.apple.com</string>\nwill get converted into this:\n<string>http:\nTo work around this feature of the C preprocessor, we can pass the -traditional flag to the Info.plist Other Preprocessor Flags build setting in Xcode. This will cause the preprocessor to use the traditional ANSI C /* and */ character strings as tokens to recognize and discard text as comments.\nLater, I found that -CC seemed to do the same thing.  See man gcc.\n\n\nI suspect that the source text \"$\" is being replaced\nbefore gcc's preprocessor ever gets run.  This would be happening because\n$ looks like a replaceable Xcode variable, so if the value\nof RELEASE_VERSION is nil or empty, it gets replaced by nothing.  You're\nthe victim of colliding replacement mechanisms.\n\nA way to test this hypothesis would be to define a build setting for\nRELEASE_VERSION that differs from the value you assign it in your\npreprocessor definition, and then see what the output Info.plist is.\n\nGcc's C preprocessor doesn't need ${} surrounding its replaceable elements.\nIt's just a normal C preprocessor working on plain text in ordinary macro\nmode.  I think if you remove the ${} from RELEASE_VERSION it will work.\n\nAlso see this past post:\n  <http://lists.apple.com/archives/cocoa-dev/2005/Dec/msg01384.html>\n\nand in this one, note:\n  <http://lists.apple.com/archives/xcode-users/2005/Nov/msg00227.html>\n\"* Preprocessing Info.plist adds whitespace that causes XML parse failure\n  Using the Preprocess Info.plist feature may produce an invalid XML file.\n  Adding the -traditional flag to 'Info.plist  Other Preprocessor Flags' may\n  help.\"\n\n  -- GG\n\n-------------------------------------------------------------------------------\n";
 			dependencies = (
-				48A7903F2B6BE91400CF2230 /* PBXTargetDependency */,
+				488D3E422BB2287900EC4E47 /* PBXTargetDependency */,
+				488D3E3E2BB227F700EC4E47 /* PBXTargetDependency */,
 				48813DD12460DE5100F0166C /* PBXTargetDependency */,
 				48813DD32460DE5100F0166C /* PBXTargetDependency */,
 				48CA761A195B31E0003FC228 /* PBXTargetDependency */,
@@ -5887,18 +5996,21 @@
 				48D6F2B9179D6E0700F23494 /* Resources */,
 				48D6F2B2179D6E0700F23494 /* Copy Helper Tools */,
 				48D6F332179D6E0700F23494 /* Copy Frameworks */,
+				488D3E2E2BB21F9C00EC4E47 /* Copy Login Items */,
+				488D3E352BB2240900EC4E47 /* Copy Other Executables */,
 				48132E49256A444800CF3FE2 /* Copy Appropriate License Obfuscated Public Key File */,
 			);
 			buildRules = (
 			);
 			comments = "On 20090819, in order to work around Apple Bug 7145893, I stopped stripping in Xcode and now strip in ShipProduct.pl.\n\nCheckboxes that were checked, now unchecked:\n\nDeployment Postprocessing\nStrip Debug Symbols During Copy\nStrip Linked Product\nDead Code Stripping\n\nThe Strip Styles were \"All Symbols\" for Bookdog main, Bookwatchdog main, and Bkmxwork; Non-Global Symbols for other frameworks.\n\n-------------------------------------------------------------------------------\n\nThe spaces between [consecutive macros] in the macro expansion process can be avoided by passing -CC to the Info.plist Other Preprocessor Flags build setting.\nThe things that Xcode replaces DO want the ${...}, but the things that the gcc preprocessor replaces do NOT want the ${...}\n\nFROM APPLE TN1275, for SPARKLE URL\nUsing the GCC C preprocessor to preprocess your Info.plist files may have some unintended side-effects. Such as using URLs in your file. That is, the C preprocessor treats the text in the same way it would treat source code - anything following \"//\" characters are treated as comments and discarded. Therefore, a <string> property that is originally represented as this:\n<string>http://developer.apple.com</string>\nwill get converted into this:\n<string>http:\nTo work around this feature of the C preprocessor, we can pass the -traditional flag to the Info.plist Other Preprocessor Flags build setting in Xcode. This will cause the preprocessor to use the traditional ANSI C /* and */ character strings as tokens to recognize and discard text as comments.\nLater, I found that -CC seemed to do the same thing.  See man gcc.\n\n\nI suspect that the source text \"$\" is being replaced\nbefore gcc's preprocessor ever gets run.  This would be happening because\n$ looks like a replaceable Xcode variable, so if the value\nof RELEASE_VERSION is nil or empty, it gets replaced by nothing.  You're\nthe victim of colliding replacement mechanisms.\n\nA way to test this hypothesis would be to define a build setting for\nRELEASE_VERSION that differs from the value you assign it in your\npreprocessor definition, and then see what the output Info.plist is.\n\nGcc's C preprocessor doesn't need ${} surrounding its replaceable elements.\nIt's just a normal C preprocessor working on plain text in ordinary macro\nmode.  I think if you remove the ${} from RELEASE_VERSION it will work.\n\nAlso see this past post:\n  <http://lists.apple.com/archives/cocoa-dev/2005/Dec/msg01384.html>\n\nand in this one, note:\n  <http://lists.apple.com/archives/xcode-users/2005/Nov/msg00227.html>\n\"* Preprocessing Info.plist adds whitespace that causes XML parse failure\n  Using the Preprocess Info.plist feature may produce an invalid XML file.\n  Adding the -traditional flag to 'Info.plist  Other Preprocessor Flags' may\n  help.\"\n\n  -- GG\n\n-------------------------------------------------------------------------------\n";
 			dependencies = (
+				488D3E442BB2288400EC4E47 /* PBXTargetDependency */,
+				488D3E3C2BB227EE00EC4E47 /* PBXTargetDependency */,
 				48813DCD2460DDD100F0166C /* PBXTargetDependency */,
 				48813DCF2460DDD100F0166C /* PBXTargetDependency */,
 				48CA7625195B31FC003FC228 /* PBXTargetDependency */,
 				48D6F286179D6E0700F23494 /* PBXTargetDependency */,
 				48D6F28A179D6E0700F23494 /* PBXTargetDependency */,
-				48E6E68A2B46116F00113FFC /* PBXTargetDependency */,
 				48D6F28E179D6E0700F23494 /* PBXTargetDependency */,
 				48D6F296179D6E0700F23494 /* PBXTargetDependency */,
 			);
@@ -5906,28 +6018,6 @@
 			productInstallPath = "$(HOME)/Applications";
 			productName = BookMacster;
 			productReference = 48D6F33B179D6E0700F23494 /* Synkmark.app */;
-			productType = "com.apple.product-type.application";
-		};
-		48E6E6772B45CF6100113FFC /* BkmxAgentRunner */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 48E6E6822B45CF6200113FFC /* Build configuration list for PBXNativeTarget "BkmxAgentRunner" */;
-			buildPhases = (
-				48E6E6742B45CF6100113FFC /* Sources */,
-				48E6E6752B45CF6100113FFC /* Frameworks */,
-				48E6E6762B45CF6100113FFC /* Resources */,
-				48E6E68F2B46125D00113FFC /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4819D30F2B6DA6CF00683C5A /* PBXTargetDependency */,
-			);
-			name = BkmxAgentRunner;
-			packageProductDependencies = (
-				48E6E6852B4606BD00113FFC /* ArgumentParser */,
-			);
-			productName = BkmxAgentRunner;
-			productReference = 48E6E6782B45CF6100113FFC /* BkmxAgentRunner.app */;
 			productType = "com.apple.product-type.application";
 		};
 		48EEBFC10FFDBE5F00A358CC /* FileAliasWorker */ = {
@@ -6013,6 +6103,9 @@
 					48813DB62460DC2000F0166C = {
 						LastSwiftMigration = 1400;
 					};
+					488D3E1D2BB2080C00EC4E47 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					4898F9F715AE3DC800141F40 = {
 						LastSwiftMigration = 0810;
 						SystemCapabilities = {
@@ -6072,9 +6165,6 @@
 							};
 						};
 					};
-					48E6E6772B45CF6100113FFC = {
-						CreatedOnToolsVersion = 15.1;
-					};
 					48EEBFC10FFDBE5F00A358CC = {
 						LastSwiftMigration = 0810;
 					};
@@ -6131,7 +6221,7 @@
 				48D6F283179D6E0700F23494 /* Synkmark */,
 				4875E5C518EB41D200859698 /* Markster */,
 				48D1ED330F6CB79A001BA354 /* BookMacster */,
-				48E6E6772B45CF6100113FFC /* BkmxAgentRunner */,
+				488D3E1D2BB2080C00EC4E47 /* BkmxAgentRunner */,
 				4820A95E212B88140040C592 /* BkmxAgent */,
 				48813DB62460DC2000F0166C /* BkmxNotifier-A */,
 				48342031245A9BB000E275B6 /* BkmxNotifier-B */,
@@ -6692,16 +6782,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48E6E6762B45CF6100113FFC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				485537642B82672200447FE7 /* .h in Resources */,
-				48E6E67D2B45CF6200113FFC /* Assets.xcassets in Resources */,
-				48E6E6802B45CF6200113FFC /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -7111,6 +7191,19 @@
 				48813DB82460DC2000F0166C /* BkmxNotifierAppDel.m in Sources */,
 				487A18B0249DAF9D0042FA2F /* SSYAppleScripter.m in Sources */,
 				48813DB92460DC2000F0166C /* BkmxNotifier-Main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488D3E1A2BB2080C00EC4E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488D3E2A2BB2093900EC4E47 /* NSRunningApplication+WaitFor.swift in Sources */,
+				488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */,
+				488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */,
+				488D3E292BB208EE00EC4E47 /* BkmxAgentRunnerError.swift in Sources */,
+				488D3E252BB208EE00EC4E47 /* BkmxAgentRunner.swift in Sources */,
+				488D3E212BB2080D00EC4E47 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7840,19 +7933,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48E6E6742B45CF6100113FFC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				48A7903A2B6B0CD000CF2230 /* BkmxAgentRunnerError.swift in Sources */,
-				48F5DFB12B81AA5E005519FB /* NSRunningApplication+WaitFor.swift in Sources */,
-				48E6E67B2B45CF6100113FFC /* BkmxAgentRunnerAppDelegate.swift in Sources */,
-				485537622B82672200447FE7 /* BkmxAgentRunner.swift in Sources */,
-				485537632B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift in Sources */,
-				485537652B82672200447FE7 /* BkmxAgentRunnerLogger.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		48EEBFBF0FFDBE5F00A358CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -7873,11 +7953,6 @@
 			isa = PBXTargetDependency;
 			target = 482CFF9E1645A311000CB943 /* Thomas */;
 			targetProxy = 48189B10164B5E61000CC240 /* PBXContainerItemProxy */;
-		};
-		4819D30F2B6DA6CF00683C5A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4820A95E212B88140040C592 /* BkmxAgent */;
-			targetProxy = 4819D30E2B6DA6CF00683C5A /* PBXContainerItemProxy */;
 		};
 		4820A97C212B881C0040C592 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7964,6 +8039,36 @@
 			target = 48813DB62460DC2000F0166C /* BkmxNotifier-A */;
 			targetProxy = 488275B9261EBDFA001667B2 /* PBXContainerItemProxy */;
 		};
+		488D3E3A2BB227DA00EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488D3E1D2BB2080C00EC4E47 /* BkmxAgentRunner */;
+			targetProxy = 488D3E392BB227DA00EC4E47 /* PBXContainerItemProxy */;
+		};
+		488D3E3C2BB227EE00EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488D3E1D2BB2080C00EC4E47 /* BkmxAgentRunner */;
+			targetProxy = 488D3E3B2BB227EE00EC4E47 /* PBXContainerItemProxy */;
+		};
+		488D3E3E2BB227F700EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 488D3E1D2BB2080C00EC4E47 /* BkmxAgentRunner */;
+			targetProxy = 488D3E3D2BB227F700EC4E47 /* PBXContainerItemProxy */;
+		};
+		488D3E422BB2287900EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4820A95E212B88140040C592 /* BkmxAgent */;
+			targetProxy = 488D3E412BB2287900EC4E47 /* PBXContainerItemProxy */;
+		};
+		488D3E442BB2288400EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4820A95E212B88140040C592 /* BkmxAgent */;
+			targetProxy = 488D3E432BB2288400EC4E47 /* PBXContainerItemProxy */;
+		};
+		488D3E462BB2288D00EC4E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4820A95E212B88140040C592 /* BkmxAgent */;
+			targetProxy = 488D3E452BB2288D00EC4E47 /* PBXContainerItemProxy */;
+		};
 		4893E46319917459008383A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
@@ -7978,11 +8083,6 @@
 			isa = PBXTargetDependency;
 			target = 4898F9F715AE3DC800141F40 /* UrlHandler */;
 			targetProxy = 4898FAB215AF527900141F40 /* PBXContainerItemProxy */;
-		};
-		48A7903F2B6BE91400CF2230 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48E6E6772B45CF6100113FFC /* BkmxAgentRunner */;
-			targetProxy = 48A7903E2B6BE91400CF2230 /* PBXContainerItemProxy */;
 		};
 		48B0C4AE1F8BBC0D00FF5F9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -8038,16 +8138,6 @@
 			isa = PBXTargetDependency;
 			target = 4898F9F715AE3DC800141F40 /* UrlHandler */;
 			targetProxy = 48D6F297179D6E0700F23494 /* PBXContainerItemProxy */;
-		};
-		48E6E6882B46115100113FFC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48E6E6772B45CF6100113FFC /* BkmxAgentRunner */;
-			targetProxy = 48E6E6872B46115100113FFC /* PBXContainerItemProxy */;
-		};
-		48E6E68A2B46116F00113FFC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48E6E6772B45CF6100113FFC /* BkmxAgentRunner */;
-			targetProxy = 48E6E6892B46116F00113FFC /* PBXContainerItemProxy */;
 		};
 		48EEC0540FFE2C1100A358CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -8347,7 +8437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@executable_path/../../../../../../../../Frameworks",
+					"@executable_path/../../../../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -8387,7 +8477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@executable_path/../../../../../../../../Frameworks",
+					"@executable_path/../../../../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -9192,6 +9282,87 @@
 			};
 			name = Release;
 		};
+		488D3E222BB2080D00EC4E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4MAMECY9VS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BkmxAgentRunner/BkmxAgentRunner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		488D3E232BB2080D00EC4E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4MAMECY9VS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "BkmxAgentRunner/BkmxAgentRunner-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		4898F9FB15AE3DCB00141F40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -9959,121 +10130,6 @@
 			};
 			name = Release;
 		};
-		48E6E6832B45CF6200113FFC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = BkmxAgentRunner/BkmxAgentRunner.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4MAMECY9VS;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSBackgroundOnly = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BkmxAgentRunner-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		48E6E6842B45CF6200113FFC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = BkmxAgentRunner/BkmxAgentRunner.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 4MAMECY9VS;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSBackgroundOnly = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BkmxAgentRunner-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		48EEBFC40FFDBE6100A358CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -10258,6 +10314,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		488D3E242BB2080D00EC4E47 /* Build configuration list for PBXNativeTarget "BkmxAgentRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488D3E222BB2080D00EC4E47 /* Debug */,
+				488D3E232BB2080D00EC4E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4898F9FD15AE3DCC00141F40 /* Build configuration list for PBXNativeTarget "UrlHandler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -10348,15 +10413,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48E6E6822B45CF6200113FFC /* Build configuration list for PBXNativeTarget "BkmxAgentRunner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				48E6E6832B45CF6200113FFC /* Debug */,
-				48E6E6842B45CF6200113FFC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		48EEBFC60FFDBE8D00A358CC /* Build configuration list for PBXNativeTarget "FileAliasWorker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -10380,7 +10436,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		48E6E6852B4606BD00113FFC /* ArgumentParser */ = {
+		488D3E2B2BB20CF900EC4E47 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48E6E6712B44A66D00113FFC /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;

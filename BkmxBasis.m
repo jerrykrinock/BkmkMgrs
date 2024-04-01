@@ -1,7 +1,4 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
-//#import <BkmxAgentRunner/BkmxAgentRunner-Swift.h>
-//#import <BkmxAgentRunner-Swift.h>
-//#import "/Users/jk/Library/Developer/Xcode/DerivedData/BkmkMgrs-dgajrgxroulefweqxsvazigfeucy/Build/Intermediates.noindex/BkmkMgrs.build/Debug/BkmxAgentRunner.build/Objects-normal/arm64/BkmxAgentRunner-Swift.h"
 #import <ServiceManagement/ServiceManagement.h>
 #import "NSError+MyDomain.h"
 #import "NSError+DecodeCodes.h"
@@ -2250,7 +2247,7 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
         if ([statusId respondsToSelector:@selector(integerValue)]) {
             NSInteger status = [(NSNumber*)statusId integerValue];
             if (status == BkmxAgentStatusRequiresApproval) {
-                report = NSLocalizedString(@"mustEnableAgentRunner", nil);
+                report = [self agentDisabledWarningText];
             } else if (!error) {
                 pid_t newPid;
                 /* My sample of 5 on my 2013 MacBook Air says that newPid
@@ -2374,9 +2371,6 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
                               markAsPresented:NO];
         }
     }
-    url = [url URLByAppendingPathComponent:@"Contents"];
-    url = [url URLByAppendingPathComponent:@"Helpers"];
-    url = [url URLByAppendingPathComponent:@"BkmxAgentRunner.app"];
     url = [url URLByAppendingPathComponent:@"Contents"];
     url = [url URLByAppendingPathComponent:@"Library"];
     url = [url URLByAppendingPathComponent:@"LoginItems"];

@@ -8,7 +8,7 @@
 
 ## Version 3.1 (2023-0-)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated methods for running our background agent (BkmxAgent) per recent Apple recommendations and deprecations.  The first time you run this version, if Syncing is active, you will see a notification from macOS that *BkmxAgentRunner* has installed an item that can run in the background.  The *item* is BkmxAgent.  This notification is good and expected.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated methods for running our background agent (BkmxAgent) per recent Apple recommendations and deprecations.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now works properly with current version of Opera web browser.  (Running Opera 103 or 104 may create a *Default* profile subfolder, as Chrome and Edge have, and move your profile data into it.)
 
