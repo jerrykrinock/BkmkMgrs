@@ -478,6 +478,12 @@ void NewSubfolderCallback(
     return m_starker ;
 }
 
+- (void)setStarker:(Starker*)starker {
+    [m_starker release];
+    m_starker = starker;
+    [m_starker retain];
+}
+
 - (Tagger*)tagger {
     if (!m_tagger) {
         m_tagger = [[Tagger alloc] initWithManagedObjectContext:[self managedObjectContext]];
@@ -493,10 +499,8 @@ void NewSubfolderCallback(
  What about BSManagedDocument?
  */
 - (void)forgetStarkerAndTagger {
-    [m_starker release] ;
-    m_starker = nil ;
-    [m_tagger release] ;
-    m_tagger = nil ;
+    [self setStarker:nil];
+    [self setTagger:nil];
 }
 
 - (SSYOperationQueue*)operationQueue {
