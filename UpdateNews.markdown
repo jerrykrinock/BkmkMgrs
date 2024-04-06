@@ -24,6 +24,8 @@
 
 *  <img src="images/BookMacster.png" alt="" class="whappMini" />  Re-entering an incorrect or missing password for Diigo or Pinboard now works correctly.
 
+*  <img src="images/BookMacster.png" alt="" class="whappMini" />  The running or not running state of our backgrouond syncing agent (BkmxAgent) is now checked and corrected if necessary on every BookMacster launch.  In particular, BkmxAgent is launched if necessary even if the .bmco document(s) which require syncing are not opened during the launch.
+
 *  <img src="images/BookMacster.png" alt="" class="whappMini" />  In the Collection document window, tab Settings > Syncing > Simple, the *Full Syncing* / *No Syncing* button now indicates the correct title again.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now acknowledges and supports multiple profiles in the Vivaldi web browser.

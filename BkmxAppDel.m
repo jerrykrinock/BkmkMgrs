@@ -2284,7 +2284,6 @@ NSString* const skuForSmarky3 = @"637653";
             [[NSUserDefaults standardUserDefaults] setObject:data
                                                       forKey:constKeyWatches];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [[NSUserDefaults standardUserDefaults] updateBkmxAgentServiceStatus_offOnly:NO];
         }
     }
 
@@ -2645,7 +2644,6 @@ NSString* const skuForSmarky3 = @"637653";
             [[NSUserDefaults standardUserDefaults] setObject:data
                                                       forKey:constKeyWatches];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [[NSUserDefaults standardUserDefaults] updateBkmxAgentServiceStatus_offOnly:NO];
         }
 
     }
@@ -2864,6 +2862,7 @@ NSString* const skuForSmarky3 = @"637653";
             [self checkNoSiblingAppsRunningElseWarnAndQuit];
             [self killAnyLegacyLaunchdAgents];
             [self killAnyOldieLoginItemsWithBasename:constAppNameBkmxAgent];
+            [[NSUserDefaults standardUserDefaults] updateBkmxAgentServiceStatus_offOnly:NO];
             [[BkmxBasis sharedBasis] checkAndHandleAppExpirationOrUpdate:^{
                 [self ensureChromessengerSymlink];
                 
