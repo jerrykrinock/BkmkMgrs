@@ -492,6 +492,12 @@ void NewSubfolderCallback(
     return m_tagger ;
 }
 
+- (void)setTagger:(Tagger*)tagger {
+    [m_tagger release];
+    m_tagger = tagger;
+    [m_tagger retain];
+}
+
 /*!
  @details  This is necessary when executing
  -[NSPersistentDocument revertToContentsOfURL::: in macOS 10.12 or later,
