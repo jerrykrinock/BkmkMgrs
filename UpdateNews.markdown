@@ -1,12 +1,6 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-**Version 3.x is "paid" upgrade:** Free for users who purchased Version a prior version within the last 6 months, 65% discount if within the last 2 years, 30% discount if over 2 years. (Markster users get more, see below.)
-
-**Running Version 3.x of our apps will convert your Version 2.x documents and other application data to a more secure format.** Apple has stated for the last few years that some future macOS version will no longer allow data in the old format to be read (which is necessary for upgrading!), so better to do this before it is too late.  Your old data will be preserved on disk by Version 3.x, but files will be renamed so that in the unlikely event you would need to revert to Version 2 of our app, you'll need some help from us.
-
-**There is not much new in version 3 for Markster users.** – just the upgraded data format and the ability to import/export with Safari 16 which is now present in macOS 11, 12 and 13.  Therefore we're giving free upgrades to Markster 3 if you purchased your Markster 2 license within 30 months, and a 65% discount, to US $6.63, for longer-term users of Markster 2.
-
-## Version 3.1 (2023-0-)
+## Version 3.1 (2023-04-15)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated methods for running our background agent (BkmxAgent) per recent Apple recommendations and deprecations.
 
