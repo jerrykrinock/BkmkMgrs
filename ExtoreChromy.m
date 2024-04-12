@@ -1577,55 +1577,103 @@ end:
         goto end ;
     }
     
-    /* The JSON "sync" prefs text being analyzed here looks e.g. like this:
-     "sync": {
-     "autofill": false,
-     "bookmarks": false,
-     "extensions": false,
-     "has_setup_completed": true,
-     "keep_everything_synced": false,
-     "preferences": false,
-     "suppress_start": false,
-     "themes": false
-     },
+    BOOL sync_hsc;
+    BOOL sync_b;
+    BOOL sync_kes;
+    /* Case 1 and Case 2 occur as follows.  Of course this is ambiguous because
+     I've only tested a few versions.  Results on 2024-04-09:
+
+     Case 1a:
+     • Chrome 123
+     
+     Case 1b:
+     • Opera 106
+     
+     Case 2:
+     • older verisons of Chrome
+     • Edge 123 or earlier
      */
-    
-    NSNumber* sync_hasSetupCompleted_object = [syncPrefs objectForKey:@"has_setup_completed"] ;
-    NSNumber* sync_bookmarks_object = [syncPrefs objectForKey:@"bookmarks"] ;
-    NSNumber* sync_keepEverythingSynced_object = [syncPrefs objectForKey:@"keep_everything_synced"] ;
-    if (sync_hasSetupCompleted_object) {
-        if (![sync_hasSetupCompleted_object respondsToSelector:@selector(boolValue)]) {
-            errorCode = 156412 ;
-            errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [sync_hasSetupCompleted_object className], @"Object Class",
-                         sync_hasSetupCompleted_object, @"Object",
-                         nil] ;
-            goto end ;
+
+    NSDictionary* dTSFSTS = [syncPrefs objectForKey:@"data_type_status_for_sync_to_signin"];
+    if (dTSFSTS  != nil) {
+        // Case 1
+        id sync_hasSetupCompleted_object = [syncPrefs objectForKey:@"has_setup_completed"] ;
+        if ([sync_hasSetupCompleted_object respondsToSelector:@selector(integerValue)]) {
+            // Case 1a
+            NSInteger hscInteger = [sync_hasSetupCompleted_object integerValue];
+            sync_hsc = hscInteger > 0;
+        } else if ([sync_hasSetupCompleted_object respondsToSelector:@selector(boolValue)]) {
+            // Case 1b
+            sync_hsc = [sync_hasSetupCompleted_object boolValue];
+        } else {
+            sync_hsc = NO;
         }
-    }
-    if (sync_bookmarks_object) {
-        if (![sync_bookmarks_object respondsToSelector:@selector(boolValue)]) {
-            errorCode = 156512 ;
-            errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [sync_bookmarks_object className], @"Object Class",
-                         sync_bookmarks_object, @"Object",
-                         nil] ;
-            goto end ;
+
+        id bookmarksObject = [dTSFSTS objectForKey:@"bookmarks"];
+        if ([bookmarksObject respondsToSelector:@selector(integerValue)]) {
+            // Case 1a
+            NSInteger bookmarksInteger = [bookmarksObject integerValue];
+            sync_b = bookmarksInteger > 0;
+        } else if ([bookmarksObject respondsToSelector:@selector(boolValue)]) {
+            // Case 1b
+            sync_b = [bookmarksObject boolValue];
+        } else {
+            sync_hsc = NO;
         }
-    }
-    if (sync_keepEverythingSynced_object) {
-        if (![sync_keepEverythingSynced_object respondsToSelector:@selector(boolValue)]) {
-            errorCode = 156612 ;
-            errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [sync_keepEverythingSynced_object className], @"Object Class",
-                         sync_keepEverythingSynced_object, @"Object",
-                         nil] ;
-            goto end ;
+
+    } else {
+        /* Case 2.
+         The JSON "sync" prefs text being analyzed here typically looks e.g. like this:
+         "sync": {
+         "autofill": false,
+         "bookmarks": false,
+         "extensions": false,
+         "has_setup_completed": true,
+         "keep_everything_synced": false,
+         "preferences": false,
+         "suppress_start": false,
+         "themes": false
+         },
+         */
+        
+        NSNumber* sync_hasSetupCompleted_object = [syncPrefs objectForKey:@"has_setup_completed"] ;
+        NSNumber* sync_bookmarks_object = [syncPrefs objectForKey:@"bookmarks"] ;
+        NSNumber* sync_keepEverythingSynced_object = [syncPrefs objectForKey:@"keep_everything_synced"] ;
+        if (sync_hasSetupCompleted_object) {
+            if (![sync_hasSetupCompleted_object respondsToSelector:@selector(boolValue)]) {
+                errorCode = 156412 ;
+                errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [sync_hasSetupCompleted_object className], @"Object Class",
+                             sync_hasSetupCompleted_object, @"Object",
+                             nil] ;
+                goto end ;
+            }
         }
+        if (sync_bookmarks_object) {
+            if (![sync_bookmarks_object respondsToSelector:@selector(boolValue)]) {
+                errorCode = 156512 ;
+                errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [sync_bookmarks_object className], @"Object Class",
+                             sync_bookmarks_object, @"Object",
+                             nil] ;
+                goto end ;
+            }
+        }
+        if (sync_keepEverythingSynced_object) {
+            if (![sync_keepEverythingSynced_object respondsToSelector:@selector(boolValue)]) {
+                errorCode = 156612 ;
+                errorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [sync_keepEverythingSynced_object className], @"Object Class",
+                             sync_keepEverythingSynced_object, @"Object",
+                             nil] ;
+                goto end ;
+            }
+        }
+        sync_hsc = [sync_hasSetupCompleted_object boolValue] ;
+        sync_b = [sync_bookmarks_object boolValue] ;
+        sync_kes = [sync_keepEverythingSynced_object boolValue] ;
     }
-    BOOL sync_hsc = [sync_hasSetupCompleted_object boolValue] ;
-    BOOL sync_b = [sync_bookmarks_object boolValue] ;
-    BOOL sync_kes = [sync_keepEverythingSynced_object boolValue] ;
+
     // The rather redundant logic here *is* necessary to properly decode all
     // possible cases.  Ask the Chrome Team why they made it so complicated…
     syncActive = sync_hsc && (sync_b || sync_kes) ;
