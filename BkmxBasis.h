@@ -499,11 +499,6 @@ __attribute__((visibility("default"))) @interface BkmxBasis : NSObject <SSYAlert
 
 - (NSTimeInterval)timeoutForAppToLaunch ;
 
-//- (BOOL)kickBkmxAgent:(KickType)kickType
-//          statusInt_p:(NSInteger*)statusInt_p
-//       statusString_p:(NSString**)statusString_p
-//              error_p:(NSError**)error_p;
-
 - (NSString*)bundleIdentifierForLoginItemName:(NSString*)appName
                                   inWhich1App:(BkmxWhich1App)which1App
                                       error_p:(NSError**)error_p;
@@ -511,9 +506,6 @@ __attribute__((visibility("default"))) @interface BkmxBasis : NSObject <SSYAlert
 - (NSArray<NSRunningApplication*>*)runningAgents;
 
 - (NSString*)runningAgentDescription;
-
-- (BOOL)quillBkmxAgentPids_p:(NSString**)pids_p
-                     error_p:(NSError**)error_p;
 
 - (BOOL)rebootSyncAgentReport_p:(NSString**)report_p
                         title_p:(NSString**)titie_p

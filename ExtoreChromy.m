@@ -1597,6 +1597,7 @@ end:
     NSDictionary* dTSFSTS = [syncPrefs objectForKey:@"data_type_status_for_sync_to_signin"];
     if (dTSFSTS  != nil) {
         // Case 1
+        sync_kes = NO;
         id sync_hasSetupCompleted_object = [syncPrefs objectForKey:@"has_setup_completed"] ;
         if ([sync_hasSetupCompleted_object respondsToSelector:@selector(integerValue)]) {
             // Case 1a

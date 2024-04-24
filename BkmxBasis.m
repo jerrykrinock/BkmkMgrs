@@ -2170,52 +2170,6 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
     return answer;
 }
 
-- (BOOL)quillBkmxAgentPids_p:(NSString**)pids_p
-                    error_p:(NSError**)error_p {
-    NSError* error = nil;
-    NSMutableArray* killedPids = [NSMutableArray new];
-    BOOL ok = YES;
-    NSArray<NSNumber*>* pids = [[self runningAgents] valueForKey:@"processIdentifier"];
-    [self kickBkmxAgentWithKickType:KickType_Stop
-                              error:&error];
-    for (NSNumber* pid in pids) {
-        [killedPids addObject:[NSString stringWithFormat:@"%@", pid]];
-    }
-
-    if (!ok || pids.count > 1) {
-        for (NSNumber* pid in pids) {
-            [self logFormat:@"Something fishy.  Killing pid %@", pid];
-            /* Sometimes, I'm not sure why, SMLoginItemSetEnabled returns NO, and
-             in one case, telling it to "Quit" (not Force) in Activity Monitor
-             did work.  As I now understand it, "Quit" in Activity Monitor is
-             equivalent to SIGTERM.  So we now try that: */
-            ok = [SSYOtherApper killThisUsersProcessWithPid:pid.unsignedShortValue
-                                                        sig:SIGTERM
-                                                    timeout:5.0];
-            /*  Oddly, even after the process has been successfully terminated
-             by Activity Monitor, if you then try again to "disable" it with
-             SMLoginItemSetEnabled, it will SMLoginItemSetEnabled will still return NO.
-             So that is why we take our OK from the above call. */
-            [self logFormat:@"then, using SIGTERM returned %@", ok?@"YES":@"NO"];
-        }
-    }
-    
-    if (error && error_p) {
-        *error_p = error ;
-    }
-    
-    if (pids_p) {
-        if (killedPids.count > 0) {
-            *pids_p = [killedPids componentsJoinedByString:@", "];
-        } else {
-            *pids_p = nil;
-        }
-    }
-    [killedPids release];
-    
-    return ok;
-}
-
 - (BOOL)rebootSyncAgentReport_p:(NSString**)report_p
                         title_p:(NSString**)title_p
                         error_p:(NSError**)error_p {

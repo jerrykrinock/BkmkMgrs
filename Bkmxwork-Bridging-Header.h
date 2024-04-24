@@ -26,6 +26,7 @@
 #import "NSEntityDescription+SSYMavericksBugFix.h"
 #import "NSError+InfoAccess.h"
 #import "NSError+InfoAccess.h"
+#import "NSError+MoreDescriptions.h"
 #import "NSError+MyDomain.h"
 #import "NSError+SSYInfo.h"
 #import "NSFileManager+SomeMore.h"

@@ -2,12 +2,14 @@ import Foundation
 import ServiceManagement
 import Cocoa
 
-typealias Retult = (returnValue: Int, status: BkmxAgentStatus)
+// " Result Tuplet"
+typealias Retult = (returnValue: Int, status: BkmxAgentStatus, errorDesc: String?, errorSugg: String?)
 
 class BkmxAgentRunner {
-    func kick(_ bundleIdentifier: String, whatDo: KickType) throws {
-        var retult = Retult(1, BkmxAgentStatusUnknown)
+    func kick(_ bundleIdentifier: String, whatDo: KickType) -> Retult{
         var ok = false
+        var errorDesc: String? = nil
+        var errorSugg: String? = nil
         
         var whatDoing: String
         switch whatDo {
@@ -26,34 +28,46 @@ class BkmxAgentRunner {
         }
         agentRunnerLogger.log("Will \(whatDoing) \(bundleIdentifier)")
         
+        let timeout = 3.0
         switch (whatDo) {
         case .start:
-            try self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: 3.0)
+            self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: timeout)
+            if (!ok) {
+                errorDesc = "Agent Runner commanded macOS to start BkmxAgent, but it was still not running after \(timeout) seconds."
+            }
         case .stop:
-            try self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: 3.0)
+            self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: timeout)
+            if (!ok) {
+                errorDesc = "Agent Runner commanded macOS to stop BkmxAgent, but it was still running after \(timeout) seconds."
+            }
         case .reboot:
-            try self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: 3.0)
-            try self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: 3.0)
+            self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: timeout)
+            if (!ok) {
+                errorDesc = "Agent Runner commanded macOS to stop BkmxAgent, so it could be rebooted, but it was still  running after \(timeout) seconds."
+                errorSugg = "Try to quit BkmxAgent by using the Activity Monitor app."
+            } else {
+                self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
+                ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: timeout)
+                if (!ok) {
+                    errorDesc = "Agent Runner commanded macOS to relaunch BkmxAgent after quitting, but it was still not running after \(timeout) seconds."
+                }
+            }
         case .status:
             ok = true
         case .nothing:
-            agentRunnerLogger.log("Nothing to do")
-            retult = (7, BkmxAgentStatusNotRequested)
+            errorDesc = "Nothing to do"
         @unknown default:
-            agentRunnerLogger.log("Unknown KickType")
-            retult = (8, BkmxAgentStatusNotRequested)
+            errorDesc = "Unknown KickType"
         }
 
-        retult.returnValue = (ok == true) ? 0 : 1
-        retult.status = self.getStatus(bundleIdentifier)
+        let returnValue = (ok == true) ? 0 : 1
+        let status = self.getStatus(bundleIdentifier)
+        let retult: Retult = (returnValue, status, errorDesc, errorSugg)
 
-        
-        agentRunnerLogger.log("BkAgRnRsltRETVAL: \(retult.returnValue)")
-        agentRunnerLogger.log(String(format: "BkAgRnRsltSTATUS: %d", retult.status.rawValue))
+        return retult
     }
     
     
@@ -123,7 +137,7 @@ class BkmxAgentRunner {
         }
      }
     
-    func switchLoginItem(_ onOff: Bool, bundleIdentifier: String) throws {
+    func switchLoginItem(_ onOff: Bool, bundleIdentifier: String) {
         if #available(macOS 13, *) {
             let service = SMAppService.loginItem(identifier: bundleIdentifier)
             if (onOff) {

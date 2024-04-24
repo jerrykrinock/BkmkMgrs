@@ -8,7 +8,7 @@ extension ExtoreOrion {
         
         /* Try to read the "profiles" file which we have reverse-engineered. */
         let profilesFileUrl = URL(fileURLWithPath: self.browserSupportPath(forHomePath: nil)).appendingPathComponent("profiles", isDirectory: false)
-        var profilesFilePath = profilesFileUrl.path
+        let profilesFilePath = profilesFileUrl.path
         var displayProfileNames = Dictionary<String,Any>()
         do {
             if(FileManager.default.isReadableFile(atPath: profilesFilePath)) {

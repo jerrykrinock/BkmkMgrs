@@ -32,6 +32,7 @@ NSString* const constKeyCurrentValue = @"currentValue" ;
 NSString* const constKeyDontPauseSyncing = @"dontPauseSyncing" ;
 NSString* const constKeyIsNewBeNice = @"isNewBeNice" ;
 NSString* const constKeyLaunchBrowserPref = @"launchBrowserPref" ;
+NSString* const constKeyLogText = @"logText";
 NSString* const constKeyMaxValue = @"maxValue" ;
 __attribute__((visibility("default"))) NSString* const constKeyReturnValue = @"returnValue";
 NSString* const constKeySeverity = @"severity" ;

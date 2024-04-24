@@ -5681,14 +5681,29 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
 
     /* Removing all Syncers should have cause the BkmxAgent service to
      be terminated, but just in case that did not work, we do it again: */
-    [[BkmxBasis sharedBasis] kickBkmxAgentWithKickType:KickType_Stop
-                                                 error:NULL];
+    NSError* error = nil;
+    NSDictionary* result = [[BkmxBasis sharedBasis] kickBkmxAgentWithKickType:KickType_Stop
+                                                 error:&error];
+    NSNumber* returnValueNumber = [result objectForKey:constKeyReturnValue];
+    NSString* msg = nil;
+    if ([returnValueNumber respondsToSelector:@selector(integerValue)]) {
+        NSInteger returnValue = [returnValueNumber integerValue];
+        if (returnValue == 0) {
+            msg = @"All Syncers of Smarky, Synkmark or BookMacster have been removed, and the BkmxAgent process has been quit." ;
+        } else {
+            error = [SSYMakeError(285791, @"Agent runner failed") errorByAddingUnderlyingError:error];
+        }
+    } else {
+        error = [SSYMakeError(285792, @"Agent runner failed bad") errorByAddingUnderlyingError:error];
+    }
 
-    NSString* msg = @"All Syncers of Smarky, Synkmark or BookMacster have been removed, and the BkmxAgent process has been quit." ;
-
-	[SSYAlert runModalDialogTitle:nil
-                          message:msg
-                          buttons:nil];
+    if (msg) {
+        [SSYAlert runModalDialogTitle:nil
+                              message:msg
+                              buttons:nil];
+    }
+    
+    [SSYAlert alertError:error];
 }
 
 - (void)showSyncingStatus {

@@ -71,24 +71,32 @@ extension BkmxBasis {
         Self.shared().logString("Will \(whatDo) BkmxAgent")
         
         var returnValue = 5
-        var statusInt = -3
+        var status = -3
+        var logText = "No log text"
         
         var error: NSError? = nil
         let runnerPath = Bundle.mainAppBundle().path(forMacOS: "BkmxAgentRunner")
-        if let appSupportPath  = Bundle.main.applicationSupportPathForMotherApp() {
-            let subcommand = String(format: "--\(whatDo)")
-            let arguments = [
-                subcommand]
-            var stdout: NSData? = nil
-            var stderr: NSData? = nil
-            let taskResult = SSYShellTasker.doShellTaskCommand(runnerPath,
-                                                               arguments: arguments as [Any],
-                                                               inDirectory: nil,
-                                                               stdinData: nil,
-                                                               stdoutData_p: &stdout,
-                                                               stderrData_p: &stderr,
-                                                               timeout: 20.0,
-                                                               error_p: &error)
+        let subcommand = String(format: "--\(whatDo)")
+        let arguments = [
+            subcommand]
+        var stdout: NSData? = nil
+        var stderr: NSData? = nil
+        let taskResult = SSYShellTasker.doShellTaskCommand(runnerPath,
+                                                           arguments: arguments as [Any],
+                                                           inDirectory: nil,
+                                                           stdinData: nil,
+                                                           stdoutData_p: &stdout,
+                                                           stderrData_p: &stderr,
+                                                           timeout: 20.0,
+                                                           error_p: &error)
+        if (error == nil) {
+            if let stderr = stderr {
+                let stdoutString = String(decoding: stderr, as: UTF8.self)
+                if stdoutString.count > 0 {
+                    Self.shared().logString("BkmxAgentRunner returned stderr: \(stdoutString)")
+                }
+            }
+
             if (taskResult != 0) {
                 let wrappedError = BkmxAgentRunnerError(.couldNotEvenLaunchAgentRunner, underlying: error)
                 throw wrappedError
@@ -97,76 +105,117 @@ extension BkmxBasis {
                 let stdoutString = String(decoding: stdout, as: UTF8.self)
                 let scanner = Scanner(string: stdoutString)
                 
-                /* Scan and discard into _ the 'log' text: */
-                _ = scanner.scanUpToString("BkAgRnRsltRETVAL: ") ?? "??"
-                
-                /* Scan and discard into _ a delimiter */
+                logText = scanner.scanUpToString("BkAgRnRsltRETVAL: ") ?? "??"
                 _ = scanner.scanString("BkAgRnRsltRETVAL: ")
                 
                 returnValue = scanner.scanInt() ?? -11
                 
-                /* Scan and discard into _ a delimiter: */
+                _ = scanner.scanUpToString("BkAgRnRsltSTATUS: ") ?? "??"
                 _ = scanner.scanString("BkAgRnRsltSTATUS: ")
-                
-                statusInt = scanner.scanInt() ?? -13
-            } 
-            if let stderr = stderr {
-                let stdoutString = String(decoding: stderr, as: UTF8.self)
-                if stdoutString.count > 0 {
-                    Self.shared().logString("BkmxAgentRunner returned stderr: \(stdoutString)")
+
+                /* Scan the status value*/
+                status = scanner.scanInt() ?? -12
+
+                if (returnValue != 0) {
+                    _ = scanner.scanUpToString("BkAgRnRsltERRDESC: ") ?? "No error description!"
+                    _ = scanner.scanString("BkAgRnRsltERRDESC: ")
+
+                    let errorDesc = scanner.scanUpToString("BkAgRnRsltERRSUGG: ") ?? "??"
+                    _ = scanner.scanString("BkAgRnRsltERRSUGG: ")
+
+                    var errorSugg = scanner.scanUpToCharacters(from: CharacterSet())
+                    
+                    if (status == BkmxAgentStatusRequiresApproval.rawValue) && ((kickType == .start) || (kickType == .reboot)) {
+                        /* errorSugg should be nil in this situation.  But even if it is
+                         not, the following error suggestion is likely to be better, so
+                         we overwrite errorSugg in this special case. */
+                        errorSugg = String(format:
+                                        NSLocalizedString("maybeEnableAgentRunner", comment:"what it says"),
+                                      self.appNameLocalized,
+                                      self.appNameLocalized)
+                    }
+
+                    var userInfo = [NSLocalizedDescriptionKey:"Agent Runner ran but failed."]
+                    if logText.count > 0 {
+                        userInfo["BkmxAgentRunner Log"] = logText
+                    }
+                    if (errorDesc.count > 0) {
+                        userInfo[NSLocalizedDescriptionKey] = errorDesc.trimmingCharacters(in: .whitespacesAndNewlines)
+                    }
+                    if let errorSugg = errorSugg {
+                        userInfo[NSLocalizedRecoverySuggestionErrorKey] = errorSugg.trimmingCharacters(in: .whitespacesAndNewlines)
+                    }
+                    error = NSError(domain:"BkmxAgentRunnerErrorDomain",
+                                    code: 283732,
+                                    userInfo:userInfo)
+                    if let error = error {
+                        throw error
+                    }
                 }
             }
         }
         
         return [
             constKeyReturnValue: returnValue,
-            constKeyStatus: statusInt
+            constKeyStatus: status,
+            constKeyLogText: logText
         ]
     }
-    
     
     @objc
     func bkmxAgentRegistrationStatusReport() -> String {
         if #available(macOS 13, *) {
             do {
                 let results = try self.kickBkmxAgent(kickType: .status)
-                let status = Int32((results[constKeyStatus] as? Int) ?? Int(BkmxAgentStatusUnknown.rawValue))
-                switch status {
-                case BkmxAgentStatusUnknown.rawValue:
-                    return NSLocalizedString("Someting weent wrong.  The registration status of BkmxAgent could not be determined.",
-                                             comment: "what it says"
-                    )
-                case BkmxAgentStatusNotAvailableDueToMacOS12OrEarlier.rawValue:
-                    return NSLocalizedString("Our ability to run Login Items (in  > System Settings > Login Items) could not be determined because you are running macOS 12 or earlier.  If you suspect we are not enabled, look at our switch status in there.",
-                                             comment: "what it says"
-                    )
-                case BkmxAgentStatusNotRequested.rawValue:
-                    return NSLocalizedString("Something went wrong.  BkmxAgentRunner did not get our question about the status of BkmxAgent registration.",
-                                             comment: "what it says"
-                    )
-                case BkmxAgentStatusNotRegistered.rawValue:
-                    return NSLocalizedString("BkmxAgent is not running, probably because there is no bookmarks collection with Syncing on.",
-                                             comment: "what it says"
-                    )
-                case BkmxAgentStatusEnabled.rawValue:
-                    return self.agentEnabledOKText()
-                case BkmxAgentStatusRequiresApproval.rawValue:
-                    return "*** " + self.agentDisabledWarningText() + " ***"
-                case BkmxAgentStatusUnknown.rawValue:
-                    return NSLocalizedString("Someting went wrong.  macOS does not recognize that our internal tool BkmxAgentRunner is even installed.",
-                                             comment: "what it says"
-                    )
-                case BkmxAgentStatusNoSuchService.rawValue:
-                    return NSLocalizedString("Cannot tell if the correct BkmmxAgent is running or not, because SMAppService says it does not recognize the bundle identifier which BkmxAgentRunner gave it.  (Very strange!!)",
-                                             comment: "what it says"
-                    )
-                default:
-                    return NSLocalizedString("Someting *really* went wrong.  Got an unknown response when querying the status of BkmxAgent registration.",
-                                             comment: "what it says"
-                    )
+                let returnValue = Int32((results[constKeyReturnValue] as? Int) ?? Int(2))
+                if (returnValue == 0) {
+                    let status = Int32((results[constKeyStatus] as? Int) ?? Int(BkmxAgentStatusUnknown.rawValue))
+                    switch status {
+                    case BkmxAgentStatusUnknown.rawValue:
+                        return NSLocalizedString("Someting weent wrong.  The registration status of BkmxAgent could not be determined.",
+                                                 comment: "what it says"
+                        )
+                    case BkmxAgentStatusNotAvailableDueToMacOS12OrEarlier.rawValue:
+                        return NSLocalizedString("Our ability to run Login Items (in  > System Settings > Login Items) could not be determined because you are running macOS 12 or earlier.  If you suspect we are not enabled, look at our switch status in there.",
+                                                 comment: "what it says"
+                        )
+                    case BkmxAgentStatusNotRequested.rawValue:
+                        return NSLocalizedString("Something went wrong.  BkmxAgentRunner did not get our question about the status of BkmxAgent registration.",
+                                                 comment: "what it says"
+                        )
+                    case BkmxAgentStatusNotRegistered.rawValue:
+                        return NSLocalizedString("BkmxAgent is not running, probably because there is no bookmarks collection with Syncing on.",
+                                                 comment: "what it says"
+                        )
+                    case BkmxAgentStatusEnabled.rawValue:
+                        return self.agentEnabledOKText()
+                    case BkmxAgentStatusRequiresApproval.rawValue:
+                        return "*** " + self.agentDisabledWarningText() + " ***"
+                    case BkmxAgentStatusUnknown.rawValue:
+                        return NSLocalizedString("Someting went wrong.  macOS does not recognize that our internal tool BkmxAgentRunner is even installed.",
+                                                 comment: "what it says"
+                        )
+                    case BkmxAgentStatusNoSuchService.rawValue:
+                        return NSLocalizedString("Cannot tell if the correct BkmmxAgent is running or not, because SMAppService says it does not recognize the bundle identifier which BkmxAgentRunner gave it.  (Very strange!!)",
+                                                 comment: "what it says"
+                        )
+                    default:
+                        return NSLocalizedString("Someting *really* went wrong.  Got an unknown response when querying the status of BkmxAgent registration.",
+                                                 comment: "what it says"
+                        )
+                    }
+                } else {
+                    var errorDesc: String!
+                    let intro = NSLocalizedString("Could not determine registration status of \(constAppNameBkmxAgent) because of error:", comment: "what it says")
+                    if let error = results[constKeyError] as? NSError {
+                        if let errorDesc1 = error.longDescription() {
+                            errorDesc = errorDesc1
+                        }
+                    }
+                    return ("\(intro) \(errorDesc ?? "Unknown error, sorry!")")
                 }
             } catch {
-                return "macOS could not determine registration status of \(constAppNameBkmxAgent) because \(String(describing: error))"
+                return "Could not determine registration status of \(constAppNameBkmxAgent) because \(String(describing: (error as NSError).longDescription))"
             }
         } else {
             return "Registration status of \(constAppNameBkmxAgent) is not available in macOS 12 or earlier."

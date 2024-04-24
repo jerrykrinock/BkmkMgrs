@@ -187,7 +187,7 @@ NSString* const constKeyUninhibitorDate = @"date" ;
                 KickType startOrStop = needItRunning ? KickType_Start : KickType_Stop ;
                 [[BkmxBasis sharedBasis] kickBkmxAgentWithKickType:startOrStop
                                                              error:&error];
- 
+                
                 if (error != nil) {
                     NSInteger code = needItRunning ? 582958 : 582957;
                     NSString* desc = [NSString stringWithFormat:

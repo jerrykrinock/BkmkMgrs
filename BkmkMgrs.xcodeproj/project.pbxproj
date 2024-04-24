@@ -351,6 +351,7 @@
 		4868DC5A0F7824C400CBEC6B /* SSYAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 4868DC590F7824C400CBEC6B /* SSYAlert.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4868DDDF0F7917C000CBEC6B /* NSError+Bkmx.m in Sources */ = {isa = PBXBuildFile; fileRef = 4868DDDE0F7917C000CBEC6B /* NSError+Bkmx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4868FCCC121F0D1C007DE7A6 /* prefsUpdates.tif in Resources */ = {isa = PBXBuildFile; fileRef = 4868FCCB121F0D1C007DE7A6 /* prefsUpdates.tif */; };
+		486A02282BCA1E560028561E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A02272BCA1E560028561E /* main.swift */; };
 		486B0DE0281B02B5008D888A /* SafariRootChildoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347928183AEC00164969 /* SafariRootChildoid.swift */; };
 		486B0DE1281B02BB008D888A /* SafariDupeAtRootChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48023481281842D200164969 /* SafariDupeAtRootChecker.swift */; };
 		486B0DE2281B02BF008D888A /* CountedSetByHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347B28183B3D00164969 /* CountedSetByHash.swift */; };
@@ -561,7 +562,6 @@
 		488CBCD311207B15006AF61F /* SSYSizeFixxerSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBCD211207B15006AF61F /* SSYSizeFixxerSubview.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		488CBDBF1120C9DC006AF61F /* NSNumber+ChangeTypesSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBDBE1120C9DC006AF61F /* NSNumber+ChangeTypesSymbols.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		488CBDC41120D0A7006AF61F /* SSYModelChangeTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 488CBDC31120D0A7006AF61F /* SSYModelChangeTypes.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		488D3E212BB2080D00EC4E47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488D3E202BB2080D00EC4E47 /* main.swift */; };
 		488D3E252BB208EE00EC4E47 /* BkmxAgentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */; };
 		488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */; };
 		488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */; };
@@ -2170,7 +2170,6 @@
 		4853E78317A07BD100E842E1 /* Bkmslf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bkmslf.m; sourceTree = "<group>"; };
 		4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunner.swift; sourceTree = "<group>"; };
 		4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunnerCommandLiner.swift; sourceTree = "<group>"; };
-		485537602B82672200447FE7 /* .h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .h; sourceTree = SOURCE_ROOT; };
 		485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunnerLogger.swift; sourceTree = "<group>"; };
 		48553F9A13D3BBAB0006E382 /* NSMenu+Populating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenu+Populating.h"; path = "../../CategoriesObjC/NSMenu+Populating.h"; sourceTree = SOURCE_ROOT; };
 		48553F9B13D3BBAB0006E382 /* NSMenu+Populating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenu+Populating.m"; path = "../../CategoriesObjC/NSMenu+Populating.m"; sourceTree = SOURCE_ROOT; };
@@ -2263,6 +2262,7 @@
 		4868DDDD0F7917C000CBEC6B /* NSError+Bkmx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Bkmx.h"; sourceTree = "<group>"; };
 		4868DDDE0F7917C000CBEC6B /* NSError+Bkmx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Bkmx.m"; sourceTree = "<group>"; };
 		4868FCCB121F0D1C007DE7A6 /* prefsUpdates.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = prefsUpdates.tif; path = Resources/prefsUpdates.tif; sourceTree = "<group>"; };
+		486A02272BCA1E560028561E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		486B0DE3281B2BB5008D888A /* SafariDupeAtRootChecker-BmcoGlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafariDupeAtRootChecker-BmcoGlue.swift"; sourceTree = "<group>"; };
 		486B0DE5281B2DF2008D888A /* SafariDupeAtRootChecker-SafariGlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafariDupeAtRootChecker-SafariGlue.swift"; sourceTree = "<group>"; };
 		486B44BD1CD725B700081339 /* NSPredicate+SSYPreflight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPredicate+SSYPreflight.h"; path = "../../ClassesObjC/NSPredicate+SSYPreflight.h"; sourceTree = "<group>"; };
@@ -2429,7 +2429,6 @@
 		488CBDC21120D0A7006AF61F /* SSYModelChangeTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYModelChangeTypes.h; path = ../../ClassesObjC/SSYModelChangeTypes.h; sourceTree = SOURCE_ROOT; };
 		488CBDC31120D0A7006AF61F /* SSYModelChangeTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYModelChangeTypes.m; path = ../../ClassesObjC/SSYModelChangeTypes.m; sourceTree = SOURCE_ROOT; };
 		488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BkmxAgentRunner; sourceTree = BUILT_PRODUCTS_DIR; };
-		488D3E202BB2080D00EC4E47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../BkmxAgentRunner/main.swift; sourceTree = "<group>"; };
 		488E42E411EEB00D0056CEA9 /* SSYErrorAlertee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYErrorAlertee.h; path = ../../ProtocolsObjC/SSYErrorAlertee.h; sourceTree = SOURCE_ROOT; };
 		4891B2FC0F2177BA00EE20B7 /* SSYTransformSetToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYTransformSetToArray.h; path = ../../ClassesObjC/SSYTransformSetToArray.h; sourceTree = SOURCE_ROOT; };
 		4891B2FD0F2177BA00EE20B7 /* SSYTransformSetToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYTransformSetToArray.m; path = ../../ClassesObjC/SSYTransformSetToArray.m; sourceTree = SOURCE_ROOT; };
@@ -3555,7 +3554,6 @@
 				4801E2B8231704C500E2A886 /* BkmkMgrTests */,
 				48E6E6792B45CF6100113FFC /* BkmxAgentRunner */,
 				484F55F02B48BEED0050F78F /* BkmxAgentTest */,
-				488D3E1F2BB2080D00EC4E47 /* BkmxAgentRunner2 */,
 				48D2A57516FC348400480801 /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 			);
@@ -4342,14 +4340,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		488D3E1F2BB2080D00EC4E47 /* BkmxAgentRunner2 */ = {
-			isa = PBXGroup;
-			children = (
-				488D3E202BB2080D00EC4E47 /* main.swift */,
-			);
-			path = BkmxAgentRunner2;
-			sourceTree = "<group>";
-		};
 		4891BDB017A72905008B750E /* BkmxDoc */ = {
 			isa = PBXGroup;
 			children = (
@@ -4753,7 +4743,7 @@
 		48E6E6792B45CF6100113FFC /* BkmxAgentRunner */ = {
 			isa = PBXGroup;
 			children = (
-				485537602B82672200447FE7 /* .h */,
+				486A02272BCA1E560028561E /* main.swift */,
 				4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */,
 				4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */,
 				485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */,
@@ -7199,11 +7189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				488D3E2A2BB2093900EC4E47 /* NSRunningApplication+WaitFor.swift in Sources */,
+				486A02282BCA1E560028561E /* main.swift in Sources */,
 				488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */,
 				488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */,
 				488D3E292BB208EE00EC4E47 /* BkmxAgentRunnerError.swift in Sources */,
 				488D3E252BB208EE00EC4E47 /* BkmxAgentRunner.swift in Sources */,
-				488D3E212BB2080D00EC4E47 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

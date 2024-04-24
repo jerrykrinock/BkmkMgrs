@@ -229,6 +229,7 @@ extern BOOL gDoLog ;
 
 #pragma mark * enums
 
+/* In Swift, these will appear as KickType.nothing, KickType.start, etc. */
 typedef NS_ENUM(NSUInteger, KickType) {
     KickType_Nothing = 0,
     KickType_Start = 1,
@@ -729,6 +730,7 @@ extern NSString* const constSeparatorUrlScheme;
 extern NSString* const constSorryNullExtore  ; // Must match string in background.html in Chrome Extension
 extern NSString* const constSorryNullProfile  ; // Must match string in background.html in Chrome Extension
 extern NSString* const constKeyLaunchBrowserPref ;
+extern NSString* const constKeyLogText;
 extern NSString* const constKeyReturnValue;
 extern NSString* const constKeySeverity ;
 extern NSString* const constKeyStatus;
