@@ -117,7 +117,7 @@
 NSString* const constNoteLaunchInBackgroundSwitchedOff = @"launchInBackgroundSwitchedOff" ;
 NSString* const constLegacyKeyLaunchDocUuids = @"launchDocUuids" ;
 
-static BOOL xor(BOOL a, BOOL b) {
+static BOOL xorr(BOOL a, BOOL b) {
     return ((a||b)  && !(a&&b)) ;
 }
 
@@ -3607,7 +3607,7 @@ NSString* const skuForSmarky3 = @"637653";
             //       0                1                        0               0       0
             //       1                0                        1               0       0
             //       1                1                        0               1       1
-            showInspector = xor([SSYEventInfo alternateKeyDown], ![[NSUserDefaults standardUserDefaults] boolForKey:constKeyAltKeyInspectsLander]) ;
+            showInspector = xorr([SSYEventInfo alternateKeyDown], ![[NSUserDefaults standardUserDefaults] boolForKey:constKeyAltKeyInspectsLander]) ;
         }
     }
     
