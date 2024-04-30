@@ -3132,7 +3132,7 @@ NSString* const skuForSmarky3 = @"637653";
         // desiredBundleIdentifier is, for example, com.sheepsystems.BkmxAgent-20180927-153817
     }
 
-    NSMutableSet* killedOldies = [NSMutableSet new];
+    NSMutableSet* humanReadableKilledOldies = [NSMutableSet new];
     if (desiredBundleIdentifier) {
         for (NSDictionary* info in candidateInfos) {
             NSString* candidateExecutableOrBundleID = [info objectForKey:SSYOtherApperKeyExecutable];
@@ -3146,8 +3146,8 @@ NSString* const skuForSmarky3 = @"637653";
              •   com.sheepsystems.BkmxAgent-20180927-153817
 
              Taking advantage of the fact that our BkmxAgent's executable name
-             is name is the same as its bundle identifier, and is unique to
-             each build, we now handle each case: */
+             is the same as its bundle identifier, and is unique to
+             each build, we now handle both of the cases: */
             NSString* candidateBundleIdentifier;
             if ([candidateExecutableOrBundleID rangeOfString:@"/"].location != NSNotFound) {
                 // candidateExecutableOrBundleID must be a path
@@ -3165,47 +3165,63 @@ NSString* const skuForSmarky3 = @"637653";
             if (![desiredBundleIdentifier isEqualToString:candidateBundleIdentifier]) {
                 /* candidateBundleIdentifier represents a BkmxAgent XPC Service
                  which is probably from a previous version of this app.
-                 Kill it. */
-                /* For concise logging when this method returns to the caller,
-                 we remove the "com.sheepsystems" prefix. */
-                NSString* oldie = [desiredBundleIdentifier pathExtension];
-                // oldie is, for example: BkmxAgent-20180927-153817
-                [killedOldies addObject:oldie];
+                 We need to disable it, and maybe kill it.  */
 
                 pid_t candidatePid = ((NSNumber*)[info objectForKey:SSYOtherApperKeyPid]).intValue;
+                
+                NSError* underlyingError = nil;
+                /* I tried a less heavy-handed approach, which is to *disable* the old BkmxAgent
+                 using SMAppService.unregister().  However that fails and returns error
+                 Error Domain=SMAppServiceErrorDomain Code=22 "Invalid argument" UserInfo={NSLocalizedFailureReason=Invalid argument}
+                 I presume the problem is that the old BkmxAgent is not in the
+                 current main app package' Contents/Library/LoginItems.
+                 And considered including a shell of the old BkmxAgent, but
+                 decided that would be too messy and risky.  So now, I just kill
+                 its process and hope that the system will not try to relaunch
+                 it from the Trash. */
+                if ([[BkmxBasis sharedBasis] killLoginItem:candidateBundleIdentifier
+                                                       pid:candidatePid
+                                                     error:&underlyingError]) {
+                    /* For concise logging when this method returns to the caller,
+                     we remove the "com.sheepsystems" prefix. */
+                    NSString* oldie = [candidateBundleIdentifier pathExtension];
+                    // oldie is, for example: BkmxAgent-20180927-153817
+                    [humanReadableKilledOldies addObject:oldie];
+                } else {
+                    NSString* errorDesc = [NSString stringWithFormat:
+                                           @"Tried to disable BkmxAgent %@ because it is from an old version of %@, but its process with pid %d is still running.  This may cause trouble with syncing",
+                                           candidateBundleIdentifier,
+                                           [[BkmxBasis sharedBasis] appNameLocalized],
+                                           candidatePid];
+                    NSError* error = SSYMakeError(397077, errorDesc);
+                    error = [error errorByAddingLocalizedRecoverySuggestion:@"It may be fixed the next time you restart this Mac."];
+                    error = [error errorByAddingUnderlyingError:underlyingError];
+                    if ([[NSThread currentThread] isMainThread]) {
+                        [SSYAlert alertError:error];
+                    } else {
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [SSYAlert alertError:error];
+                        });
+                    }
+                    [[BkmxBasis sharedBasis] logError:error
+                                      markAsPresented:![[BkmxBasis sharedBasis] isBkmxAgent]];
+                }
 
-                [SSYOtherApper killThisUsersProcessWithPid:candidatePid
-                                                       sig:SIGTERM
-                                                   timeout:10.0];
-                /* The above method always returns YES, even when you send
-                 a SIGKILL and launchd relaunches the process immediately.
-
-                 Why SIGTERM?
-
-                 Somehow, I got an earlier version of BkmxAgent stuck in my
-                 system.  Its service would always launch when I log back in or
-                 restart.  I tried passing sig = 1, 2, 3, ... 15.  The first
-                 14 did not work because the system would immediately restart
-                 the service with a new process as soon as I killed it.  But,
-                 miraculously, sig = 15 (=SIGTERM) worked.   */
 
             }
         }
 
-        NSString* what = @"oldie agent";
-        if (killedOldies.count > 1) {
-            NSString* oldiesList = [[killedOldies allObjects] listValuesForKey:nil
-                                                                   conjunction:nil
-                                                                    truncateTo:0];
-            what = [what stringByAppendingString:@"s"];
+        if (humanReadableKilledOldies.count > 0) {
+            NSString* oldiesList = [[humanReadableKilledOldies allObjects] listValuesForKey:nil
+                                                                                conjunction:nil
+                                                                                 truncateTo:0];
             NSString* msg = [NSString stringWithFormat:
-                             @"Killed %@: %@",
-                             what,
+                             @"Killed old %@",
                              oldiesList];
             [[BkmxBasis sharedBasis] logFormat:msg];
         }
     }
-    [killedOldies release];
+    [humanReadableKilledOldies release];
 }
 
 - (void)showUnpresentedErrors {

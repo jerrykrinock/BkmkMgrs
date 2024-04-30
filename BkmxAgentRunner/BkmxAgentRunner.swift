@@ -167,16 +167,6 @@ class BkmxAgentRunner {
         }
     }
     
-    /**
-     Checks if an app with the given bundle identifier is running, waiting
-     up to a timeout of 3 seconds to meet a given expectation
-     
-     - parameter expectRunning: true if you want to wait for the app to be
-     running, false if you want to wait for the app to be not running
-     - returns: true if your running/not expectation is met within the timeout,
-     false if a timeout occurs before the expectation is met
-     */
-  
     // MARK:= Error Handling
     /* This is a work in progress, trying to do as explained here:
      https://www.swiftbysundell.com/articles/providing-a-unified-swift-error-api/ */

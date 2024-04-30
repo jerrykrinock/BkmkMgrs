@@ -40,6 +40,7 @@
 #import "SSYEventInfo.h"
 #import "SSYMOCManager.h"
 #import "SSYMojo.h"
+#import "SSYOtherApper.h"
 #import "SSYShellTasker.h"
 #import "SSYUUID.h"
 #import "Stark+Attributability.h"

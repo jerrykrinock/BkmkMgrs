@@ -352,6 +352,7 @@
 		4868DDDF0F7917C000CBEC6B /* NSError+Bkmx.m in Sources */ = {isa = PBXBuildFile; fileRef = 4868DDDE0F7917C000CBEC6B /* NSError+Bkmx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4868FCCC121F0D1C007DE7A6 /* prefsUpdates.tif in Resources */ = {isa = PBXBuildFile; fileRef = 4868FCCB121F0D1C007DE7A6 /* prefsUpdates.tif */; };
 		486A02282BCA1E560028561E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A02272BCA1E560028561E /* main.swift */; };
+		486A02292BDF02C00028561E /* NSRunningApplication+WaitFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */; };
 		486B0DE0281B02B5008D888A /* SafariRootChildoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347928183AEC00164969 /* SafariRootChildoid.swift */; };
 		486B0DE1281B02BB008D888A /* SafariDupeAtRootChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48023481281842D200164969 /* SafariDupeAtRootChecker.swift */; };
 		486B0DE2281B02BF008D888A /* CountedSetByHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347B28183B3D00164969 /* CountedSetByHash.swift */; };
@@ -7386,6 +7387,7 @@
 				48D1E7160F6C4025001BA354 /* SSYDocChildObject.m in Sources */,
 				48D1E7170F6C4027001BA354 /* SSYHintableWindow.m in Sources */,
 				48D1E7190F6C402C001BA354 /* SSYIOKit.m in Sources */,
+				486A02292BDF02C00028561E /* NSRunningApplication+WaitFor.swift in Sources */,
 				48D1E71A0F6C4032001BA354 /* SSYKeychain.m in Sources */,
 				48D1E71B0F6C4035001BA354 /* SSYLaunchdGuy.m in Sources */,
 				48D1E71C0F6C4054001BA354 /* SSYListPicker.m in Sources */,

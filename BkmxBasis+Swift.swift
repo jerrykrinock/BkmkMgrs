@@ -235,4 +235,63 @@ extension BkmxBasis {
                         NSLocalizedString("agentEnabledOK", comment:"what it says"),
                       self.appNameLocalized)
     }
+    
+    
+    @objc
+    func killLoginItem(_ bundleIdentifier: String,
+                       pid: pid_t) throws {
+        var ok = SSYOtherApper.killThisUsersProcess(withPid: pid,
+                                                    sig: SIGTERM,
+                                                    timeout: 10.0)
+        /*
+         Why SIGTERM?
+         Somehow, I got an earlier version of BkmxAgent stuck in my
+         system.  Its service would always launch when I log back in or
+         restart.  I tried passing sig = 1, 2, 3, ... 15.  The first
+         14 did not work because the system would immediately restart
+         the service with a new process as soon as I killed it.  But,
+         miraculously, sig = 15 (=SIGTERM) worked.   */
+        
+        /* Wait up for 5 seconds for it to terminate. */
+        let timeout = 5.0
+        ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
+                                             expectRunning: ExpectRunning.no,
+                                             timeout: timeout)
+        
+        if (!ok) {
+            /* Even killing did not work. */
+            let userInfo = [NSLocalizedDescriptionKey: "Told macOS to SIGTERM old \(bundleIdentifier), but pid \(pid) is still running after \(timeout) secs."]
+            throw NSError(domain: NSError.myDomain(),
+                          code: 373906,
+                          userInfo:userInfo)
+        }
+        
+        /* We shall return immediately, but we will call back 15 seconds
+         later if we see that macOS relaunched the old agent. */
+        let serialQueue = DispatchQueue(label: "BkmkMgrs.checkThatOldBkmxAgentStaysQuit")
+        let checkItTime = DispatchTime.now() + .seconds(15)
+        serialQueue.asyncAfter(deadline: checkItTime) {
+            let oldAgentsStillRunning = NSRunningApplication.runningApplications(withBundleIdentifier: bundleIdentifier)
+            if (oldAgentsStillRunning.isEmpty) {
+                BkmxBasis.shared().logString("macOS has *not* restarted the old agent (Good!)")
+            } else {
+                let newPids = oldAgentsStillRunning.map{$0.processIdentifier}
+                let userInfo = [NSLocalizedDescriptionKey: "Told macOS to SIGTERM old \(bundleIdentifier), and pid \(pid) did quit after a few seconds, but then macOS apparently relaunched it with a new pid(s) \(newPids)."]
+                let error = NSError(domain: NSError.myDomain(),
+                                    code: 373906,
+                                    userInfo:userInfo)
+                
+                if (Thread.current.isMainThread) {
+                    SSYAlert.alertError(error)
+                } else {
+                    DispatchQueue.main.async {
+                        SSYAlert.alertError(error)
+                    }
+                }
+                BkmxBasis.shared().logError(error,
+                                            markAsPresented: true)
+            }
+        }
+    }
 }
+     
