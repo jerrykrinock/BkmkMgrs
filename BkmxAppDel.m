@@ -71,7 +71,6 @@
 #import "SSYLabelledList.h"
 #import "SSYLabelledRadioButtons.h"
 #import "SSYLaunchdBasics.h"
-#import "SSYLaunchdGuy.h"
 #import "SSYLazyNotificationCenter.h"
 #import "SSYLicenseBuyController.h"
 #import "SSYLicenseMaintainer.h"
@@ -84,7 +83,6 @@
 #import "SSYOtherApper.h"
 #import "SSYProcessTyper.h"
 #import "SSYRepresentative.h"
-#import "SSYShellTasker.h"
 #import "SSYShoeboxDocument-Categories.h"
 #import "SSYShortcutActuator.h"
 #import "SSYShortcutActuator.h"
@@ -2130,38 +2128,6 @@ NSString* const skuForSmarky3 = @"637653";
         [fullPaths release];
     }
 
-    regularThreshold = [SSYVersionTriplet versionTripletWithMajor:2
-                                                            minor:4
-                                                           bugFix:9] ;
-    if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
-        /* Some versions between 2.4.3 and 2.4.8 inclusive (I think it was broke,
-         then fixed, then broke again) of Synkmark would create a bastard quatch
-         runner launchd syncer.  The filename and label was "…BookMacster…",
-         but the Program Arguments inside was "…Synkmark…".  Because of the
-         latter, it mostly worked, except for a edge case if you quit Firefox
-         while Synkmark was running, there would be Error 193835.
-
-         The following code detects and removes such a bastard quatch runner
-         syncer. */
-        if ([[BkmxBasis sharedBasis] iAm] == BkmxWhich1AppSynkmark) {
-            NSString* badPrefix = [[BkmxBasis appIdentifierForAppName:constAppNameBookMacster] stringByAppendingDotSuffix:@"QuatchRunner"];
-            NSDictionary* agents = [SSYLaunchdBasics installedLaunchdAgentsWithPrefix:badPrefix];
-            for (NSString* agentKey in [agents allKeys]) {
-                NSDictionary* syncer = [agents objectForKey:agentKey];
-                NSString* label = [syncer objectForKey:@"Label"];
-                if ([label hasSuffix:@"QuatchRunner"]) {
-                    NSString* firstArg = [[syncer objectForKey:@"ProgramArguments"] firstObject];
-                    if ([firstArg rangeOfString:@"Synkmark.app/Contents/Helpers/Sheep-Sys-Quatch"].location != NSNotFound) {
-                        [SSYLaunchdGuy removeAgentWithLabel:label
-                                                 afterDelay:0
-                                                 justReload:NO
-                                                    timeout:10.384];
-                    }
-                }
-            }
-        }
-    }
-
     /* Version 2.4.8 would write "Changes" to the Safari Bookmarks.plist
      file even if syncing was off.  These will pile up until the next time
      that a user edits (insert, update, delete) a bookmark in Safari, after
@@ -2860,7 +2826,6 @@ NSString* const skuForSmarky3 = @"637653";
             /* Secondary Thread Chores */
             [self ensureGoodLocation];
             [self checkNoSiblingAppsRunningElseWarnAndQuit];
-            [self killAnyLegacyLaunchdAgents];
             [self killAnyOldieLoginItemsWithBasename:constAppNameBkmxAgent];
             [[NSUserDefaults standardUserDefaults] updateBkmxAgentServiceStatus_offOnly:NO];
             [[BkmxBasis sharedBasis] checkAndHandleAppExpirationOrUpdate:^{
@@ -3080,25 +3045,6 @@ NSString* const skuForSmarky3 = @"637653";
                                     waitUntilDone:NO];
         }
     }
-}
-
-- (void)killAnyLegacyLaunchdAgents {
-    NSMutableSet* successes = [NSMutableSet new];
-    NSMutableSet* failures = [NSMutableSet new];
-    [SSYLaunchdGuy removeAgentsWithPrefix:[[NSBundle mainBundle] bundleIdentifier]
-                               afterDelay:1.0
-                                  timeout:15.0
-                                successes:successes
-                                 failures:failures];
-    if (successes.count + failures.count > 0) {
-        NSString* msg = [NSString stringWithFormat:
-                         @"Removed %ld legacy launch jobs (failed %ld)",
-                         successes.count,
-                         failures.count];
-        [[BkmxBasis sharedBasis] logFormat:msg];
-    }
-    [successes release];
-    [failures release];
 }
 
 - (NSString*)childBundleIdentifierForName:(NSString*)name {
@@ -5700,17 +5646,17 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
     NSError* error = nil;
     NSDictionary* result = [[BkmxBasis sharedBasis] kickBkmxAgentWithKickType:KickType_Stop
                                                  error:&error];
-    NSNumber* returnValueNumber = [result objectForKey:constKeyReturnValue];
+    NSNumber* runnerExitStatusNumber = [result objectForKey:constKeyExitStatus];
     NSString* msg = nil;
-    if ([returnValueNumber respondsToSelector:@selector(integerValue)]) {
-        NSInteger returnValue = [returnValueNumber integerValue];
-        if (returnValue == 0) {
+    if ([runnerExitStatusNumber respondsToSelector:@selector(integerValue)]) {
+        NSInteger runnerExitStatus = [runnerExitStatusNumber integerValue];
+        if (runnerExitStatus == EXIT_SUCCESS) {
             msg = @"All Syncers of Smarky, Synkmark or BookMacster have been removed, and the BkmxAgent process has been quit." ;
         } else {
             error = [SSYMakeError(285791, @"Agent runner failed") errorByAddingUnderlyingError:error];
         }
     } else {
-        error = [SSYMakeError(285792, @"Agent runner failed bad") errorByAddingUnderlyingError:error];
+        error = [SSYMakeError(285792, @"Agent runner failed – did not return exit status") errorByAddingUnderlyingError:error];
     }
 
     if (msg) {

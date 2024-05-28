@@ -70,74 +70,63 @@ extension BkmxBasis {
         
         Self.shared().logString("Will \(whatDo) BkmxAgent")
         
-        var returnValue = 5
-        var status = -3
-        var logText = "No log text"
+        var agentStatus: Int32 = -3
+        var runnerExitStatus: Int32 = -9
+        var runnerLogText = "No log text"
         
-        var error: NSError? = nil
-        let runnerPath = Bundle.mainAppBundle().path(forMacOS: "BkmxAgentRunner")
+        let runnerUrl = URL(fileURLWithPath: Bundle.mainAppBundle().path(forMacOS: "BkmxAgentRunner"))
         let subcommand = String(format: "--\(whatDo)")
         let arguments = [
             subcommand]
-        var stdout: NSData? = nil
-        var stderr: NSData? = nil
-        let taskResult = SSYShellTasker.doShellTaskCommand(runnerPath,
-                                                           arguments: arguments as [Any],
-                                                           inDirectory: nil,
-                                                           stdinData: nil,
-                                                           stdoutData_p: &stdout,
-                                                           stderrData_p: &stderr,
-                                                           timeout: 20.0,
-                                                           error_p: &error)
-        if (error == nil) {
-            if let stderr = stderr {
-                let stdoutString = String(decoding: stderr, as: UTF8.self)
-                if stdoutString.count > 0 {
-                    Self.shared().logString("BkmxAgentRunner returned stderr: \(stdoutString)")
+        let taskResult = SSYTask.run(runnerUrl,
+                                     arguments: arguments,
+                                     timeout: 20.0,
+                                     wait:true)
+        
+        switch taskResult {
+        case .success(let programResult):
+            runnerExitStatus = programResult.exitStatus
+            if let stderr = programResult.stderr {
+                /* This should never happen, because, I believe, there is no
+                 code in BkmxAgentRunner which emits stderr.  Error description
+                 and recovery suggestion are encoded into stdout. */
+                let stderrString = String(decoding: stderr, as: UTF8.self)
+                if stderrString.count > 0 {
+                    Self.shared().logString("BkmxAgentRunner surprisingly returned stderr: \(stderrString)")
                 }
             }
-
-            if (taskResult != 0) {
-                let wrappedError = BkmxAgentRunnerError(.couldNotEvenLaunchAgentRunner, underlying: error)
-                throw wrappedError
-            }
-            if let stdout = stdout {
+            if let stdout = programResult.stdout {
                 let stdoutString = String(decoding: stdout, as: UTF8.self)
                 let scanner = Scanner(string: stdoutString)
                 
-                logText = scanner.scanUpToString("BkAgRnRsltRETVAL: ") ?? "??"
-                _ = scanner.scanString("BkAgRnRsltRETVAL: ")
-                
-                returnValue = scanner.scanInt() ?? -11
-                
                 _ = scanner.scanUpToString("BkAgRnRsltSTATUS: ") ?? "??"
                 _ = scanner.scanString("BkAgRnRsltSTATUS: ")
-
+                
                 /* Scan the status value*/
-                status = scanner.scanInt() ?? -12
-
-                if (returnValue != 0) {
+                agentStatus = scanner.scanInt32() ?? -12
+                
+                if (runnerExitStatus != EXIT_SUCCESS) {
                     _ = scanner.scanUpToString("BkAgRnRsltERRDESC: ") ?? "No error description!"
                     _ = scanner.scanString("BkAgRnRsltERRDESC: ")
-
+                    
                     let errorDesc = scanner.scanUpToString("BkAgRnRsltERRSUGG: ") ?? "??"
                     _ = scanner.scanString("BkAgRnRsltERRSUGG: ")
-
+                    
                     var errorSugg = scanner.scanUpToCharacters(from: CharacterSet())
                     
-                    if (status == BkmxAgentStatusRequiresApproval.rawValue) && ((kickType == .start) || (kickType == .reboot)) {
+                    if (agentStatus == BkmxAgentStatusRequiresApproval.rawValue) && ((kickType == .start) || (kickType == .reboot)) {
                         /* errorSugg should be nil in this situation.  But even if it is
                          not, the following error suggestion is likely to be better, so
                          we overwrite errorSugg in this special case. */
                         errorSugg = String(format:
-                                        NSLocalizedString("maybeEnableAgentRunner", comment:"what it says"),
-                                      self.appNameLocalized,
-                                      self.appNameLocalized)
+                                            NSLocalizedString("maybeEnableAgentRunner", comment:"what it says"),
+                                           self.appNameLocalized,
+                                           self.appNameLocalized)
                     }
-
+                    
                     var userInfo = [NSLocalizedDescriptionKey:"Agent Runner ran but failed."]
-                    if logText.count > 0 {
-                        userInfo["BkmxAgentRunner Log"] = logText
+                    if runnerLogText.count > 0 {
+                        userInfo["BkmxAgentRunner Log"] = runnerLogText
                     }
                     if (errorDesc.count > 0) {
                         userInfo[NSLocalizedDescriptionKey] = errorDesc.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -145,20 +134,20 @@ extension BkmxBasis {
                     if let errorSugg = errorSugg {
                         userInfo[NSLocalizedRecoverySuggestionErrorKey] = errorSugg.trimmingCharacters(in: .whitespacesAndNewlines)
                     }
-                    error = NSError(domain:"BkmxAgentRunnerErrorDomain",
+                    let error = NSError(domain:"BkmxAgentRunnerErrorDomain",
                                     code: 283732,
                                     userInfo:userInfo)
-                    if let error = error {
-                        throw error
-                    }
+                    throw error
                 }
             }
+        case .failure(let error):
+            print("Error: \(error)")
         }
         
         return [
-            constKeyReturnValue: returnValue,
-            constKeyStatus: status,
-            constKeyLogText: logText
+            constKeyExitStatus: runnerExitStatus,
+            constKeyStatus: agentStatus,
+            constKeyLogText: runnerLogText
         ]
     }
     
@@ -167,9 +156,9 @@ extension BkmxBasis {
         if #available(macOS 13, *) {
             do {
                 let results = try self.kickBkmxAgent(kickType: .status)
-                let returnValue = Int32((results[constKeyReturnValue] as? Int) ?? Int(2))
-                if (returnValue == 0) {
-                    let status = Int32((results[constKeyStatus] as? Int) ?? Int(BkmxAgentStatusUnknown.rawValue))
+                let runnerExitStatus = (results[constKeyExitStatus] as? Int32) ?? Int32(2)
+                if (runnerExitStatus == EXIT_SUCCESS) {
+                    let status = (results[constKeyStatus] as? Int32) ?? Int32(BkmxAgentStatusUnknown.rawValue)
                     switch status {
                     case BkmxAgentStatusUnknown.rawValue:
                         return NSLocalizedString("Someting weent wrong.  The registration status of BkmxAgent could not be determined.",
@@ -226,6 +215,8 @@ extension BkmxBasis {
     func agentDisabledWarningText() -> String {
         return String(format:
                         NSLocalizedString("mustEnableAgentRunner", comment:"what it says"),
+                      self.appNameLocalized,
+                      self.appNameLocalized,
                       self.appNameLocalized,
                       self.appNameLocalized)
     }

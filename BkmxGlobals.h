@@ -81,8 +81,6 @@
 #define constBkmxErrorTimedOutGettingExidsFromClient 453973
 #define constBkmxErrorInUserNotificationAuthorization 927183
 #define constBkmxErrorCouldNotGetBundleInMain 293835
-#define constBkmxErrorCouldNotGetBundleInAgent 293836
-#define constBkmxErrorCouldNotGetBundleInUnknown 293837
 
 // Major Errors
 #define constBkmxErrorMajor 108000
@@ -731,7 +729,7 @@ extern NSString* const constSorryNullExtore  ; // Must match string in backgroun
 extern NSString* const constSorryNullProfile  ; // Must match string in background.html in Chrome Extension
 extern NSString* const constKeyLaunchBrowserPref ;
 extern NSString* const constKeyLogText;
-extern NSString* const constKeyReturnValue;
+extern NSString* const constKeyExitStatus;
 extern NSString* const constKeySeverity ;
 extern NSString* const constKeyStatus;
 extern NSString* const constKeySummary;

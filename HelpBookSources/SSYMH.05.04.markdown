@@ -8,7 +8,7 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
-## Version 3.1 (2024-04-30)
+## Version 3.1 (2024-05-28)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated methods for running our background agent (BkmxAgent) per recent Apple recommendations and deprecations.
 
@@ -21,6 +21,10 @@ Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  No longer misses if Chrome Sync is on, and therefore presents the expected warning about sync loops, when using Chrome 123 or later.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Improved part of the process of importing from and exporting to Safari, so that it will no longer hang and eventually fail with Error 772041 on some Macs.  (Now uses a system function instead of a unix tool to get the machine heardware UUID that is used for file locking.)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />   Replaced an old macOS system call which has become unreliable in macOS 14 (sometimes "just doesn't work") with a newer macOS system call that, in our testing, works every time.  This may affect many operations, including but not limited to: stopping old BkmxAgent processes after an upgrade of the app,  Show Syncing Status, document opening.  (Replaced NSTask with Swift's Process.)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  No longer migrates syncing configuration when upgrading from version 2.4.8 and earlier, which was 7 years ago.
 
 *   <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />   If user accidentally commands landing a new bookmark when a browser is the active application, but that browser has no brpwser window open, now opens our Dock or Status Item menu instead of displaying an error dialog.
 
@@ -35,6 +39,8 @@ Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now acknowledges and supports multiple profiles in the Vivaldi web browser.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated *drag and drop* code to remove methods which have been deprecated by Apple.
+
+<img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  No longer migrates syncing configuration when upgrading from version 2.4.8 and earlier, which was 7 years ago.
 
 ## Version 3.0.12 (2023-01-24)
 

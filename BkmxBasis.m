@@ -31,7 +31,6 @@
 #import "NSDate+NiceFormats.h"
 #import "NSManagedObjectContext+Cheats.h"
 #import "NSString+SSYExtraUtils.h"
-#import "SSYShellTasker.h"
 #import "SSYUuid.h"
 #import "BkmxDoc.h"
 #import "NSError+LowLevel.h"
@@ -2293,36 +2292,11 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
             if ([myMainAppName isEqualToString:targetAppName]) {
                 /* We are BkmxAgent, and the target app is our main app */
                 url = [[NSBundle mainAppBundle] bundleURL];
-                if (!url) {
-                    NSString* desc = [NSString stringWithFormat:
-                                      @"Agent failed get mainAppBundlefor %@ in %@",
-                                      name,
-                                      [self appNameForWhich1App:which1App]];
-                    NSError* error = SSYMakeError(constBkmxErrorCouldNotGetBundleInAgent, desc);
-                    error = [error errorByAddingIsOnlyInformational];
-                    error = [error errorByAddingUserInfoObject:myMainAppName
-                                                        forKey:@"main app name"];
-                    error = [error errorByAddingUserInfoObject:targetAppName
-                                                        forKey:@"target app name"];
-                    [[BkmxBasis sharedBasis] logError:error
-                                      markAsPresented:NO];
-                }
             } else {
                 /* This is expected when we are called by
                  -[BkmxBasis bundleIdentifierForLoginItemName:inWhich1App:error_p:]
                  in Agent.  Leave `url` as nil and return nil. */
             }
-        } else {
-            NSString* desc = [NSString stringWithFormat:
-                              @"??? failed get mainAppBundle for %@ in %@",
-                              name,
-                              [self appNameForWhich1App:which1App]];
-            NSError* error = SSYMakeError(constBkmxErrorCouldNotGetBundleInUnknown, desc);
-            error = [error errorByAddingIsOnlyInformational];
-            error = [error errorByAddingUserInfoObject:SSYDebugCaller()
-                                                forKey:@"caller"];
-            [[BkmxBasis sharedBasis] logError:error
-                              markAsPresented:NO];
         }
     }
     url = [url URLByAppendingPathComponent:@"Contents"];

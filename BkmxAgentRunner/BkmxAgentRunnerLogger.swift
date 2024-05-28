@@ -15,7 +15,7 @@ class BkmxAgentRunnerLogger {
          https://www.avanderlee.com/debugging/oslog-unified-logging/   */
         osLogger.debug("\(sds, privacy: .public)")
         
-        /* Also log to stdout, which main app has directed to ~/ApplicationSupport/BookMacster/BkmxAgentRunnerLog.txt */
+        /* Also print to stdout */
         print("\(sds)")
     }
 }

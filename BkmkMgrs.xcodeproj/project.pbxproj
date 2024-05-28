@@ -204,7 +204,6 @@
 		483FCB051C7A751B0084B35E /* ExtensionsVersionChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FCB001C7A751B0084B35E /* ExtensionsVersionChecker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483FCB061C7A751B0084B35E /* ExtensionsWinCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FCB021C7A751B0084B35E /* ExtensionsWinCon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483FFEBD1177F8C200596CDE /* NSInvocation+Nesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BA58B3115EF69000899CC6 /* NSInvocation+Nesting.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4842228F1419A3FA00D20DCF /* NSString+PerlGrep.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842228E1419A3FA00D20DCF /* NSString+PerlGrep.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		484293A611E94E9600AAC84D /* BkmxIgnoredPrefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 484293A511E94E9600AAC84D /* BkmxIgnoredPrefix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		484293AB11E94F6D00AAC84D /* SSYTransformStringsToIgnoredsArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 484293AA11E94F6D00AAC84D /* SSYTransformStringsToIgnoredsArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		484293C011E95B3300AAC84D /* PrefsWinCon+Autosaving.m in Sources */ = {isa = PBXBuildFile; fileRef = 484293BF11E95B3300AAC84D /* PrefsWinCon+Autosaving.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -505,7 +504,6 @@
 		487FFB88199C07DD00722DC9 /* NSBundle+MainApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25A7310326E1100D86524 /* NSBundle+MainApp.m */; };
 		487FFB89199C080400722DC9 /* NSBundle+SSYMotherApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4801540F18098DC200C0E8BC /* NSBundle+SSYMotherApp.m */; };
 		487FFB8A199C085100722DC9 /* SSYOtherApper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A460F05296200288DD2 /* SSYOtherApper.m */; };
-		487FFB8B199C0E9100722DC9 /* SSYShellTasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A4A0F05296200288DD2 /* SSYShellTasker.m */; };
 		487FFB8C199C0EAA00722DC9 /* SSYThreadPauser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886B4AE101A102800F9CDA1 /* SSYThreadPauser.m */; };
 		487FFB8D199C0EC000722DC9 /* SSYRunLoopTickler.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A6B0161066DB3F00AB026D /* SSYRunLoopTickler.m */; };
 		487FFB8E199C134400722DC9 /* NSInvocation+Quick.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD59C60F05296100288DD2 /* NSInvocation+Quick.m */; };
@@ -550,6 +548,7 @@
 		4886B4AF101A102800F9CDA1 /* SSYThreadPauser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886B4AE101A102800F9CDA1 /* SSYThreadPauser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4886BBE0101F2B8B00F9CDA1 /* SSYNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886BBDF101F2B8B00F9CDA1 /* SSYNull.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48872AA713FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 48872AA613FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48879B3A2BFE3D4100B0AA4A /* SSYTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48879B392BFE3D4000B0AA4A /* SSYTask.swift */; };
 		4887D14313AD091F0022C4C6 /* MouseClick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4887D14213AD091F0022C4C6 /* MouseClick.aiff */; };
 		4887D7B813B019AF0022C4C6 /* NSString+DomainName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887D7B713B019AF0022C4C6 /* NSString+DomainName.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4888ADE928347771003877DD /* BkmxDoc+Migrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888ADE828347771003877DD /* BkmxDoc+Migrate.swift */; };
@@ -919,7 +918,6 @@
 		48D1E7170F6C4027001BA354 /* SSYHintableWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A3A0F05296200288DD2 /* SSYHintableWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E7190F6C402C001BA354 /* SSYIOKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E7D8F0F4DAFE2001E6AC0 /* SSYIOKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E71A0F6C4032001BA354 /* SSYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E7D910F4DAFE2001E6AC0 /* SSYKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48D1E71B0F6C4035001BA354 /* SSYLaunchdGuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E200EA0F118D3200BC7687 /* SSYLaunchdGuy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E71C0F6C4054001BA354 /* SSYListPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4845D4C20F60AE8700FC46B8 /* SSYListPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E71E0F6C4057001BA354 /* SSYManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A400F05296200288DD2 /* SSYManagedObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E71F0F6C4059001BA354 /* SSYMOCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A420F05296200288DD2 /* SSYMOCManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -930,7 +928,6 @@
 		48D1E7240F6C4065001BA354 /* SSYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A480F05296200288DD2 /* SSYProgressView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E7250F6C4066001BA354 /* SSYRecurringDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DA6D7E0F33F965002660BA /* SSYRecurringDate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E7260F6C4067001BA354 /* SSYWeblocGuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E200F10F118E4E00BC7687 /* SSYWeblocGuy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48D1E7270F6C406B001BA354 /* SSYShellTasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A4A0F05296200288DD2 /* SSYShellTasker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E7280F6C406C001BA354 /* SSYSynchronousHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A4C0F05296200288DD2 /* SSYSynchronousHttp.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E72A0F6C406F001BA354 /* SSYTextCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5A4E0F05296200288DD2 /* SSYTextCodec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E72B0F6C4074001BA354 /* SSYTokenFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E827B0F4E62E0001E6AC0 /* SSYTokenFieldCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2054,8 +2051,6 @@
 		483FCB001C7A751B0084B35E /* ExtensionsVersionChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionsVersionChecker.m; sourceTree = "<group>"; };
 		483FCB011C7A751B0084B35E /* ExtensionsWinCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionsWinCon.h; sourceTree = "<group>"; };
 		483FCB021C7A751B0084B35E /* ExtensionsWinCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionsWinCon.m; sourceTree = "<group>"; };
-		4842228D1419A3FA00D20DCF /* NSString+PerlGrep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+PerlGrep.h"; path = "../../CategoriesObjC/NSString+PerlGrep.h"; sourceTree = SOURCE_ROOT; };
-		4842228E1419A3FA00D20DCF /* NSString+PerlGrep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+PerlGrep.m"; path = "../../CategoriesObjC/NSString+PerlGrep.m"; sourceTree = SOURCE_ROOT; };
 		484293A411E94E9600AAC84D /* BkmxIgnoredPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BkmxIgnoredPrefix.h; sourceTree = "<group>"; };
 		484293A511E94E9600AAC84D /* BkmxIgnoredPrefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BkmxIgnoredPrefix.m; sourceTree = "<group>"; };
 		484293A911E94F6D00AAC84D /* SSYTransformStringsToIgnoredsArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSYTransformStringsToIgnoredsArray.h; sourceTree = "<group>"; };
@@ -2396,6 +2391,7 @@
 		4886BBDF101F2B8B00F9CDA1 /* SSYNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYNull.m; path = ../../ClassesObjC/SSYNull.m; sourceTree = "<group>"; };
 		48872AA513FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+HttpRatesDisplay.h"; sourceTree = "<group>"; };
 		48872AA613FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+HttpRatesDisplay.m"; sourceTree = "<group>"; };
+		48879B392BFE3D4000B0AA4A /* SSYTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSYTask.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		4887D14213AD091F0022C4C6 /* MouseClick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = MouseClick.aiff; path = Resources/MouseClick.aiff; sourceTree = "<group>"; };
 		4887D7B613B019AF0022C4C6 /* NSString+DomainName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DomainName.h"; path = "../../CategoriesObjC/NSString+DomainName.h"; sourceTree = SOURCE_ROOT; };
 		4887D7B713B019AF0022C4C6 /* NSString+DomainName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DomainName.m"; path = "../../CategoriesObjC/NSString+DomainName.m"; sourceTree = SOURCE_ROOT; };
@@ -2882,8 +2878,6 @@
 		48E200DF0F118B9700BC7687 /* SSYUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYUserInfo.m; path = ../../ClassesObjC/SSYUserInfo.m; sourceTree = SOURCE_ROOT; };
 		48E200E10F118BD600BC7687 /* SSYUuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYUuid.h; path = ../../ClassesObjC/SSYUuid.h; sourceTree = SOURCE_ROOT; };
 		48E200E20F118BD600BC7687 /* SSYUuid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYUuid.m; path = ../../ClassesObjC/SSYUuid.m; sourceTree = SOURCE_ROOT; };
-		48E200E90F118D3200BC7687 /* SSYLaunchdGuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYLaunchdGuy.h; path = ../../ClassesObjC/SSYLaunchdGuy.h; sourceTree = SOURCE_ROOT; };
-		48E200EA0F118D3200BC7687 /* SSYLaunchdGuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYLaunchdGuy.m; path = ../../ClassesObjC/SSYLaunchdGuy.m; sourceTree = SOURCE_ROOT; };
 		48E200F00F118E4E00BC7687 /* SSYWeblocGuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYWeblocGuy.h; path = ../../ClassesObjC/SSYWeblocGuy.h; sourceTree = SOURCE_ROOT; };
 		48E200F10F118E4E00BC7687 /* SSYWeblocGuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYWeblocGuy.m; path = ../../ClassesObjC/SSYWeblocGuy.m; sourceTree = SOURCE_ROOT; };
 		48E201940F11A18F00BC7687 /* BkmxAppDel+Generics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BkmxAppDel+Generics.h"; sourceTree = "<group>"; };
@@ -3126,8 +3120,6 @@
 		48FD5A460F05296200288DD2 /* SSYOtherApper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYOtherApper.m; path = ../../ClassesObjC/SSYOtherApper.m; sourceTree = SOURCE_ROOT; };
 		48FD5A470F05296200288DD2 /* SSYProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYProgressView.h; path = ../../ClassesObjC/SSYProgressView.h; sourceTree = SOURCE_ROOT; };
 		48FD5A480F05296200288DD2 /* SSYProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYProgressView.m; path = ../../ClassesObjC/SSYProgressView.m; sourceTree = SOURCE_ROOT; };
-		48FD5A490F05296200288DD2 /* SSYShellTasker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYShellTasker.h; path = ../../ClassesObjC/SSYShellTasker.h; sourceTree = SOURCE_ROOT; };
-		48FD5A4A0F05296200288DD2 /* SSYShellTasker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYShellTasker.m; path = ../../ClassesObjC/SSYShellTasker.m; sourceTree = SOURCE_ROOT; };
 		48FD5A4B0F05296200288DD2 /* SSYSynchronousHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYSynchronousHttp.h; path = ../../ClassesObjC/SSYSynchronousHttp.h; sourceTree = SOURCE_ROOT; };
 		48FD5A4C0F05296200288DD2 /* SSYSynchronousHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYSynchronousHttp.m; path = ../../ClassesObjC/SSYSynchronousHttp.m; sourceTree = SOURCE_ROOT; };
 		48FD5A4D0F05296200288DD2 /* SSYTextCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYTextCodec.h; path = ../../ClassesObjC/SSYTextCodec.h; sourceTree = SOURCE_ROOT; };
@@ -4662,6 +4654,7 @@
 		48D96039264ABB9900169C11 /* Ex-Project Swift */ = {
 			isa = PBXGroup;
 			children = (
+				48879B392BFE3D4000B0AA4A /* SSYTask.swift */,
 				48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */,
 				48165002299AB13100F48DB2 /* NSWindow+SwiftUI.swift */,
 				48E66D2628795C10006B6252 /* OtherAppVersionGetter.swift */,
@@ -5066,8 +5059,6 @@
 				48FD59E20F05296100288DD2 /* NSString+MorePaths.m */,
 				486DE3171152E6D9008616A1 /* NSString+OAuth.h */,
 				486DE3181152E6D9008616A1 /* NSString+OAuth.m */,
-				4842228D1419A3FA00D20DCF /* NSString+PerlGrep.h */,
-				4842228E1419A3FA00D20DCF /* NSString+PerlGrep.m */,
 				4802A94B1034B04400AABE30 /* NSString+RangeDebug.h */,
 				4802A94C1034B04400AABE30 /* NSString+RangeDebug.m */,
 				48FD59E30F05296100288DD2 /* NSString+RSS.h */,
@@ -5234,8 +5225,6 @@
 				4868DC280F78225E00CBEC6B /* SSYLabelledTextField.m */,
 				489FA8F1154730DD0059E43D /* SSYLaunchdBasics.h */,
 				489FA8F2154730DD0059E43D /* SSYLaunchdBasics.m */,
-				48E200E90F118D3200BC7687 /* SSYLaunchdGuy.h */,
-				48E200EA0F118D3200BC7687 /* SSYLaunchdGuy.m */,
 				4899DE3D133BEB9500495E05 /* SSYLazyNotificationCenter.h */,
 				4899DE3E133BEB9500495E05 /* SSYLazyNotificationCenter.m */,
 				48CBA6E119A13DD600DB0921 /* SSYLineBox.h */,
@@ -5306,8 +5295,6 @@
 				48A67BAC14B92DF700F13578 /* SSYSemaphore.m */,
 				488655B411C2F96B00CF0EF8 /* SSYSheetEnder.h */,
 				488655B511C2F96B00CF0EF8 /* SSYSheetEnder.m */,
-				48FD5A490F05296200288DD2 /* SSYShellTasker.h */,
-				48FD5A4A0F05296200288DD2 /* SSYShellTasker.m */,
 				48B3D5EA1449B02B00556C9F /* SSYShortcutActuator.h */,
 				48B3D5EB1449B02B00556C9F /* SSYShortcutActuator.m */,
 				48B3D56214485F9400556C9F /* SSYShortcutBackEnd.h */,
@@ -7161,7 +7148,6 @@
 				487FFB8E199C134400722DC9 /* NSInvocation+Quick.m in Sources */,
 				487FFB8D199C0EC000722DC9 /* SSYRunLoopTickler.m in Sources */,
 				487FFB8C199C0EAA00722DC9 /* SSYThreadPauser.m in Sources */,
-				487FFB8B199C0E9100722DC9 /* SSYShellTasker.m in Sources */,
 				487FFB8A199C085100722DC9 /* SSYOtherApper.m in Sources */,
 				487FFB89199C080400722DC9 /* NSBundle+SSYMotherApp.m in Sources */,
 				487FFB88199C07DD00722DC9 /* NSBundle+MainApp.m in Sources */,
@@ -7389,7 +7375,6 @@
 				48D1E7190F6C402C001BA354 /* SSYIOKit.m in Sources */,
 				486A02292BDF02C00028561E /* NSRunningApplication+WaitFor.swift in Sources */,
 				48D1E71A0F6C4032001BA354 /* SSYKeychain.m in Sources */,
-				48D1E71B0F6C4035001BA354 /* SSYLaunchdGuy.m in Sources */,
 				48D1E71C0F6C4054001BA354 /* SSYListPicker.m in Sources */,
 				48D1E71E0F6C4057001BA354 /* SSYManagedObject.m in Sources */,
 				48D1E71F0F6C4059001BA354 /* SSYMOCManager.m in Sources */,
@@ -7403,7 +7388,6 @@
 				48D1E7260F6C4067001BA354 /* SSYWeblocGuy.m in Sources */,
 				48997CB028ADAE09003E2D50 /* TrashDocSupportDataView.swift in Sources */,
 				484EB4992019258500B13702 /* BSManagedDocument+SSYAuxiliaryData.m in Sources */,
-				48D1E7270F6C406B001BA354 /* SSYShellTasker.m in Sources */,
 				48D1E7280F6C406C001BA354 /* SSYSynchronousHttp.m in Sources */,
 				48D1E72A0F6C406F001BA354 /* SSYTextCodec.m in Sources */,
 				48D1E72B0F6C4074001BA354 /* SSYTokenFieldCell.m in Sources */,
@@ -7812,7 +7796,6 @@
 				48D31E3B206A87C600CCDA2F /* HtmlEncoder.m in Sources */,
 				48872AA713FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m in Sources */,
 				483AC186140944A600E9C424 /* SSYDictionaryDebugger.m in Sources */,
-				4842228F1419A3FA00D20DCF /* NSString+PerlGrep.m in Sources */,
 				483416F51443A26B00FD0BA1 /* SSYMiniProgressWindow.m in Sources */,
 				48E68CBD184D5867005464D7 /* SyncStatusTextField.m in Sources */,
 				48B3D56414485F9400556C9F /* SSYShortcutBackEnd.m in Sources */,
@@ -7894,6 +7877,7 @@
 				48257EBE17A87E9F00956961 /* SSYExtrospectiveViewController.m in Sources */,
 				48770A5F17ABF51B0028CB09 /* BkmxDocViewController.m in Sources */,
 				48C120BF17AECC9800D63787 /* SSYContentLazyView.m in Sources */,
+				48879B3A2BFE3D4100B0AA4A /* SSYTask.swift in Sources */,
 				48C120CB17AECCAE00D63787 /* SSYSettingsLazyView.m in Sources */,
 				481BF3E617EFB2AE008B4830 /* SSYWindowHangout.m in Sources */,
 				48C120D017AECCBD00D63787 /* SSYReportsLazyView.m in Sources */,

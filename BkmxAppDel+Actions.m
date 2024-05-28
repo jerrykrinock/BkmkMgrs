@@ -32,7 +32,6 @@
 #import "SSYTroubleZipper.h"
 #import "ExtensionsWinCon.h"
 #import "Uninstaller.h"
-#import "SSYLaunchdGuy.h"
 #import "SSYAppInfo.h"
 #import "SUUpdater.h"
 #import "NSUserDefaults+MainApp.h"

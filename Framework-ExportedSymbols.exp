@@ -90,10 +90,8 @@ _SSYDebugBacktraceDepth
 .objc_class_name_Extore
 .objc_class_name_SSYInterappClient
 .objc_class_name_SSYInterappServer
-.objc_class_name_SSYLaunchdGuy
 .objc_class_name_SSYOtherApper
 .objc_class_name_SSYRunLoopTickler
-.objc_class_name_SSYShellTasker
 .objc_class_name_SSYSystemUptimer
 .objc_class_name_SSYUserInfo
 .objc_class_name_Stager

@@ -10,7 +10,6 @@
 #import "NSManagedObject+Debug.h"
 #import "Macster.h"
 #import "NSDictionary+SimpleMutations.h"
-#import "SSYLaunchdGuy.h"
 #import "NSError+InfoAccess.h"
 #import "SSYUuid.h"
 #import "NSUserDefaults+KeyPaths.h"

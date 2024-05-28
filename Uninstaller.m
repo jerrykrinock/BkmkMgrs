@@ -2,7 +2,6 @@
 #import "NSFileManager+SomeMore.h"
 #import "NSString+MorePaths.h"
 #import "ExtensionsMule.h"
-#import "SSYLaunchdGuy.h"
 #import "SSYAlert.h"
 #import "BkmxBasis+Strings.h"
 #import "BkmxDoc.h"
@@ -15,13 +14,13 @@
 #import "SSYAppInfo.h"
 #import "SSYMH.AppAnchors.h"
 #import "NSBundle+SSYMotherApp.h"
-#import "SSYShellTasker.h"
 #import "NSString+SSYDotSuffix.h"
 #import "SSYLabelledList.h"
 #import "NSArray+SSYMutations.h"
 #import "SSYCachyAliasResolver.h"
 #import "SSYAlert.h"
 #import "Chromessengerer.h"
+#import <Bkmxwork/Bkmxwork-Swift.h>
 
 @interface Uninstaller ()
 
@@ -120,14 +119,11 @@
                      @"delete",
                      [[NSBundle mainBundle] bundleIdentifier],
                      nil] ;
-    [SSYShellTasker doShellTaskCommand:command
-                             arguments:args
-                           inDirectory:nil
-                             stdinData:nil
-                          stdoutData_p:NULL
-                          stderrData_p:NULL
-                               timeout:0.0  // return immediately
-                               error_p:NULL] ;
+    [SSYTask run:[NSURL fileURLWithPath:command]
+       arguments:args
+     inDirectory:nil
+        stdinput:nil
+         timeout:0.0];
     
     sleep((unsigned int)finalDelay) ;
 

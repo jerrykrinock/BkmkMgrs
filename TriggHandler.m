@@ -22,7 +22,6 @@
 #import "NSError+LowLevel.h"
 #import "NSString+TimeIntervals.h"
 #import "NSObject+MoreDescriptions.h"
-#import "SSYLaunchdGuy.h"
 #import "Extore.h"
 #import "NSFileManager+SomeMore.h"
 #import "Stager.h"
@@ -435,12 +434,6 @@ NSString* constStringSpaceQuitSuffix = @" quit";
                         NSArray* someChanges = [NSArray arrayWithJSONString:jsonString
                                                                  accurately:NO];
                         for (NSDictionary* aChange in someChanges) {
-                            // The keys and values in aChange come from the
-                            // notification received from the Firefox
-                            // API into SSYC_observeBookmarksChange() in
-                            // SSYFirefoxCTypes.m.  This is the only place I
-                            // read them.  Therefore I don't have any constants
-                            // for the keys or common values.
                             NSString* property = [aChange valueForKey:@"property"];
                             NSString* changeType = [aChange valueForKey:@"changeType"];
                             if (property) {

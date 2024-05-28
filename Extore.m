@@ -39,7 +39,6 @@
 #import "NSUserDefaults+Bkmx.h"
 #import "NSFileManager+TempFile.h"
 #import "SSYInterappClient.h"
-#import "SSYShellTasker.h"
 #import "Stange.h"
 #import "SSYInterappServer.h"
 #import "OperationExport.h"
@@ -1736,15 +1735,14 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
                                                              error:&error] ;
         if (ok) {
             if ([self emptyExtoreResourceFilenameAfterUnzipping] != nil) {
-                NSInteger result = [SSYShellTasker doShellTaskCommand:@"/usr/bin/unzip"
-                                                            arguments:[NSArray arrayWithObjects:@"-o", @"-d", destinDirectory, sourcePath, nil]
-                                                          inDirectory:nil
-                                                            stdinData:nil
-                                                         stdoutData_p:NULL
-                                                         stderrData_p:NULL
-                                                              timeout:5.0
-                                                              error_p:&error] ;
-                ok = (result == 0) ;
+                NSDictionary* programResults = [SSYTask run:[NSURL fileURLWithPath:@"/usr/bin/unzip"]
+                                                  arguments:[NSArray arrayWithObjects:@"-o", @"-d", destinDirectory, sourcePath, nil]
+                                                inDirectory:nil
+                                                   stdinput:nil
+                                                    timeout:5.0];
+                NSInteger exitStatus = [[programResults objectForKey:SSYTask.exitStatusKey] integerValue];
+                NSError* error = [programResults objectForKey:SSYTask.errorKey];
+                ok = (exitStatus == EXIT_SUCCESS);
                 if (ok) {
                     /* The unzipped file is now in the Firefox profile directory,
                      however it is still named ExtoreFirefox.  We need to change
@@ -1792,27 +1790,24 @@ end:;
  @brief    Troubleshooting method added in BookMacster 1.10 for user Carol Kino
 */
 - (NSString*)listPath:(NSString*)path {
-	NSString* command = @"/bin/ls" ;
-	NSArray* arguments = [NSArray arrayWithObjects:
-						  @"-alww",
-						  path,
-						  nil] ;
+    NSArray* args = [NSArray arrayWithObjects:
+                     @"-alww",
+                     path,
+                     nil] ;
 	NSError* error = nil ;
-	NSData* stdoutData = nil ;
-	NSInteger result = [SSYShellTasker doShellTaskCommand:command
-												arguments:arguments
-											  inDirectory:nil
-												stdinData:nil
-											 stdoutData_p:&stdoutData
-											 stderrData_p:NULL
-												  timeout:5.0
-												  error_p:&error] ;
+    NSDictionary* programResults = [SSYTask run:[NSURL fileURLWithPath:@"/bin/ls"]
+                                      arguments:args
+                                    inDirectory:nil
+                                       stdinput:nil
+                                        timeout:5.0];
+    NSInteger exitStatus = [[programResults objectForKey:SSYTask.exitStatusKey] integerValue];
+    NSData* stdoutData = [programResults objectForKey:SSYTask.stdoutKey];
 	NSString* stdoutString = [[NSString alloc] initWithData:stdoutData
 												   encoding:NSUTF8StringEncoding] ;
 	NSString* answer = [NSString stringWithFormat:
-						@"ls for path:\n%@\nexit status=%ld  stdout:\n%@\nerror: %@",
+						@"ls for path:\n%@\nexit exitStatus=%ld  stdout:\n%@\nerror: %@",
 						path,
-						(long)result,
+						(long)exitStatus,
 						stdoutString,
 						error] ;
 
@@ -4176,6 +4171,8 @@ end:;
 
     pid_t pidOfOwnerApp = [self pidOfOwnerApp] ;
     NSInteger secondsOwnerAppHasBeenRunning = [SSYOtherApper secondsRunningPid:pidOfOwnerApp] ;
+    /*SSYDBL*/ NSLog(@"Owner app has been running %ld seconds", secondsOwnerAppHasBeenRunning);
+
     NSInteger delayNeeded = 0 ;
     if (secondsOwnerAppHasBeenRunning == -1) {
         /* The owner app is not running yet, or maybe it was quit since we

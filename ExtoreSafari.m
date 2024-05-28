@@ -20,7 +20,6 @@
 #import "Stange.h"
 #import "Chaker.h"
 #import "NSBundle+HelperPaths.h"
-#import "SSYShellTasker.h"
 #import "SafariSyncGuardian.h"
 #import "NSObject+MoreDescriptions.h"
 #import "SSYProgressView.h"
@@ -2520,19 +2519,18 @@ end:
 
         NSString* helperName = [[[BkmxBasis sharedBasis] appFamilyName] stringByAppendingString:@"-Thomas"] ;
         NSString* path = [[NSBundle mainAppBundle] pathForHelper:helperName] ;
-        NSArray* arguments = [NSArray arrayWithObjects:
-                              @"com.apple.safaridavclient.push",
-                              [NSString stringWithFormat:@"%ld", (long)timeoutSeconds],
-                              nil] ;
-        NSInteger result = [SSYShellTasker doShellTaskCommand:path
-                                                    arguments:arguments
-                                                  inDirectory:nil
-                                                    stdinData:nil
-                                                 stdoutData_p:NULL
-                                                 stderrData_p:NULL
-                                                      timeout:0.0 // return immediately, don't want for SafariDAVClient
-                                                      error_p:&error] ;
-        ok = (result == 0) ;
+        NSArray* args = [NSArray arrayWithObjects:
+                         @"com.apple.safaridavclient.push",
+                         [NSString stringWithFormat:@"%ld", (long)timeoutSeconds],
+                         nil] ;
+        NSDictionary* programResults = [SSYTask run:[NSURL fileURLWithPath:path]
+                                          arguments:args
+                                        inDirectory:nil
+                                           stdinput:nil
+                                            timeout:0.0];
+        NSInteger exitStatus = [[programResults objectForKey:SSYTask.exitStatusKey] integerValue];
+        NSError* error = [programResults objectForKey:SSYTask.errorKey];
+        ok = (exitStatus == 0) ;
 
         if (ok) {
             [[NSUserDefaults standardUserDefaults] setAndSyncMainAppValue:[NSDate date]

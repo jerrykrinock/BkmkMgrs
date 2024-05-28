@@ -3,11 +3,10 @@ import ServiceManagement
 import Cocoa
 
 // " Result Tuplet"
-typealias Retult = (returnValue: Int, status: BkmxAgentStatus, errorDesc: String?, errorSugg: String?)
+typealias KickResult = (agentStatus: BkmxAgentStatus, errorDesc: String?, errorSugg: String?)
 
 class BkmxAgentRunner {
-    func kick(_ bundleIdentifier: String, whatDo: KickType) -> Retult{
-        var ok = false
+    func kick(_ bundleIdentifier: String, whatDo: KickType) -> KickResult{
         var errorDesc: String? = nil
         var errorSugg: String? = nil
         
@@ -29,6 +28,7 @@ class BkmxAgentRunner {
         agentRunnerLogger.log("Will \(whatDoing) \(bundleIdentifier)")
         
         let timeout = 3.0
+        var ok: Bool
         switch (whatDo) {
         case .start:
             self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
@@ -63,27 +63,25 @@ class BkmxAgentRunner {
             errorDesc = "Unknown KickType"
         }
 
-        let returnValue = (ok == true) ? 0 : 1
-        let status = self.getStatus(bundleIdentifier)
-        let retult: Retult = (returnValue, status, errorDesc, errorSugg)
+        let agentStatus = self.getAgentStatus(bundleIdentifier)
 
-        return retult
+        return (agentStatus, errorDesc, errorSugg)
     }
     
     
-    fileprivate func getStatus(_ bundleIdentifier: String) -> BkmxAgentStatus {
+    fileprivate func getAgentStatus(_ bundleIdentifier: String) -> BkmxAgentStatus {
         if #available(macOS 13.0, *) {
             let service = SMAppService.loginItem(identifier: bundleIdentifier)
-            let statusAsInt = service.status.rawValue
+            let agentStatusAsInt = service.status.rawValue
             /* Note that if the service is disallowed in System Settings >
              Login Items AND the service is not registered, the above system
              call will ignore the Login Items setting and return .notRegistered.
              Therefore, you cannot get the Login Item switch status of a service
              unless it is registered or trying to be registered. */
-            agentRunnerLogger.log("Got SMAppService status: \(statusAsInt)")
-            let status = BkmxAgentRunner.bkmxAgentStatus(smStatus: statusAsInt)
-            agentRunnerLogger.log("Translated to BkmxAgentStatus: \(status.rawValue) = \(self.humanReadableBkmxAgentStatus(status))")
-            return status
+            agentRunnerLogger.log("Got SMAppService status: \(agentStatusAsInt)")
+            let agentStatus = BkmxAgentRunner.bkmxAgentStatus(smStatus: agentStatusAsInt)
+            agentRunnerLogger.log("Translated to BkmxAgentStatus: \(agentStatus.rawValue) = \(self.humanReadableBkmxAgentStatus(agentStatus))")
+            return agentStatus
         } else {
             // Fallback on earlier versions
             return BkmxAgentStatusNotAvailableDueToMacOS12OrEarlier

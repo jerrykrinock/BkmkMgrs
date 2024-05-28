@@ -2,9 +2,8 @@
 
 
 /*!
- @brief    Class used in Chromessenger, and in the
- JS-CTypes for Firefox, for coalescing bookmarks change
- notifications into lazy intervals, and writing the file which is detected by launchd.
+ @brief    Class used in Chromessenger for coalescing bookmarks change
+ notifications into lazy intervals
  
  @details  First I thought that writing a file to be detected by launchd was kind
  of cheesy, but then I decided that it was actually a good idea because

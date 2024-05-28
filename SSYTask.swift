@@ -3,7 +3,8 @@ import Foundation
 /**
     A class for running external command-line programs
  */
-class SSYTask {
+@objc
+class SSYTask : NSObject {
     static let errorDomain = "SSYTaskErrorDomain"
     
     struct ProgramResult {
@@ -26,7 +27,7 @@ class SSYTask {
      
      If you so use this function asynchronously, you get the program
      result as the parameters passed to your completion handler.
-
+     
      Credit: This function started with code written by Quinn "The Eskimo":
      https://developer.apple.com/forums/thread/690310
      I've added parameters, and also the process-launching code runs in a
@@ -40,16 +41,18 @@ class SSYTask {
      - parameter stdin : The stdin data to pass to the program
      - parameter timeout : Time interval after which the program will be terminated if it is not yet finished.  Pass nil to allow infinite time.
      - parameter wait :  If true, will block execution in the current thread until the program terminates or exceeds the given timeout.
-     - parameter completionHandler : An optional closure to run after the program terminates, to which is passed the Result of executing or
-     attempting to execute the program.  Note that this will be Result.failure only if the program fails to
-     start or fails to exit, for example if you pass a nonexistent `command` or the program running time
-     exceeds the `timeout` you passed in.  If the program runs and terminates with a nonzero exit code,
-     that will produce a Result.success.  Thus, in many cases you will want to first verify that you
-     have `Result.success` and then checking its enclosed `ProgramResult.exitStatus`.
+     - parameter completionHandler : An optional closure to run after the
+     program terminates, to which is passed the Result of executing or
+     attempting to execute the program.
+     
+     If the program (a) fails to start, or (b) fails to exit on its own, this Result will be a Result.failure.  An example of (a)) is if you pass a nonexistent `command`.  An example of (b) is if the program has not yet returned when  the `timeout` you passed in expires.  Note that if the program runs and terminates with a nonzero exit code, that will produce a Result.success.  Thus, if you are expecting EXIT\_SUCCESS from the program, you should first verify that you have `Result.success`, and then check its enclosed `ProgramResult.exitStatus`.
+     
+     If either the stdout or stderr from the program are 0 bytes, the corresponding value in the ProgramResult your completion handler receives will be nil. This function will not return an empty Data object.
+     
      (Note that an optional closure like this must be escaping, since the closure is stored inside the Optional.some case.  See https://forums.swift.org/t/allowing-escaping-for-optional-closures-in-method-signature/27556/2)
-     - returns: if `wait` is true, returns a Result as described above to the `completionHandler.
-     Otherwise, returns a Result.failure.  If you pass `wait` = true and also a `completionHandler`,
-     this return value will be equal to the ProgramResult passed to the completion handler.
+     - returns: If you passed in wait = true, the ProgramResult returned will be equal to the ProgramResult described above which his passed to the completionHandler. So, ditto that preceding documentation here.
+     
+     If you passed in wait = false, and the program starts succesfully, returns a Result.success with the encclosed exitStatus = EXIT\_SUCCESS.  Only if the program fails to start will you get a Result.failure.
      - requires: Swift
      */
     @discardableResult
@@ -95,15 +98,16 @@ class SSYTask {
                 group.leave()
             }
         }
-
+        
         /* Define the .notify block, which runs after the external task is
          complete, and std out and stderr have been received.  */
         group.notify(queue: queue) {
             if let completionHandler = completionHandler {
-                completionHandler(Self.runResult(
+                completionHandler(Self.encodeResult(
                     proc: proc,
                     stdout: stdout,
                     stderr: stderr,
+                    wait:wait,
                     error: errorQ))
             }
             semaphore?.signal()
@@ -132,7 +136,9 @@ class SSYTask {
                 writeIO.write(offset: 0, data: inputDD, queue: queue) { isDone, _, error in
                     if isDone || error != 0 {
                         writeIO.close()
-                        if errorQ == nil && error != 0 { errorQ = posixErr(error) }
+                        if errorQ == nil && error != 0 {
+                            errorQ = posixErr(error)
+                        }
                         group.leave()
                     }
                 }
@@ -157,7 +163,9 @@ class SSYTask {
                     stdout.append(contentsOf: chunk ?? .empty)
                     if isDone || error != 0 {
                         readStdout.close()
-                        if errorQ == nil && error != 0 { errorQ = posixErr(error) }
+                        if errorQ == nil && error != 0 {
+                            errorQ = posixErr(error)
+                        }
                         group.leave()
                     }
                 }
@@ -178,7 +186,9 @@ class SSYTask {
                     stderr.append(contentsOf: chunk ?? .empty)
                     if isDone || error != 0 {
                         readStderr.close()
-                        if errorQ == nil && error != 0 { errorQ = posixErr(error) }
+                        if errorQ == nil && error != 0 {
+                            errorQ = posixErr(error)
+                        }
                         group.leave()
                     }
                 }
@@ -209,27 +219,18 @@ class SSYTask {
             proc.terminationHandler!(proc)
         }
         
-        if (wait) {
-            return Self.runResult(proc: proc, stdout:stdout, stderr: stderr, error: errorQ)
-        } else {
-            var result: Result<ProgramResult, Error>
-            result = .failure(NSError(domain: Self.errorDomain,
-                                      code: 287594,
-                                      userInfo: [
-                                        NSLocalizedDescriptionKey: NSLocalizedString("No results because you did not wait", comment: "what it says")
-                                      ]))
-            return result
-        }
+        return Self.encodeResult(proc: proc, stdout:stdout, stderr: stderr, wait:wait, error: errorQ)
     }
     
-    private class func runResult(proc: Process?,
-                                 stdout: Data?,
-                                 stderr: Data?,
-                                 error: Error?) -> Result<ProgramResult, Error> {
+    private class func encodeResult(proc: Process,
+                                    stdout: Data?,
+                                    stderr: Data?,
+                                    wait: Bool,
+                                    error: Error?) -> Result<ProgramResult, Error> {
         var result: Result<ProgramResult, Error>
         if let underlyingError = error {
-            let programPath = proc?.executableURL?.absoluteString ?? "<NO-PROGRAM-PATH>"
-            let programName = proc?.executableURL?.lastPathComponent ?? "<NO-PROGRAM-NAME>"
+            let programPath = proc.executableURL?.absoluteString ?? "<NO-PROGRAM-PATH>"
+            let programName = proc.executableURL?.lastPathComponent ?? "<NO-PROGRAM-NAME>"
             let errorDescription = String(format:
                                             "%s `%s`",
                                           NSLocalizedString(
@@ -245,15 +246,79 @@ class SSYTask {
             )
             result = .failure(error)
         } else {
+            var exitStatus: Int32
+            if (proc.isRunning) {
+                if (wait == false) {
+                    exitStatus = EXIT_SUCCESS
+                } else {
+                    exitStatus = -1
+                }
+            } else {
+                exitStatus = proc.terminationStatus
+            }
             let programResult: ProgramResult = ProgramResult(
-                exitStatus: proc?.terminationStatus ?? -979797,
-                stdout: stdout,
-                stderr: stderr
+                exitStatus: exitStatus,
+                stdout: (stdout?.count ?? 0 > 0) ? stdout : nil,
+                stderr: (stderr?.count ?? 0 > 0) ? stderr : nil
             )
             result = .success(programResult)
         }
         
         return result
+    }
+    
+    @objc static var exitStatusKey = "exitStatus"
+    @objc static var stdoutKey = "stdout"
+    @objc static var stderrKey = "stderr"
+    @objc static var errorKey = "error"
+    
+    /**
+     An Objective-C friendly wrapper around the function
+     class SSYTask.run(_:arguments:inDirectory:stdin:timeout:wait:completionHandler:)
+    
+     - parameter command : The program to run, a file URL
+     - parameter arguments : The arguments to pass to the program
+     - parameter inDirectory : The "current directory" to run the program in
+     - parameter stdin : The stdin data to pass to the program
+     - parameter timeout : Time interval after which the program will be terminated if it is not yet finished and this function will return.  Pass 0.0 to return immediately and let the program run its course.
+     - returns: A dictionary.  If success (as defined in the documentation of
+     
+     class SSYTask.run(\_:arguments:inDirectory:stdin:timeout:wait:completionHandler:),
+     
+     this dictionary contains values for keys SSYTaskExitStatusKey, SSYTaskStdoutKey
+     and SSYTaskStderrKey if these are not nil.  If failure, contains value for SSYTaskErrorKey.
+     */
+
+    @objc
+    @discardableResult
+    class func run(_ command: URL,
+                   arguments: [String]? = [],
+                   inDirectory: URL? = nil,
+                   stdinput: Data? = nil,
+                   timeout: TimeInterval) -> Dictionary<String, Any> {
+        let result = Self.run(command,
+                              arguments: arguments,
+                              inDirectory: inDirectory,
+                              stdin: stdinput,
+                              timeout: timeout,
+                          wait: (timeout != 0.0),
+                              completionHandler: nil)
+
+        var returnDic: Dictionary<String, Any> = [:]
+        switch result {
+        case .success(let programResult):
+            returnDic[exitStatusKey] = programResult.exitStatus
+            if let stdout = programResult.stdout {
+                returnDic[stdoutKey] = stdout
+            }
+            if let stderr = programResult.stderr {
+                returnDic[stderrKey] = stderr
+            }
+        case .failure(let error):
+            returnDic[errorKey] = error
+        }
+
+        return returnDic
     }
 }
 

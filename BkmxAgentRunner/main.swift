@@ -11,20 +11,25 @@ do {
         agentRunnerLogger.log("Our BkmxAgent is: \(agentBundleIdentifier)")
         let commandLiner = try BkmxAgentRunnerCommandLiner.parse()
         let whatDo = try commandLiner.getArgs()
-        let retult = BkmxAgentRunner().kick(agentBundleIdentifier, whatDo: whatDo)
+        
+        let kickResult = BkmxAgentRunner().kick(agentBundleIdentifier, whatDo: whatDo)
+        
         agentRunnerLogger.log("TERMINATING-AT: \(NSDate())\n")
-        agentRunnerLogger.log("BkAgRnRsltRETVAL: \(retult.returnValue)\n")
-        agentRunnerLogger.log("BkAgRnRsltSTATUS: \(retult.status.rawValue)\n")
-        if let errorDesc = retult.errorDesc {
+        agentRunnerLogger.log("BkAgRnRsltSTATUS: \(kickResult.agentStatus.rawValue)\n")
+        var exitStatus = EXIT_SUCCESS
+        if let errorDesc = kickResult.errorDesc {
+            exitStatus = EXIT_FAILURE
             agentRunnerLogger.log("BkAgRnRsltERRDESC: \(errorDesc)\n")
         }
-        if let errorSugg = retult.errorSugg {
+        if let errorSugg = kickResult.errorSugg {
             agentRunnerLogger.log("BkAgRnRsltERRSUGG: \(errorSugg)\n")
         }
-        exit(0)
+        exit(exitStatus)
     } else {
         agentRunnerLogger.log("Failed: BkmxAgent or its bundle identifier was not found in Contents/Library/LoginItems\n")
+        exit(EXIT_FAILURE)
     }
 } catch {
     agentRunnerLogger.log("Error running BkmxAgentRunner: \(String(describing: error))")
+    exit(EXIT_FAILURE)
 }

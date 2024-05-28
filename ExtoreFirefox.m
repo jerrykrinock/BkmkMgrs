@@ -32,7 +32,6 @@
 #import "SSYUuid.h"
 #import "NSFileManager+SomeMore.h"
 #import "ConstsFromJavaScript.h"
-#import "SSYShellTasker.h"
 #import "NSObject+DoNil.h"
 #import "NSString+VarArgs.h"
 #import "SSYSystemDescriber.h"
@@ -4263,8 +4262,8 @@ endWithoutSettingError:
 - (NSInteger)launchFirefoxAtPath:(id)path
                      profilePath:(NSString*)profilePath
                          error_p:(NSError**)error_p {
-    NSInteger result ;
     NSError* error = nil ;
+    NSInteger exitStatus = EXIT_FAILURE;
     
     if ([path respondsToSelector:@selector(stringByAppendingPathComponent:)]) {
         path = [path stringByAppendingPathComponent:@"Contents"] ;
@@ -4288,27 +4287,27 @@ endWithoutSettingError:
         }
 
         if (exists && !isDirectory) {
-            NSArray* arguments = [NSArray arrayWithObjects:
-                                  @"-profile", profilePath,
-                                  nil] ;
-            result = [SSYShellTasker doShellTaskCommand:path
-                                              arguments:arguments
+            NSArray* args = [NSArray arrayWithObjects:
+                             @"-profile", profilePath,
+                             nil] ;
+            NSDictionary* programResults = [SSYTask run:[NSURL fileURLWithPath:path]
+                                              arguments:args
                                             inDirectory:nil
-                                              stdinData:nil
-                                           stdoutData_p:NULL
-                                           stderrData_p:NULL
-                                                timeout:0.0 // Don't wait
-                                                error_p:&error] ;
-            if (result != 0) {
+                                               stdinput:nil
+                                                timeout:0.0];
+            exitStatus = [[programResults objectForKey:SSYTask.exitStatusKey] integerValue];
+            error = [programResults objectForKey:SSYTask.errorKey];
+
+            if (exitStatus != EXIT_SUCCESS) {
                 error = [SSYMakeError(524000, @"Error launching Firefox") errorByAddingUnderlyingError:error] ;
-                error = [error errorByAddingUserInfoObject:[NSNumber numberWithInteger:result]
+                error = [error errorByAddingUserInfoObject:[NSNumber numberWithInteger:exitStatus]
                                                     forKey:@"Task exit status"] ;
-                error = [error errorByAddingUserInfoObject:arguments
+                error = [error errorByAddingUserInfoObject:args
                                                     forKey:@"Arguments"] ;
             }
         }
         else {
-            result = 524001 ;
+            exitStatus = 524001 ;
             error = SSYMakeError(524001, @"Expected Firefox executable does not exist") ;
             error = [error errorByAddingUserInfoObject:path
                                                 forKey:@"Expected Exe Path"] ;
@@ -4319,7 +4318,7 @@ endWithoutSettingError:
         }
     }
     else {
-        result = 524002 ;
+        exitStatus = 524002 ;
         error = SSYMakeError(524002, @"No path") ;
     }
     
@@ -4329,7 +4328,7 @@ endWithoutSettingError:
         *error_p = error ;
     }
     
-    return result ;
+    return exitStatus ;
 }
 
 #define FIREFOX_LAUNCH_TIMEOUT 8.0

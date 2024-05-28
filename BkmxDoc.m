@@ -40,7 +40,6 @@
 #import "NSUserDefaults+KeyPaths.h"
 #import "NSString+BkmxURLHelp.h"
 #import "SSYLaunchdBasics.h"
-#import "SSYLaunchdGuy.h"
 #import "SSYLicenseBuyController.h"
 #import "SSYLicensor.h"
 #import "SSYVersionTriplet+BkmxLegacyEffectivness.h"

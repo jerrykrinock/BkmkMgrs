@@ -1,6 +1,5 @@
 #import "ExtensionDetectionTester.h"
 #import "Extore.h"
-#import "SSYLaunchdGuy.h"
 #import "SSYPathObserver.h"
 #import "Trigger.h"
 #import "NSBundle+MainApp.h"

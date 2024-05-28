@@ -2873,7 +2873,7 @@
 "mustBeAtLeast%0Chars" = "Must be at least %0 characters." ;
 
 /* What is says! */
-"mustEnableAgentRunner" = "ATTENTION: %@ is disabled in main menu:  > System Settings > Login Items, and is therefore not able to run BkmxAgent.  For syncing to work, you must visit there and switch %@ ON." ;
+"mustEnableAgentRunner" = "ATTENTION: %@ is disabled in main menu:  > System Settings > Login Items, and is therefore not able to run BkmxAgent.  For syncing to work, you must visit there and switch %@ ON.  If you see that it is on, you should click it once to turn it OFF, and then as quickly as you can, click it again to turn it back ON.  (There is a bug, discovered in macOS 14, which causes this button to turn itself back ON after it is turned OFF, but it is a false indication.)  After you have so turned it ON, activate %@, click in the main menu > %@ > Show Syncing Status and verify that WE say it is ON.  Do not trust what Apple shows you in System Settings." ;
 
 /* What is says! */
 "maybeEnableAgentRunner" = "The problem appears to be that %@ is disabled in main menu:  > System Settings > Login Items.  To fix it, visit there and switch %@ ON." ;
