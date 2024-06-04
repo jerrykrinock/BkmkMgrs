@@ -112,7 +112,7 @@ No need to quote anything since values are delimited by end of line or backslash
     # Path to a shell script, relative to Home, which signs the zip package for Sparkle, which must take two command-line parameters: (1) the zip to be signed (2) path to the private key .pem file
                    zipSignerPath  Documents/Programming/Projects/Sparkle/bin/old_dsa_scripts/sign_update
     # Path to the Sparkle generate_appcast tool
-    appcastGeneratorPathFromHome  Library/Developer/Xcode/DerivedData/Sparkle-dwqopuvqccscpahawjdgenyclvfe/Build/Products/Debug/generate_appcast
+    appcastGeneratorPathFromHome  bin/generate_appcast
     # Path to a private key file (.pem), relative to Home, used by the previous parameter to sign the zip package for Sparkle
                zipPrivateKeyPath  Documents/SheepSystems/Keys/SheepSystems_Sparkle_priv.pem
     # Path to a public key file (.pem), relative to Home, which will be sent in appcasts generated, which Sparkle will use in the old version of an app to verify that the zip archive containng a new version of the app is authentic

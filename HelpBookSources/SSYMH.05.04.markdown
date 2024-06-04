@@ -40,7 +40,7 @@ Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of 
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Updated *drag and drop* code to remove methods which have been deprecated by Apple.
 
-<img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  No longer migrates syncing configuration when upgrading from version 2.4.8 and earlier, which was 7 years ago.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  No longer migrates syncing configuration when upgrading from version 2.4.8 and earlier, which was 7 years ago.
 
 ## Version 3.0.12 (2023-01-24)
 
