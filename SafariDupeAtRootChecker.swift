@@ -1,4 +1,5 @@
 import Foundation
+import SSYSwift
 
 /* Requirement 2, noticed in macOS 11.4 Beta 4, Safari Version 14.1.1 (16611.2.7.1.4)
  Detect if there is any of a  If you do this in Safari's Edit

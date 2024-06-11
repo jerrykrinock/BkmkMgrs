@@ -1,3 +1,5 @@
+#import <Bkmxwork/Bkmxwork-Swift.h>
+#import "SSYSwift-Swift.h"
 #import "Uninstaller.h"
 #import "NSFileManager+SomeMore.h"
 #import "NSString+MorePaths.h"
@@ -20,7 +22,6 @@
 #import "SSYCachyAliasResolver.h"
 #import "SSYAlert.h"
 #import "Chromessengerer.h"
-#import <Bkmxwork/Bkmxwork-Swift.h>
 
 @interface Uninstaller ()
 

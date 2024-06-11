@@ -1,4 +1,5 @@
 import Foundation
+import SSYSwift
 
 struct SafariRootChildoid : Hashable & Descriptable {
     public var name: String?

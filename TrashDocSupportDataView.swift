@@ -1,5 +1,6 @@
 import Cocoa
 import SwiftUI
+import SSYSwift
 
 let docRowHeight = 72.0
 

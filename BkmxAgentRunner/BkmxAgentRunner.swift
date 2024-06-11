@@ -1,6 +1,7 @@
 import Foundation
 import ServiceManagement
 import Cocoa
+import SSYSwift
 
 // " Result Tuplet"
 typealias KickResult = (agentStatus: BkmxAgentStatus, errorDesc: String?, errorSugg: String?)

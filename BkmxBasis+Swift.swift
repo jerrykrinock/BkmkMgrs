@@ -1,5 +1,6 @@
 import Foundation
 import ServiceManagement
+import SSYSwift
 
 extension BkmxBasis {
     
@@ -185,7 +186,7 @@ extension BkmxBasis {
                                                  comment: "what it says"
                         )
                     case BkmxAgentStatusNoSuchService.rawValue:
-                        return NSLocalizedString("Cannot tell if the correct BkmmxAgent is running or not, because SMAppService says it does not recognize the bundle identifier which BkmxAgentRunner gave it.  (Very strange!!)",
+                        return NSLocalizedString("macOS does not recognize the identifier of BkmxAgent.  This is expected if you have never enabled Syncing since last updating this app.",
                                                  comment: "what it says"
                         )
                     default:

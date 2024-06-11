@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -33,7 +33,6 @@
 		48015426180CA21000C0E8BC /* NSBundle+MainApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25A7310326E1100D86524 /* NSBundle+MainApp.m */; };
 		4801E2BA231704C500E2A886 /* BkmkMgrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4801E2B9231704C500E2A886 /* BkmkMgrTests.m */; };
 		4802347F28183F9E00164969 /* SafariRootChildoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347928183AEC00164969 /* SafariRootChildoid.swift */; };
-		4802348028183FA400164969 /* CountedSetByHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347B28183B3D00164969 /* CountedSetByHash.swift */; };
 		48023482281842D200164969 /* SafariDupeAtRootChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48023481281842D200164969 /* SafariDupeAtRootChecker.swift */; };
 		4802A94D1034B04400AABE30 /* NSString+RangeDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 4802A94C1034B04400AABE30 /* NSString+RangeDebug.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4803F8CB28C149EB00765089 /* NSCountedSet+DespoofTagStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803F8CA28C149EB00765089 /* NSCountedSet+DespoofTagStrings.swift */; };
@@ -44,7 +43,6 @@
 		48057DB20F7496BC00366879 /* GetOrderForm.html in Resources */ = {isa = PBXBuildFile; fileRef = 488C58460F16C13700874FA9 /* GetOrderForm.html */; };
 		48057FC70F75779300366879 /* NSObject+DeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48057FC60F75779300366879 /* NSObject+DeepCopy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4805806B0F7595C100366879 /* SSYSqliter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4805806A0F7595C100366879 /* SSYSqliter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48065C4D28009246005C06DE /* SSYSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48065C4B27FF958C005C06DE /* SSYSound.swift */; };
 		4806C585250DEC6D00517F1D /* SSYLicensePersistor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4806C583250DEC6C00517F1D /* SSYLicensePersistor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		480727AE23EA7E5C003A900A /* SSYEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 480894711117FC31002D78AB /* SSYEventInfo.m */; };
 		4807B377283DBF770017BE8A /* NSSet+SSYJsonClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 4807B376283DBF770017BE8A /* NSSet+SSYJsonClasses.m */; };
@@ -63,8 +61,6 @@
 		480ABFEC136456750011EF83 /* circle_ok.tif in Resources */ = {isa = PBXBuildFile; fileRef = 480ABFEA136456750011EF83 /* circle_ok.tif */; };
 		480ABFED136456750011EF83 /* circle_stop.tif in Resources */ = {isa = PBXBuildFile; fileRef = 480ABFEB136456750011EF83 /* circle_stop.tif */; };
 		480C37691EFC955400D78F30 /* BSManagedDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 480C375D1EFC955300D78F30 /* BSManagedDocument.m */; };
-		480C3C0828B40E1B0012EF93 /* String+SSYScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C3C0728B40E1B0012EF93 /* String+SSYScanner.swift */; };
-		480C3C0A28B7ADCF0012EF93 /* SSYDirectoryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480C3C0928B7ADCF0012EF93 /* SSYDirectoryWatcher.swift */; };
 		480CA0821107CA490060550C /* NSSet+Identicalness.m in Sources */ = {isa = PBXBuildFile; fileRef = 480CA0811107CA490060550C /* NSSet+Identicalness.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		480CCC2815E29AE900F36678 /* SSYSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480CCC2715E29AE900F36678 /* SSYSplitView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		480EDB0C1CD97039002E6150 /* SpecifyCruftController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480EDB0B1CD97039002E6150 /* SpecifyCruftController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -95,8 +91,6 @@
 		48134F0A190C053700FA3EDF /* BkmxDoc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48134F06190C053700FA3EDF /* BkmxDoc.xib */; };
 		4814CE4C292C331100A08AD3 /* SheepSafariHelper+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBBE9F29244B8D00375875 /* SheepSafariHelper+Swift.swift */; };
 		4814E04912ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4814E04812ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48165003299AB13100F48DB2 /* NSWindow+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48165002299AB13100F48DB2 /* NSWindow+SwiftUI.swift */; };
-		48165005299AB19D00F48DB2 /* SSYMonologWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48165004299AB19D00F48DB2 /* SSYMonologWindowController.swift */; };
 		4816982B17FBA1BC00A04CC1 /* SSYShoeboxDocument-Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E7E4517A1E883008A96A2 /* SSYShoeboxDocument-Categories.m */; };
 		4816982C17FBA1BD00A04CC1 /* SSYShoeboxDocument-Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E7E4517A1E883008A96A2 /* SSYShoeboxDocument-Categories.m */; };
 		4816982E17FF2A1900A04CC1 /* AboutPanel.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C0D0F053AD000288DD2 /* AboutPanel.rtf */; };
@@ -331,6 +325,8 @@
 		485F190418EC6DD80019B4ED /* Sheep-Sys-Thomas in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 482CFF9F1645A311000CB943 /* Sheep-Sys-Thomas */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4863D38D1476935E00AE2DAC /* TagMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4863D38C1476935E00AE2DAC /* TagMap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		486418281AAD465C001542A4 /* ExtoreSafari in Resources */ = {isa = PBXBuildFile; fileRef = 48B3777D1738B03300D6E286 /* ExtoreSafari */; };
+		4865513C2C0FD99300EE2322 /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4865513B2C0FD99300EE2322 /* SSYSwift */; };
+		4865513E2C0FD9CC00EE2322 /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4865513D2C0FD9CC00EE2322 /* SSYSwift */; };
 		48669CA8102FB7660097EF19 /* SSYArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48669CA7102FB7660097EF19 /* SSYArrayController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48669CCF102FCAE40097EF19 /* SSYDragTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48669CCE102FCAE40097EF19 /* SSYDragTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		486749F510A5BCB30045D5F6 /* LicensingParms-BkmkMgrs.m in Sources */ = {isa = PBXBuildFile; fileRef = 486749F410A5BCB30045D5F6 /* LicensingParms-BkmkMgrs.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -351,10 +347,8 @@
 		4868DDDF0F7917C000CBEC6B /* NSError+Bkmx.m in Sources */ = {isa = PBXBuildFile; fileRef = 4868DDDE0F7917C000CBEC6B /* NSError+Bkmx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4868FCCC121F0D1C007DE7A6 /* prefsUpdates.tif in Resources */ = {isa = PBXBuildFile; fileRef = 4868FCCB121F0D1C007DE7A6 /* prefsUpdates.tif */; };
 		486A02282BCA1E560028561E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486A02272BCA1E560028561E /* main.swift */; };
-		486A02292BDF02C00028561E /* NSRunningApplication+WaitFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */; };
 		486B0DE0281B02B5008D888A /* SafariRootChildoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347928183AEC00164969 /* SafariRootChildoid.swift */; };
 		486B0DE1281B02BB008D888A /* SafariDupeAtRootChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48023481281842D200164969 /* SafariDupeAtRootChecker.swift */; };
-		486B0DE2281B02BF008D888A /* CountedSetByHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802347B28183B3D00164969 /* CountedSetByHash.swift */; };
 		486B0DE4281B2BB5008D888A /* SafariDupeAtRootChecker-BmcoGlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486B0DE3281B2BB5008D888A /* SafariDupeAtRootChecker-BmcoGlue.swift */; };
 		486B0DE6281B2DF2008D888A /* SafariDupeAtRootChecker-SafariGlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486B0DE5281B2DF2008D888A /* SafariDupeAtRootChecker-SafariGlue.swift */; };
 		486B1F0D1F9EBEC100A9E8C5 /* BkmxGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5ABC0F052E4900288DD2 /* BkmxGlobals.m */; };
@@ -548,7 +542,6 @@
 		4886B4AF101A102800F9CDA1 /* SSYThreadPauser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886B4AE101A102800F9CDA1 /* SSYThreadPauser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4886BBE0101F2B8B00F9CDA1 /* SSYNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886BBDF101F2B8B00F9CDA1 /* SSYNull.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48872AA713FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 48872AA613FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48879B3A2BFE3D4100B0AA4A /* SSYTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48879B392BFE3D4000B0AA4A /* SSYTask.swift */; };
 		4887D14313AD091F0022C4C6 /* MouseClick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4887D14213AD091F0022C4C6 /* MouseClick.aiff */; };
 		4887D7B813B019AF0022C4C6 /* NSString+DomainName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4887D7B713B019AF0022C4C6 /* NSString+DomainName.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4888ADE928347771003877DD /* BkmxDoc+Migrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4888ADE828347771003877DD /* BkmxDoc+Migrate.swift */; };
@@ -566,7 +559,6 @@
 		488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */; };
 		488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */; };
 		488D3E292BB208EE00EC4E47 /* BkmxAgentRunnerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A790392B6B0CD000CF2230 /* BkmxAgentRunnerError.swift */; };
-		488D3E2A2BB2093900EC4E47 /* NSRunningApplication+WaitFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */; };
 		488D3E2C2BB20CF900EC4E47 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 488D3E2B2BB20CF900EC4E47 /* ArgumentParser */; };
 		488D3E2F2BB21FCB00EC4E47 /* BkmxAgent.app in Copy Login Items */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		488D3E302BB21FDD00EC4E47 /* BkmxAgent.app in Copy Login Items */ = {isa = PBXBuildFile; fileRef = 4820A95F212B88140040C592 /* BkmxAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -610,6 +602,7 @@
 		4899885913E4D71C00B02C31 /* NSDocument+SyncModDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4899885813E4D71C00B02C31 /* NSDocument+SyncModDate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48999AB4112AE4130073D2D9 /* SSYHintArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 48999AB3112AE4130073D2D9 /* SSYHintArrow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4899DE3F133BEB9500495E05 /* SSYLazyNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4899DE3E133BEB9500495E05 /* SSYLazyNotificationCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4899E2F12C12CAF4006ADD44 /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4899E2F02C12CAF4006ADD44 /* SSYSwift */; };
 		489B246524DA6FE200534EE3 /* SSYTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489B246424DA6FE200534EE3 /* SSYTabViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		489B98CF28DA6E03009E82FD /* CoreDataProgressiveMigrationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B98C428DA6E03009E82FD /* CoreDataProgressiveMigrationErrors.swift */; };
 		489B98D028DA6E03009E82FD /* CoreDataProgressiveMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B98C528DA6E03009E82FD /* CoreDataProgressiveMigrator.swift */; };
@@ -1119,7 +1112,6 @@
 		48D6FD2518C824860020E9F9 /* SyncNotifications.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D6FD2118C824860020E9F9 /* SyncNotifications.xib */; };
 		48D6FD2918C82AAB0020E9F9 /* SyncNotificationsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D6FD2818C82AAB0020E9F9 /* SyncNotificationsWindowController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D940201A7A78BA003ACF61 /* SSYKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9401E1A7A78BA003ACF61 /* SSYKeychainQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48D9603C264ABE4A00169C11 /* SSYSecureColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D9603B264ABE4A00169C11 /* SSYSecureColorTransformer.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48DAC01817F4C0B10076B3D4 /* LicensingParms-SheepSystems.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DAC01717F4C0B10076B3D4 /* LicensingParms-SheepSystems.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48DAC01D17F5D3B70076B3D4 /* SSYXugradeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DAC01C17F5D3B70076B3D4 /* SSYXugradeApp.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48DAC02717F77B880076B3D4 /* AboutPanel.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 48DAC02617F77B880076B3D4 /* AboutPanel.rtf */; };
@@ -1149,7 +1141,6 @@
 		48E5E19F25EEA78E008D625B /* SSYKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9401E1A7A78BA003ACF61 /* SSYKeychainQuery.m */; };
 		48E6052010E80058006187B9 /* NSHTTPURLResponse+Descriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E6051F10E80058006187B9 /* NSHTTPURLResponse+Descriptions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48E6072F10E9163B006187B9 /* GCUndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E6072E10E9163B006187B9 /* GCUndoManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48E66D2728795C10006B6252 /* OtherAppVersionGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E66D2628795C10006B6252 /* OtherAppVersionGetter.swift */; };
 		48E68CBD184D5867005464D7 /* SyncStatusTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E68CBC184D5867005464D7 /* SyncStatusTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48E6973F18D1082E003A97BF /* Bkmx017_018.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */; };
 		48E6974018D1082E003A97BF /* Bkmx017_018.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */; };
@@ -1195,6 +1186,7 @@
 		48EEF1141A42638A00503A12 /* TagsPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48EEF1101A42638A00503A12 /* TagsPopover.xib */; };
 		48EEF11B1A4264B900503A12 /* TagsPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EEF11A1A4264B900503A12 /* TagsPopoverViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48EF4DE713BD8844006A4530 /* NSMenuItem+Bkmx.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EF4DE613BD8844006A4530 /* NSMenuItem+Bkmx.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48EFA9912C10B30900EC82CF /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48EFA9902C10B30900EC82CF /* SSYSwift */; };
 		48F00400112DF320009974CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F003FF112DF320009974CD /* QuartzCore.framework */; };
 		48F004CD112F77D4009974CD /* NSDocumentController+OpenExpress.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F004CC112F77D4009974CD /* NSDocumentController+OpenExpress.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0DE2A0FA79DF900AA8D01 /* NSSet+SimpleMutations.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0DE290FA79DF900AA8D01 /* NSSet+SimpleMutations.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1799,7 +1791,6 @@
 		4801E2B9231704C500E2A886 /* BkmkMgrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BkmkMgrTests.m; sourceTree = "<group>"; };
 		4801E2BB231704C500E2A886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4802347928183AEC00164969 /* SafariRootChildoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariRootChildoid.swift; sourceTree = "<group>"; };
-		4802347B28183B3D00164969 /* CountedSetByHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountedSetByHash.swift; path = ../../SSYSwift/CountedSetByHash.swift; sourceTree = "<group>"; };
 		48023481281842D200164969 /* SafariDupeAtRootChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariDupeAtRootChecker.swift; sourceTree = "<group>"; };
 		4802A94B1034B04400AABE30 /* NSString+RangeDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RangeDebug.h"; path = "../../CategoriesObjC/NSString+RangeDebug.h"; sourceTree = SOURCE_ROOT; };
 		4802A94C1034B04400AABE30 /* NSString+RangeDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RangeDebug.m"; path = "../../CategoriesObjC/NSString+RangeDebug.m"; sourceTree = SOURCE_ROOT; };
@@ -1815,7 +1806,6 @@
 		48060C1B1B7EB6A9007E859E /* NSWindow+Screening.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSWindow+Screening.h"; path = "../../CategoriesObjC/NSWindow+Screening.h"; sourceTree = "<group>"; };
 		48060C1C1B7EB6A9007E859E /* NSWindow+Screening.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSWindow+Screening.m"; path = "../../CategoriesObjC/NSWindow+Screening.m"; sourceTree = "<group>"; };
 		480627851C2612750074718B /* ConstsFromJavaScript.make */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConstsFromJavaScript.make; sourceTree = "<group>"; };
-		48065C4B27FF958C005C06DE /* SSYSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSYSound.swift; path = ../../SSYSwift/SSYSound.swift; sourceTree = "<group>"; };
 		4806C583250DEC6C00517F1D /* SSYLicensePersistor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSYLicensePersistor.m; sourceTree = "<group>"; };
 		4806C584250DEC6C00517F1D /* SSYLicensePersistor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSYLicensePersistor.h; sourceTree = "<group>"; };
 		4807B375283DBF770017BE8A /* NSSet+SSYJsonClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSSet+SSYJsonClasses.h"; path = "../../CategoriesObjC/NSSet+SSYJsonClasses.h"; sourceTree = "<group>"; };
@@ -1841,8 +1831,6 @@
 		480ABFEB136456750011EF83 /* circle_stop.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = circle_stop.tif; path = Resources/circle_stop.tif; sourceTree = "<group>"; };
 		480C375D1EFC955300D78F30 /* BSManagedDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSManagedDocument.m; path = ../BSManagedDocument/BSManagedDocument.m; sourceTree = "<group>"; };
 		480C37671EFC955300D78F30 /* BSManagedDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSManagedDocument.h; path = ../BSManagedDocument/BSManagedDocument.h; sourceTree = "<group>"; };
-		480C3C0728B40E1B0012EF93 /* String+SSYScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+SSYScanner.swift"; path = "../../SSYSwift/String+SSYScanner.swift"; sourceTree = "<group>"; };
-		480C3C0928B7ADCF0012EF93 /* SSYDirectoryWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSYDirectoryWatcher.swift; path = ../../SSYSwift/SSYDirectoryWatcher.swift; sourceTree = "<group>"; };
 		480CA0801107CA490060550C /* NSSet+Identicalness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Identicalness.h"; path = "../../CategoriesObjC/NSSet+Identicalness.h"; sourceTree = SOURCE_ROOT; };
 		480CA0811107CA490060550C /* NSSet+Identicalness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Identicalness.m"; path = "../../CategoriesObjC/NSSet+Identicalness.m"; sourceTree = SOURCE_ROOT; };
 		480CCC2615E29AE900F36678 /* SSYSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSYSplitView.h; sourceTree = "<group>"; };
@@ -1892,8 +1880,6 @@
 		4814E04812ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSProcessInfo+SSYMoreInfo.m"; path = "../../CategoriesObjC/NSProcessInfo+SSYMoreInfo.m"; sourceTree = SOURCE_ROOT; };
 		4815263C1369239900E9D4C6 /* BkmxChangeNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BkmxChangeNotifier.h; sourceTree = "<group>"; };
 		4815263D1369239900E9D4C6 /* BkmxChangeNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BkmxChangeNotifier.m; sourceTree = "<group>"; };
-		48165002299AB13100F48DB2 /* NSWindow+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSWindow+SwiftUI.swift"; path = "../../SSYSwift/NSWindow+SwiftUI.swift"; sourceTree = "<group>"; };
-		48165004299AB19D00F48DB2 /* SSYMonologWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSYMonologWindowController.swift; path = ../../SSYSwift/SSYMonologWindowController.swift; sourceTree = "<group>"; };
 		4817123116E71B3600E31585 /* ExtoreChromy+UserOpenProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ExtoreChromy+UserOpenProfile.h"; sourceTree = "<group>"; };
 		4817123216E71B3700E31585 /* ExtoreChromy+UserOpenProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ExtoreChromy+UserOpenProfile.m"; sourceTree = "<group>"; };
 		48189A8D164A0CCA000CC240 /* BkmkMgrs_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BkmkMgrs_Prefix.pch; sourceTree = "<group>"; };
@@ -2224,6 +2210,7 @@
 		4864E338135DD0570090E368 /* DesignDocumentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DesignDocumentation; sourceTree = "<group>"; };
 		4864E40B12F387D500ED00D6 /* ConstsFromJavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstsFromJavaScript.h; sourceTree = "<group>"; };
 		4864E47212F51BD200ED00D6 /* ConstsFromJavaScript.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConstsFromJavaScript.c; sourceTree = "<group>"; };
+		486551392C0FC1A500EE2322 /* SSYSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SSYSwift; path = ../../SSYSwift; sourceTree = "<group>"; };
 		48669CA6102FB7660097EF19 /* SSYArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYArrayController.h; path = ../../ClassesObjC/SSYArrayController.h; sourceTree = SOURCE_ROOT; };
 		48669CA7102FB7660097EF19 /* SSYArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYArrayController.m; path = ../../ClassesObjC/SSYArrayController.m; sourceTree = SOURCE_ROOT; };
 		48669CCD102FCAE40097EF19 /* SSYDragTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYDragTableView.h; path = ../../ClassesObjC/SSYDragTableView.h; sourceTree = SOURCE_ROOT; };
@@ -2391,7 +2378,6 @@
 		4886BBDF101F2B8B00F9CDA1 /* SSYNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYNull.m; path = ../../ClassesObjC/SSYNull.m; sourceTree = "<group>"; };
 		48872AA513FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+HttpRatesDisplay.h"; sourceTree = "<group>"; };
 		48872AA613FF5A3800D16EA2 /* NSNumber+HttpRatesDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+HttpRatesDisplay.m"; sourceTree = "<group>"; };
-		48879B392BFE3D4000B0AA4A /* SSYTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSYTask.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		4887D14213AD091F0022C4C6 /* MouseClick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = MouseClick.aiff; path = Resources/MouseClick.aiff; sourceTree = "<group>"; };
 		4887D7B613B019AF0022C4C6 /* NSString+DomainName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DomainName.h"; path = "../../CategoriesObjC/NSString+DomainName.h"; sourceTree = SOURCE_ROOT; };
 		4887D7B713B019AF0022C4C6 /* NSString+DomainName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DomainName.m"; path = "../../CategoriesObjC/NSString+DomainName.m"; sourceTree = SOURCE_ROOT; };
@@ -2831,7 +2817,6 @@
 		48D8329F19CA37D900D967F8 /* UIN-Update-Items-for-Next-Version.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UIN-Update-Items-for-Next-Version.markdown"; sourceTree = "<group>"; wrapsLines = 1; };
 		48D9401D1A7A78BA003ACF61 /* SSYKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYKeychainQuery.h; path = ../../ClassesObjC/SSYKeychainQuery.h; sourceTree = "<group>"; };
 		48D9401E1A7A78BA003ACF61 /* SSYKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYKeychainQuery.m; path = ../../ClassesObjC/SSYKeychainQuery.m; sourceTree = "<group>"; };
-		48D9603B264ABE4A00169C11 /* SSYSecureColorTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSYSecureColorTransformer.swift; path = ../../SSYSwift/SSYSecureColorTransformer.swift; sourceTree = "<group>"; };
 		48DA6D0D0F33C324002660BA /* NSNumber+TrigTypeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TrigTypeDisplay.h"; sourceTree = "<group>"; };
 		48DA6D0E0F33C324002660BA /* NSNumber+TrigTypeDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TrigTypeDisplay.m"; sourceTree = "<group>"; };
 		48DA6D7D0F33F965002660BA /* SSYRecurringDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYRecurringDate.h; path = ../../ClassesObjC/SSYRecurringDate.h; sourceTree = SOURCE_ROOT; };
@@ -2903,7 +2888,6 @@
 		48E6051F10E80058006187B9 /* NSHTTPURLResponse+Descriptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSHTTPURLResponse+Descriptions.m"; path = "../../CategoriesObjC/NSHTTPURLResponse+Descriptions.m"; sourceTree = SOURCE_ROOT; };
 		48E6072D10E9163B006187B9 /* GCUndoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCUndoManager.h; path = ../../ClassesObjC/GCUndoManager.h; sourceTree = SOURCE_ROOT; };
 		48E6072E10E9163B006187B9 /* GCUndoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCUndoManager.m; path = ../../ClassesObjC/GCUndoManager.m; sourceTree = SOURCE_ROOT; };
-		48E66D2628795C10006B6252 /* OtherAppVersionGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtherAppVersionGetter.swift; path = ../../SSYSwift/OtherAppVersionGetter.swift; sourceTree = "<group>"; };
 		48E68CBB184D5867005464D7 /* SyncStatusTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStatusTextField.h; sourceTree = "<group>"; };
 		48E68CBC184D5867005464D7 /* SyncStatusTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStatusTextField.m; sourceTree = "<group>"; };
 		48E6973E18D1082E003A97BF /* Bkmx017_018.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Bkmx017_018.xcmappingmodel; sourceTree = "<group>"; };
@@ -2987,7 +2971,6 @@
 		48F4674712E7857B00A2906B /* NSDate+LongLong1970.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+LongLong1970.m"; path = "../../CategoriesObjC/NSDate+LongLong1970.m"; sourceTree = SOURCE_ROOT; };
 		48F47C24182C8D520034A6F6 /* SpecialFirefox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpecialFirefox.xib; path = Resources/SpecialFirefox.xib; sourceTree = "<group>"; };
 		48F4BDB22A2C15F8004797B7 /* DraggableStark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableStark.swift; sourceTree = "<group>"; };
-		48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSRunningApplication+WaitFor.swift"; path = "../../SSYSwift/NSRunningApplication+WaitFor.swift"; sourceTree = "<group>"; };
 		48F6671D12A4D01500A5473C /* OperationConsolidateFolders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationConsolidateFolders.h; sourceTree = "<group>"; };
 		48F6671E12A4D01500A5473C /* OperationConsolidateFolders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationConsolidateFolders.m; sourceTree = "<group>"; };
 		48F73F09144F2EA900E9B0F7 /* ActiveBrowserObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveBrowserObserver.h; sourceTree = "<group>"; };
@@ -3362,6 +3345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EFA9912C10B30900EC82CF /* SSYSwift in Frameworks */,
 				488D3E2C2BB20CF900EC4E47 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3400,6 +3384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4865513E2C0FD9CC00EE2322 /* SSYSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3433,6 +3418,7 @@
 				48D1E7340F6C40A3001BA354 /* CoreData.framework in Frameworks */,
 				48D1E7350F6C40A4001BA354 /* AppKit.framework in Frameworks */,
 				48D1E7360F6C40A6001BA354 /* Carbon.framework in Frameworks */,
+				4899E2F12C12CAF4006ADD44 /* SSYSwift in Frameworks */,
 				48D1E7370F6C40A7001BA354 /* CoreFoundation.framework in Frameworks */,
 				48D1E7380F6C40A8001BA354 /* CoreServices.framework in Frameworks */,
 				48D1E7390F6C40A9001BA354 /* Foundation.framework in Frameworks */,
@@ -3442,6 +3428,7 @@
 				48EECDDB1003054200A358CC /* ScriptingBridge.framework in Frameworks */,
 				48D572BB102E6D6300D18F98 /* AudioToolbox.framework in Frameworks */,
 				48F00400112DF320009974CD /* QuartzCore.framework in Frameworks */,
+				4865513C2C0FD99300EE2322 /* SSYSwift in Frameworks */,
 				48CA051D138E1CB700E7365E /* ExceptionHandling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3527,7 +3514,6 @@
 				485F5873292EE5EE0084E1B8 /* Swift Bridging-Header.h files */,
 				48CFA60C18E452F5000E77FA /* HelpBookSources */,
 				2A37F4B8FDCFA73011CA2CEA /* Project Resources */,
-				48D96039264ABB9900169C11 /* Ex-Project Swift */,
 				48D778D41614EB410064C439 /* Ex-Project Projects, Kits, etc. */,
 				48D39128106E484200DC52C3 /* Ex-Project Debugging */,
 				48A416CE100A639F00D71E7D /* Ex-Project Headers */,
@@ -3557,6 +3543,7 @@
 		2A37F4ABFDCFA73011CA2CEA /* Project Classes, Exts, Cats & Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				486551392C0FC1A500EE2322 /* SSYSwift */,
 				48F73F09144F2EA900E9B0F7 /* ActiveBrowserObserver.h */,
 				48F73F0A144F2EA900E9B0F7 /* ActiveBrowserObserver.m */,
 				4825C4340F72B9860001429E /* AgentPerformer.h */,
@@ -3683,7 +3670,6 @@
 				48FD5ACC0F052EAF00288DD2 /* ContentOutlineView.h */,
 				48FD5ACD0F052EAF00288DD2 /* ContentOutlineView.m */,
 				48FA96EC29C0E01600ACF388 /* ContentProxy.swift */,
-				4802347B28183B3D00164969 /* CountedSetByHash.swift */,
 				48FD5AF50F052EAF00288DD2 /* DelPinParser.h */,
 				48FD5AF60F052EAF00288DD2 /* DelPinParser.m */,
 				48997CB328ADEBFF003E2D50 /* DocSupportFileCleaning.swift */,
@@ -4651,21 +4637,6 @@
 			name = "Ex-Project Projects, Kits, etc.";
 			sourceTree = "<group>";
 		};
-		48D96039264ABB9900169C11 /* Ex-Project Swift */ = {
-			isa = PBXGroup;
-			children = (
-				48879B392BFE3D4000B0AA4A /* SSYTask.swift */,
-				48F5DFB02B81AA5D005519FB /* NSRunningApplication+WaitFor.swift */,
-				48165002299AB13100F48DB2 /* NSWindow+SwiftUI.swift */,
-				48E66D2628795C10006B6252 /* OtherAppVersionGetter.swift */,
-				480C3C0928B7ADCF0012EF93 /* SSYDirectoryWatcher.swift */,
-				48165004299AB19D00F48DB2 /* SSYMonologWindowController.swift */,
-				48D9603B264ABE4A00169C11 /* SSYSecureColorTransformer.swift */,
-				480C3C0728B40E1B0012EF93 /* String+SSYScanner.swift */,
-			);
-			name = "Ex-Project Swift";
-			sourceTree = "<group>";
-		};
 		48DABF4517F4B63E0076B3D4 /* Per-App */ = {
 			isa = PBXGroup;
 			children = (
@@ -5303,7 +5274,6 @@
 				48AA0D031EA2877B00AC0141 /* SSYSidebarController.m */,
 				488CBCD111207B15006AF61F /* SSYSizeFixxerSubview.h */,
 				488CBCD211207B15006AF61F /* SSYSizeFixxerSubview.m */,
-				48065C4B27FF958C005C06DE /* SSYSound.swift */,
 				480CCC2615E29AE900F36678 /* SSYSplitView.h */,
 				480CCC2715E29AE900F36678 /* SSYSplitView.m */,
 				48A668EF1A56FBE700CC5D60 /* SSYSpotlighter.h */,
@@ -5766,6 +5736,7 @@
 			name = BkmxAgentRunner;
 			packageProductDependencies = (
 				488D3E2B2BB20CF900EC4E47 /* ArgumentParser */,
+				48EFA9902C10B30900EC82CF /* SSYSwift */,
 			);
 			productName = BkmxAgentRunner2;
 			productReference = 488D3E1E2BB2080C00EC4E47 /* BkmxAgentRunner */;
@@ -5852,6 +5823,9 @@
 			dependencies = (
 			);
 			name = SheepSafariHelper;
+			packageProductDependencies = (
+				4865513D2C0FD9CC00EE2322 /* SSYSwift */,
+			);
 			productName = Pajara;
 			productReference = 48B0C4A41F8BBC0D00FF5F9C /* SheepSafariHelper.xpc */;
 			productType = "com.apple.product-type.xpc-service";
@@ -5912,6 +5886,7 @@
 			buildPhases = (
 				4876CA6E12CCB15900E7F440 /* Touch Info.plist */,
 				48D1E6290F6C35CF001BA354 /* Resources */,
+				4899E2F22C13BC96006ADD44 /* Log environment macros for troubleshooting */,
 				48D1E62A0F6C35CF001BA354 /* Sources */,
 				48D1E62B0F6C35CF001BA354 /* Frameworks */,
 				48AC15F01725DEDD00CAD65C /* Copy Frameworks */,
@@ -5926,6 +5901,10 @@
 				48B0C4AE1F8BBC0D00FF5F9C /* PBXTargetDependency */,
 			);
 			name = Bkmxwork;
+			packageProductDependencies = (
+				4865513B2C0FD99300EE2322 /* SSYSwift */,
+				4899E2F02C12CAF4006ADD44 /* SSYSwift */,
+			);
 			productName = FrameworkHowTo;
 			productReference = 48D1E62D0F6C35CF001BA354 /* Bkmxwork.framework */;
 			productType = "com.apple.product-type.framework";
@@ -6191,6 +6170,7 @@
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* BookMacster */;
 			packageReferences = (
 				48E6E6712B44A66D00113FFC /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -6918,6 +6898,25 @@
 			shellPath = /bin/sh;
 			shellScript = "# We need this symlink so that the main app's icon will appear in Alerts which are displayed when we add them to Notification Center.\ncd $CONFIGURATION_BUILD_DIR/$CONTENTS_FOLDER_PATH/Resources\necho \"Adding symlink to main app's icon\"\npwd\n# Traversing from BkmxNotifier's Resources up to the main app's Resources requires exactly four (4) \"../\" jumps, as shown here:\n# Contents/Helpers/BkmxNotifier.app/Contents/Resources\nln -Ffhs \"../../../../Resources/AppIcon.icns\" \"MainAppIcon.icns\"\n";
 		};
+		4899E2F22C13BC96006ADD44 /* Log environment macros for troubleshooting */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Log environment macros for troubleshooting";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo Bonehead your BUILT_PRODUCTS_DIR is $BUILT_PRODUCTS_DIR\nGMM=\"$BUILT_PRODUCTS_DIR/../../Intermediates.noindex/GeneratedModuleMaps/\"\necho Bonehead your GMM is $GMM\n";
+		};
 		48BD42F6256983FB00DC211A /* Copy Appropriate License Obfuscated Public Key File */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -7175,7 +7174,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488D3E2A2BB2093900EC4E47 /* NSRunningApplication+WaitFor.swift in Sources */,
 				486A02282BCA1E560028561E /* main.swift in Sources */,
 				488D3E262BB208EE00EC4E47 /* BkmxAgentRunnerCommandLiner.swift in Sources */,
 				488D3E272BB208EE00EC4E47 /* BkmxAgentRunnerLogger.swift in Sources */,
@@ -7241,7 +7239,6 @@
 				480964BD1FA03D1B00BAE9C9 /* SSYIndexee.m in Sources */,
 				486B0DE1281B02BB008D888A /* SafariDupeAtRootChecker.swift in Sources */,
 				486B1F0D1F9EBEC100A9E8C5 /* BkmxGlobals.m in Sources */,
-				486B0DE2281B02BF008D888A /* CountedSetByHash.swift in Sources */,
 				486B0DE6281B2DF2008D888A /* SafariDupeAtRootChecker-SafariGlue.swift in Sources */,
 				48B0C4AB1F8BBC0D00FF5F9C /* SheepSafariHelper-main.m in Sources */,
 				48041E80213DD95A00A0B2E5 /* SheepSafariHelper.m in Sources */,
@@ -7293,7 +7290,6 @@
 				48D1E6580F6C3927001BA354 /* BkmxDoc+GuiStuff.m in Sources */,
 				48D1E65C0F6C392B001BA354 /* BkmxDocWinCon+Alerts.m in Sources */,
 				48D1E65E0F6C392D001BA354 /* Bookshig.m in Sources */,
-				480C3C0828B40E1B0012EF93 /* String+SSYScanner.swift in Sources */,
 				48D1E6600F6C3930001BA354 /* Broker.m in Sources */,
 				48D1E6640F6C3936001BA354 /* Client.m in Sources */,
 				48D1E6660F6C3940001BA354 /* ClientChoice.m in Sources */,
@@ -7312,7 +7308,6 @@
 				48D1E6C10F6C3EC0001BA354 /* Dupetainer.m in Sources */,
 				48D1E6C20F6C3EC3001BA354 /* OperationExport.m in Sources */,
 				48D1E6C30F6C3EC4001BA354 /* Extore.m in Sources */,
-				48165005299AB19D00F48DB2 /* SSYMonologWindowController.swift in Sources */,
 				48D1E6C50F6C3EC7001BA354 /* ExtoreWebFlat.m in Sources */,
 				48D1E6C60F6C3EC9001BA354 /* ExtoreLocalPlist.m in Sources */,
 				48D1E6C80F6C3ECC001BA354 /* ExtoreFirefox.m in Sources */,
@@ -7373,7 +7368,6 @@
 				48D1E7160F6C4025001BA354 /* SSYDocChildObject.m in Sources */,
 				48D1E7170F6C4027001BA354 /* SSYHintableWindow.m in Sources */,
 				48D1E7190F6C402C001BA354 /* SSYIOKit.m in Sources */,
-				486A02292BDF02C00028561E /* NSRunningApplication+WaitFor.swift in Sources */,
 				48D1E71A0F6C4032001BA354 /* SSYKeychain.m in Sources */,
 				48D1E71C0F6C4054001BA354 /* SSYListPicker.m in Sources */,
 				48D1E71E0F6C4057001BA354 /* SSYManagedObject.m in Sources */,
@@ -7450,7 +7444,6 @@
 				48D1EC2C0F6C98C2001BA354 /* NSObject+SuperUtils.m in Sources */,
 				48C3DC1A21841EF1003C7E51 /* NSDocumentController+SSYFixLaunchServicesBug.m in Sources */,
 				48D1EC2D0F6C98C3001BA354 /* NSPopUpButton+Populating.m in Sources */,
-				48D9603C264ABE4A00169C11 /* SSYSecureColorTransformer.swift in Sources */,
 				48D1EC2E0F6C98C5001BA354 /* NSScanner+GeeWhiz.m in Sources */,
 				48D1EC2F0F6C98C7001BA354 /* NSSegmentedControl+FitTextNice.m in Sources */,
 				48CBA6E319A13DD600DB0921 /* SSYLineBox.m in Sources */,
@@ -7488,7 +7481,6 @@
 				4825C9100F7445F30001429E /* NSDictionary+KeyPaths.m in Sources */,
 				48057FC70F75779300366879 /* NSObject+DeepCopy.m in Sources */,
 				4805806B0F7595C100366879 /* SSYSqliter.m in Sources */,
-				48165003299AB13100F48DB2 /* NSWindow+SwiftUI.swift in Sources */,
 				4868DC220F7821E700CBEC6B /* NSHelpManager+HelpForHelp.m in Sources */,
 				4868DC290F78225E00CBEC6B /* SSYLabelledList.m in Sources */,
 				4868DC2A0F78225E00CBEC6B /* SSYLabelledPopUp.m in Sources */,
@@ -7566,7 +7558,6 @@
 				4811A1FD17C5825B00E2CB21 /* NSString+SSYCaseness.m in Sources */,
 				48EA7CC60FCE27D2009202C8 /* NSUserDefaults+Bkmx.m in Sources */,
 				48EA7F010FD015FA009202C8 /* Operation_Common.m in Sources */,
-				4802348028183FA400164969 /* CountedSetByHash.swift in Sources */,
 				48DAC01817F4C0B10076B3D4 /* LicensingParms-SheepSystems.m in Sources */,
 				48C521570FD48001000154D8 /* NSString+BkmxDisplayNames.m in Sources */,
 				48B3663B0FDD7AF20018919F /* SSYLabelledRadioButtons.m in Sources */,
@@ -7600,10 +7591,8 @@
 				48B0243710951D8500DC0714 /* NSIndexSet+MoreRanges.m in Sources */,
 				486749F510A5BCB30045D5F6 /* LicensingParms-BkmkMgrs.m in Sources */,
 				48674C2A10A919310045D5F6 /* SSYDisplayAlotPopUpButtonCell.m in Sources */,
-				48065C4D28009246005C06DE /* SSYSound.swift in Sources */,
 				489F7B2020B06CA200E991D6 /* SSYSystemUptimer.m in Sources */,
 				483FCB031C7A751B0084B35E /* ExtensionDetectionTester.m in Sources */,
-				480C3C0A28B7ADCF0012EF93 /* SSYDirectoryWatcher.swift in Sources */,
 				486C8AD628BE6153003D3FEB /* BkmxBasis+Swift.swift in Sources */,
 				48C1AD8D10B4B799002FCC63 /* NSNumber+MergeBiasDisplay.m in Sources */,
 				480070D410BC496500EFD45E /* NSTabView+Safe.m in Sources */,
@@ -7842,7 +7831,6 @@
 				48E848F4169A938800AE3100 /* SSYStarRatingView.m in Sources */,
 				488A0FE2169DD69C00416ACE /* SSYFolderMenu.m in Sources */,
 				48B589F01C00FDCB00BDBC54 /* NSObject+RecklessPerformSelector.m in Sources */,
-				48E66D2728795C10006B6252 /* OtherAppVersionGetter.swift in Sources */,
 				488A0FE4169DEB6100416ACE /* TalderMapProto.m in Sources */,
 				488A0FE8169EFFB800416ACE /* TalderMapper.m in Sources */,
 				488A0FEC16A0357700416ACE /* TalderMapProtoArrayController.m in Sources */,
@@ -7877,7 +7865,6 @@
 				48257EBE17A87E9F00956961 /* SSYExtrospectiveViewController.m in Sources */,
 				48770A5F17ABF51B0028CB09 /* BkmxDocViewController.m in Sources */,
 				48C120BF17AECC9800D63787 /* SSYContentLazyView.m in Sources */,
-				48879B3A2BFE3D4100B0AA4A /* SSYTask.swift in Sources */,
 				48C120CB17AECCAE00D63787 /* SSYSettingsLazyView.m in Sources */,
 				481BF3E617EFB2AE008B4830 /* SSYWindowHangout.m in Sources */,
 				48C120D017AECCBD00D63787 /* SSYReportsLazyView.m in Sources */,
@@ -8205,7 +8192,8 @@
 				HEADER_SEARCH_PATHS = (
 					"/System/Frameworks/Python.frameworks/Headers/**",
 					"\"$(SRCROOT)/HelpBookSources\"/**",
-					"\"$(SRCROOT)/ShortcutRecorder-BkmxFork\"/**",
+					"\"$(SRCROOT)/ShortcutRecorder-BkmxFork\"",
+					"\"$(SRCROOT)/../../",
 				);
 				HELP_BOOK_NAME = "Help for BookMacster App Family";
 				INFOPLIST_PREPROCESS = YES;
@@ -8222,6 +8210,7 @@
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				TROUBLE_ZIPPER_URL = "https://sheepsystems.com/files/SSYTroubleZipper.zip";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Intermediates.noindex/GeneratedModuleMaps/";
 			};
 			name = Debug;
 		};
@@ -8281,7 +8270,7 @@
 				HEADER_SEARCH_PATHS = (
 					"/System/Frameworks/Python.frameworks/Headers/**",
 					"\"$(SRCROOT)/HelpBookSources\"/**",
-					"\"$(SRCROOT)/ShortcutRecorder-BkmxFork\"/**",
+					"\"$(SRCROOT)/ShortcutRecorder-BkmxFork\"",
 				);
 				HELP_BOOK_NAME = "Help for BookMacster App Family";
 				INFOPLIST_PREPROCESS = YES;
@@ -8295,6 +8284,7 @@
 				SYMROOT = ../../Builds;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				TROUBLE_ZIPPER_URL = "https://sheepsystems.com/files/SSYTroubleZipper.zip";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Intermediates.noindex/GeneratedModuleMaps/";
 			};
 			name = Release;
 		};
@@ -8723,7 +8713,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.CategoriesObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -8759,7 +8749,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.CategoriesObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -8810,7 +8800,7 @@
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -8863,7 +8853,7 @@
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -10400,6 +10390,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../SSYSwift;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		48E6E6712B44A66D00113FFC /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -10412,10 +10409,27 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4865513B2C0FD99300EE2322 /* SSYSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SSYSwift;
+		};
+		4865513D2C0FD9CC00EE2322 /* SSYSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SSYSwift;
+		};
 		488D3E2B2BB20CF900EC4E47 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 48E6E6712B44A66D00113FFC /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
+		};
+		4899E2F02C12CAF4006ADD44 /* SSYSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SSYSwift;
+		};
+		48EFA9902C10B30900EC82CF /* SSYSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */;
+			productName = SSYSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

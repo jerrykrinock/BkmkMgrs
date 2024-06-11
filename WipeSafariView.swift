@@ -1,5 +1,6 @@
 import Cocoa
 import SwiftUI
+import SSYSwift
 
 @objc
 class WipeSafariController : NSWindowController {

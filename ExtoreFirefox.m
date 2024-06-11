@@ -1,4 +1,5 @@
 #import "Bkmxwork/Bkmxwork-Swift.h"
+#import "SSYSwift-Swift.h"
 #import "ExtoreFirefox.h"
 #import "NSError+SuggestMountVolume.h"
 #import "NSError+DecodeCodes.h"

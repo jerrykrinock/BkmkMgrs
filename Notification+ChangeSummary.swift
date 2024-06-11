@@ -1,4 +1,5 @@
 import Foundation
+import SSYSwift
 
 extension Notification {
     func changesSummary() -> String {
