@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name" : "BookMacster Button",
-	"version" : "32",
+	"version" : "33",
 	"description" : "Provides facility for landing info on the current page into Sheep Systems' BookMacster or Markster directly",
 	"homepage_url" : "https:\/\/sheepsystems.com\/bookmacster\/HelpBook\/browserExtensions",
 	"permissions" : ["tabs", "nativeMessaging"],
