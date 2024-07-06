@@ -476,15 +476,16 @@ static AgentPerformer* sharedPerformer = nil ;
         ||
         ![[error userInfo] objectForKey:constKeyDontStopOthersIfError]
         ) {
-        Job* job = [error.userInfo objectForKey:constKeyJob];
-        [self abortJob:job];
+            Job* job = [error.userInfo objectForKey:constKeyJob];
+            [[BkmxBasis sharedBasis] logFormat:@"Aborting this do of %@ cuz Error %ld",
+             job.serialString,
+             (long)error.code];
+            [self abortJob:job];
     }
  }
 
 - (void)abortJob:(Job*)job {
-    [[BkmxBasis sharedBasis] logFormat:@"Will abort this do of %@", job.serialString];
-
-    /* Agent should have zero or one document open.  The zero happens if the 
+    /* Agent should have zero or one document open.  The zero happens if the
      document has already been closed due to an error. */
     BkmxDoc* bkmxDoc = [[[NSDocumentController sharedDocumentController] documents] firstObject];
     
