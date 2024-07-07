@@ -1,9 +1,10 @@
 #import "StarkPredicateEditor.h"
 #import "BkmxBasis+Strings.h"
 #import "BkmxAppDel+Capabilities.h"
-#import "NSPredicateEditor+ControlAccess.h"
+#import "NSPredicateEditor+AppleForgot.h"
 #import "SSYReplacePredicateEditorRowTemplate.h"
 #import "NSView+SSYDarkMode.h"
+#import "NSString+BkmxDisplayNames.h"
 
 CGFloat const rightTextFieldMinimumWidth = 50.0 ;
 
@@ -151,131 +152,6 @@ CGFloat const rightTextFieldMinimumWidth = 50.0 ;
 
 - (NSInteger)itemIndexForAttributeKeyPath:(NSString*)keyPath {
 	return [[self attributeKeyPaths] indexOfObject:keyPath] ;
-}
-
-- (NSInteger)itemIndexOfOperator:(id)operator
-				   attributeType:(NSAttributeType)attributeType {
-	NSArray* operators = [StarkPredicateEditor operatorsForAttributeType:attributeType] ;
-	return [operators indexOfObject:operator] ;
-}
-
-- (void)addCompoundRowPresetToPredicateType:(NSCompoundPredicateType)predicateType
-							  asSubrowOfRow:(NSInteger)parentRow {
-	NSInteger rowIndex = [self numberOfRows] ;
-	[self insertRowAtIndex:rowIndex
-				  withType:NSRuleEditorRowTypeCompound
-			 asSubrowOfRow:parentRow
-				   animate:YES] ;
-	
-	NSControl* control ;
-	NSMenuItem* selectedItem ;
-	
-	// Set popup
-	control = (NSPopUpButton*)[self controlOfClass:[NSPopUpButton class]
-										  fromLeft:0
-											 inRow:rowIndex] ;
-
-	NSInteger itemIndex ;
-	// When NSPredicateEditor creates a compound row, its
-	// popup menu's items are: All, Any, None -- in that order.
-	switch (predicateType) {
-		case NSAndPredicateType:
-			itemIndex = 0 ;
-			break ;
-		case NSOrPredicateType:
-			itemIndex = 1 ;
-			break ;
-		case NSNotPredicateType:
-			itemIndex = 2 ;
-			break ;
-	}
-
-	[(NSPopUpButton*)control selectItemAtIndex:itemIndex] ;
-	selectedItem = [[(NSPopUpButton*)control itemArray] objectAtIndex:itemIndex] ;
-	[[selectedItem target] performSelector:[selectedItem action]
-								withObject:selectedItem] ;
-}
-
-- (void)addSimpleRowPresetToAttributeKey:(NSString*)attributeKey
-                             hasOperator:(BOOL)hasOperator
-							operatorType:(NSPredicateOperatorType)operatorType
-						   asSubrowOfRow:(NSInteger)parentRow
-							 targetValue:(id)targetValue {
-	NSInteger rowIndex = [self numberOfRows] ;
-	[self insertRowAtIndex:rowIndex
-				  withType:NSRuleEditorRowTypeSimple
-			 asSubrowOfRow:parentRow
-				   animate:YES] ;
-	
-	NSInteger itemIndex ;
-	NSControl* control ;
-	NSMenuItem* selectedItem ;
-	NSAttributeType attributeType = [[BkmxBasis sharedBasis] attributeTypeForStarkKey:attributeKey] ;
-	
-	// Set Left popup
-	control = (NSPopUpButton*)[self controlOfClass:[NSPopUpButton class]
-                                          fromLeft:0
-										   inRow:rowIndex] ;
-	itemIndex = [self itemIndexForAttributeKeyPath:attributeKey] ;
-	[(NSPopUpButton*)control selectItemAtIndex:itemIndex] ;
-	selectedItem = [[(NSPopUpButton*)control itemArray] objectAtIndex:itemIndex] ;
-	[[selectedItem target] performSelector:[selectedItem action]
-								withObject:selectedItem] ;
-	
-	// Set Middle (operator) popup, assign lastPopupIndex ;
-	NSInteger lastControlIndex ;
-	if (hasOperator) {
-		control = (NSPopUpButton*)[self controlOfClass:[NSPopUpButton class]
-											  fromLeft:1
-												 inRow:rowIndex] ;
-		itemIndex = [self itemIndexOfOperator:[NSNumber numberWithInteger:operatorType]
-								attributeType:attributeType] ;
-		[(NSPopUpButton*)control selectItemAtIndex:itemIndex] ;
-		selectedItem = [[(NSPopUpButton*)control itemArray] objectAtIndex:itemIndex] ;
-		[[selectedItem target] performSelector:[selectedItem action]
-									withObject:selectedItem] ;
-		lastControlIndex = 2 ;
-	}
-	else {
-		// This row has only two controls, left and right.
-		// The middle "control" is the static text "is"
-		lastControlIndex = 1 ;
-	}
-	
-    control = nil ;
-    
-    // See if there is a popup, and if so set it to targetValue.
-	if ([targetValue isKindOfClass:[NSNumber class]]) {
-		control = (NSPopUpButton*)[self controlOfClass:[NSPopUpButton class]
-											  fromLeft:lastControlIndex
-												 inRow:rowIndex] ;
-        if (control) {
-            NSArray* choices ;
-            if (attributeType == NSBooleanAttributeType) {
-                choices = [(BkmxAppDel*)[NSApp delegate] booleanChoices] ;
-            }
-            else {
-                choices = [(BkmxAppDel*)[NSApp delegate] starkChoicesForKey:attributeKey] ;
-            }
-            itemIndex = [choices indexOfObject:targetValue] ;
-            [(NSPopUpButton*)control selectItemAtIndex:itemIndex] ;
-            selectedItem = [[(NSPopUpButton*)control itemArray] objectAtIndex:itemIndex] ;
-            [[selectedItem target] performSelector:[selectedItem action]
-                                        withObject:selectedItem] ;
-        }
-	}
-    
-    // If there was no popup, look for a text field and set it to targetValue.
-    if (!control) {
-        control = (NSPopUpButton*)[self controlOfClass:[NSTextField class]
-                                              fromLeft:0
-                                                 inRow:rowIndex] ;
-        [control setObjectValue:targetValue] ;
-	}
-	else if ([targetValue isKindOfClass:[NSDate class]]) {
-	//TODO:
-    }
-
 }
 
 - (NSPredicate*)objectValue {
@@ -426,6 +302,8 @@ CGFloat const rightTextFieldMinimumWidth = 50.0 ;
 		for (NSMenuItem* menuItem in [[leftPopUpButton menu] itemArray]) {
 			[menuItem setTitle:[[BkmxBasis sharedBasis] labelNoNilForKey:key]] ;
 			[menuItem setTag:tag++] ;
+            /*SSYDBL*/ NSLog(@"1 somefood menuItem %@:\nhas repObject: %@", menuItem, [menuItem representedObject]);
+
 		}
 		
         /* Post-creation template tweak #2

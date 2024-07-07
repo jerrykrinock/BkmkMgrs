@@ -1191,7 +1191,7 @@
 		48F004CD112F77D4009974CD /* NSDocumentController+OpenExpress.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F004CC112F77D4009974CD /* NSDocumentController+OpenExpress.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0DE2A0FA79DF900AA8D01 /* NSSet+SimpleMutations.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0DE290FA79DF900AA8D01 /* NSSet+SimpleMutations.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0DEE80FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0DEE70FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48F0E12E0FAA593600AA8D01 /* NSPredicateEditor+ControlAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+ControlAccess.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48F0E12E0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0E1C40FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0E1C30FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0E4D919088240005CD2FC /* NSFileManager+SSYFixPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0E4D819088240005CD2FC /* NSFileManager+SSYFixPermissions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48F0E4E119088C6F005CD2FC /* NSFileManager+SSYFixPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F0E4D819088240005CD2FC /* NSFileManager+SSYFixPermissions.m */; };
@@ -2949,8 +2949,8 @@
 		48F0DE290FA79DF900AA8D01 /* NSSet+SimpleMutations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+SimpleMutations.m"; path = "../../CategoriesObjC/NSSet+SimpleMutations.m"; sourceTree = SOURCE_ROOT; };
 		48F0DEE60FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+VerifierSubtype302Display.h"; sourceTree = "<group>"; };
 		48F0DEE70FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+VerifierSubtype302Display.m"; sourceTree = "<group>"; };
-		48F0E12C0FAA593500AA8D01 /* NSPredicateEditor+ControlAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPredicateEditor+ControlAccess.h"; path = "../../CategoriesObjC/NSPredicateEditor+ControlAccess.h"; sourceTree = SOURCE_ROOT; };
-		48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+ControlAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPredicateEditor+ControlAccess.m"; path = "../../CategoriesObjC/NSPredicateEditor+ControlAccess.m"; sourceTree = SOURCE_ROOT; };
+		48F0E12C0FAA593500AA8D01 /* NSPredicateEditor+AppleForgot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPredicateEditor+AppleForgot.h"; path = "../../CategoriesObjC/NSPredicateEditor+AppleForgot.h"; sourceTree = SOURCE_ROOT; };
+		48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPredicateEditor+AooleForgot.m"; path = "../../CategoriesObjC/NSPredicateEditor+AooleForgot.m"; sourceTree = SOURCE_ROOT; };
 		48F0E1C20FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+VerifierDispositionDisplay.h"; sourceTree = "<group>"; };
 		48F0E1C30FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+VerifierDispositionDisplay.m"; sourceTree = "<group>"; };
 		48F0E4D719088240005CD2FC /* NSFileManager+SSYFixPermissions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+SSYFixPermissions.h"; sourceTree = "<group>"; };
@@ -4988,8 +4988,8 @@
 				48FD59B60F05296100288DD2 /* NSPredicate+SSYMore.m */,
 				486B44BD1CD725B700081339 /* NSPredicate+SSYPreflight.h */,
 				486B44BE1CD725B700081339 /* NSPredicate+SSYPreflight.m */,
-				48F0E12C0FAA593500AA8D01 /* NSPredicateEditor+ControlAccess.h */,
-				48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+ControlAccess.m */,
+				48F0E12C0FAA593500AA8D01 /* NSPredicateEditor+AppleForgot.h */,
+				48F0E12D0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m */,
 				4814E04712ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.h */,
 				4814E04812ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.m */,
 				48C1E11821BF3D6400FF1AFB /* NSRunningApplication+SSYHideReliably.h */,
@@ -7529,7 +7529,7 @@
 				485CAF620FA1099B00EAC841 /* BkmxDocWinCon+Delegations.m in Sources */,
 				48F0DE2A0FA79DF900AA8D01 /* NSSet+SimpleMutations.m in Sources */,
 				48F0DEE80FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.m in Sources */,
-				48F0E12E0FAA593600AA8D01 /* NSPredicateEditor+ControlAccess.m in Sources */,
+				48F0E12E0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m in Sources */,
 				48F0E1C40FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.m in Sources */,
 				48F0E4E30FABE81D00AA8D01 /* NSString+MoreComparisons.m in Sources */,
 				48F0E65D0FACD99E00AA8D01 /* NSMenu+Ancestry.m in Sources */,

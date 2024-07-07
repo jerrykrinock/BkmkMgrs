@@ -4,7 +4,7 @@
 #import "NSString+LocalizeSSY.h"
 #import "StarkPredicateEditor.h"
 #import "BkmxDocWinCon+Autosaving.h"
-#import "NSPredicateEditor+ControlAccess.h"
+#import "NSPredicateEditor+AppleForgot.h"
 #import "BkmxAppDel.h"
 #import "StarkReplicator.h"
 #import "NSIndexSet+MoreRanges.h"
@@ -412,14 +412,24 @@
 - (IBAction)findStarksThatAreDontVerify:(id)sender {
 	[self reveal] ;
 	
-	// Clear out all existing rows
-	[predicateEditor removeAllRows] ;
-	
-	// Add a root row set to "All of the following are true"
-	[predicateEditor addCompoundRowPresetToPredicateType:NSAndPredicateType
-										   asSubrowOfRow:-1] ;
-	
-	StarkTableColumn* tableColumn ;
+    NSExpression* lhs;
+    NSExpression* rhs;
+    NSPredicateOperatorType operatorType;
+
+    lhs = [NSExpression expressionForKeyPath:constKeyDontVerify];
+    rhs = [NSExpression expressionForConstantValue:@YES];
+    operatorType = NSEqualToPredicateOperatorType;
+    
+    NSPredicate* pred = [NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0] ;
+
+    [predicateEditor changeRowCountTo:1];
+    predicateEditor.objectValue = pred;
+
+    StarkTableColumn* tableColumn ;
 	
 	tableColumn = (StarkTableColumn*)[[self findTableView] tableColumnWithIdentifier:@"userDefinedF0"] ;
 	[tableColumn setUserDefinedAttribute:constKeyUrlOrStats] ;
@@ -428,31 +438,27 @@
 	tableColumn = (StarkTableColumn*)[[self findTableView] tableColumnWithIdentifier:@"userDefinedF1"] ;
 	[tableColumn setUserDefinedAttribute:constKeyDontVerify] ;
 	[tableColumn sizeToFit] ;
-	
-	// Add a row to express predicate "DontVerify = YES"
-	[predicateEditor addSimpleRowPresetToAttributeKey:constKeyDontVerify
-                                          hasOperator:NO
-										 operatorType:0
-										asSubrowOfRow:0
-										  targetValue:[NSNumber numberWithBool:YES]] ;
 }
 
 - (IBAction)findStarksThatAreBroken:(id)sender {
 	[self reveal] ;
 
-	// Clear out all existing rows
-	[predicateEditor removeAllRows] ;	
-	
-	// Add a root row set to "All of the following are true"
-	[predicateEditor addCompoundRowPresetToPredicateType:NSAndPredicateType
-										   asSubrowOfRow:-1] ;
-	
-	// Add a row to express predicate "Verifier Disposition = Broken"
-	[predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierDisposition
-                                          hasOperator:YES
-										 operatorType:NSEqualToPredicateOperatorType
-										asSubrowOfRow:0
-										  targetValue:[NSNumber numberWithInteger:BkmxFixDispoLeaveBroken]] ;
+    NSExpression* lhs;
+    NSExpression* rhs;
+    NSPredicateOperatorType operatorType;
+
+    lhs = [NSExpression expressionForKeyPath:constKeyVerifierDisposition];
+    rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoLeaveBroken)];
+    operatorType = NSEqualToPredicateOperatorType;
+    
+    NSPredicate* pred = [NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0] ;
+    
+    [predicateEditor changeRowCountTo:1];
+    predicateEditor.objectValue = pred;
 	
 	StarkTableColumn* tableColumn ;
 	
@@ -470,28 +476,33 @@
 
 - (IBAction)findStarksThatAreUpdatedOrSecured:(id)sender {
 	[self reveal] ;
-	
-	// Clear out all existing rows
-	[predicateEditor removeAllRows] ;	
-	
-	// Add a root row set to "Any of the following are true"
-	[predicateEditor addCompoundRowPresetToPredicateType:NSOrPredicateType
-										   asSubrowOfRow:-1] ;
-	
-	// Add a row to express predicate "Verifier Disposition = Updated"
-	[predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierDisposition
-                                          hasOperator:YES
-										 operatorType:NSEqualToPredicateOperatorType
-										asSubrowOfRow:0
-										  targetValue:[NSNumber numberWithInteger:BkmxFixDispoDoUpdate]] ;
-    // Add a row to express predicate "Verifier Disposition = Secured"
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierDisposition
-                                          hasOperator:YES
-                                         operatorType:NSEqualToPredicateOperatorType
-                                        asSubrowOfRow:0
-                                          targetValue:[NSNumber numberWithInteger:BkmxFixDispoDoUpgradeInsecure]] ;
 
-	StarkTableColumn* tableColumn ;
+    NSExpression* lhs;
+    NSExpression* rhs;
+    NSPredicateOperatorType operatorType;
+    NSMutableArray* subpreds = [NSMutableArray new];
+
+    lhs = [NSExpression expressionForKeyPath:constKeyVerifierDisposition];
+    rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoDoUpdate)];
+    operatorType = NSEqualToPredicateOperatorType;
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoDoUpgradeInsecure)];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    NSPredicate* pred = [NSCompoundPredicate orPredicateWithSubpredicates:[[subpreds copy] autorelease]];
+
+    [subpreds release];
+    [predicateEditor changeRowCountTo:3] ;
+    predicateEditor.objectValue = pred;
+
+    StarkTableColumn* tableColumn ;
 	
 	tableColumn = (StarkTableColumn*)[[self findTableView] tableColumnWithIdentifier:@"userDefinedF0"] ;
 	[tableColumn setUserDefinedAttribute:constKeyUrlOrStats] ;
@@ -513,76 +524,89 @@
 - (IBAction)findStarksThatAreUnknown:(id)sender {
     [self reveal] ;
     
-    // Clear out all existing rows
-    [predicateEditor removeAllRows] ;
-    
-    // Add a root row set to "Any of the following are true"
-    [predicateEditor addCompoundRowPresetToPredicateType:NSOrPredicateType
-                                           asSubrowOfRow:-1] ;
-    
-    // Add a row to express predicate "Verifier Status Code = -1002"
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSEqualToPredicateOperatorType
-                                        asSubrowOfRow:0
-                                          targetValue:[NSNumber numberWithInteger:-1002]] ;
-    // Add a row to express predicate "Verifier Status Code = 0"
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSEqualToPredicateOperatorType
-                                        asSubrowOfRow:0
-                                          targetValue:[NSNumber numberWithInteger:0]] ;
+    NSExpression* lhs;
+    NSExpression* rhs;
+    NSPredicateOperatorType operatorType;
+    NSMutableArray* subpreds = [NSMutableArray new];
 
-    [predicateEditor addCompoundRowPresetToPredicateType:NSAndPredicateType
-                                           asSubrowOfRow:0] ;
+    lhs = [NSExpression expressionForKeyPath:constKeyVerifierDisposition];
+    rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoLeaveAsIs)];
+    operatorType = NSEqualToPredicateOperatorType;
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    lhs = [NSExpression expressionForKeyPath:constKeyVerifierCode];
+    rhs = [NSExpression expressionForConstantValue:@200];
+    operatorType = NSNotEqualToPredicateOperatorType;
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@301];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@302];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@404];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@-1001];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@-1003];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    rhs = [NSExpression expressionForConstantValue:@-1012];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+    NSPredicate* pred = [NSCompoundPredicate andPredicateWithSubpredicates:[[subpreds copy] autorelease]];
     
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierDisposition
-                                          hasOperator:YES
-                                         operatorType:NSEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:BkmxFixDispoLeaveAsIs]] ;
+    [subpreds removeAllObjects];
+    [subpreds addObject:pred];
+    lhs = [NSExpression expressionForKeyPath:constKeyVerifierCode];
+    rhs = [NSExpression expressionForConstantValue:@-1002];
+    operatorType = NSEqualToPredicateOperatorType;
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:operatorType
+                                                                   options:0]];
+
+    rhs = [NSExpression expressionForConstantValue:@0];
+    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+                                                           rightExpression:rhs
+                                                                  modifier:NSDirectPredicateModifier
+                                                                      type:NSEqualToPredicateOperatorType
+                                                                   options:0]];
+
+    pred = [NSCompoundPredicate orPredicateWithSubpredicates:[[subpreds copy] autorelease]];
+    [subpreds release];
     
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:200]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:301]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:302]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:404]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:-1001]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:-1003]] ;
-    
-    [predicateEditor addSimpleRowPresetToAttributeKey:constKeyVerifierCode
-                                          hasOperator:YES
-                                         operatorType:NSNotEqualToPredicateOperatorType
-                                        asSubrowOfRow:3
-                                          targetValue:[NSNumber numberWithInteger:-1012]] ;
+
+    [predicateEditor changeRowCountTo:11];
+    predicateEditor.objectValue = pred;
     
     StarkTableColumn* tableColumn ;
     
