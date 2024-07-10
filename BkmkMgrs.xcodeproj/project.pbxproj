@@ -75,12 +75,6 @@
 		4812B9D51E6B2ADF002C4421 /* Chromessenger-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4812B9D11E6B2ADF002C4421 /* Chromessenger-Main.m */; };
 		4812B9D61E6B2ADF002C4421 /* Chromessenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4812B9D31E6B2ADF002C4421 /* Chromessenger.m */; };
 		4812BA0A1E6DBA2D002C4421 /* FirefoxPrefsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4812BA091E6DBA2D002C4421 /* FirefoxPrefsParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4812BA0D1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA0B1E6DDFF8002C4421 /* BookMacsterButton.xpi */; };
-		4812BA0E1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA0B1E6DDFF8002C4421 /* BookMacsterButton.xpi */; };
-		4812BA0F1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA0B1E6DDFF8002C4421 /* BookMacsterButton.xpi */; };
-		4812BA351E6DE704002C4421 /* BookMacsterSync.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA341E6DE704002C4421 /* BookMacsterSync.xpi */; };
-		4812BA361E6DE704002C4421 /* BookMacsterSync.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA341E6DE704002C4421 /* BookMacsterSync.xpi */; };
-		4812BA371E6DE704002C4421 /* BookMacsterSync.xpi in Resources */ = {isa = PBXBuildFile; fileRef = 4812BA341E6DE704002C4421 /* BookMacsterSync.xpi */; };
 		48134EFB190B84D100FA3EDF /* PrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48134EF6190B84D100FA3EDF /* PrefsWindow.xib */; };
 		48134EFC190B84D100FA3EDF /* PrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48134EF6190B84D100FA3EDF /* PrefsWindow.xib */; };
 		48134EFD190B84D100FA3EDF /* PrefsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48134EF6190B84D100FA3EDF /* PrefsWindow.xib */; };
@@ -1872,8 +1866,6 @@
 		4812B9D31E6B2ADF002C4421 /* Chromessenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chromessenger.m; path = ExtensionsBrowser/W3CBE/Chromessenger/Chromessenger.m; sourceTree = "<group>"; };
 		4812BA081E6DBA2C002C4421 /* FirefoxPrefsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirefoxPrefsParser.h; path = ../../ClassesObjC/FirefoxPrefsParser.h; sourceTree = "<group>"; };
 		4812BA091E6DBA2D002C4421 /* FirefoxPrefsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirefoxPrefsParser.m; path = ../../ClassesObjC/FirefoxPrefsParser.m; sourceTree = "<group>"; };
-		4812BA0B1E6DDFF8002C4421 /* BookMacsterButton.xpi */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookMacsterButton.xpi; path = Resources/BookMacsterButton.xpi; sourceTree = "<group>"; };
-		4812BA341E6DE704002C4421 /* BookMacsterSync.xpi */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookMacsterSync.xpi; path = Resources/BookMacsterSync.xpi; sourceTree = "<group>"; };
 		48134EF6190B84D100FA3EDF /* PrefsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrefsWindow.xib; path = Resources/PrefsWindow.xib; sourceTree = "<group>"; };
 		48134F06190C053700FA3EDF /* BkmxDoc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BkmxDoc.xib; path = resources/BkmxDoc.xib; sourceTree = "<group>"; };
 		4814E04712ADE122004BD7CE /* NSProcessInfo+SSYMoreInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSProcessInfo+SSYMoreInfo.h"; path = "../../CategoriesObjC/NSProcessInfo+SSYMoreInfo.h"; sourceTree = SOURCE_ROOT; };
@@ -4544,8 +4536,6 @@
 		48C650160F700CA6008CC67F /* Other Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4812BA0B1E6DDFF8002C4421 /* BookMacsterButton.xpi */,
-				4812BA341E6DE704002C4421 /* BookMacsterSync.xpi */,
 				48FD5C0F0F053AD000288DD2 /* AmpEscapes.plist */,
 				48FD5C160F053AD000288DD2 /* SheepSysBkmkMgrs.sdef */,
 				48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */,
@@ -6322,7 +6312,6 @@
 				4875E63A18EB41D200859698 /* ClientInfo.xib in Resources */,
 				4875E63B18EB41D200859698 /* ClientsWiz.xib in Resources */,
 				4875E63C18EB41D200859698 /* prefsPrimeDoc.png in Resources */,
-				4812BA361E6DE704002C4421 /* BookMacsterSync.xpi in Resources */,
 				4875E63D18EB41D200859698 /* SpecialHttp.xib in Resources */,
 				4875E63E18EB41D200859698 /* prefsUpdates.tif in Resources */,
 				4875E63F18EB41D200859698 /* ManageExtensions.xib in Resources */,
@@ -6353,7 +6342,6 @@
 				484B40D01D808B0E00117E59 /* FindAndReplace.xib in Resources */,
 				48C1E11521BED92400FF1AFB /* AppleScripts in Resources */,
 				4875E66318EB41D200859698 /* sortUpEn.png in Resources */,
-				4812BA0E1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */,
 				4875E66418EB41D200859698 /* sortUpEn@2x.png in Resources */,
 				4875E66618EB41D200859698 /* circle_warning.tif in Resources */,
 				4875E66918EB41D200859698 /* SyncNotifications.xib in Resources */,
@@ -6577,7 +6565,6 @@
 				480ABFED136456750011EF83 /* circle_stop.tif in Resources */,
 				48FAFE0C17E02F8C006283CF /* useDirectly.png in Resources */,
 				4843A6A71D07905C00A8383B /* ExtoreEpic in Resources */,
-				4812BA371E6DE704002C4421 /* BookMacsterSync.xpi in Resources */,
 				48CA07CD138F1AF400E7365E /* Dupe.aiff in Resources */,
 				4887D14313AD091F0022C4C6 /* MouseClick.aiff in Resources */,
 				48B3D2B81446582C00556C9F /* prefsShortcuts.png in Resources */,
@@ -6603,7 +6590,6 @@
 				48477E611C4DDB77004CC33B /* ContentOutline.xib in Resources */,
 				48B377801738B03300D6E286 /* ExtoreCanary in Resources */,
 				48C1E11621BED92400FF1AFB /* AppleScripts in Resources */,
-				4812BA0F1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */,
 				48B377811738B03300D6E286 /* ExtoreChrome in Resources */,
 				48CFA61218E4535D000E77FA /* HelpBook in Resources */,
 				48B377821738B03300D6E286 /* ExtoreChromium in Resources */,
@@ -6700,7 +6686,6 @@
 				48D6F301179D6E0700F23494 /* Sync.png in Resources */,
 				48D6F305179D6E0700F23494 /* prefsSyncing.png in Resources */,
 				48D6F306179D6E0700F23494 /* SheepSystems_Sparkle_pub.pem in Resources */,
-				4812BA351E6DE704002C4421 /* BookMacsterSync.xpi in Resources */,
 				48D6F30F179D6E0700F23494 /* excluded.png in Resources */,
 				48D6F310179D6E0700F23494 /* excluded@2x.png in Resources */,
 				48D6F311179D6E0700F23494 /* excludedDs.png in Resources */,
@@ -6722,7 +6707,6 @@
 				48D6F327179D6E0700F23494 /* ExtoreOmniWeb in Resources */,
 				48D6F328179D6E0700F23494 /* ExtoreOpera in Resources */,
 				48D6F32A179D6E0700F23494 /* ExtoreSafari in Resources */,
-				4812BA0D1E6DDFF9002C4421 /* BookMacsterButton.xpi in Resources */,
 				48D6F32B179D6E0700F23494 /* ExtoreXbel in Resources */,
 				48D6F32C179D6E0700F23494 /* MiniSearchWindow.xib in Resources */,
 				48C113DF179DD61A0004B919 /* folderMapped.png in Resources */,

@@ -1,8 +1,10 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.1.1 (2024-07-)
+## Version 3.1.1 (2024-07-09)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  In the document window, tab Reports > Verify, clicking the little magnifying glass buttons now set the predicate as expected when the Reports > Find tab is opened, as it worked in previous versions of macOS.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  In the document window, tab Reports > Verify, clicking the little magnifying glass buttons now set the predicate as expected when the Reports > Find tab is opened, as it worked in previous versions of macOS.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  The app package no longer contains either of our web browser extensions.  When installing either into Firefox, our app now downloads the latest version from our repository at mozilla.org.
 
 ## Version 3.1 (2024-05-28)
 

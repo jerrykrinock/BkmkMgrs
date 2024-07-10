@@ -407,20 +407,20 @@ static const ExtoreConstants extoreConstants = {
 }
 
 + (NSURL*)sourceUrlForExtensionIndex:(NSInteger)extensionIndex {
-	NSURL* url ;
+    NSString* basename;
     switch (extensionIndex) {
         case 1:
-            url = [[NSBundle mainAppBundle] URLForResource:constExtension1Name
-                                             withExtension:constExtensionFilenameExtension] ;
+            basename = constExtension1Name;
             break ;
         case 2:
-            url = [[NSBundle mainAppBundle] URLForResource:constExtension2Name
-                                             withExtension:constExtensionFilenameExtension] ;
+            basename = constExtension2Name;
             break ;
         default:
-            url = nil ;
+            basename = nil ;
     }
-    
+    NSString* filename = [basename stringByAppendingPathExtension:constExtensionFilenameExtension];
+    NSURL* url = [[NSURL URLWithString:@"https://sheepsystems.com/bookmacster/extensions/"] URLByAppendingPathComponent:filename];
+
 	return url ;
 }
 

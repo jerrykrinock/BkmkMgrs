@@ -43,10 +43,12 @@ packExtensionForBrowser () {
             echo "FAIL because Version from manifest ($versionFromManifest) < version demanded by $appKey in product ($minVersion)"
             exit 15
         fi
-
-        cp $manifestPath $innerTempDir
-
     fi
+    
+    # Copy all files from the BrowserSpecial directory.  This means the manifest and possibly other files)
+    browserSpecialDir=$productName/BrowserSpecial/$browser
+    echo "Will copy everything in $browserSpecialDir/ to $innerTempDir"
+    cp -a $browserSpecialDir/. $innerTempDir
 
     # The following section no longer executes.  It was useful for manifest v2 when I had a common manifest file for all browsers, with additions for Firefox.  But as of now, 2023-08-25, Chrome needs manifest v3 and Firefox barfs on service_worker which is requireed by Chrome manifest v3 in lieu of background page.
     # See if there is are any additions to the manifest for this browser

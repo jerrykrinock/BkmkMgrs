@@ -2332,17 +2332,17 @@ BrowserToBeRunningError_p:(NSError**)error_p {
 - (NSString*)installExtensionPromptForExtensionIndex:(NSInteger)extensionIndex {
     NSString* suffix ;
     if (extensionIndex == 1) {
-        suffix = @"\n\n•  Return here and 'Test' the newly-installed extension.  (This is necessary to initialize it.)" ;
+        suffix = @"\n\n•  After instaling, return here and 'Test' the newly-installed extension.  (This is necessary to initialize it.)" ;
     }
     else {
         suffix = @"" ;
     }
 
     return [NSString stringWithFormat:
-            @"•  Click 'OK' below. %@ should activate and show our '%@' extension.  (If it does not show our extension, return here and click 'Install' again.)"
-            @"\n\n•  Click the buttons given to 'Add' or 'Install' it.%@",
+            @"•  Click 'OK' below. %@ should activate and offer to install our '%@' extension.\n\nIMPORTANT:\n\nIf %@ displays a blank tab with no offer to install our extension, click in its address bar (\"https://sheepsystems.c…\" and hit 'return'.  If it still does not work, return here and click 'Install' again.%@",
             [self ownerAppDisplayName],
             [self extensionDisplayNameForExtensionIndex:extensionIndex],
+            [self ownerAppDisplayName],
             suffix] ;
 }
 
