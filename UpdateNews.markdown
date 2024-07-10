@@ -1,6 +1,6 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.1.1 (2024-07-09)
+## Version 3.1.1 (2024-07-10)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  In the document window, tab Reports > Verify, clicking the little magnifying glass buttons now set the predicate as expected when the Reports > Find tab is opened, as it worked in previous versions of macOS.
 
