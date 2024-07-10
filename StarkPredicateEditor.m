@@ -302,8 +302,6 @@ CGFloat const rightTextFieldMinimumWidth = 50.0 ;
 		for (NSMenuItem* menuItem in [[leftPopUpButton menu] itemArray]) {
 			[menuItem setTitle:[[BkmxBasis sharedBasis] labelNoNilForKey:key]] ;
 			[menuItem setTag:tag++] ;
-            /*SSYDBL*/ NSLog(@"1 somefood menuItem %@:\nhas repObject: %@", menuItem, [menuItem representedObject]);
-
 		}
 		
         /* Post-creation template tweak #2

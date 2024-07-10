@@ -4172,7 +4172,6 @@ end:;
 
     pid_t pidOfOwnerApp = [self pidOfOwnerApp] ;
     NSInteger secondsOwnerAppHasBeenRunning = [SSYOtherApper secondsRunningPid:pidOfOwnerApp] ;
-    /*SSYDBL*/ NSLog(@"Owner app has been running %ld seconds", secondsOwnerAppHasBeenRunning);
 
     NSInteger delayNeeded = 0 ;
     if (secondsOwnerAppHasBeenRunning == -1) {
