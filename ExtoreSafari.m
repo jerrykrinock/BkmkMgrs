@@ -1,5 +1,5 @@
 #import "ExtoreSafari.h"
-#import "SSYSwift-Swift.h"
+@import SSYSwift;
 #import "Bkmxwork/Bkmxwork-Swift.h"
 #import "NSError+MyDomain.h"
 #import "NSError+SSYInfo.h"

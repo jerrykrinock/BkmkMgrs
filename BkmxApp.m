@@ -1,5 +1,5 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
-#import "SSYSwift-Swift.h"
+@import SSYSwift;;
 
 #import "BkmxApp.h"
 #import "BkmxDoc.h"

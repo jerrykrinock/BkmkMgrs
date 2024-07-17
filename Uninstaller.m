@@ -1,5 +1,5 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
-#import "SSYSwift-Swift.h"
+@import SSYSwift;
 #import "Uninstaller.h"
 #import "NSFileManager+SomeMore.h"
 #import "NSString+MorePaths.h"

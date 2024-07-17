@@ -1,5 +1,5 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
-#import "SSYSwift-Swift.h"
+@import SSYSwift;
 #import "NSError+Recovery.h"
 #import "NSError+MyDomain.h"
 #import "NSError+SSYInfo.h"

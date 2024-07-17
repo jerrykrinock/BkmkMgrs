@@ -1,5 +1,5 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
-#import "SSYSwift-Swift.h"
+@import SSYSwift;
 #import "ActiveBrowserObserver.h"
 #import "Syncer.h"
 #import "AgentPerformer.h"

@@ -319,7 +319,6 @@
 		485F190418EC6DD80019B4ED /* Sheep-Sys-Thomas in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 482CFF9F1645A311000CB943 /* Sheep-Sys-Thomas */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4863D38D1476935E00AE2DAC /* TagMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4863D38C1476935E00AE2DAC /* TagMap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		486418281AAD465C001542A4 /* ExtoreSafari in Resources */ = {isa = PBXBuildFile; fileRef = 48B3777D1738B03300D6E286 /* ExtoreSafari */; };
-		4865513C2C0FD99300EE2322 /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4865513B2C0FD99300EE2322 /* SSYSwift */; };
 		4865513E2C0FD9CC00EE2322 /* SSYSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4865513D2C0FD9CC00EE2322 /* SSYSwift */; };
 		48669CA8102FB7660097EF19 /* SSYArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48669CA7102FB7660097EF19 /* SSYArrayController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48669CCF102FCAE40097EF19 /* SSYDragTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48669CCE102FCAE40097EF19 /* SSYDragTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1256,19 +1255,26 @@
 			remoteGlobalIDString = 48D1E62C0F6C35CF001BA354;
 			remoteInfo = Bkmxwork;
 		};
-		482C8499137C21A4009EF220 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48D1E62C0F6C35CF001BA354;
-			remoteInfo = "Framework (Bkmxwork)";
-		};
 		48342055245A9F1F00E275B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 48342031245A9BB000E275B6;
 			remoteInfo = BkmxNotifier;
+		};
+		484161662C42C2CB00952F66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48D1E62C0F6C35CF001BA354;
+			remoteInfo = Bkmxwork;
+		};
+		4841616C2C42F7FE00952F66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48D1E62C0F6C35CF001BA354;
+			remoteInfo = Bkmxwork;
 		};
 		485142461D43EE4600C4B634 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1304,13 +1310,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4898F9F715AE3DC800141F40;
 			remoteInfo = UrlHandler;
-		};
-		487F28BE2160A50F00BA9EC7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 48D1E62C0F6C35CF001BA354;
-			remoteInfo = Bkmxwork;
 		};
 		48813DCC2460DDD100F0166C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -3420,7 +3419,6 @@
 				48EECDDB1003054200A358CC /* ScriptingBridge.framework in Frameworks */,
 				48D572BB102E6D6300D18F98 /* AudioToolbox.framework in Frameworks */,
 				48F00400112DF320009974CD /* QuartzCore.framework in Frameworks */,
-				4865513C2C0FD99300EE2322 /* SSYSwift in Frameworks */,
 				48CA051D138E1CB700E7365E /* ExceptionHandling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5793,7 +5791,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				487F28BF2160A50F00BA9EC7 /* PBXTargetDependency */,
+				484161672C42C2CB00952F66 /* PBXTargetDependency */,
 			);
 			name = Chromessenger;
 			productName = Chromessenger;
@@ -5888,11 +5886,11 @@
 			);
 			comments = "# Why CopyJSConstantsToC is a Dependency\n\nCopyJSConstantsToC is a dependency because it generates ConstsFromJavaScript.h/.c which are included and linked into this target.\n\n-------------------------------------------------\n\n# Why Any .c Files Must Be set in Info panel to File Type = sourcecode.c.objc\n\nNote: There is only one .c file in the project:\nAuthorizedTasks+SetAnyUserPrefs.c\n\nOn 2009 Mar 14, at 19:46, Chris Espinosa wrote:\n\nThe good target uses a prefix file that conditionally #includes AppKit.h only when building Objective-C code.\n\nJerry:  Yes.\n\nThe bad target unconditionally uses AppKit.h as its Prefix Header setting.\n\nYes, $(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h\n\nAnd the good target uses:\n\n#ifdef __OBJC__\n   #import <Cocoa/Cocoa.h>\n#endif\n\nChris:  It's a performance vs. flexibility tradeoff. Using AppKit.h as the prefix file increases the odds of reusing an already-built pch file.  But it limits you to .m or .mm files, or as you discovered, C files declared to be Objective-C.\n\n-------------------------------------------------\n\n# Sparkle \"Installation Directory\".\n\nIn Sparkle 1.5, as it ships from Andy, in the Framework target > Build Settings, Installation Directory is @loader_path/../Frameworks.  This doesn't work for us because we use Sparkle as a \"framework within a framework\".  The \"loader\" is, I guess, Bkmxworks.framework.  I tried putting a copy of Sparkle.framework at Bkmxworks/../Frameworks, i.e. BookMacster.app/Contents/Frameworks/Bkmxworks/Versions/A/Frameworks.  I think that should have worked, but it didn't.\n\nSo, the solution I used was to hack into the Sparkle project, Framework target > Build Settings and change Installation Directory to @executable_path/../Frameworks.  Now it works.\n\nFor definitions of @loader_path and @executable_path see:\n\nhttp://developer.apple.com/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013";
 			dependencies = (
+				4841616B2C42C3EA00952F66 /* PBXTargetDependency */,
 				48B0C4AE1F8BBC0D00FF5F9C /* PBXTargetDependency */,
 			);
 			name = Bkmxwork;
 			packageProductDependencies = (
-				4865513B2C0FD99300EE2322 /* SSYSwift */,
 				4899E2F02C12CAF4006ADD44 /* SSYSwift */,
 			);
 			productName = FrameworkHowTo;
@@ -5977,7 +5975,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				482C849A137C21A4009EF220 /* PBXTargetDependency */,
+				4841616D2C42F7FE00952F66 /* PBXTargetDependency */,
 			);
 			name = FileAliasWorker;
 			productName = FileAliasWorker;
@@ -6899,7 +6897,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo Bonehead your BUILT_PRODUCTS_DIR is $BUILT_PRODUCTS_DIR\nGMM=\"$BUILT_PRODUCTS_DIR/../../Intermediates.noindex/GeneratedModuleMaps/\"\necho Bonehead your GMM is $GMM\n";
+			shellScript = "echo Bonehead your BUILT_PRODUCTS_DIR is $BUILT_PRODUCTS_DIR\nGMM=\"$BUILT_PRODUCTS_DIR/../../Intermediates.noindex/GeneratedModuleMaps/\"\necho If DEBUG your Bonehead your GMM is $GMM\nGMM=\"$BUILT_PRODUCTS_DIR/../../../../GeneratedModuleMaps/\"\necho If ARCHIVE/RELEASE your Bonehead your GMM is $GMM\n";
 		};
 		48BD42F6256983FB00DC211A /* Copy Appropriate License Obfuscated Public Key File */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -7911,15 +7909,24 @@
 			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
 			targetProxy = 4820A987212B888A0040C592 /* PBXContainerItemProxy */;
 		};
-		482C849A137C21A4009EF220 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
-			targetProxy = 482C8499137C21A4009EF220 /* PBXContainerItemProxy */;
-		};
 		48342056245A9F1F00E275B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48342031245A9BB000E275B6 /* BkmxNotifier-B */;
 			targetProxy = 48342055245A9F1F00E275B6 /* PBXContainerItemProxy */;
+		};
+		484161672C42C2CB00952F66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
+			targetProxy = 484161662C42C2CB00952F66 /* PBXContainerItemProxy */;
+		};
+		4841616B2C42C3EA00952F66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4841616A2C42C3EA00952F66 /* SSYSwift */;
+		};
+		4841616D2C42F7FE00952F66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
+			targetProxy = 4841616C2C42F7FE00952F66 /* PBXContainerItemProxy */;
 		};
 		485142471D43EE4600C4B634 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7945,11 +7952,6 @@
 			isa = PBXTargetDependency;
 			target = 4898F9F715AE3DC800141F40 /* UrlHandler */;
 			targetProxy = 4875E5D918EB41D200859698 /* PBXContainerItemProxy */;
-		};
-		487F28BF2160A50F00BA9EC7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
-			targetProxy = 487F28BE2160A50F00BA9EC7 /* PBXContainerItemProxy */;
 		};
 		48813DCD2460DDD100F0166C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -8125,6 +8127,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48FBA1791840FCC000968F15 /* BkmkMgrs.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -8194,7 +8197,7 @@
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				TROUBLE_ZIPPER_URL = "https://sheepsystems.com/files/SSYTroubleZipper.zip";
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Intermediates.noindex/GeneratedModuleMaps/";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -8202,6 +8205,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48FBA1791840FCC000968F15 /* BkmkMgrs.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -8261,6 +8265,7 @@
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MOTHER_APP_NAME = BookMacster;
+				ONLY_ACTIVE_ARCH = NO;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SUPPORT_EMAIL = "support@sheepsystems.com";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -8268,7 +8273,7 @@
 				SYMROOT = ../../Builds;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				TROUBLE_ZIPPER_URL = "https://sheepsystems.com/files/SSYTroubleZipper.zip";
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Intermediates.noindex/GeneratedModuleMaps/";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -8616,7 +8621,6 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxNotifier-B-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -8662,7 +8666,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxNotifier-B-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -8697,7 +8700,6 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.CategoriesObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -8733,7 +8735,6 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.CategoriesObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -8784,7 +8785,6 @@
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -8795,7 +8795,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -8837,7 +8836,6 @@
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -8847,7 +8845,6 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -8884,7 +8881,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BookMacsterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BookMacster;
 			};
 			name = Debug;
@@ -8918,7 +8914,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BookMacsterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = BookMacster;
 			};
 			name = Release;
@@ -9182,7 +9177,6 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxNotifier-A-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -9228,7 +9222,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxNotifier-A-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -9271,7 +9264,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxAgentRunner/BkmxAgentRunner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -9309,7 +9301,6 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "BkmxAgentRunner/BkmxAgentRunner-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -9339,7 +9330,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${COMPANY_TOP_LEVEL_DOMAIN}.${COMPANY_MID_LEVEL_DOMAIN}.${EXECUTABLE_NAME}";
 				PRODUCT_NAME = "Sheep-Sys-UrlHandler";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -9368,7 +9358,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${COMPANY_TOP_LEVEL_DOMAIN}.${COMPANY_MID_LEVEL_DOMAIN}.${EXECUTABLE_NAME}";
 				PRODUCT_NAME = "Sheep-Sys-UrlHandler";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -9534,7 +9523,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -9569,7 +9557,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -9761,7 +9748,6 @@
 				PRODUCT_NAME_LOWER = smarky;
 				SWIFT_OBJC_BRIDGING_HEADER = "Smarky-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wimplicit-function-declaration",
 					"-fobjc-exceptions",
@@ -9800,7 +9786,6 @@
 				PRODUCT_NAME = Smarky;
 				PRODUCT_NAME_LOWER = smarky;
 				SWIFT_OBJC_BRIDGING_HEADER = "Smarky-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wimplicit-function-declaration",
 					"-fobjc-exceptions",
@@ -9867,7 +9852,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bkmxwork-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -9923,7 +9907,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bkmxwork-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -9959,7 +9942,6 @@
 				PRODUCT_NAME = BookMacster;
 				PRODUCT_NAME_LOWER = bookmacster;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Wimplicit-function-declaration",
 					"-fobjc-exceptions",
@@ -9998,7 +9980,6 @@
 				PRODUCT_NAME = BookMacster;
 				PRODUCT_NAME_LOWER = bookmacster;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = (
 					"-Wimplicit-function-declaration",
 					"-fobjc-exceptions",
@@ -10104,7 +10085,6 @@
 				);
 				PRODUCT_NAME = FileAliasWorker;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -10130,7 +10110,6 @@
 				);
 				PRODUCT_NAME = FileAliasWorker;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -10393,8 +10372,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4865513B2C0FD99300EE2322 /* SSYSwift */ = {
+		4841616A2C42C3EA00952F66 /* SSYSwift */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */;
 			productName = SSYSwift;
 		};
 		4865513D2C0FD9CC00EE2322 /* SSYSwift */ = {
