@@ -110,7 +110,7 @@ extension BkmxBasis {
                     _ = scanner.scanUpToString("BkAgRnRsltERRDESC: ") ?? "No error description!"
                     _ = scanner.scanString("BkAgRnRsltERRDESC: ")
                     
-                    let errorDesc = scanner.scanUpToString("BkAgRnRsltERRSUGG: ") ?? "??"
+                    let errorDesc = scanner.scanUpToString("BkAgRnRsltERRSUGG: ") ?? "No Error Desc!  Here is the whole stdout from BkmxAgentRunner:\n \(stdoutString)"
                     _ = scanner.scanString("BkAgRnRsltERRSUGG: ")
                     
                     var errorSugg = scanner.scanUpToCharacters(from: CharacterSet())
