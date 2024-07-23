@@ -5720,6 +5720,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				484161722C4C3E1F00952F66 /* PBXTargetDependency */,
+				484161702C4C3E1300952F66 /* PBXTargetDependency */,
 			);
 			name = BkmxAgentRunner;
 			packageProductDependencies = (
@@ -7928,6 +7930,14 @@
 			target = 48D1E62C0F6C35CF001BA354 /* Bkmxwork */;
 			targetProxy = 4841616C2C42F7FE00952F66 /* PBXContainerItemProxy */;
 		};
+		484161702C4C3E1300952F66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4841616F2C4C3E1300952F66 /* SSYSwift */;
+		};
+		484161722C4C3E1F00952F66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 484161712C4C3E1F00952F66 /* ArgumentParser */;
+		};
 		485142471D43EE4600C4B634 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48D1ED330F6CB79A001BA354 /* BookMacster */;
@@ -9254,7 +9264,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
@@ -9292,7 +9301,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.BkmxAgentRunner;
@@ -10376,6 +10384,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */;
 			productName = SSYSwift;
+		};
+		4841616F2C4C3E1300952F66 /* SSYSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4865513A2C0FD99300EE2322 /* XCLocalSwiftPackageReference "../../SSYSwift" */;
+			productName = SSYSwift;
+		};
+		484161712C4C3E1F00952F66 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48E6E6712B44A66D00113FFC /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 		4865513D2C0FD9CC00EE2322 /* SSYSwift */ = {
 			isa = XCSwiftPackageProductDependency;
