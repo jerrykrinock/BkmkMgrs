@@ -115,7 +115,7 @@ class BkmxAgentRunner {
         }
     }
     
-    func humanReadableBkmxAgentStatus(_ status: BkmxAgentStatus) -> String {
+    fileprivate func humanReadableBkmxAgentStatus(_ status: BkmxAgentStatus) -> String {
         switch(status) {
         case BkmxAgentStatusUnknown:
             return "Unknown"
@@ -136,7 +136,7 @@ class BkmxAgentRunner {
         }
      }
     
-    func switchLoginItem(_ onOff: Bool, bundleIdentifier: String) {
+    fileprivate func switchLoginItem(_ onOff: Bool, bundleIdentifier: String) {
         if #available(macOS 13, *) {
             let service = SMAppService.loginItem(identifier: bundleIdentifier)
             if (onOff) {
