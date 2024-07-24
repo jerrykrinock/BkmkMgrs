@@ -100,7 +100,7 @@ extension BkmxBasis {
                 let stdoutString = String(decoding: stdout, as: UTF8.self)
                 let scanner = Scanner(string: stdoutString)
                 
-                _ = scanner.scanUpToString("BkAgRnRsltSTATUS: ") ?? "??"
+                runnerLogText = scanner.scanUpToString("BkAgRnRsltSTATUS: ") ?? "??"
                 _ = scanner.scanString("BkAgRnRsltSTATUS: ")
                 
                 /* Scan the status value*/
