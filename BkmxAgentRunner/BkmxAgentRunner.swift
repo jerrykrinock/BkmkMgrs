@@ -4,69 +4,100 @@ import Cocoa
 import SSYSwift
 
 // " Result Tuplet"
-typealias KickResult = (agentStatus: BkmxAgentStatus, errorDesc: String?, errorSugg: String?)
+typealias KickResult = (
+    agentStatus: BkmxAgentStatus,
+    errorCode: Int?,
+    errorDesc: String?,
+    errorSugg: String?
+)
 
 class BkmxAgentRunner {
-    func kick(_ bundleIdentifier: String, whatDo: KickType) -> KickResult{
+    
+    public class func commandName(kickType: KickType) -> String {
+        switch (kickType) {
+        case .stop:
+            return "stop"
+        case .start:
+            return "start"
+        case .reboot:
+            return "reboot"
+        case .nothing:
+            return "nothing"
+        case .status:
+            return "status"
+        default:
+            return "dunno"
+        }
+    }
+    
+    func kick(_ bundleIdentifier: String,
+              orExecutableName: String,
+              command: KickType) -> KickResult {
+        var errorCode: Int? = nil
         var errorDesc: String? = nil
         var errorSugg: String? = nil
         
-        var whatDoing: String
-        switch whatDo {
-        case .nothing:
-            whatDoing = "NOOP"
-        case .start:
-            whatDoing = "START"
-        case .stop:
-            whatDoing = "STOP"
-        case .reboot:
-            whatDoing = "REBOOT"
-        case .status:
-            whatDoing = "STATUS"
-        @unknown default:
-            whatDoing = "NOOP"
-        }
-        agentRunnerLogger.log("Will \(whatDoing) \(bundleIdentifier)")
-        
-        let timeout = 3.0
+        let readableKickType = Self.commandName(kickType: command)
+        agentRunnerLogger.log("Will --\(readableKickType) \(bundleIdentifier)")
+
+        let timeout = 3.02
         var ok: Bool
-        switch (whatDo) {
+        let processName = ProcessInfo.processInfo.processName
+        switch (command) {
         case .start:
             self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: timeout)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
+                                                 orExecutableName: orExecutableName,
+                                                 expectRunning: ExpectRunning.yes,
+                                                 timeout: timeout)
             if (!ok) {
-                errorDesc = "Agent Runner commanded macOS to start BkmxAgent, but it was still not running after \(timeout) seconds."
+                errorCode = 288421
+                errorDesc = "\(processName) commanded macOS to start \(bundleIdentifier), but it was still not running after \(timeout) seconds."
             }
         case .stop:
             self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: timeout)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
+                                                 orExecutableName: orExecutableName,
+                                                 expectRunning: ExpectRunning.no,
+                                                 timeout: timeout)
             if (!ok) {
-                errorDesc = "Agent Runner commanded macOS to stop BkmxAgent, but it was still running after \(timeout) seconds."
+                errorCode = 288422
+                errorDesc = "\(processName) commanded macOS to stop \(bundleIdentifier), but it was still running after \(timeout) seconds."
             }
         case .reboot:
             self.switchLoginItem(false, bundleIdentifier: bundleIdentifier)
-            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.no, timeout: timeout)
+            ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
+                                                 orExecutableName: orExecutableName,
+                                                 expectRunning: ExpectRunning.no,
+                                                 timeout: timeout)
             if (!ok) {
-                errorDesc = "Agent Runner commanded macOS to stop BkmxAgent, so it could be rebooted, but it was still  running after \(timeout) seconds."
+                errorCode = 288423
+                errorDesc = "\(processName) commanded macOS to stop \(bundleIdentifier), so it could be rebooted, but it was still  running after \(timeout) seconds."
                 errorSugg = "Try to quit BkmxAgent by using the Activity Monitor app."
             } else {
                 self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
-                ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier, expectRunning: ExpectRunning.yes, timeout: timeout)
+                ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
+                                                     orExecutableName: orExecutableName,
+                                                     expectRunning: ExpectRunning.yes,
+                                                     timeout: timeout)
                 if (!ok) {
-                    errorDesc = "Agent Runner commanded macOS to relaunch BkmxAgent after quitting, but it was still not running after \(timeout) seconds."
+                    errorCode = 288424
+                    errorDesc = "\(processName) commanded macOS to relaunch \(bundleIdentifier) after quitting, but it was still not running after \(timeout) seconds."
                 }
             }
         case .status:
             ok = true
         case .nothing:
+            errorCode = 288425
             errorDesc = "Nothing to do"
         @unknown default:
+            errorCode = 288426
             errorDesc = "Unknown KickType"
         }
 
         let agentStatus = self.getAgentStatus(bundleIdentifier)
 
-        return (agentStatus, errorDesc, errorSugg)
+        return (agentStatus, errorCode, errorDesc, errorSugg)
     }
     
     
@@ -137,7 +168,7 @@ class BkmxAgentRunner {
      }
     
     fileprivate func switchLoginItem(_ onOff: Bool, bundleIdentifier: String) {
-        if #available(macOS 13, *) {
+        if #available(macOS 14, *) {
             let service = SMAppService.loginItem(identifier: bundleIdentifier)
             if (onOff) {
                 do {
@@ -158,10 +189,10 @@ class BkmxAgentRunner {
             }
         } else {
             let cfBundleIdentifier = bundleIdentifier as CFString
-            agentRunnerLogger.log("Will try legacy SMLoginItemSetEnabled: \(onOff ? "enable" : "disable"))\n")
+            agentRunnerLogger.log("Will try legacy SMLoginItemSetEnabled: \(onOff ? "true" : "false")\n")
             let ok = SMLoginItemSetEnabled(cfBundleIdentifier, onOff)
             if (!ok) {
-                agentRunnerLogger.log("SMLoginItemSetEnabled failed switching \(onOff ? "on" : "off"))\n")
+                agentRunnerLogger.log("SMLoginItemSetEnabled failed switching \(onOff ? "on" : "off")\n")
             }
         }
     }

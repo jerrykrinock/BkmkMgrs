@@ -538,6 +538,16 @@ CA
                                     <action selector="touchSafariBookmarks:" target="-1" id="wZt-be-1EX"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Legacy Start BkmxAgent" tag="48621" id="MU4-0u-BtI">
+                                <connections>
+                                    <action selector="legacyStartBkmxAgent:" target="347" id="Bie-29-bfY"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Legacy Stop BkmxAgent" tag="48621" id="aJH-EN-3H9" userLabel="Legacy Stop BkmxAgent">
+                                <connections>
+                                    <action selector="legacyStopBkmxAgent:" target="347" id="vrT-yj-nSA"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

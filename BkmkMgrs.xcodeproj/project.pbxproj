@@ -207,6 +207,8 @@
 		4843A6AD1D07976900A8383B /* ExtoreEpic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4843A6AC1D07976900A8383B /* ExtoreEpic.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4843A6B01D0797A400A8383B /* ExtoreVivaldi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4843A6AF1D0797A400A8383B /* ExtoreVivaldi.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48442DFA14E4E67200536867 /* Sync.png in Resources */ = {isa = PBXBuildFile; fileRef = 48442DF914E4E67200536867 /* Sync.png */; };
+		484460702C5097A9004E4A79 /* BkmxAgentRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */; };
+		484460712C509BCA004E4A79 /* BkmxAgentRunnerLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */; };
 		4845213D12C9690200B6EBDD /* NoStark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4845213C12C9690200B6EBDD /* NoStark.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		484639211CD9184800B849E3 /* CategoriesObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 484639131CD9179100B849E3 /* CategoriesObjCTests.m */; };
 		484639221CD9199000B849E3 /* NSString+SSYHttpQueryCruft.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F3BA51CD90FE500E7FE4F /* NSString+SSYHttpQueryCruft.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -280,6 +282,7 @@
 		484F55F62B48BEEF0050F78F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 484F55F52B48BEEF0050F78F /* Assets.xcassets */; };
 		484F55F92B48BEEF0050F78F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 484F55F82B48BEEF0050F78F /* Preview Assets.xcassets */; };
 		485142441D43EE4600C4B634 /* BookMacsterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 485142431D43EE4600C4B634 /* BookMacsterUITests.m */; };
+		4852A5712C5BAA64005D6088 /* BkmxAppDel+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4852A5702C5BAA64005D6088 /* BkmxAppDel+Actions.swift */; };
 		4852B4FE0F8190E3000569AA /* MAKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4852B4FD0F8190E3000569AA /* MAKVONotificationCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4852B68B1396FD9C00A3469A /* NSURL+FileDisplayName.m in Sources */ = {isa = PBXBuildFile; fileRef = 4852B68A1396FD9C00A3469A /* NSURL+FileDisplayName.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4852BC880F842EBA000569AA /* OperationSaveDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4852BC850F842EBA000569AA /* OperationSaveDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2123,6 +2126,7 @@
 		485142411D43EE4600C4B634 /* BookMacsterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookMacsterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		485142431D43EE4600C4B634 /* BookMacsterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookMacsterUITests.m; sourceTree = "<group>"; };
 		485142451D43EE4600C4B634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4852A5702C5BAA64005D6088 /* BkmxAppDel+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BkmxAppDel+Actions.swift"; sourceTree = "<group>"; };
 		4852B4FC0F8190E3000569AA /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAKVONotificationCenter.h; path = ../../ClassesObjC/MAKVONotificationCenter.h; sourceTree = SOURCE_ROOT; };
 		4852B4FD0F8190E3000569AA /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAKVONotificationCenter.m; path = ../../ClassesObjC/MAKVONotificationCenter.m; sourceTree = SOURCE_ROOT; };
 		4852B6891396FD9C00A3469A /* NSURL+FileDisplayName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+FileDisplayName.h"; path = "../../CategoriesObjC/NSURL+FileDisplayName.h"; sourceTree = SOURCE_ROOT; };
@@ -3553,6 +3557,7 @@
 				48FD5AC10F052EAF00288DD2 /* BkmxAppDel.m */,
 				48FD5AD40F052EAF00288DD2 /* BkmxAppDel+Actions.h */,
 				48FD5AD50F052EAF00288DD2 /* BkmxAppDel+Actions.m */,
+				4852A5702C5BAA64005D6088 /* BkmxAppDel+Actions.swift */,
 				48FD5AC20F052EAF00288DD2 /* BkmxAppDel+Capabilities.h */,
 				48FD5AC30F052EAF00288DD2 /* BkmxAppDel+Capabilities.m */,
 				48E201940F11A18F00BC7687 /* BkmxAppDel+Generics.h */,
@@ -7513,6 +7518,7 @@
 				485CAF620FA1099B00EAC841 /* BkmxDocWinCon+Delegations.m in Sources */,
 				48F0DE2A0FA79DF900AA8D01 /* NSSet+SimpleMutations.m in Sources */,
 				48F0DEE80FA902D800AA8D01 /* NSNumber+VerifierSubtype302Display.m in Sources */,
+				484460702C5097A9004E4A79 /* BkmxAgentRunner.swift in Sources */,
 				48F0E12E0FAA593600AA8D01 /* NSPredicateEditor+AooleForgot.m in Sources */,
 				48F0E1C40FAA797400AA8D01 /* NSNumber+VerifierDispositionDisplay.m in Sources */,
 				48F0E4E30FABE81D00AA8D01 /* NSString+MoreComparisons.m in Sources */,
@@ -7823,11 +7829,13 @@
 				482EBB7B16BB1924008ED822 /* NSDictionary+SSYJsonFile.m in Sources */,
 				48A335D116D87ECA0067553D /* Chromessengerer.m in Sources */,
 				4817123316E71B3700E31585 /* ExtoreChromy+UserOpenProfile.m in Sources */,
+				4852A5712C5BAA64005D6088 /* BkmxAppDel+Actions.swift in Sources */,
 				48AE855016FAD113007FC064 /* OperationQuill.m in Sources */,
 				489D1EBB170E20950097E05F /* SSYVersionTriplet+BkmxLegacyEffectivness.m in Sources */,
 				487911CD171DA44D0008170D /* NSError+MoreDescriptions.m in Sources */,
 				48FF3BEA171DDB0F00D040BC /* NSError+Recovery.m in Sources */,
 				48FF3BEF171DE13700D040BC /* NSError+DecodeCodes.m in Sources */,
+				484460712C509BCA004E4A79 /* BkmxAgentRunnerLogger.swift in Sources */,
 				4870DCB91CCC3A9A00897B0F /* SSYReplacePredicateEditorRowTemplate.m in Sources */,
 				489B98D328DA6E03009E82FD /* NSPersistentStoreCoordinator+MigrationHelp.swift in Sources */,
 				48FF3BF4171DF41A00D040BC /* NSError+MyDomain.m in Sources */,

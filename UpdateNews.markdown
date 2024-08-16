@@ -1,5 +1,11 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.1.4 (2024-08-16)
+
+Version 3.1.4 has some fixes for users with macOS 13 or earlier.  If, like most people, you are using macOS 14 or later, you should *Skip* this update.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for a bug in recent versions of macOS 11-13 which caused Error 582958 when switching syncing between Ready and Paused or Off.
+
 ## Version 3.1.3 (2024-07-20)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Fixed bug which probably caused Error 582958 when switching syncing between Ready and Paused or Off, or Show Syncing Status, when running in macOS 11 - 13.

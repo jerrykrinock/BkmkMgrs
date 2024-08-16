@@ -505,6 +505,8 @@ __attribute__((visibility("default"))) @interface BkmxBasis : NSObject <SSYAlert
 
 - (NSArray<NSRunningApplication*>*)runningAgents;
 
+- (NSString*)appNameContainingAgentWithBundleIdentifier:(NSString*)bundleIdentifier;
+
 - (NSString*)runningAgentDescription;
 
 - (BOOL)rebootSyncAgentReport_p:(NSString**)report_p

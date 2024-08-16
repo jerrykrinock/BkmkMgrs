@@ -12,7 +12,10 @@ do {
         let commandLiner = try BkmxAgentRunnerCommandLiner.parse()
         let whatDo = try commandLiner.getArgs()
         
-        let kickResult = BkmxAgentRunner().kick(agentBundleIdentifier, whatDo: whatDo)
+        let kickResult = BkmxAgentRunner().kick(
+            agentBundleIdentifier,
+            orExecutableName: "BkmxAgent", // Should use constAppNameBkmxAgent, but for economy I don't want ta rget BkmxAgentRunner to include BkmxGlobals or link to Bkmxwork.
+            command: whatDo)
         
         agentRunnerLogger.log("TERMINATING-AT: \(NSDate())\n")
         agentRunnerLogger.log("BkAgRnRsltSTATUS: \(kickResult.agentStatus.rawValue)\n")

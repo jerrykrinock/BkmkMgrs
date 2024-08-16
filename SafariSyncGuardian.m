@@ -107,6 +107,7 @@
 											user:user] ;
 #else
 	pid_t pid = [SSYOtherApper pidOfProcessNamed:@"SafariDAVClient"
+                              orBundleIdentifier:nil
 											user:user] ;
 #endif
 	return (pid != 0) ;

@@ -238,7 +238,8 @@ typedef NS_ENUM(NSUInteger, KickType) {
 
 enum BkmxAgentStatus_enum {
     /* The negative ones are my additions. */
-    BkmxAgentStatusUnknown = -3,  // should not happen
+    BkmxAgentStatusInternalError = -4,
+    BkmxAgentStatusUnknown = -3,
     BkmxAgentStatusNotAvailableDueToMacOS12OrEarlier = -2,
     BkmxAgentStatusNotRequested = -1,
     /* The positive ones here replicate Apple's SMAppService.Status */

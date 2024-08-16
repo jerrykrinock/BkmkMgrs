@@ -2137,21 +2137,29 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
 
 - (NSString*)runningAgentDescription {
 
-    NSMutableArray* agentDescriptions = [NSMutableArray new];
+    NSArray* agentDescriptions;
+    NSMutableArray* bucket = [NSMutableArray new];
     for (NSRunningApplication* runningAgent in [self runningAgents]) {
         /* NSRunningAgent.launchDate does not work for processes which are "not
          launched by launchd".  I thought BkmxAgent *was* launched by launchd,
          but apparently not, because .launchDate does not work.  So we do this
          instead… */
-        NSString* elapsedTimeString = [SSYOtherApper humanReadableElapsedRunningTimeOfPid:runningAgent.processIdentifier];
-        
-        [agentDescriptions addObject:[NSString stringWithFormat:
-                                      NSLocalizedString(@"A BkmxAgent process with these attributes is running:\n    Name: %@\n    Bundle Identifier: %@\n    Found in app package: %@\n    Process Identifier (pid): %d\n    Was launched %@ ago", nil),
-                                      constAppNameBkmxAgent,
-                                      runningAgent.bundleIdentifier,
-                                      [self appNameContainingAgentWithBundleIdentifier:runningAgent.bundleIdentifier],
-                                      runningAgent.processIdentifier,
-                                      elapsedTimeString]];
+        [bucket addObject:[self agentDescriptionWithExecutableName:constAppNameBkmxAgent
+                                                  bundleIdentifier:runningAgent.bundleIdentifier
+                                                               pid:runningAgent.processIdentifier
+                                                          rawEtime:nil
+                                                        launchDate:runningAgent.launchDate]];
+    }
+    if (bucket.count > 0) {
+        agentDescriptions = [[bucket copy] autorelease];
+    } else {
+        /* For some strange reason, class NSRunningApplication.runningApplications(withBundleIdentifier:)
+         will miss BkmxAgent in macOS 13 (tested in July 2024).  This is
+         possibly because it does not consider a process run as a
+         Login Item to be an "application"??  This problem does not
+         occur in macOS 14.  This branch is *apparently*, at this time,
+         only needed for macOS 13 and probably earlier. */
+        agentDescriptions = [self agentDescriptionsGotByUnix];
     }
     
     NSString* answer;
@@ -2165,7 +2173,7 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
                                              inWhich1App:[[BkmxBasis sharedBasis] iAm]
                                                  error_p:NULL]];
     }
-    [agentDescriptions release];
+    [bucket release];
     
     return answer;
 }
@@ -2184,7 +2192,6 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
     NSError* error = nil;
     NSString* report = nil;
     NSString* title = nil;
-    NSString* const nilReport = NSLocalizedString(@"No report", nil);
     NSString* const rebootFailed = NSLocalizedString(@"Reboot Failed", nil);
     
     /* Fixed in BkmkMgrs 2.9.3:  Because each app has its own BkmxAgent
@@ -2195,60 +2202,53 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
     if (watchesCount > 0) {
         pid_t oldPid = [self runningAgents].firstObject.processIdentifier;
         NSString* oldPidString = [NSString stringWithFormat:@"%d", oldPid];
-        NSDictionary* result = [self kickBkmxAgentWithKickType:KickType_Reboot
+        RunnerResult* result = [self kickBkmxAgentWithKickType:KickType_Reboot
                                                          error:&error];
-        id statusId = [result objectForKey:constKeyStatus];
-        if ([statusId respondsToSelector:@selector(integerValue)]) {
-            NSInteger status = [(NSNumber*)statusId integerValue];
-            if (status == BkmxAgentStatusRequiresApproval) {
-                report = [self agentDisabledWarningText];
-            } else if (!error) {
-                pid_t newPid;
-                /* My sample of 5 on my 2013 MacBook Air says that newPid
-                 will be 0 for some duration between 38 and 511 milliseconds.
-                 So we allow 94 * 0.1 = 9.4 seconds
-                 */
-                NSInteger i = 0;
-                do {
-                    newPid = [self runningAgents].firstObject.processIdentifier;
-                    [NSThread sleepForTimeInterval:0.1];
-                    i++;
-                } while ((newPid == 0) && (i < 94));
-                if (newPid > 0) {
-                    NSString* newPidString = [NSString stringWithFormat:@"%d", newPid];
-                    if (![newPidString isEqualToString:oldPidString]) {
-                        ok = YES;
-                        title = NSLocalizedString(@"Reboot Succeeded", nil);
-                        report = [NSString stringWithFormat:
-                                  @"BkmxAgent Process Identifier:\n"
-                                  @"     Before reboot: %@\n"
-                                  @"     After reboot: %@",
-                                  oldPidString,
-                                  newPidString];
-                        error = nil;
-                    } else {
-                        ok = NO;
-                        title = rebootFailed;
-                        report = [NSString stringWithFormat:
-                                  NSLocalizedString(@"Same process identifier, %d, before and after rebooting of BkmxAgent.", nil),
-                                  newPid];
-                        error = SSYMakeError(663845, report);
-                    }
+        NSInteger status = result.agentStatus;
+        if (status == BkmxAgentStatusRequiresApproval) {
+            report = [self agentDisabledWarningText];
+        } else if (!error) {
+            pid_t newPid;
+            /* My sample of 5 on my 2013 MacBook Air says that newPid
+             will be 0 for some duration between 38 and 511 milliseconds.
+             So we allow 94 * 0.1 = 9.4 seconds
+             */
+            NSInteger i = 0;
+            do {
+                newPid = [self runningAgents].firstObject.processIdentifier;
+                [NSThread sleepForTimeInterval:0.1];
+                i++;
+            } while ((newPid == 0) && (i < 94));
+            if (newPid > 0) {
+                NSString* newPidString = [NSString stringWithFormat:@"%d", newPid];
+                if (![newPidString isEqualToString:oldPidString]) {
+                    ok = YES;
+                    title = NSLocalizedString(@"Reboot Succeeded", nil);
+                    report = [NSString stringWithFormat:
+                              @"BkmxAgent Process Identifier:\n"
+                              @"     Before reboot: %@\n"
+                              @"     After reboot: %@",
+                              oldPidString,
+                              newPidString];
+                    error = nil;
                 } else {
                     ok = NO;
                     title = rebootFailed;
-                    report = NSLocalizedString(@"BkmxAgentRunner says reboot succeeded, but the BkmxAgent process is not running.", nil);
-                    error = SSYMakeError(663895, report);
+                    report = [NSString stringWithFormat:
+                              NSLocalizedString(@"Same process identifier, %d, before and after rebooting of BkmxAgent.", nil),
+                              newPid];
+                    error = SSYMakeError(663845, report);
                 }
             } else {
+                ok = NO;
                 title = rebootFailed;
-                report = NSLocalizedString(@"BkmxAgent could not be rebooted because an error occurred.", nil);
-                error = [SSYMakeError(663904, report) errorByAddingUnderlyingError:error];
+                report = NSLocalizedString(@"BkmxAgentRunner says reboot succeeded, but the BkmxAgent process is not running.", nil);
+                error = SSYMakeError(663895, report);
             }
         } else {
             title = rebootFailed;
-            report = nilReport;
-            error = [SSYMakeError(662712, @"Failed to reboot BkmxAgent") errorByAddingUnderlyingError:error];
+            report = NSLocalizedString(@"BkmxAgent could not be rebooted because an error occurred.", nil);
+            error = [SSYMakeError(663904, report) errorByAddingUnderlyingError:error];
         }
     } else {
         ok = YES;
