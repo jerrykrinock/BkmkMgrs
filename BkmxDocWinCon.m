@@ -1505,7 +1505,7 @@ willBeInsertedIntoToolbar:(BOOL)flag {
     }
     else {
         [toolbar insertItemWithItemIdentifier:constIdentifierTabViewSettings
-                                      atIndex:2];  // After "Content"
+                                      atIndex:2];  // After "Reports"
         /* The above statement will cause a call to the delegate method
          -toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:,
          which will create and provide the new item. */
