@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.1.5 (2024-0)
+
+*  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug in macOS 15 betas which causes an failure whenever any subsequent .bmco document is opened.  (The first document opened after launching BookMacster would open OK.)
+
 ## Version 3.1.4 (2024-08-16)
 
 Version 3.1.4 has some fixes for users with macOS 13 or earlier.  If, like most people, you are using macOS 14 or later, you should *Skip* this update.

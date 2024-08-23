@@ -1495,6 +1495,35 @@ willBeInsertedIntoToolbar:(BOOL)flag {
 	[self safelySendSuperSelector:_cmd
                    prettyFunction:__PRETTY_FUNCTION__
 						arguments:nil] ;
+    
+    /* The 'settings' and 'Sync' toolbar items are not in the nib, because
+     not all apps should have them, so we insert them programatically if needed
+     later in this method.  However, in macOS 15 Beta 6 and 7, it seems that
+     macOS may cache the nib with these items in there the first time that a
+     document is opened, so that they are present at this point when subsequent
+     documents are opened (FB14892799).  To keep those from causing trouble,
+     we now search for those two items and remove if they are found. */
+    NSArray* items = [toolbar items];
+    NSMutableArray* badIndices = [NSMutableArray new];
+    NSInteger i = [items count] - 1;
+    for (NSToolbarItem* item in [items reverseObjectEnumerator]) {
+        if ([[item itemIdentifier] isEqualToString:constIdentifierTabViewSettings]) {
+            [badIndices addObject:@(i)];
+            toolbarItemSettings = nil;
+        }
+        if ([[item itemIdentifier] isEqualToString:@"Sync"]) {
+            [badIndices addObject:@(i)];
+            toolbarItemSync = nil;
+        }
+        i--;
+    }
+    for (NSNumber* removeeIndex in badIndices) {
+        NSToolbarItem* item = [[toolbar items] objectAtIndex:[removeeIndex integerValue]];
+        [[BkmxBasis sharedBasis] logFormat:@"Removed surprise toolbar item %@ at index %@", [item itemIdentifier], removeeIndex];
+        [toolbar removeItemAtIndex:[removeeIndex integerValue]];
+    }
+    [badIndices release];
+    
 
     if ([[BkmxBasis sharedBasis] iAm] != BkmxWhich1AppBookMacster) {
         /* To remove the popover on the title bar which because it has controls
