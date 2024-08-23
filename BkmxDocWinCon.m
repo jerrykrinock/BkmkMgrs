@@ -1506,9 +1506,10 @@ willBeInsertedIntoToolbar:(BOOL)flag {
     else {
         [toolbar insertItemWithItemIdentifier:constIdentifierTabViewSettings
                                       atIndex:2];  // After "Reports"
-        /* The above statement will cause a call to the delegate method
+        /* The above statement caused a call to the delegate method
          -toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:,
-         which will create and provide the new item. */
+         which created the new item and assigned it to the ivar
+         toolbarItemSettings. */
     }
     
     if (@available(macOS 10.16, *)) {
@@ -1538,9 +1539,10 @@ willBeInsertedIntoToolbar:(BOOL)flag {
         NSInteger syncingToolbarItemIndex = reportsToolbarItemIndex + 2;
         [toolbar insertItemWithItemIdentifier:@"Sync"
                                       atIndex:syncingToolbarItemIndex];
-        /* The above statement will cause a call to the delegate method
+        /* The above statement caused a call to the delegate method
          -toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:,
-         which will create and provide the new item. */
+         which created the new item and assigned it to the ivar
+         toolbarItemSync. */
 
         NSString* syncOffToolTip = [[[BkmxBasis sharedBasis] tooltipSyncStatusOff] stringByAppendingString:@"\n\nClick this button to make ready for syncing."];
         NSString* syncOnToolTip = [[[BkmxBasis sharedBasis] tooltipSyncStatusOn] stringByAppendingString:@"\n\nClick this button to temporarily pause syncing."];
