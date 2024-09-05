@@ -58,9 +58,6 @@ enum VerifyPhase
 	NSError* error ;
 }
 
-@property (assign) VerifyType verifyType ;
-@property (assign) NSInteger nSecurifySucceeded ;
-@property (assign) NSInteger nSecurifyFailed ;
 @property (retain) NSMutableArray* brokenBookmarkHeaders ;
 @property (retain) NSMutableArray* brokenBookmarks ;
 @property (retain) NSMutableArray* autoFixedBookmarks ;
@@ -90,7 +87,6 @@ enum VerifyPhase
  @result   
 */
 - (BOOL)verifyStarks:(NSArray*)starks
-          verifyType:(VerifyType)verifyType
 			   since:(NSDate*)since
        plusAllFailed:(BOOL)plusAllFailed
 	ignoreNoInternet:(BOOL)ignoreNoInternet_

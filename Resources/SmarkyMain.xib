@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23090" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21179.7"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23090"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -362,12 +363,6 @@ CA
                                     <action selector="verify:" target="-1" id="1040"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="upgdInsecure" tag="4402" id="PkE-Ta-BUh">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="upgradeInsecureBookmarks:" target="-1" id="bl7-Wf-233"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="rmvCruft" tag="4403" id="2Ba-7k-oqJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -480,6 +475,7 @@ CA
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-16" y="128"/>
         </menu>
         <customObject id="347" userLabel="App Delegate" customClass="BkmxAppDel"/>
         <customObject id="1045" userLabel="Document Controller" customClass="BkmxDocumentController"/>

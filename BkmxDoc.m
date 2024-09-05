@@ -6388,7 +6388,6 @@ completionHandler:(void (^)(NSError *errorOrNil))completionHandler {
          plusAllFailed:(BOOL)plusAllFailed
          waitUntilDone:(BOOL)waitUntilDone {
     [[self broker] verifyStarks:[[[self starker] root] extractLeavesOnly]
-                     verifyType:BrokerVerifyTypeRegularVerify
                           since:since
                   plusAllFailed:plusAllFailed
                ignoreNoInternet:NO

@@ -250,12 +250,6 @@ enum BkmxAgentStatus_enum {
 } ;
 typedef enum BkmxAgentStatus_enum BkmxAgentStatus;
 
-typedef enum {
-    BrokerVerifyTypeRegularVerify,
-    BrokerVerifyTypeSecurifyFirstPass,
-    BrokerVerifyTypeSecurifySecondPass
-} VerifyType ;
-
 enum BkmxClientTask_enum
 {
 	BkmxClientTaskRead = 1,

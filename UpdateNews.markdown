@@ -4,6 +4,8 @@
 
 *  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug in macOS 15 betas which causes an failure whenever any subsequent .bmco document is opened.  (The first document opened after launching BookMacster would open OK.)
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />Removed the *Upgrade Insecure Bookmarks* feature because it rarely upgrades any bookmarks nowadays – Any sites which still do not support *https* are probably going to die before they do.
+
 ## Version 3.1.4 (2024-08-16)
 
 Version 3.1.4 has some fixes for users with macOS 13 or earlier.  If, like most people, you are using macOS 14 or later, you should *Skip* this update.

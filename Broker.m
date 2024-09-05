@@ -228,27 +228,17 @@
         NSString* textWhatDoing ;
         NSString* waitingForReplies = [NSString localize:@"waitingForReplies"] ;
 		if (verifyPhase == kFirstPass) {
-            if ([self verifyType] == BrokerVerifyTypeRegularVerify) {
-                textWhatDoing = [NSString stringWithFormat:
-                                 @"%@ (%@)",
-                                 waitingForReplies,
-                                 @"first try"] ;
-            }
-            else {
-                textWhatDoing = waitingForReplies ;
-            }
+            textWhatDoing = [NSString stringWithFormat:
+                             @"%@ (%@)",
+                             waitingForReplies,
+                             @"first try"] ;
             verifyPhase = kWaitingFirst ;
 		}
 		else if (verifyPhase == kRetestingSome) {
-            if ([self verifyType] == BrokerVerifyTypeRegularVerify) {
-                textWhatDoing = [NSString stringWithFormat:
-                                 @"%@ (%@)",
-                                 waitingForReplies,
-                                 @"second try"] ;
-            }
-            else {
-                textWhatDoing = waitingForReplies ;
-            }
+            textWhatDoing = [NSString stringWithFormat:
+                             @"%@ (%@)",
+                             waitingForReplies,
+                             @"second try"] ;
 			verifyPhase = kWaitingSecond ;
 		}
 		else {
@@ -354,7 +344,6 @@
     // alloc]init a HeaderGetter to get this bookmark's headers from the internet.
 	HeaderGetter* headerGetter = [[HeaderGetter alloc] initWithBookmark:bm
 																  index:iNext
-                                                             verifyType:[self verifyType]
 														   sendResultTo:self
 														   usingMessage:@selector(gotHeaders:)
 																timeout:30.0  // Was 6 hours, via an ivar, prior to BookMacster 1.6.3
@@ -376,7 +365,7 @@
 	/* We have now made a list of broken bookmarks, with a trouble description
      for each one.  But we have not added these keys to bookmarks tree. */
    
-	if ((verifyPhase == kWaitingFirst) && ([self verifyType] == BrokerVerifyTypeRegularVerify)) {
+	if (verifyPhase == kWaitingFirst) {
 		[self retestSome] ;
 	}
 	else {
@@ -597,10 +586,7 @@
                                                 priority:SSYProgressPriorityRegular] ;
 
 		NSUInteger nBB = [[self brokenBookmarkHeaders] count] ;
-        _nSecurifySucceeded = 0 ;
-        _nSecurifyFailed = 0 ;
         
-        NSRange firstFour = NSMakeRange(0, 4) ;
         for (i=nBB-1; i>=0; i--) {
 			/* The array brokenBookmarkHeaders now contains "headers": dictionaries of "trouble keys"
 			which were generated during verification.  One of the trouble keys is the bookmark itself.
@@ -615,60 +601,32 @@
             // The following qualification was added in BookMacster 1.15
             if ([stark isAvailable]) {
                 NSNumber* code = [headers objectForKey:constKeyVerifierCode] ;
-                BOOL securifySucceeded = NO ;
-                if ([self verifyType] == BrokerVerifyTypeSecurifySecondPass) {
-                    if ([code integerValue] == 200) {
-                        securifySucceeded = YES ;
-                        _nSecurifySucceeded++ ;
-                    }
-                    else {
-                        _nSecurifyFailed++ ;
-                    }
+
+                NSString* suggestedUrl = [headers objectForKey:constKeyVerifierSuggestedUrl] ;
+                
+                [stark setVerifierDisposition:[headers objectForKey:constKeyVerifierDisposition]] ;
+                
+                /* Test the suggested url before setting it, because 95%
+                 of sites returning a 200 also have a
+                 verifierSuggestedUrl to the same original url. We don't
+                 want to show our users a "suggested" url which is the
+                 same as the original url. */
+                if (![[stark url] isEqualToString:suggestedUrl]) {
+                    [stark setVerifierSuggestedUrl:suggestedUrl] ;
                 }
-
-                BOOL shouldUpdateForReal = (
-                                            ([self verifyType] != BrokerVerifyTypeSecurifySecondPass)
-                                            ||
-                                            securifySucceeded) ;
-                if (shouldUpdateForReal) {
-                    NSString* suggestedUrl = [headers objectForKey:constKeyVerifierSuggestedUrl] ;
-
-                    if (securifySucceeded) {
-                        /* This branch is for Upgrade Insecure Bookmarks. */
-                        [stark setVerifierPriorUrl:[stark url]] ;
-                        NSMutableString* securifiedUrl = [NSMutableString stringWithString:[stark url]] ;
-                        [securifiedUrl replaceCharactersInRange:firstFour
-                                                     withString:@"https"] ;
-                        [stark setVerifierSuggestedUrl:securifiedUrl] ;
-                        [stark setVerifierDispositionValue:BkmxFixDispoDoUpgradeInsecure] ;
-                    }
-                    else {
-                        /* This branch is for regular Verify operations. */
-                        [stark setVerifierDisposition:[headers objectForKey:constKeyVerifierDisposition]] ;
-                        
-                        /* Test the suggested url before setting it, because 95%
-                         of sites returning a 200 also have a
-                         verifierSuggestedUrl to the same original url. We don't
-                         want to show our users a "suggested" url which is the
-                         same as the original url. */
-                        if (![[stark url] isEqualToString:suggestedUrl]) {
-                            [stark setVerifierSuggestedUrl:suggestedUrl] ;
-                        }
-                    }
-
-                    // Copy the remaining interesting keys from the headers to the stark
-                    [stark setVerifierCode:code] ;
-                    [stark setVerifierAdviceArray:[headers objectForKey:constKeyVerifierAdviceArray]] ;
-                    [stark setVerifierNSErrorDomain:[headers objectForKey:constKeyVerifierNsErrorDomain]] ;
-                    [stark setVerifierPriorUrl:[headers objectForKey:constKeyVerifierPriorUrl]] ;
-                    [stark setVerifierReason:[headers objectForKey:constKeyVerifierReason]] ;
-                    [stark setVerifierSubtype302:[headers objectForKey:constKeyVerifierSubtype302]] ;
-                    [stark setVerifierLastDate:[NSDate date]] ;
-                    [stark setVerifierUrl:[stark url]] ;
-                    /* Note that we do not copy constKeyVerifierNeedsRetest or
-                     constKeyVerifierHeaderGetter since we don't need these
-                     values any more. */
-                }
+                
+                // Copy the remaining interesting keys from the headers to the stark
+                [stark setVerifierCode:code] ;
+                [stark setVerifierAdviceArray:[headers objectForKey:constKeyVerifierAdviceArray]] ;
+                [stark setVerifierNSErrorDomain:[headers objectForKey:constKeyVerifierNsErrorDomain]] ;
+                [stark setVerifierPriorUrl:[headers objectForKey:constKeyVerifierPriorUrl]] ;
+                [stark setVerifierReason:[headers objectForKey:constKeyVerifierReason]] ;
+                [stark setVerifierSubtype302:[headers objectForKey:constKeyVerifierSubtype302]] ;
+                [stark setVerifierLastDate:[NSDate date]] ;
+                [stark setVerifierUrl:[stark url]] ;
+                /* Note that we do not copy constKeyVerifierNeedsRetest or
+                 constKeyVerifierHeaderGetter since we don't need these
+                 values any more. */
 
                 // To make sure bookmark was not deleted (=orphaned) by user
                 // since the verification started, we only add items that still have a parent
@@ -694,16 +652,10 @@
             dispatch_semaphore_signal([self doneSemaphore]) ;
         }
 		
-		/* Make all the results' views obvious to the user, unless this is
-        only the first of two passes. */
-        if ([self verifyType] != BrokerVerifyTypeSecurifyFirstPass) {
-            [[[self document] bkmxDocWinCon] revealTabViewVerify] ;
-        }
 	}
 }
 
 - (BOOL)verifyStarks:(NSArray*)starks
-          verifyType:(VerifyType)verifyType
 	ignoreNoInternet:(BOOL)ignoreNoInternet_
 	   waitUntilDone:(BOOL)waitUntilDone_
 			 error_p:(NSError**)error_p {
@@ -735,18 +687,7 @@
 	
     nToVerify = [[self bookmarksFlat] count] ;    
 	[[self document] tellVerifyStarted] ;
-    NSString* verb ;
-    switch (verifyType) {
-        case BrokerVerifyTypeRegularVerify:
-            verb = [NSString localize:@"080_verifying"] ;
-            break ;
-        case BrokerVerifyTypeSecurifyFirstPass:
-            verb = @"Verifying https:// responses (1st of 2 Passes)" ;
-            break ;
-        case BrokerVerifyTypeSecurifySecondPass:
-            verb = @"Verifying https:// responses (2nd of 2 Passes)" ;
-            break ;
-    }
+    NSString* verb = [NSString localize:@"080_verifying"] ;
 	[[[self document] bkmxDocWinCon] startVerifyProgressWithLocalizedVerb:verb
 																   limit:nToVerify
 																  broker:self] ;
@@ -806,24 +747,12 @@
 }
 
 - (BOOL)verifyStarks:(NSArray*)starks
-          verifyType:(VerifyType)verifyType
 			   since:(NSDate*)since
        plusAllFailed:(BOOL)plusAllFailed
     ignoreNoInternet:(BOOL)ignoreNoInternet_
 	   waitUntilDone:(BOOL)waitUntilDone_
 			 error_p:(NSError**)error_p {
-    NSString* msg ;
-    switch (verifyType) {
-        case BrokerVerifyTypeRegularVerify:
-            msg = @"Begin Regular Verify" ;
-            break ;
-        case BrokerVerifyTypeSecurifyFirstPass:
-            msg = @"Begin Securify First Pass" ;
-            break ;
-        case BrokerVerifyTypeSecurifySecondPass:
-            msg = @"Begin Securify Second Pass" ;
-            break ;
-    }
+    NSString* msg = @"Begin Regular Verify" ;
     [[BkmxBasis sharedBasis] logFormat:msg] ;
 	NSMutableArray* starksToVerify = [[NSMutableArray alloc] init] ;
 	for (Stark* stark in starks) {
@@ -866,10 +795,7 @@
 	NSArray* starksToVerifyCopy = [NSArray arrayWithArray:starksToVerify] ;
 	[starksToVerify release] ;
     
-    [self setVerifyType:verifyType] ;
-	
 	return [self verifyStarks:starksToVerifyCopy
-                   verifyType:verifyType
 			 ignoreNoInternet:ignoreNoInternet_
 				waitUntilDone:waitUntilDone_
 					  error_p:error_p] ;

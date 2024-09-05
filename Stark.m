@@ -2208,7 +2208,7 @@ NSString* const constKeyFoldersDeletedDuringConsolidation = @"foldersDeletedDuri
                         break ;
 				}
 			}
-			else if ((code==200) && ([currentDisposition integerValue] != BkmxFixDispoDoUpgradeInsecure)){
+			else if (code==200){
 				jiggeredDisposition = [NSNumber numberWithInteger:BkmxFixDispoLeaveAsIs] ;
 			}
 			else {

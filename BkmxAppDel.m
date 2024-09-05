@@ -5062,10 +5062,6 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
                         // Main Menu > Bookmarks > Verify...
                         title = [[BkmxBasis sharedBasis] labelVerifyEllipsis] ;
                         break ;
-                    case 4402:
-                        // Main Menu > Bookmarks > Upgrade Insecure Bookmarks...
-                        title = NSLocalizedString(@"Upgrade Insecure Bookmarks…", nil) ;
-                        break ;
                     case 4403:
                         // Main Menu > Bookmarks > Remove URL Cruft...
                         title = NSLocalizedString(@"Remove URL Cruft…", nil) ;

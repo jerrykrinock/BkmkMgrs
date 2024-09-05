@@ -25,7 +25,6 @@
 	BOOL ignoreNoInternet = [[[self info] objectForKey:constKeyIgnoreNoInternet] boolValue] ;
 	
     BOOL ok = [[bkmxDoc broker] verifyStarks:starks
-                                  verifyType:BrokerVerifyTypeRegularVerify
                                        since:since
                                plusAllFailed:plusAllFailed
                             ignoreNoInternet:ignoreNoInternet

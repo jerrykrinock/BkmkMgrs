@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22503" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23090" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22503"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23090"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -396,12 +396,6 @@ CA
                             <menuItem title="veri" tag="4401" enabled="NO" keyEquivalent="e" id="853">
                                 <connections>
                                     <action selector="verify:" target="-1" id="1040"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="upgdInsecure" tag="4402" id="SsX-uo-mPf">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="upgradeInsecureBookmarks:" target="-1" id="fNu-fk-TGC"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="rmvCruft" tag="4403" id="O5P-3v-2pP">

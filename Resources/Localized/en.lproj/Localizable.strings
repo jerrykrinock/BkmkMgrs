@@ -458,7 +458,7 @@
 "080_verifyLastResult" = "Last Verify Result" ;
 
 /* %0 will be replaced by your translation of "Unverifiable" */
-"080_skippedExplain" = "'%0' bookmarks include non-http:// bookmarks such as javascript bookmarklets, ftp:// sites, etc.\n\nWhen upgrading insecure bookmarks, includes bookmarks which are already secure (https://)." ;
+"080_skippedExplain" = "'%0' bookmarks include non-http:// bookmarks such as javascript bookmarklets, ftp:// sites, etc." ;
 
 /* One-word description of an item which has not been verified */
 "080_verifyNotDone" = "Unverified" ;

@@ -480,25 +480,15 @@
     NSExpression* lhs;
     NSExpression* rhs;
     NSPredicateOperatorType operatorType;
-    NSMutableArray* subpreds = [NSMutableArray new];
 
     lhs = [NSExpression expressionForKeyPath:constKeyVerifierDisposition];
     rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoDoUpdate)];
     operatorType = NSEqualToPredicateOperatorType;
-    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
+    NSPredicate* pred = [NSComparisonPredicate predicateWithLeftExpression:lhs
                                                            rightExpression:rhs
                                                                   modifier:NSDirectPredicateModifier
                                                                       type:operatorType
-                                                                   options:0]];
-    rhs = [NSExpression expressionForConstantValue:@(BkmxFixDispoDoUpgradeInsecure)];
-    [subpreds addObject:[NSComparisonPredicate predicateWithLeftExpression:lhs
-                                                           rightExpression:rhs
-                                                                  modifier:NSDirectPredicateModifier
-                                                                      type:operatorType
-                                                                   options:0]];
-    NSPredicate* pred = [NSCompoundPredicate orPredicateWithSubpredicates:[[subpreds copy] autorelease]];
-
-    [subpreds release];
+                                                                   options:0];
     [predicateEditor changeRowCountTo:3] ;
     predicateEditor.objectValue = pred;
 
@@ -518,9 +508,7 @@
 
 /* The very complicated predicate built in this method is a reimplementation
  of the three conditions in -[VerifySummary summarizeIntoSummary:] which
- increment nUnverifiable.  (Search for nUnverifiable++.)  I think that the logic
- regarding verify dispositions has not really been thought through properly,
- especially since I bolted on Upgrade Insecure Bookmarks.  But, it works! */
+ increment nUnverifiable.  (Search for nUnverifiable++.) */
 - (IBAction)findStarksThatAreUnknown:(id)sender {
     [self reveal] ;
     

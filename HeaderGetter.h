@@ -15,7 +15,6 @@
 	BOOL _cancelled ;
 }
 
-@property (assign) VerifyType verifyType ;
 - (Stark*)bookmark ;
 
 // Initializer
@@ -30,7 +29,6 @@
  */
 - (id)initWithBookmark:(id)bookmark
 				 index:(NSInteger)i
-            verifyType:(VerifyType)verifyType
 		  sendResultTo:(id)receiveTarget
 		  usingMessage:(SEL)receiveSelector
 			   timeout:(CGFloat)timeout

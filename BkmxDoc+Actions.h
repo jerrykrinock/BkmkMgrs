@@ -104,8 +104,6 @@
 
 - (IBAction)verifyAllNeverVerified:(id)sender ;
 
-- (IBAction)upgradeInsecureBookmarks:(id)sender ;
-
 - (IBAction)removeCruft:(id)sender ;
 
 - (IBAction)removeLegacyArtifacts:(id)sender ;

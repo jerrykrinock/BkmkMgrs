@@ -456,16 +456,6 @@
             urlString = [NSString stringWithString:temp] ;
             _feedFake = YES ;
         }
-        if (
-            ([self verifyType] == BrokerVerifyTypeSecurifySecondPass)
-            &&
-            [urlString hasPrefix:@"http://"]
-            ) {
-            NSMutableString* temp = [NSMutableString stringWithString:urlString] ;
-            [temp replaceCharactersInRange:firstFour
-                                withString:@"https"] ;
-            urlString = [NSString stringWithString:temp] ;
-        }
         
         NSString* urlStringFixed = [urlString stringByFixingFirefoxQuicksearch] ;
         
@@ -503,7 +493,6 @@
 
 - (id)initWithBookmark:(id)bookmark_
 				 index:(NSInteger)i
-            verifyType:(VerifyType)verifyType
 		  sendResultTo:(id)receiveTarget
 		  usingMessage:(SEL)receiveSelector
 			   timeout:(CGFloat)timeout
@@ -523,7 +512,6 @@
 		_targetMethod = receiveSelector ;
 		_index = i ;
 		_timeout = timeout ;
-        _verifyType = verifyType ;
 		
 		[self doConnect] ;
 	}

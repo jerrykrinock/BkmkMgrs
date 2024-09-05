@@ -56,12 +56,7 @@
 			NSInteger code = [verifierCode integerValue] ;
 	    	
 			if (code == 200) {
-                if ([self verifierDispositionValue] == BkmxFixDispoDoUpgradeInsecure) {
-                    stats.nSecured++ ;
-                }
-                else {
-                    stats.n200++ ;
-                }
+                stats.n200++ ;
 			}
 			else if (code==301) {
 				stats.n301++ ;
@@ -118,9 +113,6 @@
 				if (fixDisposition == BkmxFixDispoDoUpdate) {
 					stats.nOthersUpdated++ ;
 				}
-                else if (fixDisposition == BkmxFixDispoDoUpgradeInsecure) {
-                    stats.nSecured++ ;
-                }
 				else if (fixDisposition == BkmxFixDispoLeaveAsIs) {
 					stats.nUnverifiable++ ; // some javascript bookmarklets will end up here
                 } else {
