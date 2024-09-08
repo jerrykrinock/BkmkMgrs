@@ -404,7 +404,7 @@ struct TableBodyCell : View {
 
 }
 
-class ShortDateFormatter : DateFormatter {
+class ShortDateFormatter : DateFormatter, @unchecked Sendable {
     static var dateFormatter : DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .short

@@ -11,7 +11,7 @@ import Foundation
  readonly.  Oh well, I learned some more Swift from writing this.
  */
 @objc
-class BkmxAgentRunnerError: NSError {
+class BkmxAgentRunnerError: NSError, @unchecked Sendable {
     enum What: Int {
         case couldNotEvenLaunchAgentRunner = 3303
         case couldNotReadLogFileFromAgentRunner = 3304
