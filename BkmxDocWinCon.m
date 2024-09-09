@@ -1504,25 +1504,22 @@ willBeInsertedIntoToolbar:(BOOL)flag {
      documents are opened (FB14892799).  To keep those from causing trouble,
      we now search for those two items and remove if they are found. */
     NSArray* items = [toolbar items];
-    NSMutableArray* badIndices = [NSMutableArray new];
     NSInteger i = [items count] - 1;
+    BOOL alreadyHasSettingsItem = NO;
+    BOOL alreadyHasSyncItem = NO;
     for (NSToolbarItem* item in [items reverseObjectEnumerator]) {
         if ([[item itemIdentifier] isEqualToString:constIdentifierTabViewSettings]) {
-            [badIndices addObject:@(i)];
-            toolbarItemSettings = nil;
+            toolbarItemSettings = item;
+            alreadyHasSettingsItem = YES;
+            [[BkmxBasis sharedBasis] logString:@"Surprise: Already has 'Settings' toolbar item (Working around Apple Bug FB14892799)"];
         }
         if ([[item itemIdentifier] isEqualToString:@"Sync"]) {
-            [badIndices addObject:@(i)];
-            toolbarItemSync = nil;
+            toolbarItemSync = (SSYToolbarButton*)item;
+            alreadyHasSyncItem = YES;
+            [[BkmxBasis sharedBasis] logString:@"Surprise: Already has 'Sync' toolbar item (Working around Apple Bug FB14892799)"];
         }
         i--;
     }
-    for (NSNumber* removeeIndex in badIndices) {
-        NSToolbarItem* item = [[toolbar items] objectAtIndex:[removeeIndex integerValue]];
-        [[BkmxBasis sharedBasis] logFormat:@"Removed surprise toolbar item %@ at index %@", [item itemIdentifier], removeeIndex];
-        [toolbar removeItemAtIndex:[removeeIndex integerValue]];
-    }
-    [badIndices release];
     
 
     if ([[BkmxBasis sharedBasis] iAm] != BkmxWhich1AppBookMacster) {
@@ -1532,7 +1529,7 @@ willBeInsertedIntoToolbar:(BOOL)flag {
          is apparently a holdover from the prior usage.) */
         [[[self window] standardWindowButton:NSWindowDocumentVersionsButton] setHidden:YES];
     }
-    else {
+    else if (!alreadyHasSettingsItem) {
         [toolbar insertItemWithItemIdentifier:constIdentifierTabViewSettings
                                       atIndex:2];  // After "Reports"
         /* The above statement caused a call to the delegate method
@@ -1564,14 +1561,16 @@ willBeInsertedIntoToolbar:(BOOL)flag {
     }
     
     if ([[BkmxBasis sharedBasis] isAMainAppWhichCanSync]) {
-        NSInteger reportsToolbarItemIndex = [[toolbar items] indexOfObject:toolbarItemReports];
-        NSInteger syncingToolbarItemIndex = reportsToolbarItemIndex + 2;
-        [toolbar insertItemWithItemIdentifier:@"Sync"
-                                      atIndex:syncingToolbarItemIndex];
-        /* The above statement caused a call to the delegate method
-         -toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:,
-         which created the new item and assigned it to the ivar
-         toolbarItemSync. */
+        if (!alreadyHasSyncItem) {
+            NSInteger reportsToolbarItemIndex = [[toolbar items] indexOfObject:toolbarItemReports];
+            NSInteger syncingToolbarItemIndex = reportsToolbarItemIndex + 2;
+            [toolbar insertItemWithItemIdentifier:@"Sync"
+                                          atIndex:syncingToolbarItemIndex];
+            /* The above statement caused a call to the delegate method
+             -toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:,
+             which created the new item and assigned it to the ivar
+             toolbarItemSync. */
+        }
 
         NSString* syncOffToolTip = [[[BkmxBasis sharedBasis] tooltipSyncStatusOff] stringByAppendingString:@"\n\nClick this button to make ready for syncing."];
         NSString* syncOnToolTip = [[[BkmxBasis sharedBasis] tooltipSyncStatusOn] stringByAppendingString:@"\n\nClick this button to temporarily pause syncing."];
