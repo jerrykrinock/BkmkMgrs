@@ -648,6 +648,8 @@
 		
         [[self document] postVerifyDone] ;
         
+        [[self document] showVerifyReport];
+        
         if ([self doneSemaphore] != NULL) {
             dispatch_semaphore_signal([self doneSemaphore]) ;
         }
