@@ -1,10 +1,10 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.1.5 (2024-0)
+## Version 3.1.5 (2024-09-09)
 
-*  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug in macOS 15 betas which causes an failure whenever any subsequent .bmco document is opened.  (The first document opened after launching BookMacster would open OK.)
+*  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug (FB14892799) in macOS 15.0 Sequoia which causes failure to open any second or subsequent .bmco document after launching BookMacster and opening a first .bmco document.
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />Removed the *Upgrade Insecure Bookmarks* feature because it rarely upgrades any bookmarks nowadays – Any sites which still do not support *https* are probably going to die before they do.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Removed the *Upgrade Insecure Bookmarks* feature because it rarely upgrades any bookmarks nowadays – Any sites which still do not support *https* are probably going to die before they do.  So using this feature has become pretty much a waste of users' time.
 
 ## Version 3.1.4 (2024-08-16)
 
