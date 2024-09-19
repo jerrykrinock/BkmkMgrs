@@ -40,7 +40,7 @@ class BkmxAgentRunner {
         let readableKickType = Self.commandName(kickType: command)
         agentRunnerLogger.log("Will --\(readableKickType) \(bundleIdentifier)")
 
-        let timeout = 3.02
+        let timeout = 6.45
         var ok: Bool
         let processName = ProcessInfo.processInfo.processName
         switch (command) {

@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.1.6 (2024-)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Increased the timeout before displaying Error 592957 or 582958 (which says that BkmxAgent took too long to start, quit of relaunch) from 3.02 seconds to 6.45 seconds.  The idea is to reduce the occurrence of these errors which has recently been reported by a few users, often immediately after logging in to their Mac.
+
 ## Version 3.1.5 (2024-09-09)
 
 *  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug (FB14892799) in macOS 15.0 Sequoia which causes failure to open any second or subsequent .bmco document after launching BookMacster and opening a first .bmco document.
