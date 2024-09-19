@@ -2011,14 +2011,14 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
      andBundleIdentifier:(NSString*)bundleIdentifier
      error_p:(NSError**)error_p;
      
-     This method called the unix progra `ps` instead of NSRunningApplication,
+     This method called the unix program `ps` instead of NSRunningApplication,
      found the desired executable name, and then dug into the app's Info.piist
      to get the bundle identifier.  Whew!  Also, notice that it returned
      SSYRunningApp, which was a custom stripped-down replacement for
-     NSRunningApplication ( because there is no API to create and set
+     NSRunningApplication (because there is no API to create and set
      attributes in NSRunningApplication.  It was a lot of work.  Result:
      It did not help.  Whenever NSRunningApplication failed, this new method
-     based on `ps` failed also.  So I delete the new method from SSYOtherApper.
+     based on `ps` failed also.  So I deleted the new method from SSYOtherApper.
      
      I experimented a little to see if there was any correlation between
      the failures and either switching from Light to Dark mode or waking from

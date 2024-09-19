@@ -383,7 +383,7 @@ extension BkmxBasis {
         launchDate: Date?) -> String {
             let parentAppName = self.appNameContainingAgent(withBundleIdentifier: bundleIdentifier)
             let eTime = SSYOtherApper.humanReadableEtime(rawEtime, launch:launchDate)
-            return "A BkmxAgent process with these attributes is running:\n    Name: \(executableName ?? "???? (expected if `ps` gave bundle identifier instead)")\n    Bundle Identifier: \(bundleIdentifier ?? "????")\n    Found in app package: \(parentAppName ?? "????")\n    Process Identifier (pid): \(pid)\n    Was launched \(eTime ?? "????") ago"
+            return "A BkmxAgent process with these attributes is running:\n    Name: \(executableName ?? "???? (expected if `ps` gave bundle identifier instead)")\n    Bundle Identifier: \(bundleIdentifier ?? "????")\n    Found in app package: \(parentAppName ?? "????")\n    Process Identifier (pid): \(pid)\n    was launched \(eTime ?? "????") ago"
         }
     
     @objc
