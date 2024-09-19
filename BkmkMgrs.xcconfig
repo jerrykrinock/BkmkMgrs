@@ -1,4 +1,4 @@
-CURRENT_PROJECT_VERSION = 3.1.5
+CURRENT_PROJECT_VERSION = 3.1.6
 
 // Note: You cannot use /* C-style comments */ in .xcconfig file
 
