@@ -2141,14 +2141,19 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
     NSMutableArray* bucket = [NSMutableArray new];
     for (NSRunningApplication* runningAgent in [self runningAgents]) {
         /* NSRunningAgent.launchDate does not work for processes which are "not
-         launched by launchd".  I thought BkmxAgent *was* launched by launchd,
-         but apparently not, because .launchDate does not work.  So we do this
-         instead… */
+         launched by Launch Services (launchd)".  I thought BkmxAgent *was* launched by launchd,
+         but apparently not, because .launchDate returns nil.  Hence this workaround: */
+        NSString* rawEtime = nil;
+        NSDate* launchDate = runningAgent.launchDate;
+        if (!launchDate) {
+            rawEtime = [self rawEtimeOfAppWithApp:runningAgent];
+        }
+        
         [bucket addObject:[self agentDescriptionWithExecutableName:constAppNameBkmxAgent
                                                   bundleIdentifier:runningAgent.bundleIdentifier
                                                                pid:runningAgent.processIdentifier
-                                                          rawEtime:nil
-                                                        launchDate:runningAgent.launchDate]];
+                                                          rawEtime:rawEtime
+                                                        launchDate:launchDate]];
     }
     if (bucket.count > 0) {
         agentDescriptions = [[bucket copy] autorelease];

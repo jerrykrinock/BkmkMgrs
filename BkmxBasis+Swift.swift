@@ -448,5 +448,26 @@ extension BkmxBasis {
         return agentDescriptions
     }
     
+    @objc
+    func rawEtimeOfApp(app: NSRunningApplication) -> String? {
+        var etimeString: String? = nil
+        let pid = app.processIdentifier
+        let pidString = String(pid)
+        let args = ["-p", pidString, "-o", "etime="]
+        let programResults = SSYTask.run(
+            URL(fileURLWithPath: "/bin/ps"),
+            arguments: args,
+            inDirectory: nil,
+            stdinput: nil,
+            timeout: 5.3)
+        if (programResults[SSYTask.exitStatusKey] as? Int32 == EXIT_SUCCESS) {
+            if let stdoutData = programResults[SSYTask.stdoutKey] as? Data {
+                etimeString = String(data: stdoutData, encoding: .utf8)
+            }
+        }
+        
+        return etimeString
+    }
+    
 }
      
