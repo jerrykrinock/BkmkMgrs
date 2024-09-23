@@ -8,6 +8,12 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.1.6 (2024-09-23)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Much less likely to display Error 592957 or 582958, which has been seen by some users particularly after logging in to their Mac if our app was running before logging out, and the checkbox "Reopen windows when logging back in" in the system's confirmation dialog was on.  (Increased the timeout before displaying Error 592957 or 582958 from 6.4 seconds to 60.1 seconds.)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Syncing Status Report now correctly shows how long ago any BkmxAgent was launched instead of "???" as it has in recent versions.
+
 ## Version 3.1.5 (2024-09-09)
 
 *  <img src="images/BookMacster.png" alt="" class="whappMini" />  Now includes a workaround for an apparent bug (FB14892799) in macOS 15.0 Sequoia which causes failure to open any second or subsequent .bmco document after launching BookMacster and opening a first .bmco document.
