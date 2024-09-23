@@ -19,6 +19,7 @@ do {
         
         agentRunnerLogger.log("TERMINATING-AT: \(NSDate())\n")
         agentRunnerLogger.log("BkAgRnRsltSTATUS: \(kickResult.agentStatus.rawValue)\n")
+        agentRunnerLogger.log("BkAgRnRsltDURATION: \(kickResult.duration)\n")
         var exitStatus = EXIT_SUCCESS
         if let errorDesc = kickResult.errorDesc {
             exitStatus = EXIT_FAILURE

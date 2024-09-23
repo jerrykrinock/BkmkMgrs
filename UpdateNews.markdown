@@ -1,8 +1,8 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.1.6 (2024-)
+## Version 3.1.6 (2024-09-23)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Increased the timeout before displaying Error 592957 or 582958 (which says that BkmxAgent took too long to start, quit of relaunch) from 3.02 seconds to 6.45 seconds.  The idea is to reduce the occurrence of these errors which has recently been reported by a few users, often immediately after logging in to their Mac.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Much less likely to display Error 592957 or 582958, which has been seen by some users particularly after logging in to their Mac if our app was running before logging out, and the checkbox "Reopen windows when logging back in" in the system's confirmation dialog was on.  (Increased the timeout before displaying Error 592957 or 582958 from 6.4 seconds to 60.1 seconds.)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Syncing Status Report now correctly shows how long ago any BkmxAgent was launched instead of "???" as it has in recent versions.
 

@@ -6,6 +6,7 @@ import SSYSwift
 // " Result Tuplet"
 typealias KickResult = (
     agentStatus: BkmxAgentStatus,
+    duration: TimeInterval,
     errorCode: Int?,
     errorDesc: String?,
     errorSugg: String?
@@ -40,9 +41,16 @@ class BkmxAgentRunner {
         let readableKickType = Self.commandName(kickType: command)
         agentRunnerLogger.log("Will --\(readableKickType) \(bundleIdentifier)")
 
-        let timeout = 6.45
+        /* The time to launch BkmxAgent has been observed to be as much as
+         20 seconds on my M1 MacBook Air running macOS 15, if I Restart with
+         BookMacster and a dozen other apps running, and the checkbox
+         "Reopen windows when logging back in" ON.  So we triple
+         20 seconds for margin:  */
+        let timeout = 60.1232
         var ok: Bool
         let processName = ProcessInfo.processInfo.processName
+        var duration = -3.777
+        let startDate = Date()
         switch (command) {
         case .start:
             self.switchLoginItem(true, bundleIdentifier: bundleIdentifier)
@@ -95,9 +103,12 @@ class BkmxAgentRunner {
             errorDesc = "Unknown KickType"
         }
 
+        duration = Date().timeIntervalSince(startDate)
+        agentRunnerLogger.log("BkmxAgent took \(duration) seconds to \(readableKickType) [1]")
+
         let agentStatus = self.getAgentStatus(bundleIdentifier)
 
-        return (agentStatus, errorCode, errorDesc, errorSugg)
+        return KickResult(agentStatus, duration, errorCode, errorDesc, errorSugg)
     }
     
     

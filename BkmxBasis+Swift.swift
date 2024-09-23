@@ -52,6 +52,14 @@ extension BkmxBasis {
         if (kickType == .stop) || (kickType == .status) || (self.coreDataMigrationDelegate == nil) || (self.coreDataMigrationDelegate?.countMigrationsInProcess == 0) {
             if #available(macOS 14.0, *) {
                 runnerResult = runRunner(kickType: kickType)
+                let duration = runnerResult.duration
+                var durationString: String
+                durationString = String(format:  "%0.3f", duration)
+                if (duration < 0.0) {
+                    durationString = durationString + " <nonsense>"
+                }
+                let readableKickType = BkmxAgentRunner.commandName(kickType: kickType)
+                Self.shared().logString("BkmxAgent took \(durationString) secs to \(readableKickType) [2]")
                 if let error = runnerResult.error {
                     throw error
                 }
@@ -131,6 +139,7 @@ extension BkmxBasis {
         @objc public var exitStatus: Int32 = -13
         @objc public var agentStatus: BkmxAgentStatus = BkmxAgentStatusInternalError
         @objc public var logText: String = "Internal Error 284-2747"
+        @objc public var duration: Double = -1.0  // Would like to make this type TimeInterval and default to nil but cannot because it is @objc.
         @objc public var error: NSError? = nil
     }
     
@@ -182,6 +191,13 @@ extension BkmxBasis {
                         agentStatusRawValue = BkmxAgentStatusInternalError.rawValue
                     }
                     runnerResult.agentStatus = (BkmxAgentStatus(agentStatusRawValue))
+                }
+                
+                _ = scanner.scanString("BkAgRnRsltDURATION: ")
+
+                /* Scan the duration value */
+                if var duration = scanner.scanDouble() {
+                    runnerResult.duration = duration
                 }
                 
                 if (runnerResult.exitStatus != EXIT_SUCCESS) {

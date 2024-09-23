@@ -36,6 +36,7 @@
 #import "NSString+MorePaths.h"
 #import "NSUserDefaults+Bkmx.h"
 #import "ProfileInfoCache.h"
+#import "SSYDebug.h"
 #import "SSYLicense.h"
 #import "SSYEventInfo.h"
 #import "SSYMOCManager.h"
