@@ -196,7 +196,7 @@ extension BkmxBasis {
                 _ = scanner.scanString("BkAgRnRsltDURATION: ")
 
                 /* Scan the duration value */
-                if var duration = scanner.scanDouble() {
+                if let duration = scanner.scanDouble() {
                     runnerResult.duration = duration
                 }
                 
