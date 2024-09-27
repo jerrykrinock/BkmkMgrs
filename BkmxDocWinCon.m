@@ -1502,7 +1502,9 @@ willBeInsertedIntoToolbar:(BOOL)flag {
      macOS may cache the nib with these items in there the first time that a
      document is opened, so that they are present at this point when subsequent
      documents are opened (FB14892799).  To keep those from causing trouble,
-     we now search for those two items and remove if they are found. */
+     we now search for those two items and remove if they are found.
+     Note: We have also now removed the setting of the toolbar's identifier
+     from BkmxDoc.xib.  For explanation see FBFB14892799 comment on 2024-09-26. */
     NSArray* items = [toolbar items];
     NSInteger i = [items count] - 1;
     BOOL alreadyHasSettingsItem = NO;
