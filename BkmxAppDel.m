@@ -5572,6 +5572,8 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
     NSError* error = nil ;
     BOOL ok ;
 
+    /* Note that the folder named "SyncingStatusReports" is copied by SSYTroubleZipper.
+     So, don't change it unless you also change SSYTroubleZipper. */
     NSString* path =  [[[NSBundle mainBundle] applicationSupportPathForMotherApp] stringByAppendingPathComponent:@"SyncingStatusReports"];
     ok = [fm ensureDirectoryAtPath:path
                            error_p:&error] ;
