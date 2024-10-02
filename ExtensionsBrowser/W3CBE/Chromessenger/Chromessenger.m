@@ -101,7 +101,13 @@ NSInteger const nativeMessagingAPILimit = 1000000;
             [self sendJSONDataToExtension:payloadData];
         } else {
             /*
-             We must break up payloadData into chunks not exceeding the limit.
+             We must break up payloadData into chunks not exceeding the Native Messaging
+             limit of 1 MB when hereby sending from Chromessenger to our BookMacster Sync
+             extension.  (Note that it is not necessary to chunk in the opposite direction,
+             when sending from the BookMacster Sync extension *to* Chromessenger, because
+             in that other direction, the limit is an unfathomable 4 GB.)  References:
+             https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging
+             https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
 
              However, we cannot just chunk the data, because the Native
              Messaging protocol requires that the message data be valid JSON,
