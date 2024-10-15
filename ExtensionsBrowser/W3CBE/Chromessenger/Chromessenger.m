@@ -14,6 +14,7 @@ static Chromessenger* sharedMessenger = nil ;
 @property (retain) NSData* carryoverData ;
 @property (retain) NSData* carryoverLengthBytes ;
 @property (assign) uint32_t owedBytes ;
+@property (class, assign, readonly) NSUInteger optionsForNSJSON;
 
 @end
 
@@ -224,22 +225,39 @@ NSInteger const nativeMessagingAPILimit = 1000000;
 #endif
 }
 
+/* This is a copy of the method that exists in BkmxBasis, because I don't want to
+ include the Bkmxwork framework in te Chromessenger target.  (This class is included
+ in both Bkmxwork and Chromessenger.) */
++ (NSUInteger)optionsForNSJSON {
+    NSUInteger options;
+    if (@available(macOS 12.0, *)) {
+        /* I have never seen any indication that JSON5 is necessary here.  This
+         is just a crazy attempt at futureproofing in case one of the browsers
+         starts output bookmarks trees in JSON5, or something. */
+        options = NSJSONReadingJSON5Allowed;
+    } else {
+        options = 0;
+    }
+    
+    return options;
+}
+
+
 /* This handles stdin data from the browser extension and forwards it to our
  native app. */
 - (void)handleStdinPayloadData:(NSData *)rxPayloadData {
     if (rxPayloadData) {
-        NSString* payloadString = [[NSString alloc] initWithData:rxPayloadData
-                                                        encoding:NSUTF8StringEncoding] ;
+        NSError* error = nil;
+        NSDictionary* payloads = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:rxPayloadData
+                                                                                options:self.class.optionsForNSJSON
+                                                                                  error:&error];
         // syslog(LOG_NOTICE, "Got payloadData:\n%s", [payloadString UTF8String]) ;
-        if (payloadString) {
-            NSDictionary* payloads = [NSDictionary dictionaryWithJSONString:payloadString
-                                                                 accurately:NO] ;
+        if (payloads) {
             BOOL didProcess = NO;
             id rxObject;
             NSString* issue;
 
             rxObject = [payloads objectForKey:@"startupInfo"] ;
-            NSError* error = nil ;
             if (rxObject) {
                 NSString* extensionName = [rxObject objectForKey:@"extensionName"] ;
                 NSString* extensionVersion = [rxObject objectForKey:@"extensionVersion"] ;
@@ -462,7 +480,6 @@ NSInteger const nativeMessagingAPILimit = 1000000;
                     }
                 }
                 
-                NSError* error = nil ;
                 BOOL ok = [SSYInterappClient sendHeaderByte:constInterappHeaderByteForVersionCheck
                                                   txPayload:txPayload
                                                    portName:[[ChromeBookmarksGuy sharedBookmarksGuy] outgoingPortName]
@@ -541,7 +558,6 @@ NSInteger const nativeMessagingAPILimit = 1000000;
                 
                 NSTimeInterval rxTimeout = MIN(MAX(2.0, ([txPayload length] * .001)), 20.0) ;
                 
-                NSError* error = nil ;
                 BOOL ok = [SSYInterappClient sendHeaderByte:constInterappHeaderByteForExportFeedback
                                                   txPayload:txPayload
                                                    portName:[[ChromeBookmarksGuy sharedBookmarksGuy] outgoingPortName]
@@ -571,7 +587,6 @@ NSInteger const nativeMessagingAPILimit = 1000000;
                     txPayload = [issue dataUsingEncoding:NSUTF8StringEncoding];
                 }
                 
-                NSError* error = nil ;
                 BOOL ok = [SSYInterappClient sendHeaderByte:constInterappHeaderByteForProgress
                                                   txPayload:txPayload
                                                    portName:[[ChromeBookmarksGuy sharedBookmarksGuy] outgoingPortName]
@@ -639,7 +654,6 @@ NSInteger const nativeMessagingAPILimit = 1000000;
                     txPayload = [issue dataUsingEncoding:NSUTF8StringEncoding];
                 }
 
-                NSError* error = nil ;
                 BOOL ok = [SSYInterappClient sendHeaderByte:constInterappHeaderByteForErrors
                                                   txPayload:txPayload
                                                    portName:[[ChromeBookmarksGuy sharedBookmarksGuy] outgoingPortName]
@@ -686,7 +700,7 @@ NSInteger const nativeMessagingAPILimit = 1000000;
             }
         }
         else {
-            syslog(LOG_ERR, "Error 465-5031  Could not decode UTF8 string from stdin data %s", rxPayloadData.description.UTF8String) ;
+            syslog(LOG_ERR, "Error 465-5031 : %s.  Could not JSON decode dict from %ld bytes stdin data: %s", error.description.UTF8String, (long)rxPayloadData.length, rxPayloadData.description.UTF8String) ;
         }
 #if !__has_feature(objc_arc)
         [payloadString release] ;
@@ -797,8 +811,10 @@ NSInteger const nativeMessagingAPILimit = 1000000;
 }
 
 - (void)putExportAndSendExidsFromJsonText:(NSString*)jsonString {
-    NSDictionary* jsonTree = [NSDictionary dictionaryWithJSONString:jsonString
-                                                         accurately:NO] ;
+    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* jsonTree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:data
+                                                                            options:self.class.optionsForNSJSON
+                                                                              error:NULL];
     [self sendToExtensionCommand:@"putExportAndSendExids"
                     otherObjects:@{@"jsonTree": jsonTree}] ;
 }

@@ -530,12 +530,11 @@ NSString* constStringSpaceQuitSuffix = @" quit";
                                                                  error:NULL];
                     }
 #endif
-                    NSString* jsonString = [NSString stringWithContentsOfFile:lastExportedChangesPath
-                                                                     encoding:NSUTF8StringEncoding
-                                                                        error:NULL];
-                    if (jsonString) {
-                        NSDictionary* lastExportedChanges = [NSDictionary dictionaryWithJSONString:jsonString
-                                                                                        accurately:NO];
+                    NSData* lastExportedChangesData = [NSData dataWithContentsOfFile:lastExportedChangesPath];
+                    if (lastExportedChangesData) {
+                        NSDictionary* lastExportedChanges = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:lastExportedChangesData
+                                                                                                    options:BkmxBasis.optionsForNSJSON
+                                                                                                  error:NULL];
 
                         // Exported Changes may need to be corrected with Exid Feedback
                         NSString* exidFeedbackPath = [lastExportedChangesPath stringByDeletingLastPathComponent];
@@ -548,13 +547,11 @@ NSString* constStringSpaceQuitSuffix = @" quit";
                         // exidFeedbackPath is, for example, ...BookMacster/Changes/ExidFeedback/Firefox.default
                         exidFeedbackPath = [exidFeedbackPath stringByAppendingPathExtension:@"json"];
                         // exidFeedbackPath is, for example, ...BookMacster/Changes/ExidFeedback/Firefox.default.json
-                        NSString* exidFeedbackString = [NSString stringWithContentsOfFile:exidFeedbackPath
-                                                                                 encoding:NSUTF8StringEncoding
-                                                                                    error:NULL];
-                        NSDictionary* exidFeedbackDic = nil;
-                        if (exidFeedbackString) {
-                            exidFeedbackDic = [NSDictionary dictionaryWithJSONString:exidFeedbackString
-                                                                          accurately:NO];
+                        NSData* exidFeedbackData = [NSData dataWithContentsOfFile:exidFeedbackPath];
+                        if (exidFeedbackData) {
+                            NSDictionary* exidFeedbackDic = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:exidFeedbackData
+                                                                                                           options:BkmxBasis.optionsForNSJSON
+                                                                                                             error:NULL];
                             if (exidFeedbackDic) {
                                 NSMutableArray* fixedPuts = [[NSMutableArray alloc] init];
                                 for (NSDictionary* put in [lastExportedChanges objectForKey:@"puts"]) {
@@ -608,7 +605,7 @@ NSString* constStringSpaceQuitSuffix = @" quit";
                         didCompareWithLastExport = YES;
                     }
                     else {
-                        NSLog(@"Internal Error 526-9389 %@", jsonString);
+                        NSLog(@"Internal Error 526-9389 No last exported changes data at expected path %@", lastExportedChangesPath);
                     }
                 }
 

@@ -5627,13 +5627,15 @@ end:
     BOOL ok = YES ;
     NSError* error = nil ;
     
-    NSDictionary* tree = [NSDictionary dictionaryWithJSONString:jsonString
-                                                     accurately:NO] ;
-    if (!tree) {
+    NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* tree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                        options:BkmxBasis.optionsForNSJSON
+                                                                          error:&error];
+    if (error) {
         NSString* msg = [NSString stringWithFormat:
                          @"Could not decode JSON data from %@",
                          self.clientoid.displayName] ;
-        error = SSYMakeError(564205, msg) ;
+        error = [SSYMakeError(564205, msg) errorByAddingUnderlyingError:error];
         error = [error errorByAddingUserInfoObject:jsonString
                                             forKey:@"Undecodeable String"] ;
         ok = NO ;
@@ -5662,9 +5664,11 @@ end:
 }
 
 - (void)processExidFeedbackString:(NSString *)jsonText {
-    NSDictionary* feedbacks = [NSDictionary dictionaryWithJSONString:jsonText
-                                                          accurately:NO] ;
-    
+    NSData* jsonData = [jsonText dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* feedbacks = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                        options:BkmxBasis.optionsForNSJSON
+                                                                          error:NULL];
+
     /* Task 1 of 2.  Write the feedback to a file, for reading soon by
      TriggHandler to prevent some false triggers; or, remove the old file. */
     

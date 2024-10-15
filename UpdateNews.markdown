@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.1.7 (2024-10-14)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Replaced old code, which was causing at least one rare issue, with newer Apple code that is available in recent macOS versions.  The rare issue was failure to import bookmarks from Chrome-ish browsers if a bookmark name contained invisible, undefined characters.  But since the replaced code is used in many parts of the app, this fix could resolve other unreported, weird, rare issues also.
+
 ## Version 3.1.6 (2024-09-23)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Much less likely to display Error 592957 or 582958, which has been seen by some users particularly after logging in to their Mac if our app was running before logging out, and the checkbox "Reopen windows when logging back in" in the system's confirmation dialog was on.  (Increased the timeout before displaying Error 592957 or 582958 from 6.4 seconds to 60.1 seconds.)

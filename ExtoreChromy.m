@@ -10,7 +10,6 @@
 #import "BkmxBasis+Strings.h"
 #import "SSYUuid.h"
 #import "NSString+BkmxDisplayNames.h"
-#import "NSDictionary+SSYJsonFile.h"
 #import "NSError+InfoAccess.h"
 #import "NSError+DecodeCodes.h"
 #import "NSDictionary+SimpleMutations.h"
@@ -273,46 +272,43 @@ NSString* const constKeyState = @"state" ;
  branch and 'trash' branches which are ignored in Opera. */
 - (NSDictionary*)ignoredBranchesInRootFromDisk {
     NSError* error = nil ;
-    NSString* jsonString = nil ;
+    NSData* jsonData = nil;
     
     NSMutableDictionary* ignoredBranchesInRoot = nil ;
     NSString* path = [self workingFilePathError_p:&error] ;
-    if (!path) {
-        NSLog(@"Internal Error 684-1092, %@", self) ;
-        goto end ;
-    }
-    
-    NSStringEncoding usedEncoding ;
-    jsonString = [[NSString alloc] initWithContentsOfFile:path
-                                             usedEncoding:&usedEncoding
-                                                    error:&error] ;
-    if (!jsonString) {
-        NSLog(@"Internal Error 684-1094 %@\n%@", self, error) ;
-        goto end ;
-    }
-    
-    NSDictionary* tree = [NSDictionary dictionaryWithJSONString:jsonString
-                                                     accurately:NO] ;
-    if (!tree) {
-        NSString* msg = [NSString stringWithFormat:
-                         @"Could not decode JSON received from %@ API",
-                         [self displayName]] ;
-        NSLog(@"Internal Error 562-9205 %@", msg) ;
-    }
-    
-    NSDictionary* roots = [tree objectForKey:@"roots"] ;
-    NSArray* branchNames = [roots allKeys] ;
-    ignoredBranchesInRoot = [[NSMutableDictionary alloc] init] ;
-    for (NSString* branchName in branchNames) {
-        if (![[self hartainersWeEdit] member:branchName]) {
-            [ignoredBranchesInRoot setObject:[roots objectForKey:branchName]
-                                forKey:branchName] ;
+    if (path) {
+        jsonData = [[NSData alloc] initWithContentsOfFile:path] ;
+        if (jsonData) {
+            NSDictionary* tree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                                options:BkmxBasis.optionsForNSJSON
+                                                                                  error:&error];
+            
+            if (error) {
+                NSString* msg = [NSString stringWithFormat:
+                                 @"Could not decode JSON received from %@ API due to %@",
+                                 [self displayName],
+                                 error] ;
+                NSLog(@"Internal Error 562-9205 %@", msg) ;
+            }
+            
+            NSDictionary* roots = [tree objectForKey:@"roots"] ;
+            NSArray* branchNames = [roots allKeys] ;
+            ignoredBranchesInRoot = [[NSMutableDictionary alloc] init] ;
+            for (NSString* branchName in branchNames) {
+                if (![[self hartainersWeEdit] member:branchName]) {
+                    [ignoredBranchesInRoot setObject:[roots objectForKey:branchName]
+                                              forKey:branchName] ;
+                }
+            }
+        } else {
+            NSLog(@"Internal Error 684-1094 could not read data in %@", path) ;
         }
+    } else {
+        NSLog(@"Internal Error 684-1096") ;
     }
     
-end:;
+    [jsonData release];
     NSDictionary* answer = nil ;
-    [jsonString release] ;
     if (ignoredBranchesInRoot) {
         answer = [[ignoredBranchesInRoot copy] autorelease] ;
     }
@@ -624,21 +620,35 @@ end:;
 }
 
 + (NSDictionary*)localStateDicOnceForHomePath:(NSString*)homePath {
+    NSDictionary* tree = nil;
+    NSError* error = nil;
     NSString* path = [self localStateFilePathForHomePath:homePath] ;
-    NSString* string = [[NSString alloc] initWithContentsOfFile:path
-                                                   usedEncoding:NULL
-                                                          error:NULL] ;
-    NSDictionary* answer = nil ;
-    if (string) {
-        answer = [NSDictionary dictionaryWithJSONString:string
-                                             accurately:NO] ;
-        if (![answer isKindOfClass:[NSDictionary class]]) {
-            answer = nil ;
+
+    NSData* jsonData = [[NSData alloc] initWithContentsOfFile:path] ;
+    if (jsonData) {
+        tree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                              options:BkmxBasis.optionsForNSJSON
+                                                                error:&error];
+        if (error) {
+            NSString* msg = [NSString stringWithFormat:
+                             @"Could not decode JSON received from %@ due to %@",
+                             path,
+                             error] ;
+            NSLog(@"Internal Error 562-9205 %@", msg) ;
         }
+        if (![tree isKindOfClass:[NSDictionary class]]) {
+            tree = nil ;
+            NSString* msg = [NSString stringWithFormat:
+                             @"Expected dictionary, got %@ from %@",
+                             [tree className],
+                             path] ;
+            NSLog(@"Internal Error 562-8489 %@", msg) ;
+        }
+    } else {
+        NSLog(@"Internal Error 684-1094 could not read %@\n%@", self, path) ;
     }
-    [string release] ;
-    
-    return answer ;
+
+    return tree;
 }
 
 + (NSDictionary*)localStateDicForHomePath:(NSString*)homePath
@@ -1511,13 +1521,19 @@ end:;
 		goto end ;
 	}
 	
-    dic = [NSDictionary dictionaryFromJsonAtPath:path
-                                         error_p:&error] ;
+    NSData* jsonData = [NSData dataWithContentsOfFile:path];
+    if (jsonData) {
+        dic = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                             options:BkmxBasis.optionsForNSJSON
+                                                               error:&error];
+    }
     
     if (!dic && [self profileStuffMayBeInstalledInParentFolder]) {
         path = [path pathByDeletingLastNPathComponent:2];
-        dic = [NSDictionary dictionaryFromJsonAtPath:path
-                                             error_p:&error] ;
+        jsonData = [NSData dataWithContentsOfFile:path];
+        dic = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                             options:BkmxBasis.optionsForNSJSON
+                                                               error:&error];
     }
     
     if (!dic) {

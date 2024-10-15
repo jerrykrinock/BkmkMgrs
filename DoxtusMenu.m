@@ -1,4 +1,5 @@
 #import "DoxtusMenu.h"
+#import "BkmxBasis.h"
 #import "BkmxBasis+Strings.h"
 #import "NSError+MyDomain.h"
 #import "NSString+SSYExtraUtils.h"
@@ -131,8 +132,10 @@
         }
         
         if (jsonString) {
-            browmarkInfo = [NSDictionary dictionaryWithJSONString:jsonString
-                                                       accurately:NO] ;
+            NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary* browmarkInfo = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:data
+                                                                                        options:BkmxBasis.optionsForNSJSON
+                                                                                      error:NULL];
             if (!browmarkInfo) {
                 NSLog(@"Internal Error 741-6883 decoding json: %@", jsonString) ;
             }

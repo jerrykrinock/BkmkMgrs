@@ -153,7 +153,6 @@
 		482CFFA51645A312000CB943 /* Thomas-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 482CFFA41645A312000CB943 /* Thomas-Main.m */; };
 		482CFFAD1645AF21000CB943 /* Sheep-Sys-Thomas in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 482CFF9F1645A311000CB943 /* Sheep-Sys-Thomas */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		482EBB7616B88129008ED822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FD593A0F0528BC00288DD2 /* Foundation.framework */; };
-		482EBB7B16BB1924008ED822 /* NSDictionary+SSYJsonFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 482EBB7A16BB1924008ED822 /* NSDictionary+SSYJsonFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48307F5E2072DF4E00320FFD /* ExtoreEpic in Resources */ = {isa = PBXBuildFile; fileRef = 4843A6A31D07905C00A8383B /* ExtoreEpic */; };
 		48307F692072DF5B00320FFD /* ExtoreVivaldi in Resources */ = {isa = PBXBuildFile; fileRef = 4843A6A41D07905C00A8383B /* ExtoreVivaldi */; };
 		48307F6A2072DFC700320FFD /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
@@ -1981,8 +1980,6 @@
 		482C807013796DCB009EF220 /* SSYBlocker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYBlocker.m; path = ../../ClassesObjC/SSYBlocker.m; sourceTree = SOURCE_ROOT; };
 		482CFF9F1645A311000CB943 /* Sheep-Sys-Thomas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Sheep-Sys-Thomas"; sourceTree = BUILT_PRODUCTS_DIR; };
 		482CFFA41645A312000CB943 /* Thomas-Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Thomas-Main.m"; path = "Thomas/Thomas-Main.m"; sourceTree = "<group>"; };
-		482EBB7916BB1924008ED822 /* NSDictionary+SSYJsonFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SSYJsonFile.h"; path = "../../CategoriesObjC/NSDictionary+SSYJsonFile.h"; sourceTree = "<group>"; };
-		482EBB7A16BB1924008ED822 /* NSDictionary+SSYJsonFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SSYJsonFile.m"; path = "../../CategoriesObjC/NSDictionary+SSYJsonFile.m"; sourceTree = "<group>"; };
 		4830D892114FF33500AE4006 /* NSString+DangerousUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DangerousUrl.h"; sourceTree = "<group>"; };
 		4830D893114FF33500AE4006 /* NSString+DangerousUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DangerousUrl.m"; sourceTree = "<group>"; };
 		4830DB55115170CE00AE4006 /* ExtoreHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreHttp.h; sourceTree = "<group>"; };
@@ -4859,8 +4856,6 @@
 				483560D60F5907B800A5625E /* NSDictionary+Readable.m */,
 				48FD59BF0F05296100288DD2 /* NSDictionary+SimpleMutations.h */,
 				48FD59C00F05296100288DD2 /* NSDictionary+SimpleMutations.m */,
-				482EBB7916BB1924008ED822 /* NSDictionary+SSYJsonFile.h */,
-				482EBB7A16BB1924008ED822 /* NSDictionary+SSYJsonFile.m */,
 				48FD53691537DB9B00FA6027 /* NSDictionary+Subdictionary.h */,
 				48FD536A1537DB9B00FA6027 /* NSDictionary+Subdictionary.m */,
 				48D49B14183AB134009996F7 /* NSDocument+SSYAutosaveBetter.h */,
@@ -7826,7 +7821,6 @@
 				488A0FEC16A0357700416ACE /* TalderMapProtoArrayController.m in Sources */,
 				489B98D828DA6E03009E82FD /* BkmxCoreDataMigrationDelegate.swift in Sources */,
 				48716A0C16AE383A003F07BC /* SSYChromePaths.m in Sources */,
-				482EBB7B16BB1924008ED822 /* NSDictionary+SSYJsonFile.m in Sources */,
 				48A335D116D87ECA0067553D /* Chromessengerer.m in Sources */,
 				4817123316E71B3700E31585 /* ExtoreChromy+UserOpenProfile.m in Sources */,
 				4852A5712C5BAA64005D6088 /* BkmxAppDel+Actions.swift in Sources */,

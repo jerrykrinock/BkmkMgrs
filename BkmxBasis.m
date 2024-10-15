@@ -80,6 +80,20 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
 @synthesize starkAttributeTypes = m_starkAttributeTypes ;
 @synthesize currentAppleScriptCommand = m_currentAppleScriptCommand ;
 
++ (NSUInteger)optionsForNSJSON {
+    NSUInteger options;
+    if (@available(macOS 12.0, *)) {
+        /* I have never seen any indication that JSON5 is necessary here.  This
+         is just a crazy attempt at futureproofing in case one of the browsers
+         starts output bookmarks trees in JSON5, or something. */
+        options = NSJSONReadingJSON5Allowed;
+    } else {
+        options = 0;
+    }
+    
+    return options;
+}
+
 + (NSString*)companyIdentifier {
     NSString* identifier = [[NSBundle mainAppBundle] bundleIdentifier] ;
     identifier = [identifier stringByDeletingDotSuffix] ;

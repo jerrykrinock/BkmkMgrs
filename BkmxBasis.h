@@ -61,6 +61,8 @@ __attribute__((visibility("default"))) @interface BkmxBasis : NSObject <SSYAlert
 
 + (BkmxBasis*)sharedBasis ;
 
+@property (class, assign, readonly) NSUInteger optionsForNSJSON;
+
 + (NSString*)companyIdentifier ;
 
 + (NSString*)appIdentifierForAppName:(NSString*)appName ;

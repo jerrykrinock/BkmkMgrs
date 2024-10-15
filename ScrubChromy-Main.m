@@ -19,8 +19,6 @@ void processFile(NSString* path) {
     else {
         [gScannerFindings release] ;
         gScannerFindings = [NSMutableDictionary new] ;
-        [NSDictionary dictionaryWithJSONString:s
-                                    accurately:NO] ;
         NSMutableArray* locs = [[NSMutableArray alloc] init] ;
         [locs addObjectsFromArray:[gScannerFindings allKeys]] ;
         [locs sortUsingSelector:@selector(compare:)] ;

@@ -234,18 +234,21 @@ static const ExtoreConstants extoreConstants = {
 
 - (NSDate*)decodeRetryDateFromData:(NSData*)rxData
 						   error_p:(NSError**)error_p  {
+    NSError* error = nil;
 	NSDate* retryDate = nil ;
 	if (rxData) {
-		NSString* rxString = [[NSString alloc] initWithData:rxData
-												   encoding:NSUTF8StringEncoding] ;
-		NSDictionary* dictionary = [NSDictionary dictionaryWithJSONString:rxString
-															   accurately:NO] ;
-        [rxString release] ;
-		NSString* messageFromDiigo = [dictionary objectForKey:@"message"] ;
+        NSDictionary* dictionary = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:rxData
+                                                                                  options:BkmxBasis.optionsForNSJSON
+                                                                                    error:&error];
+        if (!dictionary) {
+            error = [SSYMakeError(284921, @"Could not decode Retry Date from Diigo") errorByAddingUnderlyingError: error];
+        }
+        
+        NSString* messageFromDiigo = [dictionary objectForKey:@"message"] ;
 		if (messageFromDiigo) {
 			// If this is a throttling, messageFromDiigo is, for example:
 			// "API Limit Exceeded. IP limit reached. Next reset at 2011-08-20 07:00:03 UTC"
-			*error_p = [*error_p errorByAppendingLocalizedFailureReason:
+			error = [error errorByAppendingLocalizedFailureReason:
 						[NSString stringWithFormat:
 						 @"Message from Diigo: \"%@\"",
 						 messageFromDiigo]] ;
@@ -275,6 +278,11 @@ static const ExtoreConstants extoreConstants = {
 			}
 		}
 	}
+    
+    if (error && error_p) {
+        *error_p = error ;
+    }
+
 	
 	return retryDate ;
 }
