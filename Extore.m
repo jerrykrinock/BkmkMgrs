@@ -5879,9 +5879,15 @@ end:
             
             NSString* jsonText = nil;
             if (data) {
+                // Chromesenger encodes data as a keyed archive
                 jsonText = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
                                                                fromData:data
                                                                   error:&error];
+                /* The tree (dictionary) which comes from the Chrome-ish browsers is wrapped as a
+                 single-element array.  The following statement removes that array
+                 wrapper, if any. so that subsequent JSON decoding results in a
+                 dictionary, as expected.  */
+                jsonText = [jsonText stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]"]];
             }
             
             if (error) {
