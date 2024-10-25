@@ -917,7 +917,7 @@ function reportProgress(majorNum, majorDen, minorNum, minorDen) {
     timeOfLastProgressReport = timeNow;
     var progress = {
       progressMajorNum: majorNum,
-      progressMajorNum: majorNum,
+      progressMajorDen: majorDen,
       progressMinorNum: minorNum,
       progressMinorDen: minorDen
     };
