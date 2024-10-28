@@ -3047,7 +3047,7 @@ end:
 
 /* Confused?  See Note SheepSafariHelperMethodsMap */
 - (void)writeWithSheepSafariHelperChanges:(NSDictionary *)changes
-                     operation:(SSYOperation*)operation {
+                                operation:(SSYOperation*)operation {
     NSXPCConnection* connection = [[NSXPCConnection alloc] initWithServiceName:@"com.sheepsystems.SheepSafariHelper"];
     self.sheepSafariHelperXpcConnection = connection;
     [connection release];
@@ -3056,112 +3056,116 @@ end:
     [[BkmxBasis sharedBasis] logString:[NSString stringWithFormat:@"Call SheepSafariHelper for Job %05ld", self.jobSerial]];
     [[connection remoteObjectProxy] exportForKlientAppDescription:[self customerDescription]
                                                           changes:changes
-                                   completionHandler:^(NSString* exidFeedback, NSDictionary* results, NSError* error) {
-                                       [self.sheepSafariHelperTimeoutTimer invalidate];
-                                       self.sheepSafariHelperTimeoutTimer = nil;
-
-                                       /* Apple documentation says to invalidate now.  It probably has no effect
-                                        in our case because SheepSafariHelper kills itself with exit(0) when it is
-                                        done.  I mean, it's probably already invalidated. */
-                                       [connection invalidate];
-                                       self.sheepSafariHelperXpcConnection = nil;
-
-                                       NSDictionary* issues = [results objectForKey:constKeySheepSafariHelperResultIssues];
-                                       NSString* msg = [NSString stringWithFormat:
-                                                        @"SheepSafariHelper write try: %@: %@ sv=%@ drq=%@ limbo:%ld,%ld,%ld,%ld fwk=%@",
-                                                        error ? @"Fail" : @"Good",
-                                                        [self sheepSafariHelperStatusDescription],
-                                                        [results objectForKey:constKeySheepSafariHelperResultSaveResults],
-                                                        [results objectForKey:constKeySheepSafariHelperDidRequestSyncClientTrigger],
-                                                        ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboInsertionsCount]).longValue,
-                                                        ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboRemovalsCount]).longValue,
-                                                        ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboOrphanCount]).longValue,
-                                                        ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboOrphanDisappearedCount]).longValue,
-                                                        [results objectForKey:constKeySheepSafariHelperResultSafariFrameworkTattle]
-                                                        ];
-                                       [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
-                                                                   logFormat:msg];
-                                       msg = [NSString stringWithFormat:
-                                              @"SheepSafariHelper write depth:trials: %@",
-                                              [results objectForKey:constKeySheepSafariHelperTrialsByDepthReport]];
-                                       [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
-                                                                   logFormat:msg];
-                                       if (issues) {
-                                           msg = [NSString stringWithFormat:
-                                                  @"SheepSafariHelper had %ld nonfatal issues writing",
-                                                  (long)issues.count];
-                                           [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
-                                                                       logFormat:
-                                            @"%@.  See Error %@",
-                                            msg,
-                                            @(constBkmsErrorSheepSafariHelperHadIssuesWriting)];
-                                           NSError* error = SSYMakeError(constBkmsErrorSheepSafariHelperHadIssuesWriting, msg);
-                                           error = [error errorByAddingUserInfoObject:issues
-                                                                               forKey:constKeySheepSafariHelperResultIssues];
-                                           [[BkmxBasis sharedBasis] logError:error
-                                                             markAsPresented:NO];
-                                       }
-
-                                       BOOL ok = YES;
-                                       BOOL done = NO;
-                                       if (!error) {
-                                           done = YES;
-                                           if ([NSThread isMainThread]) {
-                                               [self processExidFeedbackString:exidFeedback];
-                                           } else {
-                                               dispatch_sync(dispatch_get_main_queue(), ^{
-                                                   [self processExidFeedbackString:exidFeedback];
-                                               });
-                                           }
-
-                                           [[NSUserDefaults standardUserDefaults] setAndSyncMainAppValue:[NSDate date]
-                                                                                                  forKey:constKeySafariPushLastSheepSafariHelper];
-                                           NSInteger priorsCount = [[NSUserDefaults standardUserDefaults] syncAndGetMainAppIntegerForKey:constKeySafariPushCountSheepSafariHelper];
-                                           [[NSUserDefaults standardUserDefaults] setAndSyncMainAppValue:@(priorsCount + 1)
-                                                                                                  forKey:constKeySafariPushCountSheepSafariHelper];
-                                           if (priorsCount % PUSH_PUSH_LAZINESS == 0) {
-                                               if ([[NSUserDefaults standardUserDefaults] syncAndGetMainAppBoolForKey:constKeySendPerformanceData]) {
-                                                   [self pushPushDataWithCkms:[[NSUserDefaults standardUserDefaults] syncAndGetMainAppIntegerForKey:constKeySafariPushPriorCkms]
-                                                                ixportSubstyle:@"SheepSafariHelper"];
-                                               }
-                                           }
-                                       } else if (self.sheepSafariHelperCurrentTrialIndex <= [[error.userInfo objectForKey:constKeyRetrialsRecommended] integerValue]) {
-                                           NSString* msg = [NSString stringWithFormat:
-                                                            @"SheepSafariHelper export fail; %ld/%ld cuz %ld \u279e Retry in %0.1f secs",
-                                                            (long)(self.sheepSafariHelperCurrentTrialIndex),
-                                                            (long)[[[error userInfo] objectForKey:constKeyRetrialsRecommended] integerValue],
-                                                            (long)[error code],
-                                                            constSheepSafariHelperExportRetryDuration
-                                                            ];
-                                           [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
-                                                                       logFormat:msg];
-                                           self.sheepSafariHelperCurrentTrialIndex = self.sheepSafariHelperCurrentTrialIndex + 1;
-
-                                           [NSThread sleepForTimeInterval:constSheepSafariHelperExportRetryDuration];
-
-                                           [self writeWithSheepSafariHelperChanges:changes
-                                                              operation:operation];
-                                       } else {
-                                           done = YES;
-                                           error = [error errorByAddingUserInfoObject:changes
-                                                                               forKey:@"Changes Attempted"];
-                                           [self setError:error] ;
-                                           ok = NO;
-                                       }
-
-                                       if (done) {
-                                           if ([NSThread isMainThread]) {
-                                               self.isDoneWritingToSheepSafariHelper = YES;
-                                               [operation writeAndDeleteDidSucceed:ok] ;
-                                           } else {
-                                               dispatch_sync(dispatch_get_main_queue(), ^{
-                                                   self.isDoneWritingToSheepSafariHelper = YES;
-                                                   [operation writeAndDeleteDidSucceed:ok] ;
-
-                                               });
-                                           }
-                                       }
-                                   }];
+                                                completionHandler:^(NSString* exidFeedback, NSDictionary* results, NSError* errorIn) {
+        __block NSError* error = errorIn;
+        [self.sheepSafariHelperTimeoutTimer invalidate];
+        self.sheepSafariHelperTimeoutTimer = nil;
+        
+        /* Apple documentation says to invalidate now.  It probably has no effect
+         in our case because SheepSafariHelper kills itself with exit(0) when it is
+         done.  I mean, it's probably already invalidated. */
+        [connection invalidate];
+        self.sheepSafariHelperXpcConnection = nil;
+        
+        NSDictionary* issues = [results objectForKey:constKeySheepSafariHelperResultIssues];
+        NSString* msg = [NSString stringWithFormat:
+                             @"SheepSafariHelper write try: %@: %@ sv=%@ drq=%@ limbo:%ld,%ld,%ld,%ld fwk=%@",
+                         error ? @"Fail" : @"Good",
+                         [self sheepSafariHelperStatusDescription],
+                         [results objectForKey:constKeySheepSafariHelperResultSaveResults],
+                         [results objectForKey:constKeySheepSafariHelperDidRequestSyncClientTrigger],
+                         ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboInsertionsCount]).longValue,
+                         ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboRemovalsCount]).longValue,
+                         ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboOrphanCount]).longValue,
+                         ((NSNumber*)[results objectForKey:constKeySheepSafariHelperResultLimboOrphanDisappearedCount]).longValue,
+                         [results objectForKey:constKeySheepSafariHelperResultSafariFrameworkTattle]
+        ];
+        [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
+                                    logFormat:msg];
+        msg = [NSString stringWithFormat:
+               @"SheepSafariHelper write depth:trials: %@",
+               [results objectForKey:constKeySheepSafariHelperTrialsByDepthReport]];
+        [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
+                                    logFormat:msg];
+        if (issues) {
+            msg = [NSString stringWithFormat:
+                   @"SheepSafariHelper had %ld nonfatal issues writing",
+                   (long)issues.count];
+            [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
+                                        logFormat:
+             @"%@.  See Error %@",
+             msg,
+             @(constBkmsErrorSheepSafariHelperHadIssuesWriting)];
+            NSError* error = SSYMakeError(constBkmsErrorSheepSafariHelperHadIssuesWriting, msg);
+            error = [error errorByAddingUserInfoObject:issues
+                                                forKey:constKeySheepSafariHelperResultIssues];
+            [[BkmxBasis sharedBasis] logError:error
+                              markAsPresented:NO];
+        }
+        
+        BOOL ok = YES;
+        BOOL done = NO;
+        if (!error) {
+            done = YES;
+            NSData* exidFeedbackData = [exidFeedback dataUsingEncoding:NSUTF8StringEncoding];
+            if ([NSThread isMainThread]) {
+                [self processExidFeedbackData:exidFeedbackData
+                                      error_p:&error];
+            } else {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self processExidFeedbackData:exidFeedbackData
+                                          error_p:&error];
+                });
+            }
+            
+            [[NSUserDefaults standardUserDefaults] setAndSyncMainAppValue:[NSDate date]
+                                                                   forKey:constKeySafariPushLastSheepSafariHelper];
+            NSInteger priorsCount = [[NSUserDefaults standardUserDefaults] syncAndGetMainAppIntegerForKey:constKeySafariPushCountSheepSafariHelper];
+            [[NSUserDefaults standardUserDefaults] setAndSyncMainAppValue:@(priorsCount + 1)
+                                                                   forKey:constKeySafariPushCountSheepSafariHelper];
+            if (priorsCount % PUSH_PUSH_LAZINESS == 0) {
+                if ([[NSUserDefaults standardUserDefaults] syncAndGetMainAppBoolForKey:constKeySendPerformanceData]) {
+                    [self pushPushDataWithCkms:[[NSUserDefaults standardUserDefaults] syncAndGetMainAppIntegerForKey:constKeySafariPushPriorCkms]
+                                ixportSubstyle:@"SheepSafariHelper"];
+                }
+            }
+        } else if (self.sheepSafariHelperCurrentTrialIndex <= [[error.userInfo objectForKey:constKeyRetrialsRecommended] integerValue]) {
+            NSString* msg = [NSString stringWithFormat:
+                                 @"SheepSafariHelper export fail; %ld/%ld cuz %ld \u279e Retry in %0.1f secs",
+                             (long)(self.sheepSafariHelperCurrentTrialIndex),
+                             (long)[[[error userInfo] objectForKey:constKeyRetrialsRecommended] integerValue],
+                             (long)[error code],
+                             constSheepSafariHelperExportRetryDuration
+            ];
+            [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
+                                        logFormat:msg];
+            self.sheepSafariHelperCurrentTrialIndex = self.sheepSafariHelperCurrentTrialIndex + 1;
+            
+            [NSThread sleepForTimeInterval:constSheepSafariHelperExportRetryDuration];
+            
+            [self writeWithSheepSafariHelperChanges:changes
+                                          operation:operation];
+        } else {
+            done = YES;
+            error = [error errorByAddingUserInfoObject:changes
+                                                forKey:@"Changes Attempted"];
+            [self setError:error] ;
+            ok = NO;
+        }
+        
+        if (done) {
+            if ([NSThread isMainThread]) {
+                self.isDoneWritingToSheepSafariHelper = YES;
+                [operation writeAndDeleteDidSucceed:ok] ;
+            } else {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    self.isDoneWritingToSheepSafariHelper = YES;
+                    [operation writeAndDeleteDidSucceed:ok] ;
+                    
+                });
+            }
+        }
+    }];
 }
 
 /* Confused?  See Note SheepSafariHelperMethodsMap */

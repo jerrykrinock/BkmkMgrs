@@ -1803,7 +1803,7 @@ __attribute__((visibility("default"))) @interface Extore : NSObject <Hartainerta
 - (BOOL)writeString:(NSString*)string
 			 toFile:(NSString*)path ;
 
-- (BOOL)makeStarksFromJsonString:(NSString*)jsonString
+- (BOOL)makeStarksFromJsonData:(NSData*)jsonData
 						 error_p:(NSError**)error_p ;
 
 /*!
@@ -1916,8 +1916,8 @@ __attribute__((visibility("default"))) @interface Extore : NSObject <Hartainerta
 
 - (void)registerHighExidFromItem:(NSDictionary*)item ;
 
-- (void)processExidFeedbackString:(NSString *)jsonText;
-
+- (BOOL)processExidFeedbackData:(NSData*)exidFeedbackData
+                        error_p:(NSError**)error_p;
 - (void)clearTransMoc;
 - (void)clearLocalMoc;
 

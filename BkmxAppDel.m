@@ -4584,6 +4584,9 @@ typedef void (^TaskBlockType)(id <BkmxAgentProtocol>);
 }
 
 - (void)restartSyncWatchesThen:(void (^)(NSError*))then {
+    /* Try to restart watches, and if that fails, reboot, which will load and
+     realize the current watches.*/
+
     /* We use BkmxWhichAppsMain instead of BkmxWhichAppsAny because each
      app (BookMacster, Synkmark, Smarky) has its own agent with a different
      bundle identifier. */

@@ -3959,8 +3959,8 @@ endWithoutSettingError:
 - (BOOL)makeStarksFromExtoreTree:(NSDictionary*)treeIn
                          error_p:(NSError**)error_p {
     BOOL ok = YES ;
+    NSError* error = nil ;
     @autoreleasepool {
-        NSError* error = nil ;
 
         NSDictionary* clientBookmarksBar = nil ;
         NSDictionary* clientBookmarksMenu = nil ;
@@ -4082,7 +4082,7 @@ endWithoutSettingError:
             [unfiledOut release] ;
         }
 
-        if (error_p && error) {
+        if (error) {
             NSString* s ;
             s = [NSString stringWithFormat:
                  @"Could not decode bookmarks from %@.",
@@ -4092,15 +4092,16 @@ endWithoutSettingError:
                  @"Activate %@ and check out its bookmarks.  Reset if corrupt.",
                  [self displayName]] ;
             error = [error errorByAddingLocalizedRecoverySuggestion:s] ;
-            *error_p = error;
-
-            [*error_p retain];
+            [error retain];
         }
     }
 
-    if (error_p) {
-        [*error_p autorelease];
+    [error autorelease];
+
+    if (error && error_p) {
+        *error_p = error ;
     }
+    
 
 	return ok ;
 }

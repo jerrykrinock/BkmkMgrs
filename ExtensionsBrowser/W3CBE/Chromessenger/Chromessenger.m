@@ -513,11 +513,9 @@ NSInteger const nativeMessagingAPILimit = 1000000;
             if (rxObject) {
                 // This branch was formerly handled by ssyE2P_sendBookmarksToBkmx()
 
-                NSString* jsonString = [rxObject jsonStringValue] ;
-
-                NSData* txPayload = [NSKeyedArchiver archivedDataWithRootObject:jsonString
-                                                          requiringSecureCoding:YES
-                                                                          error:&error];
+                NSData* txPayload = [NSJSONSerialization dataWithJSONObject:rxObject
+                                                                    options:0
+                                                                      error:&error];
                 if (error) {
                     issue = @"Internal Error 274-9955";
                     syslog(LOG_ERR, "%s", issue.UTF8String);
@@ -546,10 +544,9 @@ NSInteger const nativeMessagingAPILimit = 1000000;
 
             rxObject = [payloads valueForKey:@"assignedVsProposedExids"] ;
             if (rxObject) {
-                NSString* exidFeedbackString = [rxObject jsonStringValue] ;
-                NSData* txPayload = [NSKeyedArchiver archivedDataWithRootObject:exidFeedbackString
-                                                          requiringSecureCoding:YES
-                                                                          error:&error];
+                NSData* txPayload = [NSJSONSerialization dataWithJSONObject:rxObject
+                                                                    options:0
+                                                                      error:&error];
                 if (error) {
                     issue = @"Internal Error 274-9956";
                     syslog(LOG_ERR, "%s", issue.UTF8String);
@@ -578,9 +575,9 @@ NSInteger const nativeMessagingAPILimit = 1000000;
             
             rxObject = [payloads valueForKey:@"progress"] ;
             if (rxObject) {
-                NSData* txPayload = [NSKeyedArchiver archivedDataWithRootObject:rxObject
-                                                          requiringSecureCoding:YES
-                                                                          error:&error];
+                NSData* txPayload = [NSJSONSerialization dataWithJSONObject:rxObject
+                                                                    options:0
+                                                                      error:&error];
                 if (error) {
                     issue = @"Internal Error 274-9957";
                     syslog(LOG_ERR, "%s", issue.UTF8String);
@@ -627,10 +624,9 @@ NSInteger const nativeMessagingAPILimit = 1000000;
             
             rxObject = [payloads valueForKey:@"grabbedInfo"] ;
             if (rxObject) {
-                NSString* rxJson = [rxObject jsonStringValue];
-                NSData* rxData = [NSKeyedArchiver archivedDataWithRootObject:rxJson
-                                                       requiringSecureCoding:YES
-                                                                       error:&error];
+                NSData* rxData = [NSJSONSerialization dataWithJSONObject:rxObject
+                                                                 options:0
+                                                                   error:&error];
                 if (error) {
                     issue = @"Internal Error 274-9958";
                     syslog(LOG_ERR, "%s", issue.UTF8String);

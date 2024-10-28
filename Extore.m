@@ -5622,53 +5622,89 @@ end:
     }
 }
 
-- (BOOL)makeStarksFromJsonString:(NSString*)jsonString
+- (BOOL)makeStarksFromJsonData:(NSData*)jsonData
                          error_p:(NSError**)error_p {
     BOOL ok = YES ;
     NSError* error = nil ;
-    
-    NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary* tree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+    @autoreleasepool {
+        id treeOrArray = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
                                                                         options:BkmxBasis.optionsForNSJSON
                                                                           error:&error];
-    if (error) {
-        NSString* msg = [NSString stringWithFormat:
-                         @"Could not decode JSON data from %@",
-                         self.clientoid.displayName] ;
-        error = [SSYMakeError(564205, msg) errorByAddingUnderlyingError:error];
-        error = [error errorByAddingUserInfoObject:jsonString
-                                            forKey:@"Undecodeable String"] ;
-        ok = NO ;
-    }
-    
-    if (ok) {
-#if DEBUG_WRITE_IMPORTED_URLS_TO_FILES
-        [self beginSSYLinearFileWriter] ;
-#endif
-        ok = [self makeStarksFromExtoreTree:tree
-                                    error_p:&error] ;
-#if DEBUG_WRITE_IMPORTED_URLS_TO_FILES
-        [self closeSSYLinearFileWriter] ;
-#endif
-        if (!ok) {
-            // This, or Error 290041, may occur if Firefox has the "empty Library" corruption.
-            error = [SSYMakeError(594520, @"Could not decode bookmarks data") errorByAddingUnderlyingError:error] ;
+        if (!treeOrArray) {
+            /* See Note OldKA */
+            NSError* legacyError = nil;
+            NSString* jsonString = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
+                                                                       fromData:jsonData
+                                                                          error:&legacyError];
+            jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            if (jsonData) {
+                treeOrArray = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                             options:BkmxBasis.optionsForNSJSON
+                                                                               error:&legacyError];
+            }
+            /* The 'error' is not really underlying in this case, but we use this
+             as a hack in order to return both errors. */
+            error = [legacyError errorByAddingUnderlyingError:error];
+
+            [[BkmxBasis sharedBasis] logFormat:
+             @"Unarchive legacy Chrmsngr tree : %@,%@,%@",
+             @(jsonString != nil),
+             @(jsonData != nil),
+             @(treeOrArray != nil)];
         }
+        
+        NSDictionary* tree;
+        if ([treeOrArray isKindOfClass:[NSArray class]]) {
+            /* The tree (dictionary) which comes from the Chrome-ish browsers is wrapped as a
+             single-element array.  The following statement removes that array
+             wrapper, if any. so that subsequent JSON decoding results in a
+             dictionary, as expected. */
+            tree = (NSDictionary*)[treeOrArray firstObject];
+        } else if ([treeOrArray isKindOfClass:[NSDictionary class]]) {
+            tree = (NSDictionary*)treeOrArray;
+        } else {
+            tree = nil;
+        }
+        
+        
+        if (!tree && error) {
+            NSString* msg = [NSString stringWithFormat:
+                             @"Could not decode JSON data from %@",
+                             self.clientoid.displayName] ;
+            error = [SSYMakeError(564205, msg) errorByAddingUnderlyingError:error];
+            error = [error errorByAddingUserInfoObject:jsonData
+                                                forKey:@"Undecodeable data"] ;
+            ok = NO ;
+        }
+        
+        if (ok) {
+#if DEBUG_WRITE_IMPORTED_URLS_TO_FILES
+            [self beginSSYLinearFileWriter] ;
+#endif
+            ok = [self makeStarksFromExtoreTree:tree
+                                        error_p:&error] ;
+#if DEBUG_WRITE_IMPORTED_URLS_TO_FILES
+            [self closeSSYLinearFileWriter] ;
+#endif
+            if (!ok) {
+                // This, or Error 290041, may occur if Firefox has the "empty Library" corruption.
+                error = [SSYMakeError(594520, @"Could not decode bookmarks data") errorByAddingUnderlyingError:error] ;
+            }
+        }
+        [error retain];
     }
-    
+
+    [error autorelease];
     if (!ok && error_p) {
         *error_p = error ;
     }
-    
+
     return ok ;
 }
 
-- (void)processExidFeedbackString:(NSString *)jsonText {
-    NSData* jsonData = [jsonText dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary* feedbacks = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
-                                                                        options:BkmxBasis.optionsForNSJSON
-                                                                          error:NULL];
-
+- (BOOL)processExidFeedbackData:(NSData*)exidFeedbackData
+                        error_p:(NSError**)error_p {
+    NSError* error = nil;
     /* Task 1 of 2.  Write the feedback to a file, for reading soon by
      TriggHandler to prevent some false triggers; or, remove the old file. */
     
@@ -5682,11 +5718,9 @@ end:
                                                     error:NULL] ;
     path = [path stringByAppendingPathComponent:[self localIdentifier]] ;
     path = [path stringByAppendingPathExtension:@"json"] ;
-    if (feedbacks) {
-        [jsonText writeToFile:path
-                   atomically:YES
-                     encoding:NSUTF8StringEncoding
-                        error:NULL] ;
+    if (exidFeedbackData) {
+        [exidFeedbackData writeToFile:path
+                           atomically:YES] ;
     }
     else {
         // Remove old feedback file, if any
@@ -5696,36 +5730,66 @@ end:
     
     /* Task 2.  Do actual work of swapping the exids.  */
     
-    if (feedbacks) {
-        [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
-                                    logFormat:@"Export succeeded, got exids"];
+    if (exidFeedbackData) {
+        NSDictionary* feedbacks = [NSJSONSerialization JSONObjectWithData:exidFeedbackData
+                                                                  options:BkmxBasis.optionsForNSJSON
+                                                                    error:&error];
+        if (!feedbacks) {
+            /* See Note OldKA */
+            NSError* legacyError = nil;
+            NSString* jsonString = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
+                                                                       fromData:exidFeedbackData
+                                                                          error:&legacyError];
+            exidFeedbackData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            if (exidFeedbackData) {
+                feedbacks = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:exidFeedbackData
+                                                                           options:BkmxBasis.optionsForNSJSON
+                                                                             error:&legacyError];
+            }
+            /* The 'error' is not really underlying in this case, but we use this
+             as a hack in order to return both errors. */
+            error = [legacyError errorByAddingUnderlyingError:error];
+            [[BkmxBasis sharedBasis] logFormat:
+             @"Unarchive legacy Chrmsngr exidFdbk : %@,%@,%@",
+             @(jsonString != nil),
+             @(exidFeedbackData != nil),
+             @(feedbacks != nil)];
+        }
         
-        Clientoid* clientoid = self.clientoid ;
-        for (Stark* stark in [[self starker] allStarks]) {
-            //if (![self isHartainer]) {
-            NSString* currentExid = [stark exidForClientoid:clientoid] ;
-            NSString* correctExid = [feedbacks objectForKey:currentExid] ;
+        if (!feedbacks && error) {
+            NSString* errorDesc = [NSString stringWithFormat:@"Could not decode feedback of identifiers from %@", [self displayName]];
+            error = [SSYMakeError(382930, errorDesc) errorByAddingUnderlyingError:error];
+        } else {
+            [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
+                                        logFormat:@"Export succeeded, got exids"];
             
-            // This is kind of tricky.  Note that we correct the exid of the stark
-            // in the Extore, not the exid of its mateInBkmxDoc, even though the
-            // stark in the extore will soon be destroyed and the mateInBkmxDoc is
-            // the one that needs the exid.  This is because, in
-            // feedbackPostWrite, the exid that we set here will be copied
-            // over to its mateInBkmxDoc, as ultimately desired.
-            // (If we did copy it to the mateInBkmxDoc here, then when
-            // feedbackPostWrite ran, it would see that the one in the
-            // extore had a bad exid, create a spurious new one, and copy this
-            // spurious one to its mateInBkmxDoc.
-            
-            if (correctExid) {
-                if (![correctExid isEqualToString:currentExid]) {
-                    // The following 'if' should not be needed but is defensive programming
-                    // because I hate "Core Data could not fulfill a fault…" errors
-                    if (![stark isDeleted]) {
-                        // We first check to see if there has been any change, to avoid
-                        // unnecessarily dirtying the dot
-                        [stark setExid:correctExid
-                          forClientoid:clientoid] ;
+            Clientoid* clientoid = self.clientoid ;
+            for (Stark* stark in [[self starker] allStarks]) {
+                //if (![self isHartainer]) {
+                NSString* currentExid = [stark exidForClientoid:clientoid] ;
+                NSString* correctExid = [feedbacks objectForKey:currentExid] ;
+                
+                // This is kind of tricky.  Note that we correct the exid of the stark
+                // in the Extore, not the exid of its mateInBkmxDoc, even though the
+                // stark in the extore will soon be destroyed and the mateInBkmxDoc is
+                // the one that needs the exid.  This is because, in
+                // feedbackPostWrite, the exid that we set here will be copied
+                // over to its mateInBkmxDoc, as ultimately desired.
+                // (If we did copy it to the mateInBkmxDoc here, then when
+                // feedbackPostWrite ran, it would see that the one in the
+                // extore had a bad exid, create a spurious new one, and copy this
+                // spurious one to its mateInBkmxDoc.
+                
+                if (correctExid) {
+                    if (![correctExid isEqualToString:currentExid]) {
+                        // The following 'if' should not be needed but is defensive programming
+                        // because I hate "Core Data could not fulfill a fault…" errors
+                        if (![stark isDeleted]) {
+                            // We first check to see if there has been any change, to avoid
+                            // unnecessarily dirtying the dot
+                            [stark setExid:correctExid
+                              forClientoid:clientoid] ;
+                        }
                     }
                 }
             }
@@ -5736,6 +5800,12 @@ end:
          feedback.  This is expected if the last export did not insert any
          new items. */
     }
+    
+    if (error && error_p) {
+        *error_p = error ;
+    }
+    
+    return (error == nil);
 }
 
 - (void)interappServer:(SSYInterappServer*)server
@@ -5747,8 +5817,8 @@ end:
     SSYOperation* operation = [userInfo objectForKey:constKeyReadExternalOperation] ;
     ExtensionsMule* addonsManager = [userInfo objectForKey:constKeyReadExternalMule] ;
     
-    NSError* error = nil ;
-    BOOL ok = YES ;
+    __block NSError* error = nil ;
+    __block BOOL ok = YES ;
     
     // Initialize versions to "not applicable" indication
     NSString* receivedProfile = nil ;
@@ -5761,21 +5831,42 @@ end:
         
         NSDictionary* progressNumbers = nil;
         if (data) {
-            progressNumbers = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
-                                                                  fromData:data
-                                                                     error:&error];
-            /* Since this is only a progress message, onl{y log any error to
+            progressNumbers = [NSJSONSerialization JSONObjectWithData:data
+                                                              options:BkmxBasis.optionsForNSJSON
+                                                                error:&error];
+            if (!progressNumbers) {
+                /* See Note OldKA */
+                NSError* legacyError = nil;
+                progressNumbers = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
+                                                                      fromData:data
+                                                                         error:&legacyError];
+                /* The 'error' is not really underlying in this case, but we use this
+                 as a hack in order to return both errors. */
+                error = [legacyError errorByAddingUnderlyingError:error];
+
+                [[BkmxBasis sharedBasis] logFormat:
+                 @"Unarchive legacy Chrmsngr progress : %@:%@",
+                 @(progressNumbers != nil),
+                 @(progressNumbers.count)];
+                /* progressNumbers.count should be 3 for BookMacsterSync
+                 estension 49 or lower, 4 for BookMacsterSync extension
+                 50 or higher. */
+            }
+            
+            /* Since this is only a progress message, only log any error to
              console. */
-            if (error) {
+            if (!progressNumbers && error) {
                 NSLog(@"Internal Error 822-9585: %@", error);
             }
+
         }
         NSInteger majorNum = [[progressNumbers objectForKey:constKeyProgressMajorNum] integerValue] ;
         NSInteger majorDen = [[progressNumbers objectForKey:constKeyProgressMajorDen] integerValue] ;
         NSInteger minorNum = [[progressNumbers objectForKey:constKeyProgressMinorNum] integerValue] ;
         NSInteger minorDen = [[progressNumbers objectForKey:constKeyProgressMinorDen] integerValue] ;
         
-        // Patch for bug in Chrome extension version 21 and lower
+        /* Patch for bug in BookMacster Sync extension version 49 and lower.
+         At this time, the majorDen is always 3 anyhow. */
         if (majorDen == 0) {
             majorDen = 3 ;
         }
@@ -5873,58 +5964,41 @@ end:
         
     }
     else if (headerByte == constInterappHeaderByteForBookmarksTree) {
-        @autoreleasepool {
-            [self forgetTimeoutter] ;
-            server.userInfo = nil;
-            
-            NSString* jsonText = nil;
-            if (data) {
-                // Chromesenger encodes data as a keyed archive
-                jsonText = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
-                                                               fromData:data
-                                                                  error:&error];
-                /* The tree (dictionary) which comes from the Chrome-ish browsers is wrapped as a
-                 single-element array.  The following statement removes that array
-                 wrapper, if any. so that subsequent JSON decoding results in a
-                 dictionary, as expected.  */
-                jsonText = [jsonText stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"[]"]];
-            }
-            
-            if (error) {
-                ok = NO;
-                error = [SSYMakeError(205292, @"Failed to unarchive bookmarks tree") errorByAddingUnderlyingError:error];
-            } else {
-                if ([[BkmxBasis sharedBasis] traceLevel] >= 5) {
-                    NSError* unlikelyError = nil;
-                    NSString* path = [[NSFileManager defaultManager] ensureDesktopDirectoryNamed:@"Bkmx-Trees-From-Clients"
-                                                                                         error_p:&unlikelyError];
+        [self forgetTimeoutter] ;
+        server.userInfo = nil;
+        
+        if (error) {
+            ok = NO;
+            error = [SSYMakeError(205292, @"Failed to unarchive bookmarks tree") errorByAddingUnderlyingError:error];
+        } else {
+            if ([[BkmxBasis sharedBasis] traceLevel] >= 5) {
+                NSError* unlikelyError = nil;
+                NSString* path = [[NSFileManager defaultManager] ensureDesktopDirectoryNamed:@"Bkmx-Trees-From-Clients"
+                                                                                     error_p:&unlikelyError];
+                if (unlikelyError) {
+                    NSLog(@"Internal Error 523-4355 No JSON tree: %@", unlikelyError);
+                } else {
+                    NSString* filename = [NSString stringWithFormat:
+                                          @"Tree-From-%@-%@",
+                                          self.clientoid.displayName,
+                                          [[NSDate date] compactDateTimeString]] ;
+                    filename = [filename stringByAppendingPathExtension:@"json"] ;
+                    path = [path stringByAppendingPathComponent:filename];
+                    [data writeToFile:path
+                           atomically:YES];
                     if (unlikelyError) {
-                        NSLog(@"Internal Error 523-4355 No JSON tree: %@", unlikelyError);
-                    } else {
-                        NSString* filename = [NSString stringWithFormat:
-                                              @"Tree-From-%@-%@",
-                                              self.clientoid.displayName,
-                                              [[NSDate date] compactDateTimeString]] ;
-                        filename = [filename stringByAppendingPathExtension:@"json"] ;
-                        path = [path stringByAppendingPathComponent:filename];
-                        [jsonText writeToFile:path
-                                   atomically:NO
-                                     encoding:NSUTF8StringEncoding
-                                        error:&unlikelyError];
-                        if (unlikelyError) {
-                            NSLog(@"Internal Error 523-4366 No write file: %@", unlikelyError);
-                        }
+                        NSLog(@"Internal Error 523-4366 No write file: %@", unlikelyError);
                     }
                 }
-                
-                if (!jsonText) {
-                    error = SSYMakeError(515609, @"Failed to unarchive imported bookmarks") ;
-                    ok = NO ;
-                }
-                else {
-                    ok = [self makeStarksFromJsonString:jsonText
-                                                error_p:&error] ;
-                }
+            }
+            
+            if (!data) {
+                error = SSYMakeError(515609, @"Failed to unarchive imported bookmarks") ;
+                ok = NO ;
+            }
+            else {
+                    ok = [self makeStarksFromJsonData:data
+                                              error_p:&error] ;
             }
             
             if (!ok) {
@@ -5941,27 +6015,22 @@ end:
         [self forgetTimeoutter] ;
         server.userInfo = nil;
         
-        NSString* jsonText = nil;
         if (data) {
-            jsonText = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
-                                                           fromData:data
-                                                              error:&error] ;
-            if (error) {
-                ok = NO;
-                error = [SSYMakeError(260859, @"Failed to unarchive exid feedback") errorByAddingUnderlyingError:error];
-                [self setError:error] ;
+            if ([NSThread isMainThread]) {
+                ok = [self processExidFeedbackData:data
+                                           error_p:&error];
             } else {
-                if ([NSThread isMainThread]) {
-                    [self processExidFeedbackString:jsonText];
-                } else {
-                    dispatch_sync(dispatch_get_main_queue(), ^{
-                        [self processExidFeedbackString:jsonText];
-                    });
-                }
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    ok = [self processExidFeedbackData:data
+                                               error_p:&error];
+                });
             }
         }
         
-        [operation writeAndDeleteDidSucceed:ok] ;
+        [operation writeAndDeleteDidSucceed:ok];
+        if (error) {
+            [self setError:error];
+        }
     }
     else if (headerByte == constInterappHeaderByteForErrors) {
         NSArray* errorInfos = nil;

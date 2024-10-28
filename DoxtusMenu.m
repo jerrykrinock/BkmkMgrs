@@ -1,6 +1,7 @@
 #import "DoxtusMenu.h"
 #import "BkmxBasis.h"
 #import "BkmxBasis+Strings.h"
+#import "NSError+InfoAccess.h"
 #import "NSError+MyDomain.h"
 #import "NSString+SSYExtraUtils.h"
 #import "NSString+LocalizeSSY.h"
@@ -126,24 +127,36 @@
     NSString* jsonString = nil ;
     if (ok) {
         if (rxData) {
-            jsonString = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSString class]
-                                                           fromData:rxData
-                                                              error:&error];
-        }
-        
-        if (jsonString) {
-            NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary* browmarkInfo = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:data
-                                                                                        options:BkmxBasis.optionsForNSJSON
-                                                                                      error:NULL];
+            browmarkInfo = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:rxData
+                                                                          options:BkmxBasis.optionsForNSJSON
+                                                                            error:&error];
             if (!browmarkInfo) {
-                NSLog(@"Internal Error 741-6883 decoding json: %@", jsonString) ;
+                /* See Note OldKA */
+                NSError* legacyError = nil;
+                jsonString = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSString class]
+                                                               fromData:rxData
+                                                                  error:&legacyError];
+                rxData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+                if (rxData) {
+                    browmarkInfo = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:rxData
+                                                                                  options:BkmxBasis.optionsForNSJSON
+                                                                                    error:&legacyError];
+                }
+                /* The 'error' is not really underlying in this case, but we use this
+                 as a hack in order to return both errors. */
+                error = [legacyError errorByAddingUnderlyingError:error];
+                [[BkmxBasis sharedBasis] logFormat:
+                 @"Unarchive legacy Chrmsngr browmark : %@,%@,%@",
+                 @(jsonString != nil),
+                 @(rxData != nil),
+                 @(browmarkInfo != nil)];
             }
         }
-        else {
+        
+        if (!browmarkInfo) {
             NSString* dataString = [[NSString stringWithDataUTF8:rxData] stringByTruncatingMiddleToLength:1024
                                                                                                wholeWords:NO] ;
-            NSLog(@"Error 361-2252 unarchiving jsonString from %ld bytes : %@\nError: %@", (long)[rxData length], dataString ? (NSObject*)dataString : (NSObject*)rxData, error) ;
+            NSLog(@"Error 361-2252 decoding jsonString from %ld bytes : %@\nError: %@", (long)[rxData length], dataString ? (NSObject*)dataString : (NSObject*)rxData, error) ;
         }
     }
     else {

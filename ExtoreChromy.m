@@ -477,18 +477,14 @@ NSString* const constKeyState = @"state" ;
         goto end ;
     }
     else {
-        NSStringEncoding usedEncoding ;
-        NSString* stringIn = [[NSString alloc] initWithContentsOfFile:path
-                                                         usedEncoding:&usedEncoding
-                                                                error:&error] ;
-        if (!stringIn) {
+        NSData* data = [NSData dataWithContentsOfFile:path];
+        if (!data) {
             NSLog(@"Internal Error 684-1094 %@\n%@", self, error) ;
         }
         else {
-            ok = [self makeStarksFromJsonString:stringIn
+            ok = [self makeStarksFromJsonData:data
                                         error_p:&error] ;
         }
-        [stringIn release] ;
         if (!ok) {
             goto end ;
         }

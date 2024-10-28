@@ -169,6 +169,35 @@ NSString* const constKeyUninhibitorDate = @"date" ;
     return sortedArray;
 }
 
+- (void (^)(NSError *))finishRestartOfSyncWatches {
+    return [(^void(NSError* error) {
+        if (error) {
+            NSError* restartError = error;
+            BOOL ok = [[BkmxBasis sharedBasis] rebootSyncAgentReport_p:NULL
+                                                               title_p:NULL
+                                                               error_p:&error];
+            if (ok) {
+                error = [SSYMakeError(118747, @"Failed restarting sync watches, fixed by rebooting agent") errorByAddingUnderlyingError:error];
+                // Just log it
+                [[BkmxBasis sharedBasis] logError:error
+                                  markAsPresented:NO];
+                error = nil;
+            } else {
+                error = [[SSYMakeError(118748, @"Failed restarting sync watches, reboot failed too") errorByAddingUnderlyingError:error] errorByAddingUnderlyingError:restartError];
+            }
+            [[BkmxBasis sharedBasis] logError:error
+                              markAsPresented:YES];
+            [SSYAlert alertError:error];
+        }
+    }) copy];
+}
+
+- (void)probablyRestartSyncWatches {
+    BkmxAppDel* appDelegate = (BkmxAppDel*)[NSApp delegate];
+    NSAssert([appDelegate isKindOfClass:[BkmxAppDel class]], @"Agent should not be updating own status!");
+    [appDelegate restartSyncWatchesThen:[self finishRestartOfSyncWatches]];
+}
+
 - (void)updateBkmxAgentServiceStatus_offOnly:(BOOL)offOnly {
     NSError* error = nil;
     if ([BkmxBasis sharedBasis].manualAgentRebootInProgress) {
@@ -204,36 +233,18 @@ NSString* const constKeyUninhibitorDate = @"date" ;
                                             waitUntilDone:NO];
                 }
             } else if (needItRunning && !offOnly) {
-                /* Agent needs to be running and is already running.  Try to
-                 restart watches, and if that fails, reboot, which will load and
-                 realize the current watches. */
-                BkmxAppDel* appDelegate = (BkmxAppDel*)[NSApp delegate];
-                NSAssert([appDelegate isKindOfClass:[BkmxAppDel class]], @"Agent should not be updating own status!");
-                [appDelegate restartSyncWatchesThen:^void(NSError* error) {
-                    if (error) {
-                        NSError* restartError = error;
-                        BOOL ok = [[BkmxBasis sharedBasis] rebootSyncAgentReport_p:NULL
-                                                                           title_p:NULL
-                                                                           error_p:&error];
-                        if (ok) {
-                            error = [SSYMakeError(118747, @"Failed restarting sync watches, fixed by rebooting agent") errorByAddingUnderlyingError:error];
-                            // Just log it
-                            [[BkmxBasis sharedBasis] logError:error
-                                              markAsPresented:NO];
-                            error = nil;
-                        } else {
-                            error = [[SSYMakeError(118748, @"Failed restarting sync watches, reboot failed too") errorByAddingUnderlyingError:error] errorByAddingUnderlyingError:restartError];
-                        }
-                        [[BkmxBasis sharedBasis] logError:error
-                                          markAsPresented:YES];
-                        /* We might be on a secondary thread here, for examole when called from
-                         -[NSUserDefaults(Bkmx) forgetDefunctDocumentsWithWatchesAndEnDisableBkmxAgent_worker:]
-                         SSYAlert requires main thread. */
-                        [SSYAlert performSelectorOnMainThread:@selector(alertError:)
-                                                   withObject:error
-                                                waitUntilDone:NO];
-                    }
-                }];
+                /* Agent needs to be running and is already running. */
+                
+                /* We might be on a secondary thread here, for examole when called from
+                 -[NSUserDefaults(Bkmx) forgetDefunctDocumentsWithWatchesAndEnDisableBkmxAgent_worker:]
+                 SSYAlert requires main thread. */
+                if ([[NSThread currentThread] isMainThread]) {
+                    [self probablyRestartSyncWatches];
+                } else {
+                    [self performSelectorOnMainThread:@selector(probablyRestartSyncWatches)
+                                           withObject:nil
+                                        waitUntilDone:YES];
+                }
             }
     } else if ([[BkmxBasis sharedBasis] isBkmxAgent]) {
         /* This can happen if BkmxAgent processes a serious error such as

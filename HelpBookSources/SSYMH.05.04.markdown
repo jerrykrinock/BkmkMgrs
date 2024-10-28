@@ -8,9 +8,13 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.1.8 (2024-10-28)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Fixed a bug which caused a crash that was introduced in verrsion 3.1.7 and modernized more old code.  (Date from browser extensions to main app is no lnger encoded with NSKeyedArchiver.)
+
 ## Version 3.1.7 (2024-10-14)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Replaced old code, which was causing at least one rare issue, with newer Apple code that is available in recent macOS versions.  The rare issue was failure to import bookmarks from Chrome-ish browsers if a bookmark name contained invisible, undefined characters.  But since the replaced code is used in many parts of the app, this fix could resolve other unreported, weird, rare issues also.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Replaced old code, which was causing at least one rare issue, with newer Apple code that is available in recent macOS versions.  The rare issue was failure to import bookmarks from Chrome-ish browsers if a bookmark name contained invisible, undefined characters.  But since the replaced code is used in many parts of the app, this fix could resolve other unreported, weird, rare issues also.  (Replaced some uses of BSJSONAdditions with NSJSONSerialization.)
 
 ## Version 3.1.6 (2024-09-23)
 
