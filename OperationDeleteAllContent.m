@@ -5,6 +5,7 @@
 #import "Starker.h"
 #import "BkmxBasis+Strings.h"
 #import "StarkEditor.h"
+#import "Stark.h"
 
 @implementation SSYOperation (OperationDeleteAllContent)
 
@@ -18,11 +19,11 @@
 	[[BkmxBasis sharedBasis] logFormat:@"Deleting all Content in %@", [bkmxDoc displayName]] ;
     NSError* error = nil;
 
-    /* Theoreticaly, we could just delete all starks and rely on the Casecade
-     Delete Rule to deet*/
     BOOL ok = [[bkmxDoc tagger] deleteAllObjectsError_p:&error];
     if (ok) {
-        ok = [[bkmxDoc starker] deleteAllObjectsError_p:&error];
+        for (Stark* stark in [[bkmxDoc starker] allSoftStarksQuickly:NO]){
+            [stark deleteMe];
+        }
     }
     if (!ok) {
         [self setError:error];

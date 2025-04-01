@@ -1174,6 +1174,8 @@ __attribute__((visibility("default"))) @interface Stark : SSYManagedTreeObject {
  */
 - (void)remove ;
 
+- (void)deleteMe;
+
 /*!
  This method is no longer used as of BookMacster 1.0.4
 

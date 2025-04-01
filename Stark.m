@@ -680,7 +680,7 @@ NSString* const constKeyFoldersDeletedDuringConsolidation = @"foldersDeletedDuri
 	return tmpValue;
 }
 
-- (void)setAddDate:(NSDate*)newValue  {
+- (void)setAddDate:(NSDate*)newValue {
 	[self postWillSetNewValue:newValue
 					   forKey:constKeyAddDate] ;
 	[self willChangeValueForKey:constKeyAddDate] ;

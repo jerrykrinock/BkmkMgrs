@@ -1525,11 +1525,15 @@ end:;
     }
     
     if (!dic && [self profileStuffMayBeInstalledInParentFolder]) {
-        path = [path pathByDeletingLastNPathComponent:2];
-        jsonData = [NSData dataWithContentsOfFile:path];
-        dic = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
-                                                             options:BkmxBasis.optionsForNSJSON
-                                                               error:&error];
+        path = [path stringByDeletingLastPathComponent];
+        BOOL profileDirExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+        if (!profileDirExists) {
+            path = [path stringByDeletingLastPathComponent];
+            jsonData = [NSData dataWithContentsOfFile:path];
+            dic = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData
+                                                                 options:BkmxBasis.optionsForNSJSON
+                                                                   error:&error];
+        }
     }
     
     if (!dic) {

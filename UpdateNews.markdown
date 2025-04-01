@@ -1,8 +1,14 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.1.9 (2025-04-01)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now recovers gracefully if a Chrome-ish profile folder is missing.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  The *Delete All Content* function no longer deletes [hard folders](), which caused errors to occur later.
+
 ## Version 3.1.8 (2024-10-28)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Fixed a bug which caused a crash that was introduced in verrsion 3.1.7 and modernized more old code.  (Date from browser extensions to main app is no lnger encoded with NSKeyedArchiver.)
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Fixed a bug which caused a crash that was introduced in version 3.1.7 and modernized more old code.  (Date from browser extensions to main app is no longer encoded with NSKeyedArchiver.)
 
 ## Version 3.1.7 (2024-10-14)
 
