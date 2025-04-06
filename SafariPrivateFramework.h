@@ -58,6 +58,23 @@
  operation the linker (`ld`), pass this clause through to the dynamic linker
  `dyld` for use at launch time.  But I can't find that reference right now.
  It's a weird syntax!
+ 
+>>> UPDATE 2024-04 (BkmkMgrs 3.1.9)
+ 
+ I'm not sure how long this has been happening, but now, using Xcode 16.2, when building my target with the solution discussed above, I am getting the following warning:
+
+ The OTHER_LDFLAGS build setting is not allowed to contain -dyld_env, use the dedicated LD_ENVIRONMENT build setting instead.
+ 
+ I solved the problem by removing the prior solution, these two entries from Other Linker Flags build setting:
+
+ -Wl,-dyld_env
+ -Wl,DYLD_VERSIONED_FRAMEWORK_PATH=/System/Library/StagedFrameworks/Safari
+ and instead I added the following entry to the Dynamic Linker Environment build setting:
+
+ DYLD_VERSIONED_FRAMEWORK_PATH=/System/Library/StagedFrameworks/Safari
+ In the version of macOS which I now have (15.4), there is no StagedFrameworks, so I cannot state for sure that this will work. Maybe someday we shall find out.
+ 
+ <<< End of UPDATE 2024-04
 
  In the SheepSafariHelper target, I went a little further.  Instead of doing a normal
  strong link to /System/Library/PrivateFrameworks/Safari.framework by
@@ -69,7 +86,7 @@
  to "Other Linker Flags".  Mark Rowe says it would work either way.  But I
  think it's better to be a weak link, since Safari.framework is subject to
  change without notice at any time.  I think that maybe weakly-linked
- frameworks cause longer load times that strongly, but a few hundred
+ frameworks cause longer load times than strongly, but a few hundred
  milliseconds more is not a big deal with SheepSafariHelper.
  */
 
