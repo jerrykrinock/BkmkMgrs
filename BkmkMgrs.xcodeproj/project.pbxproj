@@ -291,6 +291,8 @@
 		4852C3330F895048000569AA /* NSMenu+PopOntoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4852C3320F895048000569AA /* NSMenu+PopOntoView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4852C4310F89B6AC000569AA /* Inspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4852C4300F89B6AC000569AA /* Inspector.xib */; };
 		4853E78517A07BD200E842E1 /* Bkmslf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4853E78317A07BD100E842E1 /* Bkmslf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4854C1962DCA8C6A0011F447 /* ExtoreOpera.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854C1952DCA8C6A0011F447 /* ExtoreOpera.m */; };
+		4854C1992DCA8C840011F447 /* ExtoreOperaAir.m in Sources */ = {isa = PBXBuildFile; fileRef = 4854C1982DCA8C840011F447 /* ExtoreOperaAir.m */; };
 		48553F9C13D3BBAB0006E382 /* NSMenu+Populating.m in Sources */ = {isa = PBXBuildFile; fileRef = 48553F9B13D3BBAB0006E382 /* NSMenu+Populating.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4855B2661A75F89C0006A597 /* SSY-RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B2651A75F89C0006A597 /* SSY-RSA.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4855B7681902045400D4EC7A /* BookMacster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 482C4FD41695C22400CB7C9F /* BookMacster.xcdatamodeld */; };
@@ -865,7 +867,7 @@
 		48D1E6C60F6C3EC9001BA354 /* ExtoreLocalPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B060F052EAF00288DD2 /* ExtoreLocalPlist.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6C80F6C3ECC001BA354 /* ExtoreFirefox.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B0A0F052EAF00288DD2 /* ExtoreFirefox.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6CA0F6C3ED0001BA354 /* ExtoreOmniWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B0E0F052EAF00288DD2 /* ExtoreOmniWeb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48D1E6CB0F6C3ED1001BA354 /* ExtoreOpera.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B100F052EAF00288DD2 /* ExtoreOpera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48D1E6CB0F6C3ED1001BA354 /* ExtoreOperas.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B100F052EAF00288DD2 /* ExtoreOperas.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6CC0F6C3ED3001BA354 /* ExtoreSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B120F052EAF00288DD2 /* ExtoreSafari.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6D00F6C3ED8001BA354 /* HeaderGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B1A0F052EAF00288DD2 /* HeaderGetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6D10F6C3EDA001BA354 /* InspectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B1D0F052EAF00288DD2 /* InspectorController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2142,6 +2144,10 @@
 		4852C4300F89B6AC000569AA /* Inspector.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Inspector.xib; path = Resources/Inspector.xib; sourceTree = "<group>"; };
 		4853E78217A07BD100E842E1 /* Bkmslf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bkmslf.h; sourceTree = "<group>"; };
 		4853E78317A07BD100E842E1 /* Bkmslf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bkmslf.m; sourceTree = "<group>"; };
+		4854C1942DCA8C6A0011F447 /* ExtoreOpera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtoreOpera.h; sourceTree = "<group>"; };
+		4854C1952DCA8C6A0011F447 /* ExtoreOpera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtoreOpera.m; sourceTree = "<group>"; };
+		4854C1972DCA8C840011F447 /* ExtoreOperaAir.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtoreOperaAir.h; sourceTree = "<group>"; };
+		4854C1982DCA8C840011F447 /* ExtoreOperaAir.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtoreOperaAir.m; sourceTree = "<group>"; };
 		4855375E2B82672200447FE7 /* BkmxAgentRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunner.swift; sourceTree = "<group>"; };
 		4855375F2B82672200447FE7 /* BkmxAgentRunnerCommandLiner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunnerCommandLiner.swift; sourceTree = "<group>"; };
 		485537612B82672200447FE7 /* BkmxAgentRunnerLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BkmxAgentRunnerLogger.swift; sourceTree = "<group>"; };
@@ -3161,8 +3167,8 @@
 		48FD5B0A0F052EAF00288DD2 /* ExtoreFirefox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreFirefox.m; sourceTree = "<group>"; };
 		48FD5B0D0F052EAF00288DD2 /* ExtoreOmniWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreOmniWeb.h; sourceTree = "<group>"; };
 		48FD5B0E0F052EAF00288DD2 /* ExtoreOmniWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreOmniWeb.m; sourceTree = "<group>"; };
-		48FD5B0F0F052EAF00288DD2 /* ExtoreOpera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreOpera.h; sourceTree = "<group>"; };
-		48FD5B100F052EAF00288DD2 /* ExtoreOpera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreOpera.m; sourceTree = "<group>"; };
+		48FD5B0F0F052EAF00288DD2 /* ExtoreOperas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreOperas.h; sourceTree = "<group>"; };
+		48FD5B100F052EAF00288DD2 /* ExtoreOperas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreOperas.m; sourceTree = "<group>"; };
 		48FD5B110F052EAF00288DD2 /* ExtoreSafari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreSafari.h; sourceTree = "<group>"; };
 		48FD5B120F052EAF00288DD2 /* ExtoreSafari.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreSafari.m; sourceTree = "<group>"; };
 		48FD5B190F052EAF00288DD2 /* HeaderGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderGetter.h; sourceTree = "<group>"; };
@@ -3740,8 +3746,12 @@
 				48FD5B060F052EAF00288DD2 /* ExtoreLocalPlist.m */,
 				48FD5B0D0F052EAF00288DD2 /* ExtoreOmniWeb.h */,
 				48FD5B0E0F052EAF00288DD2 /* ExtoreOmniWeb.m */,
-				48FD5B0F0F052EAF00288DD2 /* ExtoreOpera.h */,
-				48FD5B100F052EAF00288DD2 /* ExtoreOpera.m */,
+				48FD5B0F0F052EAF00288DD2 /* ExtoreOperas.h */,
+				48FD5B100F052EAF00288DD2 /* ExtoreOperas.m */,
+				4854C1972DCA8C840011F447 /* ExtoreOperaAir.h */,
+				4854C1982DCA8C840011F447 /* ExtoreOperaAir.m */,
+				4854C1942DCA8C6A0011F447 /* ExtoreOpera.h */,
+				4854C1952DCA8C6A0011F447 /* ExtoreOpera.m */,
 				48DCC21E2AF6CE600036B1C6 /* ExtoreOrion.h */,
 				48DCC21F2AF6CE600036B1C6 /* ExtoreOrion.m */,
 				48DCC2212AF849170036B1C6 /* ExtoreOrion.swift */,
@@ -7300,7 +7310,7 @@
 				4801541018098DC200C0E8BC /* NSBundle+SSYMotherApp.m in Sources */,
 				481F15B424281ADC003B1868 /* ExtoreBravy.m in Sources */,
 				48015424180C721200C0E8BC /* NSUserDefaults+MainApp.m in Sources */,
-				48D1E6CB0F6C3ED1001BA354 /* ExtoreOpera.m in Sources */,
+				48D1E6CB0F6C3ED1001BA354 /* ExtoreOperas.m in Sources */,
 				48D1E6CC0F6C3ED3001BA354 /* ExtoreSafari.m in Sources */,
 				48D1E6D00F6C3ED8001BA354 /* HeaderGetter.m in Sources */,
 				48D1E6D10F6C3EDA001BA354 /* InspectorController.m in Sources */,
@@ -7639,6 +7649,7 @@
 				48AF1DAE1171FB7200769A60 /* NSDate+Microsoft1601Epoch.m in Sources */,
 				48AF1DDD11720BEB00769A60 /* Stark+ConvertToChrome.m in Sources */,
 				48AF1F281172A28A00769A60 /* NSArray+BSJSONAdditions.m in Sources */,
+				4854C1992DCA8C840011F447 /* ExtoreOperaAir.m in Sources */,
 				48AF1F291172A28A00769A60 /* NSDictionary+BSJSONAdditions.m in Sources */,
 				48AF1F2A1172A28A00769A60 /* NSScanner+BSJSONAdditions.m in Sources */,
 				48AF1F2B1172A28A00769A60 /* NSString+BSJSONAdditions.m in Sources */,
@@ -7783,6 +7794,7 @@
 				48E2ADF6146B823D00B0A8FC /* SSYBetterHashCategories.m in Sources */,
 				4863D38D1476935E00AE2DAC /* TagMap.m in Sources */,
 				48D6FD2918C82AAB0020E9F9 /* SyncNotificationsWindowController.m in Sources */,
+				4854C1962DCA8C6A0011F447 /* ExtoreOpera.m in Sources */,
 				48AF1F55149B0BCB001ABCBC /* Gulper.m in Sources */,
 				48AF1F5E149B7933001ABCBC /* GulperImportDelegate.m in Sources */,
 				487704D114D59F4900C4CAFB /* NSFileHandle+SSYExtras.m in Sources */,

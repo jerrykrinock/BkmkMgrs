@@ -1,6 +1,9 @@
-#import "ExtoreCustomChromy.h"
+#import "ExtoreOperas.h"
 
-@interface ExtoreOpera : ExtoreCustomChromy {
-}
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ExtoreOpera : ExtoreOperas
 
 @end
+
+NS_ASSUME_NONNULL_END

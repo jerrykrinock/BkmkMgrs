@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.2 (2025-)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now supports imports and exports with the *Opera Air* web browser.
+
 ## Version 3.1.9 (2025-04-01)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now recovers gracefully if a Chrome-ish profile folder is missing.

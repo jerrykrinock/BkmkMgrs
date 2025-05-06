@@ -15,7 +15,7 @@
 #import "Clixid.h"
 #import "ContentDataSource.h"
 #import "Extore.h"
-#import "ExtoreOpera.h"
+#import "ExtoreOperas.h"
 #import "ExtoreOrion.h"
 #import "Macster.h"
 #import "NSArray+SSYDisjoint.h"

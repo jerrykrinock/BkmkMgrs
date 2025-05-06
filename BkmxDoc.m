@@ -93,7 +93,7 @@
 #import "Stager.h"
 #import "TalderMapper.h"
 #import "Clixid.h"
-#import "ExtoreOpera.h"
+#import "ExtoreOperas.h"
 #import "NSUserDefaults+MainApp.h"
 #import "NSBundle+MainApp.h"
 #import "NSBundle+SSYMotherApp.h"

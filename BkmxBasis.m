@@ -1180,6 +1180,7 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
                                              constExformatCanary,
                                              constExformatChromium,
                                              constExformatOpera,
+                                             constExformatOperaAir,
                                              constExformatOrion,
                                              constExformatICab,
                                              constExformatOmniweb,

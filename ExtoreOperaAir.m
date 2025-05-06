@@ -1,4 +1,4 @@
-#import "ExtoreOpera.h"
+#import "ExtoreOperaAir.h"
 
 static const ExtoreConstants extoreConstants = {
     /* canEditAddDate */                  NO, // See Note 190352
@@ -20,7 +20,7 @@ static const ExtoreConstants extoreConstants = {
     /* canEditUrl */                      YES,
     /* canEditVisitCount */               NO,
     /* canCreateNewDocuments */           YES,
-    /* ownerAppDisplayName */             @"Opera",
+    /* ownerAppDisplayName */             @"Opera Air",
     /* webHostName */                     nil,
     /* authorizationMethod */             BkmxAuthorizationMethodNone,
     /* accountNameHint */                 nil,
@@ -29,7 +29,7 @@ static const ExtoreConstants extoreConstants = {
     /* oAuthRequestTokenUrl */            nil,
     /* oAuthRequestAccessUrl */           nil,
     /* oAuthRealm */                      nil,
-    /* appSupportRelativePath */          @"com.operasoftware.Opera",
+    /* appSupportRelativePath */          @"com.operasoftware.OperaAir",
     /* defaultFilename */                 @"Bookmarks",
     /* defaultProfileName */              @"Default",
     /* iconResourceFilename */            nil,
@@ -60,8 +60,7 @@ static const ExtoreConstants extoreConstants = {
     /* minSystemVersionForBrowBugFix */   0
 } ;
 
-
-@implementation ExtoreOpera
+@implementation ExtoreOperaAir
 
 /*
  The following implementation is the same in all subclasses, but we define it
@@ -73,12 +72,12 @@ static const ExtoreConstants extoreConstants = {
 }
 
 + (NSArray*)browserBundleIdentifiers {
-    return [NSArray arrayWithObject:@"com.operasoftware.Opera"] ;
+    return [NSArray arrayWithObject:@"com.operasoftware.OperaAir"] ;
 }
 
 + (NSString*)fileParentRelativePath {
     /* Return name of subfolder in ~/Library/Application Support/ */
-    return @"com.operasoftware.Opera" ;
+    return @"com.operasoftware.OperaAir" ;
 }
 
 @end

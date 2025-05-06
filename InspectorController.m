@@ -1,6 +1,6 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
 #import "InspectorController.h"
-#import "ExtoreOpera.h" // Needed for -localizedStrings
+#import "ExtoreOperas.h" // Needed for -localizedStrings
 #import "NSMenu+PopOntoView.h"
 #import "BkmxBasis+Strings.h"
 #import "NSMenu+StarkContextual.h"

@@ -51,7 +51,7 @@
 #import "ChromeDigesterHelpers.h"
 #import "NSDictionary+Treedom.h"
 #import "Chaker.h"
-#import "ExtoreOpera.h"
+#import "ExtoreOperas.h"
 #import "NSString+URIQuery.h"
 #import "BkmxAppDel.h"
 #import "ProfileInfoCache.h"
@@ -2303,8 +2303,8 @@ end:
     NSDictionary* moreInfos = @{@"allowed_origins" : @[
                                         [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreChromy extension1Uuid]],
                                         [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreChromy extension2Uuid]],
-                                        [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreOpera extension1Uuid]],
-                                        [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreOpera extension2Uuid]],
+                                        [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreOperas extension1Uuid]],
+                                        [NSString stringWithFormat:@"chrome-extension://%@/", [ExtoreOperas extension2Uuid]],
                                         // For debugging, using "Load Unpacked Extension" on BookMacster Sync in Chrome and Opera
                                         [NSString stringWithFormat:@"chrome-extension://%@/", @"boelefkanomccbopnmpddkhcbdnidnlh"],
                                         // For debugging, using "Load Unpacked Extension" on BookMacster Button in Chrome and Opera

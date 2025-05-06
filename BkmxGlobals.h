@@ -1004,6 +1004,7 @@ extern NSString* const constExformatHtml ;
 extern NSString* const constExformatICab ;
 extern NSString* const constExformatOmniweb ;
 extern NSString* const constExformatOpera ;
+extern NSString* const constExformatOperaAir ;
 extern NSString* const constExformatOrion ;
 extern NSString* const constExformatSafari ;
 extern NSString* const constExformatVivaldi ;

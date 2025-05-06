@@ -2,7 +2,7 @@
 #import "NSString+SSYExtraUtils.h"
 #import "NSNumber+CharacterDisplay.h"
 #import "NSString+LocalizeSSY.h"
-#import "ExtoreOpera.h"
+#import "ExtoreOperas.h"
 #import "NSDocumentController+DisambiguateForUTI.h"
 #import "BkmxDocumentController.h"
 #import "NSArray+Stringing.h"

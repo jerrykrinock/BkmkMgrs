@@ -338,6 +338,7 @@ NSString* const constExformatFirefox = @"Firefox" ;
 NSString* const constExformatHtml = @"Html" ;
 NSString* const constExformatICab = @"ICab" ;
 NSString* const constExformatOmniweb = @"OmniWeb" ;
+NSString* const constExformatOperaAir = @"OperaAir" ;
 NSString* const constExformatOpera = @"Opera" ;
 NSString* const constExformatOrion = @"Orion" ;
 NSString* const constExformatSafari = @"Safari" ;
