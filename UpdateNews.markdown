@@ -2,7 +2,9 @@
 
 ## Version 3.2 (2025-)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now supports imports and exports with the *Opera Air* web browser.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now supports imports and exports with the *[Opera Air](https://www.opera.com/air) web browser.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Imports from the current version of Opera now land in the correct folder in your Collection.
 
 ## Version 3.1.9 (2025-04-01)
 

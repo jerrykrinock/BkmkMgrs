@@ -51,7 +51,7 @@
 }
 
 + (NSString*)labelMenu {
-    return @"My Folders" ;
+    return @"Other Bookmarks" ;
 }
 
 + (NSString*)labelUnfiled {
@@ -175,6 +175,9 @@
     NSDictionary* extoreUnfiled = nil ;
     NSDictionary* extoreOhared = nil ;
     NSDictionary* extoreTrash = nil ;
+    NSDictionary* extoreImported = nil;
+    NSDictionary* extorePinboard = nil;
+    NSDictionary* extoreUnsynchronizedPinboard = nil;
     NSInteger errorCode = 0 ;
     NSString* errorMoreInfo = nil ;
     NSMutableIndexSet* hiddenExids = [NSMutableIndexSet new] ;
@@ -299,71 +302,130 @@
         else if (children) {
             if ([children respondsToSelector:@selector(objectAtIndex:)]) {
                 /* This will happen normally if we are invoked from
-                 -readExternalStyle2WithCompletionHandler: */
-                /* My reverse-engineering:
-                 actual index    value of 'index'
-                 in the array    attribute           What is it
-                 ------------    ----------------    ----------------------------------------------
-                 .    0                0             Bookmarks Bar
-                 .    1                1             "Other Bookmarks", always empty and not used in Opera
-                 .    2                3             Speed Dial.  (Bkmx Ohared) This is actually the "Mother of Speed Dials", a dictionary which contains, in its 'children' key, Speed Dials from different devices.  The local computer's speed dial is the one at index 0, I hope!!
-                 .    3                4             Trash
-                 .    4                5             Unsorted Bookmarks
-                 .    5                6             My Folders (Bkmx Menu)
+                 -readExternalStyle2WithCompletionHandler:
+                 Three different structures have ben seen throughout the years
                  */
-                if (children.count >= 6) {
-                     extoreBar = [self extractDictionaryFromArray:children
-                                                          atIndex:0
-                                           expectedIndexAttribute:0
-                                                       errorCode1:180610
-                                                       errorCode2:180611
+                NSDictionary* speedMom = nil;
+                if (children.count >= 8) {
+                    /* This structure was seen in Opera 2024-2025ish:
+                     actual index    value of 'index'
+                     in the array    attribute           Title  * = but will  be localized     We map to
+                     ------------    ----------------    ------------------------------------  -----------
+                     .    0                0             Bookmarks Bar  *                      bar
+                     .    1                1             Imported *                            IBA
+                     .    2                3             Pinboard                              IBA
+                     .    3                4             Speed Dials                           0th: ohared.  Others: IBA
+                     .    4                5             Trash *                               IBA
+                     .    5                6             Unsorted Bookmarks *                  unfiled
+                     .    6                7             Unsynchronized Pinboard               IBA
+                     .    7                8             Other Bookmarks *                     menu
+                     .                                                              IBA = ignore but add exids to hiddenExids
+                     */
+                    extoreBar = [self extractDictionaryFromArray:children
+                                                         atIndex:0
+                                          expectedIndexAttribute:0
+                                                      errorCode1:180810
+                                                      errorCode2:180811
+                                                     errorCode_p:&errorCode
+                                                 errorDesription:&errorMoreInfo] ;
+                    extoreMenu = [self extractDictionaryFromArray:children
+                                                          atIndex:7
+                                           expectedIndexAttribute:8
+                                                       errorCode1:180820
+                                                       errorCode2:180821
                                                       errorCode_p:&errorCode
                                                   errorDesription:&errorMoreInfo] ;
-                     extoreMenu = [self extractDictionaryFromArray:children
-                                                           atIndex:5
-                                            expectedIndexAttribute:6
-                                                        errorCode1:180620
-                                                        errorCode2:180621
+                    extoreUnfiled = [self extractDictionaryFromArray:children
+                                                             atIndex:5
+                                              expectedIndexAttribute:6
+                                                          errorCode1:180830
+                                                          errorCode2:180831
+                                                         errorCode_p:&errorCode
+                                                     errorDesription:&errorMoreInfo] ;
+                    speedMom = [self extractDictionaryFromArray:children
+                                                        atIndex:3
+                                         expectedIndexAttribute:4
+                                                     errorCode1:180840
+                                                     errorCode2:180841
+                                                    errorCode_p:&errorCode
+                                                errorDesription:&errorMoreInfo] ;
+                    extoreTrash = [self extractDictionaryFromArray:children
+                                                           atIndex:4
+                                            expectedIndexAttribute:5
+                                                        errorCode1:180850
+                                                        errorCode2:180851
                                                        errorCode_p:&errorCode
                                                    errorDesription:&errorMoreInfo] ;
-                     extoreUnfiled = [self extractDictionaryFromArray:children
-                                                              atIndex:4
-                                               expectedIndexAttribute:5
-                                                           errorCode1:180630
-                                                           errorCode2:180631
+                    extoreImported = [self extractDictionaryFromArray:children
+                                                              atIndex:1
+                                               expectedIndexAttribute:1
+                                                           errorCode1:180860
+                                                           errorCode2:180861
                                                           errorCode_p:&errorCode
                                                       errorDesription:&errorMoreInfo] ;
-                     NSDictionary* speedMom = [self extractDictionaryFromArray:children
-                                                                       atIndex:2
-                                                        expectedIndexAttribute:3
-                                                                    errorCode1:180640
-                                                                    errorCode2:180641
-                                                                   errorCode_p:&errorCode
-                                                               errorDesription:&errorMoreInfo] ;
-                     if ([speedMom respondsToSelector:@selector(objectForKey:)]) {
-                         [speedMom addIndexOfIdToIndexSet:hiddenExids] ;
-                         NSArray* speedDials = [speedMom objectForKey:@"children"] ;
-                         if (speedDials.count > 0) {
-                             extoreOhared = [speedDials objectAtIndex:0] ;
-                             for (NSInteger i=1; i<speedDials.count; i++) {
-                                 [[speedDials objectAtIndex:i] recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
-                                                                                              withObject:hiddenExids] ;
-                             }
-                         }
-                     }
-                     else {
-                         errorCode = 174879 ;
-                         errorMoreInfo = [NSString stringWithFormat:@"Expected speed dials dictionary, got %@", [speedMom className]] ;
-                     }
-                     extoreTrash = [self extractDictionaryFromArray:children
-                                                            atIndex:3
-                                             expectedIndexAttribute:4
-                                                         errorCode1:180650
-                                                         errorCode2:180651
-                                                        errorCode_p:&errorCode
-                                                    errorDesription:&errorMoreInfo] ;
-                     [extoreTrash recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
-                                                                 withObject:hiddenExids] ;
+                    extorePinboard = [self extractDictionaryFromArray:children
+                                                              atIndex:2
+                                               expectedIndexAttribute:3
+                                                           errorCode1:180870
+                                                           errorCode2:180871
+                                                          errorCode_p:&errorCode
+                                                      errorDesription:&errorMoreInfo] ;
+                    extoreUnsynchronizedPinboard = [self extractDictionaryFromArray:children
+                                                                            atIndex:6
+                                                             expectedIndexAttribute:7
+                                                                         errorCode1:180880
+                                                                         errorCode2:180881
+                                                                        errorCode_p:&errorCode
+                                                                    errorDesription:&errorMoreInfo] ;
+                }
+                else if (children.count >= 6) {
+                    /* This structure was seen in Opera Pre-2025:
+                     actual index    value of 'index'
+                     in the array    attribute           What is it                            We map to
+                     ------------    ----------------    ------------------------------------  -----------
+                     .    0                0             Bookmarks Bar                         bar
+                     .    1                1             Other Bookmarks                       just ignore because it is always empty
+                     .    2                3             Speed Dials                           0th: ohared.  Others: IBA
+                     .    3                4             Trash                                 IBA
+                     .    4                5             Unsorted Bookmarks                    unfiled
+                     .    5                6             My Folders (Bkmx Menu)                menu
+                     .                                                         IBA = ignore but add exids to hiddenExids
+                     */
+                    extoreBar = [self extractDictionaryFromArray:children
+                                                         atIndex:0
+                                          expectedIndexAttribute:0
+                                                      errorCode1:180610
+                                                      errorCode2:180611
+                                                     errorCode_p:&errorCode
+                                                 errorDesription:&errorMoreInfo] ;
+                    extoreMenu = [self extractDictionaryFromArray:children
+                                                          atIndex:5
+                                           expectedIndexAttribute:6
+                                                       errorCode1:180620
+                                                       errorCode2:180621
+                                                      errorCode_p:&errorCode
+                                                  errorDesription:&errorMoreInfo] ;
+                    extoreUnfiled = [self extractDictionaryFromArray:children
+                                                             atIndex:4
+                                              expectedIndexAttribute:5
+                                                          errorCode1:180630
+                                                          errorCode2:180631
+                                                         errorCode_p:&errorCode
+                                                     errorDesription:&errorMoreInfo] ;
+                    speedMom = [self extractDictionaryFromArray:children
+                                                        atIndex:2
+                                         expectedIndexAttribute:3
+                                                     errorCode1:180640
+                                                     errorCode2:180641
+                                                    errorCode_p:&errorCode
+                                                errorDesription:&errorMoreInfo] ;
+                    extoreTrash = [self extractDictionaryFromArray:children
+                                                           atIndex:3
+                                            expectedIndexAttribute:4
+                                                        errorCode1:180650
+                                                        errorCode2:180651
+                                                       errorCode_p:&errorCode
+                                                   errorDesription:&errorMoreInfo] ;
                 }
                 /* This is what happens for user Ulysese B., Opera 63, on
                  20190930.  I do not understand why or how this happens
@@ -400,6 +462,36 @@
                     errorCode = 174876 ;
                     errorMoreInfo = [NSString stringWithFormat:@"%ld children, expected more", children.count] ;
                 }
+                
+                /* Further processing is needed for Speed Dials and the branches we ignore… */
+
+                /* We assume that the local computer's speed dial is the one at index 0
+                 and ignore any others */
+                if ([speedMom respondsToSelector:@selector(objectForKey:)]) {
+                    [speedMom addIndexOfIdToIndexSet:hiddenExids] ;
+                    NSArray* speedDials = [speedMom objectForKey:@"children"] ;
+                    if (speedDials.count > 0) {
+                        extoreOhared = [speedDials objectAtIndex:0] ;
+                        for (NSInteger i=1; i<speedDials.count; i++) {
+                            [[speedDials objectAtIndex:i] recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
+                                                                                         withObject:hiddenExids] ;
+                        }
+                    }
+                }
+                else {
+                    errorCode = 174879 ;
+                    errorMoreInfo = [NSString stringWithFormat:@"Expected speed dials dictionary, got %@", [speedMom className]] ;
+                }
+                
+                [extoreTrash recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
+                                                            withObject:hiddenExids] ;
+                [extoreImported recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
+                                                               withObject:hiddenExids] ;
+                [extorePinboard recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
+                                                               withObject:hiddenExids] ;
+                [extoreUnsynchronizedPinboard recursivelyPerformOnChildrenLowerSelector:@selector(addIndexOfIdToIndexSet:)
+                                                                             withObject:hiddenExids] ;
+
             }
             else {
                 errorCode = 174875 ;

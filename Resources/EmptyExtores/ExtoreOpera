@@ -1,81 +1,132 @@
 {
-   "checksum": "c4a06cd30be8ffc5cd747f2baa7f472b",
+   "checksum": "c8b8910cab376b77966d8345033335d1",
    "roots": {
       "bookmark_bar": {
          "children": [  ],
-         "date_added": "13109569410413484",
-         "date_modified": "13109570140578425",
+         "date_added": "13391050915269069",
+         "date_last_used": "0",
+         "date_modified": "13392157273802791",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks Bar",
-         "sync_transaction_version": "3",
          "type": "folder"
       },
       "custom_root": {
+         "pinboard": {
+            "children": [  ],
+            "date_added": "13391050915269134",
+            "date_last_used": "0",
+            "date_modified": "0",
+            "guid": "00000000-0000-4000-a000-000000000907",
+            "id": "7",
+            "name": "Pinboard",
+            "type": "folder"
+         },
          "speedDial": {
             "children": [ {
                "children": [  ],
-               "date_added": "13109569410574074",
-               "date_modified": "13109570266158225",
-               "id": "8",
+               "date_added": "13391050921955721",
+               "date_last_used": "0",
+               "date_modified": "13392157273806396",
+               "guid": "ada9596f-2dc2-4bd9-92a8-807062a1ed68",
+               "id": "10",
                "meta_info": {
-                  "speed_dial_root_folder_guid": "8E5B29CB-5489-4A60-A33F-F6FAA9F256F2"
+                  "speed_dial_root_folder_guid": "57510c0a-52a4-4e93-b7c3-387bb589308a"
                },
                "name": "Air2",
-               "sync_transaction_version": "3",
                "type": "folder"
             } ],
-            "date_added": "13109569410573622",
+            "date_added": "13391050915269134",
+            "date_last_used": "0",
             "date_modified": "0",
+            "guid": "00000000-0000-4000-a000-000000000904",
             "id": "6",
-            "name": "Speed Dial",
-            "sync_transaction_version": "3",
+            "name": "Speed Dials",
             "type": "folder"
          },
          "trash": {
             "children": [  ],
-            "date_added": "13109569410573623",
-            "date_modified": "13109814631997845",
-            "id": "7",
+            "date_added": "13391050915269136",
+            "date_last_used": "0",
+            "date_modified": "13392157846448794",
+            "guid": "00000000-0000-4000-a000-000000000905",
+            "id": "9",
             "name": "Trash",
-            "sync_transaction_version": "3",
             "type": "folder"
          },
          "unsorted": {
             "children": [  ],
-            "date_added": "13109569410573620",
-            "date_modified": "13109570228548517",
+            "date_added": "13391050915269132",
+            "date_last_used": "0",
+            "date_modified": "13392157273799866",
+            "guid": "00000000-0000-4000-a000-000000000901",
             "id": "4",
             "name": "Unsorted Bookmarks",
-            "sync_transaction_version": "3",
+            "type": "folder"
+         },
+         "unsyncedPinboard": {
+            "children": [ {
+               "date_added": "13391058074393437",
+               "date_last_used": "0",
+               "guid": "fae4ac3d-cec6-4544-b375-c9932fe0c448",
+               "id": "31",
+               "meta_info": {
+                  "userId": "65247b2d-35ea-4170-bc8c-6b9cd1532768",
+                  "userToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjoxLCJpZCI6IjY1MjQ3YjJkLTM1ZWEtNDE3MC1iYzhjLTZiOWNkMTUzMjc2OCJ9.Tx1SVfjSOneNtvpD6yTJqlJMkU-a3nA8loNeyTnXGyQ"
+               },
+               "name": "Dashboard",
+               "type": "url",
+               "url": "https://pinboard.opera.com/"
+            }, {
+               "date_added": "13391058663339525",
+               "date_last_used": "0",
+               "guid": "8099c8f8-232f-4a36-9704-9973e625441d",
+               "id": "32",
+               "meta_info": {
+                  "thumb": "images/e70c5bf1-6428-4c9c-afaa-c903462dadc5/thumb/image.png",
+                  "uat": "2025-05-07T02:38:57.144Z"
+               },
+               "name": "Pinboard 1",
+               "type": "url",
+               "url": "https://pinboard.opera.com/edit/e70c5bf1-6428-4c9c-afaa-c903462dadc5/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjoxLCJpZCI6ImU3MGM1YmYxLTY0MjgtNGM5Yy1hZmFhLWM5MDM0NjJkYWRjNSJ9.oiRar9utVYXAeL2My8y8mV8nPbDupzYTDf17zZNbvdY"
+            } ],
+            "date_added": "13391050915269135",
+            "date_last_used": "0",
+            "date_modified": "13391058663339525",
+            "guid": "00000000-0000-4000-a000-000000000908",
+            "id": "8",
+            "name": "Unsynchronized Pinboard",
             "type": "folder"
          },
          "userRoot": {
             "children": [  ],
-            "date_added": "13109569410573621",
-            "date_modified": "13109724286805824",
+            "date_added": "13391050915269133",
+            "date_last_used": "0",
+            "date_modified": "13392157273808937",
+            "guid": "00000000-0000-4000-a000-000000000902",
             "id": "5",
-            "name": "My Folders",
-            "sync_transaction_version": "3",
+            "name": "Other Bookmarks",
             "type": "folder"
          }
       },
       "other": {
          "children": [  ],
-         "date_added": "13109569410413491",
+         "date_added": "13391050915269081",
+         "date_last_used": "0",
          "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
-         "name": "Other Bookmarks",
-         "sync_transaction_version": "3",
+         "name": "Imported Bookmarks",
          "type": "folder"
       },
-      "sync_transaction_version": "25",
       "synced": {
          "children": [  ],
-         "date_added": "13109569410413493",
+         "date_added": "13391050915269083",
+         "date_last_used": "0",
          "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
          "id": "3",
          "name": "Mobile Bookmarks",
-         "sync_transaction_version": "3",
          "type": "folder"
       }
    },

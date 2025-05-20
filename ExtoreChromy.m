@@ -342,7 +342,8 @@ NSString* const constKeyState = @"state" ;
               ] ;
 }
 
-// This method is only used when writing bookmarks in Style 1
+// This method is only used when writing bookmarks in Style 1,
+// which I'm pretty sure is no longer used in Opera
 - (NSString*)jsonStringFromTree {
     
     SEL reformatter = [self reformatStarkToExtore] ;
