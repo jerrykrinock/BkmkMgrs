@@ -145,6 +145,7 @@ extern NSString* const constKeyExtoreLabelOfUnfiled ;
 extern NSString* const constKeyExtoreLabelOfOhared ;
 
 extern NSString* const constKeyGuid ;
+extern NSString* const constKeySyncing;
 
 
 struct ExtoreConstants_struct {
@@ -1537,6 +1538,13 @@ __attribute__((visibility("default"))) @interface Extore : NSObject <Hartainerta
  @details  This is used by ExtoreFirefox and ExtoreChromy.
 */
 - (void)exportJsonViaIpcForOperation:(SSYOperation*)operation ;
+
+/*!
+@details  Used by some Chromys to split our single trees into
+ the dual trees for export.  Default implementation just
+ returns the passed-in dic.
+*/
+- (NSDictionary*)relocateLocalItemsToLocalHardFoldersInChangesDic:(NSDictionary*)changesDic;
 
 /*!
  @brief    Assuming prerequisites have already been verified,

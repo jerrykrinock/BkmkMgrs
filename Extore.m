@@ -93,6 +93,7 @@ NSString* const constKeyExtoreLabelOfUnfiled = @"extoreLabelOfUnfiled" ;
 NSString* const constKeyExtoreLabelOfOhared = @"extoreLabelOfOhared" ;
 
 NSString* const constKeyGuid = @"guid";
+NSString* const constKeySyncing = @"syncing";
 
 NSString* const constKeyFileHeader = @"fileHeader" ;
 NSString* const constKeyFileSubheader = @"fileSubheader" ;
@@ -1333,7 +1334,6 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
     NSString* exid = nil ;
     NSDate* addDate = nil ;
     NSDate* lastModifiedDate = nil ;
-    NSString* guid = nil;
 
     // Attributes common to both containers and nodes
 
@@ -1519,13 +1519,19 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
     /* Chrome bookmarks have a separate "guid" which is not available in
      Style 2.  See https://bugs.chromium.org/p/chromium/issues/detail?id=1103030.
      So, we store it as a Owner Value.  */
-    guid = [dic objectForKey:constKeyGuid] ;
+    NSString* guid = [dic objectForKey:constKeyGuid] ;
     if (guid) {
         [stark setOwnerValue:guid
                       forKey:constKeyGuid] ;
     }
-
     
+    NSNumber* syncing = [dic objectForKey:constKeySyncing];
+    if (syncing) {
+        /*SSYDBL*/ NSLog(@"set syncing = %@ for %d %@", syncing, stark.sharypeValue, stark.name);
+        [stark setOwnerValue:syncing
+                      forKey:constKeySyncing];
+    }
+     
     return stark ;
 }
 
@@ -5305,6 +5311,10 @@ end:;
     return identifier ;
 }
 
+- (NSDictionary*)relocateLocalItemsToLocalHardFoldersInChangesDic:(NSDictionary*)changesDic {
+    return changesDic;
+}
+
 - (void)exportJsonViaIpcForOperation:(SSYOperation*)operation {
 #if 0
 #warning Bypassing write for testing
@@ -5322,6 +5332,8 @@ end:;
 		ok = NO ;
 		goto end ;
 	}
+    
+    dic = [self relocateLocalItemsToLocalHardFoldersInChangesDic:dic];
 		
 	NSMutableString* dirtyJsonChangesString = [[dic jsonStringValue] mutableCopy];
     NSString* jsonChangesString = [dirtyJsonChangesString stringByRemovingCharactersInSet:[NSCharacterSet zeroWidthAndIllegalCharacterSet]];

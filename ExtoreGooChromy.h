@@ -9,4 +9,16 @@
  */
 @interface ExtoreGooChromy: ExtoreChromy
 
+@property (assign) BOOL hasDualTrees;
+
+@property (retain) NSNumber* syncedBarId;
+@property (retain) NSNumber* localBarId;
+@property (retain) NSNumber* syncedOtherId;
+@property (retain) NSNumber* localOtherId;
+
+@property (retain) NSMutableArray* syncedBarChildExids;
+@property (retain) NSMutableArray* localBarChildExids;
+@property (retain) NSMutableArray* syncedOtherChildExids;
+@property (retain) NSMutableArray* localOtherChildExids;
+
 @end

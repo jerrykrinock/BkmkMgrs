@@ -1,4 +1,5 @@
 #import "ExtoreGooChromy.h"
+#import "NSArray+SSYMutations.h"
 #import "NSString+LocalizeSSY.h"
 #import "Client+SpecialOptions.h"
 #import "GulperImportDelegate.h"
@@ -12,6 +13,11 @@
 #import "NSObject+SSYCheckType.h"
 #import "NSString+MorePaths.h"
 #import "BkmxBasis.h"
+
+NSString* const folderTypeKey = @"folderType";
+NSString* const folderTypeBar = @"bookmarks-bar";
+NSString* const folderTypeOther = @"other";
+
 
 @implementation ExtoreGooChromy
 
@@ -36,6 +42,19 @@
 
 + (NSString*)labelOhared {
     return constDisplayNameNotUsed ;
+}
+
++ (BOOL)style1Available {
+    /* Support for Style 1 was removed from GooChromy in BkmkMgrs 3.2
+     because items with the "synced" attribute no longer appear in the
+     Bookmarks file in the profile folder, for those Chrome users who
+     have upgraded to Chrome's new bookmark syncing.  They are
+     only stored in the Cloud! */
+    return NO;
+}
+
+- (BOOL)style1Available {
+    return [[self class] style1Available];
 }
 
 - (BOOL)hasUnfiled {
@@ -196,6 +215,22 @@
             // Must be Style 2 invoked from -readExternalStyle2WithCompletionHandler:
             if ([whatever isKindOfClass:[NSArray class]]) {
                 if ([whatever count] >= 1) {
+                    NSInteger countOfBars = 0;
+                    NSInteger countOfOthers = 0;
+                    
+                    // Test for dual trees (synced, unsynced) introduced by Google in July 2025
+                    for (NSDictionary* hardFolder in whatever) {
+                        if ([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeBar]) {
+                            countOfBars++;
+                        }
+                        if ([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeOther]) {
+                            countOfOthers++;
+                        }
+                    }
+                    if ((countOfBars > 1) || (countOfOthers > 1)) {
+                        self.hasDualTrees = YES;
+                        whatever = [self mergeDualTreesInArray:whatever];
+                    }
                     extoreBar = [whatever objectAtIndex:0] ;
                     /* Not all browsers have the menu (Brave, Vivaldi) */
                     if ([whatever count] >= 2) {
@@ -385,5 +420,256 @@
     return answer;
 }
 
+- (NSArray*)mergeDualTreesInArray:(NSArray*)arrayIn {
+    
+    NSMutableArray* barChildren = [NSMutableArray new];
+    NSMutableArray* otherChildren = [NSMutableArray new];
+    
+    /* Defensive programming in case this method gets re-run during the lifetime of this extore */
+    self.syncedBarId = nil;
+    self.syncedOtherId = nil;
+    self.localBarId = nil;
+    self.localOtherId = nil;
+    self.syncedBarChildExids = nil;
+    self.syncedOtherChildExids = nil;
+    self.localBarChildExids = nil;
+    self.localOtherChildExids = nil;
+    
+    NSDictionary* barSynced = nil;
+    NSDictionary* barLocal = nil;
+    NSDictionary* otherSynced = nil;
+    NSDictionary* otherLocal = nil;
+
+    NSArray* children;
+    for (NSDictionary* hardFolder in arrayIn) {
+        if (([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeBar])
+            && ([[hardFolder objectForKey:constKeySyncing] integerValue] == 1)) {
+            barSynced = hardFolder;
+            self.syncedBarId = [hardFolder objectForKey:@"id"];
+            children = [hardFolder objectForKey:constKeyChildren];
+            self.syncedBarChildExids = [[[children valueForKey:@"id"] mutableCopy] autorelease];
+        }
+        else if (([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeBar])
+                 && ([[hardFolder objectForKey:constKeySyncing] integerValue] == 0)) {
+            barLocal = hardFolder;
+            self.localBarId = [hardFolder objectForKey:@"id"];
+            children = [hardFolder objectForKey:constKeyChildren];
+            self.localBarChildExids = [[[children valueForKey:@"id"] mutableCopy] autorelease];
+        }
+        else if (([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeOther])
+                 && ([[hardFolder objectForKey:constKeySyncing] integerValue] == 1)) {
+            otherSynced = hardFolder;
+            self.syncedOtherId = [hardFolder objectForKey:@"id"];
+            children = [hardFolder objectForKey:constKeyChildren];
+            self.syncedOtherChildExids = [[[children valueForKey:@"id"] mutableCopy] autorelease];
+        }
+        else if (([[hardFolder objectForKey:folderTypeKey] isEqualToString:folderTypeOther])
+                 && ([[hardFolder objectForKey:constKeySyncing] integerValue] == 0)) {
+            otherLocal = hardFolder;
+            self.localOtherId = [hardFolder objectForKey:@"id"];
+            children = [hardFolder objectForKey:constKeyChildren];
+            self.localOtherChildExids = [[[children valueForKey:@"id"] mutableCopy] autorelease];
+        }
+    }
+        
+    children = [barSynced objectForKey:constKeyChildren];
+    if (children.count > 0) {
+        [barChildren addObjectsFromArray:children];
+    }
+    
+    children = [barLocal objectForKey:constKeyChildren];
+    if (children.count > 0) {
+        [barChildren addObjectsFromArray:children];
+    }
+    
+    children = [otherSynced objectForKey:constKeyChildren];
+    if (children.count > 0) {
+        [otherChildren addObjectsFromArray:children];
+    }
+    
+    children = [otherLocal objectForKey:constKeyChildren];
+    if (children.count > 0) {
+        [otherChildren addObjectsFromArray:children];
+    }
+    
+    NSNumber* barId = self.syncedBarId ? self.syncedBarId : self.localBarId;
+    NSNumber* otherId = self.syncedOtherId ? self.syncedOtherId : self.localOtherId;
+
+    NSMutableArray* mergedArray = [NSMutableArray new];
+
+    NSMutableDictionary* bar = [NSMutableDictionary new];
+    if (barChildren.count > 0) {
+        [bar setObject:barChildren
+                forKey:constKeyChildren];
+    }
+    [barChildren release];
+    [bar setValue:barId
+           forKey:@"id"];
+    [mergedArray addObject:bar];
+    [bar release];
+    
+    NSMutableDictionary* other = [NSMutableDictionary new];
+    if (otherChildren.count > 0) {
+        [other setObject:otherChildren
+                  forKey:constKeyChildren];
+    }
+    [otherChildren release];
+    [other setValue:otherId
+             forKey:@"id"];
+    [mergedArray addObject:other];
+    [other release];
+    
+    NSArray* answer = [mergedArray copy];
+    [mergedArray release];
+    [answer autorelease];
+    
+    return answer;
+}
+
+- (void)restackIndexesInPuts:(NSDictionary*)putsDic
+                    perArray:(NSArray*)exidsArray {
+    NSInteger index = 0;
+    for (NSString* exid in exidsArray) {
+        NSMutableDictionary* dic = [putsDic objectForKey:exid];
+        [dic setObject:@(index)
+                forKey:constKeyIndex];
+        index++;
+    }
+}
+
+- (void)removeFromHardFolderExidArraysExid:(NSString*)exid {
+    /* This method could maybe be more efficient if we
+     used -indexOfObject and bail out when found.  Or maybe
+     that would be less efficient.  Anyhow, since this method
+     is only used in the edge case of dual trees, I don't
+     care enough to test it. */
+    if (exid) {
+        /* Onlye one of the following will have any effect. */
+        [self.syncedBarChildExids removeObject:exid];
+        [self.syncedOtherChildExids removeObject:exid];
+        [self.localBarChildExids removeObject:exid];
+        [self.localOtherChildExids removeObject:exid];
+    }
+}
+
+/*!
+ @brief     Does the opposite of -mergeDualTreesInArray:
+ 
+ @details   when reading the extore, if there was a dual tree, items from the "local" tree
+ were moved into the "synced" tree, and the changes were constructed assuming that there
+ is only one tree.  This method is called just before writing, to move the local items back
+ into the local tree.
+  */
+- (NSDictionary*)relocateLocalItemsToLocalHardFoldersInChangesDic:(NSDictionary*)changesDic {
+    if (!self.hasDualTrees) {
+        return changesDic;
+    }
+    NSAssert((self.syncedBarId && self.syncedOtherId && self.localBarId && self.localOtherId), @"Assert 485948");
+    
+    // Update the child counts due to any deletions (cuts)
+    NSDictionary* cuts = [changesDic objectForKey:constKeyCuts];
+    for (NSDictionary* cut in cuts) {
+        NSString* exid = [cut valueForKey:@"id"];
+        [self removeFromHardFolderExidArraysExid:exid];
+    }
+
+    NSDictionary* puts = [changesDic objectForKey:constKeyPuts];
+    NSMutableArray* correctedPutsArray = [NSMutableArray new];
+    NSMutableDictionary* correctedPutsDic = [NSMutableDictionary new];
+    BOOL didCorrectAny = NO;
+    for (NSDictionary* put in puts) {
+        NSNumber* parentExid = [put objectForKey:constKeyParentExid];
+        
+        NSString* exid = [put objectForKey:constKeyExid];
+        NSInteger synced = 1;
+        for (Stark* stark in [[self starker] allStarks]) {
+            NSString* aExid = [stark exidForClientoid:[self clientoid]];
+            if ([aExid isEqualToString: exid]) {
+                synced = [[stark ownerValueForKey:constKeySyncing] integerValue];
+                break;
+            }
+        }
+        
+        NSMutableDictionary* correctedPut = nil;
+
+        /* Start out by removing the subject item's exid from the child exid arrays
+         of all four hard folders.  If in fact this 'put' is only a 'slide',that exid
+         will be restored subsequently. */
+        [self removeFromHardFolderExidArraysExid:exid];
+        
+        NSNumber* correctedParentId = nil;
+        if ([parentExid isEqual:self.syncedBarId]) {
+            if (synced < 1) {
+                correctedParentId = self.localBarId;
+                [self.localBarChildExids addObject:exid];
+                didCorrectAny = YES;
+            } else {
+                [self.syncedBarChildExids addObject:exid];
+            }
+        } else if ([parentExid isEqual:self.syncedOtherId]) {
+            if (synced < 1) {
+                correctedParentId = self.localOtherId;
+                [self.localOtherChildExids addObject:exid];
+                didCorrectAny = YES;
+            } else {
+                [self.syncedOtherChildExids addObject:exid];
+            }
+        }
+        
+        correctedPut = [put mutableCopy];
+        if (correctedParentId) {
+            [correctedPut setObject:correctedParentId
+                             forKey:constKeyParentExid];
+        }
+
+        [correctedPutsArray addObject:correctedPut];
+        [correctedPutsDic setObject:correctedPut
+                             forKey:exid];
+        [correctedPut release];
+    }
+    
+    if (didCorrectAny) {
+        [self restackIndexesInPuts:correctedPutsDic
+                          perArray:self.syncedBarChildExids];
+        [self restackIndexesInPuts:correctedPutsDic
+                          perArray:self.syncedOtherChildExids];
+        [self restackIndexesInPuts:correctedPutsDic
+                          perArray:self.localBarChildExids];
+        [self restackIndexesInPuts:correctedPutsDic
+                          perArray:self.localOtherChildExids];
+    }
+
+    NSDictionary* answer;
+    if (didCorrectAny) {
+        NSMutableDictionary* fixedChangesDic = [changesDic mutableCopy];
+        [fixedChangesDic setObject:correctedPutsArray
+                            forKey:constKeyPuts];
+        answer = [fixedChangesDic copy];
+        [answer autorelease];
+        [fixedChangesDic release];
+    } else {
+        answer = changesDic;
+    }
+    
+    [correctedPutsArray release];
+    [correctedPutsDic release];
+    
+    return answer;
+}
+
+- (void)dealloc {
+    [_syncedBarId release];
+    [_syncedOtherId release];
+    [_localBarId release];
+    [_localOtherId release];
+    
+    [_syncedBarChildExids release];
+    [_syncedOtherChildExids release];
+    [_localBarChildExids release];
+    [_localOtherChildExids release];
+
+    
+    [super dealloc];
+}
 
 @end

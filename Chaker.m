@@ -450,7 +450,7 @@ NSString* const constLeadingWhitespace = @"    " ;
 
 - (void)tagsHaveBeenAffectedInExtore:(Extore*)extore {
 #if LOG_CHAKER_INPUTS
-    NSLog(@"19450 %p %s %@ %@", self, __PRETTY_FUNCTION__, [stark name], [stark starkid]) ;
+    NSLog(@"19450 %p %s %@", self, __PRETTY_FUNCTION__, [extore displayName]) ;
 #endif
     if (!m_isActive) {
 #if LOG_CHAKER_INPUTS
