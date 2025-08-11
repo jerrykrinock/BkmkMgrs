@@ -97,104 +97,17 @@ async function connectNativeMessaging() {
     console.log("No extoreName in storageCache");
   }
 
-  if (!isDefined(storageCache.profileName) || !isDefined(storageCache.extoreName)) {
-    try {
-    await requestLegacyStorage();
-    console.log("Requested legacy storage");
-    } catch {
-      console.log("Error requesting legacy storage (seen in Orion)");
-      finishConnectNativeMessaging();
-    }
-  } else {
-    finishConnectNativeMessaging();
-  }
+  finishConnectNativeMessaging();
 }
     
-/*
-In legacy manifest v2 extensions, there was only one store in which an extensions could store local user data persistently:
-    (2a) the localStorage of a background page [1]
-
-In manifest v3 extensions, there are two stores [2]:
-    (3a) the localStorage of an offscreen document
-    (3b) chrome.storage.local [3]
-  
-Fortunately, since stores 2a and 2b have the same origin (chrome-extension://{{hash}}) there is no need to migrate stored local data from a manifest v2 extension to a manifest v3 extension.  Stores 2a and 3a are in fact the same stores and furthermore, their data will persist through an update of the extension from manifest v2 to manifest v3.
-
-But store 3a is a bit of a pain to access, requiring some dozens lines of code and two additional files (e.g. offscreen.html and offscreen.js) to be added to the extension. [4]  Therefore, in this manifest v3 extension we only *read* data from 3a on the first run, then immediately write it to 3b.  The need for all of that code and the two additional files is thus only temporary, until all users have either launched Chrome and been updated to manifest v3, or until their data is so stale that it doesn't matter any more.  Conclusion: A year or so after we publish our first manifest v3 extension update (version 48, 2023 Oct 1), in some future extension update, we could delete those two offscreen.xxx files, the following two functions, and the code branches which call them.
-
-1. https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-2. https://developer.chrome.com/docs/extensions/migrating/to-service-workers/#convert-localstorage
-3. https://developer.chrome.com/docs/extensions/reference/storage/
-4. https://github.com/GoogleChrome/chrome-extensions-samples/tree/main/functional-samples/cookbook.offscreen-clipboard-write
-5. https://groups.google.com/a/chromium.org/g/chromium-extensions/c/T3_8r6Anv14/m/kelGzQ92AQAJ?utm_medium=email&utm_source=footer
-*/
-
-async function requestLegacyStorage() {
-  chrome.runtime.onMessage.addListener(receiveMessageFromOffscreenDoc);
-
-  await chrome.offscreen.createDocument({
-    url: 'offscreen.html',
-    reasons: [chrome.offscreen.Reason.CLIPBOARD],
-    justification: 'Read legacy stored info'
-  });
-  console.log("Created offscreen document to get legacy storage");
-
-  // Dispatch the message.
-  chrome.runtime.sendMessage({
-    type: 'request-legacy-stored-info',
-    target: 'offscreen-doc'
-  });
-
-  console.log("Sent message to offscreen document requesting legacy storage");
-}
-
-async function receiveMessageFromOffscreenDoc(message) {
-  // Return early if this message isn't meant for the offscreen document.
-  if (message.target !== 'my-service-worker') {
-    console.log("Received message for unknown target: " + message.target);
-    return;
-  }
-
-  switch (message.type) {
-    case 'legacy-stored-info':
-      let extoreName = message.extoreName;
-      if (isDefined(extoreName)) {
-        console.log("Got legacy stored extoreName: " + extoreName);
-        storageCache.extoreName = extoreName;
-      } else {
-         console.log("Failed to get legacy stored extoreName");
-      }
-      let profileName = message.profileName;
-      if (isDefined(profileName)) {
-        console.log("Got legacy stored profileName: " + profileName);
-        storageCache.profileName = profileName;
-      } else {
-         console.log("Failed to get legacy stored profileName");
-      }
-      
-      cacheAndStore(extoreName, profileName)
-      
-	  chrome.runtime.sendMessage({
-		type: 'close-yourself',
-		target: 'offscreen-doc'
-	  });
-      console.log("Closed offscreen document");
-
-      finishConnectNativeMessaging();
-      break;
-    default:
-      console.warn(`Unexpected message type received: '${message.type}'.`);
-  }
-}
-
 function finishConnectNativeMessaging() {
   if (!isDefined(storageCache.extoreName)) {
-    console.log("No extoreName in legacy storage, using SORRY_");
+    console.log("No extoreName in storage, using SORRY_");
     storageCache.extoreName = "SORRY-NULL-EXTORE";
       // Warning: That string matches one in constSorryNullProfile in BkmxGlobals.h
     }
     if (!isDefined(storageCache.profileName)) {
-      console.log("No profileName in legacy storage, using SORRY_");
+      console.log("No profileName in storage, using SORRY_");
       storageCache.profileName = "SORRY-NULL-PROFILE";
       // Warning: That string matches one in constSorryNullProfile in BkmxGlobals.h
     }

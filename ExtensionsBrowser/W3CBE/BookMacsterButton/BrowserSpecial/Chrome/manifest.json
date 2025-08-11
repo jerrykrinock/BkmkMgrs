@@ -1,14 +1,13 @@
 {
 	"manifest_version": 3,
 	"name" : "BookMacster Button",
-	"version" : "32",
+	"version" : "33",
 	"description" : "Empowers Sheep Systems' BookMacster or Markster apps to bookmark the web page you are currently viewing",
 	"homepage_url" : "https:\/\/sheepsystems.com\/bookmacster\/HelpBook\/browserExtensions",
 	"permissions" : [
 	"tabs",
 	"nativeMessaging",
-	"storage",
-	"offscreen"
+	"storage"
 	],
 	"background": {
 	"service_worker": "service_worker.js",
