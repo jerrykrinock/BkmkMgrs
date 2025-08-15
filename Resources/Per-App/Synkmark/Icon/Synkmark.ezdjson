@@ -1,0 +1,1283 @@
+{
+	"DKDSaveTimeStamp" : "2025-08-15 06:51:42 +0600",
+	"ArchiveMatchStore" : {
+		"Archive_Stores" : [
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "1",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.854902",
+									"GreenPlus" : "0.517647"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "2",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "1",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.854902",
+									"GreenPlus" : "0.517647"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "3",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "1"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "8"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"FillRGB" : {
+									"BluePlus" : "0.815686",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.815686",
+									"GreenPlus" : "0.815686"
+									},
+								"DrawsLine" : "YES",
+								"LineWidth" : "1.2",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsFill" : "YES",
+								"WindingRule" : "Even-Odd",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "9"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"FillRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsLine" : "NO",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"DrawsFill" : "YES",
+								"WindingRule" : "Even-Odd",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "11"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Butt",
+								"FillRGB" : {
+									"White" : "0",
+									"Opacity" : "1",
+									"ColorSpace" : "NSCalibratedWhiteColorSpace"
+									},
+								"DrawsLine" : "NO",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"DrawsFill" : "YES",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "15"
+						}
+					],
+				"Class_Store" : "DKDGraphicStyle",
+				"NHashBins" : "16"
+				},
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"DKDScaledPath" : "M0,0 C13.3333333333,-26.6666666667 26.6666666667,-53.3333333333 40,-80 C51.0456,-102.0912 77.9088,-111.0456 100,-100 C126.666666667,-86.6666666667 153.333333333,-73.3333333333 180,-60 C202.0912,-48.9544 211.0456,-22.0912 200,0\nC186.666666667,26.6666666667 173.333333333,53.3333333333 160,80 C148.9544,102.0912 122.0912,111.0456 100,100 C73.3333333333,86.6666666667 46.6666666667,73.3333333333 20,60 C-2.0912,48.9544 -11.0456,22.0912 0,0\nz M-20,40 C6.666666666667,-13.3333333333 33.3333333333,-66.6666666667 60,-120 C113.333333333,-93.3333333333 166.666666667,-66.6666666667 220,-40 C193.333333333,13.3333333333 166.666666667,66.6666666667 140,120\nC86.6666666667,93.3333333333 33.3333333333,66.6666666667 -20,40 z"
+								},
+							{
+								"DKDScaledPath" : "M102.5,-32.5000000001 C75.0000000001,-41.6666666667 47.5,-50.8333333334 20.0000000001,-60 C16.6171598534,-49.8514795603 23.0573534147,-43.0238860867 54.9719149534,-15.4459414894 C12.6494648379,-12.7271866483 3.283826520189,-9.851479560122 -0,0\nC59.9999999999,20 120,40 180,60 C186.666666667,40 193.333333333,20 200,0 C195,-1.666666666619 190,-3.333333333312 185,-4.999999999991 C166.666666667,-16.6666666667 148.333333333,-28.3333333333 130,-40 C128.333333333,-35.0000000001 126.666666667,-30.0000000001 125,-25.0000000001\nC122.5,-25.8333333333 120,-26.6666666667 117.5,-27.5 C117.40715381,-27.5728988199 117.31430762,-27.64579764 117.22146143,-27.7186964599 C114.809825728,-12.885285908 117.396434897,2.354858148765 124.581982637,15.6490472419\nC108.032048229,5.597933101337 99.2033687006,-13.4632097263 102.240376106,-32.586541298 M150.625,16.875 C151.03341902,15.6474818284 151.68635393,14.5020660321 152.534515109,13.5252192825 C153.38159595,12.5474355606 154.423160797,11.7390767223 155.580582618,11.1611652352\nC156.7373649,10.581974671 158.008990879,10.2337380961 159.299466361,10.1427436566 C160.589840468,10.0503227631 161.89793405,10.2152243134 163.125,10.625 C163.125,10.625 163.125,10.625 163.125,10.625 C164.352518172,11.0334190205 165.497933968,11.6863539298 166.474780718,12.5345151088\nC167.452564439,13.3815959498 168.260923278,14.4231607969 168.838834765,15.5805826176 C169.418025329,16.7373648997 169.766261904,18.0089908786 169.857256343,19.2994663607 C169.949677237,20.5898404678 169.784775687,21.8979340505 169.375,23.125\nC168.96658098,24.3525181716 168.31364607,25.4979339679 167.465484891,26.4747807175 C166.61840405,27.4525644394 165.576839203,28.2609232777 164.419417382,28.8388347649 C163.2626351,29.4180253291 161.991009121,29.7662619039 160.700533639,29.8572563434\nC159.410159532,29.9496772369 158.10206595,29.7847756867 156.875,29.375 C155.647481828,28.9665809795 154.502066032,28.3136460703 153.525219282,27.4654848912 C152.547435561,26.6184040502 151.739076722,25.5768392031 151.161165235,24.4194173824\nC150.581974671,23.2626351003 150.233738096,21.9910091214 150.142743657,20.7005336393 C150.050322763,19.4101595322 150.215224313,18.1020659496 150.625,16.875 z"
+								},
+							{
+								"DKDScaledPath" : "M82.5,27.5000000001 C55,18.3333333333 27.5000000001,9.166666666798 -0,-0 C3.382840146562,-10.1485204397 12.6315510799,-11.7464790817 54.7099670693,-14.6600978363 C22.4832598813,-42.2285717784 16.7161734799,-50.1485204396 20,-59.9999999998\nC80,-39.9999999998 140,-20 200,-0 C193.333333333,19.9999999998 186.666666667,39.9999999999 180,59.9999999999 C175,58.3333333332 170,56.6666666665 165,54.9999999999 C143.333333333,53.3333333332 121.666666667,51.6666666666 100,50\nC101.666666667,45 103.333333333,40 105,35 C102.5,34.1666666667 100,33.3333333333 97.5000000001,32.5 C97.3819837561,32.5026113419 97.2639675122,32.5052226839 97.1459512681,32.5078340257 C104.116689037,19.194124163 115.330062807,8.553974419482 129.055014455,2.229951788816\nC109.784398444,0.340882456469 91.2847691247,10.2925890014 82.2403761062,27.413458702 M150.625,16.875 C150.215224313,18.1020659495 150.050322763,19.4101595323 150.142743657,20.7005336393 C150.233738096,21.9910091213 150.581974671,23.2626351002 151.161165235,24.4194173823\nC151.739076722,25.576839203 152.547435561,26.6184040503 153.525219283,27.4654848911 C154.502066032,28.3136460702 155.647481828,28.9665809795 156.875,29.375 C156.875,29.375 156.875,29.375 156.875,29.375\nC158.102065949,29.7847756866 159.410159532,29.9496772369 160.700533639,29.8572563433 C161.991009121,29.7662619038 163.2626351,29.418025329 164.419417382,28.8388347648 C165.576839203,28.2609232776 166.61840405,27.4525644394 167.465484891,26.4747807175\nC168.31364607,25.4979339679 168.96658098,24.3525181715 169.375,23.125 C169.784775687,21.8979340504 169.949677237,20.5898404677 169.857256343,19.2994663606 C169.766261904,18.0089908786 169.418025329,16.7373648997 168.838834765,15.5805826176\nC168.260923278,14.4231607969 167.452564439,13.3815959498 166.474780717,12.5345151088 C165.497933968,11.6863539297 164.352518172,11.0334190204 163.125,10.6249999999 C161.89793405,10.2152243133 160.589840468,10.050322763 159.299466361,10.1427436566\nC158.008990879,10.2337380961 156.7373649,10.5819746709 155.580582618,11.1611652351 C154.423160797,11.7390767223 153.38159595,12.5474355605 152.534515109,13.5252192824 C151.68635393,14.502066032 151.03341902,15.6474818284 150.625,16.875\nz"
+								}
+							],
+						"BinIndex" : "1"
+						},
+					{
+						"BinMatches" : [
+							{
+								"DKDScaledPath" : "M0,-0 C3.433898899289,3.111084678978 6.870405902902,6.218625880259 10.3221832235,9.310470836497 C13.9557104766,12.5661064125 17.6074808295,15.8004043737 21.3102976629,18.9777803149 C29.3781688375,25.902060908 37.741436955,32.6385155315 46.7974968207,38.2969758793\nC55.9845786874,44.0379722355 65.4377718421,48.3844782681 75.926694306,51.2371033289 C86.2367138585,54.0406385798 96.9451256799,55.2001833108 107.61639167,54.6760892458 C118.287685857,54.1525696317 128.831644917,51.9498267069 138.816962243,48.1500814251\nC148.976390602,44.2842063281 157.958162218,39.0325199424 166.53913635,32.4196564534 C174.997197071,25.9012159979 182.660524016,18.3780853584 190.011780578,10.6972346016 C193.38531838,7.172223196997 196.702781738,3.595835790652 200,-0\nC203.915478672,-4.268791002451 207.804801717,-8.559643365793 211.694944141,-12.8513997007 L109.818713162,99.5423679952 z M277.106509998,-310.889476393 L389.500320292,-209.013252415 L287.624144024,-96.6194444345\nC291.514286449,-100.91120077 295.403609493,-105.202053133 299.268415669,-109.516774801 C302.524051233,-113.150302065 305.758349194,-116.802072418 308.936026459,-120.504616125 C315.860278855,-128.57306175 322.596460352,-136.936028543 328.255495151,-145.992116606\nC333.995915248,-155.179171914 338.342722605,-164.632091942 341.195046342,-175.121287533 C343.998882917,-185.431033959 345.158131786,-196.139724933 344.634310848,-206.811292247 C344.110518107,-217.48228511 341.908088559,-228.025960119 338.108041953,-238.011550572\nC334.242139543,-248.170948798 328.990453158,-257.152720414 322.377588849,-265.733693642 C315.859148394,-274.191754363 308.336017755,-281.855081308 300.655166998,-289.20633787 C297.130155593,-292.579875672 293.553768187,-295.89733903 289.957932396,-299.194557292\nC285.689118697,-303.110010924 281.398266334,-306.999333968 277.106509998,-310.889476393 z M193.338465265,-386.818676276 C189.04670893,-390.7088187 184.755856566,-394.598141745 180.441157595,-398.462972961\nC176.807630331,-401.718608525 173.155859978,-404.952906487 169.453316271,-408.130583751 C161.385171971,-415.054563021 153.021903853,-421.791017644 143.966117114,-427.449779316 C134.778761301,-433.190473444 125.325841273,-437.537280801 114.836672995,-440.38963467\nC104.527227893,-443.193198118 93.8182355947,-444.352720114 83.1472427315,-443.828927373 C72.4756754177,-443.305106435 61.9319949469,-441.102670861 51.9464044936,-437.302624255 C41.7872473267,-433.436503344 32.8051743871,-428.185090085 24.2247756097,-421.572253974\nC15.7661404384,-415.053785321 8.103086619329,-407.530956005 0.751556930332,-399.849803925 C-2.621980871029,-396.32479252 -5.939444229173,-392.748405114 -9.236662491188,-389.152569323 C-13.1521161232,-384.883755624 -17.0414391675,-380.592903261 -20.9315815919,-376.301146926\nL80.9446197161,-488.69493221 z M-198.736987414,-180.139311799 L-99.194483668,-289.957865662 C-102.305776458,-286.524155399 -105.413152923,-283.087499074 -108.50507816,-279.635794522 C-111.760713724,-276.002267258 -114.995011686,-272.350496906 -118.172688951,-268.647953199\nC-125.09666822,-260.579808897 -131.833122843,-252.21654078 -137.491583191,-243.160480914 C-143.232578644,-233.973398228 -147.579084676,-224.520205074 -150.431679604,-214.031255297 C-153.235243053,-203.721810195 -154.394770511,-193.01281187 -153.870676446,-182.34154588\nC-153.347156832,-171.670251693 -151.144146807,-161.12659942 -147.344674652,-151.140980769 C-143.478526428,-140.981853735 -138.227113169,-131.999780795 -131.613974915,-123.419109795 C-125.095807586,-114.96074775 -117.572676946,-107.297420804 -109.891553064,-99.9464655661\nC-106.366814785,-96.5726264409 -102.790427379,-93.2551630828 -99.1945915771,-89.9579448327 C-94.9258005586,-86.0424661788 -90.6349481951,-82.1531431342 -86.3431918601,-78.26300071 L-198.736987414,-180.139311799\nz"
+								}
+							],
+						"BinIndex" : "7"
+						}
+					],
+				"Class_Store" : "DKDBezPathArchive",
+				"NHashBins" : "16"
+				},
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"CenterLock" : "YES"
+								}
+							],
+						"BinIndex" : "10"
+						}
+					],
+				"Class_Store" : "DKDLock",
+				"NHashBins" : "16"
+				}
+			]
+		},
+	"AAAA_EazyDrawVersion" : "11.11.2",
+	"DKDToolbarSelectedButtonPairs" : [
+		"ColorTextToolbarItemIdentifier_0",
+		[
+			"HSB_0000B0"
+			],
+		"ColorFillToolbarItemIdentifier_0",
+		[
+			"HSB_0000D0"
+			],
+		"ColorStrokeToolbarItemIdentifier_0",
+		[
+			"HSB_000020"
+			],
+		"GradientToolbarItemIdentifier_0",
+		[
+			{
+				"GradientFillClass" : "DKDHorizontalGradientFill",
+				"EndGradientColor" : {
+					"BluePlus" : "1",
+					"RedPlus" : "0.999996",
+					"ColorSpacePlus" : "DKDsRgbColorSpace",
+					"Blue" : "0.999991",
+					"GreenPlus" : "1",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedRGBColorSpace",
+					"Green" : "0.999974",
+					"Red" : "0.999999",
+					"OpacityPlus" : "1"
+					},
+				"StartGradientColor" : {
+					"BluePlus" : "0",
+					"RedPlus" : "0",
+					"ColorSpacePlus" : "DKDsRgbColorSpace",
+					"Blue" : "0",
+					"GreenPlus" : "0",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedRGBColorSpace",
+					"Green" : "0",
+					"Red" : "0",
+					"OpacityPlus" : "1"
+					}
+				}
+			],
+		"PatternForToolbarItemIdentifier_0",
+		[
+			"Toolbar_02"
+			],
+		"TextureForToolbarItemIdentifier_0",
+		[
+			"Ancient"
+			],
+		"DKDArrowMenuToolbarItemIdentifier_0",
+		[
+			"810007"
+			],
+		"DashMenuToolbarIdentifier_0",
+		[
+			"810017"
+			]
+		],
+	"GroupEdit" : "Fixed",
+	"DKDCreateTimeStamp" : "2025-06-21 20:52:27 +0600",
+	"DKDDocumentRuler" : {
+		"RulerTickPattern" : {
+			"TickPatternStyle" : "Fifths"
+			},
+		"RulerHasBorder" : "YES",
+		"RulerBackgroundRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "windowBackgroundColor"
+			},
+		"RulerHasBackgroundColor" : "YES",
+		"AutoLightDarkModeulerStyle" : "YES",
+		"RulerBorderLineWidth" : "1",
+		"RulerHeightHorizontalRuler" : "20",
+		"RulerWidthVerticalRuler" : "18",
+		"RulerFontIOS" : {
+			"Family" : ".AppleSystemUIFont",
+			"Name" : ".AppleSystemUIFont",
+			"Size" : "10"
+			},
+		"RulerTextRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "systemGrayColor"
+			},
+		"RulerBorderRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "systemGrayColor"
+			}
+		},
+	"AAAA_DKDDocumentVersion" : "11.0.0 : Cross Platform",
+	"DKDDisplayGraphicDetails" : {
+		"AreaForm" : "Natural",
+		"PercentDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "1",
+			"UnitsDisplaySpec" : "Punctuation",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"HelpTipDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "3",
+			"UnitsDisplaySpec" : "Abbreviate",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"LengthsDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "2",
+			"UnitsDisplaySpec" : "Nothing",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"AnglesDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "2",
+			"UnitsDisplaySpec" : "Punctuation",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"PercentFormatDisplayDetails" : {
+			"PrecisionPercents" : "1",
+			"PercentForm" : "Percent"
+			},
+		"AngleFormatDisplayDetails" : {
+			"AngleForm" : "degrees",
+			"AngleRotation" : "Counter Clockwise",
+			"AngleDirection" : "Right",
+			"PrecisionAngles" : "2"
+			},
+		"InspectingSpecIndex" : "2"
+		},
+	"NumberColorsToListInContextMenu" : "12",
+	"AAAB_Build" : "51015",
+	"AAAB_Distribution" : "Free Market",
+	"AAAA_CurrentOSVersion" : "Unknown: 4039.000000",
+	"NumberPairColorsToListInContextMenu" : "6",
+	"DKDTablet" : {
+		"PenMax" : "25",
+		"PenMin" : "0.5",
+		"PenPressureFactor" : "0.5",
+		"BrushFit" : "6",
+		"PencilFit" : "7",
+		"PencilDynamic" : "NO",
+		"BrushDynamic" : "NO"
+		},
+	"DKDChangeTimeStamp" : "2025-08-15 06:50:58 +0600",
+	"DKDProperties" : {
+		"QuickLookContent" : "First Page",
+		"QuickLookUseSmallerOf_JPG_PDF" : "YES",
+		"QuickLookPage" : "0",
+		"QuickLookFormat" : "???"
+		},
+	"AAA_DKDQuicklookData" : 
+		{ "DKD_JSONDataObject_Base64" :[
+"JVBERi0xLjMKJcTl8uXrp_Og0MTGCjMgMCBvYmoKPDwgL0ZpbHRlciAvRmxhdGVEZWNvZGUgL0xl",
+"bmd0aCA1MjYxID4-CnN0cmVhbQp4AZWby47utrGF53oKjQNER6LE29izzAw_QgNGDpA9MDzI6-db",
+"RVZR7d6dg5Mgtrp-iqz7qioqf-y_7n_s51H2_93_55c_r_3jz_3a__zYz_0607P_GP-y53-N53P_",
+"F7_qn__cf9_T_g-9mLZfftM7_O-3X9hRD-f-d_3L3v34sadc-OvH_qRylFIqf-Rej5v_8FhL458f",
+"ez_7cbe7bvPF63qOcpV7bKM9PsZjbGP7x072lzaby2I_fxhva8VgbDFhf3_eVufNZZ8YgbvYb_Au",
+"jQUT51vIwTPihCT-cEonbPWBJrVK2vkNg0ifMsR5tCuXxg9fHrDQ87SjXuXan56OWlLf0K3T7nwd",
+"HdqipOs6rk-Ueh63CB_73ctRc677JG13zcfVpPXrPHIqeU-Y6kq189CP_rTMa-nqR-5JKuoHaqr7",
+"1Tn2tdF-PdeRYXJbhzlpv2s9shgISmmPSbIoXRsOJtNzH11bBe1-ynFLA0EJ-YPy0lMvLH9rYOvP",
+"Oc5b710IPs576jN2b9fQL4pGdJ1X0YrtlFMe4pWzOp-xKmix06K4nYKy-NxynzwEV7mlz5zvuaD6",
+"ySd74YyP0c504xDPMMeG8xxPI75ESb2wBDafW8aT9tOt12onwp6230jVW247f7EKc6Yi_dxpL9qo",
+"3mXD6O06Sm4X7-E09d7vnI9-n33PZ8FPU14-92C9574Vs0lCme760B3eep_Xcffe9ipahpcbNZZ2",
+"isIpZxNTNyI8HcpznBdpA9bxu4QhoJXjuVra7mRZ4oGCiWrZ79SPM9e0t_M5nnQpH5BojnzekNrR",
+"Cm573_U4OWVvCHy1yvl3P56S7q1xRO8P-XC_ceFWT7bC2LW3BOVGFtTZ7nSctTsFz2h3i6CyVfhr",
+"0MZ771VfKTrPd38Q6inwOTnYWsZCSeJNPveWMcJ9mVZCmpKOfDdJMwXG6gQzbIZWKg51PpgzNNdk",
+"zgdjhHZbwyqnTnMbNPywnt204pZqTYatWxizNYVZeZbJB8UyTWronjP3tYo9c75EsY125IORig3W",
+"aYn0QbCiceeJnITX4qzBdyokuJohmGzyOSkn9bQ1V0DK6LbqMNdRQqW19P7WZCKiCG9IU93pIfld",
+"eEybJtkG5W1KjotV7haxkXvOOi38a1s8uRc638tTQ7blzaEAd3nX0eZREZp8x05ydUeEhUkiCj1W",
+"2WnmOUOov0YwaPX73_brSPu_gS799zvo90S25Zvld71UBkQKxF6naEFRwqUEeFE6diui4LATq7ag",
+"BVh1-WkluwVYVfLCma9PYNVRc-skLgertVMAUexNFTERbCcUSWbwEBRFoUnjFPLQEEXOMNCKABuk",
+"ACsnhLhOWBBAbjVxt1jT7nFSEC4lsaGRgBdBvPETEKTINb0FUD1XcRZjVdBip0VxKwVlcbk9afIQ",
+"XD0oy85blEz-nXw6UD3QSNIqTiZQPWAIZUI1ioDqIXTPTN2BwR2oHoLvbpk05kD1UHeQ5e8FVAIj",
+"6hVltgCqh7hMoNkCqotwbqSK4DJjg6ycxWvu5onsKVneQGU05aEAqsSbd7_E1ASqRJLtAl1Yd6Di",
+"-APMbAuokjyTPBgp2YqpCrrw2szbScXIbbA0gSohMNGxAGBLZITzzFbFOVBdvR3pBPMCSszVE0gX",
+"gHORbT2iHKiC9nXVVwpsOlBdVBB3vhHGgeqqN8Ao8RyoMO6RSjOtOFBRDoC24LgLTLWLwJTmoZWL",
+"OrZ01R0BVJfMmcHj0O4FI6XrNLeBAjJRFEmZDlQX0NzavYAK1aICqpMw-aBYmomsuFZ55pwbRXrd",
+"Xqd5EiZJTJ4iTwffnsynbPI5B6pQQIBC6Cig46VJx5dQd0CQm2QBVRhXuWnCWbhFbOSeE6ct_1pA",
+"FV7ofNMJTE912V7eHApwl3cdbR4Vocn9FTsBVBFhYZKIQjfc5rGKLmml_hrBs63KFBEPdQfJJRN7",
+"xMwPEu15UB1SxYIKKZVEzUz4Ug1LpzSDo6wutZI_0kHVqFKrJKU5uamSDXVrwdqpPXkHy8rTSRCV",
+"JfUkEUkjHY3xGsUjlSQJTNUMalFJaZhCBCQc_6bWUjnTKi4I5bzxat7jb-Kk9G0ADjy12pQe6wQl",
+"K4OaisW8D-hib85jr_SwSrR2kxAKQrWnNCBP6YcaMVdi8NESya98K8rd6fQ66b2krEofytNYdBLW",
+"TqERFLuwBoUAzQ-pl_K60jueFV1ksh8qyJxK2ZjQ19MFiqb0u1KP8hJr8kn5JUOoLtQutJN9M8tQ",
+"kNovFJ3NHmBRBtCPRVBAr6nz66DQTbEBVXNCI7bmpv5W0UHtrhZANDCKVSpE1ODaMeAeFArBB1AS",
+"5eR3o6QTmMDgj-yDc5BX6nPSZwC_D6jB6oK7XPSEmXa80hcXNqIk0WuVDFNPXIdynF4dVZZyU1Of",
+"ZcMIqkJkAHkllSTbKdVJPJUthWkCm4Iu95nx1HpRlOIgg4QWK1XSyQ5b1YtgAExhb7VTAs-rGwcn",
+"u3dkF3vPneBA0VExLyMDkIM8WqjysBdb0yCDzRljMnWAT_yjwh5mx3VUjatZMq-6M06vWrzqXH46",
+"EUiKwh-oreC80XPknLeicv7GZ9XAkTrlhFDk_OJt-NwX0neE7a8vFc5vyI3sNzsTFomdUU1X0ygW",
+"sTcE9N8eoY_kaJlWtqHk3GBMstIiVqKR0D9ZJY0QiHRzVBz0MnoNtd1kZevwaHvRA-wXsgVNAUYi",
+"AzLjYCP2tzahXtZ0ykp0NFpF0j3xDxkyF_WhajMe2QZO6CwG4eaXj42eTuMWeNIiMSdfovLQa1YM",
+"EGhKOifvj67kknQEDEbFumIq4eF4BzLI-9WGFqnLPFUdvMRL2pL38Es8ht3RQdUkCF-oDz2b1ESE",
+"YT8SIzlKvTEb0UPxFolB76heJ2T4Wz5CPSaLZAxhhIwiZDYywMhKLMIVcQiygdxN2zzsak5TKolZ",
+"Z52Fmq0ybcAS5spwVPKJ4-M_JBhxRDpiT_koPg8BJ-ettol7sokdh_wXtmc1W5HEKhpVDrTVZNSh",
+"yJPqEAqjDNwGydA2cMBOBFfOiUWENaMTHYK5L00kvkSp0Ocr1dqkP7afjERH7INIGtQQyuqLLCEJ",
+"kch5mq-QyCYiqR2l2C0GUYZImnKRSM2tJySJRA9EnDskdUqomxwLZwOS0ATxSv8nP3NIEkSc6p0C",
+"krRTK2qD0bdB0hiqsfeCJIJHIzuFk0PSGOuhe1EMkjAPCaAqPwQkQbuKbO6QRIShgisr8w9IggCW",
+"8NJCJGIQDwdaHJGuhFUGSqjiA5Eu2rQsCu8NRKIGQrsJ-wYiaTxKVCZHJMu9mFsvOSIZjSTgiGQJ",
+"ugrrZCJDJC2p-LLxOBEJoNb5A1mIN3oalcfEkpkWVZHqmdheUISa7GWIZFNcik2jUKE9xhsZZ-Cl",
+"IZLwk3GTdDIRaX9IZ5QyxLkjktodsgL2dkTCxwkLEHn4tSESE1xVLKTIiUhAqZA34V5iSYikB9KR",
+"5Qf39YTmKUXeiDRIcrCJSNRzvNj7yIhCJMomEjK5Bw4ckVQXUsLAgSOSlUqaBwYigewH-ue9LRBJ",
+"pfHJTNgyuSGS6tmKp0GZiJTAaTxa8R-IlG6ai4d0E4ikahM52WkiUkoE-_C5L6TvCFSxn19SiiVh",
+"440Y0xFJrflpBcBEJBI3hacVM4FIF8PLh_5nIdKloWdnlSPS1RjWFrLQC5FU2at0XYh0aUZLLbIQ",
+"Sf0A9bMlREekS3HdGY4EIjE-I8XiqY5IRigUIi9EMlpVgnJE0kadknEh0mg_SLbY2xFJTJHpVa9M",
+"RBLjJOAXIkk8YMHec0SSDpimkLUmIklNRJjqlYlIUuZNGlV-MUSyy45OWRuIJIsoBQUiyWxAwkhK",
+"E5ESOf7E3RYiyWkAEkCHswyRQBWQ2Ubo4sgQSQ5IWIqjgUjyUXhWtTYRSZ4MtNlxjkjYjLEikjki",
+"WauklCFoN0QiJxHMyriBSAouYpxFjkgWgI1VgT0RpZ8QKajjmune_v3zmzpiQsmZ_kZeo4LoBwNT",
+"HJjYsHEMk6PO_Z_uqr5c9W1c9f1_NhiTQ-6zpD-7a1tXhJv9Hddq9tfr5i6u4OwH-8dn0roH5FJl",
+"XjXasq-3fPO6MC7pYqN1NelbcGMX79sVHpNPXqeBtItKCfT6Q2LpcvD1im-0nxQq8ojXbWK8aXyG",
+"TmTHeSPKvQnZjUJs3okqfeg-dShrqWJK5D8P3X5-VXzH72fsi4D6r_iK9ed7oR3yiSUGwTYGprSm",
+"_U3cWGaywgNT3w6FdcTn6-Wf-tOOPw3JGcTZwbp6_napCtNMSv9ht1iUwsJR1SG01IUkfDMJBTTJ",
+"F1tRu3STXB_KVi4HrYziSopGjxkBV18qQDPYyT2SZtGguGr6TMVzJZDzYbZFO68yinREP0p6fYhJ",
+"bs7oIgWrVMI0OGCM-jxKDrCU08hEqMaKBrWFEDQ0oNLRkBb--qa5ZtfFqiR5LpkihIjfTIj1cgjx",
+"2n8KwaB2MhFCBJ8hRDxwlguxls8NaFuHWuKQOJbXXI7JmQuxWEcSScTS-dvmIq-XrVXmz6mkUBsv",
+"uRShW-fT1b-FEGEkXgvDhSmnECWM7Q4QLvGxDSGWyywn0sBVBlXhYG1QCKGL0_GbGdZf3kKItX84",
+"SDDhQiyXCyHiAU9zIWL52mC6XBwSxxLl7vpDvc7o0r_HjaLanwdMfMnwikjlrRFmPFHZUGuAriob",
+"wSWggm4Kz2UU0xUVArhMWGFWFDQKypvLVPWMfOwBsBIXfMug27rOnJ5gKtRpiMoYgyUCugYsIgcw",
+"fAO-muoChGpz-O0mdjUdTIL8It-CjUQxAz_kV8IT8FbsCnELU__RGtDNgjq0fHxmYdKMXB2CxG8h",
+"iL-_uSDrkCVIcDIFWcyGIPHwwTh6SuKr1-uumTjETwUsXZDF2hRk2UHSjHALQawjMrH9_aUaV5fr",
+"72MLTkLJwWzYwU0TxmLiPuz3MugUhKnGNLoLEo6hMHVnCfdZDjVczKQxxGQQpwsj7OfuR7MybRzu",
+"54K8DglBgpMpyBbeF4LEA7WXu6aLvV5394tD5qm0dsHIizUX5MX-tBGTg4ipn6KbCqvOTGWEHU-M",
+"uqi5GSBRoTL86BbiDFm5EaJZYZykuZ5m0br4YqSqSoMPGYgb7qGomLNmhk0gRndvV2jEMW07WZGb",
+"VIJFR3BRzmuqa4kSpuICP8pf6xkoA_N2qQeGLX0i0jVOxCoUjQzFlXWIVkpo6iHFHbzr1p4RBkDO",
+"IZVRl6QB1VnsglDHzN9CEn89BHmdEZI4I_poxQRxXunQpiDxQG3kgqzlU5C1oQsSx35szsliLZh1",
+"O0iaEXYhyBJ76sEVs4UgoT5Ym4yoLZOKF69hhhAkjEW0utxh0pBkWn05QrgGand3Cf-ZgmzhYpJG",
+"nse0wu0Xv7kk4X4hyDqD4JqSOCMhSPAagsQDzuq-uZZP910buo_HsXxCOANhseax8mZ_2Gj75yum",
+"FHYXHzP8FPGupA8UKUH5t5Wh3xSh1v8wh9LapnmUbnm_WetIqrWK_v-2VvuSvmxf_fu_rdW-Mpr2",
+"nQH2LQ_aVx8Laa3-_X_tK1TR2mhNvpFN-8Il2vIin8dv1o4aX9qaa_X4zdqxr7Q11-rxm7VjX2lr",
+"rtXjN2vHvtLWXKvHb9aOfaWtuVaP36wd-0pbc60ex1r_4Pa0D251GcNNGZUPJVBh6M5NFu-QzKiY",
+"uKfmqzQu2ccHa8pwTE8LQzp1aDg_39CSrJ-z8VmXFUyp3pqBMmblZgsqN5wUSLr4AQE6NxH3CQrQ",
+"ARFlkMrFAJFVlFD8bNeVVHFcA7OzhhCMqvj2U5-RGUX3YJ1bDcZzZ4ey6QaYiZuOJMelxAHkLaY5",
+"fNfHlzZCFFHIH5RvCEhG5u4ICjvxgY7eY-bBt6NnI8lyHuBGJaz7VVbxzQ_zLC5DKQmuUzvZA992",
+"8Z79CBNjOR-kAjda9lz0A8YUFDtG6tLB41p1MAPN2Lv0njEsikQ4oQyx2EmCMjJXDarhYmVUbepA",
+"lcJOKYgbFamMjx6hmBq5FpRmMxT1cEPdbCYL8BkdxGEU3pSdtBckSqqkuwAZlE9LGJjqXcojWupr",
+"_7scAutTZ3RwnGTNdc2LfJ0Yj87TVq3VkMX7eFlOwq3W2IpD2PDpmz7otui_1Q5pxDM91tdRnPNh",
+"C85b1MvCxNoeZqp-wL7Mva4tuORc3csx2OQCeq2HrKtIlQ6o-5OkdAUqKF4qAT_oBvXx6FIcnYJm",
+"8CItBev-hlu-lx10NZlOKHJd6ZcLRGowTQNeFrWLsILKw-58BktUiSLXlW_oa0Q-RF0eRIXXYZVL",
+"XIYD7md8nYkLYHdzXflip9Rr1E6fPZbwlondrzfaG12hcp77fly2vCIErdE_MZiLOKLE0FSVEJux",
+"puqJW8hw3RGRJ1c_ulsYrkvcYmcqMmYOEdtQmFiQxzwDIJ_R0PL0XPYyCjeQK5sYRR_jDr_18_Qx",
+"kDx2nPVMR51_4Z_Tw9RusgOXsPrW8uVzw5P0cbj9ag40_kLVV7HmkMsYyzfiXDwNz7kml-J7OI4y",
+"kEs3_IbbEZPOdMBAWm4z3ht6Gm5j501tDreZ502dD7cxrQy78IGu3AZKWG-4jWklbDzchr260rz5",
+"gbkNDLu38Gm63AZ94WXuU2O5dne_G1uyU3jnOBjOKZ-mD-MSxh6XybrwNa92t4lomG5jk2aPGZQ2",
+"1THjSiPG4TYRfqFYdUkzSo1m6vdQNopM5CGvncyQ8BnZARqOMFOIu8XMNPab2SxKFCailoUsmyXt",
+"KLyc0GmFFyfYoHrgJsFlh5KpJmhSWhuFpBZZd1DwMHKuIabSulaZ1xtgKi2IIhEj0RtF8aPm3OFg",
+"qosbyAkZrJqRaHhpO5mHSfELftw8C6KmCe1bM_0fKtb_54H3Jtzt4Q4BieEyAZzuWMi34NXdzyF4",
+"ehiOFUD9cuSAc3f3LSA_QsILA9pJ5VsLnCgfVnh5ieEhCDR6JfKK1KhYVkCvuiaiXigyC6DhZtwl",
+"a4Y9_IuQ4NGcazx6wvkEitaMqpb77Fyy98P8-ff91_8Axs5hmAplbmRzdHJlYW0KZW5kb2JqCjEg",
+"MCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvUmVzb3VyY2VzIDQgMCBSIC9Db250",
+"ZW50cyAzIDAgUiAvTWVkaWFCb3ggWzAgMCAxMDI0IDEwMjRdCj4-CmVuZG9iago0IDAgb2JqCjw8",
+"IC9Qcm9jU2V0IFsgL1BERiBdIC9Db2xvclNwYWNlIDw8IC9DczEgNSAwIFIgL0NzMiA2IDAgUiA-",
+"PiA-PgplbmRvYmoKNyAwIG9iago8PCAvTiAxIC9BbHRlcm5hdGUgL0RldmljZUdyYXkgL0xlbmd0",
+"aCAzMzg1IC9GaWx0ZXIgL0ZsYXRlRGVjb2RlID4-CnN0cmVhbQp4AaVXB1xTV9s_N_dmsMKeMsJG",
+"lgFly4jMALKH4CImgYQRYiAIiItSrGDd4sBR0aKoRasVgTpRi1bqxq0v1FJBqcVaXFh9n5uAwtv-",
+"3u_7fl_u73D_5znjWf_z3ANC2lt4UmkuBSGUJymUhSdw0qalpbPo9xEDGSJN5Io0efwCKScuLhqm",
+"IEm-REi-x_5e3kQYKbnuQu41dux_7FEFwgI-zDoFrURQwM9DCJuMEMOEL5UVIqQyDeTW8wqlJC4D",
+"rJeTlBAMeBXMUR9eC2JkES6UCGViPitcxithhfPy8ngsd1d3VpwsP1Oc-w9Wk4v-P7-8XDlpN_mz",
+"gKZekJMYBW9XsL9CwAshsS_gQ3xeaCJgb8D9ReKUGMBBCFFspIVTEgBHAhbIc5I5gJ0BN2bKwpIB",
+"BwC-K5JHkHgSQrhRqSgpFbAJ4Oic_ChyrRXgTMmcmFjAoAv_gl8QnA7YAXCbSMglc2YD-IksP4Gc",
+"44gQwRQIQ0IBgx2Et7iQmzSMKwuKEkk52EncKBUFk3aCLqp6Ni8yDrAdYDthbjipF_ahRksL48g9",
+"oU8tkuTGkLqCAJ8XFij8hT6NUShKigC5O-CkQlkSuRbsoVVmisO4gMMA7xXJIkg5-EsbkOYqeAYx",
+"obvyZKHhIIeY0Itl8gQyDuAjfZdQkkzGEzhCf4hSMB4Sonw0B_7ykQR1IxYqQGJUpEBZiIfyoLHA",
+"Amdo4TBLAk0GMwpQDsizAPd8HCf75ApyjQuSwlg-yoS5ubByRM5CAthBuZLcJR8a2SN37lXszB_W",
+"6Aoag82_RnIYF6F-GBcBmoq6FJJisDAP-sEglcNYFuDRWtyBSe4oTmGt0gZynNTSN6wlH1YIFLqU",
+"60g_lbYFg80SVApjpG0K3wlDgk1MhOZHRBP-BFuhTQYzSpCLQj5ZIRvR-slz0re-j1rngq2jvR8d",
+"sZEon4Z4FcLOueChZDg-BWDNO7A7Z3j1p2gqNK4ykTtIpTUr4rmz6sFe8LxcNlvMv7xyoL3smBFi",
+"3Vx-6gJi7ddqOa_wh4wMq5NonnFdvb3sv2T1UzZHbBub1djRvFEwSfA33oAu6jXqFepD6g3Egvcv",
+"1E5qL6B71Pvw3Ploz6cckJwSg1zJCSXb-BiumEmykAORyVWM5kE0yEwJFXkKh3U8iG8BRE8OvCNz",
+"7QIMGJ2LsQwhdxs9TjJCqT0L9lX2PjGer5CQDCH1k2z5e3z-Lydk1PnIlKwykUpn1ZcNCaXK_JG5",
+"Ey6NeRmDyp3ZB9n97F3s_ewX7IeKKCjyx77F_o3dyd4BI0_xtfgR_DjegrfiHYgFvVb8NN6iQPvx",
+"Y_B8-3Hd2BOhjPHYE0Hykz98AkjvC4c5OPqsjK4KZD7IfchskPNHYpg9fLJHc5WM-GgOkbH831k0",
+"OtZjK4gy-4pTyrRmujHpTEemB5PDxJiW8LgzgwBZM62Y0UxDGI1g2jNDmOM-xmMkY7kgIRlEMu8T",
+"F5V1Lw2sHGEa6Z8Isi9TVDnesL__6SNrjJdkBRSPPmeYBpxkpSZlDRnRORJXRYbHVNBk0CRG88AO",
+"GcSVrA4SqD2sMXPI2k1WLWA8Nl2Rw3_gKM2XZk8LpdnDWmW1YtFCaBG0MMSiuZFy2gRaJGAfchZh",
+"TrgRXKh6sYhFcAgPImgYk5VwMjxkHVTGyIUIhNEAIoTwJmvkaG_BEmVsyWr5z56OPoVw1ygUFsN9",
+"BaHgfGmJTJwlKmRx4GYkZHElfFdnljvbDb6I5D2LnIPQi3jF_Qkz6ODLZUVKGUG-qEgV7mB6yBiZ",
+"I2v4qruArV7ID76zoXBviEVJKA3NAutEkEsZxLYMLUGVqBqtQuvRZrQd7UINqBEdQkfRMXQa_YAu",
+"oiuoE92DL1APeooG0Es0hGEYHdPAdDFjzAKzxZwwd8wbC8BCsWgsAUvDMrAsTILJsTLsM6waW4Nt",
+"xnZgDdi3WAt2GruAXcXuYN1YH_YH9paCU9QpehQzih1lAsWbwqFEUZIoMylZlLmUUkoFZQVlI6WO",
+"sp_SRDlNuUjppHRRnlIGcYSr4Qa4Je6Ce-PBeCyejmfiMnwhXoXX4HV4I1SBdvw63oX3428IGqFL",
+"sAgXyE0EkUzwibnEQmI5sZnYQzQRZ4nrRDcxQLynalBNqU5UXyqXOo2aRZ1HraTWUOupR6jnoGr3",
+"UF_SaDQD4IUX8CWNlk2bT1tO20o7QDtFu0p7RBuk0-nGdCe6Pz2WzqMX0ivpm-j76Sfp1-g99NcM",
+"NYYFw50RxkhnSBjljBrGXsYJxjXGY8aQipaKrYqvSqyKQKVEZaXKLpVWlcsqPSpDqtqq9qr-qkmq",
+"2apLVDeqNqqeU72v-kJNTc1KzUctXk2stlhto9pBtfNq3Wpv1HXUHdWD1Weoy9VXqO9WP6V-R_2F",
+"hoaGnUaQRrpGocYKjQaNMxoPNV4zdZmuTC5TwFzErGU2Ma8xn2mqaNpqcjRnaZZq1mge1rys2a-l",
+"omWnFazF01qoVavVonVLa1BbV9tNO1Y7T3u59l7tC9q9OnQdO51QHYFOhc5OnTM6j3RxXWvdYF2-",
+"7me6u3TP6fbo0fTs9bh62XrVet_oXdIb0NfRn6Sfol-sX6t_XL_LADewM-Aa5BqsNDhkcNPgraGZ",
+"IcdQaLjMsNHwmuEro3FGQUZCoyqjA0adRm-NWcahxjnGq42PGj8wIUwcTeJN5plsMzln0j9Ob5zf",
+"OP64qnGHxt01pZg6miaYzjfdadphOmhmbhZuJjXbZHbGrN_cwDzIPNt8nfkJ8z4LXYsAC7HFOouT",
+"Fk9Y-iwOK5e1kXWWNWBpahlhKbfcYXnJcsjK3irZqtzqgNUDa1Vrb-tM63XWbdYDNhY2U23KbPbZ",
+"3LVVsfW2FdlusG23fWVnb5dqt9TuqF2vvZE9177Ufp_9fQcNh0CHuQ51DjfG08Z7j88Zv3X8FUeK",
+"o4ejyLHW8bITxcnTSey01emqM9XZx1niXOd8y0XdheNS5LLPpdvVwDXatdz1qOuzCTYT0iesntA-",
+"4T3bg50L37d7bjpukW7lbq1uf7g7uvPda91vTNSYGDZx0cTmic8nOU0STto26baHrsdUj6UebR5_",
+"eXp5yjwbPfu8bLwyvLZ43fLW847zXu593ofqM8Vnkc8xnze-nr6Fvod8f_dz8cvx2-vXO9l-snDy",
+"rsmP_K38ef47_LsCWAEZAV8FdAVaBvIC6wJ_DrIOEgTVBz3mjOdkc_Zznk1hT5FNOTLlVbBv8ILg",
+"UyF4SHhIVcilUJ3Q5NDNoQ_DrMKywvaFDYR7hM8PPxVBjYiKWB1xi2vG5XMbuAORXpELIs9GqUcl",
+"Rm2O-jnaMVoW3TqVMjVy6tqp92NsYyQxR2NRLDd2beyDOPu4uXHfx9Pi4-Jr439NcEsoS2hP1E2c",
+"nbg38WXSlKSVSfeSHZLlyW0pmikzUhpSXqWGpK5J7Zo2YdqCaRfTTNLEac3p9PSU9Pr0wemh09dP",
+"75nhMaNyxs2Z9jOLZ16YZTIrd9bx2ZqzebMPZ1AzUjP2ZrzjxfLqeINzuHO2zBngB_M38J8KggTr",
+"BH1Cf-Ea4eNM_8w1mb1Z_llrs_pEgaIaUb84WLxZ_Dw7Int79quc2JzdOR9yU3MP5DHyMvJaJDqS",
+"HMnZfPP84vyrUidppbRrru_c9XMHZFGy-gKsYGZBc6Ee_FPaIXeQfy7vLgooqi16PS9l3uFi7WJJ",
+"cUeJY8mykselYaVfzyfm8-e3lVmWLSnrXsBZsGMhtnDOwrZF1osqFvUsDl-8Z4nqkpwlP5Wzy9eU",
+"__lZ6metFWYViysefR7--b5KZqWs8tZSv6XbvyC-EH9xadnEZZuWva8SVP1Yza6uqX63nL_8xy_d",
+"vtz45YcVmSsurfRcuW0VbZVk1c3Vgav3rNFeU7rm0dqpa5vWsdZVrftz_ez1F2om1WzfoLpBvqFr",
+"Y_TG5k02m1ZterdZtLmzdkrtgS2mW5ZtebVVsPXatqBtjdvNtldvf_uV-KvbO8J3NNXZ1dXspO0s",
+"2vnrrpRd7V97f91Qb1JfXf_Xbsnurj0Je842eDU07DXdu3IfZZ98X9_-GfuvfBPyTXOjS-OOAwYH",
+"qg-ig_KDT77N-PbmoahDbYe9Dzd-Z_vdliO6R6qasKaSpoGjoqNdzWnNV1siW9pa_VqPfO_6_e5j",
+"lsdqj-sfX3lC9UTFiQ8nS08OnpKe6j-ddfpR2-y2e2emnblxNv7spXNR587_EPbDmXZO-8nz_ueP",
+"XfC90PKj949HL3pebOrw6Djyk8dPRy55Xmq67HW5-YrPldark6-euBZ47fT1kOs_3ODeuNgZ03n1",
+"ZvLN27dm3Oq6Lbjdeyf3zvO7RXeH7i2Gi33VA60HNQ9NH9b9a_y_DnR5dh3vDunu-Dnx53uP-I-e",
+"_lLwy7ueil81fq15bPG4ode991hfWN-VJ9Of9DyVPh3qr_xN-7ctzxyeffd70O8dA9MGep7Lnn_4",
+"Y_kL4xe7_5z0Z9tg3ODDl3kvh15VvTZ-veeN95v2t6lvHw_Ne0d_t_Gv8X-1vo96f_9D3ocP_wYJ",
+"D_hiCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iagpbIC9JQ0NCYXNlZCA3IDAgUiBdCmVuZG9iago4",
+"IDAgb2JqCjw8IC9OIDMgL0FsdGVybmF0ZSAvRGV2aWNlUkdCIC9MZW5ndGggMzU3IC9GaWx0ZXIg",
+"L0ZsYXRlRGVjb2RlID4-CnN0cmVhbQp4AXWQv0tCURTHv2ohmA2Rg0PDm6LhVaJBLg1qIEXQwwqy",
+"pufzV6Cvy3tPwmiL1hD6DzJoDhqSCIOWhoYgaoiorcmpwKXkdu57iS6ey7nn8875nnPvu4A7qDJW",
+"GgJQ1i0jlYxLm-ktyfsJFy3bVM1kMUVZER_d6FS6e_vF0T5Ni1mtTv04epS8K1_erO6_Bme7qgHR",
+"l82ZGtV-yUMaMyzAJRMrexYTfEAcMOhSxDXBBYfPBGccvrI166kEaR6IJa2oZolbxHKmL1_o43Kp",
+"Is4VJv7Un9M31igGyCewiB2YYChBRRUSFEQG6OdsfQK7pK7CoL4CirCoJ0YZMSFHvAQdGmYgE4cR",
+"Ig-Ld6Zesvbz__vJvdzhB7DQ5Jxf93LLTeBiHvA1ermpKDA2Atw3mGqo9jgP7e58Hvg6B0bTwPgj",
+"9Wyb-UjYrrv8cWD4nfPvScB7AnRqnP-cct6pA5434Fb_AxcparwKZW5kc3RyZWFtCmVuZG9iago2",
+"IDAgb2JqClsgL0lDQ0Jhc2VkIDggMCBSIF0KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2Vz",
+"IC9NZWRpYUJveCBbMCAwIDEwMjQgMTAyNF0gL0NvdW50IDEgL0tpZHMgWyAxIDAgUiBdID4-CmVu",
+"ZG9iago5IDAgb2JqCjw8IC9UeXBlIC9DYXRhbG9nIC9QYWdlcyAyIDAgUiA-PgplbmRvYmoKMTAg",
+"MCBvYmoKPDwgL1Byb2R1Y2VyIChtYWNPUyBWZXJzaW9uIDI2LjAgXChCdWlsZCAyNUE1MzI3aFwp",
+"IFF1YXJ0eiBQREZDb250ZXh0KSAvQ3JlYXRpb25EYXRlCihEOjIwMjUwODE1MDA1MTQyWjAwJzAw",
+"JykgL01vZERhdGUgKEQ6MjAyNTA4MTUwMDUxNDJaMDAnMDAnKSA-PgplbmRvYmoKeHJlZgowIDEx",
+"CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwNTM1NiAwMDAwMCBuIAowMDAwMDA5NTUzIDAwMDAw",
+"IG4gCjAwMDAwMDAwMjIgMDAwMDAgbiAKMDAwMDAwNTQ2MiAwMDAwMCBuIAowMDAwMDA5MDI3IDAw",
+"MDAwIG4gCjAwMDAwMDk1MTggMDAwMDAgbiAKMDAwMDAwNTU0MSAwMDAwMCBuIAowMDAwMDA5MDYy",
+"IDAwMDAwIG4gCjAwMDAwMDk2MzggMDAwMDAgbiAKMDAwMDAwOTY4NyAwMDAwMCBuIAp0cmFpbGVy",
+"Cjw8IC9TaXplIDExIC9Sb290IDkgMCBSIC9JbmZvIDEwIDAgUiAvSUQgWyA8ZDRiODYzNzkyNTQ1",
+"NDg5Y2JkMTQ0ZjMyMGEzMGNjNDk-CjxkNGI4NjM3OTI1NDU0ODljYmQxNDRmMzIwYTMwY2M0OT4g",
+"XSA-PgpzdGFydHhyZWYKOTg1MgolJUVPRgo=" ]
+		},
+	"DKDLayersList" : [
+		{
+			"LayerGraphicsCount" : "3",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Mask-Shape",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "D11A4C4E",
+					"GraphicStyle" : "15",
+					"PathArchive" : {
+						"index" : "7",
+						"DKDNormalizeTransform" : "0.273126618286 -0.30132390192 0.30132390192 0.273126618286 -198.737037409 -180.139256643"
+						},
+					"Class" : "DKDBezier"
+					}
+				]
+			},
+		{
+			"LayerGraphicsCount" : "14",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Drawn-Grid",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "9F0AAB2E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M128,0 L128,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "F88F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M896,0 L896,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "867F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M768,0 L768,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "646F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M640,0 L640,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "325F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M512,0 L512,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "BF3F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M384,0 L384,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "2D2F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M256,0 L256,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "B9E3413E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,128 L1024,128",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "9871333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,896 L1024,896",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "F561333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,768 L1024,768",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "7351333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,640 L1024,640",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "5141333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,512 L1024,512",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "4F21333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,384 L1024,384",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "3C11333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,256 L1024,256",
+					"Class" : "DKDLine"
+					}
+				]
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "70BE3B1E",
+					"GraphicStyle" : "24",
+					"SVGPath" : "M0,0 L1024,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "A38F5C1E",
+					"GraphicStyle" : "24",
+					"SVGPath" : "M0,1024 L1024,0",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "AA97443E",
+					"Bounds" : "{{410, 410}, {204, 204}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					},
+				{
+					"GraphicID" : "8A86563E",
+					"Bounds" : "{{256, 256}, {512, 512}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					},
+				{
+					"GraphicID" : "F166473E",
+					"Bounds" : "{{102, 102}, {820, 820}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "DE20E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "5",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "Target",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "1",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Mask-RRect",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "747FAA9E",
+					"GraphicStyle" : "11",
+					"PathArchive" : {
+						"index" : "1",
+						"DKDNormalizeTransform" : "0.078125 -0.15625 0.15625 0.078125 -20 40"
+						},
+					"Class" : "DKDBezier"
+					}
+				]
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "0FCB6974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "6ED7A974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.168826879,379.204297487 L861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "C3DB6974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "C5E7A974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.168826879,379.204297487 L861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "5030E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "4",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "4 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "9A3486C2",
+					"GraphicStyle" : "9",
+					"PathArchive" : {
+						"index" : "17",
+						"DKDNormalizeTransform" : "-0.064729073833 0.195437131002 -0.195437131002 -0.064729073833 250.625862777 -107.165498694"
+						},
+					"Class" : "DKDBezier"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "0130E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "2",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "3 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "92F2C5C2",
+					"GraphicStyle" : "9",
+					"PathArchive" : {
+						"index" : "33",
+						"DKDNormalizeTransform" : "-0.065104166667 0.1953125 -0.1953125 -0.065104166667 215.470533855 -25.5541145836"
+						},
+					"Class" : "DKDBezier"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "C130E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "2",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "2 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "0",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"LayerTag" : "8230E74E",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"LayerState" : "Active",
+			"LayerName" : "1 - Layer",
+			"CloakLayerGuidelines" : "NO",
+			"LayerLock" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "1",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "RRRect",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"Bounds" : "{{0, 0}, {1024, 1024}}",
+					"DKDRectRadius3" : "256",
+					"DKDRectRadius1" : "256",
+					"GraphicID" : "94ACA79E",
+					"DKDRectRadius2" : "256",
+					"Class" : "DKDRoundedRectangle",
+					"GraphicStyle" : "56",
+					"DKDRectRadius0" : "256"
+					}
+				]
+			},
+		{
+			"LayerGraphicsCount" : "0",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "screenShot",
+			"LayerLock" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "0",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"LayerTag" : "3330E74E",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Paper",
+			"CloakLayerGuidelines" : "NO",
+			"LayerLock" : "NO"
+			}
+		],
+	"DKDGrids" : {
+		"DynamicSnapGrid" : "YES",
+		"SnapDrawing" : "YES",
+		"MajorGrid" : {
+			"PrintLineWidth" : "1",
+			"LinkGridToRulers" : "NO",
+			"GridRGB" : {
+				"BluePlus" : "1",
+				"OpacityPlus" : "0.6",
+				"ColorSpacePlus" : "DKDP3ColorSpace",
+				"RedPlus" : "0.54902",
+				"GreenPlus" : "0.713725"
+				},
+			"GridSpacingX" : "32",
+			"GridSpacingY" : "32",
+			"ShowsGrid" : "YES",
+			"GridAboveGraphics" : "NO",
+			"PrintsGrid" : "NO",
+			"SnapsToGrid" : "NO"
+			},
+		"SnapEnds" : "YES",
+		"SoftSnap" : "NO",
+		"MinorGrid" : {
+			"PrintLineWidth" : "0.5",
+			"LinkGridToRulers" : "NO",
+			"GridRGB" : {
+				"BluePlus" : "0.87451",
+				"OpacityPlus" : "1",
+				"ColorSpacePlus" : "DKDP3ColorSpace",
+				"RedPlus" : "0.745098",
+				"GreenPlus" : "0.854902"
+				},
+			"GridSpacingX" : "2",
+			"GridSpacingY" : "2",
+			"ShowsGrid" : "YES",
+			"GridAboveGraphics" : "NO",
+			"PrintsGrid" : "NO",
+			"SnapsToGrid" : "NO"
+			},
+		"SnapSound" : "None",
+		"SnapGuidelines" : "NO",
+		"GuidesLayer" : "NO",
+		"SnapRadiusGrid" : "3"
+		},
+	"DKDPagesSpec" : {
+		"bCheckerColor" : {
+			"BluePlus" : "0.784314",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.784314",
+			"GreenPlus" : "0.784314"
+			},
+		"DetailsDrawerWidth" : "203",
+		"SizeChecker" : "8",
+		"PagesSpecPrintBackground" : "NO",
+		"FullScreenCanvasMargin" : "216",
+		"NonFullScreenCanvasMargin" : "0",
+		"LayersDrawerWidth" : "285",
+		"BackgroundDisplay" : "Background",
+		"DisplayRulers" : "YES",
+		"CanvasMargin" : "0",
+		"CanvasColor" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "windowBackgroundColor"
+			},
+		"aCheckerColor" : {
+			"BluePlus" : "0.941176",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.941176",
+			"GreenPlus" : "0.941176"
+			},
+		"PagesAcross" : "1",
+		"CanvasBorder" : {
+			"BluePlus" : "0.533333",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.54902",
+			"GreenPlus" : "0.533333"
+			},
+		"ShowPageBreaks" : "NO",
+		"FullScreen" : "NO",
+		"PagesSpecBackgroundRGB" : {
+			"White" : "1",
+			"Opacity" : "1",
+			"ColorSpace" : "NSCalibratedWhiteColorSpace"
+			},
+		"DisplayAttributesBar" : "YES",
+		"PagesDown" : "1",
+		"NumberAcrossFirst" : "YES"
+		},
+	"DKDExportDoc" : {
+		"ExportImageInterpolation" : "Automatic",
+		"ExportColorTable" : "256 Best",
+		"ExportImageAntialias" : "YES",
+		"PDFYMirror" : "NO",
+		"ExportContent" : "Individual Layers",
+		"ExporBackground" : "No (Black) Background",
+		"PNGColorSpace" : "sRGB_ColorSpace",
+		"SVGProfile" : "SVG 1.1",
+		"ICOColorTable" : "256 Best",
+		"ExportCompresion" : "0.088",
+		"DXFExportRevision" : "AutoCADLT 2010",
+		"ExportTransparentColor" : "Automatic",
+		"EPSExporBackground" : "No (Black) Background",
+		"PDFPagination" : "Single Page",
+		"SVGEmbedImages" : "YES",
+		"SVGFont" : "SVG",
+		"GIFFDither" : "NO",
+		"PNGInterlace" : "NO",
+		"EPSLatexPsfrag" : "NO",
+		"HideExtension" : "NO",
+		"PNGExporBackground" : "No (Black) Background",
+		"ExportFileExtension" : "svg",
+		"PDFExporBackground" : "No (White) Background",
+		"BMPExporBackground" : "No (White) Background",
+		"BMPSpecification" : {
+			"ColorDepthWIS" : "256 Colors",
+			"WidthWIS" : "64",
+			"ColorListNameWIS" : "256 Best",
+			"HeightWIS" : "64"
+			},
+		"TIFFColorSpace" : "sRGB IEC61966-2.1",
+		"TIFExporBackground" : "No (Black) Background",
+		"ExportPath" : "\/Users\/jk\/Documents\/Programming\/Projects\/BkmkMgrs\/Resources\/Per-App\/Synkmark\/Icon",
+		"JPGExporBackground" : "White Background",
+		"DXFExportLayers" : "All",
+		"SVGOverwriteImages" : "NO",
+		"GIFExporBackground" : "White Background",
+		"JPGColorSpace" : "sRGB_ColorSpace",
+		"SVGTidyFormatting" : "YES",
+		"SVGDOMIds" : "YES",
+		"EPSColorSpace" : "RGB",
+		"SVGGlyphs" : "System Font",
+		"ICOExporBackground" : "No (White) Background",
+		"PDFXMirror" : "NO",
+		"PNGAlpha" : "YES",
+		"CSVStringEncoding" : "Unicode (UTF8)",
+		"SVGCompress" : "NO",
+		"ExportExpand" : "1"
+		},
+	"DKDHideExtension" : "YES",
+	"DKDPrintInfo" : {
+		"VerticalPagination" : "0",
+		"VerticallyCentered" : "YES",
+		"PaperSizeWidth" : "1024",
+		"PaperSizeHeight" : "1024",
+		"FallBackPaperSizeWidth" : "1024",
+		"PrintJobDisposition" : "NSPrintSpoolJob",
+		"TopMargin" : "18",
+		"RightMargin" : "18",
+		"HorizontallyCentered" : "YES",
+		"PrinterName" : "App Developer",
+		"FirstPage" : "1",
+		"PrintScalingFactor" : "1",
+		"MustCollate" : "YES",
+		"FallBackPaperSizeHeight" : "1024",
+		"HorizontalPagination" : "2",
+		"BottomMargin" : "18",
+		"PreviewPageNumber" : "1",
+		"YPrintMirror" : "NO",
+		"LeftMargin" : "18",
+		"Copies" : "1",
+		"ReversePageOrder" : "NO",
+		"PaperName" : "Custom",
+		"XPrintMirror" : "NO",
+		"LastPage" : "-1",
+		"Orientation" : "0",
+		"PrintAllPages" : "YES"
+		},
+	"DKDWindowState" : {
+		"GraphicDetailsEdge" : "2",
+		"GraphicDetailsOpen" : "YES",
+		"LayerOpen" : "YES",
+		"GDetailsLayersDrawerEdgePreference" : "Auto",
+		"ZoomPercent" : "86.937537",
+		"DrawersOnMainView" : "YES",
+		"CursorMode" : "Nothing",
+		"WindowLocation" : "27 52 1554 1020 0 0 1710 1072 ",
+		"LayerDrawerEdge" : "0",
+		"LayerSelect" : "Show Others",
+		"LayersDrawerEdgePreference" : "Auto",
+		"LayerActiveAbove" : "NO",
+		"OutlineDrawing" : "NO",
+		"DocumentFileName" : "\/Users\/jk\/Documents\/Programming\/Projects\/BkmkMgrs\/Resources\/Per-App\/Synkmark\/Icon\/Synkmark.ezdjson",
+		"DocCenter" : "{512, 512}"
+		},
+	"DKDTimeFormat" : {
+		"Field 0 Include" : "Weekday",
+		"Field 3 Include" : "Year",
+		"Time Seperator" : ":",
+		"Field 0 Type" : "Long",
+		"Used Once" : "YES",
+		"IncludeTime" : "YES",
+		"Field 2 Type" : "Number",
+		"Seperator 3" : "  ",
+		"Seperator 2" : ", ",
+		"Seperator 1" : ". ",
+		"Seperator 0" : " - ",
+		"Field 2 Include" : "Day",
+		"IncludeDate" : "YES",
+		"Twelve Hour Clock" : "YES",
+		"Include Title" : "YES",
+		"Field 1 Include" : "Month",
+		"Include GMT" : "NO",
+		"Field 1 Type" : "Short",
+		"TimeAfterDate" : "YES",
+		"Field 3 Type" : "Long"
+		}
+	}

@@ -1,0 +1,1325 @@
+{
+	"DKDSaveTimeStamp" : "2025-08-15 06:15:21 +0600",
+	"ArchiveMatchStore" : {
+		"Archive_Stores" : [
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "1",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.854902",
+									"GreenPlus" : "0.517647"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "2",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "1",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.854902",
+									"GreenPlus" : "0.517647"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "3",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"DrawsLine" : "YES",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "1"
+									},
+								"DrawsFill" : "NO",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "8"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"FillRGB" : {
+									"BluePlus" : "0.815686",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.815686",
+									"GreenPlus" : "0.815686"
+									},
+								"DrawsLine" : "YES",
+								"LineWidth" : "1.2",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsFill" : "YES",
+								"WindingRule" : "Even-Odd",
+								"MiterLimit" : "10"
+								},
+							{
+								"LineCapStyle" : "Square",
+								"FillRGB" : {
+									"BluePlus" : "0.815686",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0.815686",
+									"GreenPlus" : "0.815686"
+									},
+								"DrawsLine" : "YES",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"LineRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsFill" : "YES",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "9"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Square",
+								"FillRGB" : {
+									"BluePlus" : "0",
+									"OpacityPlus" : "1",
+									"ColorSpacePlus" : "DKDP3ColorSpace",
+									"RedPlus" : "0",
+									"GreenPlus" : "0"
+									},
+								"DrawsLine" : "NO",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"DrawsFill" : "YES",
+								"WindingRule" : "Even-Odd",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "11"
+						},
+					{
+						"BinMatches" : [
+							{
+								"LineCapStyle" : "Butt",
+								"FillRGB" : {
+									"White" : "0",
+									"Opacity" : "1",
+									"ColorSpace" : "NSCalibratedWhiteColorSpace"
+									},
+								"DrawsLine" : "NO",
+								"LineWidth" : "1",
+								"LineJoinStyle" : "Miter",
+								"StrokePosition" : "Front",
+								"DrawsFill" : "YES",
+								"WindingRule" : "Non-Zero",
+								"MiterLimit" : "10"
+								}
+							],
+						"BinIndex" : "15"
+						}
+					],
+				"Class_Store" : "DKDGraphicStyle",
+				"NHashBins" : "16"
+				},
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"DKDScaledPath" : "M0,0 C13.3333333333,-26.6666666667 26.6666666667,-53.3333333333 40,-80 C51.0456,-102.0912 77.9088,-111.0456 100,-100 C126.666666667,-86.6666666667 153.333333333,-73.3333333333 180,-60 C202.0912,-48.9544 211.0456,-22.0912 200,0\nC186.666666667,26.6666666667 173.333333333,53.3333333333 160,80 C148.9544,102.0912 122.0912,111.0456 100,100 C73.3333333333,86.6666666667 46.6666666667,73.3333333333 20,60 C-2.0912,48.9544 -11.0456,22.0912 0,0\nz M-20,40 C6.666666666667,-13.3333333333 33.3333333333,-66.6666666667 60,-120 C113.333333333,-93.3333333333 166.666666667,-66.6666666667 220,-40 C193.333333333,13.3333333333 166.666666667,66.6666666667 140,120\nC86.6666666667,93.3333333333 33.3333333333,66.6666666667 -20,40 z"
+								},
+							{
+								"DKDScaledPath" : "M102.5,-32.5000000001 C75.0000000001,-41.6666666667 47.5,-50.8333333334 20.0000000001,-60 C16.6171598534,-49.8514795603 23.0573534147,-43.0238860867 54.9719149534,-15.4459414894 C12.6494648379,-12.7271866483 3.283826520189,-9.851479560122 0,0\nC59.9999999999,20 120,40 180,60 C186.666666667,40 193.333333333,20 200,-0 C195,-1.666666666619 190,-3.333333333312 185,-4.999999999991 C166.666666667,-16.6666666667 148.333333333,-28.3333333333 130,-40\nC128.333333333,-35.0000000001 126.666666667,-30.0000000001 125,-25.0000000001 C122.5,-25.8333333333 120,-26.6666666667 117.5,-27.5 C117.40715381,-27.5728988199 117.31430762,-27.64579764 117.22146143,-27.7186964599\nC114.809825728,-12.885285908 117.396434897,2.354858148765 124.581982637,15.6490472419 C108.032048229,5.597933101337 99.2033687006,-13.4632097263 102.240376106,-32.586541298 M150.625,16.875 C151.03341902,15.6474818284 151.68635393,14.5020660321 152.534515109,13.5252192825\nC153.38159595,12.5474355606 154.423160797,11.7390767223 155.580582618,11.1611652352 C156.7373649,10.581974671 158.008990879,10.2337380961 159.299466361,10.1427436566 C160.589840468,10.0503227631 161.89793405,10.2152243134 163.125,10.625\nC163.125,10.625 163.125,10.625 163.125,10.625 C164.352518172,11.0334190205 165.497933968,11.6863539298 166.474780718,12.5345151088 C167.452564439,13.3815959498 168.260923278,14.4231607969 168.838834765,15.5805826176\nC169.418025329,16.7373648997 169.766261904,18.0089908786 169.857256343,19.2994663607 C169.949677237,20.5898404678 169.784775687,21.8979340505 169.375,23.125 C168.96658098,24.3525181716 168.31364607,25.4979339679 167.465484891,26.4747807175\nC166.61840405,27.4525644394 165.576839203,28.2609232777 164.419417382,28.8388347649 C163.2626351,29.4180253291 161.991009121,29.7662619039 160.700533639,29.8572563434 C159.410159532,29.9496772369 158.10206595,29.7847756867 156.875,29.375\nC155.647481828,28.9665809795 154.502066032,28.3136460703 153.525219282,27.4654848912 C152.547435561,26.6184040502 151.739076722,25.5768392031 151.161165235,24.4194173824 C150.581974671,23.2626351003 150.233738096,21.9910091214 150.142743657,20.7005336393\nC150.050322763,19.4101595322 150.215224313,18.1020659496 150.625,16.875 z"
+								},
+							{
+								"DKDScaledPath" : "M82.5,27.5000000001 C55,18.3333333333 27.5000000001,9.166666666798 0,0 C3.382840146562,-10.1485204397 12.6315510799,-11.7464790817 54.7099670693,-14.6600978363 C22.4832598813,-42.2285717784 16.7161734799,-50.1485204396 20,-59.9999999998\nC80,-39.9999999998 140,-20 200,0 C193.333333333,19.9999999998 186.666666667,39.9999999999 180,59.9999999999 C175,58.3333333332 170,56.6666666665 165,54.9999999999 C143.333333333,53.3333333332 121.666666667,51.6666666666 100,50\nC101.666666667,45 103.333333333,40 105,35 C102.5,34.1666666667 100,33.3333333333 97.5000000001,32.5 C97.3819837561,32.5026113419 97.2639675122,32.5052226839 97.1459512681,32.5078340257 C104.116689037,19.194124163 115.330062807,8.553974419482 129.055014455,2.229951788816\nC109.784398444,0.340882456469 91.2847691247,10.2925890014 82.2403761062,27.413458702 M150.625,16.875 C150.215224313,18.1020659495 150.050322763,19.4101595323 150.142743657,20.7005336393 C150.233738096,21.9910091213 150.581974671,23.2626351002 151.161165235,24.4194173823\nC151.739076722,25.576839203 152.547435561,26.6184040503 153.525219283,27.4654848911 C154.502066032,28.3136460702 155.647481828,28.9665809795 156.875,29.375 C156.875,29.375 156.875,29.375 156.875,29.375\nC158.102065949,29.7847756866 159.410159532,29.9496772369 160.700533639,29.8572563433 C161.991009121,29.7662619038 163.2626351,29.418025329 164.419417382,28.8388347648 C165.576839203,28.2609232776 166.61840405,27.4525644394 167.465484891,26.4747807175\nC168.31364607,25.4979339679 168.96658098,24.3525181715 169.375,23.125 C169.784775687,21.8979340504 169.949677237,20.5898404677 169.857256343,19.2994663606 C169.766261904,18.0089908786 169.418025329,16.7373648997 168.838834765,15.5805826176\nC168.260923278,14.4231607969 167.452564439,13.3815959498 166.474780717,12.5345151088 C165.497933968,11.6863539297 164.352518172,11.0334190204 163.125,10.6249999999 C161.89793405,10.2152243133 160.589840468,10.050322763 159.299466361,10.1427436566\nC158.008990879,10.2337380961 156.7373649,10.5819746709 155.580582618,11.1611652351 C154.423160797,11.7390767223 153.38159595,12.5474355605 152.534515109,13.5252192824 C151.68635393,14.502066032 151.03341902,15.6474818284 150.625,16.875\nz"
+								}
+							],
+						"BinIndex" : "1"
+						},
+					{
+						"BinMatches" : [
+							{
+								"DKDScaledPath" : "M0,-0 C3.433898899289,3.111084678978 6.870405902902,6.218625880259 10.3221832235,9.310470836497 C13.9557104766,12.5661064125 17.6074808295,15.8004043737 21.3102976629,18.9777803149 C29.3781688375,25.902060908 37.741436955,32.6385155315 46.7974968207,38.2969758793\nC55.9845786874,44.0379722355 65.4377718421,48.3844782681 75.926694306,51.2371033289 C86.2367138585,54.0406385798 96.9451256799,55.2001833108 107.61639167,54.6760892458 C118.287685857,54.1525696317 128.831644917,51.9498267069 138.816962243,48.1500814251\nC148.976390602,44.2842063281 157.958162218,39.0325199424 166.53913635,32.4196564534 C174.997197071,25.9012159979 182.660524016,18.3780853584 190.011780578,10.6972346016 C193.38531838,7.172223196997 196.702781738,3.595835790652 200,-0\nC203.915478672,-4.268791002451 207.804801717,-8.559643365793 211.694944141,-12.8513997007 L109.818713162,99.5423679952 z M277.106509998,-310.889476393 L389.500320292,-209.013252415 L287.624144024,-96.6194444345\nC291.514286449,-100.91120077 295.403609493,-105.202053133 299.268415669,-109.516774801 C302.524051233,-113.150302065 305.758349194,-116.802072418 308.936026459,-120.504616125 C315.860278855,-128.57306175 322.596460352,-136.936028543 328.255495151,-145.992116606\nC333.995915248,-155.179171914 338.342722605,-164.632091942 341.195046342,-175.121287533 C343.998882917,-185.431033959 345.158131786,-196.139724933 344.634310848,-206.811292247 C344.110518107,-217.48228511 341.908088559,-228.025960119 338.108041953,-238.011550572\nC334.242139543,-248.170948798 328.990453158,-257.152720414 322.377588849,-265.733693642 C315.859148394,-274.191754363 308.336017755,-281.855081308 300.655166998,-289.20633787 C297.130155593,-292.579875672 293.553768187,-295.89733903 289.957932396,-299.194557292\nC285.689118697,-303.110010924 281.398266334,-306.999333968 277.106509998,-310.889476393 z M193.338465265,-386.818676276 C189.04670893,-390.7088187 184.755856566,-394.598141745 180.441157595,-398.462972961\nC176.807630331,-401.718608525 173.155859978,-404.952906487 169.453316271,-408.130583751 C161.385171971,-415.054563021 153.021903853,-421.791017644 143.966117114,-427.449779316 C134.778761301,-433.190473444 125.325841273,-437.537280801 114.836672995,-440.38963467\nC104.527227893,-443.193198118 93.8182355947,-444.352720114 83.1472427315,-443.828927373 C72.4756754177,-443.305106435 61.9319949469,-441.102670861 51.9464044936,-437.302624255 C41.7872473267,-433.436503344 32.8051743871,-428.185090085 24.2247756097,-421.572253974\nC15.7661404384,-415.053785321 8.103086619329,-407.530956005 0.751556930332,-399.849803925 C-2.621980871029,-396.32479252 -5.939444229173,-392.748405114 -9.236662491188,-389.152569323 C-13.1521161232,-384.883755624 -17.0414391675,-380.592903261 -20.9315815919,-376.301146926\nL80.9446197161,-488.69493221 z M-198.736987414,-180.139311799 L-99.194483668,-289.957865662 C-102.305776458,-286.524155399 -105.413152923,-283.087499074 -108.50507816,-279.635794522 C-111.760713724,-276.002267258 -114.995011686,-272.350496906 -118.172688951,-268.647953199\nC-125.09666822,-260.579808897 -131.833122843,-252.21654078 -137.491583191,-243.160480914 C-143.232578644,-233.973398228 -147.579084676,-224.520205074 -150.431679604,-214.031255297 C-153.235243053,-203.721810195 -154.394770511,-193.01281187 -153.870676446,-182.34154588\nC-153.347156832,-171.670251693 -151.144146807,-161.12659942 -147.344674652,-151.140980769 C-143.478526428,-140.981853735 -138.227113169,-131.999780795 -131.613974915,-123.419109795 C-125.095807586,-114.96074775 -117.572676946,-107.297420804 -109.891553064,-99.9464655661\nC-106.366814785,-96.5726264409 -102.790427379,-93.2551630828 -99.1945915771,-89.9579448327 C-94.9258005586,-86.0424661788 -90.6349481951,-82.1531431342 -86.3431918601,-78.26300071 L-198.736987414,-180.139311799\nz"
+								}
+							],
+						"BinIndex" : "7"
+						}
+					],
+				"Class_Store" : "DKDBezPathArchive",
+				"NHashBins" : "16"
+				},
+			{
+				"Match_Hashes" : [
+					{
+						"BinMatches" : [
+							{
+								"CenterLock" : "YES"
+								}
+							],
+						"BinIndex" : "10"
+						}
+					],
+				"Class_Store" : "DKDLock",
+				"NHashBins" : "16"
+				}
+			]
+		},
+	"AAAA_EazyDrawVersion" : "11.11.2",
+	"DKDToolbarSelectedButtonPairs" : [
+		"ColorTextToolbarItemIdentifier_0",
+		[
+			"HSB_0000B0"
+			],
+		"ColorFillToolbarItemIdentifier_0",
+		[
+			"HSB_0000D0"
+			],
+		"ColorStrokeToolbarItemIdentifier_0",
+		[
+			"HSB_000020"
+			],
+		"GradientToolbarItemIdentifier_0",
+		[
+			{
+				"GradientFillClass" : "DKDHorizontalGradientFill",
+				"EndGradientColor" : {
+					"BluePlus" : "1",
+					"RedPlus" : "0.999996",
+					"ColorSpacePlus" : "DKDsRgbColorSpace",
+					"Blue" : "0.999991",
+					"GreenPlus" : "1",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedRGBColorSpace",
+					"Green" : "0.999974",
+					"Red" : "0.999999",
+					"OpacityPlus" : "1"
+					},
+				"StartGradientColor" : {
+					"BluePlus" : "0",
+					"RedPlus" : "0",
+					"ColorSpacePlus" : "DKDsRgbColorSpace",
+					"Blue" : "0",
+					"GreenPlus" : "0",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedRGBColorSpace",
+					"Green" : "0",
+					"Red" : "0",
+					"OpacityPlus" : "1"
+					}
+				}
+			],
+		"PatternForToolbarItemIdentifier_0",
+		[
+			"Toolbar_02"
+			],
+		"TextureForToolbarItemIdentifier_0",
+		[
+			"Ancient"
+			],
+		"DKDArrowMenuToolbarItemIdentifier_0",
+		[
+			"810007"
+			],
+		"DashMenuToolbarIdentifier_0",
+		[
+			"810017"
+			]
+		],
+	"GroupEdit" : "Fixed",
+	"DKDCreateTimeStamp" : "2025-06-21 20:52:27 +0600",
+	"DKDDocumentRuler" : {
+		"RulerTickPattern" : {
+			"TickPatternStyle" : "Fifths"
+			},
+		"RulerHasBorder" : "YES",
+		"RulerBackgroundRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "windowBackgroundColor"
+			},
+		"RulerHasBackgroundColor" : "YES",
+		"AutoLightDarkModeulerStyle" : "YES",
+		"RulerBorderLineWidth" : "1",
+		"RulerHeightHorizontalRuler" : "20",
+		"RulerWidthVerticalRuler" : "18",
+		"RulerFontIOS" : {
+			"Family" : ".AppleSystemUIFont",
+			"Name" : ".AppleSystemUIFont",
+			"Size" : "10"
+			},
+		"RulerTextRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "systemGrayColor"
+			},
+		"RulerBorderRGB" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "systemGrayColor"
+			}
+		},
+	"AAAA_DKDDocumentVersion" : "11.0.0 : Cross Platform",
+	"DKDDisplayGraphicDetails" : {
+		"AreaForm" : "Natural",
+		"PercentDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "1",
+			"UnitsDisplaySpec" : "Punctuation",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"HelpTipDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "3",
+			"UnitsDisplaySpec" : "Abbreviate",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"LengthsDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "2",
+			"UnitsDisplaySpec" : "Nothing",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"AnglesDisplaySpec" : {
+			"FormDisplaySpec" : "Decimal",
+			"PrecisionDisplaySpec" : "2",
+			"UnitsDisplaySpec" : "Punctuation",
+			"TextAlignDisplaySpec" : "Left"
+			},
+		"PercentFormatDisplayDetails" : {
+			"PrecisionPercents" : "1",
+			"PercentForm" : "Percent"
+			},
+		"AngleFormatDisplayDetails" : {
+			"AngleForm" : "degrees",
+			"AngleRotation" : "Counter Clockwise",
+			"AngleDirection" : "Right",
+			"PrecisionAngles" : "2"
+			},
+		"InspectingSpecIndex" : "2"
+		},
+	"NumberColorsToListInContextMenu" : "12",
+	"AAAB_Build" : "51015",
+	"AAAB_Distribution" : "Free Market",
+	"AAAA_CurrentOSVersion" : "Unknown: 4039.000000",
+	"NumberPairColorsToListInContextMenu" : "6",
+	"DKDTablet" : {
+		"PenMax" : "25",
+		"PenMin" : "0.5",
+		"PenPressureFactor" : "0.5",
+		"BrushFit" : "6",
+		"PencilFit" : "7",
+		"PencilDynamic" : "NO",
+		"BrushDynamic" : "NO"
+		},
+	"DKDChangeTimeStamp" : "2025-08-15 06:15:15 +0600",
+	"DKDProperties" : {
+		"QuickLookContent" : "First Page",
+		"QuickLookUseSmallerOf_JPG_PDF" : "YES",
+		"QuickLookPage" : "0",
+		"QuickLookFormat" : "???"
+		},
+	"AAA_DKDQuicklookData" : 
+		{ "DKD_JSONDataObject_Base64" :[
+"JVBERi0xLjMKJcTl8uXrp_Og0MTGCjMgMCBvYmoKPDwgL0ZpbHRlciAvRmxhdGVEZWNvZGUgL0xl",
+"bmd0aCA1NDI1ID4-CnN0cmVhbQp4AZWbza7tOG6F534KjwO0Y0m2LI1rllmjHuEChQ7Qd1CoQV4_",
+"36JEyrvPPR0kjVT5cMsS_xdJuf7c_77_uZ9H3f97_8_f_kr7j7_2tP_1Yz_3dOZr_zn-Zc__HM_n",
+"_k9-1T__sf-x5_2_9GLefvtd7_D_v__Gjno497_pX_buj597vit__dyvXI9a68Mfd3-Owv_x-NTG",
+"P3_s_exHaeXZ5ospXUdNtYxttMeP8Rjb2P6xk_2lzeay2M8fxttaMRhbTNjfn9vqvLnsgxG4i_0G",
+"79JYMHG-hRw8I05I4g-ndMJWP9CkVkk7v2MQ6VOGOI-W7toQ_ldPGKmnftw9w2PNR7t63X4arZYn",
+"wXc9ejkvOG1Hetq134nVnZ9au4-eGxo_cn-ulorUVdpxPinvfwvqhsnTfTy8eh698gq7XkfqJdv2",
+"uSXpB8rFZmIin2dnr6-MyVu-UJH3D6TW_77zmnin1XSk-7zeIvb0HGftdYnYn3xc51mWiJivHA-U",
+"l4QyqSRf8vWnHGc5nyWf9n4SWgv5xMHTOzGyJAmuPuRz6rSnWy_MuB4w4nU1Dqppv3o-npo7Egat",
+"YLMObVFyQg8flOc8igg_9tLr8dz3s0_SVp77SHKglM7jzvXekfpI-ek89KNf7ea1HG5E8KEbtNA5",
+"9rXRni58Bya3dZiT9vI8xy0GglLbZZIsCmobcnDaVY6urYJWrnoUaSAoIX9QXnrqleVvDWz9Osd5",
+"6z3c1rTEe881dm9p6BdFI7rOe9CK7XTne4hXz8f5jFVBi50WxW0XlMXndvfJQ3B1t_zJ-X5XIngY",
+"T6tIKsQaNJwWh7iGOTaSwHE18qQoGX-_K2xeRcaT9nPRa08nU15tL0jV2912_mIV5sxV-iFoqzZ6",
+"St0wQ0tHvVviPZzmKXu5SQqF8L1JHOjqXj53Yb2rFOXeLKFMd33oDm8tZzpK721_RLvhhUg6ajtF",
+"4ZST5FBSQYSrQ7mOM5H-YR2_yxgCWj2u1PJWiEuy_QUFEz11Lxld3E_eG1nmykl5HcA4boU4ea1V",
+"sl8pSgOc1hA4NdJVKf24ai5b44jeL8VswYXbc7IVxn56y1AKsqDOVjKprzsFz2gkQw8qW4W_Bm28",
+"9171laLzfPcLoa4Kn5ODrSmdZok3-dzbjRFKMq2ENOTTu5CBQmCsTjDDZmiFdEeKx5yhuSZzXhgj",
+"tNsaVjl1mtug4YfPaZksLCVMSOnZwpitKcywRZh8UCzTAB4HWrvIs76KPe87iWIb7cgHIw82WKdl",
+"0gfBisadJ3ISFsdZg--sRP_cEEw2-ZyUk3vemisg3-j20WGuo4xKn9r7W5OZiMKIkKa680XyS3hM",
+"mybZBuVtSiUoX-VuERu556zTwr-2xZN7ofO9PDVkW94cCnCXdx1tHhWhyXfsZFd3RFiYJKLQDcdO",
+"M89ZpfGvESwU_o89HXn_n19Xbit_FVZRW7wRqmKmU_VGrFKepYJ7UTrmspoEP3WIctrCqC73fEhq",
+"gVEP6eC80wdGdbTbgOuFUbFT4I9T8J2gEYHkMNVFE8os-CTNizJF-YFfDJAiroZ0gVFOCHGdsDI_",
+"KXWI62tIHaa3paOk3KWzX_gkZDd-AnkUsKY3x6f9StX4IeJjldMW0i2K41NQXlxeefCwOZuwR7b-",
+"sNx1k3Ynn45PopGbVZPMcuECOqgOHnYa-HQRsedNuYHBHZ8uYq60m-zl-HRRbpDcy8InYRBlyrVj",
+"Aceni3DMgNjCJyozsvwLn25scCtVvfApgxImy8-V0oym9BNZL_Nm6RS9kRszubULa2Hd8YnjD6Cy",
+"LXzK8kzSX2Riq6EeQIXXJj5l1SDF0GjiU0ZgomPl_S2TCM7ztuLN8Sn1Rh0N1AWCWDmWAbjAmUSS",
+"9YhyfAra11VfKbDp-JQoHMpdEMbxKakaJvgWPmHcI9dmWnF8ogoAZIFvF5hmBYHprEIrifKV-vyN",
+"T0nmvIHh0G6CEXoLTnN8UohmaiEp0ysJtSetlWVMVIsKKEo8zdHBzLjDDRyf1ipPmHOjyKrb6zTP",
+"vaSEyVOk5-Dbc_iUTT7n-BQKCCwIHQVivDTpsBLqDuRxkyx8CuO-8CncIjZyz4nTln8tfAovdL5p",
+"AKanumwvbw4FuMu7jjaPitDk_oqdwKeIsDBJRKEbbotY_cCnoI6u-KZ2oM2su7LNmYmZnyRaetWE",
+"WxZQIeeaKZUJX4pg6ZReflTT9XnIH_mgWFSFVbPSnNxUyYZytWLt3K57B8vq1UkQD0ues16bNNLR",
+"GK9RM1JAksBUxKAWVZKGKURAxvELJZaqmPaQ16GcBa_mPf4mTmrfVO3lAk_todWmhudgbWDVT1ON",
+"eO8Dutib89grX6wSrRUSQkWodtW2dVLwCccogBi8tETyK9-KUjoNHt06At8q8KFcjUUnYe0U-j-x",
+"C2tQCND7IvVSVT-0jOeDLm6yHyq4OZVqMaOvqwsUTenloQzlJdbcJ1WXDKFyULskCJtZhjrUfqHW",
+"bPYAizKAfqyCAlpMnf8MCk0UG1AsZzRiawpl903RQcmuyl80MIpVKkTU19ox9GVQqP8uQEmUk9-N",
+"kk9gAoNfsg_OQV55LkYiD_B7gRqsZkhyJVrBmy78oR2ubETbrNce8slz4jpU4bToqLLWQil91g0j",
+"qAqRAeSVFJBsp1Qn8VS2VIZBbAq6lPPGUxklsC2OZSS0yKTlONlhe_QiGABT2FtdlMAzdePgZPeO",
+"7GLvKhkOVL09mJdJAchBHq0Ud9iLremLweYbYzI0gk_844E9zI7rqAhXj2ReVW6cXiX4o3P56UQg",
+"KQp_oLaC80arcd_3VlXFy2fVt5E65YRQ5PzibfjcF9J3hO1fX6qc35Ab2Qs7ExaZnVFNV68oFrE3",
+"BPTfLqGP5Gg3HWxDyXeDMclKZ_gQjYT-ySpphECkiaPioIXRa6itkJWtsaPbRQ-wX8kW9AIYiQzI",
+"aION2N-6gydZrykr0choFUXHiX_IkHdV-6nu4pJt4ISGYhCKJk0brZymLPCkRWJOvkTlodesGCDQ",
+"lHRO3h_NiM3gCBiMinXFVMbD8Q5kkPer-6xSl3mqGneJl7UlHodf4jHsjg4eDYDwheeiVZOaiDDs",
+"R2IkR6klZiNaJyUYhjq8o3qdkOFv-Qj1mCxyYwgj3ChCZiMDjKzEIlwRhyAbyN20DTNEFIHT1IfE",
+"rLPOSs32UMRhCXNlOKr3iePjPyQYcUQ6Yk_5KD4PASfnrbaJe7KJHYf8Nrx8SMSNJMa40nKgrSaj",
+"DkWeVIdQmGDgNiNygQN2IrjuO7OIsGZiokMwd9Ig4kuUCn2-Uq07-nP7xUR7xD6IpPkMoZzeiETO",
+"01iFRDYRSV0oxW41iDJE0nCLRGpuPSFJJHog4twhqVNCFXIsnA1IQm_EK22f_MwhSRBxqncKSNJO",
+"rar7Rd8GSWOWxt4LkggeTeoUTg5JY5qH7kUxSMI8JIBH-SEgCVqqsrlDEhGGCtKtzD8gCQJYwksL",
+"kYhBPBxocURKGasMlFDFByIlEPEWhfcGIlEDod2MfQORNBUlKrMjkuVezK2XHJGMRhJwRLIE_Qjr",
+"ZDZDJC158GXjcSISQK3zB7IQbw9dFeUxsWSpHlWR6hnUJihCTfYyRLLhLcWmUajjLuONjDPw0hBJ",
+"-MmUSTqZiLRfpDNKGeLcEUntDlkBezsi4eOEBYg8_NoQicGtKhZS5EQkoFTIm3EvsSRE0gPpyPKD",
+"-3pG85Qib0QaJDnYRCTqOV7sfWREIRJlEwmZ3AMHjkiqCylh4MARyUoljQEDkUD2A_3z3haIpNL4",
+"ZKRtmdwQSVXvg6dBmYiUwWk8WvEfiEThxDUD6SYQSdUmcrLTRKTMpP8ePveF9B2BKvbzJaVYEjbe",
+"iDEdkdSan1YATEQicVN4WjETiJSYWV70PwuRkmadnVWOSKkxo61koRciqbJX6boQKan1pRZZiKR-",
+"gPrZEqIjUlJcd4YjgUhMzUixeKojkhEqhcgLkYz2UDIHImmjTsm4EGm0HyRb7O2IJKbI9KpXJiKJ",
+"cRLwC5EkHrBg7zkiSQdMU8haE5GkJiJM9cpEJCmzkEaVXwyR7I6jU9YGIskiSkGBSDIbkDCS0kSk",
+"TI4_cbeFSHIagATQ4SxDJFAFZLbJuTgyRJIDEpbiaCCSfBSeVa1NRJInA212nCMSNmOaKPyZiGSt",
+"klKGoN0QiZxEMCvjStuGSAouYpxFjkgWgI1VgT0RpR-IFNTRD5Xtm3Gd3T5VzdzlNSqIfjInxYGJ",
+"DRvHMDnqXN_qqvHLTe3GTe3_Z4Nxe8c1lvSnezUO8zvUzf6OW1H763XxGjeo9oP945O0rnG5S5k3",
+"xbbMDxgH6uR52xt3rLHRuln2LbhwjfftBpbbR16ngbR7Zgn0-mNs_vGKb7SfFCryiNdlcLxpfIZO",
+"ZMd5oc11CdmNQmxeaSt96Dp8KGupYkrkPw9RP18V3_H7GfsioP4nvmL9-V5oh3ywxPxX01_K5pv2",
+"N_NwkxUumPr2YlZHfH4d8Et_2vGnITlDYztYXw58u1SF6U1K_2mXV5TCwlHVIbTUlSRcmIQCmuSL",
+"rapdKiTXi7KVO0Ero7iJotFjRsCNlwrQG-zk-kizaFBcNf1NxZMyyHnRjdPOq4wiHdGPkl4vYpIL",
+"M7pIwSqVMA0OGKM-j5IDLOU03QtTnaFfawshaGhApaMhLfz1TXPNrmt5SXIlmSKEiN9MiPVyCPHa",
+"fwqxBRMhRPAZQsQDZ7kQa_mUgrZ1qCUOiWN5zeWYnLkQi3UkkUQsnb9tLvJ62XUylRRq46VQpevW",
+"-XT1byFEGInXwnBhyilEDWO7A4RL_NiGEMtllhNp4CqDqnCwNiiE0H3p-E39fvjbFkKs_cNBggkX",
+"YrlcCBEPeJoLEcvXBlMtcUgcS5S76w_1OqNL_x43imp_HjDxJcMrIpW3RpjxRGVDrQG6qmwEl4AK",
+"uik8l1FMV1QI4G7CCiujoFFQFu5Q1TPyrQ7ASlzwCYMu6TpzeoKpUqchKmMMlgjoGrCIHMBwAXw1",
+"1QUI1ebwWyF2NR3Mgvwq34KNTDEDP-RXwhPwVuwKcSu3FaM1oJsFdWj5-ErGpBm5OgSJ30IQf39z",
+"QdYhS5DgZAqymA1B4uEH4-gpia9er7tm4hA_FbB0QRZrU5BlB0kzwi0EsY7IxPb3l2pcXa4_3aC4",
+"Sl3JwWzYwU0TxmLiPuz3MugUhKnGNLoLEo6hMHVnCfdZDjVczKQxxGQQpwsj7OfuR7MybRzu54K8",
+"DglvCU6mIFt4XwgSD9Re7pou9nrdNROHzFNp7YKRF2suyIv9aSMmBxFTv0Q3FVadmcoIO54YdVFz",
+"M0CiQmX40S3EGbJyI0SzwjhJcz3NonXxxUhVlQbfLxA33ENRMd-aGTaBGN29XaERx7TtZEVuUgkW",
+"HcH9OK-priVKmIoL_Ch_rWegDLy3pB4YtvRlSNc4EatQNDIUV9YhWimhqYcUd_Cuy3pGGAA5h-ij",
+"KkkDqrPYBaGOmb-FJP56CPI6IyRxRvStignivNKhTUHigdrIBVnLpyBrQxckjv2xOSeLtWDW7SBp",
+"RtiFIEvsqQdXzBaChPpgbTKitkwqXryGGUKQMBbR6nKHSUOSafXlCOEaqN3dJfxnCrKFi0kaeR4F",
+"i9svfnNJwv1CkHUGwTUlcUZCkOA1BIkHnNV9cy2f7rs2dB-PY_VtnfCHKYJ7XzD7Zn_YaOOjwogp",
+"hV367huGxLeLVrDaN4y0Kd8Uodb_MIfS2qZ5lFqab9Y6kmqtov_frdW-pC_bV__-d2u1r4ymfWeA",
+"fcuD9tU3Qlqrf_9f-wpVtDZak29k075wiba8yOfxm7Wjxpe25lo9frN27CttzbV6_Gbt2Ffammv1",
+"-M3asa-0Ndfq8Zu1Y19pa67V4zdrx77S1lyrx7HWv5c-7XtpXcZwU0blQwlUGbpzk8U7JDMqJu6p",
+"-RiNS_bxnZoyHNPTypBOHRrOr098ua85mz7YVXmRn6IZKGNWbragcsMJmuvih986NxHlBAXogIgy",
+"SDUxQGQVJRQ_23UlUcQ1MDtrCMGoik8-9fWYUXQPxve8O-O5k8-Dy6YbYCZuOpIclzMHkLeY5vA5",
+"H1_aCFFEIX9QviEgGZm7IyjsxAc6eo-ZB5-Mno0ky3mAG5Ww7ldZxTc_zLO4DKUkSHxmq6sCW6Kk",
+"ZD_CxFjO58zAjX69Ev2AMQXFjpG6dPC4Vh3MQDP2kt4zhkWRCCeUIRY7SVBG5qpBNVx89BW01IEq",
+"hZ2cpxsVqYxvHaGYGrkWlGZvKOrhhrrZTBbg6zmIwyi8KTtpL0hmPEZOMiifljAw1buUR7TUSR9X",
+"4yiYXoiOR9BoMA1f5KQPqOk8bdUHWbyPl-Uk3GqNrTiEDa_Ot8z_GNFf1A5pxDM91tdRnPNhC85b",
+"1cvCxNoeZh79gH2Ze6UtuIQd3csx2OQCeq2HrKtIlQ6o-0NSugIVFC-VgB90g_pmdCmOTkEzeJGW",
+"gnV_wy3fyw66mswnFLcVF4jUYJoGvCxqF2EVlYfd-fqVqBJFrivf0EeIfH-6PIgKr8Mql7gMB9zP",
+"-CgTF8Du5rryxU6p16idPj2W8NZ1j_v1RnujK1TOc9-Py5ZXhKA1-if7Un7GESWGpqqE2Iw1VU_c",
+"Qobrjog8ufrR3cJwXeKW8KIiY-YQsQ2FiQV5zDMA8hkNLU_PZS-jcAO5solR9A3uK-lA08dA8thx",
+"1jUddf6Ff04PU7tpq5mjfvjc8CR9E669hgONv1B1qtYcchlj-Uaci6fhOWlyKb6H4ygDuXTDb7gd",
+"MelMBwyk5TbjvaGn4TZ23tTmcJt53tT5cBvTyrAL3-XKbaCE9YbbmBXCxsNt2KsrzZsfmNvAsHsL",
+"X6TLbdAXXuY-NZZrd_e7sSU7hXeOg-Gc8mn6MC5h7HGZrAtf82p3m4iG6TY2afaYQWlTHTOuNGIc",
+"bhPhF4pVlzSj1Gimfg9lo8hEHvLayQwJn5EdoGHqmULcLWamsd_MZlGiMBG1LGTZLGtH4eWETiu8",
+"OMEG1QM3CS47lEw1QZPS2igktci6g4KHkXMNMZXWtcq83gBTaUEUiRiJ3iiKHzXnDgdTXdxATshg",
+"1YxEw0vbyTxMil_w4-ZZEDVNaN-a6b-jWP-pA-9NuNvDHQISw2UCON2xkG_Bq7ufQ_D0MBwrgPrl",
+"yAHn7u5bQH6EhBcGtJPKtxY4UT6s8PISw0MQaPRK5BWpUbGsgF51TUS9UGQWQMPNuEvWDDuSB4_m",
+"XEQHj55wPkDRmlHVcp_OJXvrPxz6Y__7_wKK_bpiCmVuZHN0cmVhbQplbmRvYmoKMSAwIG9iago8",
+"PCAvVHlwZSAvUGFnZSAvUGFyZW50IDIgMCBSIC9SZXNvdXJjZXMgNCAwIFIgL0NvbnRlbnRzIDMg",
+"MCBSIC9NZWRpYUJveCBbMCAwIDEwMjQgMTAyNF0KPj4KZW5kb2JqCjQgMCBvYmoKPDwgL1Byb2NT",
+"ZXQgWyAvUERGIF0gL0NvbG9yU3BhY2UgPDwgL0NzMSA1IDAgUiAvQ3MyIDYgMCBSID4-ID4-CmVu",
+"ZG9iago3IDAgb2JqCjw8IC9OIDEgL0FsdGVybmF0ZSAvRGV2aWNlR3JheSAvTGVuZ3RoIDMzODUg",
+"L0ZpbHRlciAvRmxhdGVEZWNvZGUgPj4Kc3RyZWFtCngBpVcHXFNX2z8392awwp4ywkaWAWXLiMwA",
+"sofgIiaBhBFiIAiIi1KsYN3iwFHRoqhFqxWBOlGLVurGrS_UUkGpxVpcWH2fm4DC2_7e7_t-X-7v",
+"cP_nOeNZ__PcA0LaW3hSaS4FIZQnKZSFJ3DSpqWls-j3EQMZIk3kijR5_AIpJy4uGqYgSb5ESL7H",
+"_l7eRBgpue5C7jV27H_sUQXCAj7MOgWtRFDAz0MIm4wQw4QvlRUipDIN5NbzCqUkLgOsl5OUEAx4",
+"FcxRH14LYmQRLpQIZWI-K1zGK2GF8_LyeCx3V3dWnCw_U5z7D1aTi_4_v7xcOWk3-bOApl6QkxgF",
+"b1ewv0LACyGxL-BDfF5oImBvwP1F4pQYwEEIUWykhVMSAEcCFshzkjmAnQE3ZsrCkgEHAL4rkkeQ",
+"eBJCuFGpKCkVsAng6Jz8KHKtFeBMyZyYWMCgC_-CXxCcDtgBcJtIyCVzZgP4iSw_gZzjiBDBFAhD",
+"QgGDHYS3uJCbNIwrC4oSSTnYSdwoFQWTdoIuqno2LzIOsB1gO2FuOKkX9qFGSwvjyD2hTy2S5MaQ",
+"uoIAnxcWKPyFPo1RKEqKALk74KRCWRK5FuyhVWaKw7iAwwDvFckiSDn4SxuQ5ip4BjGhu_JkoeEg",
+"h5jQi2XyBDIO4CN9l1CSTMYTOEJ_iFIwHhKifDQH_vKRBHUjFipAYlSkQFmIh_KgscACZ2jhMEsC",
+"TQYzClAOyLMA93wcJ_vkCnKNC5LCWD7KhLm5sHJEzkIC2EG5ktwlHxrZI3fuVezMH9boChqDzb9G",
+"chgXoX4YFwGairoUkmKwMA_6wSCVw1gW4NFa3IFJ7ihOYa3SBnKc1NI3rCUfVggUupTrSD-VtgWD",
+"zRJUCmOkbQrfCUOCTUyE5kdEE_4EW6FNBjNKkItCPlkhG9H6yXPSt76PWueCraO9Hx2xkSifhngV",
+"ws654KFkOD4FYM07sDtnePWnaCo0rjKRO0ilNSviubPqwV7wvFw2W8y_vHKgveyYEWLdXH7qAmLt",
+"12o5r_CHjAyrk2iecV29vey_ZPVTNkdsG5vV2NG8UTBJ8DfegC7qNeoV6kPqDcSC9y_UTmovoHvU",
+"-_Dc-WjPpxyQnBKDXMkJJdv4GK6YSbKQA5HJVYzmQTTITAkVeQqHdTyIbwFETw68I3PtAgwYnYux",
+"DCF3Gz1OMkKpPQv2VfY-MZ6vkJAMIfWTbPl7fP4vJ2TU-ciUrDKRSmfVlw0Jpcr8kbkTLo15GYPK",
+"ndkH2f3sXez97Bfsh4ooKPLHvsX-jd3J3gEjT_G1-BH8ON6Ct-IdiAW9Vvw03qJA-_Fj8Hz7cd3Y",
+"E6GM8dgTQfKTP3wCSO8Lhzk4-qyMrgpkPsh9yGyQ80dimD18skdzlYz4aA6RsfzfWTQ61mMriDL7",
+"ilPKtGa6MelMR6YHk8PEmJbwuDODAFkzrZjRTEMYjWDaM0OY4z7GYyRjuSAhGUQy7xMXlXUvDawc",
+"YRrpnwiyL1NUOd6wv__pI2uMl2QFFI8-Z5gGnGSlJmUNGdE5EldFhsdU0GTQJEbzwA4ZxJWsDhKo",
+"Pawxc8jaTVYtYDw2XZHDf-AozZdmTwul2cNaZbVi0UJoEbQwxKK5kXLaBFokYB9yFmFOuBFcqHqx",
+"iEVwCA8iaBiTlXAyPGQdVMbIhQiE0QAihPAma-Rob8ESZWzJavnPno4-hXDXKBQWw30FoeB8aYlM",
+"nCUqZHHgZiRkcSV8V2eWO9sNvojkPYucg9CLeMX9CTPo4MtlRUoZQb6oSBXuYHrIGJkja_iqu4Ct",
+"XsgPvrOhcG-IRUkoDc0C60SQSxnEtgwtQZWoGq1C69FmtB3tQg2oER1CR9ExdBr9gC6iK6gT3YMv",
+"UA96igbQSzSEYRgd08B0MWPMArPFnDB3zBsLwEKxaCwBS8MysCxMgsmxMuwzrBpbg23GdmAN2LdY",
+"C3Yau4Bdxe5g3Vgf9gf2loJT1Cl6FDOKHWUCxZvCoURRkigzKVmUuZRSSgVlBWUjpY6yn9JEOU25",
+"SOmkdFGeUgZxhKvhBrgl7oJ748F4LJ6OZ-IyfCFehdfgdXgjVIF2_DrehffjbwgaoUuwCBfITQSR",
+"TPCJucRCYjmxmdhDNBFnietENzFAvKdqUE2pTlRfKpc6jZpFnUetpNZQ66lHqOegavdQX9JoNAPg",
+"hRfwJY2WTZtPW07bSjtAO0W7SntEG6TT6cZ0J7o_PZbOoxfSK-mb6PvpJ-nX6D301ww1hgXDnRHG",
+"SGdIGOWMGsZexgnGNcZjxpCKloqtiq9KrIpApURlpcoulVaVyyo9KkOq2qr2qv6qSarZqktUN6o2",
+"qp5Tva_6Qk1NzUrNRy1eTay2WG2j2kG182rdam_UddQd1YPVZ6jL1Veo71Y_pX5H_YWGhoadRpBG",
+"ukahxgqNBo0zGg81XjN1ma5MLlPAXMSsZTYxrzGfaapo2mpyNGdplmrWaB7WvKzZr6WiZacVrMXT",
+"WqhVq9WidUtrUFtX2007VjtPe7n2Xu0L2r06dB07nVAdgU6Fzk6dMzqPdHFda91gXb7uZ7q7dM_p",
+"9ujR9Oz1uHrZetV63-hd0hvQ19GfpJ-iX6xfq39cv8sAN7Az4BrkGqw0OGRw0-CtoZkhx1BouMyw",
+"0fCa4SujcUZBRkKjKqMDRp1Gb41ZxqHGOcarjY8aPzAhTBxN4k3mmWwzOWfSP05vnN84_riqcYfG",
+"3TWlmDqaJpjON91p2mE6aGZuFm4mNdtkdsas39zAPMg823yd-QnzPgtdiwALscU6i5MWT1j6LA4r",
+"l7WRdZY1YGlqGWEpt9xheclyyMreKtmq3OqA1QNrVWtv60zrddZt1gM2FjZTbcps9tnctVWx9bYV",
+"2W6wbbd9ZWdvl2q31O6oXa-9kT3XvtR-n_19Bw2HQIe5DnUON8bTxnuPzxm_dfwVR4qjh6PIsdbx",
+"shPFydNJ7LTV6aoz1dnHWeJc53zLRd2F41Lkss-l29XANdq13PWo67MJNhPSJ6ye0D7hPduDnQvf",
+"t3tuOm6RbuVurW5_uDu6891r3W9M1JgYNnHRxOaJzyc5TRJO2jbptoeux1SPpR5tHn95ennKPBs9",
+"-7xsvDK8tnjd8tbzjvNe7n3eh-ozxWeRzzGfN76evoW-h3x_93Pxy_Hb69c72X6ycPKuyY_8rfx5",
+"_jv8uwJYARkBXwV0BVoG8gLrAn8Osg4SBNUHPeaM52Rz9nOeTWFPkU05MuVVsG_wguBTIXhIeEhV",
+"yKVQndDk0M2hD8OswrLC9oUNhHuEzw8_FUGNiIpYHXGLa8blcxu4A5FekQsiz0apRyVGbY76Odox",
+"WhbdOpUyNXLq2qn3Y2xjJDFHY1EsN3Zt7IM4-7i5cd_H0-Lj4mvjf01wSyhLaE_UTZyduDfxZdKU",
+"pJVJ95IdkuXJbSmaKTNSGlJepYakrkntmjZh2oJpF9NM0sRpzen09JT0-vTB6aHT10_vmeExo3LG",
+"zZn2M4tnXphlMit31vHZmrN5sw9nUDNSM_ZmvOPF8up4g3O4c7bMGeAH8zfwnwqCBOsEfUJ_4Rrh",
+"40z_zDWZvVn-WWuz-kSBohpRvzhYvFn8PDsie3v2q5zYnN05H3JTcw_kMfIy8lokOpIcydl88_zi",
+"_KtSJ2mltGuu79z1cwdkUbL6AqxgZkFzoR78U9ohd5B_Lu8uCiiqLXo9L2Xe4WLtYklxR4ljybKS",
+"x6VhpV_PJ-bz57eVWZYtKetewFmwYyG2cM7CtkXWiyoW9SwOX7xnieqSnCU_lbPL15T_-VnqZ60V",
+"ZhWLKx59Hv75vkpmpazy1lK_pdu_IL4Qf3Fp2cRlm5a9rxJU_VjNrq6pfrecv_zHL92-3PjlhxWZ",
+"Ky6t9Fy5bRVtlWTVzdWBq_es0V5TuubR2qlrm9ax1lWt-3P97PUXaibVbN-gukG-oWtj9MbmTTab",
+"Vm16t1m0ubN2Su2BLaZblm15tVWw9dq2oG2N2822V29_-5X4q9s7wnc01dnV1eyk7Sza-euulF3t",
+"X3t_3VBvUl9d_9duye6uPQl7zjZ4NTTsNd27ch9ln3xf3_4Z-698E_JNc6NL444DBgeqD6KD8oNP",
+"vs349uahqENth70PN35n-92WI7pHqpqwppKmgaOio13Nac1XWyJb2lr9Wo987_r97mOWx2qP6x9f",
+"eUL1RMWJDydLTw6ekp7qP511-lHb7LZ7Z6aduXE2_uylc1Hnzv8Q9sOZdk77yfP-549d8L3Q8qP3",
+"j0cvel5s6vDoOPKTx09HLnlearrsdbn5is-V1quTr564Fnjt9PWQ6z_c4N642BnTefVm8s3bt2bc",
+"6rotuN17J_fO87tFd4fuLYaLfdUDrQc1D00f1v1r_L8OdHl2He8O6e74OfHne4_4j57-UvDLu56K",
+"XzV-rXls8bih1733WF9Y35Un05_0PJU-Heqv_E37ty3PHJ5993vQ7x0D0wZ6nsuef_hj-QvjF7v_",
+"nPRn22Dc4MOXeS-HXlW9Nn695433m_a3qW8fD817R3-38a_xf7W-j3p__0Pehw__BgkP-GIKZW5k",
+"c3RyZWFtCmVuZG9iago1IDAgb2JqClsgL0lDQ0Jhc2VkIDcgMCBSIF0KZW5kb2JqCjggMCBvYmoK",
+"PDwgL04gMyAvQWx0ZXJuYXRlIC9EZXZpY2VSR0IgL0xlbmd0aCAzNTcgL0ZpbHRlciAvRmxhdGVE",
+"ZWNvZGUgPj4Kc3RyZWFtCngBdZC_S0JRFMe_aiGYDZGDQ8ObouFVokEuDWogRdDDCrKm5_NXoK_L",
+"e0_CaIvWEPoPMmgOGpIIg5aGhiBqiKityanApeR27nuJLp7Luefzzvmec--7gDuoMlYaAlDWLSOV",
+"jEub6S3J-wkXLdtUzWQxRVkRH93oVLp7-8XRPk2LWa1O_Th6lLwrX96s7r8GZ7uqAdGXzZka1X7J",
+"QxozLMAlEyt7FhN8QBww6FLENcEFh88EZxy-sjXrqQRpHoglrahmiVvEcqYvX-jjcqkizhUm_tSf",
+"0zfWKAbIJ7CIHZhgKEFFFRIURAbo52x9ArukrsKgvgKKsKgnRhkxIUe8BB0aZiAThxEiD4t3pl6y",
+"9vP_-8m93OEHsNDknF_3cstN4GIe8DV6uakoMDYC3DeYaqj2OA_t7nwe-DoHRtPA-CP1bJv5SNiu",
+"u_xxYPid8-9JwHsCdGqc_5xy3qkDnjfgVv8DFylqvAplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmoK",
+"WyAvSUNDQmFzZWQgOCAwIFIgXQplbmRvYmoKMiAwIG9iago8PCAvVHlwZSAvUGFnZXMgL01lZGlh",
+"Qm94IFswIDAgMTAyNCAxMDI0XSAvQ291bnQgMSAvS2lkcyBbIDEgMCBSIF0gPj4KZW5kb2JqCjkg",
+"MCBvYmoKPDwgL1R5cGUgL0NhdGFsb2cgL1BhZ2VzIDIgMCBSID4-CmVuZG9iagoxMCAwIG9iago8",
+"PCAvUHJvZHVjZXIgKG1hY09TIFZlcnNpb24gMjYuMCBcKEJ1aWxkIDI1QTUzMjdoXCkgUXVhcnR6",
+"IFBERkNvbnRleHQpIC9DcmVhdGlvbkRhdGUKKEQ6MjAyNTA4MTUwMDE1MjFaMDAnMDAnKSAvTW9k",
+"RGF0ZSAoRDoyMDI1MDgxNTAwMTUyMVowMCcwMCcpID4-CmVuZG9iagp4cmVmCjAgMTEKMDAwMDAw",
+"MDAwMCA2NTUzNSBmIAowMDAwMDA1NTIwIDAwMDAwIG4gCjAwMDAwMDk3MTcgMDAwMDAgbiAKMDAw",
+"MDAwMDAyMiAwMDAwMCBuIAowMDAwMDA1NjI2IDAwMDAwIG4gCjAwMDAwMDkxOTEgMDAwMDAgbiAK",
+"MDAwMDAwOTY4MiAwMDAwMCBuIAowMDAwMDA1NzA1IDAwMDAwIG4gCjAwMDAwMDkyMjYgMDAwMDAg",
+"biAKMDAwMDAwOTgwMiAwMDAwMCBuIAowMDAwMDA5ODUxIDAwMDAwIG4gCnRyYWlsZXIKPDwgL1Np",
+"emUgMTEgL1Jvb3QgOSAwIFIgL0luZm8gMTAgMCBSIC9JRCBbIDwyOTUyOWM4MWM2MGVlY2E4NjFm",
+"MzcxNWQ0Yzc5NDQzMz4KPDI5NTI5YzgxYzYwZWVjYTg2MWYzNzE1ZDRjNzk0NDMzPiBdID4-CnN0",
+"YXJ0eHJlZgoxMDAxNgolJUVPRgo=" ]
+		},
+	"DKDLayersList" : [
+		{
+			"LayerGraphicsCount" : "3",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Mask-Shape",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "D11A4C4E",
+					"GraphicStyle" : "15",
+					"PathArchive" : {
+						"index" : "7",
+						"DKDNormalizeTransform" : "0.273126618286 -0.30132390192 0.30132390192 0.273126618286 -198.737037409 -180.139256643"
+						},
+					"Class" : "DKDBezier"
+					}
+				]
+			},
+		{
+			"LayerGraphicsCount" : "14",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Drawn-Grid",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "9F0AAB2E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M128,0 L128,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "F88F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M896,0 L896,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "867F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M768,0 L768,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "646F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M640,0 L640,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "325F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M512,0 L512,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "BF3F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M384,0 L384,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "2D2F903E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M256,0 L256,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "B9E3413E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,128 L1024,128",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "9871333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,896 L1024,896",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "F561333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,768 L1024,768",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "7351333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,640 L1024,640",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "5141333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,512 L1024,512",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "4F21333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,384 L1024,384",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "3C11333E",
+					"GraphicStyle" : "8",
+					"SVGPath" : "M0,256 L1024,256",
+					"Class" : "DKDLine"
+					}
+				]
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "70BE3B1E",
+					"GraphicStyle" : "24",
+					"SVGPath" : "M0,0 L1024,1024",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "A38F5C1E",
+					"GraphicStyle" : "24",
+					"SVGPath" : "M0,1024 L1024,0",
+					"Class" : "DKDLine"
+					},
+				{
+					"GraphicID" : "AA97443E",
+					"Bounds" : "{{410, 410}, {204, 204}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					},
+				{
+					"GraphicID" : "8A86563E",
+					"Bounds" : "{{256, 256}, {512, 512}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					},
+				{
+					"GraphicID" : "F166473E",
+					"Bounds" : "{{102, 102}, {820, 820}}",
+					"DKDLockInfo" : "10",
+					"GraphicStyle" : "24",
+					"Class" : "DKDCircle"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "DE20E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "5",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "Target",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "1",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Mask-RRect",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "747FAA9E",
+					"GraphicStyle" : "11",
+					"PathArchive" : {
+						"index" : "1",
+						"DKDNormalizeTransform" : "0.078125 -0.15625 0.15625 0.078125 -20 40"
+						},
+					"Class" : "DKDBezier"
+					}
+				]
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "0FCB6974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "6ED7A974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.168826879,379.204297487 L861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "C3DB6974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					},
+				{
+					"GraphicID" : "C5E7A974",
+					"GraphicStyle" : "40",
+					"SVGPath" : "M861.168826879,379.204297487 L861.057669669,377.49985513",
+					"Class" : "DKDPath"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "5030E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "4",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "4 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "9A3486C2",
+					"GraphicStyle" : "9",
+					"PathArchive" : {
+						"index" : "17",
+						"DKDNormalizeTransform" : "-0.064729073833 0.195437131002 -0.195437131002 -0.064729073833 250.625862777 -107.165498694"
+						},
+					"Class" : "DKDBezier"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "0130E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "2",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "3 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerState" : "On",
+			"GraphicsList" : [
+				{
+					"GraphicID" : "92F2C5C2",
+					"GraphicStyle" : "9",
+					"PathArchive" : {
+						"index" : "33",
+						"DKDNormalizeTransform" : "-0.065104166667 0.1953125 -0.1953125 -0.065104166667 215.470533855 -25.5541145836"
+						},
+					"Class" : "DKDBezier"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "C130E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "2",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "2 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerState" : "Active",
+			"GraphicsList" : [
+				{
+					"Bounds" : "{{104.148757414, 861.150391877}, {815.444018296, 163.147089465}}",
+					"MajorArcModifiedCircle" : "YES",
+					"FlatAngleModifiedCircle" : "4.711593424393",
+					"SecondRadiusDoubleFlatCircle" : "162.525293851",
+					"CenterModifiedCircle" : "{511.870702042, 861.474757581}",
+					"MainRadiusModifiedCircle" : "407.722073654",
+					"GraphicID" : "1D2DC4D2",
+					"ClockwisesModifiedCircle" : "NO",
+					"SecondRadiusModifiedCircle" : "0",
+					"GraphicStyle" : "25",
+					"Class" : "DKDDoubleFlatCircle"
+					}
+				],
+			"CloakLayerGuidelines" : "NO",
+			"LayerTag" : "8230E74E",
+			"LayerLock" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"CloakLayerVertices" : "NO",
+			"LayerGraphicsCount" : "1",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"LayerName" : "1 - Layer",
+			"OutlineLayer" : "NO",
+			"HideDimensions" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "1",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "RRRect",
+			"LayerLock" : "NO",
+			"GraphicsList" : [
+				{
+					"Bounds" : "{{0, 0}, {1024, 1024}}",
+					"DKDRectRadius3" : "256",
+					"DKDRectRadius1" : "256",
+					"GraphicID" : "94ACA79E",
+					"DKDRectRadius2" : "256",
+					"Class" : "DKDRoundedRectangle",
+					"GraphicStyle" : "56",
+					"DKDRectRadius0" : "256"
+					}
+				]
+			},
+		{
+			"LayerGraphicsCount" : "0",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"CloakLayerGuidelines" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "screenShot",
+			"LayerLock" : "NO"
+			},
+		{
+			"LayerGraphicsCount" : "0",
+			"CloakLayerVertices" : "NO",
+			"LayerColorMod" : {
+				"DKDOutlineColorMod" : "NO",
+				"DKDTintColorColorMod" : {
+					"White" : "0.5",
+					"Opacity" : "1",
+					"ColorSpace" : "NSCalibratedWhiteColorSpace"
+					},
+				"DKDTintFractionColorMod" : "0.5",
+				"DKDOnColorMod" : "NO",
+				"DKDOpacityColorMod" : "0.5"
+				},
+			"OutlineLayer" : "NO",
+			"LayerTag" : "3330E74E",
+			"FullLayerScale" : {
+				"ArchivePrecision" : "12",
+				"ScalePlusDown" : "YES",
+				"ScaleScale" : "1",
+				"ScaleOriginX" : "0",
+				"ScaleOriginY" : "0",
+				"ScaleUnits" : "Points",
+				"ScalePlusToRight" : "YES"
+				},
+			"HideDimensions" : "NO",
+			"LayerState" : "On",
+			"LayerName" : "Paper",
+			"CloakLayerGuidelines" : "NO",
+			"LayerLock" : "NO"
+			}
+		],
+	"DKDGrids" : {
+		"DynamicSnapGrid" : "YES",
+		"SnapDrawing" : "YES",
+		"MajorGrid" : {
+			"PrintLineWidth" : "1",
+			"LinkGridToRulers" : "NO",
+			"GridRGB" : {
+				"BluePlus" : "1",
+				"OpacityPlus" : "0.6",
+				"ColorSpacePlus" : "DKDP3ColorSpace",
+				"RedPlus" : "0.54902",
+				"GreenPlus" : "0.713725"
+				},
+			"GridSpacingX" : "32",
+			"GridSpacingY" : "32",
+			"ShowsGrid" : "YES",
+			"GridAboveGraphics" : "NO",
+			"PrintsGrid" : "NO",
+			"SnapsToGrid" : "NO"
+			},
+		"SnapEnds" : "YES",
+		"SoftSnap" : "NO",
+		"MinorGrid" : {
+			"PrintLineWidth" : "0.5",
+			"LinkGridToRulers" : "NO",
+			"GridRGB" : {
+				"BluePlus" : "0.87451",
+				"OpacityPlus" : "1",
+				"ColorSpacePlus" : "DKDP3ColorSpace",
+				"RedPlus" : "0.745098",
+				"GreenPlus" : "0.854902"
+				},
+			"GridSpacingX" : "2",
+			"GridSpacingY" : "2",
+			"ShowsGrid" : "YES",
+			"GridAboveGraphics" : "NO",
+			"PrintsGrid" : "NO",
+			"SnapsToGrid" : "NO"
+			},
+		"SnapSound" : "None",
+		"SnapGuidelines" : "NO",
+		"GuidesLayer" : "NO",
+		"SnapRadiusGrid" : "3"
+		},
+	"DKDPagesSpec" : {
+		"bCheckerColor" : {
+			"BluePlus" : "0.784314",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.784314",
+			"GreenPlus" : "0.784314"
+			},
+		"DetailsDrawerWidth" : "203",
+		"SizeChecker" : "8",
+		"PagesSpecPrintBackground" : "NO",
+		"FullScreenCanvasMargin" : "216",
+		"NonFullScreenCanvasMargin" : "0",
+		"LayersDrawerWidth" : "285",
+		"BackgroundDisplay" : "Background",
+		"DisplayRulers" : "YES",
+		"CanvasMargin" : "0",
+		"CanvasColor" : {
+			"Catalog" : "System",
+			"Catalog-Color" : "windowBackgroundColor"
+			},
+		"aCheckerColor" : {
+			"BluePlus" : "0.941176",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.941176",
+			"GreenPlus" : "0.941176"
+			},
+		"PagesAcross" : "1",
+		"CanvasBorder" : {
+			"BluePlus" : "0.533333",
+			"OpacityPlus" : "1",
+			"ColorSpacePlus" : "DKDP3ColorSpace",
+			"RedPlus" : "0.54902",
+			"GreenPlus" : "0.533333"
+			},
+		"ShowPageBreaks" : "NO",
+		"FullScreen" : "NO",
+		"PagesSpecBackgroundRGB" : {
+			"White" : "1",
+			"Opacity" : "1",
+			"ColorSpace" : "NSCalibratedWhiteColorSpace"
+			},
+		"DisplayAttributesBar" : "YES",
+		"PagesDown" : "1",
+		"NumberAcrossFirst" : "YES"
+		},
+	"DKDExportDoc" : {
+		"ExportImageInterpolation" : "Automatic",
+		"ExportColorTable" : "256 Best",
+		"ExportImageAntialias" : "YES",
+		"PDFYMirror" : "NO",
+		"ExportContent" : "Individual Layers",
+		"ExporBackground" : "No (Black) Background",
+		"PNGColorSpace" : "sRGB_ColorSpace",
+		"SVGProfile" : "SVG 1.1",
+		"ICOColorTable" : "256 Best",
+		"ExportCompresion" : "0.088",
+		"DXFExportRevision" : "AutoCADLT 2010",
+		"ExportTransparentColor" : "Automatic",
+		"EPSExporBackground" : "No (Black) Background",
+		"PDFPagination" : "Single Page",
+		"SVGEmbedImages" : "YES",
+		"SVGFont" : "SVG",
+		"GIFFDither" : "NO",
+		"PNGInterlace" : "NO",
+		"EPSLatexPsfrag" : "NO",
+		"HideExtension" : "NO",
+		"PNGExporBackground" : "No (Black) Background",
+		"ExportFileExtension" : "svg",
+		"PDFExporBackground" : "No (White) Background",
+		"BMPExporBackground" : "No (White) Background",
+		"BMPSpecification" : {
+			"ColorDepthWIS" : "256 Colors",
+			"WidthWIS" : "64",
+			"ColorListNameWIS" : "256 Best",
+			"HeightWIS" : "64"
+			},
+		"TIFFColorSpace" : "sRGB IEC61966-2.1",
+		"TIFExporBackground" : "No (Black) Background",
+		"ExportPath" : "\/Users\/jk\/Documents\/Programming\/Projects\/BkmkMgrs\/Resources\/Per-App\/Markster\/Icon",
+		"JPGExporBackground" : "White Background",
+		"DXFExportLayers" : "All",
+		"SVGOverwriteImages" : "NO",
+		"GIFExporBackground" : "White Background",
+		"JPGColorSpace" : "sRGB_ColorSpace",
+		"SVGTidyFormatting" : "YES",
+		"SVGDOMIds" : "YES",
+		"EPSColorSpace" : "RGB",
+		"SVGGlyphs" : "System Font",
+		"ICOExporBackground" : "No (White) Background",
+		"PDFXMirror" : "NO",
+		"PNGAlpha" : "YES",
+		"CSVStringEncoding" : "Unicode (UTF8)",
+		"SVGCompress" : "NO",
+		"ExportExpand" : "1"
+		},
+	"DKDHideExtension" : "YES",
+	"DKDPrintInfo" : {
+		"VerticalPagination" : "0",
+		"VerticallyCentered" : "YES",
+		"PaperSizeWidth" : "1024",
+		"PaperSizeHeight" : "1024",
+		"FallBackPaperSizeWidth" : "1024",
+		"PrintJobDisposition" : "NSPrintSpoolJob",
+		"TopMargin" : "18",
+		"RightMargin" : "18",
+		"HorizontallyCentered" : "YES",
+		"PrinterName" : "App Developer",
+		"FirstPage" : "1",
+		"PrintScalingFactor" : "1",
+		"MustCollate" : "YES",
+		"FallBackPaperSizeHeight" : "1024",
+		"HorizontalPagination" : "2",
+		"BottomMargin" : "18",
+		"PreviewPageNumber" : "1",
+		"YPrintMirror" : "NO",
+		"LeftMargin" : "18",
+		"Copies" : "1",
+		"ReversePageOrder" : "NO",
+		"PaperName" : "Custom",
+		"XPrintMirror" : "NO",
+		"LastPage" : "-1",
+		"Orientation" : "0",
+		"PrintAllPages" : "YES"
+		},
+	"DKDWindowState" : {
+		"GraphicDetailsEdge" : "2",
+		"GraphicDetailsOpen" : "YES",
+		"LayerOpen" : "YES",
+		"GDetailsLayersDrawerEdgePreference" : "Auto",
+		"ZoomPercent" : "86.937537",
+		"DrawersOnMainView" : "YES",
+		"CursorMode" : "Nothing",
+		"WindowLocation" : "27 52 1554 1020 0 0 1710 1072 ",
+		"LayerDrawerEdge" : "0",
+		"LayerSelect" : "Show Others",
+		"LayersDrawerEdgePreference" : "Auto",
+		"LayerActiveAbove" : "NO",
+		"OutlineDrawing" : "NO",
+		"DocumentFileName" : "\/Users\/jk\/Documents\/Programming\/Projects\/BkmkMgrs\/Resources\/Per-App\/Markster\/Icon\/Markster.ezdjson",
+		"DocCenter" : "{512, 512}"
+		},
+	"DKDTimeFormat" : {
+		"Field 0 Include" : "Weekday",
+		"Field 3 Include" : "Year",
+		"Time Seperator" : ":",
+		"Field 0 Type" : "Long",
+		"Used Once" : "YES",
+		"IncludeTime" : "YES",
+		"Field 2 Type" : "Number",
+		"Seperator 3" : "  ",
+		"Seperator 2" : ", ",
+		"Seperator 1" : ". ",
+		"Seperator 0" : " - ",
+		"Field 2 Include" : "Day",
+		"IncludeDate" : "YES",
+		"Twelve Hour Clock" : "YES",
+		"Include Title" : "YES",
+		"Field 1 Include" : "Month",
+		"Include GMT" : "NO",
+		"Field 1 Type" : "Short",
+		"TimeAfterDate" : "YES",
+		"Field 3 Type" : "Long"
+		}
+	}

@@ -513,7 +513,6 @@
 		48813DA6245EA6A700F0166C /* BookMacsterSyncStage.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 48FB13E524579A0F00C83ABF /* BookMacsterSyncStage.aiff */; };
 		48813DA7245EA6A700F0166C /* BookMacsterSyncStart.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 48FB13E724579A1000C83ABF /* BookMacsterSyncStart.aiff */; };
 		48813DA8245EA6A700F0166C /* BookMacsterSyncSuccess.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 48FB13E824579A1000C83ABF /* BookMacsterSyncSuccess.aiff */; };
-		48813DAF245F781B00F0166C /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 48813DAE245F781A00F0166C /* AppIcon.iconset */; };
 		48813DB1245F782C00F0166C /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 48813DB0245F782C00F0166C /* AppIcon.iconset */; };
 		48813DB3245F783F00F0166C /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 48813DB2245F783F00F0166C /* AppIcon.iconset */; };
 		48813DB5245F785700F0166C /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 48813DB4245F785700F0166C /* AppIcon.iconset */; };
@@ -1168,6 +1167,11 @@
 		48EBB5B82B0B4E470019963B /* BkmxBasis+OSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EBB5B72B0B4E470019963B /* BkmxBasis+OSLog.m */; };
 		48EC2EB2135017FD00FC151C /* ConstsFromJavaScript.c in Sources */ = {isa = PBXBuildFile; fileRef = 4864E47212F51BD200ED00D6 /* ConstsFromJavaScript.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48ECF89822EA5BF500E83EAE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48ECF88D22EA5BF500E83EAE /* WebKit.framework */; };
+		48ED300A2E4D6B15004B9AA1 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48ED30092E4D6B15004B9AA1 /* AppIcon.icon */; };
+		48ED300C2E4F9EF5004B9AA1 /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 48ED300B2E4F9EF5004B9AA1 /* AppIcon.iconset */; };
+		48ED30142E4F9FC5004B9AA1 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48ED30132E4F9FC5004B9AA1 /* AppIcon.icon */; };
+		48ED30162E4F9FD8004B9AA1 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48ED30152E4F9FD8004B9AA1 /* AppIcon.icon */; };
+		48ED30182E4F9FE6004B9AA1 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 48ED30172E4F9FE6004B9AA1 /* AppIcon.icon */; };
 		48EE3E3219E2B6020097C450 /* NSArray+SSYDisjoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EE3E3119E2B6020097C450 /* NSArray+SSYDisjoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48EE426F18DCC8BA008C0166 /* NSDocumentController+SSYNukeAndPave.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EE426E18DCC8BA008C0166 /* NSDocumentController+SSYNukeAndPave.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48EEBAE80FFBA6EA00A358CC /* NSData+ASCII.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EEBAE70FFBA6EA00A358CC /* NSData+ASCII.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -2342,7 +2346,6 @@
 		4880A87111CBE951004CCC99 /* ClientInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientInfoController.m; sourceTree = "<group>"; };
 		4880A87A11CBF444004CCC99 /* ClientListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientListView.h; sourceTree = "<group>"; };
 		4880A87B11CBF444004CCC99 /* ClientListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientListView.m; sourceTree = "<group>"; };
-		48813DAE245F781A00F0166C /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = AppIcon.iconset; path = "Resources/Per-App/BookMacster/AppIcon.iconset"; sourceTree = "<group>"; };
 		48813DB0245F782C00F0166C /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = AppIcon.iconset; path = "Resources/Per-App/Markster/AppIcon.iconset"; sourceTree = "<group>"; };
 		48813DB2245F783F00F0166C /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = AppIcon.iconset; path = "Resources/Per-App/Smarky/AppIcon.iconset"; sourceTree = "<group>"; };
 		48813DB4245F785700F0166C /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = AppIcon.iconset; path = "Resources/Per-App/Synkmark/AppIcon.iconset"; sourceTree = "<group>"; };
@@ -2919,6 +2922,11 @@
 		48EBB5B62B0B4E470019963B /* BkmxBasis+OSLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BkmxBasis+OSLog.h"; sourceTree = "<group>"; };
 		48EBB5B72B0B4E470019963B /* BkmxBasis+OSLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BkmxBasis+OSLog.m"; sourceTree = "<group>"; };
 		48ECF88D22EA5BF500E83EAE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		48ED30092E4D6B15004B9AA1 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = "Resources/Per-App/BookMacster/Icon/AppIcon.icon"; sourceTree = "<group>"; };
+		48ED300B2E4F9EF5004B9AA1 /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
+		48ED30132E4F9FC5004B9AA1 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = "Resources/Per-App/Markster/Icon/AppIcon.icon"; sourceTree = "<group>"; };
+		48ED30152E4F9FD8004B9AA1 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = "Resources/Per-App/Smarky/Icon/AppIcon.icon"; sourceTree = "<group>"; };
+		48ED30172E4F9FE6004B9AA1 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; name = AppIcon.icon; path = "Resources/Per-App/Synkmark/Icon/AppIcon.icon"; sourceTree = "<group>"; };
 		48EE3E3019E2B6020097C450 /* NSArray+SSYDisjoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+SSYDisjoint.h"; path = "../../CategoriesObjC/NSArray+SSYDisjoint.h"; sourceTree = "<group>"; };
 		48EE3E3119E2B6020097C450 /* NSArray+SSYDisjoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+SSYDisjoint.m"; path = "../../CategoriesObjC/NSArray+SSYDisjoint.m"; sourceTree = "<group>"; };
 		48EE426D18DCC8BA008C0166 /* NSDocumentController+SSYNukeAndPave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDocumentController+SSYNukeAndPave.h"; sourceTree = "<group>"; };
@@ -4651,7 +4659,8 @@
 		48DABF4617F4B64F0076B3D4 /* BookMacster */ = {
 			isa = PBXGroup;
 			children = (
-				48813DAE245F781A00F0166C /* AppIcon.iconset */,
+				48ED300B2E4F9EF5004B9AA1 /* AppIcon.iconset */,
+				48ED30092E4D6B15004B9AA1 /* AppIcon.icon */,
 				48FD5C0D0F053AD000288DD2 /* AboutPanel.rtf */,
 			);
 			name = BookMacster;
@@ -4661,6 +4670,7 @@
 			isa = PBXGroup;
 			children = (
 				48813DB2245F783F00F0166C /* AppIcon.iconset */,
+				48ED30152E4F9FD8004B9AA1 /* AppIcon.icon */,
 				48DAC02617F77B880076B3D4 /* AboutPanel.rtf */,
 			);
 			name = Smarky;
@@ -4670,6 +4680,7 @@
 			isa = PBXGroup;
 			children = (
 				48813DB4245F785700F0166C /* AppIcon.iconset */,
+				48ED30172E4F9FE6004B9AA1 /* AppIcon.icon */,
 				48DAC02817F77BB40076B3D4 /* AboutPanel.rtf */,
 			);
 			name = Synkmark;
@@ -4679,6 +4690,7 @@
 			isa = PBXGroup;
 			children = (
 				48813DB0245F782C00F0166C /* AppIcon.iconset */,
+				48ED30132E4F9FC5004B9AA1 /* AppIcon.icon */,
 				48DAC02417F77B7B0076B3D4 /* AboutPanel.rtf */,
 			);
 			name = Markster;
@@ -6347,6 +6359,7 @@
 				484D643C25A806F000F2C9AB /* ExtoreEdgeDev in Resources */,
 				4875E65F18EB41D200859698 /* excludedDs.png in Resources */,
 				4875E66018EB41D200859698 /* excludedDs@2x.png in Resources */,
+				48ED30142E4F9FC5004B9AA1 /* AppIcon.icon in Resources */,
 				4875E66118EB41D200859698 /* sortUpDs.png in Resources */,
 				4875E66218EB41D200859698 /* sortUpDs@2x.png in Resources */,
 				484B40D01D808B0E00117E59 /* FindAndReplace.xib in Resources */,
@@ -6486,6 +6499,7 @@
 				48E848FF169B1BF900AE3100 /* excludedDs.png in Resources */,
 				48E84901169B1BF900AE3100 /* excludedDs@2x.png in Resources */,
 				48E84907169B1C1D00AE3100 /* sortUpDs.png in Resources */,
+				48ED30162E4F9FD8004B9AA1 /* AppIcon.icon in Resources */,
 				48E84909169B1C1D00AE3100 /* sortUpDs@2x.png in Resources */,
 				484B40CA1D808AFD00117E59 /* ExtensionDetectionTester.xib in Resources */,
 				48D3CA2F1A02AF0C008D262A /* ClientTalderMaps.xib in Resources */,
@@ -6548,12 +6562,12 @@
 				4816982E17FF2A1900A04CC1 /* AboutPanel.rtf in Resources */,
 				48EEF1141A42638A00503A12 /* TagsPopover.xib in Resources */,
 				48D1EE590F6CB79A001BA354 /* RSSWhiteBkgnd.tif in Resources */,
-				48813DAF245F781B00F0166C /* AppIcon.iconset in Resources */,
 				48D1EE600F6CB79A001BA354 /* sticky.png in Resources */,
 				48D1EE610F6CB79A001BA354 /* stop14.png in Resources */,
 				48803455181971E7000908D2 /* Bookmarkshelf.png in Resources */,
 				481AE4532438506C00F4F7BA /* ExtoreBraveBeta in Resources */,
 				4852C4310F89B6AC000569AA /* Inspector.xib in Resources */,
+				48ED300A2E4D6B15004B9AA1 /* AppIcon.icon in Resources */,
 				4871D9E9121887D700E90BCC /* Logs.xib in Resources */,
 				484BD5C4120A418C009506D6 /* ImportPostproc.xib in Resources */,
 				484BDBD9120F2A42009506D6 /* SpecialGooChromy.xib in Resources */,
@@ -6599,6 +6613,7 @@
 				48D3CA291A02AECB008D262A /* BookMacsterMain.xib in Resources */,
 				48477E611C4DDB77004CC33B /* ContentOutline.xib in Resources */,
 				48B377801738B03300D6E286 /* ExtoreCanary in Resources */,
+				48ED300C2E4F9EF5004B9AA1 /* AppIcon.iconset in Resources */,
 				48C1E11621BED92400FF1AFB /* AppleScripts in Resources */,
 				48B377811738B03300D6E286 /* ExtoreChrome in Resources */,
 				48CFA61218E4535D000E77FA /* HelpBook in Resources */,
@@ -6670,6 +6685,7 @@
 				484B40DC1D808D5B00117E59 /* SpecialCustomChromy.xib in Resources */,
 				48D6F2E4179D6E0700F23494 /* ImportPostproc.xib in Resources */,
 				48D6F2E6179D6E0700F23494 /* SpecialGooChromy.xib in Resources */,
+				48ED30182E4F9FE6004B9AA1 /* AppIcon.icon in Resources */,
 				48D6F2E8179D6E0700F23494 /* SSYAboutPanel.xib in Resources */,
 				48B87745181346FC00CD60EA /* IgnoredPrefixes.xib in Resources */,
 				48134EFC190B84D100FA3EDF /* PrefsWindow.xib in Resources */,
@@ -9026,6 +9042,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Markster.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9063,6 +9081,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Markster.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9740,6 +9760,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Smarky.entitlements;
@@ -9780,6 +9802,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Smarky.entitlements;
@@ -9935,6 +9959,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = BookMacster.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -9974,6 +10000,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = BookMacster.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -10012,6 +10040,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Synkmark.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -10049,6 +10079,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Synkmark.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
