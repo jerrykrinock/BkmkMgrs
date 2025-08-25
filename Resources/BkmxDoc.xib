@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23091" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23091"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,7 +36,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="0.0" y="388" width="889" height="470"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1072"/>
             <view key="contentView" id="2" userLabel="Content">
                 <rect key="frame" x="0.0" y="0.0" width="889" height="470"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,15 +92,15 @@
                                 <rect key="frame" x="10" y="227" width="208" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" id="bR0-i5-R80">
-                                    <rect key="frame" x="1" y="1" width="195" height="199"/>
+                                    <rect key="frame" x="1" y="1" width="193" height="199"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" smartInsertDelete="YES" id="940">
-                                            <rect key="frame" x="0.0" y="208" width="278" height="199"/>
+                                            <rect key="frame" x="0.0" y="208" width="276" height="199"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="195" height="199"/>
+                                            <size key="minSize" width="193" height="199"/>
                                             <size key="maxSize" width="386" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="newLog">
@@ -119,7 +119,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="1159">
-                                    <rect key="frame" x="196" y="1" width="11" height="199"/>
+                                    <rect key="frame" x="194" y="1" width="13" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -322,7 +322,7 @@ line 2</string>
                     <toolbarItem implicitItemIdentifier="5F3ADB1E-CF18-4DA2-9E0A-6D0466504554" explicitItemIdentifier="searchField" label="" paletteLabel="PalSearch" tag="30" sizingBehavior="auto" id="4896" customClass="NSSearchToolbarItem">
                         <nil key="toolTip"/>
                         <searchField key="view" wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" tag="30" allowsCharacterPickerTouchBarItem="YES" id="4894" customClass="BkmxSearchField">
-                            <rect key="frame" x="0.0" y="14" width="120" height="22"/>
+                            <rect key="frame" x="0.0" y="14" width="120" height="24"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" bezelStyle="round" recentsAutosaveName="RecentSearches" id="4895">
                                 <font key="font" metaFont="system"/>
