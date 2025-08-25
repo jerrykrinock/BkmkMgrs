@@ -286,7 +286,7 @@ NSString* const BkmxDocumentControllerErrorDomain = @"BkmxDocumentControllerErro
                                 [[BkmxBasis sharedBasis] appNameLocalized]
                                 ];
         error = [error errorByAddingLocalizedRecoverySuggestion:suggestion];
-        error = [error errorByAddingHelpAddress:@"http://www.sheepsystems.com/files/support_articles/bkmx/processing-forever.html"];
+        error = [error errorByAddingHelpAddress:@"https://www.sheepsystems.com/files/support_articles/bkmx/processing-forever.html"];
         error = [error errorByAddingDontShowSupportEmailButton];
         [self finishOpeningUrl:url
                        display:NO
