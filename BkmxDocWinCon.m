@@ -1460,17 +1460,7 @@ willBeInsertedIntoToolbar:(BOOL)flag {
             SSYToolbarButtonView* syncingButtonView = [SSYToolbarButtonView new];
             syncingButtonView.toolbarItem = toolbarItemSync;
             
-            /* The following two lines set the "size" of the Syncing button in
-             the toolbar.  The first line, setting the ssyIntrinsicContentSize,
-             is necessary and effective in macOS 11 Big Sur but is not needed
-             in macOS 10.11 El Capitan.  The second line, setting the size,
-             is necessary and effective in macOS 10.11 El Capitan but is not
-             needed in macOS 11 Big Sur.  Probably this has something to do
-             with the new toolbar regime in Big Sur, but I have not tested the
-             effectiveness of these lines in intervening systems, 10.12-10.15,
-             so I am not sure. */
             syncingButtonView.ssyIntrinsicContentSize = NSMakeSize(TOOLBAR_ITEM_WENGTH, TOOLBAR_ITEM_WENGTH);
-            syncingButtonView.size = NSMakeSize(TOOLBAR_ITEM_WENGTH, TOOLBAR_ITEM_WENGTH);
 
             toolbarItemSync.view = syncingButtonView;
             [syncingButtonView release];
