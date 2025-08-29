@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,11 +40,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="136" height="416"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <clipView key="contentView" id="zFz-iL-eik">
-                                        <rect key="frame" x="1" y="1" width="123" height="414"/>
+                                        <rect key="frame" x="1" y="1" width="121" height="414"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4999" userLabel="Tag Cloud" customClass="RPTokenControl">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="415"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="173" height="415"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <accessibility description="Tag Cloud" help="This is the tag cloud" identifier="tagCloud"/>
                                                 <connections>
@@ -58,14 +58,14 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="4997">
-                                        <rect key="frame" x="124" y="1" width="11" height="414"/>
+                                        <rect key="frame" x="122" y="1" width="13" height="414"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
                                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1067" userLabel="- |✓|✓✓ Switch">
-                                    <rect key="frame" x="7" y="421" width="62" height="23"/>
+                                    <rect key="frame" x="10" y="421" width="56" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <segmentedCell key="cell" enabled="NO" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="1137">
+                                    <segmentedCell key="cell" enabled="NO" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="1137">
                                         <font key="font" metaFont="system"/>
                                         <segments>
                                             <segment width="18" selected="YES">
@@ -86,7 +86,7 @@
                                         <binding destination="-2" name="toolTip" keyPath="switchFilterToolTip" id="2ml-W2-GUQ"/>
                                     </connections>
                                 </segmentedControl>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4976" userLabel="Filter (label)" customClass="SSYNoVoiceOverTextField">
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4976" userLabel="Filter (label)" customClass="SSYNoVoiceOverTextField">
                                     <rect key="frame" x="69" y="426" width="62" height="14"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" title="fffilter" id="4977">
@@ -174,7 +174,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </tableHeaderView>
                                 </scrollView>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4990" userLabel="Lineage Text Field" customClass="SSYVerticalCenteredTextField">
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4990" userLabel="Lineage Text Field" customClass="SSYVerticalCenteredTextField">
                                     <rect key="frame" x="151" y="426" width="290" height="14"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" id="4991">
@@ -217,9 +217,9 @@
                                     <accessibility description="Lineage"/>
                                 </imageView>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-NW-gIW">
-                                    <rect key="frame" x="83" y="419" width="32" height="27"/>
+                                    <rect key="frame" x="83" y="421" width="32" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n9M-0P-XhM">
+                                    <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="n9M-0P-XhM">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <connections>
@@ -232,13 +232,13 @@
                                     </connections>
                                 </button>
                                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-tv-74z" userLabel="Outline / Flat Control">
-                                    <rect key="frame" x="12" y="421" width="58" height="23"/>
+                                    <rect key="frame" x="17" y="421" width="49" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="fYc-4I-IhC">
                                         <font key="font" metaFont="system"/>
                                         <segments>
-                                            <segment image="NSPathTemplate" tag="1"/>
-                                            <segment image="NSListViewTemplate"/>
+                                            <segment tag="1"/>
+                                            <segment/>
                                         </segments>
                                     </segmentedCell>
                                     <accessibility description="Outline / Table Mode" help="Switches between Outline Mode and Table Mode"/>
@@ -246,12 +246,12 @@
                                         <binding destination="-2" name="selectedTag" keyPath="outlineMode" id="Uu8-Jh-kmX"/>
                                     </connections>
                                 </segmentedControl>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" tag="49111" translatesAutoresizingMaskIntoConstraints="NO" id="Gyn-sh-bTN" customClass="SSYMenuButton">
-                                    <rect key="frame" x="424" y="420" width="42" height="23"/>
+                                <button tag="49111" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gyn-sh-bTN" customClass="SSYMenuButton">
+                                    <rect key="frame" x="417" y="419" width="49" height="28"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="roundTextured" title="Add…" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HC4-hb-8uE">
+                                    <buttonCell key="cell" type="push" title="Add…" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HC4-hb-8uE">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="label"/>
+                                        <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
                                         <outlet property="menuMaker" destination="-2" id="5xU-zv-wC8"/>
@@ -320,8 +320,4 @@
             </connections>
         </popover>
     </objects>
-    <resources>
-        <image name="NSListViewTemplate" width="21" height="15"/>
-        <image name="NSPathTemplate" width="25" height="15"/>
-    </resources>
 </document>
