@@ -487,7 +487,7 @@
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="97" translatesAutoresizingMaskIntoConstraints="NO" id="996">
-                                <rect key="frame" x="230" y="124" width="101" height="14"/>
+                                <rect key="frame" x="227" y="124" width="101" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="right" title="sort_at" id="997">
                                     <font key="font" metaFont="message" size="11"/>
@@ -773,7 +773,7 @@ ICAgA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="271" translatesAutoresizingMaskIntoConstraints="NO" id="938">
-                                <rect key="frame" x="188" y="203" width="274" height="85"/>
+                                <rect key="frame" x="188" y="2" width="274" height="85"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="939">
                                     <font key="font" metaFont="message" size="11"/>
@@ -791,24 +791,24 @@ line6</string>
                                 </connections>
                             </textField>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="879">
-                                <rect key="frame" x="46" y="44" width="9" height="9"/>
+                                <rect key="frame" x="46" y="139" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="880"/>
                             </imageView>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="878">
-                                <rect key="frame" x="25" y="46" width="21" height="5"/>
+                                <rect key="frame" x="25" y="141" width="21" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="877">
-                                <rect key="frame" x="22" y="48" width="5" height="23"/>
+                                <rect key="frame" x="22" y="143" width="5" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="876">
-                                <rect key="frame" x="22" y="90" width="5" height="23"/>
+                                <rect key="frame" x="22" y="185" width="5" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="875">
-                                <rect key="frame" x="9" y="64" width="32" height="32"/>
+                                <rect key="frame" x="9" y="159" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <buttonCell key="cell" type="round" bezelStyle="circular" image="NSRefreshTemplate" imagePosition="only" alignment="left" borderStyle="border" imageScaling="proportionallyDown" id="881">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -833,21 +833,21 @@ line6</string>
                                 </connections>
                             </button>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="795">
-                                <rect key="frame" x="46" y="108" width="9" height="9"/>
+                                <rect key="frame" x="46" y="203" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="796"/>
                             </imageView>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="794">
-                                <rect key="frame" x="25" y="110" width="21" height="5"/>
+                                <rect key="frame" x="25" y="205" width="21" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="816">
-                                <rect key="frame" x="435" y="46" width="9" height="9"/>
+                                <rect key="frame" x="435" y="141" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="817"/>
                             </imageView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="815">
-                                <rect key="frame" x="442" y="35" width="32" height="32"/>
+                                <rect key="frame" x="442" y="130" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="circular" image="NSNetwork" imagePosition="only" alignment="left" imageScaling="proportionallyDown" id="818">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -863,12 +863,12 @@ line6</string>
                                 </connections>
                             </button>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="812">
-                                <rect key="frame" x="435" y="107" width="9" height="9"/>
+                                <rect key="frame" x="435" y="202" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="813"/>
                             </imageView>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="811">
-                                <rect key="frame" x="442" y="96" width="32" height="32"/>
+                                <rect key="frame" x="442" y="191" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="circular" image="NSNetwork" imagePosition="only" alignment="left" imageScaling="proportionallyDown" id="814">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -884,41 +884,41 @@ line6</string>
                                 </connections>
                             </button>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="807">
-                                <rect key="frame" x="435" y="171" width="9" height="9"/>
+                                <rect key="frame" x="435" y="179" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="808"/>
                             </imageView>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="774">
-                                <rect key="frame" x="46" y="172" width="9" height="9"/>
+                                <rect key="frame" x="46" y="180" width="9" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSGoRightTemplate" id="775"/>
                             </imageView>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="867">
-                                <rect key="frame" x="22" y="112" width="5" height="23"/>
+                                <rect key="frame" x="22" y="207" width="5" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="755">
-                                <rect key="frame" x="22" y="154" width="5" height="23"/>
+                                <rect key="frame" x="22" y="249" width="5" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="810">
-                                <rect key="frame" x="427" y="48" width="13" height="5"/>
+                                <rect key="frame" x="427" y="143" width="13" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="809">
-                                <rect key="frame" x="427" y="109" width="13" height="5"/>
+                                <rect key="frame" x="427" y="204" width="13" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="771">
-                                <rect key="frame" x="427" y="173" width="13" height="5"/>
+                                <rect key="frame" x="427" y="181" width="13" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="751">
-                                <rect key="frame" x="25" y="174" width="21" height="5"/>
+                                <rect key="frame" x="25" y="182" width="21" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                             </box>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="769">
-                                <rect key="frame" x="442" y="160" width="32" height="32"/>
+                                <rect key="frame" x="442" y="255" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="circular" image="NSNetwork" imagePosition="only" alignment="left" imageScaling="proportionallyDown" id="770">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -934,7 +934,7 @@ line6</string>
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="740">
-                                <rect key="frame" x="9" y="128" width="32" height="32"/>
+                                <rect key="frame" x="9" y="223" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <buttonCell key="cell" type="round" bezelStyle="circular" image="NSRefreshTemplate" imagePosition="only" alignment="left" borderStyle="border" imageScaling="proportionallyDown" id="741">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -959,7 +959,7 @@ line6</string>
                                 </connections>
                             </button>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="152" translatesAutoresizingMaskIntoConstraints="NO" id="962">
-                                <rect key="frame" x="21" y="185" width="156" height="61"/>
+                                <rect key="frame" x="21" y="1" width="156" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" id="963">
                                     <font key="font" metaFont="message" size="11"/>
@@ -975,7 +975,7 @@ line6</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="161" translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                                <rect key="frame" x="12" y="243" width="165" height="17"/>
+                                <rect key="frame" x="12" y="57" width="165" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="yermacsez: 999" id="404">
                                     <font key="font" metaFont="message" size="11"/>
@@ -987,7 +987,7 @@ line6</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="146" translatesAutoresizingMaskIntoConstraints="NO" id="820">
-                                <rect key="frame" x="21" y="257" width="150" height="17"/>
+                                <rect key="frame" x="21" y="71" width="150" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="2009-0x-0x  18:45" id="821">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1004,7 +1004,7 @@ line6</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="48">
-                                <rect key="frame" x="12" y="274" width="153" height="14"/>
+                                <rect key="frame" x="12" y="88" width="153" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Da Verfy Rezult:" id="402">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1016,7 +1016,7 @@ line6</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="735">
-                                <rect key="frame" x="55" y="139" width="373" height="47"/>
+                                <rect key="frame" x="55" y="234" width="373" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="charWrapping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" id="736">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1032,7 +1032,7 @@ line3</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="341" translatesAutoresizingMaskIntoConstraints="NO" id="734">
-                                <rect key="frame" x="55" y="184" width="345" height="17"/>
+                                <rect key="frame" x="55" y="280" width="345" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="prior_url" id="737">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1044,7 +1044,7 @@ line3</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="173">
-                                <rect key="frame" x="55" y="75" width="373" height="47"/>
+                                <rect key="frame" x="55" y="170" width="373" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="charWrapping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" id="410">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1060,7 +1060,7 @@ line3</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="341" translatesAutoresizingMaskIntoConstraints="NO" id="172">
-                                <rect key="frame" x="55" y="120" width="345" height="17"/>
+                                <rect key="frame" x="55" y="215" width="345" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="current_url" id="409">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1072,7 +1072,7 @@ line3</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="580">
-                                <rect key="frame" x="55" y="11" width="373" height="47"/>
+                                <rect key="frame" x="55" y="106" width="373" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="charWrapping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="581">
                                     <font key="font" metaFont="message" size="11"/>
@@ -1088,7 +1088,7 @@ line3</string>
                                 </connections>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="341" translatesAutoresizingMaskIntoConstraints="NO" id="278">
-                                <rect key="frame" x="55" y="56" width="345" height="17"/>
+                                <rect key="frame" x="55" y="151" width="345" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="sugested_url" id="414">
                                     <font key="font" metaFont="message" size="11"/>
