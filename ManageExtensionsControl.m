@@ -40,7 +40,7 @@ typedef enum ResultDisplayMode_enum ResultDisplayMode ;
 #define STATUS_ICON_HEIGHT 20.0
 #define STATUS_ICON_WIDTH 20.0
 #define FUDGE_POINTS_TO_GET_STATUS_ICON_CLOSER_TO_TEST_BUTTON 3.0
-#define SPACING_BETWEEN_CONTROLS 0.0
+#define SPACING_BETWEEN_CONTROLS 3.0
 #define ONE_FOR_NOT_APPLICABLE 1
 
 @implementation ManageExtensionsControl
