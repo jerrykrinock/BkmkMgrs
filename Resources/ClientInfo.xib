@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21179.7"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,7 +22,7 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="88" y="200" width="560" height="479"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1072"/>
             <view key="contentView" id="77">
                 <rect key="frame" x="0.0" y="0.0" width="560" height="479"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -31,11 +31,11 @@
                         <rect key="frame" x="17" y="294" width="526" height="151"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="6vL-vw-YMb">
-                            <rect key="frame" x="4" y="5" width="518" height="129"/>
+                            <rect key="frame" x="0.0" y="0.0" width="526" height="137"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
-                                    <rect key="frame" x="298" y="57" width="203" height="18"/>
+                                    <rect key="frame" x="298" y="65" width="203" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Tags__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="22">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -49,7 +49,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="233">
-                                    <rect key="frame" x="298" y="37" width="203" height="18"/>
+                                    <rect key="frame" x="298" y="45" width="203" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Folders__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="234">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -63,7 +63,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="242">
-                                    <rect key="frame" x="317" y="17" width="191" height="18"/>
+                                    <rect key="frame" x="317" y="25" width="191" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="One for each Tag__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="243">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -77,7 +77,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                                    <rect key="frame" x="271" y="103" width="203" height="18"/>
+                                    <rect key="frame" x="271" y="111" width="203" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Share New Items__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="30">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -89,8 +89,8 @@
                                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipShareNewItems" previousBinding="151" id="152"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
-                                    <rect key="frame" x="270" y="77" width="239" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                                    <rect key="frame" x="270" y="85" width="239" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fabricate__" id="23">
                                         <font key="font" metaFont="system"/>
@@ -101,8 +101,8 @@
                                         <binding destination="-3" name="value" keyPath="delegate.basis.labelFabricateColon" id="178"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
-                                    <rect key="frame" x="10" y="104" width="241" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                                    <rect key="frame" x="10" y="112" width="241" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Merge__by__" id="27">
                                         <font key="font" metaFont="system"/>
@@ -113,8 +113,8 @@
                                         <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeBy" id="znk-JG-eHv"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                                    <rect key="frame" x="10" y="59" width="231" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                                    <rect key="frame" x="10" y="67" width="231" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keep item from___" id="28">
                                         <font key="font" metaFont="system"/>
@@ -127,7 +127,7 @@
                                     </connections>
                                 </textField>
                                 <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                                    <rect key="frame" x="37" y="17" width="250" height="38"/>
+                                    <rect key="frame" x="37" y="25" width="250" height="38"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     <size key="cellSize" width="250" height="18"/>
@@ -161,11 +161,11 @@
                                     </connections>
                                 </matrix>
                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-n0-euM">
-                                    <rect key="frame" x="34" y="76" width="185" height="26"/>
+                                    <rect key="frame" x="34" y="84" width="185" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sZH-Id-VYx" id="5ge-iU-d7S">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="message"/>
                                         <menu key="menu" title="OtherViews" id="evz-1M-xwx">
                                             <items>
                                                 <menuItem title="0" state="on" id="sZH-Id-VYx"/>
@@ -199,7 +199,7 @@
                             <binding destination="-3" name="title" keyPath="delegate.basis.labelImport" id="278"/>
                         </connections>
                     </box>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
+                    <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                         <rect key="frame" x="17" y="452" width="526" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingMiddle" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="_Advanced Settings for Client XXXXX__" id="73">
@@ -215,11 +215,11 @@
                         <rect key="frame" x="17" y="52" width="526" height="246"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" id="Ef9-rj-Uhd">
-                            <rect key="frame" x="4" y="5" width="518" height="224"/>
+                            <rect key="frame" x="0.0" y="0.0" width="526" height="232"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37">
-                                    <rect key="frame" x="298" y="171" width="203" height="18"/>
+                                    <rect key="frame" x="298" y="179" width="203" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Tags__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="62">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -231,8 +231,8 @@
                                         <binding destination="-3" name="title" keyPath="delegate.basis.labelTags" id="165"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34">
-                                    <rect key="frame" x="272" y="195" width="237" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34">
+                                    <rect key="frame" x="272" y="203" width="237" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fabricate__" id="65">
                                         <font key="font" metaFont="system"/>
@@ -243,8 +243,8 @@
                                         <binding destination="-3" name="value" keyPath="delegate.basis.labelFabricateColon" id="179"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
-                                    <rect key="frame" x="13" y="139" width="259" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
+                                    <rect key="frame" x="13" y="147" width="259" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default Parent____" id="66">
                                         <font key="font" metaFont="system"/>
@@ -258,7 +258,7 @@
                                     </connections>
                                 </textField>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46">
-                                    <rect key="frame" x="11" y="163" width="215" height="18"/>
+                                    <rect key="frame" x="11" y="171" width="215" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Delete__Unmatched__Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="47">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -271,7 +271,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39">
-                                    <rect key="frame" x="298" y="80" width="215" height="18"/>
+                                    <rect key="frame" x="298" y="88" width="215" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Separators_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="60">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -289,7 +289,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="329">
-                                    <rect key="frame" x="298" y="61" width="215" height="18"/>
+                                    <rect key="frame" x="298" y="69" width="215" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="File URLs______" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="330">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -306,7 +306,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="335">
-                                    <rect key="frame" x="298" y="41" width="215" height="18"/>
+                                    <rect key="frame" x="298" y="49" width="215" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="JavaScript Bookmarklets_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="336">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -323,7 +323,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="341">
-                                    <rect key="frame" x="298" y="21" width="215" height="18"/>
+                                    <rect key="frame" x="298" y="29" width="215" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="RSS_Feeds_____" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="342">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -339,8 +339,8 @@
                                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportRssFeeds" previousBinding="358" id="364"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42">
-                                    <rect key="frame" x="10" y="92" width="200" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42">
+                                    <rect key="frame" x="10" y="100" width="200" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Merge__by__" id="55">
                                         <font key="font" metaFont="system"/>
@@ -351,8 +351,8 @@
                                         <binding destination="-3" name="value" keyPath="delegate.basis.labelMergeBy" id="OPS-Um-ItQ"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41">
-                                    <rect key="frame" x="10" y="51" width="209" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41">
+                                    <rect key="frame" x="10" y="59" width="209" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keep item from___" id="56">
                                         <font key="font" metaFont="system"/>
@@ -365,7 +365,7 @@
                                     </connections>
                                 </textField>
                                 <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40">
-                                    <rect key="frame" x="37" y="10" width="251" height="38"/>
+                                    <rect key="frame" x="37" y="18" width="251" height="38"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     <size key="cellSize" width="251" height="18"/>
@@ -398,11 +398,11 @@
                                     </connections>
                                 </matrix>
                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32">
-                                    <rect key="frame" x="36" y="113" width="206" height="26"/>
+                                    <rect key="frame" x="36" y="121" width="206" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="67">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="message"/>
                                         <menu key="menu" title="OtherViews" id="68">
                                             <connections>
                                                 <outlet property="delegate" destination="-2" id="unr-cM-tqJ"/>
@@ -413,8 +413,8 @@
                                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipDefaultParentExport" id="298"/>
                                     </connections>
                                 </popUpButton>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="166">
-                                    <rect key="frame" x="94" y="193" width="151" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="166">
+                                    <rect key="frame" x="94" y="201" width="151" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Safe Limit__" id="173">
                                         <font key="font" metaFont="system"/>
@@ -426,8 +426,8 @@
                                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipExportLimit" id="186"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="322">
-                                    <rect key="frame" x="272" y="105" width="151" height="17"/>
+                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="322">
+                                    <rect key="frame" x="272" y="113" width="151" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Export____" id="323">
                                         <font key="font" metaFont="system"/>
@@ -440,11 +440,11 @@
                                     </connections>
                                 </textField>
                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="167">
-                                    <rect key="frame" x="10" y="188" width="82" height="26"/>
+                                    <rect key="frame" x="10" y="196" width="82" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="172" id="168">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="message"/>
                                         <menu key="menu" title="OtherViews" id="169">
                                             <items>
                                                 <menuItem title="0" state="on" id="172"/>
@@ -461,7 +461,7 @@
                                     </connections>
                                 </popUpButton>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="254">
-                                    <rect key="frame" x="298" y="151" width="203" height="18"/>
+                                    <rect key="frame" x="298" y="159" width="203" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Folders__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="257">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -475,7 +475,7 @@
                                     </connections>
                                 </button>
                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="255">
-                                    <rect key="frame" x="317" y="131" width="191" height="18"/>
+                                    <rect key="frame" x="317" y="139" width="191" height="18"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="One for each Tag__" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="256">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -489,11 +489,11 @@
                                     </connections>
                                 </button>
                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3F-1P-1pj">
-                                    <rect key="frame" x="36" y="65" width="185" height="26"/>
+                                    <rect key="frame" x="36" y="73" width="185" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <popUpButtonCell key="cell" type="push" title="0" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="D3K-48-xEr" id="ZFE-xg-3SN">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="menu"/>
+                                        <font key="font" metaFont="message"/>
                                         <menu key="menu" title="OtherViews" id="Vtm-wi-jyR">
                                             <items>
                                                 <menuItem title="0" state="on" id="D3K-48-xEr"/>

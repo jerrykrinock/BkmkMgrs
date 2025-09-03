@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="526" height="123"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" id="KbW-NT-feM">
-                <rect key="frame" x="3" y="3" width="520" height="102"/>
+                <rect key="frame" x="0.0" y="0.0" width="526" height="109"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <button id="101">
-                        <rect key="frame" x="11" y="76" width="506" height="18"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="101">
+                        <rect key="frame" x="11" y="83" width="506" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Don_t_Warn_About_Owner_Sync" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="102">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -33,8 +33,8 @@
                             <binding destination="96" name="toolTip" keyPath="content.tooltipDontWarnOwnerSync" previousBinding="121" id="123"/>
                         </connections>
                     </button>
-                    <button id="Lqu-OW-dze">
-                        <rect key="frame" x="11" y="56" width="468" height="18"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lqu-OW-dze">
+                        <rect key="frame" x="11" y="63" width="468" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Nooo_Loosies_in_menu" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="amh-UN-eES">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -46,8 +46,8 @@
                             <binding destination="96" name="toolTip" keyPath="content.tooltipNoLoosiesInMenu" previousBinding="zrD-Gf-R0P" id="htR-L7-IKX"/>
                         </connections>
                     </button>
-                    <button id="d8z-lm-hXj">
-                        <rect key="frame" x="11" y="36" width="468" height="18"/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8z-lm-hXj">
+                        <rect key="frame" x="11" y="43" width="468" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="fake_unfiled" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="YuP-fw-Cfc">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -59,16 +59,16 @@
                             <binding destination="96" name="toolTip" keyPath="content.tooltipFakeUnfiled" previousBinding="zcW-y8-1LQ" id="lFq-Fb-Zu9"/>
                         </connections>
                     </button>
-                    <popUpButton verticalHuggingPriority="750" id="uU7-MX-gtH">
-                        <rect key="frame" x="11" y="7" width="116" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uU7-MX-gtH">
+                        <rect key="frame" x="11" y="14" width="116" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" title="Automatic" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JC1-4Q-LsA" id="0Fq-iK-1oH">
+                        <popUpButtonCell key="cell" type="push" title="Automatic" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="JC1-4Q-LsA" id="0Fq-iK-1oH">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="menu"/>
+                            <font key="font" metaFont="message"/>
                             <menu key="menu" title="OtherViews" id="5fS-Oa-AFQ">
                                 <items>
-                                    <menuItem title="Automatic" id="JC1-4Q-LsA"/>
-                                    <menuItem title="Always" state="on" tag="1" id="mFn-hq-xXA"/>
+                                    <menuItem title="Automatic" state="on" id="JC1-4Q-LsA"/>
+                                    <menuItem title="Always" tag="1" id="mFn-hq-xXA"/>
                                 </items>
                             </menu>
                         </popUpButtonCell>
@@ -77,8 +77,8 @@
                             <binding destination="96" name="selectedTag" keyPath="content.launchBrowserPref" id="UxQ-xS-VZ1"/>
                         </connections>
                     </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="YIb-8l-KlX">
-                        <rect key="frame" x="130" y="12" width="349" height="17"/>
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-8l-KlX">
+                        <rect key="frame" x="130" y="19" width="349" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="launch_browza_durin_syncs" id="oTm-uc-9U2">
                             <font key="font" metaFont="system"/>
@@ -90,8 +90,8 @@
                             <binding destination="-3" name="value" keyPath="delegate.basis.labelLaunchBrowserPref" id="JM6-dW-rZO"/>
                         </connections>
                     </textField>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="v7p-fV-fEK">
-                        <rect key="frame" x="483" y="9" width="25" height="25"/>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-fV-fEK">
+                        <rect key="frame" x="483" y="16" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I11-pK-h3a">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -101,8 +101,8 @@
                             <action selector="helpLaunchBrowserPrefs:" target="-2" id="4EB-Kt-5tH"/>
                         </connections>
                     </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="lHg-ID-J0s">
-                        <rect key="frame" x="483" y="29" width="25" height="25"/>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHg-ID-J0s">
+                        <rect key="frame" x="483" y="36" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3eF-aF-y96">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -112,8 +112,8 @@
                             <action selector="helpFakeUnfiled:" target="-2" id="5hl-b9-GDq"/>
                         </connections>
                     </button>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="Xf3-2V-Lhe">
-                        <rect key="frame" x="483" y="48" width="25" height="25"/>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xf3-2V-Lhe">
+                        <rect key="frame" x="483" y="55" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WVa-Gp-nRr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

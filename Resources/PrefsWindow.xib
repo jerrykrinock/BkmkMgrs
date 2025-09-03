@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -62,7 +62,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="197" y="244" width="630" height="690"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1072"/>
             <view key="contentView" id="241">
                 <rect key="frame" x="0.0" y="0.0" width="630" height="690"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                     </tabView>
                 </subviews>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="194E7565-0E8C-4995-9D8C-D3BA7B97AEB1" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Jxp-tC-3kI">
+            <toolbar key="toolbar" implicitIdentifier="194E7565-0E8C-4995-9D8C-D3BA7B97AEB1" autosavesConfiguration="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="Jxp-tC-3kI">
                 <allowedToolbarItems/>
                 <defaultToolbarItems/>
             </toolbar>
@@ -90,7 +90,7 @@
             <rect key="frame" x="0.0" y="0.0" width="454" height="381"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27o-xo-jDe">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27o-xo-jDe">
                     <rect key="frame" x="250" y="341" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Default_TAG_Delimiter" id="nbg-we-a7e">
@@ -108,7 +108,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="zMc-7V-5Jk" id="LUA-jd-0th">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="gOd-rm-xsD">
                             <items>
                                 <menuItem title="Item 1" state="on" id="zMc-7V-5Jk"/>
@@ -129,7 +129,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="v7J-Sl-chC" id="Vmo-VA-lkf">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="8kD-Sq-QYl">
                             <items>
                                 <menuItem title="Item 1" state="on" id="v7J-Sl-chC"/>
@@ -145,7 +145,7 @@
                         <binding destination="1525" name="selectedObject" keyPath="values.tagDelimiterReplacement" previousBinding="rC5-ap-wAq" id="6Rf-0e-JQu"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ra0-EU-SEe">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ra0-EU-SEe">
                     <rect key="frame" x="250" y="311" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Tag Delimiter Replacement" id="ugk-8N-PS2">
@@ -157,7 +157,7 @@
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.tagDelimiterReplacementToolTip" id="2h5-h0-3ya"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Naf-V2-8pw">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Naf-V2-8pw">
                     <rect key="frame" x="62" y="257" width="374" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Warn before visiting too many websites at once" id="KyR-SY-750">
@@ -169,7 +169,7 @@
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncSnapshots" id="1fG-89-JgV"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts8-tU-TmX">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts8-tU-TmX">
                     <rect key="frame" x="22" y="257" width="38" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="DB0-lV-J5U">
@@ -191,7 +191,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="pcH-Fg-YHJ" id="5Ul-dw-nRP">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="APU-Qs-sdr">
                             <items>
                                 <menuItem title="Item 1" state="on" id="pcH-Fg-YHJ"/>
@@ -205,7 +205,7 @@
                         <binding destination="-3" name="contentValues" keyPath="delegate.visitorChoicesDocument.displayNameForVisitor" previousBinding="gvF-cz-ltd" id="wdD-Bx-5yc"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sta-fQ-zW8">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sta-fQ-zW8">
                     <rect key="frame" x="20" y="214" width="414" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="visitor____" id="dU0-2a-SjK">
@@ -288,7 +288,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.sendPerformanceData" id="QjG-1w-7yE"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bg4-GC-Z5t">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bg4-GC-Z5t">
                     <rect key="frame" x="18" y="51" width="128" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Copy Template:" id="mCe-T7-rIE">
@@ -297,7 +297,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-z3-OHH">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-z3-OHH">
                     <rect key="frame" x="23" y="26" width="382" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ayw-xx-W7r">
@@ -349,7 +349,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <action selector="helpDontWarnSyncingSuspended:" target="-2" id="0mk-XA-Iiy"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64b-Cx-LsM">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64b-Cx-LsM">
                     <rect key="frame" x="248" y="316" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Default_TAG_Delimiter" id="zu1-Ey-2FQ">
@@ -367,7 +367,7 @@ can help improve Smarky to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Lgo-Ox-TMG" id="3xE-Y7-nNR">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="B6h-ZN-ge1">
                             <items>
                                 <menuItem title="Item 1" state="on" id="Lgo-Ox-TMG"/>
@@ -388,7 +388,7 @@ can help improve Smarky to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="NnQ-uT-vZs" id="Qbe-Z7-pQ6">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="NgI-fv-ZL8">
                             <items>
                                 <menuItem title="Item 1" state="on" id="NnQ-uT-vZs"/>
@@ -404,7 +404,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <binding destination="1525" name="selectedObject" keyPath="values.tagDelimiterReplacement" previousBinding="n4O-5F-guA" id="CGY-cO-yNi"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-Q5-Mi0">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-Q5-Mi0">
                     <rect key="frame" x="248" y="286" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Tag Delimiter Replacement" id="1lM-8u-9Ql">
@@ -416,7 +416,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.tagDelimiterReplacementToolTip" id="5jh-cT-8VP"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INZ-QI-zZM">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INZ-QI-zZM">
                     <rect key="frame" x="64" y="232" width="374" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Warn before visiting too many websites at once" id="Vyz-AB-bis">
@@ -428,7 +428,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncSnapshots" id="v5Y-a6-jKL"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tU5-4M-RYm">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tU5-4M-RYm">
                     <rect key="frame" x="24" y="232" width="38" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="u6r-Gd-scV">
@@ -450,7 +450,7 @@ can help improve Smarky to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ceC-Yl-Evh" id="Lo2-iH-k1m">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="qMX-Dk-TdC">
                             <items>
                                 <menuItem title="Item 1" state="on" id="ceC-Yl-Evh"/>
@@ -464,7 +464,7 @@ can help improve Smarky to Sheep Systems.</string>
                         <binding destination="-3" name="contentValues" keyPath="delegate.visitorChoicesDocument.displayNameForVisitor" previousBinding="snh-FD-ktX" id="SFT-KE-Vzx"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocn-L2-Hf3">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocn-L2-Hf3">
                     <rect key="frame" x="23" y="189" width="414" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="visitor____" id="Pjj-iF-nBL">
@@ -512,7 +512,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <action selector="helpSendPerformanceData:" target="-2" id="Ths-e7-dCz"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-L1-B1T">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-L1-B1T">
                     <rect key="frame" x="24" y="45" width="128" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Copy Template:" id="3rh-0G-FdT">
@@ -521,7 +521,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-57-1hf">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-57-1hf">
                     <rect key="frame" x="29" y="20" width="362" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JoU-Eb-VEt">
@@ -551,7 +551,7 @@ can help improve Synkmark to Sheep Systems.</string>
             <rect key="frame" x="0.0" y="0.0" width="457" height="365"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRz-Lk-i0Y">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRz-Lk-i0Y">
                     <rect key="frame" x="248" y="264" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Default_TAG_Delimiter" id="WVZ-5A-PlD">
@@ -583,7 +583,7 @@ can help improve Synkmark to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="cSB-8O-wnT" id="u2M-K0-q9I">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="fLE-73-C1D">
                             <items>
                                 <menuItem title="Item 1" state="on" id="cSB-8O-wnT"/>
@@ -604,7 +604,7 @@ can help improve Synkmark to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tSS-sX-t4h" id="aA1-yM-EEg">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="NV1-s4-mBK">
                             <items>
                                 <menuItem title="Item 1" state="on" id="tSS-sX-t4h"/>
@@ -620,7 +620,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <binding destination="1525" name="selectedObject" keyPath="values.tagDelimiterReplacement" previousBinding="Zhg-1I-aCH" id="Jvl-Pc-19K"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8O-Gp-zMo">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8O-Gp-zMo">
                     <rect key="frame" x="248" y="234" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Tag Delimiter Replacement" id="JfN-Up-VyR">
@@ -632,7 +632,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.tagDelimiterReplacementToolTip" id="OUA-5u-elj"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVc-pC-Q0V">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVc-pC-Q0V">
                     <rect key="frame" x="64" y="196" width="374" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Warn before visiting too many websites at once" id="Flt-4s-tXq">
@@ -644,7 +644,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncSnapshots" id="Mhb-ou-bAp"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-Sv-6ZW">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-Sv-6ZW">
                     <rect key="frame" x="24" y="196" width="38" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="tUB-13-dUZ">
@@ -661,7 +661,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.visitWarningThreshold" id="AM4-2g-KLs"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNO-Le-Nqg">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNO-Le-Nqg">
                     <rect key="frame" x="44" y="297" width="362" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Requires that either a keyboard shortcut be set to the Floating Menu (in Shortcuts), or enabling a Menu Extra (in Appearance). " id="hl8-bc-3DX">
@@ -675,7 +675,7 @@ can help improve Synkmark to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Mi5-gs-EHa" id="X6G-ao-r5a">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="7Wu-qE-dSx">
                             <items>
                                 <menuItem title="Item 1" state="on" id="Mi5-gs-EHa"/>
@@ -689,7 +689,7 @@ can help improve Synkmark to Sheep Systems.</string>
                         <binding destination="-3" name="contentValues" keyPath="delegate.visitorChoicesDocument.displayNameForVisitor" previousBinding="SYq-Jh-L58" id="pzw-5d-oiv"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54v-Cn-vcw">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54v-Cn-vcw">
                     <rect key="frame" x="22" y="171" width="408" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="visitor____" id="cg2-KS-fyO">
@@ -737,7 +737,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.sendPerformanceData" id="4hV-zx-Cd2"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mal-Iz-v4L">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mal-Iz-v4L">
                     <rect key="frame" x="24" y="45" width="128" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Copy Template:" id="2gx-aB-lis">
@@ -746,7 +746,7 @@ can help improve Markster to Sheep Systems.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-zT-Crj">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-zT-Crj">
                     <rect key="frame" x="29" y="20" width="369" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BWv-ed-HD9">
@@ -810,7 +810,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.dontWarnSyncingSuspended" id="onl-Xf-o04"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zng-cw-NYF">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zng-cw-NYF">
                     <rect key="frame" x="248" y="238" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Default_TAG_Delimiter" id="jH0-C3-G3E">
@@ -858,7 +858,7 @@ can help improve Markster to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="5rG-9N-G2p" id="ZiI-a7-Njr">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="etm-jJ-NRD">
                             <items>
                                 <menuItem title="Item 1" state="on" id="5rG-9N-G2p"/>
@@ -879,7 +879,7 @@ can help improve Markster to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="right" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="6af-4k-Far" id="AlP-w0-EdF">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="k1k-Bw-hf2">
                             <items>
                                 <menuItem title="Item 1" state="on" id="6af-4k-Far"/>
@@ -895,7 +895,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="1525" name="selectedObject" keyPath="values.tagDelimiterReplacement" previousBinding="Lgp-Ta-JJj" id="vym-cG-WIA"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBe-zm-ydp">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBe-zm-ydp">
                     <rect key="frame" x="248" y="208" width="189" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Tag Delimiter Replacement" id="j4G-yj-uin">
@@ -907,7 +907,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.tagDelimiterReplacementToolTip" id="WqM-tH-dnO"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-sH-JIx">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-sH-JIx">
                     <rect key="frame" x="64" y="170" width="374" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Warn before visiting too many websites at once" id="uLT-WY-yKi">
@@ -919,7 +919,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipSyncSnapshots" id="wSM-T8-WRX"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNl-wZ-Uq8">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNl-wZ-Uq8">
                     <rect key="frame" x="24" y="170" width="38" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="ddX-aB-QIa">
@@ -936,7 +936,7 @@ can help improve Markster to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.visitWarningThreshold" id="Vtg-Ra-t5c"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-GP-T6h">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-GP-T6h">
                     <rect key="frame" x="49" y="274" width="362" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Requires that either a keyboard shortcut be set to the Floating Menu (in Shortcuts), or enabling a Menu Extra (in Appearance). " id="PDP-RL-nUF">
@@ -980,7 +980,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <action selector="helpDontWarnSyncingSuspended:" target="-2" id="TX0-fF-sdb"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-lI-iuY">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-lI-iuY">
                     <rect key="frame" x="24" y="45" width="128" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Copy Template:" id="inu-7b-qnM">
@@ -989,7 +989,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-6d-1ZN">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-6d-1ZN">
                     <rect key="frame" x="29" y="20" width="378" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="yRT-o9-yc3">
@@ -1023,19 +1023,19 @@ can help improve BookMacster to Sheep Systems.</string>
                     <rect key="frame" x="17" y="550" width="478" height="78"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="NHI-pl-rnU">
-                        <rect key="frame" x="4" y="5" width="470" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="478" height="78"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AxM-KW-2Im">
-                                <rect key="frame" x="38" y="26" width="408" height="18"/>
+                                <rect key="frame" x="38" y="34" width="408" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Manually, with menu item Bookmarks &gt; Sort All" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="MKU-i7-H1y">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCU-Bc-pQu">
-                                <rect key="frame" x="15" y="48" width="541" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SCU-Bc-pQu">
+                                <rect key="frame" x="15" y="56" width="541" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sort_conf" id="39q-IE-g0S">
                                     <font key="font" metaFont="systemBold"/>
@@ -1047,7 +1047,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </connections>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-n2-dNm">
-                                <rect key="frame" x="38" y="6" width="395" height="18"/>
+                                <rect key="frame" x="38" y="14" width="395" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Automatically, during Syncs" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tO5-ZJ-MYj">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1064,11 +1064,11 @@ can help improve BookMacster to Sheep Systems.</string>
                     <rect key="frame" x="17" y="401" width="478" height="142"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="OBC-Y0-oTN">
-                        <rect key="frame" x="4" y="5" width="470" height="134"/>
+                        <rect key="frame" x="0.0" y="0.0" width="478" height="142"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwh-hJ-kGz" userLabel="Sort Root Checkbox">
-                                <rect key="frame" x="38" y="90" width="375" height="18"/>
+                                <rect key="frame" x="38" y="98" width="375" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Sort_root______" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="0NU-0E-DRd">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1079,8 +1079,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipRoot" previousBinding="Swx-6S-zQM" id="FcZ-rv-y6x"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8n-aM-DfN">
-                                <rect key="frame" x="37" y="63" width="404" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8n-aM-DfN">
+                                <rect key="frame" x="37" y="71" width="404" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default_setting_for_folders_not_explicit___________________" id="on9-hV-dhs">
                                     <font key="font" metaFont="system"/>
@@ -1091,8 +1091,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelSortableDefault" id="30F-ho-9rF"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-2T-kU4">
-                                <rect key="frame" x="15" y="112" width="412" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-2T-kU4">
+                                <rect key="frame" x="15" y="120" width="412" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sort_conf" id="iEf-51-4KE">
                                     <font key="font" metaFont="systemBold"/>
@@ -1104,7 +1104,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </connections>
                             </textField>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efE-sW-eQO" userLabel="Default Sortable Matrix">
-                                <rect key="frame" x="67" y="1" width="357" height="58"/>
+                                <rect key="frame" x="67" y="9" width="357" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="357" height="18"/>
@@ -1146,11 +1146,11 @@ can help improve BookMacster to Sheep Systems.</string>
                     <rect key="frame" x="17" y="16" width="478" height="378"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="aZS-pQ-KLk">
-                        <rect key="frame" x="4" y="5" width="470" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="478" height="378"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-so-Jmt">
-                                <rect key="frame" x="37" y="158" width="406" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-so-Jmt">
+                                <rect key="frame" x="37" y="166" width="406" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Within_each_folder, sort_____..." id="fCj-pF-hvS">
                                     <font key="font" metaFont="system"/>
@@ -1161,8 +1161,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelSortingSegmentation" id="Fbn-ak-7pb"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zU-zx-CsD">
-                                <rect key="frame" x="37" y="268" width="245" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zU-zx-CsD">
+                                <rect key="frame" x="37" y="276" width="245" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sort_alpha-numerically_by____" id="Usc-ac-UlR">
                                     <font key="font" metaFont="system"/>
@@ -1173,8 +1173,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelSortBy" id="hdk-cf-2ae"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MT-rH-12x">
-                                <rect key="frame" x="289" y="209" width="172" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1MT-rH-12x">
+                                <rect key="frame" x="289" y="217" width="172" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="com, apple, itunes" id="14H-vH-XvI">
                                     <font key="font" metaFont="system"/>
@@ -1182,8 +1182,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-PX-Cz2">
-                                <rect key="frame" x="289" y="191" width="185" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-PX-Cz2">
+                                <rect key="frame" x="289" y="199" width="185" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="★★★" id="bUq-zn-Scn">
                                     <font key="font" size="13" name="AquaKana"/>
@@ -1191,8 +1191,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb8-gm-Af3">
-                                <rect key="frame" x="289" y="268" width="160" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb8-gm-Af3">
+                                <rect key="frame" x="289" y="276" width="160" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Example______" id="itd-mY-TJ2">
                                     <font key="font" metaFont="systemBold"/>
@@ -1203,8 +1203,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelExample" id="IVZ-tP-6Qo"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tw-cv-TJY">
-                                <rect key="frame" x="289" y="229" width="167" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tw-cv-TJY">
+                                <rect key="frame" x="289" y="237" width="167" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iTunes.apple.com/tunes" id="sH5-ft-ZL8">
                                     <font key="font" metaFont="system"/>
@@ -1213,11 +1213,11 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="5an-9f-IZz">
-                                <rect key="frame" x="67" y="80" width="100" height="5"/>
+                                <rect key="frame" x="67" y="88" width="100" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-03-vDc" userLabel="Sort Folders At Matrix">
-                                <rect key="frame" x="67" y="96" width="353" height="58"/>
+                                <rect key="frame" x="67" y="104" width="353" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="353" height="18"/>
@@ -1252,8 +1252,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     </column>
                                 </cells>
                             </matrix>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Kr-gH-QQP">
-                                <rect key="frame" x="15" y="347" width="541" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Kr-gH-QQP">
+                                <rect key="frame" x="15" y="355" width="541" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sort_conf" id="V76-Jj-kkd">
                                     <font key="font" metaFont="systemBold"/>
@@ -1265,7 +1265,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </connections>
                             </textField>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQo-ZL-ItB" userLabel="Sort By Matrix">
-                                <rect key="frame" x="67" y="188" width="217" height="78"/>
+                                <rect key="frame" x="67" y="196" width="217" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="217" height="18"/>
@@ -1305,7 +1305,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </cells>
                             </matrix>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-EO-B28" userLabel="Ignore Common Prefixes Checkbox">
-                                <rect key="frame" x="38" y="324" width="178" height="18"/>
+                                <rect key="frame" x="38" y="332" width="178" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Ignore Common Prefixes" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="I7j-i8-U8w">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1316,8 +1316,8 @@ can help improve BookMacster to Sheep Systems.</string>
                                     <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipCommonPrefixesSwitch" previousBinding="CqU-KB-Eqq" id="17R-Wl-r10"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-SN-qDB">
-                                <rect key="frame" x="289" y="249" width="160" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-SN-qDB">
+                                <rect key="frame" x="289" y="257" width="160" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Apple - iTunes" id="cgf-nd-DoD">
                                     <font key="font" metaFont="system"/>
@@ -1326,7 +1326,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-DT-RCY">
-                                <rect key="frame" x="61" y="292" width="86" height="32"/>
+                                <rect key="frame" x="61" y="300" width="86" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Define…" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z27-4C-75O">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1337,7 +1337,7 @@ can help improve BookMacster to Sheep Systems.</string>
                                 </connections>
                             </button>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDO-vI-hGd">
-                                <rect key="frame" x="67" y="10" width="450" height="58"/>
+                                <rect key="frame" x="67" y="18" width="450" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="450" height="18"/>
@@ -1386,11 +1386,11 @@ can help improve BookMacster to Sheep Systems.</string>
                     <rect key="frame" x="22" y="112" width="401" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" id="EFi-G3-6Bv">
-                        <rect key="frame" x="1" y="1" width="388" height="198"/>
+                        <rect key="frame" x="1" y="1" width="386" height="198"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" id="Zob-BT-Lcw">
-                                <rect key="frame" x="0.0" y="0.0" width="388" height="198"/>
+                                <rect key="frame" x="0.0" y="0.0" width="386" height="198"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1440,7 +1440,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="m3A-Ju-aPz">
-                        <rect key="frame" x="389" y="1" width="11" height="198"/>
+                        <rect key="frame" x="387" y="1" width="13" height="198"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -1471,7 +1471,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1822" name="enabled" keyPath="canRemove" id="oC7-72-ZhL"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipf-8D-3yl">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipf-8D-3yl">
                     <rect key="frame" x="19" y="314" width="407" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="Bqz-jY-wHv">
@@ -1487,7 +1487,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelIgnoredPrefixes" id="Ptl-nU-h44"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq6-KF-x83">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq6-KF-x83">
                     <rect key="frame" x="388" y="314" width="20" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="(*)" id="QTg-V1-eUN">
@@ -1496,7 +1496,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHW-SH-W6p">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHW-SH-W6p">
                     <rect key="frame" x="39" y="20" width="387" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="bAL-Un-5yn">
@@ -1511,7 +1511,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelTrailingSpaceCheckbox" id="Ktc-Sj-IXb"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAI-f1-xlh">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAI-f1-xlh">
                     <rect key="frame" x="19" y="58" width="23" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="(*)" id="cjk-In-nhe">
@@ -1543,7 +1543,7 @@ can help improve BookMacster to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="HaF-L5-j7o">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="7ep-jK-O5X"/>
                     </popUpButtonCell>
                     <connections>
@@ -1552,7 +1552,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1525" name="selectedObject" keyPath="values.shoeboxSafeSyncLimit" previousBinding="u7E-DB-zDL" id="XEQ-Xo-p88"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lvg-nJ-z0l">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lvg-nJ-z0l">
                     <rect key="frame" x="85" y="119" width="317" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="safe_limit__" id="Gc3-4l-Cbj">
@@ -1575,7 +1575,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <action selector="helpSafeSyncLimit:" target="-2" id="gIe-71-ePW"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUA-ZU-2IM">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUA-ZU-2IM">
                     <rect key="frame" x="145" y="179" width="286" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Delay before importing changes from Safari" id="AID-Lw-Hlc">
@@ -1622,7 +1622,7 @@ can help improve BookMacster to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="10 seconds" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="10" imageScaling="proportionallyDown" inset="2" selectedItem="OdV-Zz-jed" id="phU-iU-58e">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="257-GW-MLj">
                             <items>
                                 <menuItem title="10 seconds" state="on" tag="10" id="OdV-Zz-jed">
@@ -1653,7 +1653,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1525" name="selectedTag" keyPath="values.bookmarksChangeDelay2" id="tLq-l1-cAv"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-5S-3j7">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-5S-3j7">
                     <rect key="frame" x="22" y="149" width="60" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="666" drawsBackground="YES" id="KKE-Ji-sV8">
@@ -1669,7 +1669,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.syncSnapshotsLimitMB" id="qOc-it-Edd"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="418" translatesAutoresizingMaskIntoConstraints="NO" id="Ymk-9Y-AQo">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="418" translatesAutoresizingMaskIntoConstraints="NO" id="Ymk-9Y-AQo">
                     <rect key="frame" x="87" y="145" width="422" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="MB Limit for keeping old Sync Snapshots on disk" id="Em4-8l-Gho">
@@ -1696,7 +1696,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1525" name="value" keyPath="values.dontWarnExport" id="wk4-6p-w9D"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-an-WHZ" customClass="SSYNoVoiceOverTextField">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-an-WHZ" customClass="SSYNoVoiceOverTextField">
                     <rect key="frame" x="87" y="52" width="251" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Synced Browsers" id="T5s-Ir-zzp">
@@ -1736,7 +1736,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <outlet property="documentProvider" destination="-2" id="LV5-FJ-kD8"/>
                     </connections>
                 </customView>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-uN-tLw" customClass="SSYNoVoiceOverTextField">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-uN-tLw" customClass="SSYNoVoiceOverTextField">
                     <rect key="frame" x="432" y="88" width="97" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Ex_port" id="BsQ-nv-sD9">
@@ -1748,7 +1748,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelExport" id="LxN-hI-IiK"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gi-pY-kLW" customClass="SSYNoVoiceOverTextField">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gi-pY-kLW" customClass="SSYNoVoiceOverTextField">
                     <rect key="frame" x="298" y="88" width="97" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Im_port" id="4Qv-6W-sH5">
@@ -1783,7 +1783,7 @@ can help improve BookMacster to Sheep Systems.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="6Sk-ku-R1q">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="s89-Gj-RjA"/>
                     </popUpButtonCell>
                     <connections>
@@ -1792,7 +1792,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <binding destination="1525" name="selectedObject" keyPath="values.shoeboxSafeSyncLimit" previousBinding="Lef-jV-v6z" id="14H-a9-efm"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZn-aJ-Vni">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZn-aJ-Vni">
                     <rect key="frame" x="86" y="266" width="321" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="safe_limit__" id="snT-gN-k5s">
@@ -1870,7 +1870,7 @@ can help improve BookMacster to Sheep Systems.</string>
                         <action selector="helpSyncFirefoxOnQuit:" target="-2" id="789-oY-Tkp"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4G-7G-kiM" customClass="SSYNoVoiceOverTextField">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4G-7G-kiM" customClass="SSYNoVoiceOverTextField">
                     <rect key="frame" x="424" y="40" width="75" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" id="JYo-tE-SJK">
@@ -1886,7 +1886,7 @@ Up | Dn</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="10 seconds" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="10" imageScaling="proportionallyDown" inset="2" selectedItem="2aS-ld-YNe" id="uG2-af-Vej">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="0i3-fu-Bfy">
                             <items>
                                 <menuItem title="10 seconds" state="on" tag="10" id="2aS-ld-YNe">
@@ -1917,7 +1917,7 @@ Up | Dn</string>
                         <binding destination="1525" name="selectedTag" keyPath="values.bookmarksChangeDelay2" id="fGp-iC-Poa"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SzB-v8-B3w">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SzB-v8-B3w">
                     <rect key="frame" x="150" y="326" width="222" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Delay before starting to import changes from web browsers" id="qw8-SX-lnt">
@@ -1926,7 +1926,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0c-Bf-U3M">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0c-Bf-U3M">
                     <rect key="frame" x="21" y="297" width="60" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="666" drawsBackground="YES" id="s51-61-IHt">
@@ -1942,7 +1942,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.syncSnapshotsLimitMB" id="FlV-fj-TEy"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="418" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-Wf-Fr6">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="418" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-Wf-Fr6">
                     <rect key="frame" x="86" y="293" width="422" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="MB Limit for keeping old Sync Snapshots on disk" id="b7U-xw-QxM">
@@ -1980,7 +1980,7 @@ Up | Dn</string>
                         <action selector="helpSyncSnapshots:" target="-2" id="0sB-By-usI"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpD-Gi-Kpg">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpD-Gi-Kpg">
                     <rect key="frame" x="19" y="46" width="60" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="666" drawsBackground="YES" id="mvj-0S-LlV">
@@ -1996,7 +1996,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.syncSnapshotsLimitMB" id="WkX-oc-loa"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="346" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-PV-qlu">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="346" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-PV-qlu">
                     <rect key="frame" x="84" y="42" width="350" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="MB Limit for keeping old Sync Snapshots on disk" id="uqq-Tc-PIQ">
@@ -2017,7 +2017,7 @@ Up | Dn</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="10 seconds" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="10" imageScaling="proportionallyDown" inset="2" selectedItem="QvS-Tq-NfG" id="fRR-zW-bcc">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="OtherViews" id="iof-nD-f81">
                             <items>
                                 <menuItem title="10 seconds" state="on" tag="10" id="QvS-Tq-NfG">
@@ -2092,7 +2092,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.dontWarnBadCommandEnd" id="d7J-rl-44Y"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yG-yk-div">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yG-yk-div">
                     <rect key="frame" x="37" y="107" width="390" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="dont_warn_bad_agents because they won't bite you and won't hurt you!" id="zop-9e-MBY">
@@ -2115,7 +2115,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.dontWarnExport" id="Hmc-hw-cWI"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-7N-SD5">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmm-7N-SD5">
                     <rect key="frame" x="37" y="149" width="390" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Don't warn about examining Content before an Export" id="YDH-oO-48O">
@@ -2135,7 +2135,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.dontWarnOtherMacBrowsers" id="1aI-eF-5zq"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-2u-1hm">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-2u-1hm">
                     <rect key="frame" x="37" y="78" width="390" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="dont_warn_quit_other_mac_browsers" id="AOh-FI-yzy">
@@ -2169,7 +2169,7 @@ Up | Dn</string>
                         <action selector="helpSyncSnapshots:" target="-2" id="0v0-Bw-qei"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KxH-ud-b8W">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KxH-ud-b8W">
                     <rect key="frame" x="150" y="215" width="222" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Delay before starting to import changes from Clients" id="SPk-eT-TmZ">
@@ -2178,7 +2178,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-8m-bI7">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-8m-bI7">
                     <rect key="frame" x="20" y="190" width="60" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="666" drawsBackground="YES" id="Aom-zy-RV3">
@@ -2194,7 +2194,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.syncSnapshotsLimitMB" id="CPN-6b-8Zx"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="346" translatesAutoresizingMaskIntoConstraints="NO" id="IyF-KC-WpQ">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="346" translatesAutoresizingMaskIntoConstraints="NO" id="IyF-KC-WpQ">
                     <rect key="frame" x="85" y="186" width="350" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="MB Limit for keeping old Sync Snapshots on disk" id="k1J-tK-9S5">
@@ -2210,7 +2210,7 @@ Up | Dn</string>
             <rect key="frame" x="0.0" y="0.0" width="427" height="228"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saE-bo-C5H">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saE-bo-C5H">
                     <rect key="frame" x="18" y="188" width="372" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Keyboard Shortcuts from Browsers to BookMacster" id="k29-bT-z3g">
@@ -2219,7 +2219,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgf-tC-Qgt">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgf-tC-Qgt">
                     <rect key="frame" x="202" y="150" width="171" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Show the Floating Menu" id="Wuy-vq-UHv">
@@ -2253,11 +2253,11 @@ Up | Dn</string>
                     <rect key="frame" x="27" y="16" width="383" height="114"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="UIA-2H-8EX">
-                        <rect key="frame" x="4" y="5" width="375" height="106"/>
+                        <rect key="frame" x="0.0" y="0.0" width="383" height="114"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqt-OH-QU2">
-                                <rect key="frame" x="12" y="74" width="372" height="20"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqt-OH-QU2">
+                                <rect key="frame" x="12" y="82" width="372" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Add Bookmark to your New Bookmark Landing" id="Ma0-pf-21A">
                                     <font key="font" metaFont="system"/>
@@ -2265,8 +2265,8 @@ Up | Dn</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8j-Y1-JqM">
-                                <rect key="frame" x="176" y="45" width="188" height="20"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8j-Y1-JqM">
+                                <rect key="frame" x="176" y="53" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Aaadd Quickkkly" id="m7a-af-TGs">
                                     <font key="font" metaFont="system"/>
@@ -2277,8 +2277,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelAddQuickly" id="q6V-sr-4ht"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-Rt-wej">
-                                <rect key="frame" x="176" y="17" width="188" height="20"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-Rt-wej">
+                                <rect key="frame" x="176" y="25" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Adddd &amp; Inssspect" id="Dal-42-WDk">
                                     <font key="font" metaFont="system"/>
@@ -2290,14 +2290,14 @@ Up | Dn</string>
                                 </connections>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eB-8E-IG5" userLabel="SRControl : Add Quickly" customClass="SRRecorderControl">
-                                <rect key="frame" x="15" y="46" width="156" height="22"/>
+                                <rect key="frame" x="15" y="54" width="156" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="4590" id="mNU-k5-cFM"/>
                                 </connections>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJx-AN-2j2" userLabel="SRControl : Add &amp; Inspect" customClass="SRRecorderControl">
-                                <rect key="frame" x="15" y="16" width="156" height="22"/>
+                                <rect key="frame" x="15" y="24" width="156" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="4591" id="ifD-ge-ZPj"/>
@@ -2320,7 +2320,7 @@ Up | Dn</string>
                     <rect key="frame" x="17" y="404" width="416" height="136"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="c1C-XQ-bVK">
-                        <rect key="frame" x="4" y="5" width="408" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHi-ix-ofE">
@@ -2328,8 +2328,8 @@ Up | Dn</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="photo" image="WidgetExtoreChromy" id="zTy-Oa-F0O"/>
                             </imageView>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-uf-9HD" userLabel="Install or uninstall Toobar Buttons or Menu Items in web browser applications">
-                                <rect key="frame" x="12" y="4" width="266" height="34"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-uf-9HD" userLabel="Install or uninstall Toobar Buttons or Menu Items in web browser applications">
+                                <rect key="frame" x="12" y="12" width="266" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Install or uninstall Toolbar Buttons in web browser applications" id="XJX-Ns-0D5">
                                     <font key="font" metaFont="system"/>
@@ -2338,7 +2338,7 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-lz-tdk">
-                                <rect key="frame" x="286" y="2" width="120" height="32"/>
+                                <rect key="frame" x="286" y="10" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Go There…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SLb-0g-b4c">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2351,7 +2351,7 @@ Up | Dn</string>
                         </subviews>
                     </view>
                 </box>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-1e-bjS">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-1e-bjS">
                     <rect key="frame" x="196" y="20" width="54" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="22,222" drawsBackground="YES" id="umC-F1-kOV">
@@ -2377,7 +2377,7 @@ Up | Dn</string>
                         <action selector="helpDirectSettings:" target="-2" id="iYN-Xc-Dul"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-GC-DFa">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFc-GC-DFa">
                     <rect key="frame" x="29" y="375" width="390" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Wenn addin a new bookmawk from da browzer" id="xDw-Wy-Gep">
@@ -2389,7 +2389,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelWhenAddNewFromBrowser" id="1RM-IO-fe8"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGq-h2-eH9">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGq-h2-eH9">
                     <rect key="frame" x="38" y="326" width="381" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="If_I_already_have_a_bookmark_to_the_page" id="H8L-FF-YWO">
@@ -2401,7 +2401,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelIfDupingBookmark" id="aqD-Od-rUv"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNo-rC-Wrw">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNo-rC-Wrw">
                     <rect key="frame" x="38" y="19" width="160" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Truncate 'Comments' to " id="5NJ-uz-UJb">
@@ -2410,7 +2410,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-fZ-oxn">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-fZ-oxn">
                     <rect key="frame" x="254" y="19" width="160" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="characters" id="YfJ-Be-jHX">
@@ -2443,7 +2443,7 @@ Up | Dn</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="kpBth" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="1kG-X7-0Ki" id="gYe-Ar-JRE">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="If-Duper" id="Xl8-6k-fZn">
                             <items>
                                 <menuItem title="ask" tag="3" id="oBl-q4-AfG">
@@ -2477,11 +2477,11 @@ Up | Dn</string>
                     <rect key="frame" x="38" y="50" width="385" height="170"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="sfD-aB-Caf">
-                        <rect key="frame" x="4" y="5" width="377" height="162"/>
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYc-Hb-1H5">
-                                <rect key="frame" x="48" y="53" width="67" height="60"/>
+                                <rect key="frame" x="48" y="61" width="67" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="67" height="29"/>
@@ -2507,7 +2507,7 @@ Up | Dn</string>
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxZ-vM-1fd">
-                                <rect key="frame" x="154" y="53" width="62" height="60"/>
+                                <rect key="frame" x="154" y="61" width="62" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="62" height="29"/>
@@ -2532,8 +2532,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.altKeyInspectsLander" id="OK6-0Y-yY9"/>
                                 </connections>
                             </matrix>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-Oh-YcA">
-                                <rect key="frame" x="9" y="121" width="95" height="36"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-Oh-YcA">
+                                <rect key="frame" x="9" y="129" width="95" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="if opshun key is up" id="Xg4-Z0-Gc3">
                                     <font key="font" metaFont="system"/>
@@ -2544,8 +2544,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelIfOptKeyUp" id="4LT-jB-5ag"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EsO-Vt-dU4">
-                                <rect key="frame" x="118" y="121" width="95" height="36"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EsO-Vt-dU4">
+                                <rect key="frame" x="118" y="129" width="95" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="if opshun key is down" id="1Ir-sC-Hqq">
                                     <font key="font" metaFont="system"/>
@@ -2556,8 +2556,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelIfOptKeyDown" id="bnN-Y7-pqJ"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41i-PL-j4D">
-                                <rect key="frame" x="201" y="55" width="175" height="22"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41i-PL-j4D">
+                                <rect key="frame" x="201" y="63" width="175" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Adddd &amp; Inspect" id="mbw-fd-7A7">
                                     <font key="font" metaFont="system"/>
@@ -2568,8 +2568,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelAddAndInspect" id="vDO-Yh-VZw"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-aS-SBL">
-                                <rect key="frame" x="201" y="86" width="175" height="22"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsu-aS-SBL">
+                                <rect key="frame" x="201" y="94" width="175" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Adddd Quickkkkly" id="OQx-h6-5C6">
                                     <font key="font" metaFont="system"/>
@@ -2580,8 +2580,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelAddQuickly" id="QKl-YW-qlj"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzh-CK-wkr">
-                                <rect key="frame" x="15" y="0.0" width="354" height="47"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rzh-CK-wkr">
+                                <rect key="frame" x="15" y="8" width="354" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="uR3-oI-gdp">
                                     <font key="font" metaFont="message" size="11"/>
@@ -2601,14 +2601,14 @@ Up | Dn</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="G32-CD-LXx">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="New Bookmark Landing (from IB)" id="9UL-ud-MmU" userLabel="New Bookmark Landing" customClass="StarkContainersFlatMenu"/>
                     </popUpButtonCell>
                     <connections>
                         <binding destination="-3" name="toolTip" keyPath="delegate.basis.toolTipNewBookmarkLanding" id="OBB-Wb-SgU"/>
                     </connections>
                 </popUpButton>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Cv-Wo-QlC">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Cv-Wo-QlC">
                     <rect key="frame" x="39" y="268" width="377" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Neue bookmawk landin" id="t73-vS-Doj">
@@ -2632,11 +2632,11 @@ Up | Dn</string>
                     <rect key="frame" x="17" y="337" width="416" height="136"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="4Tw-fR-mxl">
-                        <rect key="frame" x="4" y="5" width="408" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-n7-pwi" userLabel="Install or uninstall Toobar Buttons or Menu Items in web browser applications">
-                                <rect key="frame" x="12" y="4" width="285" height="34"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-n7-pwi" userLabel="Install or uninstall Toobar Buttons or Menu Items in web browser applications">
+                                <rect key="frame" x="12" y="12" width="285" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Install or uninstall Toolbar Buttons in web browser applications" id="sms-Cb-L0E">
                                     <font key="font" metaFont="system"/>
@@ -2645,7 +2645,7 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LM-0V-CxA">
-                                <rect key="frame" x="286" y="3" width="120" height="32"/>
+                                <rect key="frame" x="286" y="11" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Go There…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JO7-3w-4Sc">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2663,7 +2663,7 @@ Up | Dn</string>
                         </subviews>
                     </view>
                 </box>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSB-xy-LKZ">
+                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSB-xy-LKZ">
                     <rect key="frame" x="196" y="20" width="54" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="22,222" drawsBackground="YES" id="ETS-71-pfb">
@@ -2689,7 +2689,7 @@ Up | Dn</string>
                         <action selector="helpDirectSettings:" target="-2" id="Hra-MQ-im0"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-IZ-ub9">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-IZ-ub9">
                     <rect key="frame" x="29" y="308" width="390" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Wenn addin a new bookmawk from da browzer" id="t1e-ZL-PkX">
@@ -2701,7 +2701,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelWhenAddNewFromBrowser" id="lsg-wt-ioi"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgj-3K-kQX">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgj-3K-kQX">
                     <rect key="frame" x="38" y="259" width="381" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="If_I_already_have_a_bookmark_to_the_page" id="6UA-Ve-F55">
@@ -2713,7 +2713,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelIfDupingBookmark" id="cf4-kL-vqW"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-vX-8fs">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-vX-8fs">
                     <rect key="frame" x="38" y="19" width="160" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Truncate 'Comments' to " id="m5E-Jv-rcP">
@@ -2722,7 +2722,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-ov-w1p">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-ov-w1p">
                     <rect key="frame" x="254" y="19" width="160" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="characters" id="0YI-hg-WsR">
@@ -2755,7 +2755,7 @@ Up | Dn</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="kpBth" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="uef-Mt-pJP" id="jnq-k7-85s">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="message"/>
                         <menu key="menu" title="If-Duper" id="Mbd-S3-q5k">
                             <items>
                                 <menuItem title="ask" tag="3" id="K08-Ii-ndn">
@@ -2789,11 +2789,11 @@ Up | Dn</string>
                     <rect key="frame" x="38" y="50" width="385" height="170"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="537-Ua-01H">
-                        <rect key="frame" x="4" y="5" width="377" height="162"/>
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzs-8Y-LUd">
-                                <rect key="frame" x="48" y="53" width="67" height="60"/>
+                                <rect key="frame" x="48" y="61" width="67" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="67" height="29"/>
@@ -2819,7 +2819,7 @@ Up | Dn</string>
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-XG-AIv">
-                                <rect key="frame" x="154" y="53" width="62" height="60"/>
+                                <rect key="frame" x="154" y="61" width="62" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="62" height="29"/>
@@ -2844,8 +2844,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.altKeyInspectsLander" id="YyX-gq-miZ"/>
                                 </connections>
                             </matrix>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-wN-9W6">
-                                <rect key="frame" x="9" y="121" width="95" height="36"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-wN-9W6">
+                                <rect key="frame" x="9" y="129" width="95" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="if opshun key is up" id="3gV-ul-eDS">
                                     <font key="font" metaFont="system"/>
@@ -2856,8 +2856,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelIfOptKeyUp" id="pyi-zu-CH4"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eea-JG-uHc">
-                                <rect key="frame" x="118" y="121" width="95" height="36"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eea-JG-uHc">
+                                <rect key="frame" x="118" y="129" width="95" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="if opshun key is down" id="sCf-o8-RCS">
                                     <font key="font" metaFont="system"/>
@@ -2868,8 +2868,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelIfOptKeyDown" id="Otm-f2-MWq"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-2O-8NK">
-                                <rect key="frame" x="201" y="55" width="175" height="22"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uF-2O-8NK">
+                                <rect key="frame" x="201" y="63" width="175" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Adddd &amp; Inspect" id="1bD-mf-xo8">
                                     <font key="font" metaFont="system"/>
@@ -2880,8 +2880,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelAddAndInspect" id="jdL-TZ-HDp"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-6n-rrS">
-                                <rect key="frame" x="201" y="86" width="175" height="22"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xns-6n-rrS">
+                                <rect key="frame" x="201" y="94" width="175" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Adddd Quickkkkly" id="zPD-Xj-JjW">
                                     <font key="font" metaFont="system"/>
@@ -2892,8 +2892,8 @@ Up | Dn</string>
                                     <binding destination="-3" name="value" keyPath="delegate.basis.labelAddQuickly" id="eLz-SA-dzi"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFL-1s-e2k">
-                                <rect key="frame" x="15" y="0.0" width="354" height="47"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFL-1s-e2k">
+                                <rect key="frame" x="15" y="8" width="354" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="m1R-Yf-Wqg">
                                     <font key="font" metaFont="message" size="11"/>
@@ -2915,7 +2915,7 @@ Up | Dn</string>
             <rect key="frame" x="0.0" y="0.0" width="377" height="153"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4F6-FU-bRV">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4F6-FU-bRV">
                     <rect key="frame" x="103" y="115" width="104" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="font_size" id="KGD-xX-K5D">
@@ -2927,7 +2927,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelFontSize" id="4fg-HX-zVE"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-ID-l18">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-ID-l18">
                     <rect key="frame" x="103" y="84" width="145" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="tablez, tagz" id="gYB-ZC-H07">
@@ -2940,7 +2940,7 @@ Up | Dn</string>
                         <binding destination="1525" name="fontSize" keyPath="values.tableFontSize" id="uYT-I7-m9o"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhP-rF-CAS">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhP-rF-CAS">
                     <rect key="frame" x="103" y="47" width="145" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="menuz" id="qGb-r3-3Xy">
@@ -2953,7 +2953,7 @@ Up | Dn</string>
                         <binding destination="1525" name="fontSize" keyPath="values.menuFontSize" id="LCs-12-UKH"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlT-DE-Qy2">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlT-DE-Qy2">
                     <rect key="frame" x="236" y="116" width="137" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="color_z" id="yTW-bL-lTI">
@@ -2989,7 +2989,7 @@ Up | Dn</string>
                         </binding>
                     </connections>
                 </colorWell>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-Jm-Qar">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-Jm-Qar">
                     <rect key="frame" x="79" y="94" width="19" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="b9N-A6-oyO">
@@ -2998,7 +2998,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEg-5r-EES">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEg-5r-EES">
                     <rect key="frame" x="81" y="81" width="15" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="EeD-cq-N1O">
@@ -3015,7 +3015,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.tableFontSize" id="7JS-Is-PmQ"/>
                     </connections>
                 </stepper>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-mH-g3j">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-mH-g3j">
                     <rect key="frame" x="79" y="57" width="19" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="THR-fd-Ekc">
@@ -3024,7 +3024,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRu-lf-0Hq">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRu-lf-0Hq">
                     <rect key="frame" x="81" y="44" width="15" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="91H-QV-x1m">
@@ -3069,7 +3069,7 @@ Up | Dn</string>
             <rect key="frame" x="0.0" y="0.0" width="421" height="508"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-Gm-ZaN">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-Gm-ZaN">
                     <rect key="frame" x="92" y="470" width="104" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="font_size" id="H3R-Aj-QO3">
@@ -3081,7 +3081,7 @@ Up | Dn</string>
                         <binding destination="-3" name="value" keyPath="delegate.basis.labelFontSize" id="FsX-PZ-bqd"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpW-ni-ANd">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpW-ni-ANd">
                     <rect key="frame" x="92" y="439" width="145" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="tablez, tagz" id="CAL-yC-9Ua">
@@ -3094,7 +3094,7 @@ Up | Dn</string>
                         <binding destination="1525" name="fontSize" keyPath="values.tableFontSize" id="ExP-qX-baO"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-kY-I0q">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1l-kY-I0q">
                     <rect key="frame" x="92" y="402" width="145" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="menuz" id="Wgk-4w-VZY">
@@ -3107,7 +3107,7 @@ Up | Dn</string>
                         <binding destination="1525" name="fontSize" keyPath="values.menuFontSize" id="qRc-qi-Nif"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRz-LG-4am">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRz-LG-4am">
                     <rect key="frame" x="225" y="471" width="137" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="color_z" id="TMe-J9-LBQ">
@@ -3143,7 +3143,7 @@ Up | Dn</string>
                         </binding>
                     </connections>
                 </colorWell>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Anv-k9-yhp">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Anv-k9-yhp">
                     <rect key="frame" x="69" y="449" width="17" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="ctA-j5-inw">
@@ -3152,7 +3152,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soh-ff-Q6D">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soh-ff-Q6D">
                     <rect key="frame" x="70" y="436" width="17" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="X33-xD-6Sb">
@@ -3169,7 +3169,7 @@ Up | Dn</string>
                         <binding destination="1525" name="value" keyPath="values.tableFontSize" id="0ae-AQ-hRC"/>
                     </connections>
                 </stepper>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-Up-LBb">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7i-Up-LBb">
                     <rect key="frame" x="69" y="412" width="17" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="dJN-JP-xgh">
@@ -3178,7 +3178,7 @@ Up | Dn</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-dx-avf">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-dx-avf">
                     <rect key="frame" x="70" y="399" width="17" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="A" id="fP9-1P-Bz1">
@@ -3220,11 +3220,11 @@ Up | Dn</string>
                     <rect key="frame" x="18" y="266" width="386" height="114"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="uUS-Yd-xvF">
-                        <rect key="frame" x="4" y="5" width="378" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXX-N5-xyx">
-                                <rect key="frame" x="174" y="10" width="25" height="25"/>
+                                <rect key="frame" x="174" y="18" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOq-Xo-z6G">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -3235,7 +3235,7 @@ Up | Dn</string>
                                 </connections>
                             </button>
                             <box autoresizesSubviews="NO" fixedFrame="YES" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="09L-Ec-tDu">
-                                <rect key="frame" x="40" y="57" width="90" height="21"/>
+                                <rect key="frame" x="40" y="65" width="90" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="gQ5-fb-Fts">
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="21"/>
@@ -3244,11 +3244,11 @@ Up | Dn</string>
                                 <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-Nr-3H5">
-                                <rect key="frame" x="40" y="54" width="155" height="5"/>
+                                <rect key="frame" x="40" y="62" width="155" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYV-fc-cec">
-                                <rect key="frame" x="103" y="58" width="16" height="16"/>
+                                <rect key="frame" x="103" y="66" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="oub-kT-OKB"/>
                                 <connections>
@@ -3256,7 +3256,7 @@ Up | Dn</string>
                                 </connections>
                             </imageView>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-2U-88a">
-                                <rect key="frame" x="70" y="58" width="16" height="16"/>
+                                <rect key="frame" x="70" y="66" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="w9q-oc-aTd"/>
                                 <connections>
@@ -3264,7 +3264,7 @@ Up | Dn</string>
                                 </connections>
                             </imageView>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-cn-1fJ" userLabel="Status Item Icon Matrix">
-                                <rect key="frame" x="38" y="31" width="92" height="26"/>
+                                <rect key="frame" x="38" y="39" width="92" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="28" height="26"/>
@@ -3301,8 +3301,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.statusItemStyle" id="7mD-pj-E3b"/>
                                 </connections>
                             </matrix>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5I-xq-l0N">
-                                <rect key="frame" x="14" y="4" width="68" height="28"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5I-xq-l0N">
+                                <rect key="frame" x="14" y="12" width="68" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="center" title="(None)" id="q1j-JD-aOt">
                                     <font key="font" metaFont="message" size="11"/>
@@ -3311,7 +3311,7 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o46-Vd-GMD">
-                                <rect key="frame" x="130" y="57" width="65" height="21"/>
+                                <rect key="frame" x="130" y="65" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="x3u-31-GDq"/>
                             </imageView>
@@ -3323,15 +3323,15 @@ Up | Dn</string>
                     <rect key="frame" x="18" y="52" width="386" height="196"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="WFz-Ya-eBq">
-                        <rect key="frame" x="4" y="5" width="378" height="174"/>
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="182"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1RQ-XQ-wr3">
-                                <rect key="frame" x="15" y="118" width="107" height="26"/>
+                                <rect key="frame" x="15" y="126" width="107" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8q8-j6-hCa">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="message"/>
                                     <menu key="menu" title="OtherViews" id="COt-rg-bK6">
                                         <items>
                                             <menuItem title="Top" id="Ind-bm-Kja"/>
@@ -3345,11 +3345,11 @@ Up | Dn</string>
                                 </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYt-Yh-DCe">
-                                <rect key="frame" x="45" y="35" width="67" height="26"/>
+                                <rect key="frame" x="45" y="43" width="67" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="30" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="30" imageScaling="proportionallyDown" inset="2" selectedItem="W1W-ps-MCA" id="xH8-ns-9ja">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="message"/>
                                     <menu key="menu" title="OtherViews" id="FsF-Ws-aRN">
                                         <items>
                                             <menuItem title="5" tag="5" id="7ZQ-bZ-XjX">
@@ -3377,8 +3377,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.miniSearchRecents" id="O1p-oL-TUg"/>
                                 </connections>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Evo-EW-WOH">
-                                <rect key="frame" x="126" y="124" width="250" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Evo-EW-WOH">
+                                <rect key="frame" x="126" y="132" width="250" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Position of the &quot;Mini Search&quot; item" id="OML-PH-BsX">
                                     <font key="font" metaFont="system"/>
@@ -3387,11 +3387,11 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOY-gU-KfN">
-                                <rect key="frame" x="15" y="89" width="107" height="26"/>
+                                <rect key="frame" x="15" y="97" width="107" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Top" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="f0R-PM-rRs" id="NKT-dC-Yeg">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="message"/>
                                     <menu key="menu" title="OtherViews" id="s0g-0X-kEe">
                                         <items>
                                             <menuItem title="Top" state="on" id="f0R-PM-rRs"/>
@@ -3403,8 +3403,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.doxtusShowHideQuitMenuItemsPosition" id="tB8-jR-mvY"/>
                                 </connections>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z94-sf-eAX">
-                                <rect key="frame" x="126" y="95" width="250" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z94-sf-eAX">
+                                <rect key="frame" x="126" y="103" width="250" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Position of &quot;Show&quot;, &quot;Quit&quot; etc. items" id="18y-kj-YaM">
                                     <font key="font" metaFont="system"/>
@@ -3412,8 +3412,8 @@ Up | Dn</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nm4-UZ-iYT">
-                                <rect key="frame" x="16" y="67" width="259" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nm4-UZ-iYT">
+                                <rect key="frame" x="16" y="75" width="259" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Number of Recent Items to keep in" id="NWN-Vq-g2t">
                                     <font key="font" metaFont="system"/>
@@ -3421,8 +3421,8 @@ Up | Dn</string>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iP6-kP-G0y">
-                                <rect key="frame" x="114" y="41" width="228" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iP6-kP-G0y">
+                                <rect key="frame" x="114" y="49" width="228" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Mini Search" id="mCv-g7-xvb">
                                     <font key="font" metaFont="system"/>
@@ -3431,11 +3431,11 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGk-Fo-wap">
-                                <rect key="frame" x="45" y="8" width="67" height="26"/>
+                                <rect key="frame" x="45" y="16" width="67" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="30" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="30" imageScaling="proportionallyDown" inset="2" selectedItem="HRn-m0-xGx" id="qhO-23-vwR">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="message"/>
                                     <menu key="menu" title="OtherViews" id="akI-al-pKO">
                                         <items>
                                             <menuItem title="5" tag="5" id="09N-Mz-402">
@@ -3463,8 +3463,8 @@ Up | Dn</string>
                                     <binding destination="1525" name="selectedTag" keyPath="values.landingRecents" id="7xf-JU-RRw"/>
                                 </connections>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y99-gk-ayJ">
-                                <rect key="frame" x="114" y="14" width="228" height="17"/>
+                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y99-gk-ayJ">
+                                <rect key="frame" x="114" y="22" width="228" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="&quot;Add to&quot; bookmark landings" id="ClQ-fN-bro">
                                     <font key="font" metaFont="system"/>
@@ -3473,7 +3473,7 @@ Up | Dn</string>
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b65-0O-a36">
-                                <rect key="frame" x="15" y="148" width="341" height="18"/>
+                                <rect key="frame" x="15" y="156" width="341" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Bookmarks Tree" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FhN-4y-2ib">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -3484,7 +3484,7 @@ Up | Dn</string>
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pa-pZ-CdC">
-                                <rect key="frame" x="342" y="140" width="25" height="25"/>
+                                <rect key="frame" x="342" y="148" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XWp-5b-s20">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -3505,7 +3505,7 @@ Up | Dn</string>
             <rect key="frame" x="0.0" y="0.0" width="429" height="180"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7g-fH-FyH">
+                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7g-fH-FyH">
                     <rect key="frame" x="19" y="83" width="380" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="search_for" id="8Fc-rH-Xq8">

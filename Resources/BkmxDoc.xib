@@ -62,13 +62,13 @@
                             </tabViewItem>
                             <tabViewItem label="The-Settings" identifier="settings" id="6978" userLabel="Settings">
                                 <view key="view" id="6979" customClass="SSYSettingsLazyView">
-                                    <rect key="frame" x="0.0" y="0.0" width="620" height="448"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="661" height="448"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="The-Reports" identifier="reports" id="6980" userLabel="Reports">
                                 <view key="view" id="6981" customClass="SSYReportsLazyView">
-                                    <rect key="frame" x="0.0" y="0.0" width="620" height="448"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="661" height="448"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                             </tabViewItem>

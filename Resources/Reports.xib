@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22503" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22503"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -130,7 +130,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gLG-t6-lfn">
-                                                        <rect key="frame" x="360" y="6.5" width="116" height="20"/>
+                                                        <rect key="frame" x="360" y="7" width="116" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <buttonCell key="cell" type="radio" title="All Below" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="f4B-IZ-G0t">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -145,7 +145,7 @@
                                                         </connections>
                                                     </button>
                                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5U-xF-lWj">
-                                                        <rect key="frame" x="360" y="25.5" width="116" height="20"/>
+                                                        <rect key="frame" x="360" y="26" width="116" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <buttonCell key="cell" type="radio" title="Selected Below" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="5kT-GV-vcE">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -193,11 +193,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="650" height="323"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="qhg-uq-qZZ">
-                                            <rect key="frame" x="1" y="1" width="637" height="321"/>
+                                            <rect key="frame" x="1" y="1" width="635" height="321"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="13" headerView="3981" id="3980" customClass="FindTableView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="637" height="298"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="635" height="298"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -263,11 +263,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="3979">
-                                            <rect key="frame" x="638" y="24" width="11" height="298"/>
+                                            <rect key="frame" x="636" y="24" width="13" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="3981" customClass="SSYTableHeaderView">
-                                            <rect key="frame" x="0.0" y="0.0" width="637" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="635" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
@@ -331,17 +331,17 @@
                                         <rect key="frame" x="8" y="35" width="605" height="360"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="cxa-MW-AC2">
-                                            <rect key="frame" x="1" y="1" width="592" height="358"/>
+                                            <rect key="frame" x="1" y="1" width="590" height="358"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" emptySelection="NO" autosaveColumns="NO" indentationPerLevel="16" outlineTableColumn="3107" id="3105" customClass="DupesOutlineView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="592" height="358"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="590" height="358"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="theDupes" editable="NO" width="463" minWidth="16" maxWidth="10000" id="3107" customClass="PreferredFontTableColumn">
+                                                        <tableColumn identifier="theDupes" editable="NO" width="434" minWidth="16" maxWidth="10000" id="3107" customClass="PreferredFontTableColumn">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -373,7 +373,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="3103">
-                                            <rect key="frame" x="593" y="1" width="11" height="358"/>
+                                            <rect key="frame" x="591" y="1" width="13" height="358"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -1337,11 +1337,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="650" height="286"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="66r-hl-GqS">
-                                            <rect key="frame" x="1" y="1" width="637" height="284"/>
+                                            <rect key="frame" x="1" y="1" width="635" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="14" id="5057" userLabel="Starkoids Table View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="637" height="284"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="635" height="284"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1411,7 +1411,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="5058">
-                                            <rect key="frame" x="638" y="1" width="11" height="284"/>
+                                            <rect key="frame" x="636" y="1" width="13" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>

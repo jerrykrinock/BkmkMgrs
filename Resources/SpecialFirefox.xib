@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16F43c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24112"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,20 +12,20 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <box autoresizesSubviews="NO" borderType="line" title="Spe_cial (Crome___)" id="47" userLabel="Special">
             <rect key="frame" x="0.0" y="0.0" width="526" height="64"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" id="Bnf-Tk-K3m">
-                <rect key="frame" x="1" y="1" width="524" height="45"/>
+                <rect key="frame" x="0.0" y="0.0" width="526" height="50"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <popUpButton verticalHuggingPriority="750" id="uU7-MX-gtH">
-                        <rect key="frame" x="11" y="11" width="116" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uU7-MX-gtH">
+                        <rect key="frame" x="11" y="16" width="116" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Always" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="mFn-hq-xXA" id="0Fq-iK-1oH">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="message"/>
                             <menu key="menu" title="OtherViews" id="5fS-Oa-AFQ">
                                 <items>
                                     <menuItem title="Never" tag="-1" id="hw4-Ow-PAj"/>
@@ -35,12 +35,12 @@
                             </menu>
                         </popUpButtonCell>
                         <connections>
-                            <binding destination="96" name="selectedTag" keyPath="content.launchBrowserPref" id="Krk-Bq-TAC"/>
                             <binding destination="-2" name="toolTip" keyPath="client.toolTipLaunchBrowserPref" id="zH0-3N-WBB"/>
+                            <binding destination="96" name="selectedTag" keyPath="content.launchBrowserPref" id="Krk-Bq-TAC"/>
                         </connections>
                     </popUpButton>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" id="YIb-8l-KlX">
-                        <rect key="frame" x="130" y="16" width="349" height="17"/>
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-8l-KlX">
+                        <rect key="frame" x="130" y="21" width="349" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="launch_browza_durin_syncs" id="oTm-uc-9U2">
                             <font key="font" metaFont="system"/>
@@ -52,8 +52,8 @@
                             <binding destination="-3" name="value" keyPath="delegate.basis.labelLaunchBrowserPref" id="JM6-dW-rZO"/>
                         </connections>
                     </textField>
-                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="v7p-fV-fEK">
-                        <rect key="frame" x="483" y="-35" width="25" height="25"/>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-fV-fEK">
+                        <rect key="frame" x="483" y="-30" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I11-pK-h3a">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -69,6 +69,7 @@
             <connections>
                 <binding destination="-2" name="title" keyPath="boxTitle" id="90"/>
             </connections>
+            <point key="canvasLocation" x="-21" y="-35"/>
         </box>
         <objectController id="96" userLabel="Client Controller">
             <declaredKeys>
