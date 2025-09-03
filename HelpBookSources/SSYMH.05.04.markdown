@@ -8,6 +8,10 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.3 (2025-09-08)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> New app icon and other cosmetic repairs for compatibility with macOS 26 Tahoe.
+
 ## Version 3.2 (2025-07-11)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" />  Now compatible with the [new syncing paradigm](https://developer.chrome.com/blog/bookmarks-sync-changes) in Chromium-based (["Chrome-ish"](chromish)) browsers which is being phased in to Google Chrome and Canary, and could be adopted by Brave, Microsoft Edge, Orion and Vivaldi without warning.  As part of this change, our apps will no longer attempt our *quick direct sync* method of import or export if the target browser is not running or if our *BookMacster Sync* extension is not installed in that browser.  All imports and exports must now be performed while the target web brwoser is running, and *BookMacster Sync* is installed into it and is running.  (As before, our app will attempt to quietly launch the target web browser when needed and then quit the web browser when done.)

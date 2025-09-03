@@ -3,7 +3,7 @@
 @implementation ClientListButton
 
 + (CGFloat)buttonMargin {
-    return 1.0 ;
+    return 3.0 ;
 }
 
 + (NSButton*)buttonAtPoint:(NSPoint)point
