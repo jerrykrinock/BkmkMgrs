@@ -232,13 +232,13 @@
                                     </connections>
                                 </button>
                                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLM-tv-74z" userLabel="Outline / Flat Control">
-                                    <rect key="frame" x="17" y="421" width="49" height="24"/>
+                                    <rect key="frame" x="16" y="421" width="52" height="24"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="fYc-4I-IhC">
                                         <font key="font" metaFont="system"/>
                                         <segments>
-                                            <segment tag="1"/>
-                                            <segment/>
+                                            <segment image="NSPathTemplate" tag="1"/>
+                                            <segment image="NSListViewTemplate"/>
                                         </segments>
                                     </segmentedCell>
                                     <accessibility description="Outline / Table Mode" help="Switches between Outline Mode and Table Mode"/>
@@ -320,4 +320,8 @@
             </connections>
         </popover>
     </objects>
+    <resources>
+        <image name="NSListViewTemplate" width="21" height="15"/>
+        <image name="NSPathTemplate" width="25" height="15"/>
+    </resources>
 </document>
