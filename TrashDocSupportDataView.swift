@@ -7,7 +7,7 @@ import SSYSwift
 let docRowHeight = 64.0
 
 /* The folloiwng is negative because List has too much built-in leading margin, in my opinion. */
-let listLeadingInset = -21.0
+let listLeadingInset = -18.0
 
 
 @available(macOS 10.15, *)
@@ -281,7 +281,8 @@ struct TrashDocSupportDataView: View {
             let overallWidth = proxy.size.width  // 800.0
             let usingWidth = overallWidth - 40.0
             //let overallHeight = proxy.size.height  // 1040.0
-            let columnWidth = (proxy.size.width / 4.0)  - 15.0 // /4 because our table has 4 columns
+            let columnWidth = (proxy.size.width / 4.0)  - 40.0 // /4 because our table has 4 columns
+            let firstColumnWidth = columnWidth + 73.0
             VStack {
                 if let oldFilesAdvice = self.oldFilesAdvice {
                     Text(oldFilesAdvice)
@@ -304,18 +305,19 @@ struct TrashDocSupportDataView: View {
                     Divider().padding(EdgeInsets(top: 1.0, leading: 0.0, bottom: 1.0, trailing: 0.0))
                     
                     HStack {
-                        Text(NSLocalizedString("Document Name", comment: ""))
-                            .frame(width: columnWidth)
-                        /* Vertical divider line gets 1.0 px margin on leading and trailing. */
-                        Divider().padding(EdgeInsets(top: 0.0, leading: 1.0, bottom: 0.0, trailing: 1.0))
+                        HStack {
+                            Text(NSLocalizedString("Document Name", comment: ""))
+                            Spacer()  // effects left justification of Text
+                        }
+                        .frame(width: firstColumnWidth)
+                        .padding(EdgeInsets(top: 0.0, leading: 15.0, bottom: 0.0, trailing: 0.0))
+                        Divider()
                         Text(NSLocalizedString("Client Associations", comment: ""))
                             .frame(width: columnWidth)
-                        /* Vertical divider line gets 1.0 px margin on leading and trailing. */
-                        Divider().padding(EdgeInsets(top: 0.0, leading: 1.0, bottom: 0.0, trailing: 1.0))
+                        Divider()
                         Text(NSLocalizedString("Settings", comment: ""))
                             .frame(width: columnWidth)
-                        /* Vertical divider line gets 1.0 px margin on leading and trailing. */
-                        Divider().padding(EdgeInsets(top: 0.0, leading: 1.0, bottom: 0.0, trailing: 1.0))
+                        Divider()
                         Text(NSLocalizedString("Sync Logs", comment: ""))
                             .frame(width: columnWidth)
                     }
@@ -342,6 +344,7 @@ struct TrashDocSupportDataView: View {
                                             .multilineTextAlignment(.leading)
                                         Spacer()
                                     }
+                                    .frame(width: firstColumnWidth)
                                     //.border(Color.blue)
                                     
                                     /* Make the three columns which have the checkboxes. */
