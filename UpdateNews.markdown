@@ -4,6 +4,8 @@
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Content tab, restored images to the "Outline Mode / Table Mode" button which somehow got deleted in version 3.3.
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Manage Browser Extensions window, fixed alignment of Version and Status indicators along the right edge, which were improperlyaz displaced in version 3.3.
+
 ## Version 3.3 (2025-09-09)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> New app icon and other cosmetic repairs for compatibility with macOS 26 Tahoe.

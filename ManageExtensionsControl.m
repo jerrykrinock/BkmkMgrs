@@ -39,7 +39,6 @@ typedef enum ResultDisplayMode_enum ResultDisplayMode ;
 #define VERSION_STATUS_ERROR_TEXT_FIELD_MARGIN 5.0
 #define STATUS_ICON_HEIGHT 20.0
 #define STATUS_ICON_WIDTH 20.0
-#define FUDGE_POINTS_TO_GET_STATUS_ICON_CLOSER_TO_TEST_BUTTON 3.0
 #define SPACING_BETWEEN_CONTROLS 3.0
 #define ONE_FOR_NOT_APPLICABLE 1
 
@@ -378,15 +377,14 @@ typedef enum ResultDisplayMode_enum ResultDisplayMode ;
         [testButton setAction:@selector(test:)] ;
         [itemView addSubview:testButton] ;
     }
-    x += [testButton frame].size.width ;
-    x -= FUDGE_POINTS_TO_GET_STATUS_ICON_CLOSER_TO_TEST_BUTTON ;
+    x += [testButton frame].size.width + 2.0;
     // No x += SPACING_BETWEEN_CONTROLS here; want "Test" button close to the status icon,
     // and the NSRoundedBezelStyle does not completely fill the width of its frame anyhow.
     
     NSString* clidentifier = [[[extore client] clientoid] clidentifier] ;
     
     // Add the image view for the green checkmark or red 'X'
-    CGFloat statusIconBottom = ([self rowHeight] - STATUS_ICON_HEIGHT) / 2 + 4.0 ;
+    CGFloat statusIconBottom = ([self rowHeight] - STATUS_ICON_HEIGHT) / 2 -1.0;
     // The +4.0 was added as an empirical tweak
     frame = NSMakeRect(
                        x,
@@ -452,7 +450,7 @@ typedef enum ResultDisplayMode_enum ResultDisplayMode ;
     
     frame = NSMakeRect(
                        x,
-                       VERSION_STATUS_ERROR_TEXT_FIELD_MARGIN + 1.0,
+                       VERSION_STATUS_ERROR_TEXT_FIELD_MARGIN -4.0,
                        width,
                        [self rowHeight] - 2 * VERSION_STATUS_ERROR_TEXT_FIELD_MARGIN
                        ) ;
