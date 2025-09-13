@@ -126,7 +126,6 @@
 
 - (NSDictionary*)extractDictionaryFromArray:(NSArray*)array
                                     atIndex:(NSInteger)index
-                     expectedIndexAttribute:(NSInteger)expectedIndexAttribute
                                  errorCode1:(NSInteger)errorCode1
                                  errorCode2:(NSInteger)errorCode2
                                 errorCode_p:(NSInteger* _Nonnull)errorCode_p
@@ -134,17 +133,7 @@
     NSDictionary* extraction = nil ;
     if (*errorCode_p == 0) {
         extraction = [array objectAtIndex:index] ;
-        if ([extraction respondsToSelector:@selector(objectForKey:)]) {
-            NSInteger indexAttributeValue = [[extraction objectForKey:@"index"] integerValue] ;
-            if (indexAttributeValue != expectedIndexAttribute) {
-                *errorCode_p = errorCode1 ;
-                *errorDescription_p = [NSString stringWithFormat:
-                                       @"Expected index attribute %ld, got %ld",
-                                       (long)expectedIndexAttribute,
-                                       (long)indexAttributeValue] ;
-            }
-        }
-        else {
+        if (![extraction respondsToSelector:@selector(objectForKey:)]) {
             *errorCode_p = errorCode2 ;
             *errorDescription_p = [NSString stringWithFormat:
                                    @"Expected dictionary, got %@",
@@ -309,7 +298,7 @@
                 if (children.count >= 8) {
                     /* This structure was seen in Opera 2024-2025ish:
                      actual index    value of 'index'
-                     in the array    attribute           Title  * = but will  be localized     We map to
+                     in the array    attribute (Note ⨖)  Title  * = but will  be localized     We map to
                      ------------    ----------------    ------------------------------------  -----------
                      .    0                0             Bookmarks Bar  *                      bar
                      .    1                1             Imported *                            IBA
@@ -319,60 +308,54 @@
                      .    5                6             Unsorted Bookmarks *                  unfiled
                      .    6                7             Unsynchronized Pinboard               IBA
                      .    7                8             Other Bookmarks *                     menu
-                     .                                                              IBA = ignore but add exids to hiddenExids
+                     IBA = ignore but add exids to hiddenExids
+                     Note ⨖:  Sometime in 2025, Opera fixed the 'index' attributes so that they
+                     now run from 0 to 7, coinciding with their actual indexes in the array.
                      */
                     extoreBar = [self extractDictionaryFromArray:children
                                                          atIndex:0
-                                          expectedIndexAttribute:0
                                                       errorCode1:180810
                                                       errorCode2:180811
                                                      errorCode_p:&errorCode
                                                  errorDesription:&errorMoreInfo] ;
                     extoreMenu = [self extractDictionaryFromArray:children
                                                           atIndex:7
-                                           expectedIndexAttribute:8
                                                        errorCode1:180820
                                                        errorCode2:180821
                                                       errorCode_p:&errorCode
                                                   errorDesription:&errorMoreInfo] ;
                     extoreUnfiled = [self extractDictionaryFromArray:children
                                                              atIndex:5
-                                              expectedIndexAttribute:6
                                                           errorCode1:180830
                                                           errorCode2:180831
                                                          errorCode_p:&errorCode
                                                      errorDesription:&errorMoreInfo] ;
                     speedMom = [self extractDictionaryFromArray:children
                                                         atIndex:3
-                                         expectedIndexAttribute:4
                                                      errorCode1:180840
                                                      errorCode2:180841
                                                     errorCode_p:&errorCode
                                                 errorDesription:&errorMoreInfo] ;
                     extoreTrash = [self extractDictionaryFromArray:children
                                                            atIndex:4
-                                            expectedIndexAttribute:5
                                                         errorCode1:180850
                                                         errorCode2:180851
                                                        errorCode_p:&errorCode
                                                    errorDesription:&errorMoreInfo] ;
                     extoreImported = [self extractDictionaryFromArray:children
                                                               atIndex:1
-                                               expectedIndexAttribute:1
                                                            errorCode1:180860
                                                            errorCode2:180861
                                                           errorCode_p:&errorCode
                                                       errorDesription:&errorMoreInfo] ;
                     extorePinboard = [self extractDictionaryFromArray:children
                                                               atIndex:2
-                                               expectedIndexAttribute:3
                                                            errorCode1:180870
                                                            errorCode2:180871
                                                           errorCode_p:&errorCode
                                                       errorDesription:&errorMoreInfo] ;
                     extoreUnsynchronizedPinboard = [self extractDictionaryFromArray:children
                                                                             atIndex:6
-                                                             expectedIndexAttribute:7
                                                                          errorCode1:180880
                                                                          errorCode2:180881
                                                                         errorCode_p:&errorCode
@@ -393,35 +376,30 @@
                      */
                     extoreBar = [self extractDictionaryFromArray:children
                                                          atIndex:0
-                                          expectedIndexAttribute:0
                                                       errorCode1:180610
                                                       errorCode2:180611
                                                      errorCode_p:&errorCode
                                                  errorDesription:&errorMoreInfo] ;
                     extoreMenu = [self extractDictionaryFromArray:children
                                                           atIndex:5
-                                           expectedIndexAttribute:6
                                                        errorCode1:180620
                                                        errorCode2:180621
                                                       errorCode_p:&errorCode
                                                   errorDesription:&errorMoreInfo] ;
                     extoreUnfiled = [self extractDictionaryFromArray:children
                                                              atIndex:4
-                                              expectedIndexAttribute:5
                                                           errorCode1:180630
                                                           errorCode2:180631
                                                          errorCode_p:&errorCode
                                                      errorDesription:&errorMoreInfo] ;
                     speedMom = [self extractDictionaryFromArray:children
                                                         atIndex:2
-                                         expectedIndexAttribute:3
                                                      errorCode1:180640
                                                      errorCode2:180641
                                                     errorCode_p:&errorCode
                                                 errorDesription:&errorMoreInfo] ;
                     extoreTrash = [self extractDictionaryFromArray:children
                                                            atIndex:3
-                                            expectedIndexAttribute:4
                                                         errorCode1:180650
                                                         errorCode2:180651
                                                        errorCode_p:&errorCode
@@ -444,14 +422,12 @@
                 else if (children.count >= 3) {
                     extoreBar = [self extractDictionaryFromArray:children
                                                          atIndex:0
-                                          expectedIndexAttribute:0
                                                       errorCode1:180660
                                                       errorCode2:180661
                                                      errorCode_p:&errorCode
                                                  errorDesription:&errorMoreInfo] ;
                     extoreMenu = [self extractDictionaryFromArray:children
                                                           atIndex:5
-                                           expectedIndexAttribute:6
                                                        errorCode1:180670
                                                        errorCode2:180671
                                                       errorCode_p:&errorCode

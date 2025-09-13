@@ -1,10 +1,12 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.3.1 (2025-09-09)
+## Version 3.3.1 (2025-09-12)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Now works with the latest version of Opera, no more Error 594520.  (Opera has corrected the index values for the first-level children in their bookmarks tree.)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Content tab, restored images to the "Outline Mode / Table Mode" button which somehow got deleted in version 3.3.
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Manage Browser Extensions window, fixed alignment of Version and Status indicators along the right edge, which were improperlyaz displaced in version 3.3.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Manage Browser Extensions window, fixed alignment of Version and Status indicators along the right edge, which were improperly displaced in version 3.3.
 
 ## Version 3.3 (2025-09-09)
 

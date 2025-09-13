@@ -8,6 +8,14 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.3.1 (2025-09-12)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Now works with the latest version of Opera, no more Error 594520.  (Opera has corrected the index values for the first-level children in their bookmarks tree.)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Content tab, restored images to the "Outline Mode / Table Mode" button which somehow got deleted in version 3.3.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Manage Browser Extensions window, fixed alignment of Version and Status indicators along the right edge, which were improperly displaced in version 3.3.
+
 ## Version 3.3 (2025-09-09)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> New app icon and other cosmetic repairs for compatibility with macOS 26 Tahoe.
