@@ -1378,6 +1378,28 @@ Then there is the fact that I effectively have my own user-controlled
                  errorByAddingUnderlyingError:error] ;
         error = [error errorByAddingBacktrace] ;
     }
+    
+    if ([error involvesCode:67001
+                     domain:NSCocoaErrorDomain]) {
+        /* This occurs during a "Save As" aka "Duplicate" operqation when
+         proposing tp overwrite an existing file of the same name.  After this
+         early return, Cocoa will show a sheet asking user to afffirm the overwrite */
+        return error;
+        /* Before Bkmkgrs 3.3.2, we would present the error in our own dialog.  In
+         macOS 26 Tahoe, this would cause the following dreaded inscrutable log
+         entries when the user clicked the "Replace" button:
+         
+         -continueFileAccessUsingBlock: was invoked without an outer file access! File access performed inside this block is not safe!
+         
+         FAULT: NSInternalInconsistencyException: *** -[BkmxDoc _fileAccessStabilizedFileURL]: invoked outside of file access; {
+             NSAssertFile = "NSDocument_SerializationAPIs.m";
+             NSAssertLine = 849;
+         
+         *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '*** -[BkmxDoc _fileAccessStabilizedFileURL]: invoked outside of file access'
+         terminating due to uncaught exception of type NSException
+         */
+    }
+    
 	[SSYAlert alertError:error] ;
 	
 	/* From Apple's "Document-Based Applications Overview":
