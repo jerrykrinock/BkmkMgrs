@@ -1,6 +1,8 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.3.2 (2025-09-)
+## Version 3.3.2 (2025-11-)
+
+*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug, probably introduced last year sometime which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Now behaves safely and properly in macOS 26 Tahoe if user performs a File > Duplicate operation and affirms overwriting an existing .bmco file.  (No longer raises an internal assertion.)
 

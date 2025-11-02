@@ -40,7 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @details  The default implementation sets constKeySucceeded
  to YES and then invokes -endLoginTestInfo:.  Subclasses which
- require login should override this method.
+ require login should override this method, calling, likewise
+ calling -endLoginTestInfo: if desired to save the credentials
+ to the macOS Keychain.
 */
 - (void)testLoginWithInfo:(NSMutableDictionary*)info ;
 
