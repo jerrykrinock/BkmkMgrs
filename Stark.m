@@ -825,6 +825,7 @@ NSString* const constKeyFoldersDeletedDuringConsolidation = @"foldersDeletedDuri
 // This is required to trigger -[BkmxDoc objectWillChangeNote:]
 - (void)setName:(NSString*)newValue  {
     newValue = [newValue stringByReplacingNewlinesWithSpaces] ;
+    newValue = [newValue stringByReplacingCharactersInSet:[NSCharacterSet controlCharacterSet] withString:@""];
     if (newValue.length == 0) {
         newValue = nil;
     }

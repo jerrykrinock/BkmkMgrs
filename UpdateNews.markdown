@@ -4,6 +4,8 @@
 
 *  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug, probably introduced last year sometime which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> To prevent later crashes or import/export failures, now automatically removes any invisible control characters when storing bookmark names.
+
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Better error reporting in case the messaging host of one of our web browser extensions receives undecodeable data during an Import or Export operation.
 
 ## Version 3.3.1 (2025-09-12)
