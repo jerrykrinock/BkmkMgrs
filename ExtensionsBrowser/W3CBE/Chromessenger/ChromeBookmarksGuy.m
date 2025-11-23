@@ -5,6 +5,7 @@
 #import "SSYInterappServer.h"
 #import "Chromessenger.h"
 #import "NSSet+SSYJsonClasses.h"
+#import "BkmxBasis+OSLog.h"
 
 static ChromeBookmarksGuy* sharedBookmarksGuy = nil ;
 
@@ -174,8 +175,10 @@ static ChromeBookmarksGuy* sharedBookmarksGuy = nil ;
 			[self setResponseHeaderByte:constInterappHeaderByteForAcknowledgment] ;
 			[self setResponsePayload:nil] ;
 			break ;
-		case constInterappHeaderByteForExport:
+        case constInterappHeaderByteForExport:;
 			// Export changes to browser
+            
+            NSString* errorString = nil;
             if (data) {
                 NSError* error = nil;
                 jsonText = [NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet jsonClasses]
@@ -187,26 +190,40 @@ static ChromeBookmarksGuy* sharedBookmarksGuy = nil ;
             }
 			
 			if (jsonText) {
+                NSError* error = nil;
                 //syslog(LOG_NOTICE, "Will put export of %ld JSON chars to extension\n", jsonText.length) ;
-                [[Chromessenger sharedMessenger] putExportAndSendExidsFromJsonText:jsonText] ;
-				
-				// This branch just sends a simple "ack" response synchronously.
-				// The exid feedback is sent synchronously, later.
-				[self setResponseHeaderByte:constInterappHeaderByteForAcknowledgment] ;
-				[self setResponsePayload:nil] ;
+                BOOL ok = [[Chromessenger sharedMessenger] putExportAndSendExidsFromJsonText:jsonText
+                                                                                     error_p:&error];
+                if (ok) {
+                    // This branch just sends a simple "ack" response synchronously.
+                    // The exid feedback is sent synchronously, later.
+                    [self setResponseHeaderByte:constInterappHeaderByteForAcknowledgment];
+                    [self setResponsePayload:nil];
+                } else {
+                    errorString = [NSString stringWithFormat:@"CBG could not decode export cuz underlying error %@", [error description]];
+                    [[BkmxBasis sharedBasis] consoleLogAsError:YES
+                                                        format:errorString];
+                }
 			}
 			else {
 				//syslog(LOG_NOTICE, "Error unarchiving jsonText from %ld bytes\n", (long)[data length]) ;
-
-				NSString* errorString = [NSString stringWithFormat:@"Error.  Could not decode rx data %ld bytes", (long)[data length]] ;
-				NSData* errorData = [errorString dataUsingEncoding:NSUTF8StringEncoding] ;
-				[self setResponsePayload:errorData] ;
-
-				NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"] ;
-				path = [path stringByAppendingPathComponent:@"BookMacster-Error-Data"] ;
-				[data writeToFile:path
-					   atomically:NO] ;				
+				errorString = [NSString stringWithFormat:@"Error.  Could not decode rx data %ld bytes", (long)[data length]] ;
 			}
+            
+            if (errorString) {
+                [[BkmxBasis sharedBasis] consoleLogAsError:YES
+                                                    format:errorString];
+
+                NSData* errorData = [errorString dataUsingEncoding:NSUTF8StringEncoding];
+                [self setResponseHeaderByte:constInterappHeaderByteForErrors];
+                [self setResponsePayload:errorData] ;
+
+                NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"Desktop"] ;
+                NSString* filename = [[[BkmxBasis sharedBasis] mainAppNameLocalized] stringByAppendingString:@"-Chromessenger-Errors.txt"];
+                path = [path stringByAppendingPathComponent:filename];
+                [errorData writeToFile:path
+                            atomically:NO] ;
+            }
 			break ;
         case constInterappHeaderByteForGrabRequest:;
             /* This is used for Opera and Vivaldi.  It is not used for Chrome

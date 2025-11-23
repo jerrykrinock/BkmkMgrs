@@ -806,13 +806,23 @@ NSInteger const nativeMessagingAPILimit = 1000000;
                     otherObjects:nil] ;
 }
 
-- (void)putExportAndSendExidsFromJsonText:(NSString*)jsonString {
+- (BOOL)putExportAndSendExidsFromJsonText:(NSString*)jsonString
+                                  error_p:(NSError**)error_p {
     NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError* error = nil;
     NSDictionary* jsonTree = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:data
                                                                             options:self.class.optionsForNSJSON
-                                                                              error:NULL];
-    [self sendToExtensionCommand:@"putExportAndSendExids"
-                    otherObjects:@{@"jsonTree": jsonTree}] ;
+                                                                              error:&error];
+    if (jsonTree &&  !error) {
+        [self sendToExtensionCommand:@"putExportAndSendExids"
+                        otherObjects:@{@"jsonTree": jsonTree}] ;
+        return YES;
+    } else {
+        if (error && error_p) {
+            *error_p = error ;
+        }
+        return NO;
+    }
 }
 
 - (void)grabCurrentPageInfo {

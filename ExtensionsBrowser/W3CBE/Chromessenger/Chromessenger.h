@@ -25,7 +25,8 @@
 
 - (void)sendGeneralInfo ;
 
-- (void)putExportAndSendExidsFromJsonText:(NSString*)jsonString ;
+- (BOOL)putExportAndSendExidsFromJsonText:(NSString*)jsonString
+                                  error_p:(NSError**)error_p;
 
 - (void)grabCurrentPageInfo ;
 

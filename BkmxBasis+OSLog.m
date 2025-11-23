@@ -12,6 +12,12 @@
     dispatch_once(&onceToken, ^{
         NSString* subsystemLabel = [[NSBundle mainAppBundle] bundleIdentifier];
         NSString* categoryLabel = [[NSBundle mainBundle] bundleIdentifier];
+        if (!subsystemLabel) {
+            subsystemLabel = @"Bkmx-no-subsystem";
+        }
+        if (!categoryLabel) {
+            categoryLabel = @"Bkmx-no-category";
+        }
         // This creates a thread-safe object
         logger = os_log_create(
                                subsystemLabel.UTF8String,

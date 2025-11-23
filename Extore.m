@@ -4290,7 +4290,7 @@ end:;
     if (rxHeaderByte != constInterappHeaderByteForAcknowledgment) {
         ok = NO ;
         NSString* msg = [NSString stringWithFormat:
-                         @"Received ack '%c' instead of '%c'",
+                         @"Reading, rReceived ack '%c' instead of '%c'",
                          rxHeaderByte,
                          constInterappHeaderByteForAcknowledgment] ;
         error = SSYMakeError(165825, msg) ;
@@ -5537,7 +5537,7 @@ end:;
 	if (rxHeaderByte != constInterappHeaderByteForAcknowledgment) {
 		ok = NO ;
 		NSString* msg = [NSString stringWithFormat:
-						 @"Received ack '%c' instead of '%c'",
+						 @"Exporting, received ack '%c' instead of '%c'  Maybe more info in main menu > app name > Logs > Errors, or in a new Chromessenger-Errors.txt file on your Desktop.",
 						 rxHeaderByte,
 						 constInterappHeaderByteForAcknowledgment] ;
 		error = SSYMakeError(612801, msg) ;
