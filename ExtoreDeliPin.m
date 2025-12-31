@@ -363,6 +363,11 @@
     [[NSRunLoop mainRunLoop] runUntilDate:[NSDate date]] ;
 
 	if (ok) {
+        NSString* msg = [NSString stringWithFormat:
+                         @"Downloaded all %ld items from %@",
+                         countOfStarksAfter,
+                         [[self clientoid] displayName]] ;
+        [[BkmxBasis sharedBasis] logFormat:msg] ;
         ok = [[self localMoc] save:&error] ;
     }
     
