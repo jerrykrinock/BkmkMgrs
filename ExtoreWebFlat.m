@@ -1191,12 +1191,18 @@ end:;
 	}
 	
 	if (!didRecover) {
-		[super attemptRecoveryFromError:error
-						 recoveryOption:recoveryOption
-							   delegate:dontUseThis
-					 didRecoverSelector:useInvocationFromInfoDicInstead
-							contextInfo:contextInfo] ;
-	}
+        if (error && [super respondsToSelector:@selector(attemptRecoveryFromError:recoveryOption:delegate:didRecoverSelector:contextInfo:)]) {
+            [super attemptRecoveryFromError:error
+                             recoveryOption:recoveryOption
+                                   delegate:dontUseThis
+                         didRecoverSelector:useInvocationFromInfoDicInstead
+                                contextInfo:contextInfo];
+        } else if (error) {
+            NSLog(@"Internal Error 584-3848");
+        } else {
+            NSLog(@"Internal Error 584-3849");
+        }
+ 	}
 }
 
 @end
