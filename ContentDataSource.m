@@ -481,7 +481,10 @@ extern NSString* RPTokenControlPasteboardTypeRepresentedObjects;
     // Mark any remaining children as dirty
     for ( ; i<[m_rootProxies count]; i++) {
         ContentProxy* dirtyChild = [m_rootProxies objectAtIndex:i] ;
-        [dirtyChild noteChangedChildren] ;
+        // Test in case dirtyChild is a SSYDisjoiningPlaceholder
+        if ([dirtyChild respondsToSelector:@selector(noteChangedChildren)]) {
+            [dirtyChild noteChangedChildren];
+        }
     }
 }
 
