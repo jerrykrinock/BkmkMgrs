@@ -1527,7 +1527,6 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
     
     NSNumber* syncing = [dic objectForKey:constKeySyncing];
     if (syncing) {
-        /*SSYDBL*/ NSLog(@"set syncing = %@ for %d %@", syncing, stark.sharypeValue, stark.name);
         [stark setOwnerValue:syncing
                       forKey:constKeySyncing];
     }
