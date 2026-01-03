@@ -1,8 +1,10 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.3.2 (2025-11-)
+## Version 3.3.2 (2026-01-03)
 
-*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug, probably introduced last year sometime which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
+*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused a crash when certain errors occurred while searching for crufty files or app versions, which our apps do in the background shortly after being launched.
+
+*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> To prevent later crashes or import/export failures, now automatically removes any invisible control characters when storing bookmark names.
 

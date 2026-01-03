@@ -8,6 +8,16 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.3.2 (2026-01-03)
+
+*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused a crash when certain errors occurred while searching for crufty files or app versions, which our apps do in the background shortly after being launched.
+
+*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> To prevent later crashes or import/export failures, now automatically removes any invisible control characters when storing bookmark names.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Better error reporting in case the messaging host of one of our web browser extensions receives undecodeable data during an Import or Export operation.
+
 ## Version 3.3.1 (2025-09-12)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Now works with the latest version of Opera, no more Error 594520.  (Opera has corrected the index values for the first-level children in their bookmarks tree.)
