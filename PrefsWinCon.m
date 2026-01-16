@@ -1305,13 +1305,12 @@ char *constUpdateDifferee[] = {
 
 
 - (BOOL)showsStatusItem {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] != BkmxStatusItemStyleNone ;
+    return [[NSUserDefaults standardUserDefaults] boolForKey:constKeyShowsStatusItem] ;
 }
 
 - (void)setShowsStatusItem:(BOOL)shows {
-    BkmxStatusItemStyle style = shows ? BkmxStatusItemStyleFlat : BkmxStatusItemStyleNone ;
-    [[NSUserDefaults standardUserDefaults] setInteger:style
-                                               forKey:constKeyStatusItemStyle] ;
+    [[NSUserDefaults standardUserDefaults] setBool:shows
+                                            forKey:constKeyShowsStatusItem] ;
 }
 
 #define IXPORT_LOG_MAX_LIMIT 100

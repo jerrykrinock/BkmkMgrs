@@ -18,7 +18,7 @@
 	//NOTUSEDNSDictionary* m_addHereInfo ;
 	NSDictionary* m_lastBrowmarkInfo ;
 	BOOL m_pumpIsPrimed ;
-    BkmxStatusItemStyle m_statusItemStyle ;
+    BOOL m_showsStatusItem ;
 }
 
 @property (retain) NSString* exformat ;

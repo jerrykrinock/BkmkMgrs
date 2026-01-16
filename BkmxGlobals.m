@@ -470,7 +470,8 @@ NSString* const constKeyShortcutAnywhereMenu = @"shortcutAnywhereMenu" ;
 NSString* const constKeyShortcutAddQuickly = @"shortcutAddQuickly" ;
 // Hey you!  Consider adding any new root pref keys to keysToKeep in -[Uninstaller reset]
 NSString* const constKeyShortcutAddAndInspect = @"shortcutAddAndInspect" ;
-NSString* const constKeyStatusItemStyle = @"statusItemStyle" ;
+NSString* const constKeyStatusItemStyle = @"statusItemStyle" ; // Deprecated in 3.4, replaced by constKeyShowsStatusItem
+NSString* const constKeyShowsStatusItem = @"showsStatusItem" ;
 // Hey you!  Consider adding any new root pref keys to keysToKeep in -[Uninstaller reset]
 NSString* const constKeySortShoeboxDuringSyncs = @"sortShoeboxDuringSyncs" ;
 // Hey you!  Consider adding any new root pref keys to keysToKeep in -[Uninstaller reset]

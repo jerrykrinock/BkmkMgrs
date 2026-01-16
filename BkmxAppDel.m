@@ -1354,14 +1354,14 @@ NSString* const skuForSmarky3 = @"637653";
 }
 
 - (BOOL)hasStatusItem {
-    return ([[NSUserDefaults standardUserDefaults] boolForKey:constKeyStatusItemStyle] != BkmxStatusItemStyleNone) ;
+    return [[NSUserDefaults standardUserDefaults] boolForKey:constKeyShowsStatusItem] ;
 }
 
 + (NSSet*)keyPathsForValuesAffectingHasStatusItem {
     NSString* keyPath ;
     keyPath = [NSString stringWithFormat:
                @"userDefaults.%@",
-               constKeyStatusItemStyle] ;
+               constKeyShowsStatusItem] ;
     return [NSSet setWithObjects:
             keyPath,
             nil] ;
@@ -1421,7 +1421,7 @@ NSString* const skuForSmarky3 = @"637653";
 
 + (NSSet*)keyPathsForValuesAffectingCanRunInBackground {
     return [NSSet setWithObjects:
-            [NSString stringWithFormat:@"userDefaults.%@", constKeyStatusItemStyle],
+            [NSString stringWithFormat:@"userDefaults.%@", constKeyShowsStatusItem],
             @"dateHitShortcutActuator",
             nil] ;
 }
@@ -2615,18 +2615,17 @@ NSString* const skuForSmarky3 = @"637653";
 
     }
     
-    // BkmxStatusItemStyleGray is not supported starting in Version 3.3.3,
-    // because the AppIcon is now enclosed in a squircle for macOS 26.
+    // Starting in version 3.4, the ternary constKeyStatusItemStyle is replaced
+    // by the boolean constKeyShowsStatusItem.
     regularThreshold = [SSYVersionTriplet versionTripletWithMajor:3
-                                                            minor:3
-                                                           bugFix:3] ;
+                                                            minor:4
+                                                           bugFix:0] ;
     if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
         NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] ;
-        if (statusItemStyle == BkmxStatusItemStyleGray) {
-            statusItemStyle = BkmxStatusItemStyleFlat ;
-            [[NSUserDefaults standardUserDefaults] setInteger:statusItemStyle
-                                                       forKey:constKeyStatusItemStyle] ;
-        }
+        BOOL showsStatusItem = (statusItemStyle != BkmxStatusItemStyleNone) ;
+        [[NSUserDefaults standardUserDefaults] setBool:showsStatusItem
+                                                forKey:constKeyShowsStatusItem] ;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:constKeyStatusItemStyle] ;
     }
 }
 
@@ -2678,9 +2677,9 @@ NSString* const skuForSmarky3 = @"637653";
     // is the only one ever created.  Like a singleton, but it's not.
     DoxtusMenu* doxtusMenu = [self doxtusMenu] ;
     @try {
-        [doxtusMenu bind:constKeyStatusItemStyle
+        [doxtusMenu bind:constKeyShowsStatusItem
                 toObject:[NSUserDefaults standardUserDefaults]
-             withKeyPath:constKeyStatusItemStyle
+             withKeyPath:constKeyShowsStatusItem
                  options:0] ;
     }
     @catch (NSException *exception) {
@@ -2751,7 +2750,7 @@ NSString* const skuForSmarky3 = @"637653";
                                     ) ;
 
     if ([SSYProcessTyper currentType] != NSApplicationActivationPolicyRegular) {
-        if ([[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] == BkmxStatusItemStyleNone) {
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:constKeyShowsStatusItem]) {
             KeyCombo keyCombo = [[SSYShortcutActuator sharedActuator] keyComboForSelectorName:@"popUpAnywhereMenu"] ;
             if (keyCombo.code != -1) {
                 // Launching in background, and the only way for the user to

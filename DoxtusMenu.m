@@ -574,7 +574,7 @@
         if (NSAppKitVersionNumber >= NSAppKitVersionNumber10_7) {
             // However we first need to make sure that we're showing as a
             // Status Item, lest BookMacster disappear completely!
-            if ([[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] != BkmxStatusItemStyleNone) {
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:constKeyShowsStatusItem]) {
                 title = [NSString stringWithFormat:
                          @"Background %@",
                          [[BkmxBasis sharedBasis] appNameLocalized]] ;
@@ -878,21 +878,21 @@
     }
 }
 
-// KVC Compliance for 'statusItemStyle'
+// KVC Compliance for 'showsStatusItem'
 
-- (void)setStatusItemStyle:(BkmxStatusItemStyle)style {
+- (void)setShowsStatusItem:(BOOL)shows {
     NSStatusItem* item = [self statusItem] ;
-    if ((style != BkmxStatusItemStyleNone) && (item != nil)) {
+    if (shows && (item != nil)) {
         // Keep the existing status item
     }
-    else if ((style != BkmxStatusItemStyleNone) && (item == nil)) {
+    else if (shows && (item == nil)) {
         // Create the currently-nonexistent status item
-        
+
 		NSStatusBar *bar = [NSStatusBar systemStatusBar] ;
-		
+
 		item = [bar statusItemWithLength:NSSquareStatusItemLength] ;
 		[self setStatusItem:item] ;
-		
+
         /* If I log here the value of highlightsBy before setting it, I see it
          is 0x9 = NSContentsCellMask + NSChangeBackgroundCellMask.  Apparently
          this is the default value.  I also tried this:
@@ -905,15 +905,15 @@
 	}
 	else {
         // Destroy the existing status item
-        
-		// According to Status Bar Programming Topics > 
+
+		// According to Status Bar Programming Topics >
 		// Creating Status Items, "When deallocated, the status
 		// item removes itself from the status bar."
 		// Okey dokey.  Well, -setStatusItem:nil does this.
 		[self setStatusItem:nil] ;
 	}
-    
-    NSImage* image = [(BkmxAppDel*)[NSApp delegate] statusItemImageForStyle:style] ;
+
+    NSImage* image = shows ? [(BkmxAppDel*)[NSApp delegate] statusItemImageForStyle:BkmxStatusItemStyleFlat] : nil ;
     if ((floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_9)) {
         /* The effect of setting this oddly-named property to YES is
          that the image will reverse luminosity for users who have
@@ -923,16 +923,16 @@
     }
     [self statusItem].button.image=image;
 
-    // In the above, if style is BkmxStatusItemStyleNone, [self statusItem]
+    // In the above, if shows is NO, [self statusItem]
     // will be nil and image will be nil.  Otherwise, [self statusItem] will
     // be non-nil and image will be non-nil.
-    
-    m_statusItemStyle = style ;
+
+    m_showsStatusItem = shows ;
 }
 
-// Just needed for KVC, to make statusItemStyle bindable.
-- (BkmxStatusItemStyle)statusItemStyle {
-    return m_statusItemStyle ;
+// Just needed for KVC, to make showsStatusItem bindable.
+- (BOOL)showsStatusItem {
+    return m_showsStatusItem ;
 }
 
 /* Note the distinct delegations.  Although a Doxtus Menu instance is
