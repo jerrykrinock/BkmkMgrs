@@ -107,7 +107,8 @@ NSViewToolTipOwner
 @property (readonly) BOOL updateAlpha ;
 
 - (NSImage*)statusItemImageFlat ;
-- (NSImage*)statusItemImageGray ;
+
+@property (nonatomic) BOOL showsStatusItem ;
 
 - (BOOL)canHaveNoStatusItem ;
 

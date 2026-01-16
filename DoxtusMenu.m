@@ -918,8 +918,7 @@
         /* The effect of setting this oddly-named property to YES is
          that the image will reverse luminosity for users who have
          switched on "Use dark menu bar and Dock" in System Preferences
-         > General in OS X 10.10 or later.  As a side effect, it is
-         displayed in grayscale (no color) */
+         > General in OS X 10.10 or later.  */
         [image setTemplate:YES] ;
     }
     [self statusItem].button.image=image;

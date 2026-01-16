@@ -1945,7 +1945,7 @@ NSString* const skuForSmarky3 = @"637653";
                                                            bugFix:9] ;
     if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
         BOOL oldShowStatusItemPref = [[NSUserDefaults standardUserDefaults] boolForKey:@"showStatusMenu"] ;
-        BkmxStatusItemStyle style = oldShowStatusItemPref ? BkmxStatusItemStyleGray : BkmxStatusItemStyleNone ;
+        BkmxStatusItemStyle style = oldShowStatusItemPref ? BkmxStatusItemStyleFlat : BkmxStatusItemStyleNone ;
         [[NSUserDefaults standardUserDefaults] setInteger:style
                                                    forKey:constKeyStatusItemStyle] ;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showStatusMenu"] ;
@@ -1975,9 +1975,9 @@ NSString* const skuForSmarky3 = @"637653";
                                                            bugFix:26] ;
     if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
         NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] ;
-        if (statusItemStyle > BkmxStatusItemStyleGray) {
-            // User had been using BkmxStatusItemStyleColor, now deprecated
-            statusItemStyle = BkmxStatusItemStyleGray ;
+        if (statusItemStyle > BkmxStatusItemStyleFlat) {
+            // User had been using BkmxStatusItemStyleColor or BkmxStatusItemStyleGray, now deprecated
+            statusItemStyle = BkmxStatusItemStyleFlat ;
             [[NSUserDefaults standardUserDefaults] setInteger:statusItemStyle
                                                        forKey:constKeyStatusItemStyle] ;
         }
@@ -2613,6 +2613,20 @@ NSString* const skuForSmarky3 = @"637653";
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
 
+    }
+    
+    // BkmxStatusItemStyleGray is not supported starting in Version 3.3.3,
+    // because the AppIcon is now enclosed in a squircle for macOS 26.
+    regularThreshold = [SSYVersionTriplet versionTripletWithMajor:3
+                                                            minor:3
+                                                           bugFix:3] ;
+    if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
+        NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] ;
+        if (statusItemStyle == BkmxStatusItemStyleGray) {
+            statusItemStyle = BkmxStatusItemStyleFlat ;
+            [[NSUserDefaults standardUserDefaults] setInteger:statusItemStyle
+                                                       forKey:constKeyStatusItemStyle] ;
+        }
     }
 }
 
@@ -4215,19 +4229,15 @@ NSString* const skuForSmarky3 = @"637653";
             break ;
         case BkmxStatusItemStyleGray:
         default: ;
-            /* This will happen when a user who had style set to the deprecated
-             BkmxStatusItemStyleColor = 30 updates from BkmkMgrs 1.x to 2.x.
-             No, I didn't check why, I just saw it happen once :( */
-
-            image = [[NSImage imageNamed:@"AppIcon"] copy] ;
-            [image setSize:NSMakeSize(20.0, 20.0)] ;
-            if (style == BkmxStatusItemStyleGray) {
-                /* setTemplate:YES is also needed here, to force the image
-                 to be displayed as grayscale in the sample in Preferences >
-                 Appearance. */
-                [image setTemplate:YES] ;
-            }
-            [image autorelease] ;
+            /* BkmxStatusItemStyleGray is deprecated as of version 3.3.3 because
+             the AppIcon is now enclosed in a squircle for macOS 26 compatibility.
+             If we get here, the migration hasn't run yet, so use Flat style. */
+            image = [SSYVectorImages imageStyle:SSYVectorImageStyleBookmark
+                                         wength:16
+                                          color:nil
+                                   darkModeView:nil
+                                  rotateDegrees:0.0
+                                          inset:0.0] ;
             break ;
     }
     

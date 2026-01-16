@@ -1303,11 +1303,16 @@ char *constUpdateDifferee[] = {
     return [(BkmxAppDel*)[NSApp delegate] statusItemImageForStyle:BkmxStatusItemStyleFlat] ;
 }
 
-- (NSImage*)statusItemImageGray {
-    return [(BkmxAppDel*)[NSApp delegate] statusItemImageForStyle:BkmxStatusItemStyleGray] ;
-    
+
+- (BOOL)showsStatusItem {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] != BkmxStatusItemStyleNone ;
 }
 
+- (void)setShowsStatusItem:(BOOL)shows {
+    BkmxStatusItemStyle style = shows ? BkmxStatusItemStyleFlat : BkmxStatusItemStyleNone ;
+    [[NSUserDefaults standardUserDefaults] setInteger:style
+                                               forKey:constKeyStatusItemStyle] ;
+}
 
 #define IXPORT_LOG_MAX_LIMIT 100
 
