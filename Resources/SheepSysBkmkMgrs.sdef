@@ -357,6 +357,12 @@
 			<responds-to command="redo">
 				<cocoa method=""/>
 			</responds-to>
+			<responds-to command="disable undo registration">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to command="enable undo registration">
+				<cocoa method=""/>
+			</responds-to>
 		</class>
 		<class name="syncer" code="BmAg" description="The receiver&apos;s Syncers, which can be seen in Settings ▸ Syncers tab." plural="syncers">
 			<cocoa class="Syncer"/>
@@ -482,6 +488,14 @@
 		<command name="redo" code="BkmxRedo" description="Redoes the last edit which was undone in the receiver">
 			<cocoa class="RedoCommand"/>
 			<direct-parameter description="The Collection whose last edit is to be undone." type="collection"/>
+		</command>
+		<command name="disable undo registration" code="BkmxDsUR" description="Disables undo registration in the receiver, preventing changes from being added to the undo stack. Useful for batch operations to reduce memory usage.">
+			<cocoa class="DisableUndoRegistrationCommand"/>
+			<direct-parameter description="The Collection whose undo registration is to be disabled." type="collection"/>
+		</command>
+		<command name="enable undo registration" code="BkmxEnUR" description="Enables undo registration in the receiver, allowing changes to be added to the undo stack again.">
+			<cocoa class="EnableUndoRegistrationCommand"/>
+			<direct-parameter description="The Collection whose undo registration is to be enabled." type="collection"/>
 		</command>
 		<command name="land new bookmark" code="BkmxAdBk" description="Creates, or as we say, &quot;lands&quot; a new bookmark.  Regarding which Collection the new bookmark lands into, where it lands (see New Bookmark Landing) and whether or not the Inspector panel is shown, behavior is the same as when adding a bookmark from the BookMacsterize bookmarklet.">
 			<cocoa class="AddBookmarkCommand"/>

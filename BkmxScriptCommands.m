@@ -698,11 +698,59 @@
 		[self setScriptErrorString:[NSString stringWithFormat:@"Receiver must be a collection (.bmco file)"]] ;
 		return nil ;
 	}
-	
+
 	[[bkmxDoc undoManager] redo] ;
-	
+
 	[self handleUndoManagerExceptionBkmxDoc:bkmxDoc] ;
-	
+
+	return nil ;
+}
+@end
+
+@interface DisableUndoRegistrationCommand : NSScriptCommand
+@end
+@implementation DisableUndoRegistrationCommand
+- (id)performDefaultImplementation {
+	BkmxDoc* bkmxDoc = [self evaluatedReceivers] ;
+	if (![bkmxDoc respondsToSelector:@selector(managedObjectContext)]) {
+		[self setScriptErrorNumber:19211] ;
+		[self setScriptErrorString:[NSString stringWithFormat:@"Receiver must be a collection (.bmco file)"]] ;
+		return nil ;
+	}
+
+	NSUndoManager* undoManager = [[bkmxDoc managedObjectContext] undoManager] ;
+	if (!undoManager) {
+		[self setScriptErrorNumber:19212] ;
+		[self setScriptErrorString:[NSString stringWithFormat:@"Could not get undo manager from collection"]] ;
+		return nil ;
+	}
+
+	[undoManager disableUndoRegistration] ;
+
+	return nil ;
+}
+@end
+
+@interface EnableUndoRegistrationCommand : NSScriptCommand
+@end
+@implementation EnableUndoRegistrationCommand
+- (id)performDefaultImplementation {
+	BkmxDoc* bkmxDoc = [self evaluatedReceivers] ;
+	if (![bkmxDoc respondsToSelector:@selector(managedObjectContext)]) {
+		[self setScriptErrorNumber:19221] ;
+		[self setScriptErrorString:[NSString stringWithFormat:@"Receiver must be a collection (.bmco file)"]] ;
+		return nil ;
+	}
+
+	NSUndoManager* undoManager = [[bkmxDoc managedObjectContext] undoManager] ;
+	if (!undoManager) {
+		[self setScriptErrorNumber:19222] ;
+		[self setScriptErrorString:[NSString stringWithFormat:@"Could not get undo manager from collection"]] ;
+		return nil ;
+	}
+
+	[undoManager enableUndoRegistration] ;
+
 	return nil ;
 }
 @end

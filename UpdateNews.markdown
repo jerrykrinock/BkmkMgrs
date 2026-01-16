@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.3.3 (2026-01-15)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added AppleScript commands to enable and disable *undo* registration.
+
 ## Version 3.3.2 (2026-01-03)
 
 *  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused a crash when certain errors occurred while searching for crufty files or app versions, which our apps do in the background shortly after being launched.
