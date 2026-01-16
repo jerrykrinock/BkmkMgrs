@@ -140,6 +140,8 @@ Menu Extras are handy, but the problem is that space is limited and Apple gives 
 
 Menu Extras are only shown when their application is running, and when running, most apps allow you to turn their Menu Extra ON or OFF in their Preferences Window.  **The control for the app's Menu Extra is in Preferences > General**.  By default, it is OFF.
 
+If you don't see the Menu Extra in your macOS menu bar as expected, and are using macOS 26 or later, look in your System Settings > *Menu Bar* > *Allow in the Menu Bar* and ensure that the switch for the app is ON. 
+
 Like most applications, the app duplicates the content of its Menu Extra in its Dock Menu.  So, if you don't have room for it in your menu bar, you can access the same functions in BookMacter's [Dock Menu]().
 
 ### ❖ Nontrivial Attributes [nontrivialAttributes]
