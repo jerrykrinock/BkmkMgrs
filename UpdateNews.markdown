@@ -1,8 +1,8 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.3.3 (2026-01-15)
+## Version 3.3.3 (2026-01-16)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> The option to have the icon of the Menu Extra be a grayscale image of the application icon, which looked bad and was not even discernable with the new applicattion icon we made for macOS 26, has been eliminated.  Users who had previously selected this option in *Preferences* > *Appearance* > *Menu Extra* will be automatically migrated to use the other option, which looks like is a simple, flat, black-or-white bookmark.  It is in the current style of macOS.
+*  <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> The option to have the icon of the Menu Extra be a grayscale image of the application icon, which looked bad and was not even discernable with the new applicattion icon we made for macOS 26, has been eliminated.  Users who had previously selected this option in *Preferences* > *Appearance* > *Menu Extra* will be automatically migrated to use the other option, which looks like is a simple, flat, black-or-white bookmark.  It is in the current style of macOS.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added AppleScript commands to enable and disable *undo* registration.
 

@@ -1137,14 +1137,6 @@ extern NSString* const constKeyShoeboxSafeSyncLimit ;
 extern NSString* const constKeyShortcutAnywhereMenu ;
 extern NSString* const constKeyShortcutAddQuickly ;
 extern NSString* const constKeyShortcutAddAndInspect ;
-/*!
- @brief    Deprecated in 3.4; replaced by constKeyShowsStatusItem.
-*/
-extern NSString* const constKeyStatusItemStyle ;
-/*!
- @brief    A Boolean which stores whether or not to show the
- Status Menu (NSStatusItem, "Status Item", "menu extra") for the app.
-*/
 extern NSString* const constKeyShowsStatusItem ;
 extern NSString* const constKeySortShoeboxDuringSyncs ;
 extern NSString* const constKeySoundFailMinor ;

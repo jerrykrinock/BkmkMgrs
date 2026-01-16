@@ -1947,7 +1947,7 @@ NSString* const skuForSmarky3 = @"637653";
         BOOL oldShowStatusItemPref = [[NSUserDefaults standardUserDefaults] boolForKey:@"showStatusMenu"] ;
         BkmxStatusItemStyle style = oldShowStatusItemPref ? BkmxStatusItemStyleFlat : BkmxStatusItemStyleNone ;
         [[NSUserDefaults standardUserDefaults] setInteger:style
-                                                   forKey:constKeyStatusItemStyle] ;
+                                                   forKey:@"statusItemStyle"] ;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"showStatusMenu"] ;
     }
 
@@ -1974,12 +1974,12 @@ NSString* const skuForSmarky3 = @"637653";
                                                             minor:22
                                                            bugFix:26] ;
     if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
-        NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] ;
+        NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:@"statusItemStyle"] ;
         if (statusItemStyle > BkmxStatusItemStyleFlat) {
             // User had been using BkmxStatusItemStyleColor or BkmxStatusItemStyleGray, now deprecated
             statusItemStyle = BkmxStatusItemStyleFlat ;
             [[NSUserDefaults standardUserDefaults] setInteger:statusItemStyle
-                                                       forKey:constKeyStatusItemStyle] ;
+                                                       forKey:@"statusItemStyle"] ;
         }
     }
 
@@ -2615,17 +2615,17 @@ NSString* const skuForSmarky3 = @"637653";
 
     }
     
-    // Starting in version 3.4, the ternary constKeyStatusItemStyle is replaced
+    // Starting in version 3.3.3, the ternary constKeyStatusItemStyle is replaced
     // by the boolean constKeyShowsStatusItem.
     regularThreshold = [SSYVersionTriplet versionTripletWithMajor:3
-                                                            minor:4
-                                                           bugFix:0] ;
+                                                            minor:3
+                                                           bugFix:3] ;
     if ([previousVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
-        NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:constKeyStatusItemStyle] ;
+        NSInteger statusItemStyle = [[NSUserDefaults standardUserDefaults] integerForKey:@"statusItemStyle"] ;
         BOOL showsStatusItem = (statusItemStyle != BkmxStatusItemStyleNone) ;
         [[NSUserDefaults standardUserDefaults] setBool:showsStatusItem
                                                 forKey:constKeyShowsStatusItem] ;
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:constKeyStatusItemStyle] ;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"statusItemStyle"] ;
     }
 }
 
