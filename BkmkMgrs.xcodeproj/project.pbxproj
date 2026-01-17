@@ -398,8 +398,6 @@
 		4875E60618EB41D200859698 /* BookmarkWhiteBkgnd.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C170F053AD000288DD2 /* BookmarkWhiteBkgnd.tif */; };
 		4875E60C18EB41D200859698 /* DefaultDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */; };
 		4875E60D18EB41D200859698 /* document.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1F0F053AD000288DD2 /* document.png */; };
-		4875E61018EB41D200859698 /* IconSorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2D0F053AD000288DD2 /* IconSorted.png */; };
-		4875E61118EB41D200859698 /* IconUnsorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */; };
 		4875E61218EB41D200859698 /* MarksterMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480125821885A1A800422D21 /* MarksterMain.xib */; };
 		4875E61418EB41D200859698 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C340F053AD000288DD2 /* person.png */; };
 		4875E61518EB41D200859698 /* prefsAdding.png in Resources */ = {isa = PBXBuildFile; fileRef = 481EE08B1135EE8500A729F5 /* prefsAdding.png */; };
@@ -529,6 +527,10 @@
 		48813DCB2460DDA100F0166C /* BkmxNotifier-A.app in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 48813DC52460DC2000F0166C /* BkmxNotifier-A.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48813DDA2461F63400F0166C /* BkmxNotifierAppDel+AlertActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48813DD92461F60300F0166C /* BkmxNotifierAppDel+AlertActions.m */; };
 		48813DDB2462262500F0166C /* NSBundle+MainApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E25A7310326E1100D86524 /* NSBundle+MainApp.m */; };
+		488255A32F1C06A400DAA0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488255A22F1C06A400DAA0EF /* Assets.xcassets */; };
+		488255A42F1C06A400DAA0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488255A22F1C06A400DAA0EF /* Assets.xcassets */; };
+		488255A52F1C06A400DAA0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488255A22F1C06A400DAA0EF /* Assets.xcassets */; };
+		488255A62F1C06A400DAA0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488255A22F1C06A400DAA0EF /* Assets.xcassets */; };
 		488335741D78D15900CEAC87 /* NSString+SSYDotSuffix.m in Sources */ = {isa = PBXBuildFile; fileRef = 488335731D78D15900CEAC87 /* NSString+SSYDotSuffix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		488335751D78ED1B00CEAC87 /* NSString+SSYDotSuffix.m in Sources */ = {isa = PBXBuildFile; fileRef = 488335731D78D15900CEAC87 /* NSString+SSYDotSuffix.m */; };
 		488456C817DFE7D00008DC9D /* NewUserSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488456C717DFE7D00008DC9D /* NewUserSetup.xib */; };
@@ -757,8 +759,6 @@
 		48C412AE1644CF7E00AE1D01 /* BookmarkWhiteBkgnd.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C170F053AD000288DD2 /* BookmarkWhiteBkgnd.tif */; };
 		48C412B31644CF7E00AE1D01 /* DefaultDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */; };
 		48C412B41644CF7E00AE1D01 /* document.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1F0F053AD000288DD2 /* document.png */; };
-		48C412B71644CF7E00AE1D01 /* IconSorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2D0F053AD000288DD2 /* IconSorted.png */; };
-		48C412B81644CF7E00AE1D01 /* IconUnsorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */; };
 		48C412BA1644CF7E00AE1D01 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C340F053AD000288DD2 /* person.png */; };
 		48C412BB1644CF7E00AE1D01 /* prefsAdding.png in Resources */ = {isa = PBXBuildFile; fileRef = 481EE08B1135EE8500A729F5 /* prefsAdding.png */; };
 		48C412BC1644CF7E00AE1D01 /* prefsAppearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD344A0F133E3B00D13E79 /* prefsAppearance.png */; };
@@ -999,8 +999,6 @@
 		48D1EE350F6CB79A001BA354 /* BookmarkWhiteBkgnd.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C170F053AD000288DD2 /* BookmarkWhiteBkgnd.tif */; };
 		48D1EE3A0F6CB79A001BA354 /* DefaultDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */; };
 		48D1EE3B0F6CB79A001BA354 /* document.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1F0F053AD000288DD2 /* document.png */; };
-		48D1EE4A0F6CB79A001BA354 /* IconSorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2D0F053AD000288DD2 /* IconSorted.png */; };
-		48D1EE4B0F6CB79A001BA354 /* IconUnsorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */; };
 		48D1EE4F0F6CB79A001BA354 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C340F053AD000288DD2 /* person.png */; };
 		48D1EE520F6CB79A001BA354 /* prefsAppearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD344A0F133E3B00D13E79 /* prefsAppearance.png */; };
 		48D1EE530F6CB79A001BA354 /* prefsGeneral.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C3B0F053AD000288DD2 /* prefsGeneral.tif */; };
@@ -1049,8 +1047,6 @@
 		48D6F2C3179D6E0700F23494 /* BookmarkWhiteBkgnd.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C170F053AD000288DD2 /* BookmarkWhiteBkgnd.tif */; };
 		48D6F2C7179D6E0700F23494 /* DefaultDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */; };
 		48D6F2C8179D6E0700F23494 /* document.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C1F0F053AD000288DD2 /* document.png */; };
-		48D6F2CB179D6E0700F23494 /* IconSorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2D0F053AD000288DD2 /* IconSorted.png */; };
-		48D6F2CC179D6E0700F23494 /* IconUnsorted.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */; };
 		48D6F2CE179D6E0700F23494 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD5C340F053AD000288DD2 /* person.png */; };
 		48D6F2CF179D6E0700F23494 /* prefsAdding.png in Resources */ = {isa = PBXBuildFile; fileRef = 481EE08B1135EE8500A729F5 /* prefsAdding.png */; };
 		48D6F2D0179D6E0700F23494 /* prefsAppearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FD344A0F133E3B00D13E79 /* prefsAppearance.png */; };
@@ -2352,6 +2348,7 @@
 		48813DC52460DC2000F0166C /* BkmxNotifier-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BkmxNotifier-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48813DD82461F60300F0166C /* BkmxNotifierAppDel+AlertActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BkmxNotifierAppDel+AlertActions.h"; sourceTree = "<group>"; };
 		48813DD92461F60300F0166C /* BkmxNotifierAppDel+AlertActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BkmxNotifierAppDel+AlertActions.m"; sourceTree = "<group>"; };
+		488255A22F1C06A400DAA0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		488335721D78D15900CEAC87 /* NSString+SSYDotSuffix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SSYDotSuffix.h"; path = "../../CategoriesObjC/NSString+SSYDotSuffix.h"; sourceTree = "<group>"; };
 		488335731D78D15900CEAC87 /* NSString+SSYDotSuffix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SSYDotSuffix.m"; path = "../../CategoriesObjC/NSString+SSYDotSuffix.m"; sourceTree = "<group>"; };
 		488354720F369C9F0054318A /* NSView+ActiveControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSView+ActiveControl.h"; path = "../../CategoriesObjC/NSView+ActiveControl.h"; sourceTree = SOURCE_ROOT; };
@@ -3216,8 +3213,6 @@
 		48FD5C170F053AD000288DD2 /* BookmarkWhiteBkgnd.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = BookmarkWhiteBkgnd.tif; path = Resources/BookmarkWhiteBkgnd.tif; sourceTree = "<group>"; };
 		48FD5C1E0F053AD000288DD2 /* DefaultDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = DefaultDefaults.plist; path = Resources/DefaultDefaults.plist; sourceTree = "<group>"; };
 		48FD5C1F0F053AD000288DD2 /* document.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = document.png; path = Resources/document.png; sourceTree = "<group>"; };
-		48FD5C2D0F053AD000288DD2 /* IconSorted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconSorted.png; path = Resources/IconSorted.png; sourceTree = "<group>"; };
-		48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconUnsorted.png; path = Resources/IconUnsorted.png; sourceTree = "<group>"; };
 		48FD5C340F053AD000288DD2 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person.png; path = Resources/person.png; sourceTree = "<group>"; };
 		48FD5C3B0F053AD000288DD2 /* prefsGeneral.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = prefsGeneral.tif; path = Resources/prefsGeneral.tif; sourceTree = "<group>"; };
 		48FD5C490F053AD000288DD2 /* RSSWhiteBkgnd.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = RSSWhiteBkgnd.tif; path = Resources/RSSWhiteBkgnd.tif; sourceTree = "<group>"; };
@@ -4028,6 +4023,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Project Resources */ = {
 			isa = PBXGroup;
 			children = (
+				488255A22F1C06A400DAA0EF /* Assets.xcassets */,
 				48C1E11221BED92300FF1AFB /* AppleScripts */,
 				482C02191648BE2E000CB943 /* Document Icons */,
 				48455DD0172CD90A003FA89E /* Empty Extores */,
@@ -4519,8 +4515,6 @@
 				48E848F9169B1BF900AE3100 /* excludedDs@2x.png */,
 				48A41B36100C659300D71E7D /* folder.tif */,
 				48C113DB179DD5F20004B919 /* folderMapped.png */,
-				48FD5C2D0F053AD000288DD2 /* IconSorted.png */,
-				48FD5C2E0F053AD000288DD2 /* IconUnsorted.png */,
 				48FD5C340F053AD000288DD2 /* person.png */,
 				481EE08B1135EE8500A729F5 /* prefsAdding.png */,
 				48FD344A0F133E3B00D13E79 /* prefsAppearance.png */,
@@ -6294,8 +6288,6 @@
 				4875E60618EB41D200859698 /* BookmarkWhiteBkgnd.tif in Resources */,
 				4875E60C18EB41D200859698 /* DefaultDefaults.plist in Resources */,
 				4875E60D18EB41D200859698 /* document.png in Resources */,
-				4875E61018EB41D200859698 /* IconSorted.png in Resources */,
-				4875E61118EB41D200859698 /* IconUnsorted.png in Resources */,
 				4875E61218EB41D200859698 /* MarksterMain.xib in Resources */,
 				4875E61418EB41D200859698 /* person.png in Resources */,
 				4843A6A91D07905C00A8383B /* ExtoreVivaldi in Resources */,
@@ -6386,6 +6378,7 @@
 				4875E67C18EB41D200859698 /* WidgetExtoreChromy.png in Resources */,
 				4875E67D18EB41D200859698 /* WidgetExtoreFirefox.png in Resources */,
 				4875E67E18EB41D200859698 /* Reports.xib in Resources */,
+				488255A52F1C06A400DAA0EF /* Assets.xcassets in Resources */,
 				4875E67F18EB41D200859698 /* Content.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6440,8 +6433,6 @@
 				48EEF1111A42638A00503A12 /* TagsPopover.xib in Resources */,
 				48C412B31644CF7E00AE1D01 /* DefaultDefaults.plist in Resources */,
 				48C412B41644CF7E00AE1D01 /* document.png in Resources */,
-				48C412B71644CF7E00AE1D01 /* IconSorted.png in Resources */,
-				48C412B81644CF7E00AE1D01 /* IconUnsorted.png in Resources */,
 				48C412BA1644CF7E00AE1D01 /* person.png in Resources */,
 				48C412BB1644CF7E00AE1D01 /* prefsAdding.png in Resources */,
 				48C412BC1644CF7E00AE1D01 /* prefsAppearance.png in Resources */,
@@ -6492,6 +6483,7 @@
 				48307F712072DFFC00320FFD /* ExtoreOpera in Resources */,
 				481AE4542438506C00F4F7BA /* ExtoreBravePublic in Resources */,
 				48E848FB169B1BF900AE3100 /* excluded.png in Resources */,
+				488255A62F1C06A400DAA0EF /* Assets.xcassets in Resources */,
 				486418281AAD465C001542A4 /* ExtoreSafari in Resources */,
 				48E848FD169B1BF900AE3100 /* excluded@2x.png in Resources */,
 				48CF168E1C6B93C7005F1F14 /* ContentOutline.xib in Resources */,
@@ -6543,8 +6535,6 @@
 				48D1EE350F6CB79A001BA354 /* BookmarkWhiteBkgnd.tif in Resources */,
 				48D1EE3A0F6CB79A001BA354 /* DefaultDefaults.plist in Resources */,
 				48D1EE3B0F6CB79A001BA354 /* document.png in Resources */,
-				48D1EE4A0F6CB79A001BA354 /* IconSorted.png in Resources */,
-				48D1EE4B0F6CB79A001BA354 /* IconUnsorted.png in Resources */,
 				484B40D11D808B0F00117E59 /* FindAndReplace.xib in Resources */,
 				48D1EE4F0F6CB79A001BA354 /* person.png in Resources */,
 				481EE08C1135EE8500A729F5 /* prefsAdding.png in Resources */,
@@ -6638,6 +6628,7 @@
 				48D6FD2518C824860020E9F9 /* SyncNotifications.xib in Resources */,
 				48C113EB179DDDD10004B919 /* WidgetExtoreFirefox.png in Resources */,
 				4891BD9E17A6F1F6008B750E /* Reports.xib in Resources */,
+				488255A32F1C06A400DAA0EF /* Assets.xcassets in Resources */,
 				4891BDAA17A728EE008B750E /* Content.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6659,9 +6650,7 @@
 				48DB524D23F08F6A0010EDF2 /* ExtoreEdge in Resources */,
 				48A60152224D867100ECD152 /* Localizable.strings in Resources */,
 				48D6F2C8179D6E0700F23494 /* document.png in Resources */,
-				48D6F2CB179D6E0700F23494 /* IconSorted.png in Resources */,
 				484B40D81D808BD200117E59 /* LandBookmark.aiff in Resources */,
-				48D6F2CC179D6E0700F23494 /* IconUnsorted.png in Resources */,
 				48DAC02917F77BB40076B3D4 /* AboutPanel.rtf in Resources */,
 				48D6F2CE179D6E0700F23494 /* person.png in Resources */,
 				48D6F2CF179D6E0700F23494 /* prefsAdding.png in Resources */,
@@ -6686,6 +6675,7 @@
 				48D6F2E4179D6E0700F23494 /* ImportPostproc.xib in Resources */,
 				48D6F2E6179D6E0700F23494 /* SpecialGooChromy.xib in Resources */,
 				48ED30182E4F9FE6004B9AA1 /* AppIcon.icon in Resources */,
+				488255A42F1C06A400DAA0EF /* Assets.xcassets in Resources */,
 				48D6F2E8179D6E0700F23494 /* SSYAboutPanel.xib in Resources */,
 				48B87745181346FC00CD60EA /* IgnoredPrefixes.xib in Resources */,
 				48134EFC190B84D100FA3EDF /* PrefsWindow.xib in Resources */,

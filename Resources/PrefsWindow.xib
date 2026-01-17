@@ -3407,7 +3407,7 @@ Up | Dn</string>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXX-N5-xyx">
-                    <rect key="frame" x="359" y="273" width="25" height="25"/>
+                    <rect key="frame" x="361" y="275" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iOq-Xo-z6G">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
