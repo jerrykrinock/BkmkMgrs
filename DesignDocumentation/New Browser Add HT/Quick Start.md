@@ -2,7 +2,7 @@
 
 ## Summary
 
-To add **ChatGPT Atlas** browser support to BkmkMgrs, you need to create and modify **7 files/locations**:
+To add **ChatGPT Atlas** browser support to BkmkMgrs, you need to create and modify **9 files/locations**:
 
 ## Files to Create
 
@@ -51,10 +51,27 @@ Add these files to the **BookMacster target's Compile Sources phase**:
 
 (Use Xcode: Project → BookMacster target → Build Phases → Compile Sources → Add)
 
-### 6. Client.m (Optional)
+### 6. BkmxBasis.m [Required!]
+Add your constant to the array in `-supportedLocalAppExformatsOrderedByPopularityIncludeNonClientable:` (around line 1168):
+```objc
+NSArray* synkmarkAndMarksterAdditions = [NSArray arrayWithObjects:
+                                         constExformatFirefox,
+                                         // ... existing browsers ...
+                                         constExformatChatGPTAtlas,  // <-- Add here
+                                         nil] ;
+```
+**Without this, your browser won't appear in browser selection UI!**
+
+### 7. Resources/EmptyExtores/ [Required for "New Document"]
+Create an empty bookmark file for your browser format:
+- **File**: `Resources/EmptyExtores/ExtoreChatGPTAtlas`
+- For browsers sharing formats, use symlink: `ln -s ExtoreChrome ExtoreChatGPTAtlas`
+- **Add to Xcode**: Copy Bundle Resources phase for app targets
+
+### 8. Client.m (Optional)
 If there's a method listing supported formats, add `constExformatChatGPTAtlas` there.
 
-### 7. BookMacsterTests/Cases/ChatGPTAtlas/ (Optional but Recommended)
+### 9. BookMacsterTests/Cases/ChatGPTAtlas/ (Optional but Recommended)
 Create sample bookmark files for regression testing.
 
 ## Key Decisions
@@ -86,8 +103,11 @@ Once you create the class and add the constant, the system discovers it automati
 Choose based on how ChatGPT Atlas stores bookmarks:
 
 ```
-Chromium-based (SQLite):
+Chromium-based (JSON Bookmarks file):
 ExtoreChatGPTAtlas : ExtoreChromy
+
+Mozilla/Firefox-based (places.sqlite):
+ExtoreChatGPTAtlas : ExtoreFirey
 
 Plist file:
 ExtoreChatGPTAtlas : ExtoreLocalPlist
@@ -114,18 +134,22 @@ open "build/Debug/BookMacster.app"
 
 ## Reference Implementations
 
-- **Similar Chromium browser**: `ExtoreChrome.m`, `ExtoreVivaldi.m`
+- **Chromium-based browser**: `ExtoreChrome.m`, `ExtoreVivaldi.m` (inherit from `ExtoreChromy`)
+- **Mozilla/Firefox-based browser**: `ExtoreFirefox.m`, `ExtoreZen.m` (inherit from `ExtoreFirey`)
+  - `ExtoreFirey.m` contains all places.sqlite parsing (~5000 lines)
+  - Subclasses are thin (~120-180 lines) with just constants and profile discovery
 - **Plist format**: `ExtoreSafari.m`, `ExtoreLocalPlist.m`
 - **Minimal example**: `ExtoreOrion.m` (~125 lines)
-- **Complex example**: `ExtoreFirefox.m` (184KB - custom format parsing)
 
 ## That's It!
 
 The naming convention and dynamic class lookup handle everything else:
 
 1. ✅ Create `ExtoreChatGPTAtlas` class
-2. ✅ Add `constExformatChatGPTAtlas` constant
-3. ✅ Register in Xcode build target
-4. ✅ Done! System auto-discovers the new browser
+2. ✅ Add `constExformatChatGPTAtlas` constant (BkmxGlobals.h/m)
+3. ✅ Add to supported exformats array (BkmxBasis.m)
+4. ✅ Add EmptyExtore resource file (Resources/EmptyExtores/)
+5. ✅ Register in Xcode build target (Compile Sources + Copy Bundle Resources)
+6. ✅ Done! System auto-discovers the new browser
 
 See `BROWSER_SUPPORT_CHECKLIST.md` for detailed implementation guide.

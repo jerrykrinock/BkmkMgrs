@@ -344,6 +344,7 @@ NSString* const constExformatOrion = @"Orion" ;
 NSString* const constExformatSafari = @"Safari" ;
 NSString* const constExformatVivaldi = @"Vivaldi" ;
 NSString* const constExformatXbel = @"Xbel" ;
+NSString* const constExformatZen = @"Zen" ;
 
 // Exformat names - Web Apps
 NSString* const constExformatDiigo = @"Diigo" ;

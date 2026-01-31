@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		18B46DFD523247778B828DAE /* ExtoreZen.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA1C0F5643E4464AF205799 /* ExtoreZen.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		480045B722FF818E0034F970 /* BkmxAgentMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4820A970212B881B0040C592 /* BkmxAgentMain.xib */; };
 		48006BEB11B9BCD800846A44 /* SSYPathObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 48006BEA11B9BCD800846A44 /* SSYPathObserver.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		480070D410BC496500EFD45E /* NSTabView+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 480070D310BC496500EFD45E /* NSTabView+Safe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -185,6 +186,10 @@
 		483D32471148195C00B96608 /* SSYClickActionTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 483D32461148195C00B96608 /* SSYClickActionTextField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483DECEC12083BBC00D83867 /* SSYTransformIndexBase0To1.m in Sources */ = {isa = PBXBuildFile; fileRef = 483DECEB12083BBC00D83867 /* SSYTransformIndexBase0To1.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483EB914103CA7610003C059 /* FileAliasWorker in Copy Helper Tools */ = {isa = PBXBuildFile; fileRef = 48EEBFC20FFDBE5F00A358CC /* FileAliasWorker */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		483F3F7F2F2E9BB800DFB721 /* ExtoreZen in Resources */ = {isa = PBXBuildFile; fileRef = 483F3F7E2F2E9BB800DFB721 /* ExtoreZen */; };
+		483F3F802F2E9BB800DFB721 /* ExtoreZen in Resources */ = {isa = PBXBuildFile; fileRef = 483F3F7E2F2E9BB800DFB721 /* ExtoreZen */; };
+		483F3F812F2E9BB800DFB721 /* ExtoreZen in Resources */ = {isa = PBXBuildFile; fileRef = 483F3F7E2F2E9BB800DFB721 /* ExtoreZen */; };
+		483F3F822F2E9BE700DFB721 /* ExtoreZen in Resources */ = {isa = PBXBuildFile; fileRef = 483F3F7E2F2E9BB800DFB721 /* ExtoreZen */; };
 		483FAE5E1129B6A00043E209 /* OperationIxportLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FAE5D1129B6A00043E209 /* OperationIxportLimits.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483FCB031C7A751B0084B35E /* ExtensionDetectionTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FCAFB1C7A751B0084B35E /* ExtensionDetectionTester.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		483FCB041C7A751B0084B35E /* ExtensionsMule.m in Sources */ = {isa = PBXBuildFile; fileRef = 483FCAFE1C7A751B0084B35E /* ExtensionsMule.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -864,7 +869,7 @@
 		48D1E6C30F6C3EC4001BA354 /* Extore.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B000F052EAF00288DD2 /* Extore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6C50F6C3EC7001BA354 /* ExtoreWebFlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B040F052EAF00288DD2 /* ExtoreWebFlat.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6C60F6C3EC9001BA354 /* ExtoreLocalPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B060F052EAF00288DD2 /* ExtoreLocalPlist.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		48D1E6C80F6C3ECC001BA354 /* ExtoreFirefox.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B0A0F052EAF00288DD2 /* ExtoreFirefox.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		48D1E6C80F6C3ECC001BA354 /* ExtoreFirey.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B0A0F052EAF00288DD2 /* ExtoreFirey.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6CA0F6C3ED0001BA354 /* ExtoreOmniWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B0E0F052EAF00288DD2 /* ExtoreOmniWeb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6CB0F6C3ED1001BA354 /* ExtoreOperas.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B100F052EAF00288DD2 /* ExtoreOperas.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48D1E6CC0F6C3ED3001BA354 /* ExtoreSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FD5B120F052EAF00288DD2 /* ExtoreSafari.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -1228,6 +1233,7 @@
 		48FF3BF4171DF41A00D040BC /* NSError+MyDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FF3BF3171DF41A00D040BC /* NSError+MyDomain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48FF3BF9171E05A900D040BC /* NSError+SuggestMountVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FF3BF8171E05A800D040BC /* NSError+SuggestMountVolume.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48FF3BFE171E079800D040BC /* NSError+SSYInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FF3BFD171E079700D040BC /* NSError+SSYInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A9BAF6F11DFB48B4BD62BEE9 /* ExtoreFirefox.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7B245D96544189ACC826B /* ExtoreFirefox.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1768,6 +1774,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43D7B245D96544189ACC826B /* ExtoreFirefox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreFirefox.m; sourceTree = "<group>"; };
+		4572C52186594226892B002D /* ExtoreFirefox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreFirefox.h; sourceTree = "<group>"; };
 		48006BE911B9BCD800846A44 /* SSYPathObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYPathObserver.h; path = ../../ClassesObjC/SSYPathObserver.h; sourceTree = SOURCE_ROOT; };
 		48006BEA11B9BCD800846A44 /* SSYPathObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYPathObserver.m; path = ../../ClassesObjC/SSYPathObserver.m; sourceTree = SOURCE_ROOT; };
 		480070D210BC496500EFD45E /* NSTabView+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTabView+Safe.h"; path = "../../CategoriesObjC/NSTabView+Safe.h"; sourceTree = SOURCE_ROOT; };
@@ -2018,6 +2026,7 @@
 		483D32461148195C00B96608 /* SSYClickActionTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYClickActionTextField.m; path = ../../ClassesObjC/SSYClickActionTextField.m; sourceTree = SOURCE_ROOT; };
 		483DECEA12083BBC00D83867 /* SSYTransformIndexBase0To1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYTransformIndexBase0To1.h; path = ../../ClassesObjC/SSYTransformIndexBase0To1.h; sourceTree = SOURCE_ROOT; };
 		483DECEB12083BBC00D83867 /* SSYTransformIndexBase0To1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYTransformIndexBase0To1.m; path = ../../ClassesObjC/SSYTransformIndexBase0To1.m; sourceTree = SOURCE_ROOT; };
+		483F3F7E2F2E9BB800DFB721 /* ExtoreZen */ = {isa = PBXFileReference; lastKnownFileType = file; path = ExtoreZen; sourceTree = "<group>"; };
 		483FAE5C1129B6A00043E209 /* OperationIxportLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationIxportLimits.h; sourceTree = "<group>"; };
 		483FAE5D1129B6A00043E209 /* OperationIxportLimits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationIxportLimits.m; sourceTree = "<group>"; };
 		483FCAF81C7A74AC0084B35E /* ExtensionDetectionTester.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtensionDetectionTester.xib; sourceTree = "<group>"; };
@@ -3168,8 +3177,8 @@
 		48FD5B040F052EAF00288DD2 /* ExtoreWebFlat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreWebFlat.m; sourceTree = "<group>"; };
 		48FD5B050F052EAF00288DD2 /* ExtoreLocalPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreLocalPlist.h; sourceTree = "<group>"; };
 		48FD5B060F052EAF00288DD2 /* ExtoreLocalPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreLocalPlist.m; sourceTree = "<group>"; };
-		48FD5B090F052EAF00288DD2 /* ExtoreFirefox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreFirefox.h; sourceTree = "<group>"; };
-		48FD5B0A0F052EAF00288DD2 /* ExtoreFirefox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreFirefox.m; sourceTree = "<group>"; };
+		48FD5B090F052EAF00288DD2 /* ExtoreFirey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreFirey.h; sourceTree = "<group>"; };
+		48FD5B0A0F052EAF00288DD2 /* ExtoreFirey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreFirey.m; sourceTree = "<group>"; };
 		48FD5B0D0F052EAF00288DD2 /* ExtoreOmniWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreOmniWeb.h; sourceTree = "<group>"; };
 		48FD5B0E0F052EAF00288DD2 /* ExtoreOmniWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreOmniWeb.m; sourceTree = "<group>"; };
 		48FD5B0F0F052EAF00288DD2 /* ExtoreOperas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreOperas.h; sourceTree = "<group>"; };
@@ -3246,6 +3255,8 @@
 		48FF3BFC171E079700D040BC /* NSError+SSYInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+SSYInfo.h"; path = "../../CategoriesObjC/NSError+SSYInfo.h"; sourceTree = "<group>"; };
 		48FF3BFD171E079700D040BC /* NSError+SSYInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+SSYInfo.m"; path = "../../CategoriesObjC/NSError+SSYInfo.m"; sourceTree = "<group>"; };
 		48FF3C89171FB3C400D040BC /* SSY_ARC_OR_NO_ARC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SSY_ARC_OR_NO_ARC.h; path = ../../Headers/SSY_ARC_OR_NO_ARC.h; sourceTree = "<group>"; };
+		C8F2C1038C2F4A7F95AD1D8B /* ExtoreZen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreZen.h; sourceTree = "<group>"; };
+		DBA1C0F5643E4464AF205799 /* ExtoreZen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreZen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3733,8 +3744,12 @@
 				48BADD5323D61D41003F86EF /* ExtoreEdgeDev.m */,
 				4843A6AB1D07976900A8383B /* ExtoreEpic.h */,
 				4843A6AC1D07976900A8383B /* ExtoreEpic.m */,
-				48FD5B090F052EAF00288DD2 /* ExtoreFirefox.h */,
-				48FD5B0A0F052EAF00288DD2 /* ExtoreFirefox.m */,
+				48FD5B090F052EAF00288DD2 /* ExtoreFirey.h */,
+				48FD5B0A0F052EAF00288DD2 /* ExtoreFirey.m */,
+				4572C52186594226892B002D /* ExtoreFirefox.h */,
+				43D7B245D96544189ACC826B /* ExtoreFirefox.m */,
+				C8F2C1038C2F4A7F95AD1D8B /* ExtoreZen.h */,
+				DBA1C0F5643E4464AF205799 /* ExtoreZen.m */,
 				48B037611BFA304E00116DB2 /* ExtoreGooChromy.h */,
 				48B037621BFA304E00116DB2 /* ExtoreGooChromy.m */,
 				48D31E26206A1A6B00CCDA2F /* ExtoreHtml.h */,
@@ -4162,6 +4177,7 @@
 				48B3777D1738B03300D6E286 /* ExtoreSafari */,
 				4843A6A41D07905C00A8383B /* ExtoreVivaldi */,
 				48B3777E1738B03300D6E286 /* ExtoreXbel */,
+				483F3F7E2F2E9BB800DFB721 /* ExtoreZen */,
 			);
 			name = "Empty Extores";
 			sourceTree = "<group>";
@@ -6363,6 +6379,7 @@
 				481AE4562438506C00F4F7BA /* ExtoreBravePublic in Resources */,
 				4875E66D18EB41D200859698 /* ExtoreCanary in Resources */,
 				4875E66E18EB41D200859698 /* ExtoreChrome in Resources */,
+				483F3F802F2E9BB800DFB721 /* ExtoreZen in Resources */,
 				4875E66F18EB41D200859698 /* ExtoreChromium in Resources */,
 				4875E67018EB41D200859698 /* ExtoreFirefox in Resources */,
 				4875E67218EB41D200859698 /* ExtoreICab in Resources */,
@@ -6492,6 +6509,7 @@
 				48E84901169B1BF900AE3100 /* excludedDs@2x.png in Resources */,
 				48E84907169B1C1D00AE3100 /* sortUpDs.png in Resources */,
 				48ED30162E4F9FD8004B9AA1 /* AppIcon.icon in Resources */,
+				483F3F822F2E9BE700DFB721 /* ExtoreZen in Resources */,
 				48E84909169B1C1D00AE3100 /* sortUpDs@2x.png in Resources */,
 				484B40CA1D808AFD00117E59 /* ExtensionDetectionTester.xib in Resources */,
 				48D3CA2F1A02AF0C008D262A /* ClientTalderMaps.xib in Resources */,
@@ -6613,6 +6631,7 @@
 				481AE4572438506C00F4F7BA /* ExtoreBravePublic in Resources */,
 				48B377841738B03300D6E286 /* ExtoreICab in Resources */,
 				48B377851738B03300D6E286 /* ExtoreOmniWeb in Resources */,
+				483F3F812F2E9BB800DFB721 /* ExtoreZen in Resources */,
 				48BD8C0218565516000EDE3E /* AppleMenuExtras.png in Resources */,
 				48B377861738B03300D6E286 /* ExtoreOpera in Resources */,
 				48F47C26182C8D520034A6F6 /* SpecialFirefox.xib in Resources */,
@@ -6737,6 +6756,7 @@
 				48803453181971E7000908D2 /* Bookmarkshelf.png in Resources */,
 				4891BDA017A6F1F6008B750E /* Reports.xib in Resources */,
 				4891BDAC17A728EE008B750E /* Content.xib in Resources */,
+				483F3F7F2F2E9BB800DFB721 /* ExtoreZen in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7310,7 +7330,9 @@
 				48D1E6C30F6C3EC4001BA354 /* Extore.m in Sources */,
 				48D1E6C50F6C3EC7001BA354 /* ExtoreWebFlat.m in Sources */,
 				48D1E6C60F6C3EC9001BA354 /* ExtoreLocalPlist.m in Sources */,
-				48D1E6C80F6C3ECC001BA354 /* ExtoreFirefox.m in Sources */,
+				48D1E6C80F6C3ECC001BA354 /* ExtoreFirey.m in Sources */,
+				A9BAF6F11DFB48B4BD62BEE9 /* ExtoreFirefox.m in Sources */,
+				18B46DFD523247778B828DAE /* ExtoreZen.m in Sources */,
 				48DAC01D17F5D3B70076B3D4 /* SSYXugradeApp.m in Sources */,
 				48D1E6CA0F6C3ED0001BA354 /* ExtoreOmniWeb.m in Sources */,
 				4801541018098DC200C0E8BC /* NSBundle+SSYMotherApp.m in Sources */,

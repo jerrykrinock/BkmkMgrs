@@ -9,7 +9,15 @@
       "Bash(/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -f /Users/jk/Library/Developer/Xcode/DerivedData/BkmkMgrs-dgajrgxroulefweqxsvazigfeucy/Build/Products/Debug/BookMacster.app)",
       "Bash(osascript:*)",
       "Bash(sdef \"BookMacster\")",
-      "Bash(sdef:*)"
+      "Bash(sdef:*)",
+      "WebFetch(domain:zen-browser.app)",
+      "Bash(mdls:*)",
+      "Bash(python3:*)",
+      "Bash(for:*)",
+      "Bash(do python3 -c \"import uuid; print\\(uuid.uuid4\\(\\).hex[:24].upper\\(\\)\\)\")",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

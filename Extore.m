@@ -1706,6 +1706,8 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
             sourcePath = path ;
         }
         else {
+            // Get a file from app's Resources/EmptyExtores.
+            
             // Note: I tried to create an empty places.sqlite file by removing a profile's
             // places.sqlite file, launching Firefox to create a new one, deleting
             // the default bookmarks, quitting Firefox, dumping places.sqlite to text,
@@ -1741,6 +1743,7 @@ NSString* const constKeyReadExternalMule = @"readExternalMule";
                                                              error:&error] ;
         if (ok) {
             if ([self emptyExtoreResourceFilenameAfterUnzipping] != nil) {
+                // For some browsers, for example Firefox and Zen, I have zipped the empty extore files.
                 NSDictionary* programResults = [SSYTask run:[NSURL fileURLWithPath:@"/usr/bin/unzip"]
                                                   arguments:[NSArray arrayWithObjects:@"-o", @"-d", destinDirectory, sourcePath, nil]
                                                 inDirectory:nil
@@ -2409,6 +2412,7 @@ BrowserToBeRunningError_p:(NSError**)error_p {
 }
 
 - (NSString*)messagePleaseActivateThisProfile {
+    // Must be implemented by subclasses.
     NSLog(@"Internal Error 202-5762") ;
     return nil ;
 }

@@ -1009,6 +1009,7 @@ extern NSString* const constExformatOrion ;
 extern NSString* const constExformatSafari ;
 extern NSString* const constExformatVivaldi ;
 extern NSString* const constExformatXbel ;
+extern NSString* const constExformatZen ;
 
 // Exformat names - Web Apps
 extern NSString* const constExformatDiigo ;

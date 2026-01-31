@@ -8,6 +8,10 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.3.4 (2026-02-06)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with [Zen Browser](https://zen-browser.app).
+
 ## Version 3.3.3 (2026-01-17)
 
 *  <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> The option to have the icon of the Menu Extra be a grayscale image of the application icon, which looked bad and was not even discernable with the new applicattion icon we made for macOS 26, has been eliminated.  Users who had previously selected this option in *Preferences* > *Appearance* > *Menu Extra* will be automatically migrated to use the other option, which looks like is a simple, flat, black-or-white bookmark.  This icon is more appropriate in the current style of macOS.

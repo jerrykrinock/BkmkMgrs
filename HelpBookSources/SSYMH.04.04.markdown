@@ -86,10 +86,9 @@ The screenshots below show what happens after an initial export.  After importin
 
 Some of the screenshots have been doctored to show what happens when different items are clicked.
 
-#### Firefox
+#### Firefox or Zen Browser
 
-Because Firefox does not allow anything except its three hard folders in *[Root]()*, the items from Root went into *Other Bookmarks*.  Same result with items from *Speed Dial*, because, Firefox does not 
-have a *Speed Dial*.
+Because Firefox and Zen Browser do not allow anything except its three hard folders in *[Root]()*, the items from Root went into *Other Bookmarks*.  Same result with items from *Speed Dial*, because these two browsers do not have a *Speed Dial*.
 
 <div class="screenshot">
 <img src="images/mapWhatWhereFirefox1.png" alt="" />
@@ -288,7 +287,7 @@ To configure Tag ↔ Folder Mappings,
 * Click *Done* twice.
 * Repeat for the other Client.
 
-Note that there are four possible types of Tag ↔ Folder Mappings.  In the upper table, you configure *Folder to Tag* Mappings, specifying whether to do this during *[Import]()* or *[Export]()* operations.  In the lower table you similarly configure *Tag to Folder* Mappings.  For most Clients, only two types are available; only the *[Import]()* or only the *[Export]()* item are available in the *Do during* popup.  This is because most Clients which support tags do not support folders, and vice versa.  The exception is Firefox, which supports both tags and folders.
+Note that there are four possible types of Tag ↔ Folder Mappings.  In the upper table, you configure *Folder to Tag* Mappings, specifying whether to do this during *[Import]()* or *[Export]()* operations.  In the lower table you similarly configure *Tag to Folder* Mappings.  For most Clients, only two types are available; only the *[Import]()* or only the *[Export]()* item are available in the *Do during* popup.  This is because most Clients which support tags do not support folders, and vice versa.  The exceptions are Firefox and Zen Browser, which support both tags and folders.
 
 #### Example: Creating a *Reading List* in Chrome [chromeReadList]
 
@@ -341,7 +340,7 @@ Conclusion: If you are using the app to sync browser Clients and want to delete 
 
 ## Exclude Export of Special Bookmarks <img src="images/Smarky.png" class="whapp" /> <img src="images/Synkmark.png" class="whapp" /> <img src="images/Markster.png" class="whapp" /> <img src="images/BookMacster.png" class="whapp" /> [excludeExportSpecial]
 
-In the [Advanced Client Settings]() for each Client, in the *Export* section, there are checkboxes in which you can selectively exclude exporting bookmarks to local files, JavaScript bookmarklets, RSS feeds and Firefox *Live* bookmarks.
+In the [Advanced Client Settings]() for each Client, in the *Export* section, there are checkboxes in which you can selectively exclude exporting bookmarks to local files, JavaScript bookmarklets, RSS feeds and Firefox or Zen Browser's *Live* bookmarks.
 
 ## Import and Export of Separator Changes  <img src="images/Smarky.png" class="whapp" /> <img src="images/Synkmark.png" class="whapp" /> <img src="images/Markster.png" class="whapp" /> <img src="images/BookMacster.png" class="whapp" />
 
@@ -505,7 +504,7 @@ In most cases, it does not.  A folder with the same [lineage]() and the same nam
 Before writing or uploading items, Smarky, Synkmark, Markster, and BookMacster remove items which are not allowed or not desirable in the given the Export Client, or won't work in any Client.  Most of these are fairly obvious, but here are a few examples…
 
 * Bookmarks whose URLs have no characters, or illegal characters in their host portions, for example *http:///*, are not exported to any Client.
-* Bookmarks whose URLs contain a percent-escaped NULL, "%00", in their path portions will not be exported to any Client because this causes weird behavior in Chrome, Firefox, and possibly other apps.
+* Bookmarks whose URLs contain a percent-escaped NULL, "%00", in their path portions will not be exported to any Client because this causes weird behavior in Chrome, Firefox, Zen Browser, and possibly other apps.
 * Pinboard does not allow folders or separators, only bookmarks.
 * Because they are typically huge, useless to Clients except Safari, and can cause errors in some Clients, the *[Safari Logins Bookmarklet](http://help.agile.ws/1Password3/logins_bookmarklet.html)* created by 1Password version 3.x, and the old 1Password bookmarklet created by 1Password version 2.x, are exported only to Safari Clients.
 * Safari does not allow separators "out of the box".  But instead of not exporting them, Smarky, Synkmark, Markster, and BookMacster [convert separators when exporting to Safari]() to its own fake separators.
@@ -532,7 +531,7 @@ Actually this change can occur in one or more of three places:
 
 The last item is the one relevant to Smarky, Synkmark, Markster, and BookMacster.  This is because these apps merge incoming and existing bookmarks during an [*Import* or *Export*]() operation.  For example, let's say you that your perform an *Export* in BookMacster to Pinboard, which uploads a bookmark whose URL is *http://UpPpeR.cOM*.  If you later perform an *Import* from this Pinboard account, BookMacster will receive a URL which has been normalized to contain only lower-case characters in the *host* portion, *http://upper.com*.
 
-To minimize confusion and [churning]() of bookmarks, the apps also normalize any bookmark that you enter into it.  There are a couple dozen rules in our algorithm, and our *My Eyes Glaze Over* Department did not allow us to enter them here.  Generally, the app mimics the behavior of Firefox and Chrome, which we have found to be reasonable except for a couple cases.  Therefore, since the exported URL is already normalized, the Client will not make any further changes, and [churn]() rarely occurs.  One of these rare instances was when the path of a URL ends in 'index.html' and it is exported to Google Bookmarks.  Google Bookmarks incorrectly, we believe, omits the 'index.html', and therefore when you re-import such a bookmark into BookMacster for the first time, an "update" of its URL will be tallied.
+To minimize confusion and [churning]() of bookmarks, the apps also normalize any bookmark that you enter into it.  There are a couple dozen rules in our algorithm, and our *My Eyes Glaze Over* Department did not allow us to enter them here.  Generally, the app mimics the behavior of Firefox and Chrome, which we have found to be reasonable except for a couple cases.  Therefore, since the exported URL is already normalized, the Client will not make any further changes, and [churn]() rarely occurs.
 
 ## Undo and Redo <img src="images/Smarky.png" class="whapp" /> <img src="images/Synkmark.png" class="whapp" /> <img src="images/Markster.png" class="whapp" /> <img src="images/BookMacster.png" class="whapp" />
 
@@ -593,7 +592,7 @@ The apps has two methods for importing from and exporting to [Locally-installed 
 
 The **quick direct sync** is to import from and/or export to the browser's bookmarks file or files on the disk.  This is the only method available with some browsers, particularly Safari.  Safari allows us to do this while Safari is running, provided that we are careful with iCloud.  Our apps are not able to do a quick direct sync with the Opera web browser (because, starting in Opera 48, Opera apparently adds a secret salt to their file's checsum), nor te Orion web browser because Orion uses a proprietary file format which we have chosen to not reverse-engineer.  For other browsers, our app must quit the browser before importing and/or exporting with quick direct sync.  If a browser is running and needs to be quit, our app will present a dialog asking you if it is OK to quit the app, and then to re-launch it when done.
 
-The other method is the **coordinated sync**.  This method is only available in Firefox, Google Chrome, Vivaldi, Brave, Edge, Chrome Canary and [FreeSMUG's Chromium](http://www.freesmug.org/chromium), and it is the only method available for Opera.  It communicates the import or export through a [browser extension](), and hence works while a browser app *is running*.  Our app will request that you install the browser extension into your browser profile when you add the browser as a Client, or the first time you perform either import or export with Opera, because this is the only available sync method for Opera.
+The other method is the **coordinated sync**.  This method is available for Firefox, Zen Browser, and is the only method available for Google Chrome, Vivaldi, Brave, Edge, Chrome Canary, Orion, [FreeSMUG's Chromium](http://www.freesmug.org/chromium), and Opera.  It communicates the import or export through a [browser extension](), and hence works while a browser app *is running*.  Our app will request that you install the browser extension into your browser profile when you add the browser as a Client, or the first time you perform either import or export with Opera, because this is the only available sync method for Opera.
 
 #### Launch Browser to Coordinate with Other Sync Services [launchBrowserPref]
 
@@ -605,7 +604,7 @@ Therefore, before an Import or Export, if any of these browsers are involved and
 
 To prevent the browser launching for a one-time export, click in the menu *File* > *Export to only* >.  The sheet which will appear has a *Do NOT launch* checkbox.  However, starting in 2019, we found that, if we use the *quick direct sync*, many [Chrome-ish browsers](chromish), Google Chrome and Microsoft Edge in particular, will revert your bookmarks to the previous bookmarks a few minutes after the app is launched.  Therefore, the *Do not launch* checkbox is not available for Chrome-ish browsers.
 
-If you have our advanced app, BookMacster, you can control this behavior permanently by clicking the tab *Settings* > *Clients*, and then clicking the *Advanced Client Settings* (gear) button for the subject Chrome or Firefox profile.  As explained above, the *Never* option is not available for Chrome-ish browsers.
+If you have our advanced app, BookMacster, you can control this behavior permanently by clicking the tab *Settings* > *Clients*, and then clicking the *Advanced Client Settings* (gear) button for the subject profile.  As explained above, the *Never* option is not available for Chrome-ish browsers.
 
 <div class="screenshot">
 <img src="images/ClientAdvancedGear.png" alt="" />
