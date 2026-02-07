@@ -1,6 +1,6 @@
 # Browser Extensions <img src="images/Synkmark.png" class="whapp" /> <img src="images/Markster.png" class="whapp" /> <img src="images/BookMacster.png" class="whapp" /> [browserExtensions]
 
-Firefox and the *extensible* [Chrome-ish](chromish) browsers: Google Chrome, Opera, Vivaldi, Chrome Canary, Brave, Edge, Orion, and [FreeSMUG's Chromium](http://www.freesmug.org/chromium), have some hooks into which BookMacster *adds on* its own software components which empower it to work more intimately with these browsers.  The software components which we provide to hook into them are called browser *Extensions*.
+Firefox and the *extensible* [Chrome-ish](chromish) browsers: Google Chrome, Opera, Vivaldi, Chrome Canary, Brave, Edge, Comet, Orion, and [FreeSMUG's Chromium](http://www.freesmug.org/chromium), have some hooks into which BookMacster *adds on* its own software components which empower it to work more intimately with these browsers.  The software components which we provide to hook into them are called browser *Extensions*.
 
 SSYMH-PAGE-TOC
 

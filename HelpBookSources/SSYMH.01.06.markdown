@@ -17,7 +17,7 @@ Follow the steps below.  If you click a link for more detail, use the Back (<) b
 &#160; &#160; &#160; &#160; [Global Keyboard Shortcuts](globShorts)          |      ✔      |      ✔      | All [readable browser apps](readableBrowserApp)
 &#160; &#160; &#160; &#160; [Menu Extra](bkmxMenuExtra)                      |      ✔      |      ✔      | All [readable browser apps](readableBrowserApp)
 &#160; &#160; &#160; &#160; [Dock Menu](bkmxDockMenu)                        |      ✔      |      ✔      | All [readable browser apps](readableBrowserApp)
-&#160; &#160; &#160; &#160; [Browser Toolbar Button](browserWidgets)         |      ✔      |             | Firefox, Vivadli, Brave, Edge, Opera, Orion, Chrome, FreeSMUG's Chromium, Canary only
+&#160; &#160; &#160; &#160; [Browser Toolbar Button](browserWidgets)         |      ✔      |             | Firefox, Zen Browser, Vivadli, Brave, Comet, Edge, Opera, Orion, Chrome, FreeSMUG's Chromium, Canary only
 &#160; &#160; &#160; &#160; [Bookmarklet](bookmacsterizer)                   |      ✔      |             | All browsers
 &#160; &#160; &#160; &#160; [Scripting BookMacster](scriptingBkmx)           |      ✔      |             |
 

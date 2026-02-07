@@ -29,7 +29,7 @@ This refers to the built-in bookmarks storage of a web browser.  This is probabl
 
 ### ❖ Chrome-ish Browsers [chromish]
 
-*Chrome-ish* refers to a web browser which is substantially built upon the [Chromium open-source project](http://code.google.com/intl/en/chromium/).  Such browsers include: Google Chrome, Google Chrome Canary, Brave, Edge, [FreeSMUG's Chromium](http://www.freesmug.org/chromium), Opera (since version 15), Vivaldi, Orion, Maxthon, Epic, and probably more which may have come and gone by the time you read this!
+*Chrome-ish* refers to a web browser which is substantially built upon the [Chromium open-source project](http://code.google.com/intl/en/chromium/).  Such browsers include: Google Chrome, Google Chrome Canary, Brave, Edge, Comet, [FreeSMUG's Chromium](http://www.freesmug.org/chromium), Opera (since version 15), Vivaldi, Orion, Maxthon, Epic, and probably more which may have come and gone by the time you read this!
 
 
 ### ❖ Churn [churn]
@@ -175,7 +175,7 @@ In the [Inspector]() panel, you can assign a bookmark or folder to have 1-5 *sta
 
 ### ❖ Readable Web Browser Application [readableBrowserApp]
 
-A *Readable Web Browser Application* is a web browser from which Markster or BookMacster can extract the current web page to create a bookmark.  The Readable Web Browser Applications are: Safari, Firefox, Google Chrome, Brave, Edge, Orion, [FreeSMUG's Chromium](http://www.freesmug.org/chromium), Canary, and OmniWeb.
+A *Readable Web Browser Application* is a web browser from which Markster or BookMacster can extract the current web page to create a bookmark.  The Readable Web Browser Applications are: Safari, Firefox, Google Chrome, Brave, Edge, Zen Browser, Comet, Orion, [FreeSMUG's Chromium](http://www.freesmug.org/chromium), Canary, and OmniWeb.
 
 ### ❖ Secondary Click [secondaryClick]
 
