@@ -4,6 +4,7 @@
 
 *  <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed bug: Dragging multiple bookmarks to a tag did not tag all of the bookmarks. 
 
+*  <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed bug: When user selected multiple tags in the Tag Cloud (RPTokenControl), then begins a drag, all tags except the last tag which was selected become deselected.
 
 ## Version 3.3.4 (2026-02-06)
 
