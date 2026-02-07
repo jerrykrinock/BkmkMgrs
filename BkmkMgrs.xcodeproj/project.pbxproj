@@ -158,6 +158,7 @@
 		48307F692072DF5B00320FFD /* ExtoreVivaldi in Resources */ = {isa = PBXBuildFile; fileRef = 4843A6A41D07905C00A8383B /* ExtoreVivaldi */; };
 		48307F6A2072DFC700320FFD /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48307F6B2072DFCD00320FFD /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
+		E1B9ECE0F2004C67AEC13780 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
 		48307F6C2072DFD200320FFD /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48307F6D2072DFDC00320FFD /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48307F6E2072DFE100320FFD /* ExtoreHtml in Resources */ = {isa = PBXBuildFile; fileRef = 48DBCAB8206D9D3000A8E3DB /* ExtoreHtml */; };
@@ -366,6 +367,7 @@
 		486EAB3E18AB14CA0011C9D3 /* NSDocumentController+FrontOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 486EAB3D18AB14CA0011C9D3 /* NSDocumentController+FrontOrder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		486F7A931F85A64E005F8EC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B6D02A17920D8000BD0DE2 /* Cocoa.framework */; };
 		486FFBA911713E01007BEB0B /* ExtoreChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FFBA31171362F007BEB0B /* ExtoreChrome.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		35AC11D6C0EC4735B2E1DB62 /* ExtoreComet.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48700E8629B25D5E0026166B /* BkmxNotifierCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48700E8529B25D5E0026166B /* BkmxNotifierCaller.m */; };
 		487049471175705D003994A4 /* NSImage+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 487049461175705D003994A4 /* NSImage+Merge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4870495A117574F9003994A4 /* ClientsWizWinCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 48704959117574F9003994A4 /* ClientsWizWinCon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -459,6 +461,7 @@
 		4875E66918EB41D200859698 /* SyncNotifications.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D6FD2118C824860020E9F9 /* SyncNotifications.xib */; };
 		4875E66D18EB41D200859698 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		4875E66E18EB41D200859698 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
+		D1FF15F15BAE41EF8FF3CF3F /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
 		4875E66F18EB41D200859698 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		4875E67018EB41D200859698 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		4875E67218EB41D200859698 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -682,6 +685,7 @@
 		48B36CA90FE0CF2B0018919F /* SSYTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B36CA80FE0CF2B0018919F /* SSYTokenField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		48B377801738B03300D6E286 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48B377811738B03300D6E286 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
+		5C63330C74414ECCB83642F0 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
 		48B377821738B03300D6E286 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48B377831738B03300D6E286 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48B377841738B03300D6E286 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -1094,6 +1098,7 @@
 		48D6F318179D6E0700F23494 /* circle_warning.tif in Resources */ = {isa = PBXBuildFile; fileRef = 48C8CECD16C2AFAF00D1778C /* circle_warning.tif */; };
 		48D6F322179D6E0700F23494 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48D6F323179D6E0700F23494 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
+		EAFD7CFF039B4FA586025466 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
 		48D6F324179D6E0700F23494 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48D6F325179D6E0700F23494 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48D6F326179D6E0700F23494 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -2272,6 +2277,8 @@
 		486F7A921F85A4A6005F8EC1 /* SafariBookmarksSyncAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafariBookmarksSyncAgent.m; sourceTree = "<group>"; };
 		486FFBA21171362F007BEB0B /* ExtoreChrome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreChrome.h; sourceTree = "<group>"; };
 		486FFBA31171362F007BEB0B /* ExtoreChrome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ExtoreChrome.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		61C699CA27D24CFC9BF6840A /* ExtoreComet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreComet.h; sourceTree = "<group>"; };
+		F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreComet.m; sourceTree = "<group>"; };
 		48700E8429B25D5E0026166B /* BkmxNotifierCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BkmxNotifierCaller.h; sourceTree = "<group>"; };
 		48700E8529B25D5E0026166B /* BkmxNotifierCaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BkmxNotifierCaller.m; sourceTree = "<group>"; };
 		487049451175705D003994A4 /* NSImage+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+Merge.h"; path = "../../CategoriesObjC/NSImage+Merge.h"; sourceTree = SOURCE_ROOT; };
@@ -2635,6 +2642,7 @@
 		48B36CA80FE0CF2B0018919F /* SSYTokenField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYTokenField.m; path = ../../ClassesObjC/SSYTokenField.m; sourceTree = SOURCE_ROOT; };
 		48B377751738B03300D6E286 /* ExtoreCanary */ = {isa = PBXFileReference; lastKnownFileType = text; name = ExtoreCanary; path = Resources/EmptyExtores/ExtoreCanary; sourceTree = "<group>"; };
 		48B377761738B03300D6E286 /* ExtoreChrome */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExtoreChrome; path = Resources/EmptyExtores/ExtoreChrome; sourceTree = "<group>"; };
+		D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExtoreComet; path = Resources/EmptyExtores/ExtoreComet; sourceTree = "<group>"; };
 		48B377771738B03300D6E286 /* ExtoreChromium */ = {isa = PBXFileReference; lastKnownFileType = text; name = ExtoreChromium; path = Resources/EmptyExtores/ExtoreChromium; sourceTree = "<group>"; };
 		48B377781738B03300D6E286 /* ExtoreFirefox */ = {isa = PBXFileReference; lastKnownFileType = file; name = ExtoreFirefox; path = Resources/EmptyExtores/ExtoreFirefox; sourceTree = "<group>"; };
 		48B377791738B03300D6E286 /* ExtoreICab */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = ExtoreICab; path = Resources/EmptyExtores/ExtoreICab; sourceTree = "<group>"; };
@@ -3724,6 +3732,8 @@
 				4839FA1F1588473F00F670FD /* ExtoreCanary.m */,
 				486FFBA21171362F007BEB0B /* ExtoreChrome.h */,
 				486FFBA31171362F007BEB0B /* ExtoreChrome.m */,
+				61C699CA27D24CFC9BF6840A /* ExtoreComet.h */,
+				F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */,
 				487A04C2122DDD9600E8F285 /* ExtoreChromium.h */,
 				487A04C3122DDD9600E8F285 /* ExtoreChromium.m */,
 				487A04B9122DDA2500E8F285 /* ExtoreChromy.h */,
@@ -4165,6 +4175,7 @@
 				48B377751738B03300D6E286 /* ExtoreCanary */,
 				48B377761738B03300D6E286 /* ExtoreChrome */,
 				48B377771738B03300D6E286 /* ExtoreChromium */,
+				D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */,
 				48DB524123F08F6A0010EDF2 /* ExtoreEdge */,
 				484D643925A806F000F2C9AB /* ExtoreEdgeBeta */,
 				484D643825A806F000F2C9AB /* ExtoreEdgeDev */,
@@ -6379,6 +6390,7 @@
 				481AE4562438506C00F4F7BA /* ExtoreBravePublic in Resources */,
 				4875E66D18EB41D200859698 /* ExtoreCanary in Resources */,
 				4875E66E18EB41D200859698 /* ExtoreChrome in Resources */,
+				D1FF15F15BAE41EF8FF3CF3F /* ExtoreComet in Resources */,
 				483F3F802F2E9BB800DFB721 /* ExtoreZen in Resources */,
 				4875E66F18EB41D200859698 /* ExtoreChromium in Resources */,
 				4875E67018EB41D200859698 /* ExtoreFirefox in Resources */,
@@ -6434,6 +6446,7 @@
 			files = (
 				48C848C21F602E6500A8D53B /* Bookmarkshelf.iconset in Resources */,
 				48307F6B2072DFCD00320FFD /* ExtoreChrome in Resources */,
+				E1B9ECE0F2004C67AEC13780 /* ExtoreComet in Resources */,
 				48C412A41644CF7E00AE1D01 /* SSYLicenseInfoWindow.nib in Resources */,
 				484B40D21D808B3E00117E59 /* SpecifyCruft.xib in Resources */,
 				48307F6E2072DFE100320FFD /* ExtoreHtml in Resources */,
@@ -6624,6 +6637,7 @@
 				48ED300C2E4F9EF5004B9AA1 /* AppIcon.iconset in Resources */,
 				48C1E11621BED92400FF1AFB /* AppleScripts in Resources */,
 				48B377811738B03300D6E286 /* ExtoreChrome in Resources */,
+				5C63330C74414ECCB83642F0 /* ExtoreComet in Resources */,
 				48CFA61218E4535D000E77FA /* HelpBook in Resources */,
 				48B377821738B03300D6E286 /* ExtoreChromium in Resources */,
 				48B377831738B03300D6E286 /* ExtoreFirefox in Resources */,
@@ -6734,6 +6748,7 @@
 				484B40C71D808AF300117E59 /* ApproveCruft.xib in Resources */,
 				48D6F322179D6E0700F23494 /* ExtoreCanary in Resources */,
 				48D6F323179D6E0700F23494 /* ExtoreChrome in Resources */,
+				EAFD7CFF039B4FA586025466 /* ExtoreComet in Resources */,
 				48C848C31F602E6600A8D53B /* Bookmarkshelf.iconset in Resources */,
 				48D6F324179D6E0700F23494 /* ExtoreChromium in Resources */,
 				48D6F325179D6E0700F23494 /* ExtoreFirefox in Resources */,
@@ -7673,6 +7688,7 @@
 				48BA541E115C08FA00899CC6 /* SSYOperation.m in Sources */,
 				4820A98C212BC5B90040C592 /* TriggHandler.m in Sources */,
 				486FFBA911713E01007BEB0B /* ExtoreChrome.m in Sources */,
+				35AC11D6C0EC4735B2E1DB62 /* ExtoreComet.m in Sources */,
 				48AF1D7E1171AC3100769A60 /* NSDictionary+ToStark.m in Sources */,
 				48AF1DAE1171FB7200769A60 /* NSDate+Microsoft1601Epoch.m in Sources */,
 				48AF1DDD11720BEB00769A60 /* Stark+ConvertToChrome.m in Sources */,

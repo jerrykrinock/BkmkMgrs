@@ -330,6 +330,7 @@ NSString* const constExformatBravePublic = @"BravePublic" ;
 NSString* const constExformatCanary = @"Canary" ;
 NSString* const constExformatChrome = @"Chrome" ;
 NSString* const constExformatChromium = @"Chromium" ;
+NSString* const constExformatComet = @"Comet" ;
 NSString* const constExformatEdge = @"Edge" ;
 NSString* const constExformatEdgeBeta = @"EdgeBeta" ;
 NSString* const constExformatEdgeDev = @"EdgeDev" ;

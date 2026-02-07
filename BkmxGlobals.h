@@ -995,6 +995,7 @@ extern NSString* const constExformatBravePublic;
 extern NSString* const constExformatCanary ;
 extern NSString* const constExformatChrome ;
 extern NSString* const constExformatChromium ;
+extern NSString* const constExformatComet ;
 extern NSString* const constExformatEdge ;
 extern NSString* const constExformatEdgeBeta ;
 extern NSString* const constExformatEdgeDev ;
