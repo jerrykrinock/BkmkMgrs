@@ -875,19 +875,18 @@
 	NSPasteboard *pboard;
     pboard = [sender draggingPasteboard];
     BOOL ok = NO ;
-	if ([[pboard types] containsObject:constBkmxPboardTypeDraggableStark]) {
-        NSArray<NSString*>* jsonWays = [pboard readObjectsForClasses:@[[NSString class]]
-                                                             options:nil];
+    if ([[pboard types] containsObject:constBkmxPboardTypeDraggableStark]) {
         NSMutableArray* bookmarks = [NSMutableArray new];
-        for (NSString* jsonWay in jsonWays) {
+        for (NSPasteboardItem* pboardItem in [pboard pasteboardItems]) {
+            NSString* jsonWay = [pboardItem stringForType:constBkmxPboardTypeDraggableStark];
             DraggableStark* draggableStark = [[DraggableStark alloc] initWithJsonString:jsonWay];
             Stark* stark = [draggableStark stark];
             if ([stark canHaveTags]) {
-                [bookmarks addObject: draggableStark];
+                [bookmarks addObject: stark];
             }
             [draggableStark release];
         }
-		NSArray* tags = [tagCloud selectedObjects] ;
+        NSArray* tags = [tagCloud selectedObjects] ;
 		[StarkEditor addTags:tags
                  toBookmarks:bookmarks];
         [bookmarks release];
