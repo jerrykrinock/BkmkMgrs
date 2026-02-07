@@ -256,10 +256,10 @@ NSInteger const nativeMessagingAPILimit = 1000000;
         // For debugging
         // Use ASCII in case the browser sends invalid UTF-8:
         // NSString *logString = [[NSString alloc] initWithData:rxPayloadData encoding:NSASCIIStringEncoding];
-        // os_log(OS_LOG_DEFAULT, "Payload-data29: %{public}@", logString);
+        // os_log(OS_LOG_DEFAULT, "Payload data 2: %{public}@", logString);
         // But the stupid macOS console may truncate.  If there are many bookmarks, use this instead:
-        [logString writeToFile:@"/Users/jk/Desktop/JunkFromChromessenger.txt" atomically:YES];
-        if (payloads) {
+        // [logString writeToFile:@"/Users/jk/Desktop/JunkFromChromessenger.txt" atomically:YES];
+                if (payloads) {
             BOOL didProcess = NO;
             id rxObject;
             NSString* issue;
