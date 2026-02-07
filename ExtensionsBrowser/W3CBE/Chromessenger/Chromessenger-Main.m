@@ -64,8 +64,10 @@ int main(int argc, const char * argv[]) {
                             NSFileHandle* input ;
                             input = [NSFileHandle fileHandleWithStandardInput] ;
                             NSData* data = [input availableData];
-                            /* data will never exceed 4K bytes.  See comment above
-                             -[Chromessenger handleStdinData:]. */
+                            /* `data` will never exceed the virtual memory page size of the
+                             CPU, which is 4K bytes for Intel and 16K bytes for Apple Silicon.
+                             Note that the boundaries formed by this limit are independent of
+                             the message boundaries from Chrome's postMessage function.). */
                             if ([data length] > 0) {
                                 [[Chromessenger sharedMessenger] handleStdinData:data] ;
                                 [input waitForDataInBackgroundAndNotify] ;

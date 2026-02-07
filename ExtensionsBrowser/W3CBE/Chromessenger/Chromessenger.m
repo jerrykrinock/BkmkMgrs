@@ -5,6 +5,7 @@
 #import "ChromeBookmarksGuy.h"
 #import "BkmxChangeNotifier.h"
 #import "NSDictionary+BSJSONAdditions.h"
+#import <os/log.h>
 
 static Chromessenger* sharedMessenger = nil ;
 
@@ -251,7 +252,13 @@ NSInteger const nativeMessagingAPILimit = 1000000;
         NSDictionary* payloads = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:rxPayloadData
                                                                                 options:self.class.optionsForNSJSON
                                                                                   error:&error];
-        // syslog(LOG_NOTICE, "Got payloadData:\n%s", [payloadString UTF8String]) ;
+        
+        // For debugging
+        // Use ASCII in case the browser sends invalid UTF-8:
+        // NSString *logString = [[NSString alloc] initWithData:rxPayloadData encoding:NSASCIIStringEncoding];
+        // os_log(OS_LOG_DEFAULT, "Payload-data29: %{public}@", logString);
+        // But the stupid macOS console may truncate.  If there are many bookmarks, use this instead:
+        [logString writeToFile:@"/Users/jk/Desktop/JunkFromChromessenger.txt" atomically:YES];
         if (payloads) {
             BOOL didProcess = NO;
             id rxObject;
@@ -710,18 +717,16 @@ NSInteger const nativeMessagingAPILimit = 1000000;
 #define LENGTH_LENGTH 4
 
 /*
- @details  Unix domain sockets have 4K buffers.  So there cannot ever be more
- than 4K of available data at any time, because “available” means “sitting in
- the buffer ready to be copied out”.  Until the 4K in the buffer is read,
- the sending side is blocked.  Therefore, -availableData will never return
- more than 4K.  Therefore, this method has a lot of fancy code for
- stitching together the message fields and, rarely but importantly, their
- 4-byte length fields.  (The 4K boundaries from the unix domain socket are
- independent of the message boundaries from Chrome's postMessage function.)
+ @details  This method has a lot of fancy code for stitching together the
+ message fields received from stdin, and, rarely but importantly, their
+ 4-byte length fields.
  */
 - (void)handleStdinData:(NSData*)dataIn {
     uint32_t dataInBytes = (uint32_t)[dataIn length] ;
     uint32_t pointer = 0 ;
+    /* needBytes is the remaining count of bytes needed to complete the current payload.
+     Since this method may be called more than once for a given payload, it is stored for
+     the next call to the instance variable owedBytes. */
     uint32_t needBytes = 0 ;
     NSMutableData* currentData = nil ;
     // syslog(LOG_NOTICE, "Got stdinData of %ld bytes", dataIn.length) ;
@@ -758,13 +763,13 @@ NSInteger const nativeMessagingAPILimit = 1000000;
         BOOL isComplete ;
         uint32_t availableBytes = dataInBytes - pointer ;
         if (needBytes > availableBytes) {
-            // Read the entire dataInBytes into currentData
+            // Prepare to read the entire dataInBytes into currentData
             // Store carryOver and bytesOwed for next
             readLength = availableBytes ;
             isComplete = NO ;
         }
         else {
-            // Read needBytes into currentData
+            // Prepare to read a count of needBytes bytes into currentData
             // Process currentData as JSON
             readLength = needBytes ;
             isComplete = YES ;
