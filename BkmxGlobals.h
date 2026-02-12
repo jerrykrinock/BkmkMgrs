@@ -993,6 +993,7 @@ extern NSString* const constBkmxSymbolHartainerOhared ;
 extern NSString* const constExformatBraveBeta;
 extern NSString* const constExformatBravePublic;
 extern NSString* const constExformatCanary ;
+extern NSString* const constExformatChatGPTAtlas ;
 extern NSString* const constExformatChrome ;
 extern NSString* const constExformatChromium ;
 extern NSString* const constExformatComet ;

@@ -159,6 +159,7 @@
 		48307F6A2072DFC700320FFD /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48307F6B2072DFCD00320FFD /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
 		E1B9ECE0F2004C67AEC13780 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
+		15326F12E6BD3D9AC0A89087 /* ExtoreChatGPTAtlas in Resources */ = {isa = PBXBuildFile; fileRef = 189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */; };
 		48307F6C2072DFD200320FFD /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48307F6D2072DFDC00320FFD /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48307F6E2072DFE100320FFD /* ExtoreHtml in Resources */ = {isa = PBXBuildFile; fileRef = 48DBCAB8206D9D3000A8E3DB /* ExtoreHtml */; };
@@ -368,6 +369,8 @@
 		486F7A931F85A64E005F8EC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B6D02A17920D8000BD0DE2 /* Cocoa.framework */; };
 		486FFBA911713E01007BEB0B /* ExtoreChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = 486FFBA31171362F007BEB0B /* ExtoreChrome.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35AC11D6C0EC4735B2E1DB62 /* ExtoreComet.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		68FF49F7CC34E0581874DA8D /* ExtoreChatGPTAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 635D1C24EE26B51F74D25959 /* ExtoreChatGPTAtlas.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7DE4E0FA7679887CC1E493DC /* ExtoreChatGPTAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1AE3229F4CCEFA1C37A9F /* ExtoreChatGPTAtlas.swift */; };
 		48700E8629B25D5E0026166B /* BkmxNotifierCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 48700E8529B25D5E0026166B /* BkmxNotifierCaller.m */; };
 		487049471175705D003994A4 /* NSImage+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 487049461175705D003994A4 /* NSImage+Merge.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4870495A117574F9003994A4 /* ClientsWizWinCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 48704959117574F9003994A4 /* ClientsWizWinCon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -462,6 +465,7 @@
 		4875E66D18EB41D200859698 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		4875E66E18EB41D200859698 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
 		D1FF15F15BAE41EF8FF3CF3F /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
+		86BAA0D550B5864E80853AAA /* ExtoreChatGPTAtlas in Resources */ = {isa = PBXBuildFile; fileRef = 189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */; };
 		4875E66F18EB41D200859698 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		4875E67018EB41D200859698 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		4875E67218EB41D200859698 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -686,6 +690,7 @@
 		48B377801738B03300D6E286 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48B377811738B03300D6E286 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
 		5C63330C74414ECCB83642F0 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
+		559A57602556E64714628276 /* ExtoreChatGPTAtlas in Resources */ = {isa = PBXBuildFile; fileRef = 189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */; };
 		48B377821738B03300D6E286 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48B377831738B03300D6E286 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48B377841738B03300D6E286 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -1099,6 +1104,7 @@
 		48D6F322179D6E0700F23494 /* ExtoreCanary in Resources */ = {isa = PBXBuildFile; fileRef = 48B377751738B03300D6E286 /* ExtoreCanary */; };
 		48D6F323179D6E0700F23494 /* ExtoreChrome in Resources */ = {isa = PBXBuildFile; fileRef = 48B377761738B03300D6E286 /* ExtoreChrome */; };
 		EAFD7CFF039B4FA586025466 /* ExtoreComet in Resources */ = {isa = PBXBuildFile; fileRef = D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */; };
+		796D2909B985E94005ED6E81 /* ExtoreChatGPTAtlas in Resources */ = {isa = PBXBuildFile; fileRef = 189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */; };
 		48D6F324179D6E0700F23494 /* ExtoreChromium in Resources */ = {isa = PBXBuildFile; fileRef = 48B377771738B03300D6E286 /* ExtoreChromium */; };
 		48D6F325179D6E0700F23494 /* ExtoreFirefox in Resources */ = {isa = PBXBuildFile; fileRef = 48B377781738B03300D6E286 /* ExtoreFirefox */; };
 		48D6F326179D6E0700F23494 /* ExtoreICab in Resources */ = {isa = PBXBuildFile; fileRef = 48B377791738B03300D6E286 /* ExtoreICab */; };
@@ -2279,6 +2285,9 @@
 		486FFBA31171362F007BEB0B /* ExtoreChrome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ExtoreChrome.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		61C699CA27D24CFC9BF6840A /* ExtoreComet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreComet.h; sourceTree = "<group>"; };
 		F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreComet.m; sourceTree = "<group>"; };
+		EF3BCFC93CEC81901BF1A69B /* ExtoreChatGPTAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtoreChatGPTAtlas.h; sourceTree = "<group>"; };
+		635D1C24EE26B51F74D25959 /* ExtoreChatGPTAtlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtoreChatGPTAtlas.m; sourceTree = "<group>"; };
+		4BE1AE3229F4CCEFA1C37A9F /* ExtoreChatGPTAtlas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtoreChatGPTAtlas.swift; sourceTree = "<group>"; };
 		48700E8429B25D5E0026166B /* BkmxNotifierCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BkmxNotifierCaller.h; sourceTree = "<group>"; };
 		48700E8529B25D5E0026166B /* BkmxNotifierCaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BkmxNotifierCaller.m; sourceTree = "<group>"; };
 		487049451175705D003994A4 /* NSImage+Merge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+Merge.h"; path = "../../CategoriesObjC/NSImage+Merge.h"; sourceTree = SOURCE_ROOT; };
@@ -2643,6 +2652,7 @@
 		48B377751738B03300D6E286 /* ExtoreCanary */ = {isa = PBXFileReference; lastKnownFileType = text; name = ExtoreCanary; path = Resources/EmptyExtores/ExtoreCanary; sourceTree = "<group>"; };
 		48B377761738B03300D6E286 /* ExtoreChrome */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExtoreChrome; path = Resources/EmptyExtores/ExtoreChrome; sourceTree = "<group>"; };
 		D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExtoreComet; path = Resources/EmptyExtores/ExtoreComet; sourceTree = "<group>"; };
+		189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ExtoreChatGPTAtlas; path = Resources/EmptyExtores/ExtoreChatGPTAtlas; sourceTree = "<group>"; };
 		48B377771738B03300D6E286 /* ExtoreChromium */ = {isa = PBXFileReference; lastKnownFileType = text; name = ExtoreChromium; path = Resources/EmptyExtores/ExtoreChromium; sourceTree = "<group>"; };
 		48B377781738B03300D6E286 /* ExtoreFirefox */ = {isa = PBXFileReference; lastKnownFileType = file; name = ExtoreFirefox; path = Resources/EmptyExtores/ExtoreFirefox; sourceTree = "<group>"; };
 		48B377791738B03300D6E286 /* ExtoreICab */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = ExtoreICab; path = Resources/EmptyExtores/ExtoreICab; sourceTree = "<group>"; };
@@ -3734,6 +3744,9 @@
 				486FFBA31171362F007BEB0B /* ExtoreChrome.m */,
 				61C699CA27D24CFC9BF6840A /* ExtoreComet.h */,
 				F5FC4A6FD90F4FF0B31E6BC4 /* ExtoreComet.m */,
+				EF3BCFC93CEC81901BF1A69B /* ExtoreChatGPTAtlas.h */,
+				635D1C24EE26B51F74D25959 /* ExtoreChatGPTAtlas.m */,
+				4BE1AE3229F4CCEFA1C37A9F /* ExtoreChatGPTAtlas.swift */,
 				487A04C2122DDD9600E8F285 /* ExtoreChromium.h */,
 				487A04C3122DDD9600E8F285 /* ExtoreChromium.m */,
 				487A04B9122DDA2500E8F285 /* ExtoreChromy.h */,
@@ -4176,6 +4189,7 @@
 				48B377761738B03300D6E286 /* ExtoreChrome */,
 				48B377771738B03300D6E286 /* ExtoreChromium */,
 				D7E63BEB8E9F4BFF879FE163 /* ExtoreComet */,
+				189FE9B9655AD1F83B9655F7 /* ExtoreChatGPTAtlas */,
 				48DB524123F08F6A0010EDF2 /* ExtoreEdge */,
 				484D643925A806F000F2C9AB /* ExtoreEdgeBeta */,
 				484D643825A806F000F2C9AB /* ExtoreEdgeDev */,
@@ -6391,6 +6405,7 @@
 				4875E66D18EB41D200859698 /* ExtoreCanary in Resources */,
 				4875E66E18EB41D200859698 /* ExtoreChrome in Resources */,
 				D1FF15F15BAE41EF8FF3CF3F /* ExtoreComet in Resources */,
+				86BAA0D550B5864E80853AAA /* ExtoreChatGPTAtlas in Resources */,
 				483F3F802F2E9BB800DFB721 /* ExtoreZen in Resources */,
 				4875E66F18EB41D200859698 /* ExtoreChromium in Resources */,
 				4875E67018EB41D200859698 /* ExtoreFirefox in Resources */,
@@ -6447,6 +6462,7 @@
 				48C848C21F602E6500A8D53B /* Bookmarkshelf.iconset in Resources */,
 				48307F6B2072DFCD00320FFD /* ExtoreChrome in Resources */,
 				E1B9ECE0F2004C67AEC13780 /* ExtoreComet in Resources */,
+				15326F12E6BD3D9AC0A89087 /* ExtoreChatGPTAtlas in Resources */,
 				48C412A41644CF7E00AE1D01 /* SSYLicenseInfoWindow.nib in Resources */,
 				484B40D21D808B3E00117E59 /* SpecifyCruft.xib in Resources */,
 				48307F6E2072DFE100320FFD /* ExtoreHtml in Resources */,
@@ -6638,6 +6654,7 @@
 				48C1E11621BED92400FF1AFB /* AppleScripts in Resources */,
 				48B377811738B03300D6E286 /* ExtoreChrome in Resources */,
 				5C63330C74414ECCB83642F0 /* ExtoreComet in Resources */,
+				559A57602556E64714628276 /* ExtoreChatGPTAtlas in Resources */,
 				48CFA61218E4535D000E77FA /* HelpBook in Resources */,
 				48B377821738B03300D6E286 /* ExtoreChromium in Resources */,
 				48B377831738B03300D6E286 /* ExtoreFirefox in Resources */,
@@ -6749,6 +6766,7 @@
 				48D6F322179D6E0700F23494 /* ExtoreCanary in Resources */,
 				48D6F323179D6E0700F23494 /* ExtoreChrome in Resources */,
 				EAFD7CFF039B4FA586025466 /* ExtoreComet in Resources */,
+				796D2909B985E94005ED6E81 /* ExtoreChatGPTAtlas in Resources */,
 				48C848C31F602E6600A8D53B /* Bookmarkshelf.iconset in Resources */,
 				48D6F324179D6E0700F23494 /* ExtoreChromium in Resources */,
 				48D6F325179D6E0700F23494 /* ExtoreFirefox in Resources */,
@@ -7689,6 +7707,8 @@
 				4820A98C212BC5B90040C592 /* TriggHandler.m in Sources */,
 				486FFBA911713E01007BEB0B /* ExtoreChrome.m in Sources */,
 				35AC11D6C0EC4735B2E1DB62 /* ExtoreComet.m in Sources */,
+				68FF49F7CC34E0581874DA8D /* ExtoreChatGPTAtlas.m in Sources */,
+				7DE4E0FA7679887CC1E493DC /* ExtoreChatGPTAtlas.swift in Sources */,
 				48AF1D7E1171AC3100769A60 /* NSDictionary+ToStark.m in Sources */,
 				48AF1DAE1171FB7200769A60 /* NSDate+Microsoft1601Epoch.m in Sources */,
 				48AF1DDD11720BEB00769A60 /* Stark+ConvertToChrome.m in Sources */,

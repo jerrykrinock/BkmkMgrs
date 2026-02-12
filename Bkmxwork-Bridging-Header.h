@@ -16,6 +16,7 @@
 #import "ContentDataSource.h"
 #import "Extore.h"
 #import "ExtoreOperas.h"
+#import "ExtoreChatGPTAtlas.h"
 #import "ExtoreOrion.h"
 #import "Macster.h"
 #import "NSArray+SSYDisjoint.h"

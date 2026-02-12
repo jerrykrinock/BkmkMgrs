@@ -270,7 +270,8 @@ Multi-client bookmark mapping via `Clixid` entity:
    - Handle browser-specific quirks and file locations
 3. Register in `Client` class factory methods
 4. Add corresponding `Importer`/`Exporter` instances if format differs
-5. Test with sample bookmark files in `BookMacsterTests/Cases/`
+5. For Chromium-based browsers, add an AppleScript to `Resources/AppleScripts/` named `GetFrom<BrowserName>.scpt` (e.g., copy `GetFromBravePublic.scpt` as a starting template and adapt it for the new browser)
+6. Test with sample bookmark files in `BookMacsterTests/Cases/`
 
 ## Common Issues & Patterns
 

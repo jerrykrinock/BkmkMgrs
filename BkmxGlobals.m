@@ -328,6 +328,7 @@ NSString* const constBkmxSymbolHartainerOhared = @"Ohar" ;
 NSString* const constExformatBraveBeta = @"BraveBeta" ;
 NSString* const constExformatBravePublic = @"BravePublic" ;
 NSString* const constExformatCanary = @"Canary" ;
+NSString* const constExformatChatGPTAtlas = @"ChatGPTAtlas" ;
 NSString* const constExformatChrome = @"Chrome" ;
 NSString* const constExformatChromium = @"Chromium" ;
 NSString* const constExformatComet = @"Comet" ;
