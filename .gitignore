@@ -69,6 +69,9 @@ BkmkMgrs.xcodeproj/project.xcworkspace/xcshareddata/
 # Xcode Breakpoint List
 *.xcbkptlist
 
+# Claude Code
+.claude/
+
 # Miscellaneous Non-Primary-Source files in this project
 UpdateNews.html
 Update-News-for-MacUpdate.html
