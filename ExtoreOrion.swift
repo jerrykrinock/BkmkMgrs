@@ -61,6 +61,29 @@ extension ExtoreOrion {
         cache.displayProfileNames = (displayProfileNames as NSDictionary).mutableCopy() as! NSMutableDictionary
     }
     
+    /* Added in BkmkMgrs 3.3.7  Do not export empty folders to Orion.  It was found
+     in 2026 Feb that, if you attempt an export which contains an empty folder to
+     Orion, the BookMacster Sync extension will time out when getting exids, running
+     -[Extore timedOutExportFeedbackTimer:] and displaying in a dialog to the user
+     that Orion "-[Extore timedOutExportFeedbackTimer:]did not send new identifiers
+     as expected after we exported to it.".  Importing empty folders from Orion
+     works OK.  This issue is not seen in Google Chrome.  */
+    @objc
+    open override func isExportableStark(_ stark: Stark!, withChange change: [AnyHashable : Any]?) -> Bool {
+#if IS_EXPORTABLE_STARK_WILL_ALWAYS_RETURN_YES
+        return true
+#endif
+        if !super.isExportableStark(stark, withChange: change) {
+            return false
+        }
+
+        if stark.sharypeValue() == Sharype(SharypeSoftFolder) && stark.numberOfChildren() == 0 {
+            return false
+        }
+
+        return true
+    }
+
     @objc
     class func allProfilesThisHomeSwiftly() -> Set<String> {
         let profileInfoCache = self.profileInfoCache()
