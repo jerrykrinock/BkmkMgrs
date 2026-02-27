@@ -77,8 +77,8 @@ scriptResult=`osascript -e "tell application \"BookMacster\" to tell document 1 
 sleep $SLEEP
 echo "Importing to Safari from $CURRENT_BMCO.bmco."
 scriptResult=`osascript -e "tell application \"BookMacster\" to tell document 1 to import ignoring limit true"`
-echo "Verify that the number of imported changes is +0, Δ0, ↖0, ↕0, -0.  Will sleep 10."
-sleep 10
-scriptResult=`osascript -e "tell application \"BookMacster\" to close every document"`
+echo "Verify that the number of imported changes is +0, Δ0, ↖0, ↕0, -0."
+echo "Then close Safari-3.bmco and you are done."
+
 
 done
