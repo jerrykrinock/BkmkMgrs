@@ -48,10 +48,13 @@ NSString* const constLeadingWhitespace = @"    " ;
 	return [[self substringFromIndex:2] localizedCaseInsensitiveCompare:[other substringFromIndex:2]] ;
 }
 
-- (NSInteger)bytesInString:(NSString*)s
-{
-    NSData* data = [s dataUsingEncoding:NSUTF8StringEncoding];
-    return [data length];
+- (NSInteger)byteCountIfString:(id)s {
+    if ([s respondsToSelector:@selector(dataUsingEncoding:)]) {
+        NSData* data = [s dataUsingEncoding:NSUTF8StringEncoding];
+        return [data length];
+    } else {
+        return -1;
+    }
 }
 
 - (NSString*)localizedUpdateDescriptionFromValue:(id)oldValue
@@ -73,9 +76,20 @@ NSString* const constLeadingWhitespace = @"    " ;
 		newValue = [(Stark*)newValue name] ;
 	}
 	
-	NSString* sd1 = [[oldValue shortDescription] stringByAppendingFormat:@" [%ld]", [self bytesInString:oldValue]];
-	NSString* sd2 = [[newValue shortDescription] stringByAppendingFormat:@" [%ld]", [self bytesInString:newValue]];
-	// In BookMacster 0.9.33, shortDescription was modified to
+    NSString* sd1 = [oldValue shortDescription];
+	NSString* sd2 = [newValue shortDescription];
+
+    NSInteger oldByteCount = [self byteCountIfString:oldValue];
+    if (oldByteCount >= 0) {
+        sd1 = [sd1 stringByAppendingFormat: @" [%ld bytes]", oldByteCount];
+    }
+
+    NSInteger newByteCount = [self byteCountIfString:newValue];
+    if (newByteCount >= 0) {
+        sd2 = [sd2 stringByAppendingFormat: @" [%ld bytes]", newByteCount];
+    }
+
+    // In BookMacster 0.9.33, shortDescription was modified to
 	// resolve a performance bottleneck.  See the Release Notes
 	// for 0.9.33 and comments in the implementation of
 	// -[NSObject shortDescription].
