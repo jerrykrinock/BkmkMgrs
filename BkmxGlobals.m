@@ -337,6 +337,7 @@ NSString* const constExformatEdgeBeta = @"EdgeBeta" ;
 NSString* const constExformatEdgeDev = @"EdgeDev" ;
 NSString* const constExformatEpic = @"Epic" ;
 NSString* const constExformatFirefox = @"Firefox" ;
+NSString* const constExformatHelium = @"Helium" ;
 NSString* const constExformatHtml = @"Html" ;
 NSString* const constExformatICab = @"ICab" ;
 NSString* const constExformatOmniweb = @"OmniWeb" ;

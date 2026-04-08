@@ -94,7 +94,7 @@ If you have selected any text on the web page, the bookmark's *Comments* will ma
 
 ## Landing New Bookmarks via the Menu Items and Toolbar Buttons in Web Browsers [browserWidgets]
 
-Through the magic of [browser extensions](), Markster or BookMacster are able to install a button into some web browsers which send bookmarks directly to Markster or BookMacster.  In Firefox, Edge, Comet, ChatGPT Atlas, Zen Browser, Google Chrome, Vivaldi, Opera, Orion, Brave, Canary and [FreeSMUG's Chromium](http://www.freesmug.org/chromium), you can have a *browser action button* which sits to the right of the browser's address field:
+Through the magic of [browser extensions](), Markster or BookMacster are able to install a button into some web browsers which send bookmarks directly to Markster or BookMacster.  In Firefox, Edge, Comet, ChatGPT Atlas, Helium, Zen Browser, Google Chrome, Vivaldi, Opera, Orion, Brave, Canary and [FreeSMUG's Chromium](http://www.freesmug.org/chromium), you can have a *browser action button* which sits to the right of the browser's address field:
 
 <div class="screenshot">
 <img src="images/WidgetExtoreChromy.png" alt="" />

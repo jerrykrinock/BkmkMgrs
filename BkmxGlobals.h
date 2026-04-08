@@ -1002,6 +1002,7 @@ extern NSString* const constExformatEdgeBeta ;
 extern NSString* const constExformatEdgeDev ;
 extern NSString* const constExformatEpic ;
 extern NSString* const constExformatFirefox ;
+extern NSString* const constExformatHelium ;
 extern NSString* const constExformatHtml ;
 extern NSString* const constExformatICab ;
 extern NSString* const constExformatOmniweb ;

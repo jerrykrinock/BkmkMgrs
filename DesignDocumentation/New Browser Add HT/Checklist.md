@@ -283,7 +283,8 @@ This allows developers to test import/export without the actual browser.
 - [ ] Implement `+ (PathRelativeTo)fileParentPathRelativeTo`
 - [ ] Implement `+ (BOOL)supportsMultipleProfiles`
 - [ ] Implement `+ (NSSet*)allProfilesThisHome` if multiple profiles supported
-- [ ] Override other methods as needed (sync support, special handling, etc.)
+- [ ] Override `+ (BOOL)syncExtensionAvailable` — **Required for ExtoreGooChromy subclasses**: must return YES. Without this, BookMacster silently falls back to Style 1 when the browser is running, instead of attempting Style 2 and reporting that the extension is not installed.
+- [ ] Override other methods as needed (special handling, etc.)
 
 ### Global Registration
 - [ ] Add `extern` declaration in `BkmxGlobals.h`

@@ -148,11 +148,18 @@ static const ExtoreConstants extoreConstants = {
 }
 
 /*
- Optional: If the browser has a proprietary sync mechanism through extensions,
- return YES to enable Style 2 export (extension-based sync)
+ REQUIRED for ExtoreGooChromy subclasses (Chrome-based browsers).
+ Must return YES to enable Style 2 export via the BookMacster Sync extension.
+
+ Without this override, GooChromy's superclass implementation returns NO (or
+ some conditional value), causing BookMacster to silently fall back to Style 1
+ even when the browser is running — instead of attempting Style 2 and telling
+ the user that the extension is not yet installed.
+
+ For non-Chromium browsers where no extension is supported, return NO.
  */
 + (BOOL)syncExtensionAvailable {
-    return YES;  // Or NO if no extension-based sync
+    return YES;
 }
 
 /*
