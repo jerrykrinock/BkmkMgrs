@@ -137,7 +137,7 @@
 }
 
 - (NSString*)labelNoLoosiesInMenu {
-    return [NSString stringWithFormat:@"Don't export loose bookmarks to 'Folders'"] ;
+    return [NSString stringWithFormat:@"Don't export loose bookmarks to 'Other Bookmarks'"] ;
 }
 
 - (NSString*)tooltipNoLoosiesInMenu {
