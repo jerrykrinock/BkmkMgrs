@@ -21,6 +21,11 @@
 
 - (long long)specialOptionValueForMask:(long long)mask;
 
+// Vivaldi only
+
+- (BOOL)useLegacyMapping ;
+- (void)setUseLegacyMapping:(BOOL)yn ;
+
 // ExtoreOpera Clients only
 
 - (BOOL)dontImportTrash ;

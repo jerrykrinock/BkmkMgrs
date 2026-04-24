@@ -129,6 +129,11 @@
 	return [NSString stringWithFormat:@"Don't warn if %@'s built-sync is in use", [[self clientoid] displayName]] ;
 }
 
+// Bound to in SpecialVivaldi.xib
+- (NSString*)tooltipUseLegacyMapping {
+    return @"Versions 3.1.5 and earlier of our apps created a folder named \"Bookmarks\" and put all of your Vivaldi content in it, when used with recent (2025 and later) versions of Vivaldi. This is stupid.  This option is only for people who learned to live with it this way." ;
+}
+
 // Bound to in SpecialGooChromy.xib, maybe other SpecialXxx.xib
 - (NSString*)tooltipDontWarnOwnerSync {
 	return [NSString stringWithFormat:@"If switched off, will warn you to make sure that %@'s built-sync is not syncing the same devices as %@",
@@ -151,6 +156,15 @@
 - (NSString*)tooltipFakeUnfiled {
     return [NSString stringWithFormat:@"If on, makes a folder for 'Reading List' or 'Unsorted Bookmarks', like Safari and Firefox, in %@",
             [[self clientoid] displayName]] ;
+}
+
+- (BOOL)useLegacyMapping {
+    return [self specialOptionBitForMask:constBkmxIxportSpecialOptionBitmaskUseLegacyMapping] ;
+}
+
+- (void)setUseLegacyMapping:(BOOL)yn {
+    [self setSpecialOptionBit:yn
+                      forMask:constBkmxIxportSpecialOptionBitmaskUseLegacyMapping] ;
 }
 
 - (BOOL)dontImportTrash {

@@ -121,7 +121,8 @@
 #define constBkmxIxportSpecialOptionBitmaskDontImportTrash                    0x0000000000000010LL  // 4     Opera
 #define constBkmxIxportSpecialOptionBitmaskNoLoosiesInMenu                    0x0000000000000010LL  // 4     Chromy
 // #define constBkmxIxportSpecialOptionBitmaskDontUseOtherBookmarks           0x0000000000000020LL  // 5     Chromy  Removed in BookMacster 1.22.16
-#define constBkmxIxportSpecialOptionBitmaskFakeUnfiled                        0x0000000000000040LL  // 7     Chromy
+#define constBkmxIxportSpecialOptionBitmaskUseLegacyMapping                   0x0000000000000020LL  // 5     Vivaldi
+#define constBkmxIxportSpecialOptionBitmaskFakeUnfiled                        0x0000000000000040LL  // 6     Chromy
 #define constBkmxIxportSpecialOptionBitmaskNadaMenu                           0x0000000000000010LL  // 6     Safari
 #define constBkmxIxportSpecialOptionBitmaskHttpRateInitial                    0x0000000000000030LL  // 4,5   Http = {Deli, Pinboard, Diigo}
 #define constBkmxIxportSpecialOptionBitmaskAssumeLoggedInToCorrectAccount     0x0000000000000080LL  // 7     formerly Google Bookmarks

@@ -1920,6 +1920,10 @@
 	return @"launch browser during Syncs (Import or Export)" ;
 }
 
+- (NSString*)labelUseLegacyMapping {
+    return @"Map like version 3.1.5 and earlier of our apps (which was weird)" ;
+}
+
 - (NSString*)labelChromeOtherBookmarks {
 	return [NSString localize:@"004_Chrome_otherBookmarks"] ;
 }

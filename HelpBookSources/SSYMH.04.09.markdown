@@ -64,7 +64,7 @@ If you use this Enhanced Bookmarks Manager, consider also using the options in t
 
 ### 'Don't export loose bookmarks to 'Other Bookmarks' [noLoosiesInMenu]
 
-This option, a checkbox in the [per-Client Advanced Client Settings](), is provided to play nicer with the [Enhanced Bookmarks Manager](chromyEnhanced), but it still works in any case.  If this checkbox is switched on, during exports, any loose bookmarks found in BookMacster's *Bookmarks Menu* will be [remapped]() (into the Bookmarks Bar) instead of being exported to the browser's' *Other Bookmarks* (called *Folders* if you are using the [Enhanced Bookmarks Manager](chromyEnhanced).).  In this way, *Other Bookmarks* / *Folders* will contain folders of bookmarks/subfolders only.
+This option, a checkbox in the [per-Client Advanced Client Settings](), is provided to play nicer with the [Enhanced Bookmarks Manager](chromyEnhanced), but it still works in any case.  If this checkbox is switched on, during exports, any loose bookmarks found in BookMacster's *Bookmarks Menu* will be [remapped]() (into the Bookmarks Bar) instead of being exported to the browser's' *Other Bookmarks*.  In this way, *Other Bookmarks* will contain folders of bookmarks/subfolders only.
 
 #### Create a 'Reading/Unsorted' [fakeUnfiled]
 

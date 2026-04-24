@@ -2,9 +2,9 @@
 
 ## Version 3.3.7 (2026-04-)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Helium](https://helium.computer) web browser.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> No longer puts all items from current versions of the Vivaldi web browser into a folder called *Bookmarks* in the *Bookmarks Bar*.  Items at root in Vivaldi (which is all items in Vivaldi) are now mapped to the root in our app.  If for some strange reason you want the old behavior, in a BookMacster collection, in the tab *Settings* > *Clients*, click the *Advanced Settings* for your Vivaldi Client and switch on the checkbox to *Map like versions 3.1.5. and earlier…*.
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> No longer exports empty folders to Orion, because these have been found to cause Orion's extension API to hang, and our app to indicate that *Orion did not send new identifiers as expected after we exported to it*.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Helium](https://helium.computer) web browser.
 
 ## Version 3.3.6 (2026-02-12)
 

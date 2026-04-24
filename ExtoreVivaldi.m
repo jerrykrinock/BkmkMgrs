@@ -3,6 +3,9 @@
 #import "BkmxGlobals.h"
 #import "Starker.h"
 #import "BkmxBasis.h"
+#import "NSError+MyDomain.h"
+#import "SSYTreeTransformer.h"
+#import "Client+SpecialOptions.h"
 
 static const ExtoreConstants extoreConstants = {
     /* canEditAddDate */                  NO, // See Note 190352
@@ -45,7 +48,7 @@ static const ExtoreConstants extoreConstants = {
     /* normalizesURLs */                  NO,
     /* catchesChangesDuringSave */        NO,
     /* telltaleString */                  @"checksum",
-    /* hasBar */                          YES,
+    /* hasBar */                          NO,
     /* hasMenu */                         NO,  // See Note VivaldiOtherBookmarks
     /* hasUnfiled */                      NO,
     /* hasOhared */                       NO,
@@ -160,6 +163,147 @@ static const ExtoreConstants extoreConstants = {
               @"other",
               @"synced",
               @"trash"] ;
+}
+
+
+/* The supersuperclass Extore gives the implementation we want, but unfortunately,
+ superclass ExtoreGooChromy overrides it with one we don't want, so we need our
+ own implementation…
+ */
++ (NSString*)specialNibName {
+    return @"SpecialVivaldi" ;
+}
+
+- (BOOL)parentSharype:(Sharype)parentSharype
+  canHaveChildSharype:(Sharype)childSharype {
+    if ([self.client useLegacyMapping]) {
+        return [super parentSharype:parentSharype
+                canHaveChildSharype:childSharype];
+    } else {
+        return YES;
+    }
+}
+
+
+- (BOOL)extractHartainersFromExtoreTree:(NSDictionary*)treeIn
+                                  bar_p:(NSDictionary* _Nonnull * _Nonnull)bar_p
+                           othersAtRoot:(NSMutableArray*)othersAtRoot
+                                error_p:(NSError**)error_p {
+    if ([self.client useLegacyMapping]) {
+        return [super extractHartainersFromExtoreTree:treeIn
+                                                bar_p:bar_p
+                                          othersAtRot:othersAtRoot
+                                              error_p:error_p];
+    } else {
+        BOOL ok = YES ;
+        NSError* error = nil ;
+        
+        NSDictionary* extoreBar = nil ;
+        NSDictionary* extoreMenu = nil ;
+        id whatever = nil ;  // Will be dictionary for style1, array for style2
+        NSInteger errorCode = 0 ;
+        NSString* errorMoreInfo = nil ;
+        if ([treeIn isKindOfClass:[NSDictionary class]]) {
+            if ((whatever = [treeIn objectForKey:@"children"])) {
+                if ([whatever isKindOfClass:[NSArray class]]) {
+                    [othersAtRoot addObjectsFromArray:whatever];
+                }
+            }
+            NSMutableArray* barHolder = [NSMutableArray new];
+            [(NSDictionary*)treeIn recursivelyPerformOnChildrenLowerSelector:@selector(detectBar:)
+                                                                  withObject:barHolder];
+            extoreBar = [barHolder firstObject];
+            if ((whatever = [treeIn objectForKey:@"children"])) {
+                // Must be Style 2 invoked from -readExternalStyle2WithCompletionHandler:
+            }
+            else {
+                errorCode = 164873 ;
+                errorMoreInfo = [NSString stringWithFormat:@"Expected 'roots' or 'children', got %@", [whatever allKeys]] ;
+            }
+        }
+        else {
+            errorCode = 164874 ;
+            errorMoreInfo = [NSString stringWithFormat:@"Expected dictionary, got %@", [treeIn className]] ;
+        }
+        
+        if (errorCode != 0) {
+            ok = NO ;
+            error = SSYMakeError(errorCode, @"Decoded JSON does not meet expectation") ;
+            error = [error errorByAddingUserInfoObject:errorMoreInfo
+                                                forKey:@"Details"] ;
+        }
+        
+        if (ok) {
+            // More checks for corrupt file.
+            error = [extoreBar errorIfNotClass:[NSDictionary class]
+                                          code:164800
+                                         label:@"Bar"
+                                    priorError:error] ;
+            error = [extoreMenu errorIfNotClass:[NSDictionary class]
+                                           code:164801
+                                          label:@"Menu"
+                                     priorError:error] ;
+            if (error) {
+                ok = NO ;
+            }
+        }
+        
+        *bar_p = extoreBar ;
+        
+        if (error && error_p) {
+            *error_p = error ;
+        }
+        
+        return ok ;
+    }
+}
+    
+- (BOOL)makeStarksFromExtoreTree:(NSDictionary*)treeIn
+                         error_p:(NSError **)error_p {
+    if ([self.client useLegacyMapping]) {
+        return [super makeStarksFromExtoreTree:treeIn
+                                       error_p:error_p];
+    } else {
+        BOOL ok = YES ;
+        NSError* error = nil ;
+        
+        if (ok) {
+            // Create a transformer which we will use to create our collections from Chrome/ium's
+            SSYTreeTransformer* transformer = [SSYTreeTransformer
+                                               treeTransformerWithReformatter:@selector(modelAsStarkInStartainer:)
+                                               childrenInExtractor:@selector(childrenWithLowercaseC)
+                                               newParentMover:@selector(moveToBkmxParent:)
+                                               contextObject:self] ;
+            
+            NSDictionary* vivaldiBookmarks = [(NSArray*)[treeIn objectForKey:@"children"] objectAtIndex:0];
+            Stark* rootOut = [transformer copyDeepTransformOf:vivaldiBookmarks] ;
+            
+            /* Name of root must match, I think, that assigned in
+             -registerBasicsFromStark:, to ensure that hashes will match. */
+            [rootOut setName:[NSString localize:@"lineageRoot"]];
+            // Set instance variables
+            [rootOut assembleAsTreeWithBar:nil
+                                      menu:nil
+                                   unfiled:nil
+                                    ohared:nil];
+            
+        }
+        
+        if (error && error_p) {
+            NSString* s ;
+            s = [NSString stringWithFormat:
+                 @"Could not decode bookmarks from %@.",
+                 [self displayName]] ;
+            error = [SSYMakeError(295881, s) errorByAddingUnderlyingError:error] ;
+            s = [NSString stringWithFormat:
+                 @"Activate %@ and check out its bookmarks.  Reset if corrupt.",
+                 [self displayName]] ;
+            error = [error errorByAddingLocalizedRecoverySuggestion:s] ;
+            *error_p = error ;
+        }
+        
+        return ok ;
+    }
 }
 
 @end
