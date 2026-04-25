@@ -2676,18 +2676,10 @@ NSString* const skuForSmarky3 = @"637653";
     // Note that the following will *create* a DoxtusMenu instance, which
     // is the only one ever created.  Like a singleton, but it's not.
     DoxtusMenu* doxtusMenu = [self doxtusMenu] ;
-    @try {
-        [doxtusMenu bind:constKeyShowsStatusItem
-                toObject:[NSUserDefaults standardUserDefaults]
-             withKeyPath:constKeyShowsStatusItem
-                 options:0] ;
-    }
-    @catch (NSException *exception) {
-        // This happened in developing BookMacster 1.19.9.
-        NSLog(@"Warning 390-7348: %@", exception) ;
-    }
-    @finally {
-    }
+    [doxtusMenu bind:constKeyShowsStatusItem
+            toObject:[NSUserDefaults standardUserDefaults]
+         withKeyPath:constKeyShowsStatusItem
+             options:0] ;
 
     if ([userDefaults boolForKey:SUEnableAutomaticChecksKey]) {
         [SSYLicenseMaintainer maintainAfterMin:0.05
