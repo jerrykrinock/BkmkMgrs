@@ -1,6 +1,6 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-## Version 3.3.7 (2026-04-)
+## Version 3.3.7 (2026-04-28)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> No longer puts all items from current versions of the Vivaldi web browser into a folder called *Bookmarks* in the *Bookmarks Bar*.  Items at root in Vivaldi (which is all items in Vivaldi) are now mapped to the root in our app.  If for some strange reason you want the old behavior, in a BookMacster collection, in the tab *Settings* > *Clients*, click the *Advanced Settings* for your Vivaldi Client and switch on the checkbox to *Map like versions 3.1.5. and earlier…*.
 
