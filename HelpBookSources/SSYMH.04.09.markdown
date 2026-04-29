@@ -207,6 +207,27 @@ The "Speed Dial* folder which appears in default Vivaldi bookmarks is not like t
 
 The *Trash* in Vivaldi bookmarks is a special folder into which deleted bookmarks go.  Our apps ignore this during imports and exports.
 
+### Legacy Mapping [vivaldiUseLegacyMapping]
+
+When importing from Vivaldi 7 or so, versions 3.3.6 and earlier of our apps would map all items in Vivaldi into the *Bookmarks Bar* or *Favorites* hard folder of a Collection.  This was corrected in version 3.3.7 of our apps: Items at the root in Vivaldi (which is all items, since Vivaldi has no Hard Folders) are mapped into the root of a Collection.
+
+However, when updating old Collections to version 3.3.7 of our BookMacster app, we set a setting to use the old mapping just in case you have become accustomed to the old mapping and want to keep it that way.  But the new mapping makes more sense.  If you are using BookMacster and would like to adopt the new mapping,
+
+* Click the tab: *Settings* > *Clients*
+* Delete any *Vivaldi* clients by clicking its minus (*-*) button.
+* Add a new Client by clicking the (*+*) button.  It will default to *Safari*.
+* Click the popup button indicating *Safari* and change it to *Vivaldi*.
+* If it is OK to delete all of the bookmarks in the Collection (that is, if you have your bookmarks in the browsers so you can re-import them, click in the main menu: *Bookmarks* > *Delete all Content*.  Otherwise, if you only want to delete the bookmarks that were in Vivaldi, click the tab: *Reports*, then the tab *Find/Replace*.  Set the predicate to: ***All** of the following are **true** > **Client Associations** **contains** **Vivaldi***.  The, select all items in the list (⌘A) and hit the *delete* key.
+* Click the tab: *Content*.
+* You probably  have a hard folder *Bookmarks Bar*.  If it is empty, you probably do not need it.  It is not related to the [user-designated Bookmark Bar in Vivaldi](barVivaldi).
+* Click in the main menu: *File* > *Import from only* > *Vivaldi*.  A sheet will appear
+* If you deleted all of your *Content*, leave the selection at *Do a Normal Import…*.  If you did not delete all of your Content and have bookmarks from other browsers you wish to retain, bullet *Do an Overlay…*.
+* Click button *OK*.
+
+### Any folder can be Bookmark Bar! [barVivaldi]
+
+Vivaldi provides you the capability to designating any [soft folder]() as its *Bookmark Bar*.  But so doing does not change the name or location of the designated folder in your bookmarks hierarchy.  It just adds another view to that folder, in Vivaldi's toolbar.  Our apps do not have a toolbar of bookmarks.  Therefore, in our apps, you will only see Vivaldi's *Bookmark Bar* designated folder, wherever it is in your Collection's hierarchy, with its real name.  Although we pass through the *Bookmark Bar* designation when importing and exporting with Vivaldi, we ignore it.
+
 ## Pinboard <img src="images/BookMacster.png" class="whapp" />
 
 Short version: After making changes in Pinboard on the web, sometimes you need to wait 15 minutes or so before importing the changes to Smarky, Synkmark, Markster or BookMacster, or exporting additional changes from BookMacster to Pinboard.

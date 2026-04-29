@@ -263,4 +263,66 @@ extension BkmxDoc {
         }
     }
     
+    /* We use an Associated Object here because stored properties are not allowed in class extensions. */
+    private static var tokenKey: UInt8 = 0
+    private var windowOpenToken: NSObjectProtocol? {
+        get { objc_getAssociatedObject(self, &Self.tokenKey) as? NSObjectProtocol }
+        set { objc_setAssociatedObject(self, &Self.tokenKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
+    
+    @objc
+    func setVivaldiUseLegacyMappingTrue() -> Void {
+        if (BkmxBasis.shared().iAm() == BkmxWhich1AppBookMacster) {
+            if let settingsMoc = self.settingsMoc {
+                settingsMoc.performAndWait {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+                    fetchRequest.entity = NSEntityDescription .ssy_entity(forName: constEntityNameClient,
+                                                                          in: exidsMoc)
+                    fetchRequest.predicate = NSPredicate(format:"exformat == %@ AND extoreMedia == %@", constExformatVivaldi, constBkmxExtoreMediaThisUser)
+                    settingsMoc.performAndWait {
+                        do {
+                            if let clients = try settingsMoc.fetch(fetchRequest) as? [Client] {
+                                clients.forEach { client in
+                                    let profileName = client.profileName ?? "Default"
+                                    client.setUseLegacyMapping(true)
+                                    
+                                    /* We use the tokenKey here because a local variable 'token' needs
+                                     to be mutated after capture by a sendable closure. */
+                                    windowOpenToken = NotificationCenter.default.addObserver(
+                                        forName: NSWindow.didBecomeKeyNotification,
+                                        object: nil,
+                                        queue: .main
+                                    ) { [weak self] notification in
+                                        guard let self,
+                                              let window = notification.object as? NSWindow,
+                                              self.windowControllers.contains(where: { $0.window === window })
+                                        else { return }
+                                        NotificationCenter.default.removeObserver(self.windowOpenToken!)
+                                        self.windowOpenToken = nil
+                                        
+                                        BkmxBasis.shared().logString("Set to use legacy mapping in Vivaldi profile \(profileName)")
+                                        let msg = "This latest version of \(BkmxBasis.shared().appNameLocalized ?? "<No-Apo-Name???>") can properly map items in Vivaldi's root to the Collection's root instead of to the Collection's Bookmarks Bar.  But we have preserved the old behavior in your old Collection, in case you are accustomed to and want to keep that way.\n\nTo learn more, including how to switch to the new mapping behavior, click the \"?\" button."
+                                        let alert = SSYAlert()
+                                        alert?.smallText = msg
+                                        alert?.setHelpAddress("vivaldiUseLegacyMapping")
+                                        
+                                        DispatchQueue.main.async {
+                                            self.runModalSheetAlert(alert, resizeable: false, iconStyle: SSYAlertIconInformational) { _ in }
+                                        }
+                                    }
+                                }
+                            }
+                        } catch {
+                            let errorOut = NSError.init(code: 894882,
+                                                        localizedDescription: "Could not fetch Vivaldi client",
+                                                        underlyingError: error)
+                            self.logAsInformationalError(errorOut)
+                            return
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

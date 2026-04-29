@@ -3025,6 +3025,15 @@ end:
                                    withObject:nil
                                 waitUntilDone:NO];
         }
+
+        regularThreshold = [SSYVersionTriplet versionTripletWithMajor:3
+                                                                minor:3
+                                                               bugFix:7];
+        if ([priorSavedWithVersionTriplet isBkmxEffectivelyEarlierThanRegular:regularThreshold]) {
+            [self performSelectorOnMainThread:@selector(setVivaldiUseLegacyMappingTrue)
+                                   withObject:nil
+                                waitUntilDone:NO];
+        }
     } else {
         /* See Note NoUpdateNeeded */
     }

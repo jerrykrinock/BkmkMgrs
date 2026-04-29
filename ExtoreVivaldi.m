@@ -6,6 +6,10 @@
 #import "NSError+MyDomain.h"
 #import "SSYTreeTransformer.h"
 #import "Client+SpecialOptions.h"
+#import "NSDictionary+ToStark.h"
+#import "Stark.h"
+#import "NSError+InfoAccess.h"
+#import "NSString+LocalizeSSY.h"
 
 static const ExtoreConstants extoreConstants = {
     /* canEditAddDate */                  NO, // See Note 190352
@@ -165,6 +169,13 @@ static const ExtoreConstants extoreConstants = {
               @"trash"] ;
 }
 
+- (BOOL)hasBar {
+    if ([self.client useLegacyMapping]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 /* The supersuperclass Extore gives the implementation we want, but unfortunately,
  superclass ExtoreGooChromy overrides it with one we don't want, so we need our
@@ -184,80 +195,6 @@ static const ExtoreConstants extoreConstants = {
     }
 }
 
-
-- (BOOL)extractHartainersFromExtoreTree:(NSDictionary*)treeIn
-                                  bar_p:(NSDictionary* _Nonnull * _Nonnull)bar_p
-                           othersAtRoot:(NSMutableArray*)othersAtRoot
-                                error_p:(NSError**)error_p {
-    if ([self.client useLegacyMapping]) {
-        return [super extractHartainersFromExtoreTree:treeIn
-                                                bar_p:bar_p
-                                          othersAtRot:othersAtRoot
-                                              error_p:error_p];
-    } else {
-        BOOL ok = YES ;
-        NSError* error = nil ;
-        
-        NSDictionary* extoreBar = nil ;
-        NSDictionary* extoreMenu = nil ;
-        id whatever = nil ;  // Will be dictionary for style1, array for style2
-        NSInteger errorCode = 0 ;
-        NSString* errorMoreInfo = nil ;
-        if ([treeIn isKindOfClass:[NSDictionary class]]) {
-            if ((whatever = [treeIn objectForKey:@"children"])) {
-                if ([whatever isKindOfClass:[NSArray class]]) {
-                    [othersAtRoot addObjectsFromArray:whatever];
-                }
-            }
-            NSMutableArray* barHolder = [NSMutableArray new];
-            [(NSDictionary*)treeIn recursivelyPerformOnChildrenLowerSelector:@selector(detectBar:)
-                                                                  withObject:barHolder];
-            extoreBar = [barHolder firstObject];
-            if ((whatever = [treeIn objectForKey:@"children"])) {
-                // Must be Style 2 invoked from -readExternalStyle2WithCompletionHandler:
-            }
-            else {
-                errorCode = 164873 ;
-                errorMoreInfo = [NSString stringWithFormat:@"Expected 'roots' or 'children', got %@", [whatever allKeys]] ;
-            }
-        }
-        else {
-            errorCode = 164874 ;
-            errorMoreInfo = [NSString stringWithFormat:@"Expected dictionary, got %@", [treeIn className]] ;
-        }
-        
-        if (errorCode != 0) {
-            ok = NO ;
-            error = SSYMakeError(errorCode, @"Decoded JSON does not meet expectation") ;
-            error = [error errorByAddingUserInfoObject:errorMoreInfo
-                                                forKey:@"Details"] ;
-        }
-        
-        if (ok) {
-            // More checks for corrupt file.
-            error = [extoreBar errorIfNotClass:[NSDictionary class]
-                                          code:164800
-                                         label:@"Bar"
-                                    priorError:error] ;
-            error = [extoreMenu errorIfNotClass:[NSDictionary class]
-                                           code:164801
-                                          label:@"Menu"
-                                     priorError:error] ;
-            if (error) {
-                ok = NO ;
-            }
-        }
-        
-        *bar_p = extoreBar ;
-        
-        if (error && error_p) {
-            *error_p = error ;
-        }
-        
-        return ok ;
-    }
-}
-    
 - (BOOL)makeStarksFromExtoreTree:(NSDictionary*)treeIn
                          error_p:(NSError **)error_p {
     if ([self.client useLegacyMapping]) {
@@ -286,6 +223,7 @@ static const ExtoreConstants extoreConstants = {
                                       menu:nil
                                    unfiled:nil
                                     ohared:nil];
+            [rootOut release];
             
         }
         

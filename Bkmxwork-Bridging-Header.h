@@ -12,6 +12,7 @@
 #import "BSManagedDocument.h"
 #import "BSManagedDocument+SSYAuxiliaryData.h"
 #import "Client.h"
+#import "Client+SpecialOptions.h"
 #import "Clixid.h"
 #import "ContentDataSource.h"
 #import "Extore.h"
