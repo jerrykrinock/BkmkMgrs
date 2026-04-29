@@ -8,7 +8,7 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
-## Version 3.3.7 (2026-04-28)
+## Version 3.3.7 (2026-04-29)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> When importing from the current version of Vivaldi, no longer puts all items from Vivaldi into the *Bookmarks Bar*.  Items at root in Vivaldi (which is all items in Vivaldi) are now mapped to the root in our app.  By default, BookMacster users keep the old behavior in old Collection documents, and may [manually opt to the new behavior](https://sheepsystems.com/bookmacster/HelpBook/vivaldiUseLegacyMapping).
 
