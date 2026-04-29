@@ -2794,6 +2794,7 @@ NSString* const skuForSmarky3 = @"637653";
                 [[NSUserDefaults standardUserDefaults] setBool:YES
                                                         forKey:constKeyDontWarnV3UpgradeNeeded] ;
             }
+            [alert release];
         }
     }
 }
