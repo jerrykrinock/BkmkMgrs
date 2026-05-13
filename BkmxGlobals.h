@@ -998,6 +998,7 @@ extern NSString* const constExformatChatGPTAtlas ;
 extern NSString* const constExformatChrome ;
 extern NSString* const constExformatChromium ;
 extern NSString* const constExformatComet ;
+extern NSString* const constExformatDia ;
 extern NSString* const constExformatEdge ;
 extern NSString* const constExformatEdgeBeta ;
 extern NSString* const constExformatEdgeDev ;

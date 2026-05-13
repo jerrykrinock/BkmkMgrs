@@ -332,6 +332,7 @@ NSString* const constExformatChatGPTAtlas = @"ChatGPTAtlas" ;
 NSString* const constExformatChrome = @"Chrome" ;
 NSString* const constExformatChromium = @"Chromium" ;
 NSString* const constExformatComet = @"Comet" ;
+NSString* const constExformatDia = @"Dia" ;
 NSString* const constExformatEdge = @"Edge" ;
 NSString* const constExformatEdgeBeta = @"EdgeBeta" ;
 NSString* const constExformatEdgeDev = @"EdgeDev" ;
