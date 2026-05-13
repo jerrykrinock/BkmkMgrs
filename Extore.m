@@ -2612,7 +2612,7 @@ BrowserToBeRunningError_p:(NSError**)error_p {
 							   error_p:&error] ;
 	// Wait to stabilize, in case it is still writing files or something
 	if (ok && wasRunning) {
-		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:(TIME_FOR_APP_TO_STABILIZE)]] ;
+		[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:(TIME_FOR_BROWSER_TO_QUIT)]] ;
 	}
 
     [localProgressView clearAll] ;
@@ -6540,7 +6540,7 @@ end:
                 }
                 [browserPathsLaunched setObject:launchedPath
                                          forKey:[self.clientoid clidentifier]] ;
-                usleep(TIME_FOR_APP_TO_STABILIZE*1e6) ;
+                usleep(TIME_FOR_BROWSER_TO_LAUNCH*1e6) ;
                 
                 BkmxDoc* bkmxDoc = [info objectForKey:constKeyDocument] ;
                 

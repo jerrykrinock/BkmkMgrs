@@ -4,6 +4,8 @@
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Dia](https://www.diabrowser.com) web browser.
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In an attempt to fix occasional occurrences of Error 651507 ("browser stopped responding"), if a web browser app needs to be launched in preparation for an import or export with it, now waits an additional 3 seconds between the launch and the import or export.  The idea is to give the browser app more time to get its act together.
+
 ## Version 3.3.7 (2026-04-29)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> When importing from the current version of Vivaldi, no longer puts all items from Vivaldi into the *Bookmarks Bar*.  Items at root in Vivaldi (which is all items in Vivaldi) are now mapped to the root in our app.  By default, BookMacster users keep the old behavior in old Collection documents, and may [manually opt to the new behavior](https://sheepsystems.com/bookmacster/HelpBook/vivaldiUseLegacyMapping).
