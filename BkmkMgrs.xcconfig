@@ -1,10 +1,10 @@
-CURRENT_PROJECT_VERSION = 3.3.8
+CURRENT_PROJECT_VERSION = 3.3.9
 
-// LATEST SHIPPED VERSIONS April 29
-// 3.3.7 BookMacster
-// 3.3.7 Synkmark
-// 3.3.6 Markster
-// 3.3.6 Smarky
+// LATEST SHIPPED
+// BookMacster  3.3.8     2026-04-29
+// Synkmark     3.3.8     2026-04-29
+// Markster     3.3.6     2026-02-12
+// Smarky       3.3.6     2026-02-12
 
 // Note: You cannot use /* C-style comments */ in .xcconfig file
 
