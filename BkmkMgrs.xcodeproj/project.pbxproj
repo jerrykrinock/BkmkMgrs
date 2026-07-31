@@ -2780,7 +2780,7 @@
 		48C6500A0F70085C008CC67F /* SSYTempWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYTempWindowController.m; path = ../../ClassesObjC/SSYTempWindowController.m; sourceTree = SOURCE_ROOT; };
 		48C6F2942171AA66001A2936 /* NSImage+SSYDarkMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+SSYDarkMode.m"; path = "../../CategoriesObjC/NSImage+SSYDarkMode.m"; sourceTree = "<group>"; };
 		48C6F29F2171AA67001A2936 /* NSImage+SSYDarkMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+SSYDarkMode.h"; path = "../../CategoriesObjC/NSImage+SSYDarkMode.h"; sourceTree = "<group>"; };
-		48C7100A10C2F2DF0061FA2C /* UpdateNews.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UpdateNews.markdown; sourceTree = "<group>"; wrapsLines = 1; };
+		48C7100A10C2F2DF0061FA2C /* UpdateNews.markdown */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = UpdateNews.markdown; sourceTree = "<group>"; wrapsLines = 1; };
 		48C848C11F6026AB00A8D53B /* Bookmarkshelf.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = Bookmarkshelf.iconset; path = Resources/Bookmarkshelf.iconset; sourceTree = "<group>"; };
 		48C8A04118C77204004EAE49 /* Bkmx018.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bkmx018.xcdatamodel; sourceTree = "<group>"; };
 		48C8CECD16C2AFAF00D1778C /* circle_warning.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = circle_warning.tif; path = Resources/circle_warning.tif; sourceTree = "<group>"; };
