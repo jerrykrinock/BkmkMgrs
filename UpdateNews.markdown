@@ -1,5 +1,9 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
+## Version 3.3.9 (2026-07-31)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Now pre-encodes apostrophe (`'`) characters in URLs when exporting to Chrome-ish browsers.  This eliminates churn for users who have such bookmarks.  The churn started recently due to a change in these browsers.
+
 ## Version 3.3.8 (2026-05-13)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Dia](https://www.diabrowser.com) web browser.

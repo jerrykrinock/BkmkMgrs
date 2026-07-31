@@ -1146,6 +1146,30 @@ end:;
                                                        uppercaseAnyOthers:NO
                                                   resolveDoubleDotsInPath:YES];
         [characterSet release];
+
+        /* Recent Chrome canonicalizes URLs using the WHATWG "special-query
+         percent-encode set", which includes the apostrophe (').  It therefore
+         percent-encodes any literal ' that appears in the query component (i.e.
+         after the first '?') to %27, while leaving apostrophes in the path
+         portion alone.  If we do not do the same here, Chrome will re-encode
+         our exported ' back to %27 on every export, producing a perpetual diff
+         (notably in javascript: bookmarklets, where the query begins at the
+         first ternary '?').  So we mirror Chrome: encode ' -> %27, but only in
+         the substring following the first '?'.  We must NOT encode apostrophes
+         in the path, because Chrome keeps those literal and would decode them
+         back, merely relocating the perpetual diff.  Existing %27 escapes are
+         untouched, since they contain no literal ' to match. */
+        NSRange queryStart = [tweakedValue rangeOfString:@"?"];
+        if (queryStart.location != NSNotFound) {
+            NSUInteger queryLocation = queryStart.location + queryStart.length;
+            NSString* beforeQuery = [tweakedValue substringToIndex:queryLocation];
+            NSString* query = [tweakedValue substringFromIndex:queryLocation];
+            if ([query containsString:@"'"]) {
+                query = [query stringByReplacingOccurrencesOfString:@"'"
+                                                         withString:@"%27"];
+                tweakedValue = [beforeQuery stringByAppendingString:query];
+            }
+        }
     }
 	
     return tweakedValue ;
