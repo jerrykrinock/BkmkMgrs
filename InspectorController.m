@@ -25,6 +25,18 @@
 
 NSString* const starkiObserverKeyPath = @"selection.stark.tags";
 
+/* A simple flipped view used as the document view of the scroll view which
+ holds the "Export Exclusions" browser checkboxes.  Being flipped, its origin
+ is at the top-left, so the checkboxes lay out from the top down and the scroll
+ view initially shows the top of the list. */
+@interface SSYExportExcludesDocumentView : NSView
+@end
+@implementation SSYExportExcludesDocumentView
+- (BOOL)isFlipped {
+    return YES ;
+}
+@end
+
 @interface InspectorController ()
 
 @property (assign) BkmxDoc* saveUponCloseBkmxDoc ;
@@ -336,16 +348,15 @@ NSString* const starkiObserverKeyPath = @"selection.stark.tags";
 }
 
 - (void)createCheckboxForExformat:(NSString*)exformat
+                     documentView:(NSView*)documentView
                           frame_p:(NSRect*)frame_p
                         iCheckTag:(NSInteger)iCheckTag {
-    NSView* view = rightSidebarController.sidebarView;
     NSButton* checkbox = [[NSButton alloc] init] ;
     [[self boundCheckboxes] addObject:checkbox] ;
-    frame_p->origin.y -= frame_p->size.height ;
     [checkbox setButtonType:NSButtonTypeSwitch] ;
     [checkbox setFrame:*frame_p] ;
     [[checkbox cell] setControlSize:NSControlSizeSmall] ;
-    [view addSubview:checkbox] ;
+    [documentView addSubview:checkbox] ;
     [checkbox release] ;
     Class extoreClass = [Extore extoreClassForExformat:exformat] ;
     NSString* title = [extoreClass ownerAppDisplayName] ;
@@ -359,6 +370,8 @@ NSString* const starkiObserverKeyPath = @"selection.stark.tags";
           toObject:starkiController
        withKeyPath:@"selection"
            options:[self beForgivingAndNotNil]] ;
+    /* The document view is flipped, so advance downward for the next checkbox. */
+    frame_p->origin.y += frame_p->size.height ;
 }
 
 #define CHECKBOX_VERTICAL_MARGIN 10.0
@@ -379,7 +392,9 @@ NSString* const starkiObserverKeyPath = @"selection.stark.tags";
     NSTextField* heading = nil ;
     NSView* view = rightSidebarController.sidebarView;
     for (NSView* subview in [NSArray arrayWithArray:[view subviews]]) {
-        // The first subview is the heading text
+        // The first subview is the heading text.  Any other subview is the
+        // scroll view which we added in a previous invocation; remove it so we
+        // can rebuild the checkbox list from scratch.
         if (!heading) {
             heading = (NSTextField*)subview ;
         }
@@ -391,25 +406,71 @@ NSString* const starkiObserverKeyPath = @"selection.stark.tags";
 
     [self setBoundCheckboxes:[NSMutableArray array]] ;
 
-    /* We use the constant rightSidebarController.sidebarLength instead of
-     rightSidebarView.width because the latter will be 0.0 if collapsed. */
+    /* We now support so many browsers that this list of checkboxes would, if
+     placed directly in the sidebar view, be clipped at the bottom of the
+     window.  So we place them in a flipped document view inside a scroll view
+     which fills the sidebar below the heading.  All API used here is available
+     back to macOS 10.x, so this remains compatible if we return to supporting
+     macOS 11.
 
-    CGFloat topOfTopCheckbox = heading.frame.origin.y - CHECKBOX_VERTICAL_MARGIN;
+     We use the constant rightSidebarController.sidebarLength instead of
+     rightSidebarView.frame.size.width because the latter will be 0.0 if the
+     sidebar is currently collapsed. */
+    CGFloat sidebarWidth = rightSidebarController.sidebarLength ;
+    /* Raise the top of the scroll view by one checkbox row to take up the
+     empty space below the heading, which also makes the scroll view that much
+     taller (its bottom stays at BOTTOM_MARGIN). */
+    CGFloat scrollViewTop = heading.frame.origin.y - CHECKBOX_VERTICAL_MARGIN + CHECKBOX_HEIGHT ;
+    NSRect scrollViewFrame = NSMakeRect(
+                                        heading.frame.origin.x,
+                                        BOTTOM_MARGIN,
+                                        sidebarWidth - heading.frame.origin.x,
+                                        scrollViewTop - BOTTOM_MARGIN
+                                        ) ;
+    NSScrollView* scrollView = [[NSScrollView alloc] initWithFrame:scrollViewFrame] ;
+    [scrollView setHasVerticalScroller:YES] ;
+    [scrollView setHasHorizontalScroller:NO] ;
+    [scrollView setAutohidesScrollers:YES] ;
+    [scrollView setBorderType:NSNoBorder] ;
+    [scrollView setDrawsBackground:NO] ;
+    /* Keep the scroll view anchored to the top-left of the sidebar, matching
+     the heading's springs and struts. */
+    [scrollView setAutoresizingMask:(NSViewMaxXMargin | NSViewMinYMargin)] ;
+
+    /* Size the document view to hold all of the checkboxes.  Make it at least
+     as tall as the scroll view's content area so that, when there are only a
+     few browsers, the checkboxes still sit at the top and the background fills
+     the sidebar. */
+    NSArray* exformats = [[BkmxBasis sharedBasis] supportedExformatsOrderedByName] ;
+    NSSize contentSize = [scrollView contentSize] ;
+    CGFloat neededHeight = (exformats.count * CHECKBOX_HEIGHT) + (2.0 * CHECKBOX_VERTICAL_MARGIN) ;
+    CGFloat documentHeight = MAX(neededHeight, contentSize.height) ;
+    NSRect documentFrame = NSMakeRect(0.0, 0.0, contentSize.width, documentHeight) ;
+    SSYExportExcludesDocumentView* documentView = [[SSYExportExcludesDocumentView alloc] initWithFrame:documentFrame] ;
+    [scrollView setDocumentView:documentView] ;
+    [documentView release] ;
+
+    /* The document view is flipped, so we lay out the checkboxes from the top
+     down, starting at the top margin. */
     NSRect frame = NSMakeRect(
-                              heading.frame.origin.x,
-                              topOfTopCheckbox,
-                              (rightSidebarController.sidebarLength - heading.frame.origin.x),
+                              0.0,
+                              CHECKBOX_VERTICAL_MARGIN,
+                              contentSize.width,
                               CHECKBOX_HEIGHT
                               ) ;
 
     NSInteger iCheckTag = 0 ;
 
-    for (NSString* exformat in [[BkmxBasis sharedBasis] supportedExformatsOrderedByName]) {
+    for (NSString* exformat in exformats) {
         [self createCheckboxForExformat:exformat
+                           documentView:documentView
                                 frame_p:&frame
                               iCheckTag:iCheckTag];
         iCheckTag++ ;
     }
+
+    [view addSubview:scrollView] ;
+    [scrollView release] ;
 
     view.needsDisplay = YES;
 }
