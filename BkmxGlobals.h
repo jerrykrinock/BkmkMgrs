@@ -500,9 +500,28 @@ enum Advice_enum
 	adv302,
 	advFalseAlarm,
 	advRSS,
-	advIfOK
+	advIfOK,
+	/* advBotChallenge must remain last, because these enum values are stored
+	 in users' documents (Stark.verifierAdviceArray) and inserting a new value
+	 in the middle would shift the meaning of already-stored values. */
+	advBotChallenge
 } ;
 typedef enum Advice_enum Advice ;
+
+/* Pseudo status code assigned when a website responds with an anti-bot
+ "challenge" interstitial (e.g. Cloudflare's "Verify you are human" page)
+ instead of the actual page.  We cannot pass such a challenge programmatically,
+ but the site is in fact reachable, so we treat it as OK rather than broken.
+ This is analogous to the -1012 "Needs Login" pseudo-code.
+
+ IMPORTANT: The verifier's negative "codes" are actually NSError codes from
+ NSURLErrorDomain (see -[HeaderGetter handleError:iCode:], iCode = [error code]).
+ For example -1012 is NSURLErrorUserCancelledAuthentication and -1013 is
+ NSURLErrorUserAuthenticationRequired.  So this sentinel must NOT reuse any real
+ NSURLError value, or a genuine URL error of that code would be mis-bucketed as a
+ bot challenge.  NSURLErrorDomain has no codes in the range -1023...-1099, so we
+ pick a value there; it can only ever be produced by our own bot-challenge code. */
+#define BkmxVerifierCodeBotChallenge (-1050)
 
 enum BkmxAuthorizationMethod_enum {
 	BkmxAuthorizationMethodNone,

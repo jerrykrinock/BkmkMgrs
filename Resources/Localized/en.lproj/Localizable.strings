@@ -627,6 +627,9 @@
 /* - */
 "adv400to403" = "Try to enter only the domain name (\"domain.com\")." ;
 
+/* Advice shown when a site responds with an anti-bot "challenge" page (for example Cloudflare's "Verify you are human" page) instead of the real page. */
+"advBotChallenge" = "This website is protected by an anti-bot security check (for example Cloudflare's \"Verify you are human\" page), so it could not be verified automatically.  The site is reachable and should open normally in your web browser." ;
+
 /* %0 will be replaced by the name of this application. */
 "advBadRedirect" = "This site first returned a 301 or 302 status code and \"redirected\" %0 to a new url, but the new url did not work." ;
 
@@ -3599,6 +3602,9 @@
 
 /* Keep this less than 25 characters.  Abbreviate if necessary. */
 "siteWantsPassword" = "Site asked for password." ;
+
+/* Short "reason" shown for a bookmark whose site returned an anti-bot "challenge" page (for example Cloudflare's "Verify you are human" page) instead of the real page.  Keep this reasonably short. */
+"siteWantsBotCheck" = "Site requires a human (anti-bot) check." ;
 
 /* Label on a control which sets the size of something.
  %0 = whatever object will have its size set.  Examples: "Font", "File", "Document" */

@@ -6,6 +6,8 @@
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Now pre-encodes apostrophe (`'`) characters in URLs when exporting to Chrome-ish browsers.  This eliminates churn for users who have such bookmarks.  The churn started recently due to a change in these browsers.
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> When a Verify operation encounters a site managed by Cloudflare which returns a 403 "Not authorized" error due to our being actually a bot and do not responding to its "Verify you are human" challenge, now categorizes this bookmark as good instead of as broken.
+
 ## Version 3.3.8 (2026-05-13)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Dia](https://www.diabrowser.com) web browser.

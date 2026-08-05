@@ -1280,6 +1280,9 @@ NSString* const constKeyFoldersDeletedDuringConsolidation = @"foldersDeletedDuri
 			case advIfOK:
 				[string appendString:[NSString localize:@"advIfOK"]] ;
 				break ;
+			case advBotChallenge:
+				[string appendString:[NSString localize:@"advBotChallenge"]] ;
+				break ;
 			default:
 				break ;
 		}

@@ -108,6 +108,12 @@
 				// "Needs Login"
 				stats.nOtherOk++ ;
 			}
+			else if (code==BkmxVerifierCodeBotChallenge) {
+				// Site served an anti-bot "challenge" page (e.g. Cloudflare
+				// "Verify you are human").  The site is reachable, so count it
+				// as OK rather than broken.
+				stats.nOtherOk++ ;
+			}
 			else {
 				fixDisposition = [self verifierDispositionValue] ;
 				if (fixDisposition == BkmxFixDispoDoUpdate) {

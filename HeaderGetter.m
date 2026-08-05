@@ -182,11 +182,35 @@
         BOOL redirectIndicatesNotFound = NO ;
         BOOL locationGood = NO ;
         BOOL pageMayBeGone = NO ;
-        
+        BOOL isBotChallenge = NO ;
+
         // See if we can get a "Location" field from the response
         if ([response respondsToSelector:@selector(allHeaderFields)])
         {
             NSDictionary* allFields = [(NSHTTPURLResponse*)response allHeaderFields] ;
+
+            /* Detect an anti-bot "challenge" interstitial.  When Cloudflare (and
+             now other services which have adopted the same convention) serves
+             its "Verify you are human" / "Checking your browser" page instead of
+             the real page, it responds with status 403 (or 503) and adds the
+             response header "cf-mitigated: challenge".  Such a page is NOT a real
+             failure: the site is up and reachable in a browser; we simply cannot
+             pass the challenge programmatically.  We therefore recognize it and,
+             below, categorize it as OK rather than broken.  Note that Cloudflare
+             uses "cf-mitigated: block" for actual blocks, which we deliberately
+             do NOT treat as a challenge.  Header field names are matched
+             case-insensitively because HTTP header case is not guaranteed. */
+            for (NSString* headerKey in allFields) {
+                if ([headerKey caseInsensitiveCompare:@"cf-mitigated"] == NSOrderedSame) {
+                    NSString* mitigation = [allFields objectForKey:headerKey] ;
+                    if ([mitigation isKindOfClass:[NSString class]]
+                        && ([mitigation caseInsensitiveCompare:@"challenge"] == NSOrderedSame)) {
+                        isBotChallenge = YES ;
+                    }
+                    break ;
+                }
+            }
+
             NSString* locationImmutable = [allFields objectForKey:@"Location"] ;
             
             if (!locationImmutable)
@@ -248,7 +272,20 @@
         NSURL* urlNowHave = [NSURL URLWithString:strURLNowHave] ;
         
         // Now we consider each error code, in some cases look at other conditions, and set the advice and the fix:
-        if (iCode < -1199) {
+        if (isBotChallenge) {
+            /* The site served an anti-bot "challenge" page (see detection above)
+             instead of the real page.  The site is reachable; we just cannot get
+             past the challenge programmatically.  Treat it as OK-but-unverifiable
+             rather than broken: assign a dedicated pseudo-code which the verify
+             summary buckets with the other "OK" results, leave the bookmark as-is,
+             and advise the user why it could not be fully verified. */
+            iCode = BkmxVerifierCodeBotChallenge ;
+            verifierReason = [NSString localize:@"siteWantsBotCheck"] ;
+            [headers setObject:[NSNumber numberWithInteger:BkmxFixDispoLeaveAsIs]
+                        forKey:constKeyVerifierDisposition] ;
+            [advice addObject:[NSNumber numberWithInteger:advBotChallenge]] ;
+        }
+        else if (iCode < -1199) {
             [advice addObject:[NSNumber numberWithInteger:advUntrusted]] ;
             if ([location sameHostPathButHTTPvsHTTPS:strURLNowHave])
                 [headers setObject:[NSNumber numberWithInteger:BkmxFixDispoDoUpdate] forKey:constKeyVerifierDisposition] ;
