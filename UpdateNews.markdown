@@ -2,7 +2,7 @@
 
 ## Version 3.3.9 (2026-08-01)
 
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Now requires macOS 15.6 Sequoia or later.  This is because a new bug in Apple's Developer Tools (FB23715473) or macOS 27 which we expect to never be repaired has made it very cumbersome for us to build these apps for macOS 11 - macOS 14.
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> No longer works in macOS 11.  Now requires macOS 12 or later.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> We've added support for so many web browsers this year that the *Export Exclusions* list in the Inspector Window needed a scroller to show all of them.  That scroller is now in place.
 
