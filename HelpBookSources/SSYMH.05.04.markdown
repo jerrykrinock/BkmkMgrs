@@ -8,6 +8,18 @@ We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the b
 
 Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
 
+## Version 3.3.9 (2026-08-18)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> No longer works in macOS 11.  Now requires macOS 12 or later.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> We've added support for so many web browsers this year that the *Export Exclusions* list in the Inspector Window needed a scroller to show all of them.  That scroller is now in place.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Now pre-encodes apostrophe (`'`) characters in URLs when exporting to Chrome-ish browsers.  This eliminates churn for users who have such bookmarks.  The churn started recently due to a change in these browsers.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> When a Verify operation encounters a site managed by Cloudflare which returns a 403 "Not authorized" error due to our being actually a bot and do not responding to its "Verify you are human" challenge, now categorizes this bookmark as good instead of as broken.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Inspector window, bottom collapsible *URLs* area, repositioned some graphics which have been misplaced in recent versions due to changes in Apple's build tools.
+
 ## Version 3.3.8 (2026-05-13)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Dia](https://www.diabrowser.com) web browser.
