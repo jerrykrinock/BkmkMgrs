@@ -1012,6 +1012,7 @@ extern NSString* const constBkmxSymbolHartainerOhared ;
 
 // Exformat names - Local Apps
 extern NSString* const constExformatBraveBeta;
+extern NSString* const constExformatBraveOrigin;
 extern NSString* const constExformatBravePublic;
 extern NSString* const constExformatCanary ;
 extern NSString* const constExformatChatGPTAtlas ;

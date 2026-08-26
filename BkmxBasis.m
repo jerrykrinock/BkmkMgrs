@@ -1174,6 +1174,7 @@ NSString* const constBaseNameDiaries = @"Diaries" ;
                                              constExformatVivaldi,
                                              constExformatZen,
                                              constExformatBraveBeta,
+                                             constExformatBraveOrigin,
                                              constExformatBravePublic,
                                              constExformatEdge,
                                              constExformatEdgeBeta,

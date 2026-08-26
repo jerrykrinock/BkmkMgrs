@@ -326,6 +326,7 @@ NSString* const constBkmxSymbolHartainerOhared = @"Ohar" ;
 
 // Exformat names - Local Apps
 NSString* const constExformatBraveBeta = @"BraveBeta" ;
+NSString* const constExformatBraveOrigin = @"BraveOrigin" ;
 NSString* const constExformatBravePublic = @"BravePublic" ;
 NSString* const constExformatCanary = @"Canary" ;
 NSString* const constExformatChatGPTAtlas = @"ChatGPTAtlas" ;
