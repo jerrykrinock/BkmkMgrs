@@ -1,3 +1,4 @@
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #import "BkmxGlobals.h"
 #import "NSError+MyDomain.h"
 #import "NSError+SSYInfo.h"
@@ -1010,7 +1011,10 @@ NSString* const constKeyLooseLabelledList = @"labList" ;
 		// Give the user some help in creating a file with a proper extension
 		if ([fileType length] > 0) {
 			// The new regular file must be of a specified extension
-            [panel setAllowedFileTypes:[NSArray arrayWithObject:fileType]] ;
+            UTType* allowedType = [UTType typeWithFilenameExtension:fileType] ;
+            if (allowedType) {
+                [panel setAllowedContentTypes:[NSArray arrayWithObject:allowedType]] ;
+            }
 			[panel setAllowsOtherFileTypes:NO] ;
 			// Note that the above NO only causes Cocoa to present a dialog if the user types in a filename extension known to the system
 			// such as, for example, ".webloc".  If the user types in a filename "MyJunk.bonehead" and the
@@ -1076,7 +1080,8 @@ NSString* const constKeyLooseLabelledList = @"labList" ;
 					   [exformat exformatDisplayName],
 					   [[NSString localize:@"000_Safari_Bookmarks"] lowercaseString]] ;
 			[panel setMessage:message] ;
-            [panel setAllowedFileTypes:nil] ;
+            // An empty array allows all file types (was setAllowedFileTypes:nil).
+            [panel setAllowedContentTypes:[NSArray array]] ;
 			[panel setCanCreateDirectories:YES] ;
 			[panel setCanChooseDirectories:YES] ;
 			[panel setAllowsOtherFileTypes:YES] ;
@@ -1099,7 +1104,15 @@ NSString* const constKeyLooseLabelledList = @"labList" ;
         NSString* directoryPath = [(BkmxDocumentController*)[NSDocumentController sharedDocumentController] defaultDocumentFolderError_p:NULL] ;
 		
         [panel setDirectoryURL:[NSURL fileURLWithPath:directoryPath]] ;
-        [panel setAllowedFileTypes:fileTypes] ;
+        // An empty array allows all file types (was setAllowedFileTypes:nil).
+        NSMutableArray* allowedContentTypes = [NSMutableArray array] ;
+        for (NSString* extension in fileTypes) {
+            UTType* allowedType = [UTType typeWithFilenameExtension:extension] ;
+            if (allowedType) {
+                [allowedContentTypes addObject:allowedType] ;
+            }
+        }
+        [panel setAllowedContentTypes:allowedContentTypes] ;
         [panel beginSheetModalForWindow:documentWindow
                       completionHandler:^(NSInteger returnCode) {
                           if (returnCode == NSModalResponseCancel) {
