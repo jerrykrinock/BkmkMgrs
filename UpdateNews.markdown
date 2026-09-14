@@ -2,6 +2,10 @@
 
 Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found any issues which are specific to macOS 27.
 
+## Version 3.3.11 (TBD)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Internal maintenance: updated some old code to use Apple's current programming interfaces.
+
 ## Version 3.3.10 (2026-08-25)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import and export with the *Brave Origin* (the paid version of Brave) web browser.
