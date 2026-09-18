@@ -17,7 +17,10 @@ then
 	echo "Please ensure that BookMacster is running  (preferably in the Xcode debugger in case of trouble).  Then hit 'return'."
 	read answer
 fi
-cp -fp Bookmarks.plist /Users/jk/Library/Safari/
+
+# The following line, eeek, overwrite's Safari's Bokmarks.plit file.  I suppose that I added it to the script so that all script runs would start with the same initial conditions.  But such an overwrite is well known to be very upsetting to iCloud!  Indeed, I would see duplicates a few minutes after running the script  So, as of 2026-09-18, this line is commented out.
+# cp -fp Bookmarks.plist /Users/jk/Library/Safari/
+
 sleep $SLEEP
 echo "***** Beginning test $TESTCOUNT of $TOTALTESTCOUNT ******"
 echo "Will close any open .bmco documents (and Inspector, to prevent crashes)"
