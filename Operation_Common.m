@@ -109,9 +109,14 @@ NSString* const constKeyMule = @"mule" ;
                         break ;
                     case BkmxWhich1AppBookMacster:
                         whatNot = [[BkmxBasis sharedBasis] labelClient] ;
+                        break ;
+                    default:
+                        whatNot = @"?!?!!" ;
+                        break ;
                 }
                 NSString* locDex = [NSString stringWithFormat:
-                                    @"%@ %@",
+                                    @"%@: %@ %@",
+                                    [clientoid displayName],
                                     whatNot,
                                     [NSString localize:@"notAvailable"]] ;
                 NSError* error = SSYMakeError(259284, locDex) ;
