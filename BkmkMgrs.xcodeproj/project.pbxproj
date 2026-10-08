@@ -2521,7 +2521,7 @@
 		489B98C628DA6E03009E82FD /* CoreDataVersionHacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataVersionHacker.swift; sourceTree = "<group>"; };
 		489B98C728DA6E03009E82FD /* NSManagedObjectModel+MigrationHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectModel+MigrationHelp.swift"; sourceTree = "<group>"; };
 		489B98C828DA6E03009E82FD /* NSPersistentStoreCoordinator+MigrationHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentStoreCoordinator+MigrationHelp.swift"; sourceTree = "<group>"; };
-		489B98C928DA6E03009E82FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		489B98C928DA6E03009E82FD /* README.md */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 		489B98CA28DA6E03009E82FD /* CoreDataMigrationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationDelegate.swift; sourceTree = "<group>"; };
 		489B98CB28DA6E03009E82FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		489B98CC28DA6E03009E82FD /* CoreDataProgressiveMigratorGuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProgressiveMigratorGuts.swift; sourceTree = "<group>"; };
@@ -2859,7 +2859,7 @@
 		48D6FD2118C824860020E9F9 /* SyncNotifications.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncNotifications.xib; path = Resources/SyncNotifications.xib; sourceTree = "<group>"; };
 		48D6FD2718C82AAB0020E9F9 /* SyncNotificationsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncNotificationsWindowController.h; sourceTree = "<group>"; };
 		48D6FD2818C82AAB0020E9F9 /* SyncNotificationsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncNotificationsWindowController.m; sourceTree = "<group>"; };
-		48D8329F19CA37D900D967F8 /* UIN-Update-Items-for-Next-Version.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = "UIN-Update-Items-for-Next-Version.markdown"; sourceTree = "<group>"; wrapsLines = 1; };
+		48D8329F19CA37D900D967F8 /* UIN-Update-Items-for-Next-Version.markdown */ = {isa = PBXFileReference; explicitFileType = text; path = "UIN-Update-Items-for-Next-Version.markdown"; sourceTree = "<group>"; wrapsLines = 1; };
 		48D9401D1A7A78BA003ACF61 /* SSYKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSYKeychainQuery.h; path = ../../ClassesObjC/SSYKeychainQuery.h; sourceTree = "<group>"; };
 		48D9401E1A7A78BA003ACF61 /* SSYKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSYKeychainQuery.m; path = ../../ClassesObjC/SSYKeychainQuery.m; sourceTree = "<group>"; };
 		48DA6D0D0F33C324002660BA /* NSNumber+TrigTypeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TrigTypeDisplay.h"; sourceTree = "<group>"; };
