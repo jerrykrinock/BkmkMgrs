@@ -352,7 +352,10 @@ extension BkmxBasis {
         ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
                                              orExecutableName: constAppNameBkmxAgent,
                                              expectRunning: ExpectRunning.no,
-                                             timeout: timeout)
+                                             timeout: timeout,
+                                             // Ignore our detached browser-quitters (copies of the agent binary).
+                                             // Keep the literal in sync with BkmxDoc.m / BkmxAgent-Main.m.
+                                             excludingCommandsContaining: "--quitBrowserAfterHold")
         
         if (!ok) {
             /* Even killing did not work. */
@@ -412,6 +415,33 @@ extension BkmxBasis {
             return nil
         }
         var agentDescriptions = [String]()
+
+        /* Collect the pids of our detached browser-quitters (copies of the
+         BkmxAgent executable, distinguished only by this argument) so we can
+         skip them below; otherwise this `-o comm`-based scan, which cannot see
+         arguments, would reconstruct the same bundle identifier for them and
+         list them as phantom agents.  Keep the literal in sync with BkmxDoc.m /
+         BkmxAgent-Main.m. */
+        var quitterPids = Set<Int32>()
+        let cmdResults = SSYTask.run(
+            URL(fileURLWithPath: "/bin/ps"),
+            arguments: ["-xaww", "-o", "pid=", "-o", "command="],
+            inDirectory: nil,
+            stdinput: nil,
+            timeout: 9.0)
+        if (cmdResults[SSYTask.exitStatusKey] as? Int32 == EXIT_SUCCESS),
+           let stdoutData = cmdResults[SSYTask.stdoutKey] as? Data,
+           let commandsString = String(data: stdoutData, encoding: .utf8) {
+            for line in commandsString.components(separatedBy: "\n") {
+                if line.contains("--quitBrowserAfterHold") {
+                    let fields = line.trimmingCharacters(in: .whitespaces).split(separator: " ", maxSplits: 1, omittingEmptySubsequences: true)
+                    if let first = fields.first, let pid = Int32(first) {
+                        quitterPids.insert(pid)
+                    }
+                }
+            }
+        }
+
         let args = ["-xaww", "-o", "pid=", "-o", "etime=", "-o", "comm="]
         let programResults = SSYTask.run(
             URL(fileURLWithPath: "/bin/ps"),
@@ -429,6 +459,9 @@ extension BkmxBasis {
                         /* Scanner skips whitespace by default, which is what we want since
                          the three fields we are about to scan are separated by whitespace. */
                         let pid = scanner.scanInt()
+                        if let pid = pid, quitterPids.contains(Int32(pid)) {
+                            continue
+                        }
                         let etime = scanner.scanCharacters(from: eTimeCharacterSet)
                         var executableName: String?  = nil
                         var bundleIdentifier: String? = nil

@@ -1,4 +1,7 @@
 #import <Bkmxwork/Bkmxwork-Swift.h>
+#include <spawn.h>       // posix_spawn, for the detached browser-quitter
+#include <crt_externs.h> // _NSGetEnviron(), the bundle-safe way to get environ
+#include <fcntl.h>       // O_RDONLY/O_WRONLY, for the quitter's /dev/null std fds
 @import SSYSwift;
 #import "NSError+Recovery.h"
 #import "NSError+MyDomain.h"
@@ -5906,6 +5909,92 @@ completionHandler:(void (^)(NSError *errorOrNil))completionHandler {
     [info release] ;
 }
 
+/* Spawns a detached, short-lived copy of the *current* executable (which, on
+ this code path, is always BkmxAgent -- see -requinchBrowserMaybeForInfo:)
+ running in its hidden "--quitBrowserAfterHold" mode.  That child waits out
+ holdTime and then quits the given browser.  We need a separate process
+ because BkmxAgent recycles itself as soon as its Job is done -- usually in
+ less than holdTime -- so an in-process -performSelector:afterDelay: would die
+ before it fired.  POSIX_SPAWN_SETSID puts the child in its own session (and
+ hence its own process group), so launchd does not kill it along with this
+ agent when the agent recycles.  See BkmxAgent-Main.m for the other end. */
+- (void)spawnDetachedBrowserQuitterForBrowserPath:(NSString*)browserPath
+                                          holdTime:(NSTimeInterval)holdTime
+                                           timeout:(NSTimeInterval)timeout
+                                      closeWindows:(BOOL)closeWindows
+                                  killAfterTimeout:(BOOL)killAfterTimeout {
+    NSString* executablePath = [[NSBundle mainBundle] executablePath] ;
+    if (!executablePath || !browserPath) {
+        NSLog(@"Internal Error 254-9447 cannot spawn browser quitter: exec=%@ browser=%@", executablePath, browserPath) ;
+        return ;
+    }
+
+    NSString* holdString = [NSString stringWithFormat:@"%f", holdTime] ;
+    NSString* timeoutString = [NSString stringWithFormat:@"%f", timeout] ;
+
+    /* These UTF8String/fileSystemRepresentation buffers are autoreleased and
+     remain valid for the duration of the (synchronous) posix_spawn call, which
+     copies the argument vector into the child. */
+    const char* cExecutable = [executablePath fileSystemRepresentation] ;
+    char* const argv[] = {
+        (char*)cExecutable,
+        /* This sentinel is parsed by BkmxAgent-Main.m and is also what the
+         agent-detection code matches on to avoid mistaking this quitter for a
+         running BkmxAgent.  Keep all four spellings in sync. */
+        (char*)"--quitBrowserAfterHold",
+        (char*)[browserPath UTF8String],
+        (char*)[holdString UTF8String],
+        (char*)[timeoutString UTF8String],
+        (char*)(closeWindows ? "1" : "0"),
+        (char*)(killAfterTimeout ? "1" : "0"),
+        NULL
+    } ;
+
+    posix_spawnattr_t attr ;
+    posix_spawnattr_init(&attr) ;
+    /* POSIX_SPAWN_SETSID: own session/process group, so launchd's teardown of
+     the recycling agent does not kill this child.
+     POSIX_SPAWN_CLOEXEC_DEFAULT (Apple extension): the child inherits NONE of
+     our open file descriptors.  Hygiene: this executable is a copy of BkmxAgent,
+     which holds the document's Core Data / SQLite store (the .bmco plus its -wal
+     and -shm) open; there is no reason for this short-lived quitter to carry
+     those descriptors for the whole holdTime.  It needs no inherited fds -- it
+     only waits, then quits a browser via Apple events -- so we remap just
+     stdin/stdout/stderr to /dev/null below and let everything else be closed. */
+    posix_spawnattr_setflags(&attr, POSIX_SPAWN_SETSID | POSIX_SPAWN_CLOEXEC_DEFAULT) ;
+
+    posix_spawn_file_actions_t fileActions ;
+    posix_spawn_file_actions_init(&fileActions) ;
+    posix_spawn_file_actions_addopen(&fileActions, STDIN_FILENO,  "/dev/null", O_RDONLY, 0) ;
+    posix_spawn_file_actions_addopen(&fileActions, STDOUT_FILENO, "/dev/null", O_WRONLY, 0) ;
+    posix_spawn_file_actions_addopen(&fileActions, STDERR_FILENO, "/dev/null", O_WRONLY, 0) ;
+
+    pid_t pid = 0 ;
+    int result = posix_spawn(&pid,
+                             cExecutable,
+                             &fileActions,
+                             &attr,
+                             argv,
+                             *_NSGetEnviron()) ;
+    posix_spawn_file_actions_destroy(&fileActions) ;
+    posix_spawnattr_destroy(&attr) ;
+
+    if (result == 0) {
+        /* Build the message with the real +[NSString stringWithFormat:] and log
+         it via -logString: (which does no substitution).  We must NOT pass this
+         format and its mixed %d/%@/%0.1f arguments to -logFormat:, whose custom
+         NSString+VarArgs substitutor misparses "%0.1f" (it reads the leading "0"
+         as a reorder index), desynchronizes the va_list, and crashes. */
+        NSString* msg = [NSString stringWithFormat:
+                         @"Spawned detached browser-quitter pid %d to quit %@ in %0.1f secs",
+                         pid, [browserPath lastPathComponent], holdTime] ;
+        [[BkmxBasis sharedBasis] logString:msg] ;
+    }
+    else {
+        NSLog(@"Internal Error 254-9448 posix_spawn browser quitter failed: %d (%s)", result, strerror(result)) ;
+    }
+}
+
 - (void)requinchBrowserMaybeForInfo:(NSDictionary*)info {
     Extore* extore = [info objectForKey:constKeyExtore] ;
     OwnerAppQuinchState quinchState = [extore ownerAppQuinchState] ;
@@ -5944,22 +6033,54 @@ completionHandler:(void (^)(NSError *errorOrNil))completionHandler {
         }
         
         // The browser was not running before we launched it, and the user
-        // probably didn't even notice that we did.  So we quit it.
-        BOOL no = NO ;
-        CGFloat timeout = 10.0 ;
-        NSInvocation* invocation = [NSInvocation invocationWithTarget:extore
-                                                             selector:@selector(quitOwnerAppWithTimeout:preferredPath:killAfterTimeout:wasRunning_p:pathQuilled_p:error_p:)
-                                                      retainArguments:YES
-                                                    argumentAddresses:&timeout, &path, &no, NULL, NULL, NULL] ;
+        // probably didn't even notice that we did.  So we quit it, after
+        // giving it quitHoldTime to settle (e.g. finish writing its bookmarks
+        // file).
+        NSTimeInterval holdTime = [extore quitHoldTime] ;
+        NSTimeInterval timeout = 10.0 ;
+        BOOL closeWindows = [extore shouldCloseWindowsWhenQuitting] ;
+        BOOL killAfterTimeout = NO ;
+
         NSString* msg = [NSString stringWithFormat:
                          @"Will quit %@ in %0.1f secs",
                          [extore displayName],
-                         [extore quitHoldTime]];
+                         holdTime];
         [[BkmxBasis sharedBasis] logFormat:msg];
-        
-        [invocation performSelector:@selector(invoke)
-                         withObject:nil
-                         afterDelay:[extore quitHoldTime]] ;
+
+        if ([[BkmxBasis sharedBasis] isBkmxAgent]) {
+            /* We are in BkmxAgent, which recycles itself as soon as its Job is
+             done -- usually in less than holdTime -- to shed accumulated Core
+             Data memory.  A -performSelector:afterDelay: invocation scheduled
+             here would therefore die with this process before it ever fired,
+             and the browser would never be quit.  So instead we spawn a
+             detached, short-lived copy of BkmxAgent whose only job is to wait
+             out holdTime and then quit the browser.  (The GUI apps --
+             BookMacster, Synkmark, Markster, Smarky -- are long-lived and take
+             the else branch below; Markster in particular does not even ship
+             a BkmxAgent.) */
+            [self spawnDetachedBrowserQuitterForBrowserPath:path
+                                                   holdTime:holdTime
+                                                    timeout:timeout
+                                               closeWindows:closeWindows
+                                           killAfterTimeout:killAfterTimeout] ;
+        }
+        else {
+            /* We are in the main GUI app or a scripted run.  This process is
+             long-lived, so the classic in-process delayed invocation works
+             fine.  (It also leaves the Extore's in-memory ownerAppQuinchState
+             updated, which the detached helper does not do -- harmless, since
+             the helper runs only in BkmxAgent, whose Extore is discarded when
+             the agent recycles anyway.) */
+            BOOL no = killAfterTimeout ;
+            NSInvocation* invocation = [NSInvocation invocationWithTarget:extore
+                                                                 selector:@selector(quitOwnerAppWithTimeout:preferredPath:killAfterTimeout:wasRunning_p:pathQuilled_p:error_p:)
+                                                          retainArguments:YES
+                                                        argumentAddresses:&timeout, &path, &no, NULL, NULL, NULL] ;
+
+            [invocation performSelector:@selector(invoke)
+                             withObject:nil
+                             afterDelay:holdTime] ;
+        }
     }
 }
 

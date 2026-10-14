@@ -4,6 +4,8 @@ Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found
 
 ## Version 3.3.11 (TBD)
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug in our background syncing agent (BkmxAgent) which would, in some cases, leave a web browser running after launching it to performa a syncing operation.
+
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Internal maintenance: updated some old code to use Apple's current programming interfaces.
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Error 259284 now states which browser is missing in the body of the description instead of only in the Recovery Suggestion.

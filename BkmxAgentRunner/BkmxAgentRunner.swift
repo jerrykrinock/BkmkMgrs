@@ -41,6 +41,14 @@ class BkmxAgentRunner {
         let readableKickType = Self.commandName(kickType: command)
         agentRunnerLogger.log("Will --\(readableKickType) \(bundleIdentifier)")
 
+        /* BookMacster/BkmxAgent spawns short-lived copies of the BkmxAgent
+         executable to quit a browser after a delay; they carry this sentinel
+         argument and are NOT the agent, so waitForApp must not count them.
+         Keep in sync with the literal in BkmxDoc.m (spawn), BkmxAgent-Main.m
+         (parse), and BkmxBasis+Swift.swift (detect).  Hardcoded here because,
+         as above, this target deliberately does not link Bkmxwork/BkmxGlobals. */
+        let browserQuitterArg = "--quitBrowserAfterHold"
+
         /* The time to launch BkmxAgent has been observed to be as much as
          20 seconds on my M1 MacBook Air running macOS 15, if I Restart with
          BookMacster and a dozen other apps running, and the checkbox
@@ -57,7 +65,8 @@ class BkmxAgentRunner {
             ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
                                                  orExecutableName: orExecutableName,
                                                  expectRunning: ExpectRunning.yes,
-                                                 timeout: timeout)
+                                                 timeout: timeout,
+                                                 excludingCommandsContaining: browserQuitterArg)
             if (!ok) {
                 errorCode = 288421
                 errorDesc = "\(processName) commanded macOS to start \(bundleIdentifier), but it was still not running after \(timeout) seconds."
@@ -67,7 +76,8 @@ class BkmxAgentRunner {
             ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
                                                  orExecutableName: orExecutableName,
                                                  expectRunning: ExpectRunning.no,
-                                                 timeout: timeout)
+                                                 timeout: timeout,
+                                                 excludingCommandsContaining: browserQuitterArg)
             if (!ok) {
                 errorCode = 288422
                 errorDesc = "\(processName) commanded macOS to stop \(bundleIdentifier), but it was still running after \(timeout) seconds."
@@ -77,7 +87,8 @@ class BkmxAgentRunner {
             ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
                                                  orExecutableName: orExecutableName,
                                                  expectRunning: ExpectRunning.no,
-                                                 timeout: timeout)
+                                                 timeout: timeout,
+                                                 excludingCommandsContaining: browserQuitterArg)
             if (!ok) {
                 errorCode = 288423
                 errorDesc = "\(processName) commanded macOS to stop \(bundleIdentifier), so it could be rebooted, but it was still  running after \(timeout) seconds."
@@ -87,7 +98,8 @@ class BkmxAgentRunner {
                 ok = NSRunningApplication.waitForApp(bundleIdentifier: bundleIdentifier,
                                                      orExecutableName: orExecutableName,
                                                      expectRunning: ExpectRunning.yes,
-                                                     timeout: timeout)
+                                                     timeout: timeout,
+                                                     excludingCommandsContaining: browserQuitterArg)
                 if (!ok) {
                     errorCode = 288424
                     errorDesc = "\(processName) commanded macOS to relaunch \(bundleIdentifier) after quitting, but it was still not running after \(timeout) seconds."
