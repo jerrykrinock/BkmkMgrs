@@ -164,8 +164,11 @@ BkmkMgrs uses a multi-process architecture for reliability and performance:
   - `BookMacsterButton` - Quick-add bookmark from browser
   - `BookMacsterSync` - Auto-sync capability
   - Supports Firefox, Chrome, Chromium-based browsers via manifests
-- **Safari Extension** (`SheepSafariHelper.m`, 157KB)
-  - Native App Extension (no messaging bridge needed)
+- **Safari Access** (`SheepSafariHelper.m`, 157KB)
+  - NOT a Safari App Extension or Web Extension — it is a faceless helper tool (a separate binary) that links the **private `Safari.framework` API** to read/write Safari bookmarks.
+  - Run as a separate process on purpose: if Apple changes the private `Safari.framework` API and the calls crash, only the helper dies, not the main GUI app.
+  - Requires **Full Disk Access** — without it, every `Safari.framework` API call fails. The helper inherits FDA from its parent GUI app (BookMacster, etc.).
+  - Code is full of kludgey workarounds for `Safari.framework`'s quirks; it exists only because there is no public Safari bookmarks API. A proper WebExtensions `bookmarks` API (filed as FB5753136 in 2017, still unimplemented by Apple) would let it be deleted entirely.
 - **Chromessenger** - Native messaging bridge for Chrome
   - JSON-based message protocol
 
