@@ -8,6 +8,8 @@ Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Internal maintenance: updated some old code to use Apple's current programming interfaces.
 
+*  <img src="images/Synkmark.png" alt="" class="whappMini" />  Fixed a bug which made clicking the Syncing button in the toolbar to open Preferences instead of enabling syncing in the event that Synkmark was initially configured with no Synced Browsers, and a first Synced Browser was added later, until Synkmark was relaunched.
+
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Error 259284 now states which browser is missing in the body of the description instead of only in the Recovery Suggestion.
 
 ## Version 3.3.10 (2026-08-25)

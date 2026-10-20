@@ -1062,8 +1062,26 @@ NSString* const constNoteDuplicateTrigger = @"duplicateTrigger" ;
         [self syncSyncersFromSyncingConfig] ;
     }
     
-    [self setSyncerPausedConfig:constBkmxSyncerConfigNone] ;
-    [self setSyncersPaused:NO] ;
+    /* The if() condition was added on 2026-10-20 in BkmkMgrs  to fix the following bug:
+     STEPS TO REPRODUCE:
+     Quit Synkmark if running
+     Delete Synmkmark.bmco
+     Launch Synkmark
+     OK Error 260
+     Add no browsers, click Done
+     Syncing is Paused, OK
+     Prefs
+     Syncing
+     Add Safari
+     Close Prefs
+     Click Syncing button in the toolbar again, to begin syncing`
+     Expected: Syncing remains Paused and "To begin syncing…" sheet appears.  Same thing happens if user clicks Syncing button again.
+     Actual: Syncing switches to OFF and Prefs window opens.
+     */
+    if (![[BkmxBasis sharedBasis] isShoeboxApp]) {
+        [self setSyncerPausedConfig:constBkmxSyncerConfigNone];
+    }
+    [self setSyncersPaused:NO];
 }
 
 - (BOOL)aSyncerWouldIxportIfActivatedOrResumedDoQualifyExport:(BOOL)doQualifyExport {
