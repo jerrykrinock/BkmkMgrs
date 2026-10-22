@@ -3759,6 +3759,31 @@ NSString* const skuForSmarky3 = @"637653";
      */
     [self setIsBackgrounding:YES] ;
     for (NSWindow* window in [NSApp windows]) {
+        /* Skip windows which are already closed.  A window which has been
+         closed may linger in -[NSApp windows] for a while before it is
+         deallocated — see Note in -[SSYAlert stealObjectsFromAppleAlerts].
+         The Welcome window is an SSYAlert, whose window has
+         isReleasedWhenClosed = YES.  If the user dismisses the Welcome window
+         and then, before it has been deallocated, invokes "Background
+         BookMacster", this loop would otherwise send -close to that
+         already-closed window a second time.  Sending -close to a window whose
+         isReleasedWhenClosed is YES over-releases it, which deallocates it
+         prematurely and crashes while its NSThemeFrame is torn down (KVO
+         deallocation).  A closed window is neither visible nor miniaturized, so
+         we skip those. */
+        if (!window.isVisible && !window.isMiniaturized) {
+            continue ;
+        }
+        /* If this window belongs to an SSYAlert (for example, the Welcome
+         window), dismiss it through -goAway instead of a raw -close.  -goAway
+         removes the SSYAlert from its static collection (static_alertHangout)
+         and unregisters its NSWindowDidMove observer; a raw -close would do
+         neither, leaking the SSYAlert and leaving a stale observer registered. */
+        NSWindowController* windowController = [window windowController] ;
+        if ([windowController isKindOfClass:[SSYAlert class]]) {
+            [(SSYAlert*)windowController goAway] ;
+            continue ;
+        }
         if ([window level] != NSStatusWindowLevel) {
             if ([[window delegate] respondsToSelector:@selector(windowShouldClose:)]) {
                 if ([[window delegate] windowShouldClose:window]) {

@@ -2,6 +2,10 @@
 
 Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found any issues which are specific to macOS 27.
 
+## Version 3.3.12 (2026-10-22)
+
+*  <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a crash which could occur in macOS 27 when upon clicking main menu > BookMacster > Background BookMacster.
+
 ## Version 3.3.11 (2026-10-20)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug in our background syncing agent (BkmxAgent) which would, in some cases, leave a web browser running after launching it to performa a syncing operation.
