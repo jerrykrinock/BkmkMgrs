@@ -246,7 +246,7 @@ Firefox, iCab, Google Chrome, the [Chrome-ish](chromish) browsers all support [S
 
 * In the Chrome-ish browsers, Smart Keyword Searches are stored elsewhere, such as in Preferences.  You will never see them in Smarky, Synkmark, Markster or BookMacster.
 
-Smarky, Synkmark, Markster or BookMacster will omit Firefox Smart Keyword Search Bookmarks when exporting to any other browser, because they won't like they do in Firefox.  (They don't work in iCab because iCab does not support a Keyword or Shortcut attribute.)
+* Smarky, Synkmark, Markster or BookMacster will omit Firefox Smart Keyword Search Bookmarks when exporting to any other browser, because they won't like they do in Firefox.  (They don't work in iCab because iCab does not support a Keyword or Shortcut attribute.)
 
 ## <img src="images/BookMacster.png" class="whapp" /> Multiple Web App Accounts and the macOS *Keychain*
 
