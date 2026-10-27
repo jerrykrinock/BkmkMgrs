@@ -501,6 +501,26 @@ __attribute__((visibility("hidden")))
 
 @end
 
+/* NOTE 2026-10-27 (Safari 625 / macOS 27.2): the iCloud push is performed by the
+ daemon com.apple.SafariBookmarksSyncAgent via +[WBSSafariBookmarksSyncAgentProxy
+ sharedProxy] (in SafariCore.framework, not Safari.framework, but loaded in-process
+ as a dependency so NSClassFromString finds it).  Safari.app pushes by calling
+ -userDidUpdateBookmarkDatabase on the shared proxy.  We tried poking it the same
+ way from -[SheepSafariHelper requestSync], but the agent REJECTS our XPC
+ connection ("Rejecting XPC connection … Missing entitlement") — the push is
+ gated behind the Apple-private entitlement
+ com.apple.private.safari.can-use-bookmarks-sync-agent, which a third-party
+ (non-Apple-signed) process cannot carry.
+ The declaration is kept here for reference (and in case a future OS drops the
+ entitlement check); see the full dead-end writeup in -[SheepSafariHelper
+ requestSync].  Currently unused. */
+__attribute__((visibility("hidden")))
+@interface WBSSafariBookmarksSyncAgentProxy : NSObject
++ (id)sharedProxy;
+- (void)userDidUpdateBookmarkDatabase;
+- (void)forceBookmarkSync;
+@end
+
 __attribute__((visibility("hidden")))
 @interface BookmarksUndoController : NSObject
 {

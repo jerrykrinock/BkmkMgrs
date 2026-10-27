@@ -902,20 +902,51 @@ NSString* const SheepSafariHelperTabGroupFavoritesSpecialExid = @"BkmkMgrs-Tab_-
 
 - (void)requestSync {
     BOOL didRequestSyncClientTrigger = NO;
-    // 10.12+ will execute the following branch.  Not sure about 10.11-
-#if 0
-#warning Using more aggressive (maybe) requestSync
-    if ([BookmarksController respondsToSelector:@selector(requestSyncClientTriggerSyncForBookmarkGroup:skipRequestIfNoChanges:)]) {
-        [BookmarksController requestSyncClientTriggerSyncForBookmarkGroup:self.wbg
-                                                   skipRequestIfNoChanges:NO];
-        didRequestSyncClientTrigger = YES;
-    }
-#else
+
+    /* ===================================================================
+     DEAD END, confirmed 2026-10-27 (Safari 625 / macOS 27.2).  DO NOT try
+     to make this helper trigger the iCloud push by poking the sync agent;
+     it is blocked by an Apple-private entitlement we cannot obtain.
+
+     What we learned by disassembling Safari.framework / SafariCore 625:
+       • The push is performed by the daemon com.apple.SafariBookmarksSyncAgent,
+         reached via +[WBSSafariBookmarksSyncAgentProxy sharedProxy]
+         (SafariCore).  Safari.app pushes by calling -userDidUpdateBookmarkDatabase
+         on that proxy.
+       • +[BookmarksController requestSyncClientTriggerSyncForBookmarkGroup:…]
+         decompiles to:
+             if (![group useCloudKitMode]) return;              // gate
+             if (skipRequestIfNoChanges && noChanges) return;
+             [[WBSSafariBookmarksSyncAgentProxy sharedProxy] userDidUpdateBookmarkDatabase];
+         (The 1-arg convenience hard-codes skipRequestIfNoChanges:YES.)
+
+     We tried both the direct proxy poke and skipRequestIfNoChanges:NO.  The
+     agent's own log answered definitively:
+         SafariBookmarksSyncAgent … [com.apple.Safari:CloudBookmarks]
+             Rejecting XPC connection from process NNNNN: Missing entitlement
+     The connection reaches the agent and is refused for lack of the Apple-private
+     entitlement com.apple.private.safari.can-use-bookmarks-sync-agent (confirmed
+     by inspecting the agent binary's client-entitlement check); a third-party
+     (non-Apple-signed) process cannot carry a com.apple.private.* key.  The
+     same run also shows -34018 "A required entitlement is not present" for the
+     keychain group com.apple.Safari.WBSDevice, i.e. the helper can't even hold a
+     Safari device identity.  So NO in-process call from here can trigger the
+     push.  (This worked pre-CloudKit; Apple's CloudKit migration added the
+     entitlement check.)  The outbound push now has to come from an entitled
+     Safari process; see -[ExtoreSafari …] for how the export side nudges it, and
+     the separate question of why our save leaves the server-sync-data hash
+     unchanged so nothing is marked pending-upload.
+
+     We still issue the old BookmarksController trigger below: it is a harmless
+     no-op from this helper (gated by useCloudKitMode / blocked by entitlement),
+     but it is the long-standing call and costs nothing, and on some OS versions
+     / contexts it may still be the thing that works.
+     =================================================================== */
     if ([BookmarksController respondsToSelector:@selector(requestSyncClientTriggerSyncForBookmarkGroup:)]) {
         [BookmarksController requestSyncClientTriggerSyncForBookmarkGroup:self.wbg];
         didRequestSyncClientTrigger = YES;
     }
-#endif
+
     [self.returnResults setObject:[NSNumber numberWithBool:didRequestSyncClientTrigger]
                            forKey:constKeySheepSafariHelperDidRequestSyncClientTrigger];
 }
