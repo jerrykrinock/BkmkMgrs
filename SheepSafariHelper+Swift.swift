@@ -79,6 +79,24 @@ extension SheepSafariHelper {
                 if var changesArray = syncDic[changesDicKey] as? Array<Dictionary<String, Any>> {
                     let originalCount = changesArray.count
                     var changeIndex = 0;
+                    /* A "bare" Delete change is one whose on-disk record carries
+                     neither a BookmarkServerID nor DeletedBookmarkSyncData.  We
+                     know from disassembling -[BookmarkChange dictionaryRepresentation]
+                     (Safari 625.2.8.11.9) that those two keys are written ONLY when
+                     the corresponding fields are non-nil, and that iCloud needs the
+                     server ID to tombstone a deleted item.  A bare Delete therefore
+                     tells SafariBookmarksSyncAgent nothing it can act on: the item is
+                     not tombstoned, and any other device that still holds it will
+                     re-upload it on the next reconcile -- i.e. the deleted bookmark
+                     "resurrects" days later.  We cannot repair a bare Delete here (the
+                     missing server ID only comes from a prior successful sync, and the
+                     push itself is gated behind the Apple-private entitlement
+                     com.apple.private.safari.can-use-bookmarks-sync-agent that we
+                     cannot carry -- see -[SheepSafariHelper requestSync]).  But we can
+                     at least detect it and leave a breadcrumb in the log, so a reported
+                     resurrection can be confirmed against the record instead of guessed
+                     at from device symptoms days after the fact. */
+                    var bareDeleteCount = 0
                     for change in changesArray {
                         var didRemove = false
                         self.logIfLevel(4, string: "postFix before cnt=\(changesArray.count) idx=\(changeIndex)\nconsidering \(String.init(describing: change))")
@@ -87,6 +105,14 @@ extension SheepSafariHelper {
                                 changesArray.remove(at: changeIndex)
                                 self.logIfLevel(2, string: "   postFix removed ORPHAN change")
                                 didRemove = true
+                            }
+                            else if (type == "Delete") {
+                                let hasServerID = ((change["BookmarkServerID"] as? String)?.isEmpty == false)
+                                let hasSyncData = (change["DeletedBookmarkSyncData"] != nil)
+                                if (!hasServerID && !hasSyncData) {
+                                    bareDeleteCount += 1
+                                    self.logIfLevel(1, string: "   postFix WARNING: bare Delete change for UUID \(uuid) has no BookmarkServerID and no DeletedBookmarkSyncData; iCloud cannot tombstone it, so this item may resurrect on other devices")
+                                }
                             }
                         }
                         if (!didRemove) {
@@ -117,6 +143,9 @@ extension SheepSafariHelper {
                         fixedSyncDic?[changesDicKey] = changesArray
                     }
                     self.logIfLevel(1, string: "postfix deleted \(bogusChangesCount) bogus changes")
+                    if (bareDeleteCount > 0) {
+                        self.reportIssue("postFix saw \(bareDeleteCount) bare Delete change(s) with no BookmarkServerID/DeletedBookmarkSyncData; those deletions cannot be tombstoned in iCloud and may resurrect on other devices")
+                    }
                 }
             }
             
