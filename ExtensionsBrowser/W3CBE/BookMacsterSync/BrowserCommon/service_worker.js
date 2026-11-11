@@ -581,8 +581,9 @@ function doNextDeletion() {
     chrome.bookmarks.get(json.exid,
       function (itemsArray) {
       /* Regarding next line, see Note LastError at end of file. */
-        if(chrome.runtime.lastError) {
-          logError(633844, "Failed get to delete item id=" + json.exid + ".  Ignoring.  Error: " + chrome.runtime.lastError.message);
+        const lastError = chrome.runtime.lastError;
+        if(lastError) {
+          logError(633844, "Failed get to delete item id=" + json.exid + ".  Ignoring.  Error: " + lastError.message);
           didDelete1();
         } else if (itemsArray != null) {  // See note 155 below
           if (itemsArray.length > 0) {
@@ -713,8 +714,9 @@ function doNextPut() {
       not deleted during phaseDone. */
 
       /* Regarding next line, see Note LastError at end of file. */
-      if(chrome.runtime.lastError) {
-        logError(632384, "Failed moving id=" + json.exid + " to", destinInfo, ".  Ignoring.  Error: " + chrome.runtime.lastError.message);
+      const lastError = chrome.runtime.lastError;
+      if(lastError) {
+        logError(632384, "Failed moving id=" + json.exid + " to", destinInfo, ".  Ignoring.  Error: " + lastError.message);
       } else {
         try {
           var movedItemId = movedItem.id;
@@ -848,4 +850,12 @@ Note LastError
 Checking for chrome.runtime.lastError is necessary because, in asynchrous code,
 try{} does not necessarily catch all errors.  For further study see:
 https://stackoverflow.com/questions/28431505/unchecked-runtime-lasterror-when-using-chrome-api
+
+We capture chrome.runtime.lastError into a local variable and read ONLY that
+local thereafter, rather than reading chrome.runtime.lastError twice (once to
+test it, once for .message).  In Chrome and Firefox either style works, but
+Orion (Kagi's WebKit-based engine, which reimplements the WebExtensions API)
+clears lastError after the first read: a second read returns undefined, so
+".message" throws "undefined is not an object".  Reading it exactly once is
+portable across all three.
 */
