@@ -46,7 +46,7 @@ static const ExtoreConstants extoreConstants = {
 	/* telltaleString */                  @"checksum",
 	/* hasBar */                          YES,
 	/* hasMenu */                         YES,
-	/* hasUnfiled */                      NO,
+	/* hasUnfiled */                      NO,   // See Note OrionRL
 	/* hasOhared */                       NO,
 	/* tagDelimiter */                    nil,
 	/* dateRef1970Not2001 */              YES, 
@@ -62,6 +62,25 @@ static const ExtoreConstants extoreConstants = {
 	/* minSystemVersionForBrowMinor */    0,
 	/* minSystemVersionForBrowBugFix */   0
 } ;
+
+/*
+ Note OrionRL
+ 
+ Orion does have a Reading List, however it is not accessible by the W3CBE extensions API.
+ So we do not support it.
+ */
+
+/*
+ Note: Orion files on disk
+ 
+ By the way, the Bookmarks are stored in:
+ ~/Library/Application Support/Orion/Defaults/favourites.plist
+ and the Reading List items are stored in:
+ ~/Library/Application Support/Orion/Defaults/reading_list.plist
+ The file formats are different than both Chrome (of course, since it is
+ a plist and not a json file), and different than Safari's Bookmarks.plist
+ (which is a plist file and does include Reading List items.)
+ */
 
 
 @implementation ExtoreOrion
