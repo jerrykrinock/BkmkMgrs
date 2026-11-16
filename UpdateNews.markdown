@@ -6,6 +6,8 @@ Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug which was introduced in version 3.3.7 which in some cases prevented even populated folders from being exported to Orion, instead of just preventing empty folders from being exported to Orion.
 
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug which, when exporting to Orion, sometimes caused a error when attempting to delete items in Orion.
+
 ## Version 3.3.12 (2026-10-22)
 
 *  <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a crash which could occur in macOS 27 when upon clicking main menu > BookMacster > Background BookMacster.

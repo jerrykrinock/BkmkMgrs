@@ -141,4 +141,33 @@ static const ExtoreConstants extoreConstants = {
     return [self constants_p]->appSupportRelativePath;
 }
 
+/*
+ The other Chromish browsers identify every bookmark with a small sequential
+ integer exid.  Orion's exid space is instead heterogeneous: the hard folders
+ are small integers (beginning with 1), the default bookmarks that ship with
+ Orion are integers (beginning with 100), but every user-created soft folder and
+ bookmark gets a 32-hex UUID string (e.g.
+ "A310D544-F2BF-44EA-AEAF-899F31613655").
+
+ ExtoreChromy turns on -shouldCheckAggregateExids, which exists to guarantee
+ that the integer exids of a true Chromium are unique, valid array indexes,
+ re-minting any that are not.  That check parses each exid with
+ -[NSString integerValue], which is meaningless for Orion's UUIDs: every UUID
+ that begins with a hex *letter* (a-f) parses to 0, so any two of them appear to
+ "collide" at 0.  The check would then re-mint one of the colliding items --
+ nondeterministically, since it iterates -allStarks in set order -- to a bogus
+ integer exid.  When the victim happened to be an item being deleted, its cut
+ carried an exid that does not exist in Orion, and the deletion failed
+ (BookMacster Sync "Error 633844: Failed ... to delete item").
+
+ Orion assigns its own ids (integer or UUID) and reports them back to us, and
+ the only integer exids we ever mint are placeholders for brand-new items (via
+ -getFreshExid_p:..., which returns m_highestUsedId+1, above every existing
+ integer-parsed id, then are replaced by Orion's real id via exid feedback).  So
+ the aggregate check is both unnecessary and harmful here.  We turn it off.
+ */
+- (BOOL)shouldCheckAggregateExids {
+    return NO ;
+}
+
 @end
