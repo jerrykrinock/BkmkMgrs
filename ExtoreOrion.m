@@ -2,6 +2,15 @@
 #import "Bkmxwork/Bkmxwork-Swift.h"
 #import "StarkTyper.h"
 #import "BkmxGlobals.h"
+#import "Stark.h"
+#import "SSYTreeTransformer.h"
+#import "Starker.h"
+
+/* Key under which, during a read (import, or the read phase of an export), we
+ stash the exid of Orion's root-level container folder ("Bookmarks").  It is
+ needed again at export time, to direct root-level items back into it.  See
+ Note OrionRoot. */
+static NSString* const constKeyOrionRootContainerExid = @"orionRootContainerExid" ;
 
 static const ExtoreConstants extoreConstants = {
 	/* canEditAddDate */                  NO,
@@ -60,7 +69,9 @@ static const ExtoreConstants extoreConstants = {
 	/* minBrowserVersionBugFix */         0,
 	/* minSystemVersionForBrowsMajor */   0,
 	/* minSystemVersionForBrowMinor */    0,
-	/* minSystemVersionForBrowBugFix */   0
+	/* minSystemVersionForBrowBugFix */   0,
+	/* rootLeavesOk */                    YES,  // See Note OrionRoot
+	/* rootSoftainersOk */                YES   // See Note OrionRoot
 } ;
 
 /*
@@ -168,6 +179,128 @@ static const ExtoreConstants extoreConstants = {
  */
 - (BOOL)shouldCheckAggregateExids {
     return NO ;
+}
+
+/*
+ Note OrionRoot
+
+ Unlike the other Chromish browsers, which require every bookmark and soft
+ folder to live inside one of the two hard folders (the Bookmarks Bar and the
+ "Other Bookmarks" folder), Orion also supports bookmarks at the root level.
+ The W3CBE bookmarks tree which Orion's extension sends us in a Style 2 import
+ therefore has *three* hard folders among the children of the root node:
+
+     children[0]  "Favorites"      -> our Bar
+     children[1]  "Bookmarks Bar"  -> our Menu ("Other Bookmarks")
+     children[2]  "Bookmarks"      -> holds the root-level items
+
+ The GooChromy superclass extracts the first two as the bar and menu hard
+ folders.  For a genuine Google Chrome, children[2] is the "mobile"/synced
+ tree, which we intentionally ignore.  For Orion, though, children[2] is the
+ root-level container, and its items belong at the root of our collection --
+ NOT in our Unfiled hard folder (which is displayed as the "Reading List").
+ So we graft its children directly under rootOut, as loose siblings of the bar
+ and menu.
+
+ EXPORT.  Because root-level items end up as loose children of our root -- a
+ stark which has no exid (the import mate explicitly skips the root, so one
+ could not be carried on it anyway) -- the generic change packager emits them
+ with NO parentExid, which the GooChromy extension cannot act upon (unlike the
+ Safari helper, which treats a nil parentExid as "root").  So we bridge the gap
+ ourselves, entirely in the app:
+
+   • During the read, we stash the "Bookmarks" container's exid (here).  The
+     read also happens at the start of every export, so the value is fresh and
+     on this same extore instance when the export's writing phase runs.
+   • -relocateLocalItemsToLocalHardFoldersInChangesDic: (called just before the
+     changes are sent) stamps that stashed exid onto every parentExid-less put,
+     sending the root-level items into the "Bookmarks" container.
+   • -indexOffsetForRoot shifts their indexes down past the bar and menu hard
+     folders, so they are 0-based within that container.
+ */
+- (void)graftRootLevelStarksFromExtoreTree:(NSDictionary*)treeIn
+                                   rootOut:(Stark*)rootOut
+                               transformer:(SSYTreeTransformer*)transformer {
+    NSArray* children = [treeIn objectForKey:@"children"] ;
+    if ([children isKindOfClass:[NSArray class]] && (children.count >= 3)) {
+        NSDictionary* bookmarksFolder = [children objectAtIndex:2] ;
+
+        /* Remember the container's exid, for the export direction. */
+        NSString* containerExid = [bookmarksFolder objectForKey:@"id"] ;
+        if (containerExid) {
+            [[self fileProperties] setObject:containerExid
+                                      forKey:constKeyOrionRootContainerExid] ;
+        }
+
+        NSArray* rootItems = [bookmarksFolder objectForKey:@"children"] ;
+        if ([rootItems isKindOfClass:[NSArray class]]) {
+            for (NSDictionary* itemIn in rootItems) {
+                /* NB: ExtoreOrion.m is compiled under ARC, so unlike the
+                 equivalent loops in the non-ARC ExtoreChromy/ExtoreSafari we
+                 do not -release itemOut; ARC balances the +1 from
+                 copyDeepTransformOf: after moveToBkmxParent: has grafted it. */
+                Stark* itemOut = [transformer copyDeepTransformOf:itemIn] ;
+                [itemOut moveToBkmxParent:rootOut] ;
+            }
+        }
+    }
+}
+
+/*
+ The loose root-level items are grafted after the bar and menu hard folders
+ (-assembleAsTreeWithBar:… places those at indexes 0 and 1), so under our root
+ they occupy indexes 2, 3, ….  In Orion they live inside the "Bookmarks"
+ container and must be indexed from 0 there, so we shift them down by the number
+ of hard folders present at our root.  See Note OrionRoot.
+ */
+- (NSInteger)indexOffsetForRoot {
+    NSInteger nHartainers = 0 ;
+    if ([[self starker] bar]) { nHartainers++ ; }
+    if ([[self starker] menu]) { nHartainers++ ; }
+    if ([[self starker] unfiled]) { nHartainers++ ; }
+    if ([[self starker] ohared]) { nHartainers++ ; }
+    return -nHartainers ;
+}
+
+/*
+ Direct every root-level item (a put with no parentExid; in Orion everything
+ else lives in a hard folder, which always has an exid) into Orion's
+ "Bookmarks" container.  See Note OrionRoot.
+ */
+- (NSDictionary*)relocateLocalItemsToLocalHardFoldersInChangesDic:(NSDictionary*)changesDic {
+    /* The superclass handles the (Google-Chrome-only) dual-tree case; for
+     Orion it returns changesDic unchanged. */
+    changesDic = [super relocateLocalItemsToLocalHardFoldersInChangesDic:changesDic] ;
+
+    NSString* rootContainerExid = [[self fileProperties] objectForKey:constKeyOrionRootContainerExid] ;
+    NSArray* puts = [changesDic objectForKey:constKeyPuts] ;
+    if (!rootContainerExid || ![puts isKindOfClass:[NSArray class]]) {
+        return changesDic ;
+    }
+
+    NSMutableArray* correctedPuts = [NSMutableArray arrayWithCapacity:puts.count] ;
+    BOOL didCorrectAny = NO ;
+    for (NSDictionary* put in puts) {
+        if (![put objectForKey:constKeyParentExid]) {
+            NSMutableDictionary* correctedPut = [put mutableCopy] ;
+            [correctedPut setObject:rootContainerExid
+                             forKey:constKeyParentExid] ;
+            [correctedPuts addObject:correctedPut] ;
+            didCorrectAny = YES ;
+        }
+        else {
+            [correctedPuts addObject:put] ;
+        }
+    }
+
+    if (didCorrectAny) {
+        NSMutableDictionary* fixedChangesDic = [changesDic mutableCopy] ;
+        [fixedChangesDic setObject:correctedPuts
+                            forKey:constKeyPuts] ;
+        changesDic = fixedChangesDic ;
+    }
+
+    return changesDic ;
 }
 
 @end

@@ -206,6 +206,13 @@ struct ExtoreConstants_struct {
 	NSInteger minSystemVersionForBrowsMajor ;
 	NSInteger minSystemVersionForBrowsMinor ;
 	NSInteger minSystemVersionForBrowsBugFix ;
+	/* Whether this browser supports loose bookmarks (leaves) and/or soft
+	 folders (softainers) at the root level, outside the hard folders.  Almost
+	 all browsers require everything to be inside a hard folder, so these
+	 default to NO (they are the last members of the struct, so initializers
+	 which omit them get NO).  Orion is the exception; see Note OrionRoot. */
+	BOOL rootLeavesOk ;
+	BOOL rootSoftainersOk ;
 } ;
 typedef struct ExtoreConstants_struct ExtoreConstants ;
 

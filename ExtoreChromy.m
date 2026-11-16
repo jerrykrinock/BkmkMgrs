@@ -216,10 +216,27 @@ NSString* const constKeyState = @"state" ;
     BOOL ok = [super parentSharype:parentSharype
                canHaveChildSharype:childSharype] ;
     if (ok) {
-        // Only other hartainers are allowed in Root
         if (parentSharype == SharypeRoot) {
-            if ([StarkTyper coarseTypeSharype:childSharype] != SharypeCoarseHartainer) {
-                ok = NO ;
+            /* Hard folders are always allowed at Root.  Loose bookmarks
+             (leaves) and soft folders (softainers) are allowed only if this
+             browser supports root-level items -- which, among the Chromish
+             browsers, only Orion does (see Note OrionRoot).  That capability
+             is declared in the ExtoreConstants. */
+            const ExtoreConstants* k = [[self class] constants_p] ;
+            switch ([StarkTyper coarseTypeSharype:childSharype]) {
+                case SharypeCoarseHartainer:
+                    ok = YES ;
+                    break ;
+                case SharypeCoarseLeaf:
+                    ok = k->rootLeavesOk ;
+                    break ;
+                case SharypeCoarseSoftainer:
+                    ok = k->rootSoftainersOk ;
+                    break ;
+                default:
+                    /* e.g. separators (notches) */
+                    ok = NO ;
+                    break ;
             }
         }
         if (ok) {
@@ -1277,6 +1294,13 @@ end:;
         [menuOut release] ;
         [unfiledOut release] ;
         [oharedOut release] ;
+
+        /* Allow a subclass (ExtoreOrion) to graft any root-level bookmarks,
+         which live outside the hard folders, directly under rootOut.  Default
+         is a no-op. */
+        [self graftRootLevelStarksFromExtoreTree:treeIn
+                                         rootOut:rootOut
+                                     transformer:transformer] ;
     }
     
     if (error && error_p) {
@@ -1293,6 +1317,13 @@ end:;
     }
 
 	return ok ;
+}
+
+- (void)graftRootLevelStarksFromExtoreTree:(NSDictionary*)treeIn
+                                   rootOut:(Stark*)rootOut
+                               transformer:(SSYTreeTransformer*)transformer {
+    /* Default is a no-op.  The Chromish browsers, except Orion, require every
+     bookmark and soft folder to live inside one of the hard folders. */
 }
 
 - (void)getFreshExid_p:(NSString**)exid_p
