@@ -1467,6 +1467,22 @@ __attribute__((visibility("default"))) @interface Extore : NSObject <Hartainerta
 - (void)readExternalUsingCurrentStyleWithPolarity:(BkmxIxportPolarity)polarity
                                         jobSerial:(NSInteger)jobSerial
                                 completionHandler:(void(^)(void))completionHandler;
+
+/*!
+ @brief    The maximum number of seconds that -[SSYOperation readExternal] should
+ wait for this extore's asynchronous read to invoke its completion handler before
+ giving up and failing the operation with a timeout error.
+
+ @details  The base implementation returns 0.0, meaning "no timeout" (wait
+ indefinitely), which preserves the historical behavior for extores whose reads
+ are slow or whose latency is unbounded (for example web services over the
+ Internet).  Extores whose read is a fast, local inter-process request -- and
+ therefore a never-returning read indicates a wedged peer rather than slow work
+ -- should override this to return a generous but finite value, so that a wedged
+ read fails cleanly instead of hanging BookMacster forever.  See ExtoreChromy.
+ */
+- (NSTimeInterval)readExternalTimeoutInterval ;
+
 /*!
  @brief    Returns the last date that the external store was possibly modified.
  

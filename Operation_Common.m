@@ -431,7 +431,39 @@ NSString* const constKeyMule = @"mule" ;
 - (void)readExternal {
     [self prepareLock] ;
     [self doSafely:_cmd] ;
-    [self blockForLock] ;
+
+    /* Normally we wait indefinitely for readExternal_unsafe's asynchronous read
+     to invoke its completion handler (-readExternalIsDone), which clears the
+     lock.  But for an extore whose read is a fast local inter-process request
+     (e.g. a Chromish browser, relayed through Chromessenger), a reply that never
+     arrives means the extension / native-messaging path is wedged, and waiting
+     forever would hang BookMacster until the user relaunched the browser.  Such
+     extores return a finite -readExternalTimeoutInterval; if that elapses, we
+     fail the operation with an informative error, which -setError: propagates
+     into the queue (keyed by constKeySSYOperationGroup) so that the remaining
+     operations in this export -- including the destructive write -- are skipped,
+     exactly as a read error from -readExternalIsDone would be. */
+    Extore* extore = [[self info] objectForKey:constKeyExtore] ;
+    NSTimeInterval timeout = [extore readExternalTimeoutInterval] ;
+    NSDate* limitDate = (timeout > 0.0)
+        ? [NSDate dateWithTimeIntervalSinceNow:timeout]
+        : [NSDate distantFuture] ;
+
+    BOOL finishedInTime = [self blockForLockUntilDate:limitDate] ;
+
+    if (!finishedInTime) {
+        NSString* browserName = [extore displayName] ;
+        NSString* msg = [NSString stringWithFormat:
+                         @"%@ did not return its bookmarks within %ld seconds.  Its BookMacster Sync extension may have become unresponsive; try reloading the extension or quitting and relaunching %@, then retry.",
+                         browserName,
+                         (long)timeout,
+                         browserName] ;
+        NSError* error = SSYMakeError(638412, msg) ;
+        error = [error errorByAddingUserInfoObject:browserName
+                                            forKey:@"Browser"] ;
+        [self setError:error] ;
+        [[BkmxBasis sharedBasis] logFormat:@"%@", msg] ;
+    }
 }
 
 - (void)readExternal_unsafe {

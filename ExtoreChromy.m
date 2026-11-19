@@ -207,6 +207,29 @@ NSString* const constKeyState = @"state" ;
     return YES ;
 }
 
+- (NSTimeInterval)readExternalTimeoutInterval {
+    /* A Chromish read is a request relayed through Chromessenger to the browser
+     extension, which returns the whole bookmarks tree.  Normally this completes
+     in well under a second even for thousands of bookmarks, so a reply that
+     never arrives means the extension / native-messaging path is wedged (as
+     happened after an exid-corrupted export left the read/IPC handshake in a
+     bad state -- see ExtoreOrion -shouldCheckAggregateExids).  Rather than hang
+     BookMacster forever (requiring the user to relaunch the browser), time out
+     and fail the operation with an informative error (638412).
+
+     This is a *backstop*, deliberately set a bit longer than every other
+     "get the tree" timeout, so that whenever one of those can fire, its more
+     specific error is reported instead of ours:
+        • the Style-2 import timer (Extore.m) = 90.127 s / 300.103 s (BkmxAgent),
+          which reports constBkmxErrorImportTimedOut (651507), and
+        • Chromessenger's own receive timeout, which caps at 30 s.
+     Those are run-loop NSTimers; our wait (-blockForLockUntilDate:) is a
+     pthread-level wait, so it still fires in the wedge where no run-loop timer
+     does.  BkmxAgent is a background process the system may schedule at lower
+     priority, so we allow ~3x longer there, matching the import timer's ratio. */
+    return [[BkmxBasis sharedBasis] isBkmxAgent] ? 360.0 : 120.0 ;
+}
+
 - (BOOL)canRemoveHartainers {
     return YES ;
 }

@@ -4013,6 +4013,12 @@ end:;
 	return NO ;
 }
 
+- (NSTimeInterval)readExternalTimeoutInterval {
+    /* 0.0 means "no timeout" (wait indefinitely).  Subclasses whose read is a
+     fast local inter-process request override this.  See ExtoreChromy. */
+    return 0.0 ;
+}
+
 - (void)readExternalUsingCurrentStyleWithPolarity:(BkmxIxportPolarity)polarity
                                         jobSerial:(NSInteger)jobSerial
                                 completionHandler:(void(^)(void))completionHandler {
@@ -5618,19 +5624,25 @@ end:
 
 - (void)timedOutImportTimer:(NSTimer*)timer {
     [self unleaseInterappServer];
-    
+
+    /* This read-of-the-external-tree timer governs the read phase of BOTH import
+     and export (an export must read the browser's current tree in order to merge
+     into it), so the message is phrased neutrally -- "did not return its
+     bookmarks" -- rather than saying "import", which was wrong and confusing
+     when the timeout happened during an export.  (The error code is still
+     constBkmxErrorImportTimedOut for historical/compatibility reasons.) */
     NSString* desc = [NSString stringWithFormat:
-                      @"Timed out waiting for bookmarks import from %@",
+                      @"Timed out waiting for %@ to return its bookmarks",
                       self.clientoid.displayName] ;
     NSError* error = SSYMakeError(constBkmxErrorImportTimedOut, desc);
     error = [error errorByAddingUserInfoObject:@YES
                                         forKey:constKeyDontPauseSyncing];
-    
+
     [self addHoggingAdviceAndRegisterError:error];
-    
+
     if (self.readExternalCompletionHandler) {
         self.readExternalCompletionHandler();
-        NSString* msg = [NSString stringWithFormat:@"Timed out waiting on import from %@", self.displayName];
+        NSString* msg = [NSString stringWithFormat:@"Timed out waiting for %@ to return its bookmarks", self.displayName];
         [[BkmxBasis sharedBasis] forJobSerial:self.jobSerial
                                     logFormat:msg];
         self.readExternalCompletionHandler = nil;
