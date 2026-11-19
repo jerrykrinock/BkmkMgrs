@@ -6,7 +6,17 @@ Version numbers are synchronized for all four apps in the BookMacster family: Sm
 
 We have three upgrade *channels*:  *Alpha*, *Beta* and *Production*.  If the built-in *Check for Update…* feature is not offering you the latest version as indicated here, it may be because that latest version is still on a earlier *channel*.  Alpha or Beta versions are moved to *Production* after we are certain of their improvement.  To get them earlier, you may [change your upgrade channel](https://sheepsystems.com/files/support_articles/bkmx/get-beta.html).
 
-Version 3 of our apps requires macOS 11.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
+Version 3 of our apps requires macOS 12.0 or later.  Versions 2.12 and later of our apps require macOS 10.14 or later.
+
+## Version 3.3.13 (2026-11-19)
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug which was introduced in version 3.3.7 which in some cases prevented even populated folders from being exported to Orion, instead of just preventing empty folders from being exported to Orion.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug which, when exporting to Orion, sometimes caused a error when attempting to delete items in Orion.
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Now correctly maps items from the bookmarks root in Orion to the root of our Collection, and vice versa.  (Orion is the only Chromish browser which allows bookmarks and folders in its bookmarks root).
+
+*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Improved description displayed with Error 651507.
 
 ## Version 3.3.12 (2026-10-22)
 

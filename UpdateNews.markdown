@@ -1,8 +1,8 @@
 <!-- # Latest Updates for Smarky, Synkmark, Markster and BookMacster -->
 
-Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found any issues which are specific to macOS 27.
+This is a significant update for users of the Orion web browsers.  Other users may reasonably skip this update.
 
-## Version 3.3.13 (2026-10-22)
+## Version 3.3.13 (2026-11-19)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed a bug which was introduced in version 3.3.7 which in some cases prevented even populated folders from being exported to Orion, instead of just preventing empty folders from being exported to Orion.
 
@@ -57,48 +57,6 @@ Note: We have been testing in macOS 27 *Golden Gate* and have thus far not found
 ## Version 3.3.6 (2026-02-12)
 
 *  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [ChatGPT Atlas](https://chatgpt.com/atlas/) web browser.
-
-## Version 3.3.5 (2026-02-07)
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with the [Comet](https://www.perplexity.ai/comet) web browser.
-
-*  <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed bug: Dragging multiple bookmarks to a tag did not tag all of the bookmarks. 
-
-*  <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Fixed bug: When user selected multiple tags in the Tag Cloud (RPTokenControl), then begins a drag, all tags except the last tag which was selected become deselected.
-
-## Version 3.3.4 (2026-02-06)
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added support for import, export and syncing with [Zen Browser](https://zen-browser.app).
-
-## Version 3.3.3 (2026-01-17)
-
-*  <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> The option to have the icon of the Menu Extra be a grayscale image of the application icon, which looked bad and was not even discernable with the new applicattion icon we made for macOS 26, has been eliminated.  Users who had previously selected this option in *Preferences* > *Appearance* > *Menu Extra* will be automatically migrated to use the other option, which looks like is a simple, flat, black-or-white bookmark.  This icon is more appropriate in the current style of macOS.
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Icons in *Preferences* > *Appearance* > *Colors* display properly when user is in Dark Mode now. 
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Added AppleScript commands to enable and disable *undo* registration, necessary to reduce memory bloat when running long scripts.
-
-## Version 3.3.2 (2026-01-03)
-
-*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused a crash when certain errors occurred while searching for crufty files or app versions, which our apps do in the background shortly after being launched.
-
-*  <img src="images/BookMacster. png" alt="" class="whappMini" />  Fixed a bug which caused, when configuring a new Diigo or Pinboard client, switching on the *Save password to my macOS Keychain* checkbox to in fact not do that.
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> To prevent later crashes or import/export failures, now automatically removes any invisible control characters when storing bookmark names.
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> Better error reporting in case the messaging host of one of our web browser extensions receives undecodeable data during an Import or Export operation.
-
-## Version 3.3.1 (2025-09-12)
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Now works with the latest version of Opera, no more Error 594520.  (Opera has corrected the index values for the first-level children in their bookmarks tree.)
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the document window > Content tab, restored images to the "Outline Mode / Table Mode" button which somehow got deleted in version 3.3.
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> In the Manage Browser Extensions window, fixed alignment of Version and Status indicators along the right edge, which were improperly displaced in version 3.3.
-
-## Version 3.3 (2025-09-09)
-
-*  <img src="images/Smarky.png" alt="" class="whappMini" /> <img src="images/Synkmark.png" alt="" class="whappMini" /> <img src="images/Markster.png" alt="" class="whappMini" /> <img src="images/BookMacster.png" alt="" class="whappMini" /> New app icon and other cosmetic repairs for compatibility with macOS 26 Tahoe.
 
 
 For earlier version changes, see the [Version History](https://sheepsystems.com/bookmacster/HelpBook/SSYMH.05.03.html).

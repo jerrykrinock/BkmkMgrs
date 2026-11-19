@@ -217,7 +217,7 @@ However, when updating old Collections to version 3.3.7 of our BookMacster app, 
 * Delete any *Vivaldi* clients by clicking its minus (*-*) button.
 * Add a new Client by clicking the (*+*) button.  It will default to *Safari*.
 * Click the popup button indicating *Safari* and change it to *Vivaldi*.
-* If it is OK to delete all of the bookmarks in the Collection (that is, if you have your bookmarks in the browsers so you can re-import them, click in the main menu: *Bookmarks* > *Delete all Content*.  Otherwise, if you only want to delete the bookmarks that were in Vivaldi, click the tab: *Reports*, then the tab *Find/Replace*.  Set the predicate to: ***All** of the following are **true** > **Client Associations** **contains** **Vivaldi***.  The, select all items in the list (⌘A) and hit the *delete* key.
+* If it is OK to delete all of the bookmarks in the Collection (that is, if you have your bookmarks in the browsers so you can re-import them), click in the main menu: *Bookmarks* > *Delete all Content*.  Otherwise, if you only want to delete the bookmarks that were in Vivaldi, click the tab: *Reports*, then the tab *Find/Replace*.  Set the predicate to: ***All*** *of the following are* ***true*** *>* ***Client Associations*** ***contains*** ***Vivaldi***.  Then, select all items in the list (⌘A) and hit the *delete* key.
 * Click the tab: *Content*.
 * You probably  have a hard folder *Bookmarks Bar*.  If it is empty, you probably do not need it.  It is not related to the [user-designated Bookmark Bar in Vivaldi](barVivaldi).
 * Click in the main menu: *File* > *Import from only* > *Vivaldi*.  A sheet will appear
