@@ -160,9 +160,23 @@ function finishConnectNativeMessaging() {
             
             if (rxObject.isLastChunk) {
               // Got all chunks now.  However, it is a long JSON string.
-              // We must convert back to a JSON object
-              let reconstructedRxObject = JSON.parse(chunkTrain)
-                handleCommandInRxObject(reconstructedRxObject)
+              // We must convert back to a JSON object.
+              // Reset chunkTrain FIRST (before parsing/handling), so that even
+              // if JSON.parse or the command handling below throws, the NEXT
+              // chunked message starts with a fresh, empty train instead of
+              // being corrupted by this one's leftover bytes.
+              let assembledJson = chunkTrain;
+              chunkTrain = undefined;
+              let reconstructedRxObject;
+              try {
+                reconstructedRxObject = JSON.parse(assembledJson);
+              } catch (error) {
+                logError(639530, "Failed to parse reassembled chunked message: " + error);
+                reconstructedRxObject = undefined;
+              }
+              if (isDefined(reconstructedRxObject)) {
+                handleCommandInRxObject(reconstructedRxObject);
+              }
             }
 
     } else {
@@ -189,6 +203,7 @@ function handleCommandInRxObject(rxObject) {
         errors = new Array();
     }
 
+    try {
     if (command == "getBasicInfo") {
         let basicInfo = {
             extensionVersion: extensionVersion,
@@ -219,7 +234,15 @@ function handleCommandInRxObject(rxObject) {
             port.postMessage({grabbedInfo: grabbedInfo});
         });
     } else {
-        logError(618375, "Unrecognized command " + command.description);
+        logError(618375, "Unrecognized command " + command);
+    }
+    } catch (error) {
+        /* Defensive: an unexpected exception while handling a command must not
+         leave BookMacster waiting forever for a reply, nor risk terminating the
+         service worker.  Log it, and best-effort post the errors so BookMacster
+         receives something; its own read timeout is the final backstop. */
+        logError(639540, "Exception handling command '" + command + "': " + error);
+        try { port.postMessage({errors: errors}); } catch (postError) { /* port unusable */ }
     }
 }
 
@@ -459,18 +482,27 @@ function isDefined(x) {
 }
 
 function gotTree(rootChildren) {
-  if (rootChildren) {
-    var response;
-    if (rootChildren.length == 1) {
-      response = rootChildren;
-      port.postMessage({errors:errors});
-      port.postMessage({rootChildren: rootChildren});
-    } else {
-      logError(420397, " Not 1 root but " + rootChildren.length + ".");
-    }
-  } else {
-    logError(420398, " getTree callback (gotTree) got nothing: " + rootChildren.description);
+  if (isDefined(rootChildren) && rootChildren && (rootChildren.length == 1)) {
+    port.postMessage({errors:errors});
+    port.postMessage({rootChildren: rootChildren});
+    return;
   }
+
+  /* Failure path.  Previously the two branches here logged but sent NO reply,
+   so BookMacster waited for its read timeout; and the "got nothing" branch
+   dereferenced rootChildren.description on a null/undefined value, throwing a
+   TypeError inside this callback (nothing logged, nothing sent).  Now we log
+   without crashing and post the errors so BookMacster receives the failure.
+   We deliberately do NOT fabricate a tree (e.g. an empty []): sending an empty
+   tree during an export could be interpreted as "delete everything", so we let
+   BookMacster's own read timeout govern if it is waiting specifically on the
+   tree message. */
+  if (!isDefined(rootChildren) || !rootChildren) {
+    logError(420398, "chrome.bookmarks.getTree callback received no tree.");
+  } else {
+    logError(420397, "chrome.bookmarks.getTree returned " + rootChildren.length + " roots (expected exactly 1).");
+  }
+  port.postMessage({errors:errors});
 }
 
 function abortPhase() {
@@ -624,13 +656,27 @@ function deleteItemAfterRecursivelyMovingAnyChildrenToLimbo(children, limboInfo,
     i = i - 1;
     var child = children[i];
     chrome.bookmarks.move(child.id, limboInfo, function(result) {
-      limbo.push(child.id);
-      console.log("Moved to limbo: " + child.id + " " + child.title);
+      /* Regarding next line, see Note LastError at end of file. */
+      const lastError = chrome.runtime.lastError;
+      if (lastError) {
+        logError(633845, "Failed moving child id=" + child.id + " to limbo.  Ignoring.  Error: " + lastError.message);
+      } else {
+        limbo.push(child.id);
+        console.log("Moved to limbo: " + child.id + " " + child.title);
+      }
+      // Continue down the children regardless, so one failed move cannot stall the phase.
       deleteItemAfterRecursivelyMovingAnyChildrenToLimbo(children, limboInfo, i, deleteeId);
     });
   } else {
     // All children, if any, have been safely moved to limbo.  Remove the parent.
-    chrome.bookmarks.removeTree(deleteeId, didDelete1);
+    chrome.bookmarks.removeTree(deleteeId, function() {
+      /* Regarding next line, see Note LastError at end of file. */
+      const lastError = chrome.runtime.lastError;
+      if (lastError) {
+        logError(633846, "Failed removeTree id=" + deleteeId + ".  Ignoring.  Error: " + lastError.message);
+      }
+      didDelete1();
+    });
   }
 }
 
